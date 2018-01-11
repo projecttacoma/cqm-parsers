@@ -407,7 +407,7 @@ module HQMF
     private
 
     def self.read_template_id_map(version)
-      HealthDataStandards::Util::HQMFTemplateHelper.template_id_map(version)
+      HQMF::Util::HQMFTemplateHelper.template_id_map(version)
     end
 
     def normalize_status(definition, status)

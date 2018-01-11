@@ -1,2 +1,0 @@
-class VitalSign < LabResult
-end

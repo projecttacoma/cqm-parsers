@@ -2,10 +2,12 @@
 require 'nokogiri'
 require 'json'
 require 'ostruct'
-require 'health-data-standards'
 
 # require_relative
 require_relative 'util/counter.rb'
+require_relative 'util/code_system_helper'
+require_relative 'util/hqmf_template_helper'
+
 require_relative 'hqmf-model/utilities.rb'
 
 require_relative 'hqmf-parser/1.0/utilities'
@@ -65,5 +67,3 @@ require_relative 'hqmf-parser/converter/pass2/comparison_converter'
 require_relative 'hqmf-parser/converter/pass2/operator_converter'
 
 require_relative 'hqmf-parser/parser'
-
-require_relative 'hqmf-generator/hqmf-generator'

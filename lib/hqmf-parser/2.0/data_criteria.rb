@@ -223,7 +223,7 @@ module HQMF2
     def retrieve_code_system_for_model
       code_system = attr_val("#{@code_list_xpath}/@codeSystem")
       if code_system
-        code_system_name = HealthDataStandards::Util::CodeSystemHelper.code_system_for(code_system)
+        code_system_name = HQMF::Util::CodeSystemHelper.code_system_for(code_system)
       else
         code_system_name = attr_val("#{@code_list_xpath}/@codeSystemName")
       end

@@ -1,2 +1,0 @@
-exclude_paths:
-- "lib/health-data-standards/export/view_helper.rb"

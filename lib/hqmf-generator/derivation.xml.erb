@@ -1,6 +1,0 @@
-          <%- criteria.children_criteria.each do |child_id| -%>
-            <outboundRelationship typeCode="COMP">
-              <conjunctionCode code="<%= criteria.derivation_operator == 'UNION' ? 'OR' : 'AND' %>"/>
-              <%= xml_for_reference_id(child_id) %>
-            </outboundRelationship>
-          <%- end -%>
