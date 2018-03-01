@@ -11,6 +11,7 @@ env:
 script:
   - bundle exec bundle-audit check --update
   - bundle exec rake test
+  - rubocop
 
 notifications:
   email:
