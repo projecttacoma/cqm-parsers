@@ -4,6 +4,7 @@ gemspec :development_group => :test
 
 group :development, :test do
   gem 'bundler-audit'
+  gem 'rubocop', '~> 0.52.1', require: false
 end
 
 group :development do
@@ -17,11 +18,8 @@ group :test do
   gem "cane", '~> 2.3.0'
   gem 'simplecov', :require => false
   gem 'webmock'
-
-  gem "minitest", "~> 5.3"
+  gem 'minitest', '~> 5.3'
   gem 'minitest-reporters'
   gem 'awesome_print', :require => 'ap'
-
   gem 'simplexml_parser', :git => 'https://github.com/projecttacoma/simplexml_parser.git', :branch => 'master'
-
 end
