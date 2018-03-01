@@ -8,6 +8,9 @@ services:
 env:
   - "JRUBY_OPTS=-J-Xmx1024m"
 
+before_script:
+  - gem install rubocop
+
 script:
   - bundle exec bundle-audit check --update
   - bundle exec rake test
