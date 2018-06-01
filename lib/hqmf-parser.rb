@@ -67,3 +67,9 @@ require_relative 'hqmf-parser/converter/pass2/comparison_converter'
 require_relative 'hqmf-parser/converter/pass2/operator_converter'
 
 require_relative 'hqmf-parser/parser'
+
+require_relative 'qrda-export/helper/code_system_helper.rb'
+require_relative 'qrda-export/helper/date_helper.rb'
+require_relative 'qrda-export/helper/cat_1_view_helper.rb'
+
+require_relative 'qrda-export/catI-r5/qrda1_r5.rb'
