@@ -2,6 +2,9 @@ source "https://rubygems.org"
 
 gemspec :development_group => :test
 
+gem 'mustache'
+gem 'cqm-models', :git => 'https://github.com/projecttacoma/cqm-models', :branch => 'results_object'
+
 group :development, :test do
   gem 'bundler-audit'
   gem 'rubocop', '~> 0.52.1', require: false
