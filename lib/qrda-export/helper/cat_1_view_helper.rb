@@ -19,6 +19,14 @@ module Qrda
           JSON.parse(@provider.to_json) if @provider
         end
 
+        def provider_addresses
+          @provider['addresses']
+        end
+
+        def provider_street
+          self['street'].join('')
+        end
+
         def provider_npi
           @provider['cda_identifiers'].map { |cda| cda['extension'] if cda['root'] == '2.16.840.1.113883.4.6' }.compact.first
         end
