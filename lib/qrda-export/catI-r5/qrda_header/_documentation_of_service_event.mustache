@@ -16,28 +16,32 @@
         <id extension="{{{provider_npi}}}" root="2.16.840.1.113883.4.6"/>
         <id extension="{{{provider_ccn}}}" root="2.16.840.1.113883.4.336"/>
         <code code="{{{provider_type_code}}}" codeSystem="2.16.840.1.113883.6.101" codeSystemName="Healthcare Provider Taxonomy (HIPAA)"/>
+        {{#provider_addresses}}
         <addr use="HP">
-          <streetAddressLine>16432 Jayme Viaduct Manor</streetAddressLine>
-          <city>Clairland</city>
-          <state>MS</state>
-          <postalCode>38796</postalCode>
-          <country>US</country>
+          <streetAddressLine>{{{provider_street}}}</streetAddressLine>
+          <city>{{{city}}}</city>
+          <state>{{{state}}}</state>
+          <postalCode>{{{zip}}}</postalCode>
+          <country>{{{country}}}</country>
         </addr>
+        {{/provider_addresses}}
         <assignedPerson>
           <name>
-            <given>Daryl</given>
-            <family>Carroll</family>
+            <given>{{{given_name}}}</given>
+            <family>{{{family_name}}}</family>
           </name>
         </assignedPerson>
         <representedOrganization>
           <id extension="{{{provider_tin}}}" root="2.16.840.1.113883.4.2"/>
+          {{#provider_addresses}}
           <addr use="HP">
-            <streetAddressLine>16432 Jayme Viaduct Manor</streetAddressLine>
-            <city>Clairland</city>
-            <state>MS</state>
-            <postalCode>38796</postalCode>
-            <country>US</country>
+            <streetAddressLine>{{{provider_street}}}</streetAddressLine>
+            <city>{{{city}}}</city>
+            <state>{{{state}}}</state>
+            <postalCode>{{{zip}}}</postalCode>
+            <country>{{{country}}}</country>
           </addr>
+          {{/provider_addresses}}
         </representedOrganization>
       </assignedEntity>
       {{/provider}}
