@@ -122,7 +122,7 @@ module Qrda
           elsif self['result'].is_a? Hash
             return result_value_as_string(self['result'])
           elsif !self['result'].nil?
-            return "<value xsi:type=\"PQ\" value=\"#{self['result']}\"/>"
+            return "<value xsi:type=\"PQ\" value=\"#{self['result']}\" unit=\"1\"/>"
           end
           "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>"
         end
