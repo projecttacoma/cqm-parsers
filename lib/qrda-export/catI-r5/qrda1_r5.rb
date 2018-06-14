@@ -9,6 +9,8 @@ class Qrda1R5 < Mustache
     @patient = patient
     @measures = measures
     @provider = options[:provider]
+    @performance_period_start = options[:start_time]
+    @performance_period_end = options[:end_time]
     @submission_program = options[:submission_program]
     @insurance_provider = JSON.parse(@patient.extendedData.insurance_providers)
   end

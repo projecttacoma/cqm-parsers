@@ -11,6 +11,14 @@ module Qrda
          end
         end
 
+        def performance_period_start
+          @performance_period_start.to_formatted_s(:number)
+        end
+
+        def performance_period_end
+          @performance_period_end.to_formatted_s(:number)
+        end
+
         def author_time
           "<time #{value_or_null_flavor(self['authorDatetime'])}/>"
         end
