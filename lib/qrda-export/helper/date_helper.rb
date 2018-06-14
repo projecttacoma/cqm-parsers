@@ -59,8 +59,8 @@ module Qrda
         end
 
         def facility_period
-          "<low #{value_or_null_flavor(self['Locationperiod']['low'])}/>"\
-          "<high #{value_or_null_flavor(self['Locationperiod']['high'])}/>"
+          "<low #{value_or_null_flavor(self['locationPeriod']['low'])}/>"\
+          "<high #{value_or_null_flavor(self['locationPeriod']['high'])}/>"
         end
 
         def incision_datetime
