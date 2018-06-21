@@ -20,9 +20,15 @@
         {{#dischargeDisposition}}
         <sdtc:dischargeDispositionCode {{> _code}}/>
         {{/dischargeDisposition}}
+        {{#authorDatetime}}
+        {{> qrda_templates/template_partials/_author}}
+        {{/authorDatetime}}
         {{#facilityLocations}}
           {{> qrda_templates/template_partials/_encounter_facility_location}}
         {{/facilityLocations}}
+        {{#admissionSource}}
+          {{> qrda_templates/template_partials/_admission_source}}
+        {{/admissionSource}}
         {{#principalDiagnosis}}
           {{> qrda_templates/template_partials/_principal_diagnosis}}
         {{/principalDiagnosis}}
