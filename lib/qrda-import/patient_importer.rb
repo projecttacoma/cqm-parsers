@@ -107,21 +107,24 @@ module QRDA
 
       def parse_cat1(doc)
         patient = Patient.new
+        entry_id_map = {}
         #HealthDataStandards::Import::C32::PatientImporter.instance.get_demographics(patient, doc)
-        import_data_elements(patient, doc)
+        import_data_elements(patient, doc, entry_id_map)
         #get_patient_expired(patient, doc)
         #record.dedup_record!
-        #normalize_references(record)
+        normalize_references(patient, entry_id_map)
         get_demographics(patient, doc)
         patient
       end
 
-      def import_data_elements(patient, doc)
+      def import_data_elements(patient, doc, entry_id_map)
         context = doc.xpath("/cda:ClinicalDocument/cda:component/cda:structuredBody/cda:component/cda:section[cda:templateId/@root = '2.16.840.1.113883.10.20.24.2.1']")
         nrh = NarrativeReferenceHandler.new
         nrh.build_id_map(doc)
         @data_element_importers.each do |entry_package|
-          patient.dataElements << entry_package.package_entries(context, nrh)
+          data_elements, id_map = entry_package.package_entries(context, nrh)
+          patient.dataElements << data_elements
+          entry_id_map.merge!(id_map)
         end
       end
 
@@ -133,21 +136,13 @@ module QRDA
         end
       end
 
-      # def normalize_references(record)
-      #   ref_ids = {}
-      #   record.procedures.each do |procedure|
-      #     if procedure.cda_identifier
-      #       ref_ids[procedure.cda_identifier.extension] = procedure._id
-      #     end
-      #   end
-      #   if ref_ids
-      #     record.communications.each do |communication|
-      #       communication.references.each do |reference|
-      #         reference.referenced_id = ref_ids[reference.referenced_id].to_s if ref_ids.has_key?(reference.referenced_id)
-      #       end
-      #     end
-      #   end
-      # end
+      def normalize_references(patient, entry_id_map)
+        patient.dataElements.each do |data_element|
+          if data_element.respond_to?(:relatedTo) && data_element.relatedTo
+            data_element.relatedTo.map! { |related_to| entry_id_map[related_to] }
+          end
+        end
+      end
 
       private
 

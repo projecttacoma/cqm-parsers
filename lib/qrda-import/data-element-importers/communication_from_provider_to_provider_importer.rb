@@ -5,11 +5,13 @@ module QRDA
         super(entry_finder)
         @code_xpath = './cda:code'
         @author_datetime_xpath = "./cda:author/cda:time"
+        @related_to_xpath = "./sdtc:inFulfillmentOf1/sdtc:actReference"
         @entry_class = QDM::CommunicationFromProviderToProvider
       end
 
       def create_entry(entry_element, nrh = NarrativeReferenceHandler.new)
         communication_from_provider_to_provider = super
+        communication_from_provider_to_provider.relatedTo = extract_related_to(entry_element)
         communication_from_provider_to_provider
       end
 
