@@ -7,6 +7,10 @@ module Qrda
           UUID.generate
         end
 
+        def as_id
+          self['$oid']
+        end
+
         def object_id
           self[:_id]['$oid']
         end
