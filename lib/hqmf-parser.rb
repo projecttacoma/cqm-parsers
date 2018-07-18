@@ -114,3 +114,6 @@ require_relative 'qrda-import/data-element-importers/medication_dispensed_import
 require_relative 'qrda-import/data-element-importers/procedure_order_importer.rb'
 require_relative 'qrda-import/data-element-importers/substance_administered_importer.rb'
 require_relative 'qrda-import/patient_importer.rb'
+
+require_relative 'ext/data_element.rb'
+require_relative 'ext/code.rb'
