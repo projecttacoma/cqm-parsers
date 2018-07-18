@@ -4,6 +4,7 @@ gemspec :development_group => :test
 
 gem 'mustache'
 gem 'cqm-models', :git => 'https://github.com/projecttacoma/cqm-models', :branch => 'results_object'
+gem 'mongoid', '~> 5.0.0'
 
 group :development, :test do
   gem 'bundler-audit'
@@ -12,7 +13,7 @@ end
 
 group :development do
   gem 'rake'
-  gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22]
+  gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22, :ruby_23]
 end
 
 group :test do

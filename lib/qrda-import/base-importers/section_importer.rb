@@ -37,7 +37,8 @@ module QRDA
 
       def create_entry(entry_element, nrh = NarrativeReferenceHandler.new)
         entry = @entry_class.new
-        @entry_id_map[extract_id(entry_element, "./cda:id")] = entry.id
+        @entry_id_map[extract_id(entry_element, "./cda:id")] ||= []
+        @entry_id_map[extract_id(entry_element, "./cda:id")] << entry.id
         entry.dataElementCodes = extract_codes(entry_element, @code_xpath)
         extract_dates(entry_element, entry)
         if @result_xpath
