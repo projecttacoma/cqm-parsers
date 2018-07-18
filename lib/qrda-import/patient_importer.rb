@@ -123,7 +123,22 @@ module QRDA
         nrh.build_id_map(doc)
         @data_element_importers.each do |entry_package|
           data_elements, id_map = entry_package.package_entries(context, nrh)
-          patient.dataElements << data_elements
+          new_data_elements = []
+
+          id_map.each_value do |elem_ids|
+            
+            elem_id = elem_ids.first
+            data_element = data_elements.find { |de| de.id == elem_id }
+
+            elem_ids[1,elem_ids.length].each do |merge_id|
+              merge_element = data_elements.find { |de| de.id == merge_id }
+              data_element.merge!(merge_element)
+            end
+
+            new_data_elements << data_element
+          end
+
+          patient.dataElements << new_data_elements
           entry_id_map.merge!(id_map)
         end
       end
