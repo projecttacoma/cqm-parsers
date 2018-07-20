@@ -106,6 +106,10 @@ class Qrda1R5 < Mustache
   def medication_ordered
     JSON.parse(@patient.dataElements.where(:hqmfOid => { '$in' => ['2.16.840.1.113883.3.560.1.78','2.16.840.1.113883.3.560.1.17'] }).to_json)
   end
+
+  def patient_characteristic_expired
+    JSON.parse(@patient.dataElements.where(:hqmfOid => '2.16.840.1.113883.10.20.28.3.57').to_json)
+  end
   
   def physical_exam_performed
     JSON.parse(@patient.dataElements.where(:hqmfOid => { '$in' => ['2.16.840.1.113883.3.560.1.57','2.16.840.1.113883.3.560.1.157'] }).to_json)
