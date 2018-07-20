@@ -40,6 +40,7 @@ module QRDA
         @data_element_importers << generate_importer(MedicationAdministeredImporter)
         @data_element_importers << generate_importer(MedicationDischargeImporter)
         @data_element_importers << generate_importer(MedicationDispensedImporter)
+        @data_element_importers << generate_importer(PatientCharacteristicExpired)
         @data_element_importers << generate_importer(ProcedureOrderImporter)
         @data_element_importers << generate_importer(SubstanceAdministeredImporter)
         

@@ -28,6 +28,12 @@ module Qrda
           "<effectiveTime #{value_or_null_flavor(self['authorDatetime'])}/>"
         end
 
+        def expired_date_time
+          "<effectiveTime>"\
+          "<low #{value_or_null_flavor(self['expiredDatetime'])}/>"\
+          "</effectiveTime>"
+        end
+
         def prevalence_period
           "<effectiveTime>"\
           "<low #{value_or_null_flavor(self['prevalencePeriod']['low'])}/>"\
