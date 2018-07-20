@@ -19,6 +19,7 @@ module QRDA
       # @return [Array] will be a list of Entry objects
       def create_entries(doc, nrh = NarrativeReferenceHandler.new)
         entry_list = []
+        @entry_id_map = {}
         entry_elements = @entry_finder.entries(doc)
         entry_elements.each do |entry_element|
           entry = create_entry(entry_element, nrh)
