@@ -8,10 +8,9 @@ class CDAIdentifier
   field :extension, type: String
   embedded_in :cda_identifiable, polymorphic: true
 
-  def ==(comparison_object)
-    if comparison_object.respond_to?(:root) && comparison_object.respond_to?(:extension)
-      self.root == comparison_object.root && self.extension == comparison_object.extension
-    end
+  def ==(other)
+    return unless other.respond_to?(:root) && other.respond_to?(:extension)
+    root == other.root && extension == other.extension
   end
 
   def hash

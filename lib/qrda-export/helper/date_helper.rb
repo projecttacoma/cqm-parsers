@@ -2,14 +2,13 @@ module Qrda
   module Export
     module Helper
       module DateHelper
-
         def value_or_null_flavor(time)
           # this is a bit of a hack for a defineded undefined date
           if time && DateTime.parse(time).year < 3000
-            return "value='#{DateTime.parse(time).utc.to_formatted_s(:number)}'"
+            "value='#{DateTime.parse(time).utc.to_formatted_s(:number)}'"
           else
-           return "nullFlavor='UNK'"
-         end
+            "nullFlavor='UNK'"
+          end
         end
 
         def performance_period_start
@@ -53,7 +52,7 @@ module Qrda
           end_time = self['end_time'] ? DateTime.strptime(self['end_time'].to_s, '%s').to_s : nil
           "<effectiveTime>"\
           "<low #{value_or_null_flavor(start_time)}/>"\
-          "<high #{value_or_null_flavor(self['end_time'])}/>"\
+          "<high #{value_or_null_flavor(end_time)}/>"\
           "</effectiveTime>"
         end
 
