@@ -607,18 +607,6 @@ Performance/Casecmp:
     - 'lib/hqmf-parser/2.0/data_criteria_helpers/dc_base_extract.rb'
     - 'lib/hqmf-parser/converter/pass2/comparison_converter.rb'
 
-# Offense count: 8
-# Cop supports --auto-correct.
-# Configuration parameters: AutoCorrect.
-Performance/HashEachMethods:
-  Exclude:
-    - 'lib/hqmf-parser/1.0/utilities.rb'
-    - 'lib/hqmf-parser/converter/pass1/data_criteria_converter.rb'
-    - 'lib/hqmf-parser/converter/pass1/document_converter.rb'
-    - 'lib/hqmf-parser/converter/pass1/population_criteria_converter.rb'
-    - 'test/unit/hqmf/2.0/hqmf_vs_simple_test.rb'
-    - 'test/unit/hqmf/model/nqf_0002_test.rb'
-
 # Offense count: 7
 # Cop supports --auto-correct.
 Performance/RedundantMatch:
@@ -1124,7 +1112,7 @@ Style/TernaryParentheses:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleForMultiline.
 # SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInLiteral:
+Style/TrailingCommaInArrayLiteral:
   Exclude:
     - 'test/unit/hqmf/model/nqf_0002_test.rb'
 

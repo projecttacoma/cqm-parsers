@@ -1,7 +1,7 @@
 module QRDA
   module Cat1
     class PatientCharacteristicExpired < SectionImporter
-      def initialize(entry_finder=QRDA::Cat1::EntryFinder.new("./cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.54']"))
+      def initialize(entry_finder = QRDA::Cat1::EntryFinder.new("./cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.54']"))
         super(entry_finder)
         @code_xpath = './cda:value'
         @expired_datetime_xpath = './cda:effectiveTime/cda:low'

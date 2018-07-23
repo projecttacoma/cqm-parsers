@@ -1,7 +1,7 @@
 module QRDA
   module Cat1
     class AdverseEventImporter < SectionImporter
-      def initialize(entry_finder=QRDA::Cat1::EntryFinder.new("./cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.146']"))
+      def initialize(entry_finder = QRDA::Cat1::EntryFinder.new("./cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.146']"))
         super(entry_finder)
         @code_xpath = './cda:entryRelationship/cda:observation/cda:value'
         @author_datetime_xpath = './cda:author/cda:time'
