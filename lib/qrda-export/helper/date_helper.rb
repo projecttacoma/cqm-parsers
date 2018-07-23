@@ -6,7 +6,7 @@ module Qrda
         def value_or_null_flavor(time)
           # this is a bit of a hack for a defineded undefined date
           if time && DateTime.parse(time).year < 3000
-            return "value='#{DateTime.parse(time).to_formatted_s(:number)}'"
+            return "value='#{DateTime.parse(time).utc.to_formatted_s(:number)}'"
           else
            return "nullFlavor='UNK'"
          end
