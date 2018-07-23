@@ -248,7 +248,7 @@ expected_dc[:PatientCharacteristicPayerPayer] = [
         [{:preconditions=>
            [{:reference=>"LaboratoryTestPerformedGroupAStreptococcusTest"},
            {:reference=>"LaboratoryTestPerformedGroupAStreptococcusTest"}],
-          :conjunction_code=>"allTrue"},
+          :conjunction_code=>"allTrue"}
         ],
         hqmf_id: '1E223193-25A4-4464-9D7E-89B5DCBFC513'}
 

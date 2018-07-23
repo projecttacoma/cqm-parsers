@@ -2,7 +2,6 @@ module Qrda
   module Export
     module Helper
       module Cat1ViewHelper
-
         def random_id
           UUID.generate
         end
@@ -64,15 +63,15 @@ module Qrda
         end
 
         def gender
-          @patient.dataElements.where(:hqmfOid => '2.16.840.1.113883.10.20.28.3.55').first.dataElementCodes.first['code']
+          @patient.dataElements.where(hqmfOid: '2.16.840.1.113883.10.20.28.3.55').first.dataElementCodes.first['code']
         end
 
         def race
-          @patient.dataElements.where(:hqmfOid => '2.16.840.1.113883.10.20.28.3.59').first.dataElementCodes.first['code']
+          @patient.dataElements.where(hqmfOid: '2.16.840.1.113883.10.20.28.3.59').first.dataElementCodes.first['code']
         end
 
         def ethnic_group
-          @patient.dataElements.where(:hqmfOid => '2.16.840.1.113883.10.20.28.3.56').first.dataElementCodes.first['code']
+          @patient.dataElements.where(hqmfOid: '2.16.840.1.113883.10.20.28.3.56').first.dataElementCodes.first['code']
         end
 
         def insurance_provider
@@ -95,8 +94,8 @@ module Qrda
           self[:negationRationale].nil? ? false : true
         end
 
-        def has_multiple_codes
-          self[:dataElementCodes].size > 1 ? true : false
+        def multiple_codes?
+          self[:dataElementCodes].size > 1
         end
 
         def code_system_oid(name)
@@ -113,33 +112,30 @@ module Qrda
 
         def translation_codes_and_codesystem_list
           translation_list = ""
-          self[:dataElementCodes].each_with_index do |dec, index|
-            next if index == 0
+          self[:dataElementCodes].each_with_index do |_dec, index|
+            next if index.zero?
             translation_list += "<translation code=\"#{self[:dataElementCodes][index]['code']}\" codeSystem=\"#{code_system_oid(self[:dataElementCodes][index]['codeSystem'])}\" codeSystemName=\"#{self[:dataElementCodes][index]['codeSystem']}\"/>"
           end
           translation_list
         end
 
         def result_value
-          if self['result'].is_a? Array
-            return result_value_as_string(self['result'][0])
-          elsif self['result'].is_a? Hash
-            return result_value_as_string(self['result'])
-          elsif !self['result'].nil?
-            return "<value xsi:type=\"PQ\" value=\"#{self['result']}\" unit=\"1\"/>"
-          end
-          "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>"
+          return "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>" unless self['result']
+          result_string = if self['result'].is_a? Array
+                            result_value_as_string(self['result'][0])
+                          elsif self['result'].is_a? Hash
+                            result_value_as_string(self['result'])
+                          elsif !self['result'].nil?
+                            "<value xsi:type=\"PQ\" value=\"#{self['result']}\" unit=\"1\"/>"
+                          end
+          result_string
         end
 
         def result_value_as_string(result)
-          if result['code']
-            return "<value xsi:type=\"CD\" code=\"#{result['code']}\" codeSystem=\"#{code_system_oid(result['codeSystem'])}\" codeSystemName=\"#{result['codeSystem']}\"/>"
-          elsif result['unit']
-            return "<value xsi:type=\"PQ\" value=\"#{result['value']}\" unit=\"#{result['unit']}\"/>"
-          end
-          "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>"
+          return "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>" unless result
+          return "<value xsi:type=\"CD\" code=\"#{result['code']}\" codeSystem=\"#{code_system_oid(result['codeSystem'])}\" codeSystemName=\"#{result['codeSystem']}\"/>" if result['code']
+          return "<value xsi:type=\"PQ\" value=\"#{result['value']}\" unit=\"#{result['unit']}\"/>" if result['unit']
         end
-
       end
     end
   end

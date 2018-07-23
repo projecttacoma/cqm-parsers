@@ -22,8 +22,8 @@ module QRDA
         # Not sure why, but sometimes the reference is #<Reference> and the ID value is <Reference>, and 
         # sometimes it is #<Reference>.  We look for both.
         if !value and tag[0] == '#'  
-         tag = tag[1,tag.length]
-         value = @id_map[tag]
+          tag = tag[1,tag.length]
+          value = @id_map[tag]
         end
 
         value

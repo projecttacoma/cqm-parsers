@@ -29,14 +29,14 @@ module QRDA
             entry_list << entry
           end
         end
-        return entry_list, @entry_id_map
+        [entry_list, @entry_id_map]
       end
 
       def usable_entry?(entry)
         entry.dataElementCodes.present?
       end
 
-      def create_entry(entry_element, nrh = NarrativeReferenceHandler.new)
+      def create_entry(entry_element, _nrh = NarrativeReferenceHandler.new)
         entry = @entry_class.new
         @entry_id_map[extract_id(entry_element, "./cda:id")] ||= []
         @entry_id_map[extract_id(entry_element, "./cda:id")] << entry.id
@@ -53,12 +53,11 @@ module QRDA
 
       def extract_id(parent_element, id_xpath)
         id_element = parent_element.at_xpath(id_xpath)
-        if id_element
-          identifier = CDAIdentifier.new
-          identifier.root = id_element['root']
-          identifier.extension = id_element['extension']
-          identifier
-        end
+        return unless id_element
+        identifier = CDAIdentifier.new
+        identifier.root = id_element['root']
+        identifier.extension = id_element['extension']
+        identifier
       end
 
       def extract_codes(coded_element, code_xpath)
@@ -75,13 +74,9 @@ module QRDA
       end
 
       def code_if_present(code_element)
-        if code_element && code_element['codeSystem'] && code_element['code']
-          QDM::Code.new(code_element['code'], HQMF::Util::CodeSystemHelper.code_system_for(code_element['codeSystem']))
-        else
-          nil
-        end
+        return unless code_element && code_element['codeSystem'] && code_element['code']
+        QDM::Code.new(code_element['code'], HQMF::Util::CodeSystemHelper.code_system_for(code_element['codeSystem']))
       end
-
 
       def extract_dates(parent_element, entry)
         entry.authorDatetime = extract_time(parent_element, @author_datetime_xpath) if @author_datetime_xpath
@@ -91,28 +86,28 @@ module QRDA
 
       def extract_interval(parent_element, interval_xpath)
         if parent_element.at_xpath("#{interval_xpath}/@value")
-          low_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}")['value'])
-          high_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}")['value'])
+          low_time = DateTime.parse(parent_element.at_xpath(interval_xpath)['value'])
+          high_time = DateTime.parse(parent_element.at_xpath(interval_xpath)['value'])
         end
         if parent_element.at_xpath("#{interval_xpath}/cda:low")
           low_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}/cda:low")['value'])
         end
         if parent_element.at_xpath("#{interval_xpath}/cda:high")
-          if parent_element.at_xpath("#{interval_xpath}/cda:high")['value']
-            high_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}/cda:high")['value'])
-          else
-            high_time = DateTime.new(9999,1,1)
-          end
+          high_time = if parent_element.at_xpath("#{interval_xpath}/cda:high")['value']
+                        DateTime.parse(parent_element.at_xpath("#{interval_xpath}/cda:high")['value'])
+                      else
+                        DateTime.new(9999,1,1)
+                      end
         end
         if parent_element.at_xpath("#{interval_xpath}/cda:center")
-          low_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}/cda:center")['value'])
-          high_time = DateTime.parse(parent_element.at_xpath("#{interval_xpath}/cda:center")['value'])
+          low_time = Time.parse(parent_element.at_xpath("#{interval_xpath}/cda:center")['value'])
+          high_time = Time.parse(parent_element.at_xpath("#{interval_xpath}/cda:center")['value'])
         end
         QDM::Interval.new(low_time, high_time).shift_dates(0)
       end
 
       def extract_time(parent_element, datetime_xpath)
-        DateTime.parse(parent_element.at_xpath("#{datetime_xpath}")['value']) if parent_element.at_xpath("#{datetime_xpath}/@value")
+        DateTime.parse(parent_element.at_xpath(datetime_xpath)['value']) if parent_element.at_xpath("#{datetime_xpath}/@value")
       end
 
       def extract_result_values(parent_element)
@@ -124,14 +119,13 @@ module QRDA
       end
 
       def extract_result_value(value_element)
-        if value_element && !value_element['nullFlavor']
-          value = value_element['value']
-          if value.present?
-            return value.strip.to_i if (value_element['unit'] == "1" || value_element['unit'].nil?)
-            return QDM::Quantity.new(value.strip.to_i, value_element['unit'])
-          elsif value_element['code'].present?
-            return code_if_present(value_element)
-          end
+        return unless value_element && !value_element['nullFlavor']
+        value = value_element['value']
+        if value.present?
+          return value.strip.to_i if (value_element['unit'] == "1" || value_element['unit'].nil?)
+          return QDM::Quantity.new(value.strip.to_i, value_element['unit'])
+        elsif value_element['code'].present?
+          return code_if_present(value_element)
         end
       end
 
@@ -142,10 +136,6 @@ module QRDA
         reason_element = parent_element.at_xpath("./cda:entryRelationship[@typeCode='RSON']/cda:observation[cda:templateId/@root='2.16.840.1.113883.10.20.24.3.88']/cda:value | ./cda:entryRelationship[@typeCode='RSON']/cda:act[cda:templateId/@root='2.16.840.1.113883.10.20.1.27']/cda:code")
         negation_indicator = parent_element['negationInd']
         if reason_element
-          code_system_oid = reason_element['codeSystem']
-          code = reason_element['code']
-          code_system = HQMF::Util::CodeSystemHelper.code_system_for(code_system_oid)
-          #entry.negation_ind = negation_indicator.eql?('true')
           if negation_indicator.eql?('true')
             entry.negationRationale = code_if_present(reason_element)
           else
@@ -166,37 +156,30 @@ module QRDA
 
       def extract_scalar(parent_element, scalar_xpath)
         scalar_element = parent_element.at_xpath(scalar_xpath)
-        if scalar_element
-          QDM::Quantity.new(scalar_element['value'].to_i, scalar_element['unit'])
-        else
-          nil
-        end
+        return unless scalar_element
+        QDM::Quantity.new(scalar_element['value'].to_i, scalar_element['unit'])
       end
 
       def extract_components(parent_element)
         component_elements = parent_element.xpath(@components_xpath)
         components = []
-        if component_elements
-          
-          component_elements.each do |component_element|
-            component = QDM::Component.new
-            component.code = code_if_present(component_element.at_xpath('./cda:code'))
-            component.result = extract_result_value(component_element.at_xpath('./cda:value'))
-            components << component
-          end
+        component_elements&.each do |component_element|
+          component = QDM::Component.new
+          component.code = code_if_present(component_element.at_xpath('./cda:code'))
+          component.result = extract_result_value(component_element.at_xpath('./cda:value'))
+          components << component
         end
         components
       end
 
       def extract_facility(parent_element, entry)
         facility_element = parent_element.at_xpath(@facility_xpath)
-        if (facility_element)
-          facility = QDM::FacilityLocation.new
-          participant_element = facility_element.at_xpath("./cda:participantRole[@classCode='SDLOC']/cda:code")
-          facility.code = code_if_present(participant_element)
-          facility.locationPeriod = extract_interval(facility_element, './cda:time')
-          entry.facilityLocations = [facility]
-        end
+        return unless facility_element
+        facility = QDM::FacilityLocation.new
+        participant_element = facility_element.at_xpath("./cda:participantRole[@classCode='SDLOC']/cda:code")
+        facility.code = code_if_present(participant_element)
+        facility.locationPeriod = extract_interval(facility_element, './cda:time')
+        entry.facilityLocations = [facility]
       end
 
       def extract_related_to(parent_element)
