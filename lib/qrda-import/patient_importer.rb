@@ -107,7 +107,7 @@ module QRDA
       end 
 
       def parse_cat1(doc)
-        patient = Patient.new
+        patient = QDM::Patient.new
         entry_id_map = {}
         #HealthDataStandards::Import::C32::PatientImporter.instance.get_demographics(patient, doc)
         import_data_elements(patient, doc, entry_id_map)

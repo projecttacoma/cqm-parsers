@@ -21,6 +21,7 @@ require "minitest/reporters"
 
 require 'bundler/setup'
 
+Mongoid.load!('config/mongoid.yml', :test)
 FactoryGirl.find_definitions
 
 class Minitest::Test
