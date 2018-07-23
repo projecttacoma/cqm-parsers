@@ -13,6 +13,9 @@
            displayName="Allergy to substance"
            codeSystem="2.16.840.1.113883.6.96" 
            codeSystemName="SNOMED CT"/>
+    {{#authorDatetime}}
+    {{> qrda_templates/template_partials/_author}}
+    {{/authorDatetime}}
     <participant typeCode="CSM">
       <participantRole classCode="MANU">
         <playingEntity classCode="MMAT">
