@@ -29,5 +29,5 @@ Gem::Specification.new do |s|
   s.add_dependency 'log4r', '~> 1.1.10'
   s.add_dependency 'memoist', '~> 0.9.1'
 
-  s.files = Dir.glob('lib/**/*.rb') + ["Gemfile", "README.md", "Rakefile"]
+  s.files = Dir.glob('lib/**/*.rb') + Dir.glob('lib/**/*.json') + Dir.glob('lib/**/*.mustache') + Dir.glob('lib/**/*.rake') + ["Gemfile", "README.md", "Rakefile"]
 end
