@@ -20,6 +20,7 @@ module QRDA
         pcs.dataElementCodes = [{ code: gender_code, codeSystem: 'AdministrativeGender' }]
         patient.dataElements << pcs
 
+        # TODO: Investigate what of this HDS import codes needs to be addressed in this qrda parser.
         # gender_node = patient_element.at_xpath('cda:administrativeGenderCode')
         # patient.gender = gender_node['code']
         # id_node = patient_role_element.at_xpath('./cda:id')
