@@ -2,22 +2,6 @@ module Qrda
   module Export
     module Helper
       module Cat1ViewHelper
-        def random_id
-          UUID.generate
-        end
-
-        def as_id
-          self['$oid']
-        end
-
-        def object_id
-          self[:_id]['$oid']
-        end
-
-        def submission_program
-          @submission_program
-        end
-
         def provider
           JSON.parse(@provider.to_json) if @provider
         end
@@ -80,10 +64,6 @@ module Qrda
 
         def insurance_provider_code_and_code_system
           "code=\"#{self['codes'].values.first[0]}\" codeSystem=\"#{code_system_oid(self['codes'].keys.first)}\" codeSystemName=\"#{self['codes'].keys.first}\""
-        end
-
-        def measures
-          @measures.only(:hqmf_id, :hqmf_set_id, :description).as_json
         end
 
         def negation_ind
