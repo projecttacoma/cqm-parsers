@@ -114,10 +114,12 @@ module HQMF
     # we want to find any denoms or IPPs that do not have exceptions or exclusions
     def get_unmatched_population_keys(target, source)
       return [] if target.length == source.length
+
       all_target_keys = target.values.map(&:id)
       with_ref_keys = source.values.map(&:id).map {|key| @population_criteria_by_id[@population_reference[key]].id if @population_criteria_by_id[@population_reference[key]]}
       # if we have a population without a reference, we cannot trust the results.
       return [] if with_ref_keys.include? nil
+
       all_target_keys - with_ref_keys
     end
 

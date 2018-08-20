@@ -235,12 +235,12 @@ module HQMF
     end
 
     # create a new data criteria given a category and sub_category.  A sub category can either be a status or a sub category
-    def self.create_from_category(id, title, description, code_list_id, category, sub_category=nil, negation=false, negation_code_list_id=nil)
-      settings = HQMF::DataCriteria.get_settings_for_definition(category, sub_category)
+    def self.create_from_category(id, title, description, code_list_id, qdmCategory, sub_category=nil, negation=false, negation_code_list_id=nil)
+      settings = HQMF::DataCriteria.get_settings_for_definition(qdmCategory, sub_category)
       HQMF::DataCriteria.new(id, title, nil, description, code_list_id, nil, nil, settings['definition'], settings['status'], nil, nil, nil, nil, negation, negation_code_list_id, nil, nil, nil,nil)
     end
     def type
-      @settings['category'].to_sym
+      @settings['qdmCategory'].to_sym
     end
     def property
       @settings['property'].to_sym unless @settings['property'].nil?
@@ -328,20 +328,20 @@ module HQMF
     end
 
     def self.statuses_by_definition
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       settings_map = JSON.parse(File.read(settings_file))
-      all_defs = (settings_map.map {|key, value| {category: value['category'],definition:value['definition'],status:(value['status'].empty? ? nil : value['status']), sub_category: value['sub_category'],title:value['title']} unless value['not_supported']}).compact
+      all_defs = (settings_map.map {|key, value| {qdmCategory: value['qdmCategory'],definition:value['definition'],status:(value['status'].empty? ? nil : value['status']), sub_category: value['sub_category'],title:value['title']} unless value['not_supported']}).compact
       by_categories = {}
       all_defs.each do |definition|
-        by_categories[definition[:category]]||={}
+        by_categories[definition[:qdmCategory]]||={}
         status = definition[:status]
         def_key = definition[:definition]
         if status.nil? and definition[:sub_category] and !definition[:sub_category].empty?
           status = definition[:sub_category]
           def_key = def_key.gsub("_#{status}",'')
         end
-        by_categories[definition[:category]][def_key]||={category:def_key,statuses:[]}
-        by_categories[definition[:category]][def_key][:statuses] << status unless status.nil?
+        by_categories[definition[:qdmCategory]][def_key]||={qdmCategory:def_key,statuses:[]}
+        by_categories[definition[:qdmCategory]][def_key][:statuses] << status unless status.nil?
       end
       status_by_category = {}
       by_categories.each {|key, value| status_by_category[key] = value.values}
@@ -395,12 +395,13 @@ module HQMF
 
     def self.get_settings_map
       return @settings_map if @settings_map
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       @settings_map = JSON.parse(File.read(settings_file))
     end
 
     def self.get_settings_for_definition(definition, status)
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       settings_map = get_settings_map
       key = definition + ((status.nil? || status.empty?) ? '' : "_#{status}")
       settings = settings_map[key]
@@ -446,6 +447,7 @@ module HQMF
 
     def normalize_status(definition, status)
       return status if status.nil?
+
       case status.downcase
         when 'completed', 'complete'
           case definition
@@ -463,6 +465,7 @@ module HQMF
 
     def self.convert_value(json)
       return nil unless json.present?
+
       type = json["type"]
       case type
         when 'TS', 'PQ'

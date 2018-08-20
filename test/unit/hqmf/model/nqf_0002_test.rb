@@ -3,7 +3,7 @@ module HQMFModel
 
   class NQF0002Test  < Minitest::Test    
     def setup
-      path = File.expand_path("../../../../fixtures/1.0/0002/0002.xml", __FILE__)
+      path = File.expand_path('../../../fixtures/1.0/0002/0002.xml', __dir__)
       @hqmf_contents = File.open(path).read
     end
 

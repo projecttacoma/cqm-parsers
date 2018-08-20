@@ -11,9 +11,8 @@ require 'nokogiri'
 require 'ostruct'
 require 'log4r'
 require 'memoist'
-require 'protected_attributes'
 
-PROJECT_ROOT = File.expand_path("../../", __FILE__)
+PROJECT_ROOT = File.expand_path('..', __dir__)
 require_relative File.join(PROJECT_ROOT, 'lib', 'hqmf-parser')
 
 require 'minitest/autorun'

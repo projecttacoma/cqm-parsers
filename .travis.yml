@@ -1,6 +1,8 @@
 language: ruby
 rvm:
   - 2.3.8
+  - 2.4.5
+  - 2.5.3
 
 services:
   - mongodb
@@ -17,7 +19,7 @@ before_script:
 script:
   - bundle exec bundle-audit check --update
   - bundle exec rake test
-  - rubocop
+  - bundle exec rubocop
 
 notifications:
   email:

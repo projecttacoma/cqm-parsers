@@ -46,12 +46,14 @@ module HQMF
         key = HQMF::DataCriteria::VALUE_FIELDS[field_code]
         key = VALUE_FIELD_TIMES["#{key}_#{field_time.to_s.upcase}"] if (field_time) 
         raise "unsupported field value: #{field_code}, #{field}" unless key
+
         key
       end
 
       def self.parse_value(value)
         return nil unless value
         return value if value.is_a? String
+
         if (value[:value])
           # values should be inclusive since we will be asking if it equals the value, ranther than being part of a range
           # if it's an offset we do not care that it is inclusive
@@ -72,6 +74,7 @@ module HQMF
       def self.find_category(type)
         return TEMPORAL if HQMF::TemporalReference::TYPES.include? type
         return SUMMARY if HQMF::SubsetOperator::TYPES.include? type
+
         return UNKNOWN
       end
 

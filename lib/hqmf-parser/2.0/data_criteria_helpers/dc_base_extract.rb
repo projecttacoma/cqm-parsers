@@ -35,6 +35,7 @@ module HQMF2
         if d_op && d_op != CONJUNCTION_CODE_TO_DERIVATION_OP[code.value]
           fail 'More than one derivation operator in data criteria'
         end
+
         CONJUNCTION_CODE_TO_DERIVATION_OP[code.value]
       end
     end

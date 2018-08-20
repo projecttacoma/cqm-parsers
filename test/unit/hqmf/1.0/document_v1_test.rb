@@ -4,7 +4,7 @@ module HQMF1
 
   class DocumentV1Test  < Minitest::Test
     def setup
-      @hqmf_file_path = File.expand_path("../../../../fixtures/1.0/NQF_Retooled_Measure_0043.xml", __FILE__)
+      @hqmf_file_path = File.expand_path('../../../fixtures/1.0/NQF_Retooled_Measure_0043.xml', __dir__)
       @doc = HQMF1::Document.new(File.open(@hqmf_file_path).read)
     end
 

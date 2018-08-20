@@ -1,13 +1,14 @@
-source 'https://rubygems.org'
+source "https://rubygems.org"
 
 gemspec :development_group => :test
 
-gem 'cqm-models', '~> 0.8.4'
-gem 'mongoid', '~> 5.0.0'
+gem 'mustache'
+gem 'cqm-models', '~> 1.0.1'
+gem 'mongoid', '~> 6.4.2'
 
 group :development, :test do
   gem 'bundler-audit'
-  gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop', require: false
 end
 
 group :development do
@@ -17,14 +18,11 @@ end
 
 group :test do
   gem 'factory_girl', '~> 4.1.0'
-  gem 'tailor', '~> 1.1.2'
-  gem 'cane', '~> 2.3.0'
-  gem 'codecov'
+  gem "tailor", '~> 1.1.2'
+  gem "cane", '~> 2.3.0'
   gem 'simplecov', :require => false
   gem 'webmock'
   gem 'minitest', '~> 5.3'
   gem 'minitest-reporters'
   gem 'awesome_print', :require => 'ap'
-  gem 'simplexml_parser', :git => 'https://github.com/projecttacoma/simplexml_parser.git', :branch => 'master'
-  gem 'vcr'
 end

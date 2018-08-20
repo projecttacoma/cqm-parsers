@@ -1,27 +1,16 @@
-GIT
-  remote: https://github.com/projecttacoma/simplexml_parser.git
-  revision: 1e8429773abb3e297c03133ae202900f35a6f9ed
-  branch: master
-  specs:
-    simplexml_parser (1.0.1)
-      health-data-standards (~> 4.0)
-      tilt (~> 1.4)
-
 PATH
   remote: .
   specs:
-    cqm-parsers (0.2.1)
-      activesupport (~> 4.2.0)
+    cqm-parsers (1.0.0)
+      activesupport (~> 5.1.6)
       builder (~> 3.1)
       erubis (~> 2.7.0)
       highline (~> 1.7.0)
       log4r (~> 1.1.10)
       memoist (~> 0.9.1)
-      mongoid (~> 5.0.0)
-      mongoid-tree (~> 2.0.0)
-      mustache
+      mongoid (~> 6.4.2)
+      mongoid-tree (~> 2.1.0)
       nokogiri (~> 1.8.5)
-      protected_attributes (~> 1.0.5)
       rest-client (~> 1.8.0)
       rubyzip (~> 1.2.2)
       uuid (~> 2.3.7)
@@ -30,13 +19,12 @@ PATH
 GEM
   remote: https://rubygems.org/
   specs:
-    activemodel (4.2.10)
-      activesupport (= 4.2.10)
-      builder (~> 3.1)
-    activesupport (4.2.10)
-      i18n (~> 0.7)
+    activemodel (5.1.6)
+      activesupport (= 5.1.6)
+    activesupport (5.1.6)
+      concurrent-ruby (~> 1.0, >= 1.0.2)
+      i18n (>= 0.7, < 2)
       minitest (~> 5.1)
-      thread_safe (~> 0.3, >= 0.3.4)
       tzinfo (~> 1.1)
     addressable (2.5.2)
       public_suffix (>= 2.0.2, < 4.0)
@@ -51,12 +39,8 @@ GEM
     byebug (6.0.2)
     cane (2.3.0)
       parallel
-    codecov (0.1.14)
-      json
-      simplecov
-      url
     concurrent-ruby (1.0.5)
-    cqm-models (0.8.4)
+    cqm-models (1.0.1)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     docile (1.3.1)
@@ -66,26 +50,12 @@ GEM
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
     hashdiff (0.3.7)
-    health-data-standards (4.1.0)
-      activesupport (~> 4.2.0)
-      builder (~> 3.1)
-      erubis (~> 2.7.0)
-      highline (~> 1.7.0)
-      log4r (~> 1.1.10)
-      memoist (~> 0.9.1)
-      mongoid (~> 5.0.0)
-      mongoid-tree (~> 2.0.0)
-      nokogiri (~> 1.8.2)
-      protected_attributes (~> 1.0.5)
-      rest-client (~> 1.8.0)
-      rubyzip (~> 1.2.1)
-      uuid (~> 2.3.7)
-      zip-zip (~> 0.3)
     highline (1.7.10)
     http-cookie (1.0.3)
       domain_name (~> 0.5)
-    i18n (0.9.5)
+    i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    jaro_winkler (1.5.1)
     json (2.1.0)
     log4r (1.1.10)
     log_switch (1.0.0)
@@ -102,24 +72,19 @@ GEM
       ruby-progressbar
     mongo (2.6.2)
       bson (>= 4.3.0, < 5.0.0)
-    mongoid (5.0.2)
-      activemodel (~> 4.0)
-      mongo (~> 2.1)
-      origin (~> 2.1)
-      tzinfo (>= 0.3.37)
-    mongoid-tree (2.0.1)
-      mongoid (>= 4.0, < 6.0)
+    mongoid (6.4.2)
+      activemodel (>= 5.1, < 6.0.0)
+      mongo (>= 2.5.1, < 3.0.0)
+    mongoid-tree (2.1.1)
+      mongoid (>= 4.0, < 8)
     mustache (1.0.5)
     netrc (0.11.0)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
-    origin (2.3.1)
     parallel (1.12.1)
     parser (2.5.1.2)
       ast (~> 2.4.0)
     powerpack (0.1.2)
-    protected_attributes (1.0.9)
-      activemodel (>= 4.0.1, < 5.0)
     public_suffix (3.0.3)
     rainbow (3.0.0)
     rake (12.3.1)
@@ -127,9 +92,10 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rubocop (0.52.1)
+    rubocop (0.59.2)
+      jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.4.0.2, < 3.0)
+      parser (>= 2.5, != 2.5.1.1)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
@@ -152,7 +118,6 @@ GEM
     text-table (1.2.4)
     thor (0.20.0)
     thread_safe (0.3.6)
-    tilt (1.4.1)
     tins (1.16.3)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
@@ -160,10 +125,8 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
-    url (0.3.2)
     uuid (2.3.9)
       macaddr (~> 1.0)
-    vcr (3.0.3)
     webmock (3.4.2)
       addressable (>= 2.3.6)
       crack (>= 0.3.2)
@@ -179,20 +142,18 @@ DEPENDENCIES
   bundler-audit
   byebug (~> 6.0.2)
   cane (~> 2.3.0)
-  codecov
-  cqm-models (~> 0.8.4)
+  cqm-models (~> 1.0.1)
   cqm-parsers!
   factory_girl (~> 4.1.0)
   minitest (~> 5.3)
   minitest-reporters
-  mongoid (~> 5.0.0)
+  mongoid (~> 6.4.2)
+  mustache
   rake
-  rubocop (~> 0.52.1)
+  rubocop
   simplecov
-  simplexml_parser!
   tailor (~> 1.1.2)
-  vcr
   webmock
 
 BUNDLED WITH
-   1.17.1
+   1.16.6

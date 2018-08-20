@@ -61,6 +61,7 @@ module HQMF2CQL
         # Skip this Stratification if any precondition doesn't contain any preconditions
         next unless HQMF2::PopulationCriteria.new(criteria_def, @document, @id_generator)
                     .preconditions.all? { |prcn| prcn.preconditions.length > 0 }
+
         index = number_of_populations + ((population_index - 1) * criteria_def.xpath('./*/cda:precondition').length) +
                 criteria_def_index
         criteria_id = HQMF::PopulationCriteria::STRAT
@@ -99,6 +100,7 @@ module HQMF2CQL
             # Ignore Supplemental Data Elements
             next if HQMF::PopulationCriteria::STRAT == criteria_id &&
                 !criteria_def.xpath("cda:component[@typeCode='COMP']/cda:measureAttribute/cda:code[@code='SDE']").empty?
+
             cql_statement = criteria_def.at_xpath("*/*/cda:id", HQMF2::Document::NAMESPACES).attribute('extension').to_s.match(/"([^"]*)"/)
             if populations_cql_map[criteria_id].nil?
               populations_cql_map[criteria_id] = []

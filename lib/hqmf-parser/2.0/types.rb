@@ -117,6 +117,7 @@ module HQMF2
       @type = type
       @entry = entry
       return unless @entry
+
       @low = optional_value("#{default_element_name}/cda:low", default_bounds_type)
       @high = optional_value("#{default_element_name}/cda:high", default_bounds_type)
       # Unset low bound to resolve verbose value bounds descriptions
@@ -166,6 +167,7 @@ module HQMF2
     def optional_value(xpath, type)
       value_def = @entry.at_xpath(xpath, HQMF2::Document::NAMESPACES)
       return unless value_def
+
       if value_def['flavorId'] == 'ANY.NONNULL'
         AnyValue.new
       else
@@ -307,11 +309,7 @@ module HQMF2
     # Take a qdm type code to map it to a subset operator, or failing at finding that, return the given subset code.
     def translate_type(subset_code, qdm_subset_code)
       combined = "#{qdm_subset_code}:#{subset_code}"
-      if QDM_TYPE_MAP[combined]
-        QDM_TYPE_MAP[combined]
-      else
-        subset_code
-      end
+      QDM_TYPE_MAP[combined] || subset_code
     end
 
     # Generates this classes hqmf-model equivalent

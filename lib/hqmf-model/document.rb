@@ -1,7 +1,7 @@
 module HQMF
   # Class representing an HQMF document
   class Document
-    
+
     MEASURE_PERIOD_ID = "MeasurePeriod"
 
     STRATIFIED_POPULATION_TEMPLATE_ID = '2.16.840.1.113883.3.100.1.2'
@@ -10,7 +10,7 @@ module HQMF
     include HQMF::Conversion::Utilities
 
     attr_reader :id, :title, :description, :measure_period, :attributes, :populations, :source_data_criteria, :hqmf_id, :hqmf_set_id, :hqmf_version_number, :cms_id, :populations_cql_map, :cql_measure_library, :observations
-  
+
     # Create a new HQMF::Document which can be converted to JavaScript
     # @param [String] id
     # @param [String] hqmf_id
@@ -18,7 +18,7 @@ module HQMF
     # @param [String] hqmf_version_number
     # @param [String] title
     # @param [String] description
-    # @param [Array#PopulationCritera] population_criteria 
+    # @param [Array#PopulationCritera] population_criteria
     # @param [Array#DataCriteria] data_criteria
     # @param [Array#DataCriteria] source_data_criteria
     # @param [Array#Attribute] attributes
@@ -50,7 +50,7 @@ module HQMF
       @cql_measure_library = cql_measure_library
       @observations = observations
     end
-    
+
     # Create a new HQMF::Document from a JSON hash keyed with symbols
     def self.from_json(json)
       id = json["id"]
@@ -60,7 +60,7 @@ module HQMF
       title = json["title"]
       description = json["description"]
       cms_id = json["cms_id"]
-      
+
       population_criterias = []
       json["population_criteria"].each do |key, population_criteria|
         population_criterias << HQMF::PopulationCriteria.from_json(key.to_s, population_criteria)
@@ -75,7 +75,7 @@ module HQMF
       json["source_data_criteria"].each do |key, data_criteria|
         source_data_criterias << HQMF::DataCriteria.from_json(key.to_s, data_criteria)
       end
-      
+
       populations = json["populations"] if json["populations"]
 
       attributes = json["attributes"].map {|attribute| HQMF::Attribute.from_json(attribute)} if json["attributes"]
@@ -83,7 +83,7 @@ module HQMF
       measure_period = HQMF::Range.from_json(json["measure_period"]) if json["measure_period"]
       HQMF::Document.new(id, hqmf_id, hqmf_set_id, hqmf_version_number, cms_id, title, description, population_criterias, data_criterias, source_data_criterias, attributes, measure_period,populations)
     end
-    
+
     def to_json
       json = build_hash(self, [:id, :hqmf_id, :hqmf_set_id, :hqmf_version_number, :title, :description, :cms_id])
 
@@ -101,12 +101,12 @@ module HQMF
       @source_data_criteria.each do |data|
         json[:source_data_criteria].merge! data.to_json
       end
-      
+
       x = nil
       json[:attributes] = x if x = json_array(@attributes)
-      
+
       json[:populations] = @populations
-      
+
       json[:populations_cql_map] = @populations_cql_map
 
       json[:observations] = @observations
@@ -117,14 +117,13 @@ module HQMF
 
       json
     end
-    
-    
+
     # Get all the population criteria defined by the measure
     # @return [Array] an array of HQMF::PopulationCriteria
     def all_population_criteria
       @population_criteria
     end
-    
+
     # Get a specific population criteria by id.
     # @param [String] id the population identifier
     # @return [HQMF::PopulationCriteria] the matching criteria, raises an Exception if not found
@@ -139,31 +138,31 @@ module HQMF
     def find_population_by_type(type)
       find(@population_criteria, :type, type)
     end
-    
+
     # Get all the data criteria defined by the measure
     # @return [Array] an array of HQMF::DataCriteria describing the data elements used by the measure
     def all_data_criteria
       @data_criteria
     end
-    
+
     def all_code_set_oids
       (@data_criteria.map {|d| d.all_code_set_oids }).flatten.compact.uniq
     end
-    
+
     # Get the source data criteria that are specific occurrences
     # @return [Array] an array of HQMF::DataCriteria describing the data elements used by the measure that are specific occurrences
     def specific_occurrence_source_data_criteria(force_sources=nil)
       return [] if @source_data_criteria.nil?
+
       matching = @source_data_criteria.select {|dc| !dc.specific_occurrence.nil?}
 
       if force_sources
         existing = matching.map(&:id)
-        matching.concat @source_data_criteria.select {|dc| !existing.include?(dc.id) && force_sources.include?(dc.id)} 
+        matching.concat @source_data_criteria.select {|dc| !existing.include?(dc.id) && force_sources.include?(dc.id)}
       end
 
       matching
     end
-    
 
     # @return [Array] an array of HQMF::DataCriteria ids that are actually used in the measure
     def referenced_data_criteria
@@ -192,19 +191,19 @@ module HQMF
     def attributes_for_code(code, code_system)
       @attributes.find_all { |e| e.send(:code) == code && e.send(:code_obj).send(:system) == code_system }
     end
-    
+
     # Get a specific data criteria by id.
     # @param [String] id the data criteria identifier
     # @return [HQMF::DataCriteria] the matching data criteria, raises an Exception if not found
     def data_criteria(id)
       find(@data_criteria, :id, id)
     end
-    
-    # patient characteristics data criteria such as GENDER require looking at the codes to determine if the 
+
+    # patient characteristics data criteria such as GENDER require looking at the codes to determine if the
     # measure is interested in Males or Females.  This process is awkward, and thus is done as a separate
     # step after the document has been converted.
     def backfill_patient_characteristics_with_codes(codes)
-      
+
       [].concat(self.all_data_criteria).concat(self.source_data_criteria).each do |data_criteria|
         if (data_criteria.type == :characteristic and !data_criteria.property.nil?)
           if (codes)
@@ -214,15 +213,16 @@ module HQMF
             puts "\tno code set to back fill: #{data_criteria.title}"
             next
           end
-          
+
           if (data_criteria.property == :gender)
             next if value_set.nil?
+
             key = value_set.keys[0]
             data_criteria.value = HQMF::Coded.new('CD','Administrative Sex',value_set[key].first)
           else
             data_criteria.inline_code_list = value_set
           end
-          
+
         elsif (data_criteria.type == :characteristic)
           if (codes)
             value_set = codes[data_criteria.code_list_id]
@@ -232,7 +232,7 @@ module HQMF
                 data_criteria.definition = 'patient_characteristic_birthdate'
               end
               # this is looking for a gender characteristic that is set as a generic characteristic
-              gender_key = (value_set.keys.select {|set| set == 'Administrative Sex' || set == 'AdministrativeSex'}).first
+              gender_key = (value_set.keys.select {|set| ['Administrative Sex', 'AdministrativeSex'].include? set}).first
               if (gender_key and ['M','F'].include? value_set[gender_key].first)
                 data_criteria.definition = 'patient_characteristic_gender'
                 data_criteria.value = HQMF::Coded.new('CD','Gender',value_set[gender_key].first)
@@ -245,7 +245,7 @@ module HQMF
     end
 
     private
-    
+
     def find(collection, attribute, value)
       collection.find {|e| e.send(attribute)==value}
     end
