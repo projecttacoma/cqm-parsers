@@ -7,6 +7,7 @@ require 'ostruct'
 require_relative 'util/counter.rb'
 require_relative 'util/code_system_helper'
 require_relative 'util/hqmf_template_helper'
+require_relative 'util/qrda_template_helper'
 
 require_relative 'hqmf-model/utilities.rb'
 

@@ -1,3 +1,4 @@
+require 'uuid'
 module Qrda
   module Export
     module Helper
