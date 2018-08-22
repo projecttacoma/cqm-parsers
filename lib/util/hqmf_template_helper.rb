@@ -34,6 +34,19 @@ module HQMF
           nil
         end
       end
+
+      # Returns a list of all hqmf_oids (regardless of version) for the combination of definition and status
+      def self.get_all_hqmf_oids(definition, status)
+        status ||= ""
+        version_negation_combinations = [{ version: 'r1', negation: false },
+                                         { version: 'r1', negation: true },
+                                         { version: 'r2', negation: false },
+                                         { version: 'r2cql', negation: false }]
+        hqmf_oids = version_negation_combinations.collect do |obj|
+          template_id_by_definition_and_status(definition, status, obj.negation, obj.version)
+        end
+        hqmf_oids
+      end
     end
   end
 end
