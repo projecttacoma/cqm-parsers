@@ -133,13 +133,13 @@ module QRDA
       # coded_parent_element is the 'parent' element when the coded is nested (e.g., medication order)
       def extract_reason_or_negation(parent_element, entry, coded_parent_element = nil)
         coded_parent_element ||= parent_element
-        reason_element = parent_element.at_xpath("./cda:entryRelationship[@typeCode='RSON']/cda:observation[cda:templateId/@root='2.16.840.1.113883.10.20.24.3.88']/cda:value | ./cda:entryRelationship[@typeCode='RSON']/cda:act[cda:templateId/@root='2.16.840.1.113883.10.20.1.27']/cda:code")
+        reason_element = parent_element.xpath(".//cda:entryRelationship[@typeCode='RSON']/cda:observation[cda:templateId/@root='2.16.840.1.113883.10.20.24.3.88']/cda:value | .//cda:entryRelationship[@typeCode='RSON']/cda:act[cda:templateId/@root='2.16.840.1.113883.10.20.1.27']/cda:code")
         negation_indicator = parent_element['negationInd']
-        if reason_element
+        unless reason_element.blank?
           if negation_indicator.eql?('true')
-            entry.negationRationale = code_if_present(reason_element)
+            entry.negationRationale = code_if_present(reason_element.first)
           else
-            entry.reason = code_if_present(reason_element)
+            entry.reason = code_if_present(reason_element.first)
           end
         end
         extract_negated_code(coded_parent_element, entry)
