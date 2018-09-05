@@ -15,15 +15,15 @@ module Qrda
         end
 
         def provider_npi
-          @provider['cda_identifiers'].map { |cda| cda['extension'] if cda['root'] == '2.16.840.1.113883.4.6' }.compact.first
+          @provider.npi
         end
 
         def provider_tin
-          @provider['cda_identifiers'].map { |cda| cda['extension'] if cda['root'] == '2.16.840.1.113883.4.2' }.compact.first
+          @provider.tin
         end
 
         def provider_ccn
-          @provider['cda_identifiers'].map { |cda| cda['extension'] if cda['root'] == '2.16.840.1.113883.4.336' }.compact.first
+          @provider.ccn
         end
 
         def provider_type_code
