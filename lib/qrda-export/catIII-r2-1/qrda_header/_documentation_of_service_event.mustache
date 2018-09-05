@@ -14,9 +14,7 @@
       {{#provider}}
       <assignedEntity>
         <id extension="{{{provider_npi}}}" root="2.16.840.1.113883.4.6"/>
-        {{#provider_ccn}}
-          <id extension="{{{provider_ccn}}}" root="2.16.840.1.113883.4.336"/>
-        {{/provider_ccn}}
+        <id extension="{{{provider_ccn}}}" root="2.16.840.1.113883.4.336"/>
         <code code="{{{provider_type_code}}}" codeSystem="2.16.840.1.113883.6.101" codeSystemName="Healthcare Provider Taxonomy (HIPAA)"/>
         {{#provider_addresses}}
         <addr use="HP">

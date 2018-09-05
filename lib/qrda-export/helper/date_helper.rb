@@ -19,6 +19,10 @@ module Qrda
           @performance_period_end.to_formatted_s(:number)
         end
 
+        def current_time
+          Time.now.utc.to_formatted_s(:number)
+        end
+
         def author_time
           "<time #{value_or_null_flavor(self['authorDatetime'])}/>"
         end
