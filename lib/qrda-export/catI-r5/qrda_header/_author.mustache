@@ -1,9 +1,13 @@
 <author>
   <time value="20180524170839"/>
   <assignedAuthor>
-    <!-- id extension="Cypress" root="2.16.840.1.113883.19.5"/ -->
     <!-- NPI -->
-    <id extension="1982671962" root="2.16.840.1.113883.4.6"/>
+    {{#provider}}
+      <id extension="{{{provider_npi}}}" root="2.16.840.1.113883.4.6"/>
+    {{/provider}}
+    {{^provider}}
+      <id extension="1982671962" root="2.16.840.1.113883.4.6"/>
+    {{/provider}}
     <addr>
       <streetAddressLine>202 Burlington Rd.</streetAddressLine>
       <city>Bedford</city>
