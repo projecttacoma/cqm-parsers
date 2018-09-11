@@ -89,8 +89,14 @@ module QRDA
 
       def normalize_references(patient, entry_id_map)
         patient.dataElements.each do |data_element|
-          if data_element.respond_to?(:relatedTo) && data_element.relatedTo
-            data_element.relatedTo.map! { |related_to| entry_id_map[related_to] }
+          next unless data_element.respond_to?(:relatedTo) && data_element.relatedTo
+          relations_to_add = []
+          data_element.relatedTo.each do |related_to|
+            relations_to_add << entry_id_map[related_to.value]
+          end
+          data_element.relatedTo.destroy
+          relations_to_add.each do |relation_to_add|
+            data_element.relatedTo << relation_to_add
           end
         end
       end
