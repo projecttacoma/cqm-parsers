@@ -7,11 +7,11 @@ module Qrda
         end
 
         def as_id
-          self['$oid']
+          self[:value]
         end
 
         def object_id
-          self[:_id]['$oid']
+          self[:_id]
         end
 
         def submission_program

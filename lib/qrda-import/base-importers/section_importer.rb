@@ -38,8 +38,8 @@ module QRDA
 
       def create_entry(entry_element, _nrh = NarrativeReferenceHandler.new)
         entry = @entry_class.new
-        @entry_id_map[extract_id(entry_element, "./cda:id")] ||= []
-        @entry_id_map[extract_id(entry_element, "./cda:id")] << entry.id
+        @entry_id_map[extract_id(entry_element, "./cda:id").value] ||= []
+        @entry_id_map[extract_id(entry_element, "./cda:id").value] << entry.id
         entry.dataElementCodes = extract_codes(entry_element, @code_xpath)
         extract_dates(entry_element, entry)
         if @result_xpath
@@ -54,9 +54,9 @@ module QRDA
       def extract_id(parent_element, id_xpath)
         id_element = parent_element.at_xpath(id_xpath)
         return unless id_element
-        identifier = CDAIdentifier.new
-        identifier.root = id_element['root']
-        identifier.extension = id_element['extension']
+        # If an extension is not included, use the root as the value.  Other wise use the extension
+        value = id_element['extension'] ? id_element['extension'] : id_element['root']
+        identifier = QDM::Id.new(value: value, namingSystem: id_element['root'])
         identifier
       end
 
