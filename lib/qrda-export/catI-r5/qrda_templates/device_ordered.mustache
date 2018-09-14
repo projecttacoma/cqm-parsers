@@ -22,10 +22,10 @@
             </playingDevice>
           </participantRole>
         </participant>
+        {{#negationRationale}}
+        {{> qrda_templates/template_partials/_reason}}
+        {{/negationRationale}}
       </supply>
     </entryRelationship>
-    {{#negationRationale}}
-    {{> qrda_templates/template_partials/_reason}}
-    {{/negationRationale}}  
   </act>
 </entry>

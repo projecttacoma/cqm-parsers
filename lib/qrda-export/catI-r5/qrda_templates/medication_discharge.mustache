@@ -46,10 +46,10 @@
         {{#authorDatetime}}
         {{> qrda_templates/template_partials/_author_participation}}
         {{/authorDatetime}}
+        {{#negationRationale}}
+        {{> qrda_templates/template_partials/_reason}}
+        {{/negationRationale}} 
       </substanceAdministration>
     </entryRelationship>
-    {{#negationRationale}}
-    {{> qrda_templates/template_partials/_reason}}
-    {{/negationRationale}} 
   </act>
 </entry>
