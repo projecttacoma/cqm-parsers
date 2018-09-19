@@ -3,7 +3,7 @@ source "https://rubygems.org"
 gemspec :development_group => :test
 
 gem 'mustache'
-gem 'cqm-models', '~> 0.8.2'
+gem 'cqm-models', '~> 0.8.4'
 gem 'mongoid', '~> 5.0.0'
 
 group :development, :test do
