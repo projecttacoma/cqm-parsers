@@ -9,15 +9,14 @@ Gem::Specification.new do |s|
   s.authors = ["The MITRE Corporation"]
   s.license = 'Apache-2.0'
 
-  s.version = '0.2.0'
+  s.version = '1.0.0'
 
   s.add_dependency 'rest-client', '~>1.8.0'
   s.add_dependency 'erubis', '~> 2.7.0'
-  s.add_dependency 'mongoid', '~> 5.0.0'
-  s.add_dependency 'mongoid-tree', '~> 2.0.0'
-  s.add_dependency 'activesupport', '~> 4.2.0'
+  s.add_dependency 'mongoid', '~> 6.4.2'
+  s.add_dependency 'mongoid-tree', '~> 2.1.0'
+  s.add_dependency 'activesupport', '~> 5.1.6'
 
-  s.add_dependency 'protected_attributes', '~> 1.0.5'
   s.add_dependency 'uuid', '~> 2.3.7'
   s.add_dependency 'builder', '~> 3.1'
   s.add_dependency 'nokogiri', '~> 1.8.3'
