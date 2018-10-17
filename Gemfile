@@ -3,7 +3,7 @@ source 'https://rubygems.org'
 gemspec :development_group => :test
 
 gem 'cqm-models', '~> 0.8.4'
-gem 'mongoid', '~> 5.0.0'
+gem 'mongoid', '~> 6.4.2'
 
 group :development, :test do
   gem 'bundler-audit'
@@ -25,6 +25,5 @@ group :test do
   gem 'minitest', '~> 5.3'
   gem 'minitest-reporters'
   gem 'awesome_print', :require => 'ap'
-  gem 'simplexml_parser', :git => 'https://github.com/projecttacoma/simplexml_parser.git', :branch => 'master'
   gem 'vcr'
 end
