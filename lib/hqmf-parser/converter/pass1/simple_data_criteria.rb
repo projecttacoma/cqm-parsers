@@ -15,6 +15,7 @@ module HQMF
       def assign_precondition(precondtion_id)
         return if (@precondtion_id == precondtion_id)
         raise "Cannot assign a second precondition to a data criteria" if @precondition_id
+
         @precondition_id = precondtion_id
         @id = "#{@id}_precondition_#{precondtion_id}"
       end

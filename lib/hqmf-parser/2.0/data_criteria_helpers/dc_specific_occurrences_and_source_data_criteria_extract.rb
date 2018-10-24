@@ -26,6 +26,7 @@ module HQMF2
         occurrence_criteria = @data_criteria_references[strip_tokens("#{source_data_criteria_extension}_#{source_data_criteria_root}")]
 
         return if occurrence_criteria.nil?
+
         specific_occurrence_const = HQMF2::Utilities.attr_val(specific_def,
                                                               './cda:localVariableName/@controlInformationRoot')
         specific_occurrence = HQMF2::Utilities.attr_val(specific_def,
@@ -68,6 +69,7 @@ module HQMF2
         unless occurrence
           fail "Could not find occurrence mapping for #{source_data_criteria}, #{source_data_criteria_root}"
         end
+
         # puts "\tUsing #{occurrence} for #{@id}"
         specific_occurrence ||= occurrence
       end

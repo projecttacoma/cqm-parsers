@@ -29,7 +29,7 @@ module HQMF
         new_data_criteria.assign_precondition(parent_id)
         @v2_data_criteria << new_data_criteria
         # we want to delete the original for data criteria that have been duplicated
-        @v2_data_criteria_to_delete[data_criteria.id] = true if !@v2_data_criteria_to_delete.keys.include? data_criteria.id
+        @v2_data_criteria_to_delete[data_criteria.id] = true if !@v2_data_criteria_to_delete.key?(data_criteria.id)
       end
       
       new_data_criteria

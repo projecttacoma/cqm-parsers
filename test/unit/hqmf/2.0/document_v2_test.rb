@@ -15,7 +15,7 @@ class DocumentV2Test < Minitest::Test
 
 
   def test_remove_population_preconditions
-     path = File.expand_path("../../../../fixtures/2.1/measures/fulfills.xml", __FILE__)
+     path = File.expand_path('../../../fixtures/2.1/measures/fulfills.xml', __dir__)
      hqmf_contents = File.open(path).read
      xml = Nokogiri::XML(hqmf_contents)
      #find the precondition in the parsed document

@@ -100,6 +100,7 @@ module HQMF
     def self.apply_restrictions_to_comparisons(preconditions, restrictions)
       comparisons = get_comparison_preconditions(preconditions)
       raise "no comparisons to apply restriction to" if comparisons.empty?
+
       comparisons.each do |comparison|
         comparison.preconditions.concat(restrictions)
       end
@@ -110,6 +111,7 @@ module HQMF
     
     def self.parse_and_merge_preconditions(source,data_criteria_converter)
       return [] unless source and source.size > 0
+
       preconditions_by_conjunction = {}
       source.each do |precondition|
         parsed = HQMF::PreconditionConverter.parse_precondition(precondition,data_criteria_converter)

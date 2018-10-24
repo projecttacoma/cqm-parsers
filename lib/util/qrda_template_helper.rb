@@ -10,7 +10,7 @@ module QRDA
       def self.template_id_map(version)
         if @id_map.blank?
           @id_map = {
-            'r5' => JSON.parse(File.read(File.expand_path('../qrdar5_template_oid_map.json', __FILE__)))
+            'r5' => JSON.parse(File.read(File.expand_path('qrdar5_template_oid_map.json', __dir__)))
           }
         end
         @id_map[version]

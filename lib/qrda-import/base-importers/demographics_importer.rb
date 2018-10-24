@@ -29,6 +29,7 @@ module QRDA
 
         provider_element = doc.xpath("//cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.55']")
         return if provider_element.blank?
+
         provider_code = provider_element.first.at_xpath('cda:value')['code']
         ip = {}
         ip['financial_responsibility_type'] = { 'code' => 'SELF', 'codeSystem' => 'HL7 Relationship Code' }

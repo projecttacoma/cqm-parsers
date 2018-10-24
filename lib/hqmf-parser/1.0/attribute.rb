@@ -41,11 +41,7 @@ module HQMF1
     def value
       val = attr_val('./cda:value/@value')
       val ||= attr_val('./cda:value/@extension')
-      if val
-        val
-      else
-        @entry.at_xpath('./cda:value').inner_text
-      end
+      val || @entry.at_xpath('./cda:value').inner_text
     end
     
     # Get the unit of the attribute value or nil if none is defined

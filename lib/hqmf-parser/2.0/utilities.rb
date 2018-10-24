@@ -25,6 +25,7 @@ module HQMF2
     # General helper for stripping '-' and ',' into '_' for processable ids
     def strip_tokens(value)
       return nil if value.nil?
+
       stripped = value.gsub(/[^0-9a-z]/i, '_')
       # Prefix digits with 'prefix_' to prevent JS syntax errors
       stripped.gsub(/^[0-9]/, "prefix_#{value[0]}")

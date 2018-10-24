@@ -55,6 +55,7 @@ GEM
       domain_name (~> 0.5)
     i18n (1.1.1)
       concurrent-ruby (~> 1.0)
+    jaro_winkler (1.5.1)
     json (2.1.0)
     log4r (1.1.10)
     log_switch (1.0.0)
@@ -91,9 +92,10 @@ GEM
       http-cookie (>= 1.0.2, < 2.0)
       mime-types (>= 1.16, < 3.0)
       netrc (~> 0.7)
-    rubocop (0.52.1)
+    rubocop (0.59.2)
+      jaro_winkler (~> 1.5.1)
       parallel (~> 1.10)
-      parser (>= 2.4.0.2, < 3.0)
+      parser (>= 2.5, != 2.5.1.1)
       powerpack (~> 0.1)
       rainbow (>= 2.2.2, < 4.0)
       ruby-progressbar (~> 1.7)
@@ -148,7 +150,7 @@ DEPENDENCIES
   mongoid (~> 6.4.2)
   mustache
   rake
-  rubocop (~> 0.52.1)
+  rubocop
   simplecov
   tailor (~> 1.1.2)
   webmock

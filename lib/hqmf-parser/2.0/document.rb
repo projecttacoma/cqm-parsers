@@ -293,6 +293,7 @@ module HQMF2
         criteria.instance_variable_set(:@source_data_criteria, criteria.id)
       end
       return if original_sdc.nil?
+
       if (criteria.specific_occurrence && !original_sdc.specific_occurrence)
         original_sdc.instance_variable_set(:@specific_occurrence, criteria.specific_occurrence)
         original_sdc.instance_variable_set(:@specific_occurrence_const, criteria.specific_occurrence_const)

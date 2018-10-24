@@ -6,7 +6,7 @@ class FulfillsTest <  Minitest::Test
 
   def test_fulfills
 
-     path = File.expand_path("../../../../fixtures/2.1/measures/fulfills.xml", __FILE__)
+     path = File.expand_path('../../../fixtures/2.1/measures/fulfills.xml', __dir__)
      hqmf_contents = File.open(path).read
      doc = HQMF2::Document.new(hqmf_contents)
      dc = doc.instance_variable_get('@data_criteria').detect { |dc| dc.id.starts_with?('Fulfills_28A79A40_3F99_4AAA_A6D9_8D68AE11D22C') }

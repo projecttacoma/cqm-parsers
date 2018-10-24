@@ -1,7 +1,6 @@
 module HQMF2CQL
   # Class containing value set information
   class ValueSetHelper
-    # rubocop:disable Metrics/LineLength
     VALUESET_MAP = {
       '2.16.840.1.113883.10.20.28.4.7' => { valueset_path: './*/cda:value', result_path: nil },
       '2.16.840.1.113883.10.20.28.4.8' => { valueset_path: './*/cda:code', result_path: nil },
@@ -94,7 +93,6 @@ module HQMF2CQL
       '2.16.840.1.113883.10.20.28.4.119' => { valueset_path: "./*/cda:participation[@typeCode='CSM']/cda:role[@classCode='MANU']/cda:playingEntity[@classCode='MMAT']/cda:code", result_path: nil },
       '2.16.840.1.113883.10.20.28.4.120' => { valueset_path: "./*/cda:participation[@typeCode='CSM']/cda:role[@classCode='MANU']/cda:playingEntity[@classCode='MMAT']/cda:code", result_path: nil }
     }
-    # rubocop:enable Metrics/LineLength
 
     def self.get_mapping_for_template(template)
       VALUESET_MAP[template]

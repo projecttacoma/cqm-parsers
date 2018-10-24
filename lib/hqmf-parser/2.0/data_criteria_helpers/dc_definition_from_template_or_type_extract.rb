@@ -83,6 +83,7 @@ module HQMF2
         reference_criteria = @data_criteria_references["GROUP_#{ref_id}"]
       end
       return unless reference_criteria
+
       handle_specific_variable_ref(reference_criteria)
     end
 

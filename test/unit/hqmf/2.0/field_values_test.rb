@@ -3,7 +3,7 @@ require_relative '../../../test_helper'
 class FieldValuesTest < Minitest::Test
 
   def setup
-    path = File.expand_path("../../../../fixtures/2.1/measures/field_values.xml", __FILE__)
+    path = File.expand_path('../../../fixtures/2.1/measures/field_values.xml', __dir__)
     hqmf_contents = File.open(path).read
     @doc = HQMF2::Document.new(hqmf_contents)
   end

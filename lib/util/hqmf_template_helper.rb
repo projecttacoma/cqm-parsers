@@ -10,9 +10,9 @@ module HQMF
       def self.template_id_map(version)
         if @id_map.blank?
           @id_map = {
-            'r1' => JSON.parse(File.read(File.expand_path('../hqmf_template_oid_map.json', __FILE__))),
-            'r2' => JSON.parse(File.read(File.expand_path('../hqmfr2_template_oid_map.json', __FILE__))),
-            'r2cql' => JSON.parse(File.read(File.expand_path('../hqmfr2cql_template_oid_map.json', __FILE__)))
+            'r1' => JSON.parse(File.read(File.expand_path('hqmf_template_oid_map.json', __dir__))),
+            'r2' => JSON.parse(File.read(File.expand_path('hqmfr2_template_oid_map.json', __dir__))),
+            'r2cql' => JSON.parse(File.read(File.expand_path('hqmfr2cql_template_oid_map.json', __dir__)))
           }
         end
         @id_map[version]
