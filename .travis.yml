@@ -1,15 +1,14 @@
 language: ruby
 rvm:
-  - 2.3.5
+  - 2.3.8
+  - 2.4.5
+  - 2.5.3
 
 services:
   - mongodb
 
 env:
   - "JRUBY_OPTS=-J-Xmx1024m"
-
-before_script:
-  - gem install rubocop -v 0.52.1
 
 script:
   - bundle exec bundle-audit check --update
