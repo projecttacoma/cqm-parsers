@@ -69,8 +69,8 @@ class Qrda1R5 < Mustache
     JSON.parse(@patient.dataElements.where(hqmfOid: { '$in' => HQMF::Util::HQMFTemplateHelper.get_all_hqmf_oids('encounter', 'performed') }).to_json)
   end
 
-  def immunization_aministered
-    JSON.parse(@patient.dataElements.where(hqmfOid: { '$in' => HQMF::Util::HQMFTemplateHelper.get_all_hqmf_oids('immunization', 'aministered') }).to_json)
+  def immunization_administered
+    JSON.parse(@patient.dataElements.where(hqmfOid: { '$in' => HQMF::Util::HQMFTemplateHelper.get_all_hqmf_oids('immunization', 'administered') }).to_json)
   end
 
   def intervention_ordered
