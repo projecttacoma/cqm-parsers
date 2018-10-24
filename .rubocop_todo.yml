@@ -586,6 +586,8 @@ Naming/PredicateName:
     - 'spec/**/*'
     - 'lib/hqmf-model/data_criteria.rb'
     - 'lib/hqmf-model/document.rb'
+    - 'lib/qrda-export/helper/aggregate_object_helper.rb'
+    - 'lib/qrda-export/catIII-r2-1/qrda3_r21.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_precondition.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_restriction.rb'
     - 'lib/hqmf-parser/converter/pass2/comparison_converter.rb'
@@ -1107,14 +1109,6 @@ Style/TernaryParentheses:
     - 'lib/hqmf-parser/2.0/data_criteria_helpers/dc_post_processing.rb'
     - 'lib/hqmf-parser/converter/pass2/comparison_converter.rb'
     - 'test/unit/hqmf/2.0/hqmf_vs_simple_test.rb'
-
-# Offense count: 1
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedStyleForMultiline.
-# SupportedStylesForMultiline: comma, consistent_comma, no_comma
-Style/TrailingCommaInArrayLiteral:
-  Exclude:
-    - 'test/unit/hqmf/model/nqf_0002_test.rb'
 
 # Offense count: 4
 # Cop supports --auto-correct.

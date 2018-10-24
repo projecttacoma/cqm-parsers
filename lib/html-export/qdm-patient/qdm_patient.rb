@@ -17,7 +17,7 @@ class QdmPatient < Mustache
   def data_elements
     de_hash = {}
     @patient.dataElements.each do |data_element|
-      de_hash[data_element._type] ? de_hash[data_element._type].element_list << data_element : de_hash[data_element._type] = { :title => data_element._type, :element_list => [data_element] }
+      de_hash[data_element._type] ? de_hash[data_element._type].element_list << data_element : de_hash[data_element._type] = { title: data_element._type, element_list: [data_element] }
     end
     JSON.parse(de_hash.values.to_json)
   end
@@ -40,7 +40,7 @@ class QdmPatient < Mustache
     "#{self['code']['code']} (#{self['code']['codeSystem']})"
   end
 
-  def has_end_time?
+  def end_time?
     self['high'] && DateTime.parse(self['high']).year < 3000
   end
 

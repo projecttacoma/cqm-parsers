@@ -28,14 +28,13 @@ module QRDA
         patient.dataElements << pce
 
         provider_element = doc.xpath("//cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.55']")
-        unless provider_element.blank?
-            provider_code = provider_element.first.at_xpath('cda:value')['code']
-            ip = {}
-            ip['financial_responsibility_type'] = { 'code' => 'SELF', 'codeSystem' => 'HL7 Relationship Code' }
-            ip['codes'] = { 'SOP' => [provider_code] }
-            patient.extendedData = {}
-            patient.extendedData['insurance_providers'] = JSON.generate([ip])
-        end
+        return if provider_element.blank?
+        provider_code = provider_element.first.at_xpath('cda:value')['code']
+        ip = {}
+        ip['financial_responsibility_type'] = { 'code' => 'SELF', 'codeSystem' => 'HL7 Relationship Code' }
+        ip['codes'] = { 'SOP' => [provider_code] }
+        patient.extendedData = {}
+        patient.extendedData['insurance_providers'] = JSON.generate([ip])
       end
     end
   end
