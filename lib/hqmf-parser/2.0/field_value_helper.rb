@@ -3,11 +3,13 @@ module HQMF2
   class FieldValueHelper
     def self.parse_field_values(entry)
       return if entry.nil?
+
       criteria = entry.at_xpath('./cda:actCriteria | ./cda:observationCriteria | ./cda:encounterCriteria |
                                  ./cda:procedureCriteria | ./cda:supplyCriteria |
                                  ./cda:substanceAdministrationCriteria | ./cda:grouperCriteria')
 
       return {} if criteria.nil?
+
       fields = {}
       # Negation is handled in the data criteria parsing class and not as a field value.
       # Not using the reasonCode element because the QDM HQMF ig states that reason is in an outbound relationship.
@@ -153,6 +155,7 @@ module HQMF2
       loc = entry.at_xpath("./cda:participation[@typeCode='LOC']/cda:role[@classCode='SDLOC']",
                            HQMF2::Document::NAMESPACES)
       return unless loc
+
       # does it have an effective time?
       low = loc.at_xpath('./cda:effectiveTime/cda:low/..')
       high = loc.at_xpath('./cda:effectiveTime/cda:high/..')
@@ -203,7 +206,6 @@ module HQMF2
     end
 
     # Ignoring line limits here as it would be hard to create the deep xPaths with these limits.
-    # rubocop:disable Metrics/LineLength
     def self.parse_encounter_fields(entry, fields)
       # Added a check for Principal Diagnosis and Diagnosis. QDM 4.2 Update
       principal = entry.at_xpath("./cda:outboundRelationship[@typeCode='REFR']/cda:actCriteria/cda:code[@code='52534-5']",
@@ -231,8 +233,6 @@ module HQMF2
 
       handle_loc(entry, fields)
     end
-
-    # rubocop:enable Metrics/LineLength
 
     def self.parse_procedure_fields(entry, fields)
       parse_dset_cd(entry.at_xpath('./cda:methodCode', HQMF2::Document::NAMESPACES), 'METHOD', fields)

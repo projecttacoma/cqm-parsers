@@ -139,6 +139,7 @@ module HQMF2
         # Skip this Stratification if any precondition doesn't contain any preconditions
         next unless PopulationCriteria.new(criteria_def, @document, @id_generator)
                     .preconditions.all? { |prcn| prcn.preconditions.length > 0 }
+
         index = number_of_populations + ((population_index - 1) * criteria_def.xpath('./*/cda:precondition').length) +
                 criteria_def_index
         criteria_id = HQMF::PopulationCriteria::STRAT

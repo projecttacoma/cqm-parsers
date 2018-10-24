@@ -53,6 +53,7 @@ module HQMF2
       # Need to handle grouper criteria that do not have template ids -- these will be union of and intersection
       # criteria
       return unless @template_ids.empty?
+
       # Change the XPRODUCT to an INTERSECT otherwise leave it as a UNION
       @derivation_operator = HQMF::DataCriteria::INTERSECT if @derivation_operator == HQMF::DataCriteria::XPRODUCT
       @description ||= (@derivation_operator == HQMF::DataCriteria::INTERSECT) ? 'Intersect' : 'Union'
@@ -72,9 +73,11 @@ module HQMF2
       @children_criteria << @source_data_criteria if @children_criteria.empty?
       return if @children_criteria.length != 1 ||
                 (@source_data_criteria.present? && @children_criteria.first != @source_data_criteria)
+
       # if child.first is nil, it will be caught in the second statement
       reference_criteria = @data_criteria_references[@children_criteria.first]
       return if reference_criteria.nil?
+
       @is_derived_specific_occurrence_variable = true # easier to track than all testing all features of these cases
       @subset_operators ||= reference_criteria.subset_operators
       @derivation_operator ||= reference_criteria.derivation_operator

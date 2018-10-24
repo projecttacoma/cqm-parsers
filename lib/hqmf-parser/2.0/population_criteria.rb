@@ -49,6 +49,7 @@ module HQMF2
       obs_test = attr_val('./cda:measureObservationDefinition/@classCode')
       # If there are no measure observations, or there is a title, then there are no aggregations to extract
       return unless !@title && obs_test.to_s == 'OBS'
+
       @title = attr_val('../cda:code/cda:displayName/@value')
       @aggregator = attr_val('./cda:measureObservationDefinition/cda:methodCode/cda:item/@code')
     end
@@ -72,6 +73,7 @@ module HQMF2
       # Measure Observations criteria rely on computed expressions. If it doesn't have one,
       #  then it is likely formatted improperly.
       fail 'Measure Observations criteria is missing computed expression(s) ' if exp.nil?
+
       parts = exp.to_s.split('-')
       dc = parse_parts_to_dc(parts)
       @doc.add_data_criteria(dc)

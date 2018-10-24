@@ -70,6 +70,7 @@ module HQMF1
           end
         end
       end
+
       return nil
     end
     

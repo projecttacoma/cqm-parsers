@@ -15,6 +15,7 @@ module HQMF
    
     def self.extract_preconditions_from_restrictions(restrictions,data_criteria_converter)
       return [] unless restrictions
+
       preconditions = []
       restrictions.each do |restriction|
         preconditions.concat(extract_preconditions_from_restriction(restriction,data_criteria_converter))

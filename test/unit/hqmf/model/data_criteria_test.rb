@@ -52,6 +52,7 @@ module HQMFModel
       mismatches = []
       fields.each do |field, value|
         next unless value[:code]
+
         entry = "#{value[:code]} -> #{field}"
         mismatches << entry unless values[value[:code]] && values[value[:code]] == field
       end

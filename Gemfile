@@ -7,7 +7,7 @@ gem 'mongoid', '~> 6.4.2'
 
 group :development, :test do
   gem 'bundler-audit'
-  gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop', require: false
 end
 
 group :development do

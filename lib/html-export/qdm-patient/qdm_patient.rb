@@ -33,6 +33,7 @@ class QdmPatient < Mustache
   def result_string
     return unit_string if self['unit']
     return code_code_system_string if self['code']
+
     ''
   end
 

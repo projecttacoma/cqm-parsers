@@ -95,11 +95,13 @@ module HQMF2
     # occurrence of an event.
     def extract_variable_grouper
       return unless @variable
+
       @variable = false
       @id = "GROUP_#{@id}"
       if @children_criteria.length == 1 && @children_criteria[0] =~ /GROUP_/
         reference_criteria = @data_criteria_references[@children_criteria.first]
         return if reference_criteria.nil?
+
         duplicate_child_info(reference_criteria)
         @definition = reference_criteria.definition
         @status = reference_criteria.status
@@ -138,6 +140,7 @@ module HQMF2
       elsif @children_criteria.length == 1 && @children_criteria.first.present?
         reference_criteria = @data_criteria_references[@children_criteria.first]
         return if reference_criteria.nil?
+
         duplicate_child_info(reference_criteria)
         @children_criteria = reference_criteria.children_criteria
       end
@@ -211,6 +214,7 @@ module HQMF2
         encoded_name = attr_val('./cda:localVariableName/@value')
         encoded_name = DataCriteriaMethods.extract_description_for_variable(encoded_name) if encoded_name
         return encoded_name if encoded_name.present?
+
         attr_val("./#{CRITERIA_GLOB}/cda:id/@extension")
       else
         attr_val("./#{CRITERIA_GLOB}/cda:text/@value") ||
@@ -292,6 +296,7 @@ module HQMF2
         code_id = HQMF::DataCriteria::VALUE_FIELDS[code]
         # No need to run if there is no code id
         next if (negation && code_id == 'REASON') || code_id.nil?
+
         value = DataCriteriaMethods.parse_value(field, './*/cda:value')
         value ||= DataCriteriaMethods.parse_value(field, './*/cda:effectiveTime')
         fields[code_id] = value
@@ -301,6 +306,7 @@ module HQMF2
         code = HQMF2::Utilities.attr_val(field, './*/cda:participation/cda:role/@classCode')
         code_id = HQMF::DataCriteria::VALUE_FIELDS[code]
         next if code_id.nil?
+
         value = Coded.new(field.at_xpath('./*/cda:participation/cda:role/cda:code', HQMF2::Document::NAMESPACES))
         fields[code_id] = value
       end
@@ -337,6 +343,7 @@ module HQMF2
       value_def = node.at_xpath(xpath, HQMF2::Document::NAMESPACES)
       if value_def
         return AnyValue.new if value_def.at_xpath('@flavorId') == 'ANY.NONNULL'
+
         value_type_def = value_def.at_xpath('@xsi:type', HQMF2::Document::NAMESPACES)
         return handle_value_type(value_type_def, value_def) if value_type_def
       end

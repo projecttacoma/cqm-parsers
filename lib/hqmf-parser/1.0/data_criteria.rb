@@ -12,7 +12,7 @@ module HQMF1
       @entry = entry
       
       template_map = HQMF::DataCriteria.get_template_id_map()
-      oid_xpath_file = File.expand_path('../data_criteria_oid_xpath.json', __FILE__)
+      oid_xpath_file = File.expand_path('data_criteria_oid_xpath.json', __dir__)
       oid_xpath_map = JSON.parse(File.read(oid_xpath_file))
       template_id = attr_val('cda:act/cda:templateId/@root') || attr_val('cda:observation/cda:templateId/@root')
       

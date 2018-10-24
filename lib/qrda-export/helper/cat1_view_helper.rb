@@ -34,6 +34,7 @@ module Qrda
           translation_list = ""
           self[:dataElementCodes].each_with_index do |_dec, index|
             next if index.zero?
+
             translation_list += "<translation code=\"#{self[:dataElementCodes][index]['code']}\" codeSystem=\"#{code_system_oid(self[:dataElementCodes][index]['codeSystem'])}\" codeSystemName=\"#{self[:dataElementCodes][index]['codeSystem']}\"/>"
           end
           translation_list
@@ -41,6 +42,7 @@ module Qrda
 
         def result_value
           return "<value xsi:type=\"CD\" nullFlavor=\"UNK\"/>" unless self['result']
+
           result_string = if self['result'].is_a? Array
                             result_value_as_string(self['result'][0])
                           elsif self['result'].is_a? Hash

@@ -15,6 +15,7 @@ module HQMF2
 
       grouper_data_criteria = data_criteria.extract_variable_grouper
       return unless grouper_data_criteria
+
       @data_criteria_references[data_criteria.id] = data_criteria
       @data_criteria_references[grouper_data_criteria.id] = grouper_data_criteria
 

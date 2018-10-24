@@ -328,7 +328,7 @@ module HQMF
     end
 
     def self.statuses_by_definition
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       settings_map = JSON.parse(File.read(settings_file))
       all_defs = (settings_map.map {|key, value| {category: value['category'],definition:value['definition'],status:(value['status'].empty? ? nil : value['status']), sub_category: value['sub_category'],title:value['title']} unless value['not_supported']}).compact
       by_categories = {}
@@ -395,12 +395,13 @@ module HQMF
 
     def self.get_settings_map
       return @settings_map if @settings_map
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       @settings_map = JSON.parse(File.read(settings_file))
     end
 
     def self.get_settings_for_definition(definition, status)
-      settings_file = File.expand_path('../data_criteria.json', __FILE__)
+      settings_file = File.expand_path('data_criteria.json', __dir__)
       settings_map = get_settings_map
       key = definition + ((status.nil? || status.empty?) ? '' : "_#{status}")
       settings = settings_map[key]
@@ -446,6 +447,7 @@ module HQMF
 
     def normalize_status(definition, status)
       return status if status.nil?
+
       case status.downcase
         when 'completed', 'complete'
           case definition
@@ -463,6 +465,7 @@ module HQMF
 
     def self.convert_value(json)
       return nil unless json.present?
+
       type = json["type"]
       case type
         when 'TS', 'PQ'
