@@ -4,21 +4,21 @@
 	<div class="div-head-row">
 		<div class="div-table-head--no-border"><span class="criteria-heading">Relevant Period Start:</span>  {{{low}}}</div>
 	</div>
-	{{#has_end_time?}}
+	{{#end_time?}}
 		<div class="div-head-row">
 			<div class="div-table-head--no-border"><span class="criteria-heading">Relevant Period End:</span>  {{{high}}}</div>
 		</div>
-	{{/has_end_time?}}
+	{{/end_time?}}
 {{/relevantPeriod}}
 {{#prevalencePeriod}}
 	<div class="div-head-row">
 	    <div class="div-table-head--no-border"><span class="criteria-heading">Prevalence Period Start:</span>  {{{low}}}</div>
 	</div>
-	{{#has_end_time?}}
+	{{#end_time?}}
 		<div class="div-head-row">
 		    <div class="div-table-head--no-border"><span class="criteria-heading">Prevalence Period End:</span>  {{{high}}}</div>
 		</div>
-	{{/has_end_time?}}
+	{{/end_time?}}
 {{/prevalencePeriod}}
 {{#authorDatetime}}
 	<div class="div-head-row">

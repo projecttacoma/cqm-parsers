@@ -10,9 +10,9 @@ class Qrda3R21 < Mustache
     @measures = measures
     @measure_result_hash = {}
     @measures.each do |measure|
-      @measure_result_hash[measure.hqmf_id] = { :hqmf_id => measure.hqmf_id, :hqmf_set_id => measure.hqmf_set_id, :description => measure.description, :measure_data => [], :aggregate_count => [] }
+      @measure_result_hash[measure.hqmf_id] = { hqmf_id: measure.hqmf_id, hqmf_set_id: measure.hqmf_set_id, description: measure.description, measure_data: [], aggregate_count: [] }
     end
-    @aggregate_results.each do |key, aggregate_result|
+    @aggregate_results.each do |_key, aggregate_result|
       @measure_result_hash[aggregate_result.measure_id].measure_data << aggregate_result
     end
     @measure_result_hash.each do |key, hash|
@@ -44,48 +44,48 @@ class Qrda3R21 < Mustache
     self['value'].round
   end
 
-  def is_msrpopl?
+  def msrpopl?
     self['type'] == 'MSRPOPL'
   end
 
   def not_observ?
-    self['type'] == 'OBSERV' ? false : true
+    self['type'] != 'OBSERV'
   end
 
   def stratification_observation
-    observation = @measure_result_hash[self['measure_id']].aggregate_count.populations.find{|p| p.type == "OBSERV"}
-    stratification_observation = @measure_result_hash[self['measure_id']].aggregate_count.populations.find{|p| p.type == "OBSERV"}.stratifications.find{|s| s.id == self['id'] }
+    observation = @measure_result_hash[self['measure_id']].aggregate_count.populations.find {|p| p.type == "OBSERV"}
+    stratification_observation = @measure_result_hash[self['measure_id']].aggregate_count.populations.find {|p| p.type == "OBSERV"}.stratifications.find {|s| s.id == self['id'] }
     stratification_observation.id = observation.id
     stratification_observation
   end
 
   def population_observation
-    @measure_result_hash[self['measure_id']].aggregate_count.populations.find{|p| p.type == "OBSERV"}
+    @measure_result_hash[self['measure_id']].aggregate_count.populations.find {|p| p.type == "OBSERV"}
   end
 
   def supplemental_template_ids
     case self['type']
     when 'RACE'
-      [{ :tid => '2.16.840.1.113883.10.20.27.3.8', :extension => '2016-09-01' }]
+      [{ tid: '2.16.840.1.113883.10.20.27.3.8', extension: '2016-09-01' }]
     when 'ETHNICITY'
-      [{ :tid => '2.16.840.1.113883.10.20.27.3.7', :extension => '2016-09-01' }]
+      [{ tid: '2.16.840.1.113883.10.20.27.3.7', extension: '2016-09-01' }]
     when 'SEX'
-      [{ :tid => '2.16.840.1.113883.10.20.27.3.6', :extension => '2016-09-01' }]
+      [{ tid: '2.16.840.1.113883.10.20.27.3.6', extension: '2016-09-01' }]
     when 'PAYER'
-      [{ :tid => '2.16.840.1.113883.10.20.27.3.9', :extension => '2016-02-01' }]
+      [{ tid: '2.16.840.1.113883.10.20.27.3.9', extension: '2016-02-01' }]
     end
   end
 
   def supplemental_data_code
     case self['type']
     when 'RACE'
-      [{ :supplemental_data_code => '72826-1', :supplemental_data_code_system => '2.16.840.1.113883.6.1' } ]
+      [{ supplemental_data_code: '72826-1', supplemental_data_code_system: '2.16.840.1.113883.6.1' }]
     when 'ETHNICITY'
-      [{ :supplemental_data_code => '69490-1', :supplemental_data_code_system => '2.16.840.1.113883.6.1' } ]
+      [{ supplemental_data_code: '69490-1', supplemental_data_code_system: '2.16.840.1.113883.6.1' }]
     when 'SEX'
-      [{ :supplemental_data_code => '76689-9', :supplemental_data_code_system => '2.16.840.1.113883.6.1' } ]
+      [{ supplemental_data_code: '76689-9', supplemental_data_code_system: '2.16.840.1.113883.6.1' }]
     when 'PAYER'
-      [{ :supplemental_data_code => '48768-6', :supplemental_data_code_system => '2.16.840.1.113883.6.1' } ]
+      [{ supplemental_data_code: '48768-6', supplemental_data_code_system: '2.16.840.1.113883.6.1' }]
     end
   end
 
@@ -114,7 +114,7 @@ class Qrda3R21 < Mustache
     supplemental_data_array = []
     supplemental_data.each do |supplemental_data_key, counts|
       counts.each do |key, value|
-        supplemental_data_count = { :code => key, :value => value, :type =>  supplemental_data_key }
+        supplemental_data_count = { code: key, value: value, type: supplemental_data_key }
         supplemental_data_array << supplemental_data_count
       end
     end

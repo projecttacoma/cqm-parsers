@@ -592,6 +592,8 @@ Naming/PredicateName:
     - 'spec/**/*'
     - 'lib/hqmf-model/data_criteria.rb'
     - 'lib/hqmf-model/document.rb'
+    - 'lib/qrda-export/helper/aggregate_object_helper.rb'
+    - 'lib/qrda-export/catIII-r2-1/qrda3_r21.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_precondition.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_restriction.rb'
     - 'lib/hqmf-parser/converter/pass2/comparison_converter.rb'

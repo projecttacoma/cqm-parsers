@@ -3,7 +3,7 @@ module QRDA
     # General helpers for working with codes and code systems
     class QRDATemplateHelper
 
-      def self.definition_for_template_id(hqmf_template_id, qrda_version="r5")
+      def self.definition_for_template_id(hqmf_template_id, qrda_version = "r5")
         template_id_map(qrda_version)[hqmf_template_id]
       end
 
