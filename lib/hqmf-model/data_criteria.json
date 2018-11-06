@@ -1,7 +1,7 @@
 {
   "derived":{
       "title":"derived data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"derived",
       "status":"",
       "sub_category":"",
@@ -10,7 +10,7 @@
       "not_supported":false},
   "satisfies_all":{
       "title":"satisfies all data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"satisfies_all",
       "status":"",
       "sub_category":"",
@@ -19,7 +19,7 @@
       "not_supported":false},
   "satisfies_any":{
       "title":"satisfies any data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"satisfies_any",
       "status":"",
       "sub_category":"",
@@ -28,7 +28,7 @@
       "not_supported":false},
   "variable":{
       "title":"variable data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"variable",
       "status":"",
       "sub_category":"",
@@ -37,7 +37,7 @@
       "not_supported":false},
   "variable_performed":{
       "title":"variable data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"variable",
       "status":"performed",
       "sub_category":"",
@@ -46,7 +46,7 @@
       "not_supported":false},
   "variable_active":{
       "title":"variable data criteria",
-      "category":"derived",
+      "qdmCategory":"derived",
       "definition":"variable",
       "status":"active",
       "sub_category":"",
@@ -55,7 +55,7 @@
       "not_supported":false},
   "MeasurePeriod":{
       "title":"the measurement period",
-      "category":"measurement_period",
+      "qdmCategory":"measurement_period",
       "definition":"MeasurePeriod",
       "status":"",
       "sub_category":"",
@@ -64,7 +64,7 @@
       "not_supported":false},
   "patient_characteristic":{
       "title":"patient characteristic",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic",
       "status":"",
       "sub_category":"",
@@ -73,7 +73,7 @@
       "not_supported":false},
   "patient_characteristic_birthdate":{
       "title":"patient characteristic, birthdate",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_birthdate",
       "status":"",
       "sub_category":"birthdate",
@@ -83,7 +83,7 @@
       "not_supported":false},
   "patient_characteristic_age":{
       "title":"patient characteristic, age",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_age",
       "status":"",
       "sub_category":"age",
@@ -93,7 +93,7 @@
       "not_supported":false},
   "patient_characteristic_marital_status":{
       "title":"patient characteristic, marital status",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_marital_status",
       "status":"",
       "sub_category":"marital_status",
@@ -103,7 +103,7 @@
       "not_supported":false},
   "patient_characteristic_languages":{
       "title":"patient characteristic, languages",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_languages",
       "status":"",
       "sub_category":"languages",
@@ -113,7 +113,7 @@
       "not_supported":false},
   "patient_characteristic_clinical_trial_participant":{
       "title":"patient characteristic",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic",
       "status":"",
       "sub_category":"",
@@ -122,7 +122,7 @@
       "not_supported":false},
   "patient_characteristic_gender":{
       "title":"patient characteristic, gender",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_gender",
       "status":"",
       "sub_category":"gender",
@@ -132,7 +132,7 @@
       "not_supported":false},
   "patient_characteristic_ethnicity":{
       "title":"patient characteristic, ethnicity",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_ethnicity",
       "status":"",
       "sub_category":"ethnicity",
@@ -142,7 +142,7 @@
       "not_supported":false},
   "patient_characteristic_expired":{
       "title":"patient characteristic, expired",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_expired",
       "status":"",
       "sub_category":"expired",
@@ -152,7 +152,7 @@
       "not_supported":false},
   "patient_characteristic_payer":{
       "title":"patient characteristic, payer",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_payer",
       "status":"",
       "sub_category":"payer",
@@ -162,7 +162,7 @@
       "not_supported":false},
   "patient_characteristic_race":{
       "title":"patient characteristic, race",
-      "category":"characteristic",
+      "qdmCategory":"characteristic",
       "definition":"patient_characteristic_race",
       "status":"",
       "sub_category":"race",
@@ -172,7 +172,7 @@
       "not_supported":false},
   "encounter":{
       "title":"encounter",
-      "category":"encounters",
+      "qdmCategory":"encounters",
       "definition":"encounter",
       "status":"",
       "sub_category":"",
@@ -181,7 +181,7 @@
       "not_supported":false},
   "encounter_active":{
       "title":"encounter, active",
-      "category":"encounters",
+      "qdmCategory":"encounters",
       "definition":"encounter",
       "status":"active",
       "sub_category":"",
@@ -190,7 +190,7 @@
       "not_supported":false},
   "encounter_performed":{
       "title":"encounter, performed",
-      "category":"encounters",
+      "qdmCategory":"encounters",
       "definition":"encounter",
       "status":"performed",
       "sub_category":"",
@@ -199,7 +199,7 @@
       "not_supported":false},
   "encounter_ordered":{
       "title":"encounter, order",
-      "category":"encounters",
+      "qdmCategory":"encounters",
       "definition":"encounter",
       "status":"ordered",
       "sub_category":"",
@@ -208,7 +208,7 @@
       "not_supported":false},
   "encounter_recommended":{
       "title":"encounter, recommended",
-      "category":"encounters",
+      "qdmCategory":"encounters",
       "definition":"encounter",
       "status":"recommended",
       "sub_category":"",
@@ -217,7 +217,7 @@
       "not_supported":false},
   "procedure":{
       "title":"procedure",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure",
       "status":"",
       "sub_category":"",
@@ -226,7 +226,7 @@
       "not_supported":false},
   "procedure_performed":{
       "title":"procedure, performed",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure",
       "status":"performed",
       "sub_category":"",
@@ -235,7 +235,7 @@
       "not_supported":false},
   "procedure_ordered":{
       "title":"procedure, order",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure",
       "status":"ordered",
       "sub_category":"",
@@ -244,7 +244,7 @@
       "not_supported":false},
   "procedure_result":{
       "title":"procedure, result",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure_result",
       "status":"",
       "sub_category":"result",
@@ -253,7 +253,7 @@
       "not_supported":false},
   "procedure_adverse_event":{
       "title":"procedure, adverse event",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -262,7 +262,7 @@
       "not_supported":false},
   "procedure_intolerance":{
       "title":"procedure, intolerance",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -271,7 +271,7 @@
       "not_supported":false},
   "procedure_recommended":{
       "title":"procedure, recommended",
-      "category":"procedures",
+      "qdmCategory":"procedures",
       "definition":"procedure",
       "status":"recommended",
       "sub_category":"",
@@ -280,7 +280,7 @@
       "not_supported":false},
   "diagnosis":{
       "title":"diagnosis",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis",
       "status":"",
       "sub_category":"",
@@ -289,7 +289,7 @@
       "not_supported":false},
   "diagnosis_active":{
       "title":"diagnosis, active",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis",
       "status":"active",
       "sub_category":"",
@@ -298,7 +298,7 @@
       "not_supported":false},
   "diagnosis_resolved":{
       "title":"diagnosis, resolved",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis",
       "status":"resolved",
       "sub_category":"",
@@ -307,7 +307,7 @@
       "not_supported":false},
   "diagnosis_family_history":{
       "title":"diagnosis, family history",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis",
       "status":"family_history",
       "sub_category":"family_history",
@@ -316,7 +316,7 @@
       "not_supported":false},
   "diagnosis_inactive":{
       "title":"diagnosis, inactive",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis",
       "status":"inactive",
       "sub_category":"",
@@ -325,7 +325,7 @@
       "not_supported":false},
   "diagnosis_risk_of":{
       "title":"diagnosis, risk of",
-      "category":"conditions",
+      "qdmCategory":"conditions",
       "definition":"diagnosis_risk_of",
       "status":"",
       "sub_category":"risk_of",
@@ -334,7 +334,7 @@
       "not_supported":true},
   "family_history":{
       "title":"family history",
-      "category":"family_history",
+      "qdmCategory":"family_history",
       "definition":"family_history",
       "status":"",
       "sub_category":"",
@@ -343,7 +343,7 @@
       "not_supported":false},
   "diagnostic_study":{
       "title":"diagnostic study",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study",
       "status":"",
       "sub_category":"",
@@ -352,7 +352,7 @@
       "not_supported":false},
   "diagnostic_study_performed":{
       "title":"diagnostic study, performed",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study",
       "status":"performed",
       "sub_category":"",
@@ -361,7 +361,7 @@
       "not_supported":false},
   "diagnostic_study_result":{
       "title":"diagnostic study, result",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study_result",
       "status":"",
       "sub_category":"result",
@@ -370,7 +370,7 @@
       "not_supported":false},
   "diagnostic_study_adverse_event":{
       "title":"diagnostic study, adverse event",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -379,7 +379,7 @@
       "not_supported":false},
   "diagnostic_study_intolerance":{
       "title":"diagnostic study, intolerance",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -388,7 +388,7 @@
       "not_supported":false},
   "diagnostic_study_ordered":{
       "title":"diagnostic study, order",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study",
       "status":"ordered",
       "sub_category":"",
@@ -397,7 +397,7 @@
       "not_supported":false},
   "diagnostic_study_recommended":{
       "title":"diagnostic study, recommended",
-      "category":"diagnostic_studies",
+      "qdmCategory":"diagnostic_studies",
       "definition":"diagnostic_study",
       "status":"recommended",
       "sub_category":"",
@@ -406,7 +406,7 @@
       "not_supported":false},
   "medication":{
       "title":"medication",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication",
       "status":"",
       "sub_category":"",
@@ -415,7 +415,7 @@
       "not_supported":false},
   "medication_dispensed":{
       "title":"medication, dispensed",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication",
       "status":"dispensed",
       "sub_category":"",
@@ -424,7 +424,7 @@
       "not_supported":false},
   "medication_ordered":{
       "title":"medication, order",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication",
       "status":"ordered",
       "sub_category":"",
@@ -433,7 +433,7 @@
       "not_supported":false},
   "medication_active":{
       "title":"medication, active",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication",
       "status":"active",
       "sub_category":"",
@@ -442,7 +442,7 @@
       "not_supported":false},
   "medication_administered":{
       "title":"medication, administered",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication",
       "status":"administered",
       "sub_category":"",
@@ -451,7 +451,7 @@
       "not_supported":false},
   "medication_discharge": {
       "title":"medication, discharge",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication_discharge",
       "status":"discharge",
       "sub_category":"discharge",
@@ -460,7 +460,7 @@
       "not_supported":false},
   "medication_adverse_effects":{
       "title":"medication, adverse effects",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication_adverse_effects",
       "status":"",
       "sub_category":"adverse_effects",
@@ -469,7 +469,7 @@
       "not_supported":false},
   "medication_allergy":{
       "title":"medication, allergy",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication_allergy",
       "status":"",
       "sub_category":"allergy",
@@ -478,7 +478,7 @@
       "not_supported":false},
   "medication_intolerance":{
       "title":"medication, intolerance",
-      "category":"medications",
+      "qdmCategory":"medications",
       "definition":"medication_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -487,7 +487,7 @@
       "not_supported":false},
   "immunization_administered":{
       "title":"immunization, administered",
-      "category":"immunizations",
+      "qdmCategory":"immunizations",
       "definition":"immunization",
       "status":"administered",
       "sub_category":"",
@@ -496,7 +496,7 @@
       "not_supported":false},
   "immunization_ordered":{
       "title":"immunization, order",
-      "category":"immunizations",
+      "qdmCategory":"immunizations",
       "definition":"immunization",
       "status":"ordered",
       "sub_category":"",
@@ -505,7 +505,7 @@
       "not_supported":false},
   "immunization_allergy":{
       "title":"immunization, allergy",
-      "category":"immunizations",
+      "qdmCategory":"immunizations",
       "definition":"immunization_allergy",
       "status":"",
       "sub_category":"allergy",
@@ -514,7 +514,7 @@
       "not_supported":false},
   "immunization_intolerance":{
       "title":"immunization, intolerance",
-      "category":"immunizations",
+      "qdmCategory":"immunizations",
       "definition":"immunization_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -523,7 +523,7 @@
       "not_supported":false},
   "physical_exam":{
       "title":"physical exam, finding",
-      "category":"physical_exams",
+      "qdmCategory":"physical_exams",
       "definition":"physical_exam",
       "status":"",
       "sub_category":"",
@@ -532,7 +532,7 @@
       "not_supported":false},
   "physical_exam_ordered":{
       "title":"physical exam, order",
-      "category":"physical_exams",
+      "qdmCategory":"physical_exams",
       "definition":"physical_exam",
       "status":"ordered",
       "sub_category":"",
@@ -541,7 +541,7 @@
       "not_supported":false},
   "physical_exam_performed":{
       "title":"physical exam, performed",
-      "category":"physical_exams",
+      "qdmCategory":"physical_exams",
       "definition":"physical_exam",
       "status":"performed",
       "sub_category":"",
@@ -550,7 +550,7 @@
       "not_supported":false},
   "physical_exam_recommended":{
       "title":"physical exam, recommended",
-      "category":"physical_exams",
+      "qdmCategory":"physical_exams",
       "definition":"physical_exam",
       "status":"recommended",
       "sub_category":"",
@@ -559,7 +559,7 @@
       "not_supported":false},
   "laboratory_test":{
       "title":"laboratory test, result",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test",
       "status":"",
       "sub_category":"result",
@@ -568,7 +568,7 @@
       "not_supported":false},
   "laboratory_test_performed":{
       "title":"laboratory test, performed",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test",
       "status":"performed",
       "sub_category":"",
@@ -577,7 +577,7 @@
       "not_supported":false},
   "laboratory_test_adverse_event":{
       "title":"laboratory test, adverse event",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -586,7 +586,7 @@
       "not_supported":false},
   "laboratory_test_intolerance":{
       "title":"laboratory test, intolerance",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -595,7 +595,7 @@
       "not_supported":false},
   "laboratory_test_ordered":{
       "title":"laboratory test, order",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test",
       "status":"ordered",
       "sub_category":"",
@@ -604,7 +604,7 @@
       "not_supported":false},
   "laboratory_test_recommended":{
       "title":"laboratory test, recommended",
-      "category":"laboratory_tests",
+      "qdmCategory":"laboratory_tests",
       "definition":"laboratory_test",
       "status":"recommended",
       "sub_category":"",
@@ -613,7 +613,7 @@
       "not_supported":false},
   "care_goal":{
       "title":"care goal",
-      "category":"care_goals",
+      "qdmCategory":"care_goals",
       "definition":"care_goal",
       "status":"",
       "sub_category":"",
@@ -622,7 +622,7 @@
       "not_supported":false},
   "communication_from_patient_to_provider":{
       "title":"communication, from patient to provider",
-      "category":"communications",
+      "qdmCategory":"communications",
       "definition":"communication_from_patient_to_provider",
       "status":"",
       "sub_category":"from_patient_to_provider",
@@ -631,7 +631,7 @@
       "not_supported":false},
   "communication_from_provider_to_patient":{
       "title":"communication, from provider to patient",
-      "category":"communications",
+      "qdmCategory":"communications",
       "definition":"communication_from_provider_to_patient",
       "status":"",
       "sub_category":"from_provider_to_patient",
@@ -640,7 +640,7 @@
       "not_supported":false},
   "communication_from_provider_to_provider":{
       "title":"communication, from provider to provider",
-      "category":"communications",
+      "qdmCategory":"communications",
       "definition":"communication_from_provider_to_provider",
       "status":"",
       "sub_category":"from_provider_to_provider",
@@ -649,7 +649,7 @@
       "not_supported":false},
   "device":{
       "title":"device",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device",
       "status":"",
       "sub_category":"",
@@ -658,7 +658,7 @@
       "not_supported":false},
   "device_applied":{
       "title":"device, applied",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device",
       "status":"applied",
       "sub_category":"",
@@ -667,7 +667,7 @@
       "not_supported":false},
   "device_adverse_event":{
       "title":"device, adverse event",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -676,7 +676,7 @@
       "not_supported":false},
   "device_allergy":{
       "title":"device, allergy",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device_allergy",
       "status":"",
       "sub_category":"allergy",
@@ -685,7 +685,7 @@
       "not_supported":false},
   "device_intolerance":{
       "title":"device, intolerance",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -694,7 +694,7 @@
       "not_supported":false},
   "device_ordered":{
       "title":"device, order",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device",
       "status":"ordered",
       "sub_category":"",
@@ -703,7 +703,7 @@
       "not_supported":false},
   "device_recommended":{
       "title":"device, recommended",
-      "category":"devices",
+      "qdmCategory":"devices",
       "definition":"device",
       "status":"recommended",
       "sub_category":"",
@@ -712,7 +712,7 @@
       "not_supported":false},
   "substance":{
       "title":"substance",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance",
       "status":"",
       "sub_category":"",
@@ -721,7 +721,7 @@
       "not_supported":false},
   "substance_administered":{
       "title":"substance, administered",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance",
       "status":"administered",
       "sub_category":"",
@@ -730,7 +730,7 @@
       "not_supported":false},
   "substance_ordered":{
       "title":"substance, order",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance",
       "status":"ordered",
       "sub_category":"",
@@ -739,7 +739,7 @@
       "not_supported":false},
   "substance_adverse_event":{
       "title":"substance, adverse event",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -748,7 +748,7 @@
       "not_supported":false},
   "substance_intolerance":{
       "title":"substance, intolerance",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -757,7 +757,7 @@
       "not_supported":false},
   "substance_allergy":{
       "title":"substance, allergy",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance_allergy",
       "status":"",
       "sub_category":"allergy",
@@ -766,7 +766,7 @@
       "not_supported":false},
   "substance_recommended":{
       "title":"substance, recommended",
-      "category":"substances",
+      "qdmCategory":"substances",
       "definition":"substance",
       "status":"recommended",
       "sub_category":"",
@@ -775,7 +775,7 @@
       "not_supported":false},
   "intervention":{
       "title":"intervention",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention",
       "status":"",
       "sub_category":"",
@@ -784,7 +784,7 @@
       "not_supported":false},
   "intervention_adverse_event":{
       "title":"intervention, adverse event",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention_adverse_event",
       "status":"",
       "sub_category":"adverse_event",
@@ -793,7 +793,7 @@
       "not_supported":false},
   "intervention_intolerance":{
       "title":"intervention, intolerance",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention_intolerance",
       "status":"",
       "sub_category":"intolerance",
@@ -802,7 +802,7 @@
       "not_supported":false},
   "intervention_ordered":{
       "title":"intervention, order",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention",
       "status":"ordered",
       "sub_category":"",
@@ -811,7 +811,7 @@
       "not_supported":false},
   "intervention_performed":{
       "title":"intervention, performed",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention",
       "status":"performed",
       "sub_category":"",
@@ -820,7 +820,7 @@
       "not_supported":false},
   "intervention_result":{
       "title":"intervention, result",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention_result",
       "status":"",
       "sub_category":"result",
@@ -829,7 +829,7 @@
       "not_supported":false},
   "intervention_recommended":{
       "title":"intervention, recommended",
-      "category":"interventions",
+      "qdmCategory":"interventions",
       "definition":"intervention",
       "status":"recommended",
       "sub_category":"",
@@ -838,7 +838,7 @@
       "not_supported":false},
   "symptom":{
       "title":"symptom",
-      "category":"symptoms",
+      "qdmCategory":"symptoms",
       "definition":"symptom",
       "status":"",
       "sub_category":"",
@@ -847,7 +847,7 @@
       "not_supported":false},
   "symptom_active":{
       "title":"symptom, active",
-      "category":"symptoms",
+      "qdmCategory":"symptoms",
       "definition":"symptom",
       "status":"active",
       "sub_category":"",
@@ -856,7 +856,7 @@
       "not_supported":false},
   "symptom_assessed":{
       "title":"symptom, assessed",
-      "category":"symptoms",
+      "qdmCategory":"symptoms",
       "definition":"symptom",
       "status":"assessed",
       "sub_category":"",
@@ -865,7 +865,7 @@
       "not_supported":false},
   "symptom_inactive":{
       "title":"symptom, inactive",
-      "category":"symptoms",
+      "qdmCategory":"symptoms",
       "definition":"symptom",
       "status":"inactive",
       "sub_category":"",
@@ -874,7 +874,7 @@
       "not_supported":false},
   "symptom_resolved":{
       "title":"symptom, resolved",
-      "category":"symptoms",
+      "qdmCategory":"symptoms",
       "definition":"symptom",
       "status":"resolved",
       "sub_category":"",
@@ -883,7 +883,7 @@
       "not_supported":false},
   "functional_status":{
       "title":"functional status",
-      "category":"functional_statuses",
+      "qdmCategory":"functional_statuses",
       "definition":"functional_status",
       "status":"",
       "sub_category":"",
@@ -892,7 +892,7 @@
       "not_supported":false},
   "functional_status_performed":{
       "title":"functional status, performed",
-      "category":"functional_statuses",
+      "qdmCategory":"functional_statuses",
       "definition":"functional_status",
       "status":"performed",
       "sub_category":"",
@@ -901,7 +901,7 @@
       "not_supported":false},
   "functional_status_ordered":{
       "title":"functional status, order",
-      "category":"functional_statuses",
+      "qdmCategory":"functional_statuses",
       "definition":"functional_status",
       "status":"ordered",
       "sub_category":"",
@@ -910,7 +910,7 @@
       "not_supported":false},
   "functional_status_recommended":{
       "title":"functional status, recommended",
-      "category":"functional_statuses",
+      "qdmCategory":"functional_statuses",
       "definition":"functional_status",
       "status":"recommended",
       "sub_category":"",
@@ -919,7 +919,7 @@
       "not_supported":false},
   "functional_status_result":{
       "title":"functional status, result",
-      "category":"functional_statuses",
+      "qdmCategory":"functional_statuses",
       "definition":"functional_status_result",
       "status":"",
       "sub_category":"result",
@@ -928,7 +928,7 @@
       "not_supported":false},
   "risk_category_assessment":{
       "title":"risk category / assessment",
-      "category":"risk_category_assessments",
+      "qdmCategory":"risk_category_assessments",
       "definition":"risk_category_assessment",
       "status":"",
       "sub_category":"",
@@ -937,7 +937,7 @@
       "not_supported":false},
   "provider_care_experience":{
       "title":"provider care experience",
-      "category":"care_experiences",
+      "qdmCategory":"care_experiences",
       "definition":"provider_care_experience",
       "status":"",
       "sub_category":"provider",
@@ -946,7 +946,7 @@
       "not_supported":false},
   "patient_care_experience":{
       "title":"patient care experience",
-      "category":"care_experiences",
+      "qdmCategory":"care_experiences",
       "definition":"patient_care_experience",
       "status":"",
       "sub_category":"patient",
@@ -955,7 +955,7 @@
       "not_supported":false},
   "preference_provider":{
       "title":"provider preference",
-      "category":"preferences",
+      "qdmCategory":"preferences",
       "definition":"preference_provider",
       "status":"",
       "sub_category":"provider",
@@ -964,7 +964,7 @@
       "not_supported":true},
   "preference_patient":{
       "title":"patient preference",
-      "category":"preferences",
+      "qdmCategory":"preferences",
       "definition":"preference_patient",
       "status":"",
       "sub_category":"patient",
@@ -973,7 +973,7 @@
       "not_supported":true},
   "system_characteristic":{
       "title":"system characteristic",
-      "category":"system_characteristics",
+      "qdmCategory":"system_characteristics",
       "definition":"system_characteristic",
       "status":"",
       "sub_category":"",
@@ -982,7 +982,7 @@
       "not_supported":true},
   "provider_characteristic":{
       "title":"provider characteristic",
-      "category":"provider_characteristics",
+      "qdmCategory":"provider_characteristics",
       "definition":"provider_characteristic",
       "status":"",
       "sub_category":"",
@@ -991,7 +991,7 @@
       "not_supported":true},
   "transfer_from":{
       "title":"transfer, from",
-      "category":"transfers",
+      "qdmCategory":"transfers",
       "definition":"transfer_from",
       "status":"",
       "sub_category":"from",
@@ -1000,7 +1000,7 @@
       "not_supported":false},
   "transfer_to":{
       "title":"transfer, to",
-      "category":"transfers",
+      "qdmCategory":"transfers",
       "definition":"transfer_to",
       "status":"",
       "sub_category":"to",
@@ -1009,7 +1009,7 @@
       "not_supported":false},
   "assessment_performed":{
       "title":"assessment performed",
-      "category":"assessments",
+      "qdmCategory":"assessments",
       "definition":"assessment",
       "status":"performed",
       "sub_category":"",
@@ -1018,7 +1018,7 @@
       "not_supported":false},
   "assessment_recommended":{
       "title":"assessment recommended",
-      "category":"assessments",
+      "qdmCategory":"assessments",
       "definition":"assessment",
       "status":"recommended",
       "sub_category":"",
@@ -1027,7 +1027,7 @@
       "not_supported":false},
   "adverse_event":{
       "title":"adverse event",
-      "category":"adverse_events",
+      "qdmCategory":"adverse_events",
       "definition":"adverse_event",
       "status":"",
       "sub_category":"",
@@ -1036,7 +1036,7 @@
       "not_supported":false},
   "allergy_intolerance":{
       "title":"allergy/intolerance",
-      "category":"allergies_intolerances",
+      "qdmCategory":"allergies_intolerances",
       "definition":"allergy_intolerance",
       "status":"",
       "sub_category":"",
