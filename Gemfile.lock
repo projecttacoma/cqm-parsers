@@ -179,7 +179,6 @@ DEPENDENCIES
   minitest (~> 5.3)
   minitest-reporters
   mongoid (~> 5.0.0)
-  mustache
   rake
   rubocop (~> 0.52.1)
   simplecov
