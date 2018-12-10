@@ -19,6 +19,7 @@ PATH
       memoist (~> 0.9.1)
       mongoid (~> 5.0.0)
       mongoid-tree (~> 2.0.0)
+      mustache
       nokogiri (~> 1.8.5)
       protected_attributes (~> 1.0.5)
       rest-client (~> 1.8.0)
@@ -178,7 +179,6 @@ DEPENDENCIES
   minitest (~> 5.3)
   minitest-reporters
   mongoid (~> 5.0.0)
-  mustache
   rake
   rubocop (~> 0.52.1)
   simplecov
@@ -187,4 +187,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.16.3
+   1.16.6
