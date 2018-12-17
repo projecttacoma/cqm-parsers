@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/program/HL7%20C-CDA
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - application/json
+      Content-Length:
+      - '533'
+      Date:
+      - Mon, 17 Dec 2018 16:08:23 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Q3LZV04v6bIr6hHNtNHn4GsLooFbU2LUPsAjHh758goO9eF5pxgeUIukLCEQKk9ufnoxlHtBs733Wsc=;
+        expires=Mon, 17-Dec-2018 18:08:24 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: '{"name":"HL7 C-CDA","description":"Consolidated Clinical Document Architecture
+        (C-CDA) value sets provide standardized terminology data elements for exchanging
+        templated clinical information (e.g., Allergies, Encounters, Immunizations,
+        Problems, Procedures, etc.) from electronic health records.","release":[{"name":"C-CDA
+        R2.1 2018-06-15","releaseDate":20180615},{"name":"C-CDA R2.1 2018-02-01","releaseDate":20180201},{"name":"C-CDA
+        R2.1 2017-06-09","releaseDate":20170609},{"name":"C-CDA R1.1 2016-06-23","releaseDate":20160623}]}'
+    http_version: 
+  recorded_at: Mon, 17 Dec 2018 16:08:23 GMT
+recorded_with: VCR 3.0.3

@@ -1,0 +1,370 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
+    body:
+      encoding: UTF-8
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '43'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '66'
+      Date:
+      - Mon, 17 Dec 2018 16:08:19 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!KdXW8m1TIB6h74Pm9OGvBt4MxRMcjtAqUg/2f2xIHJNEaxUXSacFzSQ1np3ohIx2baY+c+9AnXCzlfg=;
+        expires=Mon, 17-Dec-2018 18:08:20 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: TGT-1702335-yUdbuBotTmIfIlAovqfagqDVpsmYefa7bHitfcQc2BP2DqlYGi-cas
+    http_version: 
+  recorded_at: Mon, 17 Dec 2018 16:08:20 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1702335-yUdbuBotTmIfIlAovqfagqDVpsmYefa7bHitfcQc2BP2DqlYGi-cas
+    body:
+      encoding: UTF-8
+      string: service=http%3A%2F%2Fumlsks.nlm.nih.gov
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '39'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Mon, 17 Dec 2018 16:08:20 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!2/0vKy6OE4gwQObNtNHn4GsLooFbU5gvQy6aHwSbzGNqIf/jauxmgMVF9y12iYXuVy4WBtbT67TUmbY=;
+        expires=Mon, 17-Dec-2018 18:08:20 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-5088727-UlJOBvhPqhUyyRSCIgZJ-cas
+    http_version: 
+  recorded_at: Mon, 17 Dec 2018 16:08:20 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.1834&ticket=ST-5088727-UlJOBvhPqhUyyRSCIgZJ-cas&version=MU2%20EP%20Update%202014-07-01
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      X-Xss-Protection:
+      - 1; mode=block
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      Set-Cookie:
+      - BIGipServervsacweb_p=!J996H4IbqgZ/SUDm9OGvBt4MxRMcjg52ldmObYB3hWnDSMWIswW+6UgRIwGesM625quhcqnae6ik/1s=;
+        expires=Mon, 17-Dec-2018 18:08:21 GMT; path=/; Httponly; Secure
+      - JSESSIONID=36C439C12A696FA9EBED09DAE094C0F1;path=/vsac;HttpOnly;Secure
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '52900'
+      Date:
+      - Mon, 17 Dec 2018 16:08:21 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.600.1.1834" displayName="Medications Encounter Code Set" version="MU2 EP Update 2014-07-01">
+                <ns0:ConceptList>
+                    <ns0:Concept code="10197000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Psychiatric interview and evaluation (procedure)"/>
+                    <ns0:Concept code="108220007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation AND/OR management - new patient (procedure)"/>
+                    <ns0:Concept code="108221006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation AND/OR management - established patient (procedure)"/>
+                    <ns0:Concept code="108224003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Preventive patient evaluation (procedure)"/>
+                    <ns0:Concept code="108311000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Psychiatric procedure, interview AND/OR consultation (procedure)"/>
+                    <ns0:Concept code="13607009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Manual examination of breast (procedure)"/>
+                    <ns0:Concept code="14736009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="History and physical examination with evaluation and management of patient (procedure)"/>
+                    <ns0:Concept code="165171009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Initial psychiatric evaluation (procedure)"/>
+                    <ns0:Concept code="18091003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Electronystagmography with vertical electrodes (procedure)"/>
+                    <ns0:Concept code="18512000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Individual psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="185349003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Encounter for &quot;check-up&quot; (procedure)"/>
+                    <ns0:Concept code="185463005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Visit out of hours (procedure)"/>
+                    <ns0:Concept code="185465003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Weekend visit (procedure)"/>
+                    <ns0:Concept code="209099002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="History and physical examination with management of domiciliary or rest home patient (procedure)"/>
+                    <ns0:Concept code="210098006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Domiciliary or rest home patient evaluation and management (procedure)"/>
+                    <ns0:Concept code="225967005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Self-care patient education (procedure)"/>
+                    <ns0:Concept code="252592009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Speech audiometry (procedure)"/>
+                    <ns0:Concept code="252624005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evoked oto-acoustic emission measurement (procedure)"/>
+                    <ns0:Concept code="270427003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Patient-initiated encounter (procedure)"/>
+                    <ns0:Concept code="270430005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Provider-initiated encounter (procedure)"/>
+                    <ns0:Concept code="273643004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Neurobehavioral cognitive status examination (assessment scale)"/>
+                    <ns0:Concept code="274803000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Examination of tympanic membrane (procedure)"/>
+                    <ns0:Concept code="277404009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="High frequency tympanometry (procedure)"/>
+                    <ns0:Concept code="278465006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Spontaneous nystagmus (disorder)"/>
+                    <ns0:Concept code="284015009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Auditory evoked potentials monitoring (regime/therapy)"/>
+                    <ns0:Concept code="30346009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation and management of established outpatient in office or other outpatient facility (procedure)"/>
+                    <ns0:Concept code="308335008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Patient encounter procedure (procedure)"/>
+                    <ns0:Concept code="32537008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Psychiatric diagnostic interview, examination, history, mental status and disposition (procedure)"/>
+                    <ns0:Concept code="34651001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Optokinetic nystagmus test, bidirectional, with recording (procedure)"/>
+                    <ns0:Concept code="35025007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Manual pelvic examination (procedure)"/>
+                    <ns0:Concept code="36228007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Ophthalmic examination and evaluation (procedure)"/>
+                    <ns0:Concept code="370803007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation of psychosocial impact on plan of care (procedure)"/>
+                    <ns0:Concept code="37894004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation and management of new outpatient in office or other outpatient facility (procedure)"/>
+                    <ns0:Concept code="385973000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Dialysis care management (procedure)"/>
+                    <ns0:Concept code="386372009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Nutrition management (regime/therapy)"/>
+                    <ns0:Concept code="390906007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Follow-up encounter (procedure)"/>
+                    <ns0:Concept code="397745006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Medical contraindication (finding)"/>
+                    <ns0:Concept code="405096004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Diabetes self-management behavior (observable entity)"/>
+                    <ns0:Concept code="406547006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Urgent follow-up (procedure)"/>
+                    <ns0:Concept code="408983003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Renal care management (procedure)"/>
+                    <ns0:Concept code="410155007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Occupational therapy assessment (procedure)"/>
+                    <ns0:Concept code="410157004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Occupational therapy management (procedure)"/>
+                    <ns0:Concept code="410158009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Physical therapy assessment (procedure)"/>
+                    <ns0:Concept code="410160006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Physical therapy management (procedure)"/>
+                    <ns0:Concept code="410170008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Nutrition care assessment (procedure)"/>
+                    <ns0:Concept code="428119001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Procedure not indicated (situation)"/>
+                    <ns0:Concept code="439708006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Home visit (procedure)"/>
+                    <ns0:Concept code="439952009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation of auditory rehabilitation (procedure)"/>
+                    <ns0:Concept code="440524004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Oscillating tracking test with recording (procedure)"/>
+                    <ns0:Concept code="46662001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Examination of breast (procedure)"/>
+                    <ns0:Concept code="48423005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Acoustic reflex testing (procedure)"/>
+                    <ns0:Concept code="50357006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Evaluation and management of patient at home (procedure)"/>
+                    <ns0:Concept code="53555003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Basic comprehensive audiometry testing (procedure)"/>
+                    <ns0:Concept code="54290001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Positional nystagmus test with recording (procedure)"/>
+                    <ns0:Concept code="63547008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Caloric vestibular test with recording (procedure)"/>
+                    <ns0:Concept code="66902005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Ophthalmic examination and evaluation, follow-up (procedure)"/>
+                    <ns0:Concept code="78318003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="History and physical examination, annual for health maintenance (procedure)"/>
+                    <ns0:Concept code="83607001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Gynecologic examination (procedure)"/>
+                    <ns0:Concept code="8411005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Interactive individual medical psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="86013001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Periodic reevaluation and management of healthy individual (procedure)"/>
+                    <ns0:Concept code="90526000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Initial evaluation and management of healthy individual (procedure)"/>
+                    <ns0:Concept code="90791" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychiatric diagnostic evaluation"/>
+                    <ns0:Concept code="90792" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychiatric diagnostic evaluation with medical services"/>
+                    <ns0:Concept code="90832" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychotherapy, 30 minutes with patient and/or family member"/>
+                    <ns0:Concept code="90834" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychotherapy, 45 minutes with patient and/or family member"/>
+                    <ns0:Concept code="90837" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychotherapy, 60 minutes with patient and/or family member"/>
+                    <ns0:Concept code="90839" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Psychotherapy for crisis; first 60 minutes"/>
+                    <ns0:Concept code="90957" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services monthly, for patients 12-19 years of age to include monitoring for the adequacy of nutrition, assessment of growth and development, and counseling of parents; with 4 or more face-to-face visits by a physician or other qualified health care professional per month"/>
+                    <ns0:Concept code="90958" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services monthly, for patients 12-19 years of age to include monitoring for the adequacy of nutrition, assessment of growth and development, and counseling of parents; with 2-3 face-to-face visits by a physician or other qualified health care professional per month"/>
+                    <ns0:Concept code="90959" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services monthly, for patients 12-19 years of age to include monitoring for the adequacy of nutrition, assessment of growth and development, and counseling of parents; with 1 face-to-face visit by a physician or other qualified health care professional per month"/>
+                    <ns0:Concept code="90960" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services monthly, for patients 20 years of age and older; with 4 or more face-to-face visits by a physician or other qualified health care professional per month"/>
+                    <ns0:Concept code="90962" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services monthly, for patients 20 years of age and older; with 1 face-to-face visit by a physician or other qualified health care professional per month"/>
+                    <ns0:Concept code="90965" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services for home dialysis per full month, for patients 12-19 years of age to include monitoring for the adequacy of nutrition, assessment of growth and development, and counseling of parents"/>
+                    <ns0:Concept code="90966" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="End-stage renal disease (ESRD) related services for home dialysis per full month, for patients 20 years of age and older"/>
+                    <ns0:Concept code="91573000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2013-09" displayName="Tympanometry testing (procedure)"/>
+                    <ns0:Concept code="92002" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Ophthalmological services: medical examination and evaluation with initiation of diagnostic and treatment program; intermediate, new patient"/>
+                    <ns0:Concept code="92004" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Ophthalmological services: medical examination and evaluation with initiation of diagnostic and treatment program; comprehensive, new patient, 1 or more visits"/>
+                    <ns0:Concept code="92012" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Ophthalmological services: medical examination and evaluation, with initiation or continuation of diagnostic and treatment program; intermediate, established patient"/>
+                    <ns0:Concept code="92014" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Ophthalmological services: medical examination and evaluation, with initiation or continuation of diagnostic and treatment program; comprehensive, established patient, 1 or more visits"/>
+                    <ns0:Concept code="92507" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Treatment of speech, language, voice, communication, and/or auditory processing disorder; individual"/>
+                    <ns0:Concept code="92508" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Treatment of speech, language, voice, communication, and/or auditory processing disorder; group, 2 or more individuals"/>
+                    <ns0:Concept code="92526" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Treatment of swallowing dysfunction and/or oral function for feeding"/>
+                    <ns0:Concept code="92541" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Spontaneous nystagmus test, including gaze and fixation nystagmus, with recording"/>
+                    <ns0:Concept code="92542" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Positional nystagmus test, minimum of 4 positions, with recording"/>
+                    <ns0:Concept code="92543" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Caloric vestibular test, each irrigation (binaural, bithermal stimulation constitutes 4 tests), with recording"/>
+                    <ns0:Concept code="92544" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Optokinetic nystagmus test, bidirectional, foveal or peripheral stimulation, with recording"/>
+                    <ns0:Concept code="92545" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Oscillating tracking test, with recording"/>
+                    <ns0:Concept code="92547" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Use of vertical electrodes (List separately in addition to code for primary procedure)"/>
+                    <ns0:Concept code="92548" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Computerized dynamic posturography"/>
+                    <ns0:Concept code="92557" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Comprehensive audiometry threshold evaluation and speech recognition (92553 and 92556 combined)"/>
+                    <ns0:Concept code="92567" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Tympanometry (impedance testing)"/>
+                    <ns0:Concept code="92568" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Acoustic reflex testing, threshold"/>
+                    <ns0:Concept code="92570" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Acoustic immittance testing, includes tympanometry (impedance testing), acoustic reflex threshold testing, and acoustic reflex decay testing"/>
+                    <ns0:Concept code="92585" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Auditory evoked potentials for evoked response audiometry and/or testing of the central nervous system; comprehensive"/>
+                    <ns0:Concept code="92588" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Distortion product evoked otoacoustic emissions; comprehensive diagnostic evaluation (quantitative analysis of outer hair cell function by cochlear mapping, minimum of 12 frequencies), with interpretation and report"/>
+                    <ns0:Concept code="92626" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Evaluation of auditory rehabilitation status; first hour"/>
+                    <ns0:Concept code="96116" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Neurobehavioral status exam (clinical assessment of thinking, reasoning and judgment, eg, acquired knowledge, attention, language, memory, planning and problem solving, and visual spatial abilities), per hour of the psychologist's or physician's time, both face-to-face time with the patient and time interpreting test results and preparing the report"/>
+                    <ns0:Concept code="96150" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Health and behavior assessment (eg, health-focused clinical interview, behavioral observations, psychophysiological monitoring, health-oriented questionnaires), each 15 minutes face-to-face with the patient; initial assessment"/>
+                    <ns0:Concept code="96151" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Health and behavior assessment (eg, health-focused clinical interview, behavioral observations, psychophysiological monitoring, health-oriented questionnaires), each 15 minutes face-to-face with the patient; re-assessment"/>
+                    <ns0:Concept code="96152" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Health and behavior intervention, each 15 minutes, face-to-face; individual"/>
+                    <ns0:Concept code="97001" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Physical therapy evaluation"/>
+                    <ns0:Concept code="97002" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Physical therapy re-evaluation"/>
+                    <ns0:Concept code="97003" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Occupational therapy evaluation"/>
+                    <ns0:Concept code="97004" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Occupational therapy re-evaluation"/>
+                    <ns0:Concept code="97110" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Therapeutic procedure, 1 or more areas, each 15 minutes; therapeutic exercises to develop strength and endurance, range of motion and flexibility"/>
+                    <ns0:Concept code="97140" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Manual therapy techniques (eg, mobilization/ manipulation, manual lymphatic drainage, manual traction), 1 or more regions, each 15 minutes"/>
+                    <ns0:Concept code="97532" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Development of cognitive skills to improve attention, memory, problem solving (includes compensatory training), direct (one-on-one) patient contact, each 15 minutes"/>
+                    <ns0:Concept code="97802" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Medical nutrition therapy; initial assessment and intervention, individual, face-to-face with the patient, each 15 minutes"/>
+                    <ns0:Concept code="97803" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Medical nutrition therapy; re-assessment and intervention, individual, face-to-face with the patient, each 15 minutes"/>
+                    <ns0:Concept code="97804" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Medical nutrition therapy; group (2 or more individual(s)), each 30 minutes"/>
+                    <ns0:Concept code="98960" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Education and training for patient self-management by a qualified, nonphysician health care professional using a standardized curriculum, face-to-face with the patient (could include caregiver/family) each 30 minutes; individual patient"/>
+                    <ns0:Concept code="98961" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Education and training for patient self-management by a qualified, nonphysician health care professional using a standardized curriculum, face-to-face with the patient (could include caregiver/family) each 30 minutes; 2-4 patients"/>
+                    <ns0:Concept code="98962" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Education and training for patient self-management by a qualified, nonphysician health care professional using a standardized curriculum, face-to-face with the patient (could include caregiver/family) each 30 minutes; 5-8 patients"/>
+                    <ns0:Concept code="99201" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of a new patient, which requires these 3 key components: A problem focused history; A problem focused examination; Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are self limited or minor. Typically, 10 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99202" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of a new patient, which requires these 3 key components: An expanded problem focused history; An expanded problem focused examination; Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low to moderate severity. Typically, 20 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99203" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of a new patient, which requires these 3 key components: A detailed history; A detailed examination; Medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate severity. Typically, 30 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99204" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 45 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99205" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 60 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99212" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A problem focused history; A problem focused examination; Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are self limited or minor. Typically, 10 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99213" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: An expanded problem focused history; An expanded problem focused examination; Medical decision making of low complexity. Counseling and coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low to moderate severity. Typically, 15 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99214" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A detailed history; A detailed examination; Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 25 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99215" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A comprehensive history; A comprehensive examination; Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 40 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99324" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of a new patient, which requires these 3 key components: A problem focused history; A problem focused examination; and Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low severity. Typically, 20 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99325" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of a new patient, which requires these 3 key components: An expanded problem focused history; An expanded problem focused examination; and Medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate severity. Typically, 30 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99326" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of a new patient, which requires these 3 key components: A detailed history; A detailed examination; and Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 45 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99327" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of high severity. Typically, 60 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99328" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the patient is unstable or has developed a significant new problem requiring immediate physician attention. Typically, 75 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99334" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A problem focused interval history; A problem focused examination; Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are self-limited or minor. Typically, 15 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99335" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: An expanded problem focused interval history; An expanded problem focused examination; Medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low to moderate severity. Typically, 25 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99336" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A detailed interval history; A detailed examination; Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 40 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99337" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Domiciliary or rest home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A comprehensive interval history; A comprehensive examination; Medical decision making of moderate to high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. The patient may be unstable or may have developed a significant new problem requiring immediate physician attention. Typically, 60 minutes are spent with the patient and/or family or caregiver."/>
+                    <ns0:Concept code="99341" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of a new patient, which requires these 3 key components: A problem focused history; A problem focused examination; and Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low severity. Typically, 20 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99342" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of a new patient, which requires these 3 key components: An expanded problem focused history; An expanded problem focused examination; and Medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate severity. Typically, 30 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99343" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of a new patient, which requires these 3 key components: A detailed history; A detailed examination; and Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 45 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99344" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of high severity. Typically, 60 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99345" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of a new patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the patient is unstable or has developed a significant new problem requiring immediate physician attention. Typically, 75 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99347" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A problem focused interval history; A problem focused examination; Straightforward medical decision making. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are self limited or minor. Typically, 15 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99348" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: An expanded problem focused interval history; An expanded problem focused examination; Medical decision making of low complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of low to moderate severity. Typically, 25 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99349" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A detailed interval history; A detailed examination; Medical decision making of moderate complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are moderate to high severity. Typically, 40 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99350" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Home visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A comprehensive interval history; A comprehensive examination; Medical decision making of moderate to high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. The patient may be unstable or may have developed a significant new problem requiring immediate physician attention. Typically, 60 minutes are spent face-to-face with the patient and/or family."/>
+                    <ns0:Concept code="99495" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Transitional Care Management Services with the following required elements: Communication (direct contact, telephone, electronic) with the patient and/or caregiver within 2 business days of discharge Medical decision making of at least moderate complexity during the service period Face-to-face visit, within 14 calendar days of discharge"/>
+                    <ns0:Concept code="99496" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2014" displayName="Transitional Care Management Services with the following required elements: Communication (direct contact, telephone, electronic) with the patient and/or caregiver within 2 business days of discharge Medical decision making of high complexity during the service period Face-to-face visit, within 7 calendar days of discharge"/>
+                    <ns0:Concept code="G0101" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Cervical or vaginal cancer screening; pelvic and clinical breast examination"/>
+                    <ns0:Concept code="G0108" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Diabetes outpatient self-management training services, individual, per 30 minutes"/>
+                    <ns0:Concept code="G0270" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Medical nutrition therapy; reassessment and subsequent intervention(s) following second referral in same year for change in diagnosis, medical condition or treatment regimen (including additional hours needed for renal disease), individual, face to face with the patient, each 15 minutes"/>
+                    <ns0:Concept code="G0402" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Initial preventive physical examination; face-to-face visit, services limited to new beneficiary during the first 12 months of medicare enrollment"/>
+                    <ns0:Concept code="G0438" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Annual wellness visit; includes a personalized prevention plan of service (pps), initial visit"/>
+                    <ns0:Concept code="G0439" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2014" displayName="Annual wellness visit, includes a personalized prevention plan of service (pps), subsequent visit"/>
+                </ns0:ConceptList>
+                <ns0:Source>Quality Insights of Pennsylvania</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.600.1.1608:Encounters Meds HCPCS),(2.16.840.1.113883.3.600.1.1609:Encounter Medications CPT),(2.16.840.1.113883.3.600.1.1917:Medication SNOMED Encounter Codes)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2014-05-10</ns0:RevisionDate>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Meaningful Use Measures">
+                    <ns0:Keyword>CY 2014 EP</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Identifier">
+                    <ns0:Keyword>68</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Title">
+                    <ns0:Keyword>Documentation of Current Medications in the Medical Record</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Status">
+                    <ns0:Keyword>InProgress</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Finalized Time"/>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="GUID">
+                    <ns0:Keyword>9a032d9c-3d9b-11e1-8634-00237d5bf174</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Description">
+                    <ns0:Keyword>Percentage of visits for patients aged 18 years and older for which the eligible professional attests to documenting a list of current medications using all immediate resources available on the date of the encounter.  This list must include ALL known prescriptions, over-the-counters, herbals, and vitamin/mineral/dietary (nutritional) supplements AND must contain the medications' name, dosage, frequency and route of administration.</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Measure Steward">
+                    <ns0:Keyword>Centers for Medicare &amp; Medicaid Services</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Endorsed By">
+                    <ns0:Keyword>National Quality Forum</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Measure Type">
+                    <ns0:Keyword>PROCESS</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="CMS eMeasure ID">
+                    <ns0:Keyword>CMS68v4</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Copyright">
+                    <ns0:Keyword>Limited proprietary coding is contained in the measure specifications for convenience. Users of the proprietary code sets should obtain all necessary licenses from the owners of these code sets. Quality Insights of Pennsylvania disclaims all liability for use or accuracy of any Current Procedural Terminology (CPT [R</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="CATEGORY">
+                    <ns0:Keyword>Encounter</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="NQF Number">
+                    <ns0:Keyword>0419</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="Measure Developer">
+                    <ns0:Keyword>Quality Insights of Pennsylvania</ns0:Keyword>
+                </ns0:Group>
+                <ns0:Group ID="1" sourceOrganization="National Quality Forum" displayName="eMeasure Version number">
+                    <ns0:Keyword>4</ns0:Keyword>
+                </ns0:Group>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 17 Dec 2018 16:08:21 GMT
+recorded_with: VCR 3.0.3
