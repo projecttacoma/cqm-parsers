@@ -1,4 +1,4 @@
-require 'simplecov'
+require_relative './simplecov_init'
 require 'factory_girl'
 require 'erubis'
 require 'active_support'
