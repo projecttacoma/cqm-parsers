@@ -2,7 +2,7 @@ require 'test_helper'
 require 'vcr_setup.rb'
 
 # Tests that ensure VSAC authentication related situations are handled
-class VSACAPIAuthTest < ActiveSupport::TestCase
+class VSACAPIAuthTest < Minitest::Test
 
   test 'valid username and password provided' do
     VCR.use_cassette("vsac_auth_good_credentials") do

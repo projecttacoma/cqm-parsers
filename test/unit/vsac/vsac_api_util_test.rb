@@ -2,7 +2,7 @@ require 'test_helper'
 require 'vcr_setup.rb'
 
 # Tests that ensure VSAC utility functions fetch and parse correct data.
-class VSACAPIUtilTest < ActiveSupport::TestCase
+class VSACAPIUtilTest < Minitest::Test
   setup do
     @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'])
   end

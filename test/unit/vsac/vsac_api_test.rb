@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'vcr_setup.rb'
 
-class VSACApiTest < ActiveSupport::TestCase
+class VSACApiTest < Minitest::Test
   test 'api with insufficent config' do
     assert_raise Util::VSAC::VSACArgumentError do
       Util::VSAC::VSACAPI.new(config: {})
