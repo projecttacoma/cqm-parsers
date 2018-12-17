@@ -3,7 +3,6 @@ require 'uri'
 
 module Util
   module VSAC
-
     # Generic VSAC related exception.
     class VSACError < StandardError
     end
@@ -80,16 +79,12 @@ module Util
       # * config -
       def initialize(options)
         # check that :config exists and has needed fields
-        if options[:config].nil?
-          raise VSACArgumentError.new("Required param :config is missing or empty.")
-        else
-          symbolized_config = options[:config].symbolize_keys
-          if check_config symbolized_config
-            @config = symbolized_config
-          else
-            raise VSACArgumentError.new("Required param :config is missing required URLs.")
-          end
+        raise VSACArgumentError.new("Required param :config is missing or empty.") if options[:config].nil?
+        symbolized_config = options[:config].symbolize_keys
+        unless check_config symbolized_config
+          raise VSACArgumentError.new("Required param :config is missing required URLs.")
         end
+        @config = symbolized_config
 
         # if a ticket_granting_ticket was passed in, check it and raise errors if found
         # username and password will be ignored
@@ -106,7 +101,7 @@ module Util
 
           # ticket granting ticket looks good
           @ticket_granting_ticket = { ticket: provided_ticket_granting_ticket[:ticket],
-            expires: provided_ticket_granting_ticket[:expires] }
+                                      expires: provided_ticket_granting_ticket[:expires] }
 
         # if username and password were provided use them to get a ticket granting ticket
         elsif !options[:username].nil? && !options[:password].nil?
@@ -129,7 +124,7 @@ module Util
           profiles << profile.text
         end
 
-        return profiles
+        profiles
       end
 
       ##
@@ -146,7 +141,7 @@ module Util
           program_names << program['name']
         end
 
-        return program_names
+        program_names
       end
 
       ##
@@ -192,15 +187,12 @@ module Util
 
         begin
           # parse json response and return it
-          parsedResponse = JSON.parse(RestClient.get("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}/latest%20profile"))
+          parsed_response = JSON.parse(RestClient.get("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}/latest%20profile"))
 
           # As of 5/17/18 VSAC does not return 404 when an invalid profile is provided. It just doesnt fill the name
           # attribute in the 200 response. We need to check this.
-          if !parsedResponse['name'].nil?
-            return parsedResponse['name']
-          else
-            raise VSACProgramNotFoundError.new(program)
-          end
+          raise VSACProgramNotFoundError.new(program) if parsed_response['name'].nil?
+          return parsed_response['name']
 
         # keeping this rescue block in case the API is changed to return 404 for invalid profile
         rescue RestClient::ResourceNotFound
@@ -225,7 +217,7 @@ module Util
           releases << release['name']
         end
 
-        return releases
+        releases
       end
 
       ##
@@ -236,24 +228,24 @@ module Util
         params = { id: oid }
 
         # release parameter, should be used moving forward
-        if !options[:release].nil?
+        unless options[:release].nil?
           params[:release] = options[:release]
         end
 
         # profile parameter, may be needed for getting draft value sets
         if !options[:profile].nil?
           params[:profile] = options[:profile]
-          if !options[:include_draft].nil?
-            params[:includeDraft] = if !!options[:include_draft] then 'yes' else 'no' end
+          unless options[:include_draft].nil?
+            params[:includeDraft] = !options[:include_draft].nil? ? 'yes' : 'no'
           end
         else
-          if !options[:include_draft].nil?
+          unless options[:include_draft].nil?
             raise VSACArgumentError.new("Option :include_draft requires :profile to be provided.")
           end
         end
 
         # version parameter, rarely used
-        if !options[:version].nil?
+        unless options[:version].nil?
           params[:version] = options[:version]
         end
 
@@ -289,23 +281,19 @@ module Util
       end
 
       def get_ticket_granting_ticket(username, password)
-        begin
-          ticket = RestClient.post("#{@config[:auth_url]}/Ticket", username: username, password: password)
-          return { ticket: String.new(ticket), expires: Time.now + 8.hours }
-        rescue RestClient::Unauthorized
-          raise VSACInvalidCredentialsError.new
-        end
+        ticket = RestClient.post("#{@config[:auth_url]}/Ticket", username: username, password: password)
+        return { ticket: String.new(ticket), expires: Time.now + 8.hours }
+      rescue RestClient::Unauthorized
+        raise VSACInvalidCredentialsError.new
       end
 
       # Checks to ensure the API config has all necessary fields
       def check_config(config)
-        return config != nil &&
-               !config[:auth_url].nil? &&
-               !config[:content_url].nil? &&
-               !config[:utility_url].nil?
+        !config.nil? &&
+          !config[:auth_url].nil? &&
+          !config[:content_url].nil? &&
+          !config[:utility_url].nil?
       end
-
     end
-
   end
 end
