@@ -1,3 +1,6 @@
+[![codecov](https://codecov.io/gh/projecttacoma/cqm-parsers/branch/master/graph/badge.svg)](https://codecov.io/gh/projecttacoma/cqm-parsers)
+
+
 cqm-parsers
 ===========
 
