@@ -124,7 +124,7 @@ module Util
           profiles << profile.text
         end
 
-        profiles
+        return profiles
       end
 
       ##
@@ -141,7 +141,7 @@ module Util
           program_names << program['name']
         end
 
-        program_names
+        return program_names
       end
 
       ##
@@ -217,7 +217,7 @@ module Util
           releases << release['name']
         end
 
-        releases
+        return releases
       end
 
       ##
@@ -289,10 +289,10 @@ module Util
 
       # Checks to ensure the API config has all necessary fields
       def check_config(config)
-        !config.nil? &&
-          !config[:auth_url].nil? &&
-          !config[:content_url].nil? &&
-          !config[:utility_url].nil?
+        return !config.nil? &&
+               !config[:auth_url].nil? &&
+               !config[:content_url].nil? &&
+               !config[:utility_url].nil?
       end
     end
   end
