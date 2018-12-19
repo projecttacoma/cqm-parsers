@@ -1,4 +1,4 @@
-source "https://rubygems.org"
+source 'https://rubygems.org'
 
 gemspec :development_group => :test
 
@@ -17,8 +17,9 @@ end
 
 group :test do
   gem 'factory_girl', '~> 4.1.0'
-  gem "tailor", '~> 1.1.2'
-  gem "cane", '~> 2.3.0'
+  gem 'tailor', '~> 1.1.2'
+  gem 'cane', '~> 2.3.0'
+  gem 'codecov'
   gem 'simplecov', :require => false
   gem 'webmock'
   gem 'minitest', '~> 5.3'
