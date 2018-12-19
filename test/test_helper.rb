@@ -1,4 +1,4 @@
-require 'simplecov'
+require_relative './simplecov_init'
 require 'factory_girl'
 require 'erubis'
 require 'active_support'
@@ -105,3 +105,14 @@ end
 
 collection_fixtures('records', '_id')
 collection_fixtures('measures')
+
+# vsac-api related
+APP_CONFIG = {'vsac'=> {'auth_url'=> 'https://vsac.nlm.nih.gov/vsac/ws',
+                        'content_url' => 'https://vsac.nlm.nih.gov/vsac/svs',
+                        'utility_url' => 'https://vsac.nlm.nih.gov/vsac',
+                        'default_profile' => 'MU2 Update 2016-04-01'}}
+
+def get_ticket_granting_ticket
+  api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: ENV['VSAC_USERNAME'], password: ENV['VSAC_PASSWORD'])
+  return api.ticket_granting_ticket
+end
