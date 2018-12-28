@@ -1,8 +1,8 @@
 module Measures
-  class ValueSetException < Exception
+  class ValueSetException < StandardError
   end
-  class HQMFException < Exception
+  class HQMFException < StandardError
   end
-  class MeasureLoadingException < Exception
+  class MeasureLoadingException < StandardError
   end
 end 

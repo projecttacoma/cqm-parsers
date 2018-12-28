@@ -1,18 +1,14 @@
 require 'cqm/models'
-require 'pry'
 
 module Measures
-  # Utility class for loading measure definitions into the database
-  class Loader
+  class HQMFMeasureLoader
 
-    def self.load_hqmf_cql_model_json(hqmf_model_hash, user, cql_artifacts, measure_scoring)
-      # measure = CqlMeasure.new
+    def self.create_measure_model(hqmf_model_hash, measure_scoring)
       measure = CQM::Measure.new
-      # measure.bundle = user.bundle if (user && user.respond_to?(:bundle)) TODO: WTF??
 
-      # Add metadata
       measure.measure_attributes = hqmf_model_hash[:attributes]
       measure.main_cql_library = hqmf_model_hash[:cql_measure_library]
+      measure.hqmf_id = hqmf_model_hash[:hqmf_id]
       measure.hqmf_set_id = hqmf_model_hash[:hqmf_set_id]
       measure.hqmf_version_number = hqmf_model_hash[:hqmf_version_number]
       measure.cms_id = hqmf_model_hash[:cms_id]
@@ -43,18 +39,7 @@ module Measures
         measure.population_sets.each { |population_set| population_set.observations << observation }
       end
 
-      # measure.measure_id = measure_details["nqf_id"] || hqmf_model.id #TODO: ??
-      # measure.type = measure_details["type"] #TODO: ??
-      # measure.category = measure_details["category"] || "Miscellaneous" #TODO: ??
-      # measure.episode_ids = measure_details["episode_ids"] #TODO: ??
-      # puts "\tWARNING: Episode of care does not align with episode ids existance" if ((!measure.episode_ids.nil? && measure.episode_ids.length > 0) ^ measure.episode_of_care)
-      # puts "\tCould not find episode ids #{measure.episode_ids} in measure #{measure.cms_id || measure.measure_id}" if (measure.episode_ids && measure.episode_of_care && (measure.episode_ids - measure.source_data_criteria.keys).length > 0)
-      # measure.value_set_oids = measure_oids #TODO: ?? note replace measure_oids with cql_artifacts[:all_value_set_oids]
-      # measure.value_set_oid_version_objects = value_set_oid_version_objects #TODO: ?? note replace value_set_oid_version_objects with cql_artifacts[:value_set_oid_version_objects]
-      # measure.measure_id = hqmf_model.id #TODO: ??
-      # measure.user = user if user #TODO: Add this field in bonnie or something
-
-      measure
+      return measure
     end
 
     private
@@ -64,15 +49,13 @@ module Measures
         id: bonnie_stratification[:id],
         statement: CQM::StatementReference.new(
           library_name: main_cql_library,
-          statement_name: get_cql_statement_for_bonnie_population_key(populations_cql_map, bonnie_stratification[:STRAT])
+          statement_name: get_cql_statement_for_population_key(populations_cql_map, bonnie_stratification[:STRAT])
         )
       )
     end
 
-    # convert populations, skipping strats to be added later
     private
     def self.convert_population_to_population_set(bonnie_population, measure_scoring, main_cql_library, populations_cql_map)
-
       population_set = CQM::PopulationSet.new(
         title: bonnie_population[:title],
         id: bonnie_population[:id]
@@ -85,7 +68,7 @@ module Measures
         if ![:id, :title, :OBSERV, :supplemental_data_elements].include?(population_name)
           population_map[population_name] = CQM::StatementReference.new(
             library_name: main_cql_library,
-            statement_name: get_cql_statement_for_bonnie_population_key(populations_cql_map, population_key)
+            statement_name: get_cql_statement_for_population_key(populations_cql_map, population_key)
           )
         end
       end
@@ -122,7 +105,7 @@ module Measures
     end
 
     private
-    def self.get_cql_statement_for_bonnie_population_key(populations_cql_map, population_key)
+    def self.get_cql_statement_for_population_key(populations_cql_map, population_key)
       if population_key.include?('_')
         pop_name, pop_index = population_key.split('_')
         pop_index = pop_index.to_i
@@ -133,23 +116,6 @@ module Measures
 
       populations_cql_map[pop_name.to_sym][pop_index]
     end
-
-    # def self.parse(xml_contents)
-    #   doc = xml_contents.kind_of?(Nokogiri::XML::Document) ? xml_contents : Nokogiri::XML(xml_contents)
-    #   doc
-    # end
-
-
-
-    # def self.get_parser(xml_contents)
-    #   doc = self.parse(xml_contents)
-    #   PARSERS.each do |p|
-    #     if p.valid? doc
-    #       return p.new
-    #     end
-    #   end
-    #   raise "unknown document type"
-    # end
 
   end
 end

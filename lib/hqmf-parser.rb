@@ -114,3 +114,15 @@ require_relative 'qrda-import/data-element-importers/substance_administered_impo
 require_relative 'qrda-import/patient_importer.rb'
 require_relative 'ext/data_element.rb'
 require_relative 'ext/code.rb'
+
+
+require_relative 'measureloader/cql_loader.rb'
+require_relative 'measureloader/elm_dependency_finder.rb'
+require_relative 'measureloader/elm_parser.rb'
+require_relative 'measureloader/exceptions.rb'
+require_relative 'measureloader/hqmf_measure_loader.rb'
+require_relative 'measureloader/mat_measure_files.rb'
+require_relative 'measureloader/mongo_hash_key_wrapper.rb'
+require_relative 'measureloader/value_set_helpers.rb'
+require_relative 'measureloader/value_set_loader.rb'
+require_relative 'measureloader/vsacapitemp.rb'

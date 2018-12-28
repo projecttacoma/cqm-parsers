@@ -1,0 +1,1107 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<QualityMeasureDocument xmlns="urn:hl7-org:v3" xmlns:cql-ext="urn:hhs-cql:hqmf-n1-extensions:v1"
+                        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+         
+      <!--
+            **************************************************************
+            Measure Details Section
+            **************************************************************
+        -->
+         
+      <typeId extension="POQM_HD000001UV02" root="2.16.840.1.113883.1.3"/>
+   <templateId>
+      <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.1.2"/>
+   </templateId>
+   <id root="40280382-5fa6-fe85-0160-0918e74d2075"/>
+   <code code="57024-2" codeSystem="2.16.840.1.113883.6.1">
+      <displayName value="Health Quality Measure Document"/>
+   </code>
+   <title value="Diabetes: Medical Attention for Nephropathy"/>
+   <text
+         value="The percentage of patients 18-75 years of age with diabetes who had a nephropathy screening test or evidence of nephropathy during the measurement period"/>
+   <statusCode code="COMPLETED"/>
+   <setId root="7b2a9277-43da-4d99-9bee-6ac271a07747"/>
+   <versionNumber value="6.1.001"/>
+   <author>
+      <responsibleParty classCode="ASSIGNED">
+         <representedResponsibleOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id>
+               <item root="2.16.840.1.113883.3.464"/>
+            </id>
+            <name>
+               <item>
+                  <part value="National Committee for Quality Assurance"/>
+               </item>
+            </name>
+         </representedResponsibleOrganization>
+      </responsibleParty>
+   </author>
+   <custodian>
+      <responsibleParty classCode="ASSIGNED">
+         <representedResponsibleOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id>
+               <item root="2.16.840.1.113883.3.464"/>
+            </id>
+            <name>
+               <item>
+                  <part value="National Committee for Quality Assurance"/>
+               </item>
+            </name>
+         </representedResponsibleOrganization>
+      </responsibleParty>
+   </custodian>
+   <verifier>
+      <responsibleParty classCode="ASSIGNED">
+         <representedResponsibleOrganization classCode="ORG" determinerCode="INSTANCE">
+            <id>
+               <item root="2.16.840.1.113883.3.560"/>
+            </id>
+            <name>
+               <item>
+                  <part value="National Quality Forum"/>
+               </item>
+            </name>
+         </representedResponsibleOrganization>
+      </responsibleParty>
+   </verifier>
+   <!--Face-to-Face Interaction-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.101.12.1048"/>
+         <title value="Face-to-Face Interaction"/>
+      </valueSet>
+   </definition>
+   <!--Dialysis Services-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1013"/>
+         <title value="Dialysis Services"/>
+      </valueSet>
+   </definition>
+   <!--Kidney Transplant-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1012"/>
+         <title value="Kidney Transplant"/>
+      </valueSet>
+   </definition>
+   <!--ONC Administrative Sex-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113762.1.4.1"/>
+         <title value="ONC Administrative Sex"/>
+      </valueSet>
+   </definition>
+   <!--ESRD Monthly Outpatient Services-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1014"/>
+         <title value="ESRD Monthly Outpatient Services"/>
+      </valueSet>
+   </definition>
+   <!--ACE Inhibitor or ARB-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.526.3.1139"/>
+         <title value="ACE Inhibitor or ARB"/>
+      </valueSet>
+   </definition>
+   <!--Kidney Failure-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1028"/>
+         <title value="Kidney Failure"/>
+      </valueSet>
+   </definition>
+   <!--Preventive Care Services - Established Office Visit, 18 and Up-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.101.12.1025"/>
+         <title value="Preventive Care Services - Established Office Visit, 18 and Up"/>
+      </valueSet>
+   </definition>
+   <!--Diabetic Nephropathy-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1004"/>
+         <title value="Diabetic Nephropathy"/>
+      </valueSet>
+   </definition>
+   <!--Home Healthcare Services-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.101.12.1016"/>
+         <title value="Home Healthcare Services"/>
+      </valueSet>
+   </definition>
+   <!--Hospice care ambulatory-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113762.1.4.1108.15"/>
+         <title value="Hospice care ambulatory"/>
+      </valueSet>
+   </definition>
+   <!--Other Services Related to Dialysis-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1015"/>
+         <title value="Other Services Related to Dialysis"/>
+      </valueSet>
+   </definition>
+   <!--Race-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.114222.4.11.836"/>
+         <title value="Race"/>
+      </valueSet>
+   </definition>
+   <!--Office Visit-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.101.12.1001"/>
+         <title value="Office Visit"/>
+      </valueSet>
+   </definition>
+   <!--Hypertensive Chronic Kidney Disease-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1017"/>
+         <title value="Hypertensive Chronic Kidney Disease"/>
+      </valueSet>
+   </definition>
+   <!--Payer-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.114222.4.11.3591"/>
+         <title value="Payer"/>
+      </valueSet>
+   </definition>
+   <!--Encounter Inpatient-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.666.5.307"/>
+         <title value="Encounter Inpatient"/>
+      </valueSet>
+   </definition>
+   <!--Glomerulonephritis and Nephrotic Syndrome-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1018"/>
+         <title value="Glomerulonephritis and Nephrotic Syndrome"/>
+      </valueSet>
+   </definition>
+   <!--Dialysis Education-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1016"/>
+         <title value="Dialysis Education"/>
+      </valueSet>
+   </definition>
+   <!--Annual Wellness Visit-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.526.3.1240"/>
+         <title value="Annual Wellness Visit"/>
+      </valueSet>
+   </definition>
+   <!--Vascular Access for Dialysis-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1011"/>
+         <title value="Vascular Access for Dialysis"/>
+      </valueSet>
+   </definition>
+   <!--Ethnicity-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.114222.4.11.837"/>
+         <title value="Ethnicity"/>
+      </valueSet>
+   </definition>
+   <!--Urine Protein Tests-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.109.12.1024"/>
+         <title value="Urine Protein Tests"/>
+      </valueSet>
+   </definition>
+   <!--Diabetes-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.103.12.1001"/>
+         <title value="Diabetes"/>
+      </valueSet>
+   </definition>
+   <!--Preventive Care Services-Initial Office Visit, 18 and Up-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.464.1003.101.12.1023"/>
+         <title value="Preventive Care Services-Initial Office Visit, 18 and Up"/>
+      </valueSet>
+   </definition>
+   <!--Proteinuria-->
+     	 <definition>
+      <valueSet classCode="OBS" moodCode="DEF">
+         <id root="2.16.840.1.113883.3.526.3.1003"/>
+         <title value="Proteinuria"/>
+      </valueSet>
+   </definition>
+   <!--Discharge to home for hospice care (procedure)
+			-
+			CODE:/CodeSystem/SNOMEDCT/Version/2017-03/Code/428361000124107/Info-->
+      <definition>
+      <cql-ext:code code="428361000124107" codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMEDCT"
+                    codeSystemVersion="2017-03">
+         <displayName value="Discharge to home for hospice care (procedure)"/>
+      </cql-ext:code>
+   </definition>
+   <!--Discharge to healthcare facility for hospice care (procedure)
+			-
+			CODE:/CodeSystem/SNOMEDCT/Version/2017-03/Code/428371000124100/Info-->
+      <definition>
+      <cql-ext:code code="428371000124100" codeSystem="2.16.840.1.113883.6.96"
+                    codeSystemName="SNOMEDCT"
+                    codeSystemVersion="2017-03">
+         <displayName value="Discharge to healthcare facility for hospice care (procedure)"/>
+      </cql-ext:code>
+   </definition>
+   <relatedDocument typeCode="COMP">
+      <expressionDocument>
+         <id root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+         <text mediaType="text/cql">
+            <reference value="DiabetesMedicalAttentionforNephropathy-6.1.001.cql"/>
+            <translation mediaType="application/elm+xml">
+               <reference value="DiabetesMedicalAttentionforNephropathy-6.1.001.xml"/>
+            </translation>
+            <translation mediaType="application/elm+json">
+               <reference value="DiabetesMedicalAttentionforNephropathy-6.1.001.json"/>
+            </translation>
+         </text>
+      </expressionDocument>
+   </relatedDocument>
+   <relatedDocument typeCode="COMP">
+      <expressionDocument>
+         <id root="402803825fa6fe85015fb1db553401c6"/>
+         <text mediaType="text/cql">
+            <reference value="MATGlobalCommonFunctions-1.0.000.cql"/>
+            <translation mediaType="application/elm+xml">
+               <reference value="MATGlobalCommonFunctions-1.0.000.xml"/>
+            </translation>
+            <translation mediaType="application/elm+json">
+               <reference value="MATGlobalCommonFunctions-1.0.000.json"/>
+            </translation>
+         </text>
+      </expressionDocument>
+   </relatedDocument>
+   <relatedDocument typeCode="COMP">
+      <expressionDocument>
+         <id root="402803825fa6fe85015fb735add70650"/>
+         <text mediaType="text/cql">
+            <reference value="Hospice-0.1.000.cql"/>
+            <translation mediaType="application/elm+xml">
+               <reference value="Hospice-0.1.000.xml"/>
+            </translation>
+            <translation mediaType="application/elm+json">
+               <reference value="Hospice-0.1.000.json"/>
+            </translation>
+         </text>
+      </expressionDocument>
+   </relatedDocument>
+   <controlVariable>
+      <measurePeriod>
+         <id extension="measureperiod" root="98538589-5cd5-4d6f-b47e-965be2044109"/>
+         <code code="MSRTP" codeSystem="2.16.840.1.113883.5.4">
+            <originalText value="Measurement Period"/>
+         </code>
+         <value xsi:type="PIVL_TS">
+            <phase highClosed="true" lowClosed="true">
+               <low value="20170101"/>
+               <width unit="a" value="1" xsi:type="PQ"/>
+            </phase>
+            <period unit="a" value="1"/>
+         </value>
+      </measurePeriod>
+   </controlVariable>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText value="eCQM Identifier (Measure Authoring Tool)"/>
+         </code>
+         <value mediaType="text/plain" value="134" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code nullFlavor="OTH">
+            <originalText value="NQF Number"/>
+         </code>
+         <value mediaType="text/plain" value="0062" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="COPY" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Copyright"/>
+         </code>
+         <value mediaType="text/plain"
+                value="This Physician Performance Measure (Measure) and related data specifications were developed by the National Committee for Quality Assurance (NCQA). The Measure is copyrighted but can be reproduced and distributed, without modification, for noncommercial purposes (eg, use by healthcare providers in connection with their practices) without obtaining approval from NCQA. Commercial use is defined as the sale, licensing, or distribution of the Measure for commercial gain, or incorporation of the Measure into a product or service that is sold, licensed or distributed for commercial gain. All commercial uses must be approved by NCQA and are subject to a license at the discretion of NCQA. NCQA is not responsible for any use of the Measure. NCQA makes no representations, warranties, or endorsement about the quality of any organization or physician that uses or reports performance measures and NCQA has no liability to anyone who relies on such measures or specifications. (C) 2012-2017 National Committee for Quality Assurance. All Rights Reserved. &#xA;&#xA;Limited proprietary coding is contained in the Measure specifications for user convenience. Users of proprietary code sets should obtain all necessary licenses from the owners of the code sets. NCQA disclaims all liability for use or accuracy of any CPT or other codes contained in the specifications.&#xA;&#xA;CPT(R) contained in the Measure specifications is copyright 2004-2016 American Medical Association. LOINC(R) copyright 2004-2016 Regenstrief Institute, Inc. This material contains SNOMED Clinical Terms(R) (SNOMED CT[R]) copyright 2004-2016 International Health Terminology Standards Development Organisation. ICD-10 copyright 2016 World Health Organization. All Rights Reserved.&#xA;&#xA;The American Hospital Association holds a copyright to the National Uniform Billing Committee (NUBC) codes contained in the measure specifications. The NUBC codes in the specifications are included with the permission of the AHA. The NUBC codes contained in the specifications may be used by health plans and other health care delivery organizations for the purpose of calculating and reporting Measure results or using Measure results for their internal quality improvement purposes. All other uses of the NUBC codes require a license from the AHA. Anyone desiring to use the NUBC codes in a commercial product to generate Measure results, or for any other commercial use, must obtain a commercial use license directly from the AHA. To inquire about licensing, contact ub04@healthforum.com."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DISC" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Disclaimer"/>
+         </code>
+         <value mediaType="text/plain"
+                value="The performance Measure is not a clinical guideline and does not establish a standard of medical care, and has not been tested for all potential applications. THE MEASURE AND SPECIFICATIONS ARE PROVIDED &quot;AS IS&quot; WITHOUT WARRANTY OF ANY KIND.&#xA; &#xA;Due to technical limitations, registered trademarks are indicated by (R) or [R] and unregistered trademarks are indicated by (TM) or [TM]."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRSCORE" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Measure Scoring"/>
+         </code>
+         <value code="PROPOR" codeSystem="2.16.840.1.113883.1.11.20367" xsi:type="CD">
+            <displayName value="Proportion"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRTYPE" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Measure Type"/>
+         </code>
+         <value code="PROCESS" codeSystem="2.16.840.1.113883.1.11.20368" xsi:type="CD">
+            <displayName value="PROCESS"/>
+         </value>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="STRAT" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Stratification"/>
+         </code>
+         <value mediaType="text/plain" value="None" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRADJ" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Risk Adjustment"/>
+         </code>
+         <value mediaType="text/plain" value="None" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="MSRAGG" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Rate Aggregation"/>
+         </code>
+         <value mediaType="text/plain" value="None" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="RAT" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Rationale"/>
+         </code>
+         <value mediaType="text/plain"
+                value="As the seventh leading cause of death in the U.S., diabetes kills approximately 75,000 people a year (CDC FastStats 2015). Diabetes is a group of diseases marked by high blood glucose levels, resulting from the body's inability to produce or use insulin (CDC Statistics 2014, ADA Basics 2013). People with diabetes are at increased risk of serious health complications including vision loss, heart disease, stroke, kidney failure, amputation of toes, feet or legs, and premature death. (CDC Fact Sheet 2014). &#xA;&#xA;In 2012, diabetes cost the U.S. an estimated $245 billion: $176 billion in direct medical costs and $69 billion in reduced productivity. This is a 41 percent increase from the estimated $174 billion spent on diabetes in 2007 (ADA Economic 2013).  &#xA;&#xA;In 2011, diabetes accounted for 44% of new kidney failure cases. In the same year, 49,677 diabetics started treatment for kidney failure and 228,924 people of all ages with kidney failure due to diabetes were living on chronic dialysis or with a kidney transplant (CDC Statistics, 2014)."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="CRS" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Clinical Recommendation Statement"/>
+         </code>
+         <value mediaType="text/plain"
+                value="American Diabetes Association (2017):&#xA;&#xA;Screening&#xA;- At least once a year, quantitatively assess urinary albumin (eg, spot urinary albumin-to-creatinine ratio [UACR]) and estimated glomerular filtration rate (eGFR) in patients with type 1 diabetes duration of greater than or equal to 5 years in all patients with type 2 diabetes, and in all patients with comorbid hypertension. (Level of evidence: B)&#xA;&#xA;Treatment&#xA;- An angiotensin-converting enzyme (ACE) inhibitor or angiotensin receptor blocker (ARB) is not recommended for the primary prevention of diabetic kidney disease in patients with diabetes who have normal blood pressure, normal UACR (&lt;30 mg/g), and normal estimated glomerular filtration rate. (Level of evidence: B)&#xA;- Either an ACE inhibitor or ARB is suggested for the treatment of the nonpregnant patient with modestly elevated UACR (30-299 mg/day) (Level of evidence: C) and is strongly recommended for those with urinary albumin excretion &gt;=300 mg/day. (Level of evidence: A)&#xA;- When ACE inhibitors, ARBs, or diuretics are used, monitor serum creatinine and potassium levels for the development of increased creatinine or changes in potassium. (Level of evidence: E)&#xA;- Continued monitoring of UACR in patients with albuminuria treated with an ACE inhibitor or ARBs is reasonable to assess progression of diabetic kidney disease. (Level of evidence: E)&#xA;&#xA;American Association of Clinical Endocrinologists (2015): &#xA;- Beginning 5 years after diagnosis in patients with type 1 diabetes (if diagnosed before age 30) or at diagnosis in patients with type 2 diabetes and those with type 1 diabetes diagnosed after age 30, annual assessment of serum creatinine to determine the estimated glomerular filtration rate (eGFR) and urine albumin excretion rate (AER) should be performed to identify, stage, and monitor progression of diabetic nephropathy (Grade C; best evidence level 3). &#xA;- Patients with nephropathy should be counseled regarding the need for optimal glycemic control, blood pressure control, dyslipidemia control, and smoking cessation (Grade B; best evidence level 2). &#xA;- In addition, they should have routine monitoring of albuminuria, kidney function electrolytes, and lipids (Grade B; best evidence level 2). &#xA;- Associated conditions such as anemia and bone and mineral disorders should be assessed as kidney function declines (Grade D; best evidence level 4). &#xA;- Referral to a nephrologist is recommended well before the need for renal replacement therapy (Grade D; best evidence level 4)."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IDUR" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Improvement Notation"/>
+         </code>
+         <value mediaType="text/plain" value="Higher score indicates better quality"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="American Diabetes Association. Microvascular complications and foot care. Sec. 10. In Standards of Medical Care in Diabetes-2017. Diabetes Care 2017;40(Suppl. 1):S88-S98."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="American Diabetes Association. 2013. Diabetes Basics. www.diabetes.org/diabetes-basics/?loc=GlobalNavDB."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="American Diabetes Association (ADA). April 2013. Economic Costs of Diabetes in the U.S. in 2012. Diabetes Care. Vol. 36 no. 4 &#xA;1033-46. http://care.diabetesjournals.org/content/36/4/1033.full."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Centers for Disease Control and Prevention (CDC). 2014. National Diabetes Statistics Report. &#xA;http://www.cdc.gov/diabetes/pdfs/data/2014-report-estimates-of-diabetes-and-its-burden-in-the-united-states.pdf"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Centers for Disease Control and Prevention (CDC). 2015. FastStats: Deaths and Mortality. www.cdc.gov/nchs/fastats/deaths.htm."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Centers for Disease Control and Prevention. 2014. CDC Features. Diabetes Latest. www.cdc.gov/features/diabetesfactsheet/."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="REF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Reference"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Handelsman Y, Bloomgarden ZT, Grunberger G, Umpierrez G, Zimmerman RS, Bailey TS, et al. (2015) American Association of Clinical Endocrinologists and American College of Endocrinology-Clinical Practice Guidelines for Developing a Diabetes Mellitus Comprehensive Care Plan-2015. Endocr Pract 21 Suppl 1: 1-87."
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DEF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Definition"/>
+         </code>
+         <value mediaType="text/plain" value="None" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="GUIDE" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Guidance"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Only patients with a diagnosis of Type 1 or Type 2 diabetes should be included in the denominator of this measure; patients with a diagnosis of secondary diabetes due to another condition should not be included"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="TRANF" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Transmission Format"/>
+         </code>
+         <value mediaType="text/plain" value="TBD" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="IPOP" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Initial Population"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Patients 18-75 years of age with diabetes with a visit during the measurement period"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENOM" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Denominator"/>
+         </code>
+         <value mediaType="text/plain" value="Equals Initial Population" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEX" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Denominator Exclusions"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Exclude patients who were in hospice care during the measurement year"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMER" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Numerator"/>
+         </code>
+         <value mediaType="text/plain"
+                value="Patients with a screening for nephropathy or evidence of nephropathy during the measurement period"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="NUMEX" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Numerator Exclusions"/>
+         </code>
+         <value mediaType="text/plain" value="Not Applicable" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="DENEXCEP" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Denominator Exceptions"/>
+         </code>
+         <value mediaType="text/plain" value="None" xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <subjectOf>
+      <measureAttribute>
+         <code code="SDE" codeSystem="2.16.840.1.113883.5.4">
+            <displayName value="Supplemental Data Elements"/>
+         </code>
+         <value mediaType="text/plain"
+                value="For every patient evaluated by this measure also identify payer, race, ethnicity and sex"
+                xsi:type="ED"/>
+      </measureAttribute>
+   </subjectOf>
+   <componentOf>
+      <qualityMeasureSet classCode="ACT">
+         <id root="feaeb36c-a03a-4525-9bf1-db36d7413c19"/>
+         <title value="None"/>
+      </qualityMeasureSet>
+   </componentOf>
+   <!--Data Criteria Section-->
+   <component>
+      <dataCriteriaSection>
+         <templateId>
+            <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.2.6"/>
+         </templateId>
+         <code code="57025-9" codeSystem="2.16.840.1.113883.6.1"/>
+         <title value="Data Criteria Section"/>
+         <text/>
+         <entry typeCode="DRIV">
+            <localVariableName value="Face-to-FaceInteraction_EncounterPerformed_USLZg"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="Face-to-FaceInteraction_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e301a"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.101.12.1048"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="DialysisServices_ProcedurePerformed_eO65u"/>
+            <procedureCriteria classCode="PROC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.67"/>
+               </templateId>
+               <id extension="DialysisServices_ProcedurePerformed"
+                   root="40280381-3d61-56a7-013e-62abf57d300e"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1013"/>
+               <title value="Procedure, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </procedureCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="KidneyTransplant_ProcedurePerformed_OmLeq"/>
+            <procedureCriteria classCode="PROC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.67"/>
+               </templateId>
+               <id extension="KidneyTransplant_ProcedurePerformed"
+                   root="40280381-3d61-56a7-013e-62abf57d300c"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1012"/>
+               <title value="Procedure, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </procedureCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="ONCAdministrativeSex_PatientCharacteristicSex_bsF8d"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-05-01" root="2.16.840.1.113883.10.20.28.4.55"/>
+               </templateId>
+               <id extension="ONCAdministrativeSex_PatientCharacteristicSex"
+                   root="629109a3-b658-4124-b1ac-c6396879f9a1"/>
+               <code code="263495000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Gender"/>
+               </code>
+               <title value="Patient Characteristic Sex"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113762.1.4.1" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="ESRDMonthlyOutpatientServices_EncounterPerformed_qtBCS"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="ESRDMonthlyOutpatientServices_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3011"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1014"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="ACEInhibitororARB_MedicationActive_iQnob"/>
+            <substanceAdministrationCriteria classCode="SBADM" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.44"/>
+               </templateId>
+               <id extension="ACEInhibitororARB_MedicationActive"
+                   root="40280381-3d61-56a7-013e-62abf57e301b"/>
+               <title value="Medication, Active"/>
+               <statusCode code="ACTIVE"/>
+		             <participation typeCode="CSM">
+                  <role classCode="MANU">
+                     <playingMaterial classCode="MMAT" determinerCode="KIND">
+                        <code valueSet="2.16.840.1.113883.3.526.3.1139"/>
+                     </playingMaterial>
+                  </role>
+               </participation>
+	           </substanceAdministrationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="KidneyFailure_Diagnosis_0cf73"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="KidneyFailure_Diagnosis" root="96400e6f-2f81-4eb4-ab44-62586d331790"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.464.1003.109.12.1028" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="PreventiveCareServices-EstablishedOfficeVisit18andUp_EncounterPerformed_n1lvm"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="PreventiveCareServices-EstablishedOfficeVisit18andUp_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3020"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.101.12.1025"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="DiabeticNephropathy_Diagnosis_mtiNC"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="DiabeticNephropathy_Diagnosis"
+                   root="40280381-3d61-56a7-013e-62abf57e3014"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.464.1003.109.12.1004" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="HomeHealthcareServices_EncounterPerformed_NPZNe"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="HomeHealthcareServices_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3023"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.101.12.1016"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Hospicecareambulatory_InterventionOrder_6fVt3"/>
+            <actCriteria classCode="ACT" moodCode="RQO">
+               <templateId>
+                  <item extension="2017-05-01" root="2.16.840.1.113883.10.20.28.4.35"/>
+               </templateId>
+               <id extension="Hospicecareambulatory_InterventionOrder"
+                   root="95cca057-9695-4ee4-a5bd-eff4b54c6098"/>
+               <code valueSet="2.16.840.1.113762.1.4.1108.15"/>
+               <title value="Intervention, Order"/>
+               <statusCode code="ACTIVE"/>
+            </actCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Hospicecareambulatory_InterventionPerformed_BCaDE"/>
+            <actCriteria classCode="ACT" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.36"/>
+               </templateId>
+               <id extension="Hospicecareambulatory_InterventionPerformed"
+                   root="95cca057-9695-4ee4-a5bd-eff4b54c6098"/>
+               <code valueSet="2.16.840.1.113762.1.4.1108.15"/>
+               <title value="Intervention, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </actCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="OtherServicesRelatedtoDialysis_InterventionPerformed_s9jgY"/>
+            <actCriteria classCode="ACT" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.36"/>
+               </templateId>
+               <id extension="OtherServicesRelatedtoDialysis_InterventionPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e300f"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1015"/>
+               <title value="Intervention, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </actCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Race_PatientCharacteristicRace_D0yLf"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-05-01" root="2.16.840.1.113883.10.20.28.4.59"/>
+               </templateId>
+               <id extension="Race_PatientCharacteristicRace"
+                   root="9520900f-6706-40fd-879c-a92a80b4a907"/>
+               <code code="32624-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <displayName value="Race"/>
+               </code>
+               <title value="Patient Characteristic Race"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.114222.4.11.836" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="OfficeVisit_EncounterPerformed_wBRN9"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="OfficeVisit_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3018"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.101.12.1001"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="HypertensiveChronicKidneyDisease_Diagnosis_YA8sD"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="HypertensiveChronicKidneyDisease_Diagnosis"
+                   root="40280381-3d61-56a7-013e-62abf57e3012"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.464.1003.109.12.1017" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Payer_PatientCharacteristicPayer_OXLiJ"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-05-01" root="2.16.840.1.113883.10.20.28.4.58"/>
+               </templateId>
+               <id extension="Payer_PatientCharacteristicPayer"
+                   root="60b9cdf3-81b8-4c2d-91f4-5a350d063fea"/>
+               <code code="48768-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <displayName value="Payer"/>
+               </code>
+               <title value="Patient Characteristic Payer"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.114222.4.11.3591" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="EncounterInpatient_EncounterPerformed_Q96er"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="EncounterInpatient_EncounterPerformed"
+                   root="59c3933e-c568-4119-b89d-c29b7c752ef3"/>
+               <code valueSet="2.16.840.1.113883.3.666.5.307"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="GlomerulonephritisandNephroticSyndrome_Diagnosis_OaiVV"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="GlomerulonephritisandNephroticSyndrome_Diagnosis"
+                   root="40280381-3d61-56a7-013e-62abf57e3013"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.464.1003.109.12.1018" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="DialysisEducation_InterventionPerformed_HCUE6"/>
+            <actCriteria classCode="ACT" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.36"/>
+               </templateId>
+               <id extension="DialysisEducation_InterventionPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3010"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1016"/>
+               <title value="Intervention, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </actCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="AnnualWellnessVisit_EncounterPerformed_2AJrf"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="AnnualWellnessVisit_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3022"/>
+               <code valueSet="2.16.840.1.113883.3.526.3.1240"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="VascularAccessforDialysis_ProcedurePerformed_3SuJB"/>
+            <procedureCriteria classCode="PROC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.67"/>
+               </templateId>
+               <id extension="VascularAccessforDialysis_ProcedurePerformed"
+                   root="40280381-3d61-56a7-013e-62abf57d300d"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1011"/>
+               <title value="Procedure, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </procedureCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Ethnicity_PatientCharacteristicEthnicity_M3MFv"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-05-01" root="2.16.840.1.113883.10.20.28.4.56"/>
+               </templateId>
+               <id extension="Ethnicity_PatientCharacteristicEthnicity"
+                   root="1f7b0fb5-e0c6-4a41-9474-d579e350ff05"/>
+               <code code="54133-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC">
+                  <displayName value="Ethnicity"/>
+               </code>
+               <title value="Patient Characteristic Ethnicity"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.114222.4.11.837" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="UrineProteinTests_LaboratoryTestPerformed_TTcxA"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.42"/>
+               </templateId>
+               <id extension="UrineProteinTests_LaboratoryTestPerformed"
+                   root="28120d98-866d-488a-b3c6-4cd573a59048"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.109.12.1024"/>
+               <title value="Laboratory Test, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Diabetes_Diagnosis_jCpCQ"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="Diabetes_Diagnosis" root="40280381-3d61-56a7-013e-62abf57d3006"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.464.1003.103.12.1001" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="PreventiveCareServices-InitialOfficeVisit18andUp_EncounterPerformed_BzC6q"/>
+            <encounterCriteria classCode="ENC" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.5"/>
+               </templateId>
+               <id extension="PreventiveCareServices-InitialOfficeVisit18andUp_EncounterPerformed"
+                   root="40280381-3d61-56a7-013e-62abf57e3021"/>
+               <code valueSet="2.16.840.1.113883.3.464.1003.101.12.1023"/>
+               <title value="Encounter, Performed"/>
+               <statusCode code="COMPLETED"/>
+            </encounterCriteria>
+         </entry>
+         <entry typeCode="DRIV">
+            <localVariableName value="Proteinuria_Diagnosis_tudvA"/>
+            <observationCriteria classCode="OBS" moodCode="EVN">
+               <templateId>
+                  <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.4.110"/>
+               </templateId>
+               <id extension="Proteinuria_Diagnosis" root="40280381-3d61-56a7-013e-62abf57e301e"/>
+               <code code="282291009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMED CT">
+                  <displayName value="Diagnosis"/>
+               </code>
+               <title value="Diagnosis"/>
+               <statusCode code="COMPLETED"/>
+               <value valueSet="2.16.840.1.113883.3.526.3.1003" xsi:type="CD"/>
+            </observationCriteria>
+         </entry>
+      </dataCriteriaSection>
+   </component>
+   <component>
+      <populationCriteriaSection>
+         <templateId>
+            <item extension="2017-08-01" root="2.16.840.1.113883.10.20.28.2.7"/>
+         </templateId>
+         <id extension="PopulationCriteria1" root="775FD0C2-7BDD-40A8-A382-8E14CAB7641B"/>
+         <code code="57026-7" codeSystem="2.16.840.1.113883.6.1"/>
+         <title value="Population Criteria Section"/>
+         <text/>
+         <component typeCode="COMP">
+            <initialPopulationCriteria classCode="OBS" moodCode="EVN">
+               <id extension="initialPopulation" root="C0B0A24C-C68F-4A86-8F8E-4325D12FDE81"/>
+               <code code="IPOP" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;Initial Population&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </initialPopulationCriteria>
+         </component>
+         <component typeCode="COMP">
+            <denominatorCriteria classCode="OBS" moodCode="EVN">
+               <id extension="denominator" root="2587EA99-850B-49D8-A508-CD05E0D920E0"/>
+               <code code="DENOM" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;Denominator&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </denominatorCriteria>
+         </component>
+         <component typeCode="COMP">
+            <denominatorExclusionCriteria classCode="OBS" moodCode="EVN">
+               <id extension="denominatorExclusions" root="6734EEB6-9D43-4A75-B54D-97C67B404EB2"/>
+               <code code="DENEX" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;Denominator Exclusions&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </denominatorExclusionCriteria>
+         </component>
+         <component typeCode="COMP">
+            <numeratorCriteria classCode="OBS" moodCode="EVN">
+               <id extension="numerator" root="09CBAB0F-BA38-4854-90A4-43CE9258E90C"/>
+               <code code="NUMER" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;Numerator&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </numeratorCriteria>
+         </component>
+         <component typeCode="COMP">
+            <cql-ext:supplementalDataElement>
+               <id extension="Supplemental Data Elements"
+                   root="7B3C50A7-9A63-4788-A6B4-79C7C6433205"/>
+               <code code="SDE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;SDE Ethnicity&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </cql-ext:supplementalDataElement>
+         </component>
+         <component typeCode="COMP">
+            <cql-ext:supplementalDataElement>
+               <id extension="Supplemental Data Elements"
+                   root="9DE20B6E-5B4B-4BFD-B236-379EA43D631C"/>
+               <code code="SDE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;SDE Payer&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </cql-ext:supplementalDataElement>
+         </component>
+         <component typeCode="COMP">
+            <cql-ext:supplementalDataElement>
+               <id extension="Supplemental Data Elements"
+                   root="1D6F9230-E0A9-4BFA-9532-CD1EF189D38C"/>
+               <code code="SDE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;SDE Race&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </cql-ext:supplementalDataElement>
+         </component>
+         <component typeCode="COMP">
+            <cql-ext:supplementalDataElement>
+               <id extension="Supplemental Data Elements"
+                   root="8A98D4E1-5067-4A27-8A38-3FF940AC57D8"/>
+               <code code="SDE" codeSystem="2.16.840.1.113883.5.4" codeSystemName="Act Code"/>
+               <precondition typeCode="PRCN">
+                  <criteriaReference classCode="OBS" moodCode="EVN">
+                     <id extension="DiabetesMedicalAttentionforNephropathy.&quot;SDE Sex&quot;"
+                         root="41810103-F6AA-4482-A207-ED0E6D9CDCED"/>
+                  </criteriaReference>
+               </precondition>
+            </cql-ext:supplementalDataElement>
+         </component>
+      </populationCriteriaSection>
+   </component>
+</QualityMeasureDocument>

@@ -1,5 +1,5 @@
-module CqlElm
-  class Parser
+module Measures
+  class ElmParser
     #Fields are combined with the refId to find elm node that corrosponds to the current annotation node.
     @fields = ['expression', 'operand', 'suchThat']
     @html_hash = {"&amp;": '&', "&quot;": '"', "&lt;": '<', "&gt;": '>', "&apos;": "'"}

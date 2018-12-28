@@ -12,6 +12,8 @@ require 'ostruct'
 require 'log4r'
 require 'memoist'
 require 'protected_attributes'
+require 'pry'
+require 'clipboard'
 
 PROJECT_ROOT = File.expand_path("../../", __FILE__)
 require_relative File.join(PROJECT_ROOT, 'lib', 'hqmf-parser')
@@ -112,7 +114,15 @@ APP_CONFIG = {'vsac'=> {'auth_url'=> 'https://vsac.nlm.nih.gov/vsac/ws',
                         'utility_url' => 'https://vsac.nlm.nih.gov/vsac',
                         'default_profile' => 'MU2 Update 2016-04-01'}}
 
+
 def get_ticket_granting_ticket
   api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: ENV['VSAC_USERNAME'], password: ENV['VSAC_PASSWORD'])
   return api.ticket_granting_ticket
+end
+
+def get_ticket_granting_ticket_with_api_key
+  response = Typhoeus.post("https://utslogin.nlm.nih.gov/cas/v1/api-key", body: { apikey: ENV['VSAC_API_KEY'] })
+  tgt = response.body[/api-key\/(.*?)\"/m, 1]
+  raise StandardError.new("Failed to get VSAC TGT") unless tgt.present? && tgt.starts_with?('TGT')
+  return { ticket: tgt, expires: Time.now + 8.hours }
 end
