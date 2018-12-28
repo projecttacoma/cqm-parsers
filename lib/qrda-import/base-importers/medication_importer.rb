@@ -4,6 +4,7 @@ module QRDA
   
       def initialize(entry_finder = nil)
         super(entry_finder)
+        @id_xpath = './cda:id'
         @code_xpath = "./cda:consumable/cda:manufacturedProduct/cda:manufacturedMaterial/cda:code"
         @relevant_period_xpath = "./cda:effectiveTime"
         @author_datetime_xpath = "./cda:author/cda:time"

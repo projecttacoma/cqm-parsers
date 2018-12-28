@@ -3,6 +3,7 @@ module QRDA
     class ProcedurePerformedImporter < SectionImporter
       def initialize(entry_finder = QRDA::Cat1::EntryFinder.new("./cda:entry/cda:procedure[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.64']"))
         super(entry_finder)
+        @id_xpath = './cda:id'
         @code_xpath = "./cda:code"
         @relevant_period_xpath = "./cda:effectiveTime"
         @author_datetime_xpath = "./cda:author/cda:time"
