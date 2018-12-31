@@ -286,7 +286,7 @@ Layout/SpaceAroundBlockParameters:
   Exclude:
     - 'test/fixtures/1.0/measures/extract_measures.rb'
     - 'test/unit/hqmf/model/hqmf_v1_v2_roundtrip_test.rb'
-    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators.rb'
+    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators_test.rb'
 
 # Offense count: 46
 # Cop supports --auto-correct.
@@ -1001,7 +1001,7 @@ Style/RegexpLiteral:
   Exclude:
     - 'test/fixtures/1.0/measures/extract_measures.rb'
     - 'test/unit/hqmf/model/hqmf_v1_v2_roundtrip_test.rb'
-    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators.rb'
+    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators_test.rb'
 
 # Offense count: 5
 # Cop supports --auto-correct.
@@ -1013,7 +1013,7 @@ Style/RescueStandardError:
     - 'lib/hqmf-parser/cql/data_criteria_helpers/dc_definition_from_template_or_type_extract.rb'
     - 'test/unit/hqmf/1.0/document_v1_test.rb'
     - 'test/unit/hqmf/model/hqmf_v1_v2_roundtrip_test.rb'
-    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators.rb'
+    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators_test.rb'
 
 # Offense count: 8
 # Cop supports --auto-correct.
@@ -1133,7 +1133,7 @@ Style/UnneededInterpolation:
     - 'lib/tasks/hqmf.rake'
     - 'test/unit/hqmf/2.0/hqmf_vs_simple_test.rb'
     - 'test/unit/hqmf/model/hqmf_v1_v2_roundtrip_test.rb'
-    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators.rb'
+    - 'test/unit/hqmf/model/hqmf_v2.1_new_operators_test.rb'
 
 # Offense count: 17
 # Cop supports --auto-correct.
