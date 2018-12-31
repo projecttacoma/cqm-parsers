@@ -51,6 +51,10 @@ GEM
     byebug (6.0.2)
     cane (2.3.0)
       parallel
+    codecov (0.1.14)
+      json
+      simplecov
+      url
     concurrent-ruby (1.0.5)
     cqm-models (0.8.4)
     crack (0.4.3)
@@ -156,6 +160,7 @@ GEM
       unf_ext
     unf_ext (0.0.7.5)
     unicode-display_width (1.4.0)
+    url (0.3.2)
     uuid (2.3.9)
       macaddr (~> 1.0)
     vcr (3.0.3)
@@ -174,6 +179,7 @@ DEPENDENCIES
   bundler-audit
   byebug (~> 6.0.2)
   cane (~> 2.3.0)
+  codecov
   cqm-models (~> 0.8.4)
   cqm-parsers!
   factory_girl (~> 4.1.0)
