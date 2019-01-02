@@ -282,7 +282,6 @@
   <act classCode="ACT" moodCode="EVN" >
     <!--Encounter performed Act -->
     <templateId root="2.16.840.1.113883.10.20.24.3.133" extension="2017-08-01"/>
-    <id root="d57528e0-26f0-0136-9a42-6a00008fee70" />
     <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter" codeSystemName="ActClass"/>
     <entryRelationship typeCode="SUBJ">
       <encounter classCode="ENC" moodCode="EVN">
@@ -311,7 +310,6 @@
   <act classCode="ACT" moodCode="EVN" >
     <!--Encounter performed Act -->
     <templateId root="2.16.840.1.113883.10.20.24.3.133" extension="2017-08-01"/>
-    <id root="d57528e0-26f0-0136-9a42-6a00008fee70" />
     <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter" codeSystemName="ActClass"/>
     <entryRelationship typeCode="SUBJ">
       <encounter classCode="ENC" moodCode="EVN">
@@ -319,7 +317,7 @@
         <templateId root="2.16.840.1.113883.10.20.22.4.49" extension="2015-08-01"/> 
         <!-- Encounter performed template -->
         <templateId root="2.16.840.1.113883.10.20.24.3.23" extension="2017-08-01"/>
-        <id root="1.3.6.1.4.1.115" extension="5ada27b7aeac50e2db23159f"/>
+        <id root="1.3.6.1.4.1.115" extension="5ada27b7aeac50e2db23159e"/>
         <code code="99213" codeSystem="2.16.840.1.113883.6.12" sdtc:valueSet="2.16.840.1.113883.3.600.1916"><originalText>Encounter, Performed: Office Visit</originalText><translation code="99213" codeSystem="2.16.840.1.113883.6.12"/>
 </code>
         <text>Encounter, Performed: Office Visit</text>
