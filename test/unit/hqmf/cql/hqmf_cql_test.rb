@@ -37,4 +37,18 @@ class HQMF2CQLTest < Minitest::Test
     model = HQMF2CQL::Document.new(File.open(sde_measure_file).read).to_model
     assert model.populations[0]['supplemental_data_elements'].length == 5
   end
+
+  def test_measure_observation_parsing_single_observation
+    filename = File.join(HQMF_CQL_ROOT, 'QDM5_4_v5_6_CV_1_Measure.xml')
+    document = HQMF2CQL::Document.new(File.open(filename).read).to_model
+    assert document.observations.length == 1
+  end
+
+  def test_measure_observation_parsing_multiple_observation
+    skip "Parser always associates the first observ function with populations"
+    filename = File.join(HQMF_CQL_ROOT, 'QDM5_4_v5_6_CV_2_Measure.xml')
+    document = HQMF2CQL::Document.new(File.open(filename).read).to_model
+    assert document.observations.length == 2
+  end
+
 end
