@@ -79,9 +79,6 @@ module Measures
     private
     def create_cql_libraries(cql_library_files, main_cql_lib)
       cql_statement_dependencies_all_libs = ElmDependencyFinder.find_dependencies(cql_library_files, main_cql_lib)
-      # fix up statement names in cql_statement_dependencies_all_libs to not use periods <<WRAP 1>>
-      # this is matched with an UNWRAP in MeasuresController in the bonnie project
-      MongoHashKeyWrapper::wrapKeys cql_statement_dependencies_all_libs
       
       cql_libraries = cql_library_files.map do |cql_lib_files|
         cql_statement_dependencies = cql_statement_dependencies_all_libs[cql_lib_files.id]

@@ -68,7 +68,7 @@ module Measures
       end
 
       cql_libraries = []
-      (0..library_count - 1).each do |i|
+      library_count.times do |i|
         elm_annotation = measure_files[:elm_xmls][i]
         elm = measure_files[:elms][i]
         cql = measure_files[:cqls][i]

@@ -76,7 +76,7 @@ module Measures
       population_set.populations = population_map
 
       # add SDEs
-      if bonnie_population.has_key?('supplemental_data_elements')
+      if bonnie_population.key?('supplemental_data_elements')
         bonnie_population['supplemental_data_elements'].each do |sde_statement|
           population_set.supplemental_data_elements << CQM::StatementReference.new(
             library_name: main_cql_library,
@@ -92,13 +92,13 @@ module Measures
     def self.construct_population_map(measure_scoring)
       case measure_scoring
       when 'PROPORTION'
-        CQM::ProportionPopulationMap.new()
+        CQM::ProportionPopulationMap.new
       when 'RATIO'
-        CQM::RatioPopulationMap.new()
+        CQM::RatioPopulationMap.new
       when 'CONTINUOUS_VARIABLE'
-        CQM::ContinuousVariablePopulationMap.new()
+        CQM::ContinuousVariablePopulationMap.new
       when 'COHORT'
-        CQM::CohortPopulationMap.new()
+        CQM::CohortPopulationMap.new
       else
         raise StandardError("Unknown measure scoring type encountered #{measure_scoring}")
       end

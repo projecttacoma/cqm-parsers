@@ -12,7 +12,7 @@ module Measures
       @api = VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: vsac_ticket_granting_ticket)
     end
 
-    def retrieve_and_modelize_value_sets_from_vsac(value_sets, measure_id=nil)
+    def retrieve_and_modelize_value_sets_from_vsac(value_sets, measure_id = nil)
       vs_models = []
       needed_value_sets = []
       
@@ -25,9 +25,9 @@ module Measures
         if vs_model.present?
           vs_models << vs_model
         else
-          needed_value_sets << {:value_set => value_set, 
-                                :vs_vsac_options => vs_vsac_options,
-                                :query_version => query_version}
+          needed_value_sets << {value_set:  value_set, 
+                                vs_vsac_options: vs_vsac_options,
+                                query_version: query_version}
         end
       end
 
@@ -45,6 +45,7 @@ module Measures
     end
 
     private
+
     def determine_query_version(vs_vsac_options, measure_id)
       if vs_vsac_options[:include_draft] == true
         return "Draft-#{measure_id}" # Unique draft version based on measure id
@@ -58,20 +59,15 @@ module Measures
       raise ValueSetException.new("Unable to determine query version.")
     end
 
-    private
     def make_specific_value_set_options(value_set)
       # If we are allowing measure_defined value sets, determine vsac_options for this value set based on elm info.
       if @vsac_options[:measure_defined] == true
-        if !value_set[:profile].nil?
-          return { profile: value_set[:profile] }
-        elsif !value_set[:version].nil?
-          return { version: value_set[:version] }
-        end
+        return { profile: value_set[:profile] } if !value_set[:profile].nil?
+        return { version: value_set[:version] } if !value_set[:version].nil?
       end
       return @vsac_options
     end
 
-    private
     def modelize_value_set(vsac_xml_response, query_version)
       doc = Nokogiri::XML(vsac_xml_response)
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
@@ -86,14 +82,13 @@ module Measures
       return vs
     end
 
-    private
     def extract_concepts(vs_element)
       concepts = vs_element.xpath("//vs:Concept").collect do |con|
-        CQM::Concept.new(code: con["code"], 
-                    code_system_name: con["codeSystemName"],
-                    code_system_version: con["codeSystemVersion"],
-                    code_system_oid: con["codeSystem"],
-                    display_name: con["displayName"])
+        CQM::Concept.new( code: con["code"], 
+                          code_system_name: con["codeSystemName"],
+                          code_system_version: con["codeSystemVersion"],
+                          code_system_oid: con["codeSystem"],
+                          display_name: con["displayName"])
       end
       return concepts
     end
