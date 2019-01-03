@@ -1,3 +1,4 @@
+require 'simplecov'
 require 'rake/testtask'
 require 'cane/rake_task'
 

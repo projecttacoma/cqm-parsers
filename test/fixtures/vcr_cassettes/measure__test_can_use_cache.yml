@@ -1,0 +1,171 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
+    body:
+      encoding: UTF-8
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
+    headers:
+      Accept:
+      - "*/*; q=0.5, application/xml"
+      Accept-Encoding:
+      - gzip, deflate
+      Content-Length:
+      - '44'
+      Content-Type:
+      - application/x-www-form-urlencoded
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '65'
+      Date:
+      - Thu, 03 Jan 2019 20:31:18 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!6tIbbADZP9lLZUDm9OGvBt4MxRMcjrhHNRWiOpw7KuHojo5mQS/5aZ5H16Ba5yBDcnIuiOfSCA9WAEg=;
+        expires=Thu, 03-Jan-2019 22:31:18 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: TGT-229574-elRiayjf2i1OuMKQxgHfeBkH97ZK77Nmm4v54YQ0u1SmbPGKnA-cas
+    http_version: 
+  recorded_at: Thu, 03 Jan 2019 20:31:18 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229574-elRiayjf2i1OuMKQxgHfeBkH97ZK77Nmm4v54YQ0u1SmbPGKnA-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Thu, 03 Jan 2019 20:31:19 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Okz6fQLYOfqdgyjm9OGvBt4MxRMcjhm5DixvsnunA0atxofl99VRd3s6Y8YBRRKFyfFuk/9WAnzHvrU=;
+        expires=Thu, 03-Jan-2019 22:31:19 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-850671-YjyJxaY7I3fooaseoCwc-cas
+    http_version: 
+  recorded_at: Thu, 03 Jan 2019 20:31:19 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-850671-YjyJxaY7I3fooaseoCwc-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!ohjkSLSw0PK9a4nm9OGvBt4MxRMcjqATiG07j39v2HmgZizRAivjqqB3cu9FW7PCkSf+g3tFXR9Rk8M=;
+        expires=Thu, 03-Jan-2019 22:31:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=9430BBB6E09129A2E35205B58E0ED0CB;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1369'
+      Date:
+      - Thu, 03 Jan 2019 20:31:18 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.117.1.7.1.292" displayName="Emergency Department Visit" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="4525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency department patient visit (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values identifies procedures representing an emergency department encounter.),(Data Element Scope: The intent of this data element is to identify patients who have had an emergency department encounter.  Using the Quality Data Model, this particular element will map to the "Encounter" category.),(Inclusion Criteria: Include codes representing an emergency department visit encounter utilizing the SNOMED CT code system.),(Exclusion Criteria: None)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 03 Jan 2019 20:31:19 GMT
+recorded_with: VCR 3.0.3

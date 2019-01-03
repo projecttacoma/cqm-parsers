@@ -16,4 +16,20 @@ VCR.configure do |c|
   c.filter_sensitive_data('<VSAC_USERNAME>') {ENV['VSAC_USERNAME']}
   c.filter_sensitive_data('<VSAC_PASSWORD>') {URI.escape(ENV['VSAC_PASSWORD'])}
   c.default_cassette_options = { record: :once }
+
+  # Add a custom matcher for use with the bulk request by typheous, so we can ignore service ticket
+  c.register_request_matcher :uri_no_st do |req1, req2|
+    # binding.pry
+    remove_service_ticket_from_uri(req1.uri) == remove_service_ticket_from_uri(req2.uri)
+  end
+end
+
+def remove_service_ticket_from_uri(uri)
+  uri = String.new(uri)
+  st = uri[/(&ticket=.*)&|(&ticket=.*)$/,0]
+  if st.present?
+    st.chop! if st.end_with? '&'
+    uri[st] = ''
+  end
+  return uri
 end

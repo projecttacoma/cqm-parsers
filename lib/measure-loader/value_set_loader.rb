@@ -1,15 +1,14 @@
 module Measures
-
   # Utility class for loading value sets
   class ValueSetLoader
-    attr_accessor :vsac_options, :vs_data_cache, :vsac_ticket_granting_ticket
+    attr_accessor :vsac_options, :vs_data_cache
 
     def initialize(vsac_options, vsac_ticket_granting_ticket)
       @vsac_options = vsac_options
       @vsac_ticket_granting_ticket = vsac_ticket_granting_ticket
 
       @vs_data_cache = {}
-      @api = VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: vsac_ticket_granting_ticket)
+      @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: vsac_ticket_granting_ticket)
     end
 
     def retrieve_and_modelize_value_sets_from_vsac(value_sets, measure_id = nil)
@@ -27,7 +26,8 @@ module Measures
         else
           needed_value_sets << {value_set:  value_set, 
                                 vs_vsac_options: vs_vsac_options,
-                                query_version: query_version}
+                                query_version: query_version,
+                                cache_key: cache_key}
         end
       end
 
@@ -35,8 +35,7 @@ module Measures
 
       [needed_value_sets,vs_responses].transpose.each do |needed_vs,vs_data|
         vs_model = modelize_value_set(vs_data, needed_vs[:query_version])
-        cache_key = [needed_vs[:value_set][:oid], needed_vs[:value_set][:query_version]]
-        @vs_data_cache[cache_key] = vs_model
+        @vs_data_cache[needed_vs[:cache_key]] = vs_model
         vs_models << vs_model
       end
 
@@ -47,23 +46,19 @@ module Measures
     private
 
     def determine_query_version(vs_vsac_options, measure_id)
-      if vs_vsac_options[:include_draft] == true
-        return "Draft-#{measure_id}" # Unique draft version based on measure id
-      elsif vs_vsac_options[:profile]
-        return "Profile:#{vs_vsac_options[:profile]}" # Profile calls return 'N/A' so note profile use.
-      elsif vs_vsac_options[:version]
-        return vs_vsac_options[:version]
-      elsif vs_vsac_options[:release]
-        return "Release:#{vs_vsac_options[:release]}"
-      end
+      return "Draft-#{measure_id}" if vs_vsac_options[:include_draft] == true
+      return "Profile:#{vs_vsac_options[:profile]}" if vs_vsac_options[:profile]
+      return vs_vsac_options[:version] if vs_vsac_options[:version]
+      return "Release:#{vs_vsac_options[:release]}" if vs_vsac_options[:release]
+
       raise ValueSetException.new("Unable to determine query version.")
     end
 
     def make_specific_value_set_options(value_set)
       # If we are allowing measure_defined value sets, determine vsac_options for this value set based on elm info.
       if @vsac_options[:measure_defined] == true
-        return { profile: value_set[:profile] } if !value_set[:profile].nil?
-        return { version: value_set[:version] } if !value_set[:version].nil?
+        return { profile: value_set[:profile] } unless value_set[:profile].nil?
+        return { version: value_set[:version] } unless value_set[:version].nil?
       end
       return @vsac_options
     end
@@ -84,11 +79,11 @@ module Measures
 
     def extract_concepts(vs_element)
       concepts = vs_element.xpath("//vs:Concept").collect do |con|
-        CQM::Concept.new( code: con["code"], 
-                          code_system_name: con["codeSystemName"],
-                          code_system_version: con["codeSystemVersion"],
-                          code_system_oid: con["codeSystem"],
-                          display_name: con["displayName"])
+        CQM::Concept.new(code: con["code"], 
+                         code_system_name: con["codeSystemName"],
+                         code_system_version: con["codeSystemVersion"],
+                         code_system_oid: con["codeSystem"],
+                         display_name: con["displayName"])
       end
       return concepts
     end

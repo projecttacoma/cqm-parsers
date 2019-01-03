@@ -9,3 +9,8 @@ Style/DateTime:
   Enabled: false
 Performance/HashEachMethods:
   Enabled: false
+Style/RedundantReturn:
+  Enabled: false
+Style/WordArray:
+  Enabled: false
+  

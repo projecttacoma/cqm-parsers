@@ -1,4 +1,5 @@
 require 'rest_client'
+require 'typhoeus'
 require 'uri'
 
 module Util
@@ -262,6 +263,19 @@ module Util
         end
       end
 
+      def get_multiple_valuesets(needed_value_sets)
+        raise VSACNoCredentialsError.new unless @ticket_granting_ticket
+        raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
+
+        vs_responses = get_multiple_valueset_raw_responses(needed_value_sets)
+        vs_datas = [needed_value_sets,vs_responses].transpose.map do |needed_vs,vs_response|
+          expected_oid = needed_vs[:value_set][:oid]
+          process_and_validate_vsac_response(vs_response, expected_oid)
+        end
+
+        return vs_datas
+      end
+
       private
 
       def get_ticket
@@ -285,6 +299,90 @@ module Util
         return { ticket: String.new(ticket), expires: Time.now + 8.hours }
       rescue RestClient::Unauthorized
         raise VSACInvalidCredentialsError.new
+      end
+
+      def process_and_validate_vsac_response(vs_response, expected_oid)
+        raise VSNotFoundError.new(expected_oid) if vs_response.response_code == 404
+        raise VSACError.new("Error code #{vs_response.response_code} from VSAC for #{expected_oid}.") unless vs_response.response_code == 200
+
+        vs_data = vs_response.body.force_encoding("utf-8")
+        begin
+          doc = Nokogiri::XML(vs_data)
+          doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
+          vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
+          concepts = vs_element.xpath("//vs:Concept")
+        rescue StandardError
+          raise VSACError.new("Could not parse VSAC response for #{expected_oid}. Body: #{vs_data}")
+        end
+
+        raise Util::VSAC::VSNotFoundError.new(expected_oid) unless (vs_element && vs_element['ID'] == expected_oid)
+        raise Util::VSAC::VSEmptyError.new(expected_oid) if concepts.empty?
+        return vs_data
+      end
+
+      def get_multiple_valueset_raw_responses(needed_value_sets)
+        service_tickets = get_service_tickets(needed_value_sets.size)
+
+        hydra = Typhoeus::Hydra.new
+        requests = needed_value_sets.map do |n| 
+          request = create_valueset_request(n[:value_set][:oid], service_tickets.pop, n[:vs_vsac_options])
+          hydra.queue(request)
+          request
+        end
+
+        hydra.run
+        responses = requests.map(&:response)
+        return responses
+      end
+
+      def get_service_tickets(amount)
+        raise VSACNoCredentialsError.new unless @ticket_granting_ticket
+        raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
+        
+        hydra = Typhoeus::Hydra.new
+        requests = amount.times.map do
+          request = create_service_ticket_request
+          hydra.queue(request)
+          request
+        end
+
+        hydra.run
+        tickets = requests.map do |request|
+          response_code = request.response.response_code
+          raise VSACError.new("Error code #{response_code} when getting service ticket.") unless response_code == 200
+          request.response.body
+        end
+        return tickets
+      end
+
+      def create_valueset_request(oid, ticket, options = {})
+        # base parameter oid is always needed
+        params = { id: oid }
+
+        # release parameter, should be used moving forward
+        params[:release] = options[:release] unless options[:release].nil?
+
+        # profile parameter, may be needed for getting draft value sets
+        if options[:profile].present?
+          params[:profile] = options[:profile]
+          params[:includeDraft] = options[:include_draft] ? 'yes' : 'no' unless options[:include_draft].nil?
+        end
+        if !options[:include_draft].nil? && options[:profile].nil?
+          raise VSACArgumentError.new("Option :include_draft requires :profile to be provided.")
+        end
+
+        # version parameter, rarely used
+        params[:version] = options[:version] unless options[:version].nil?
+
+        params[:ticket] = ticket
+
+        return Typhoeus::Request.new("#{@config[:content_url]}/RetrieveMultipleValueSets", params: params)
+      end
+
+      def create_service_ticket_request
+        return Typhoeus::Request.new("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}", 
+                                     method: :post,
+                                     params: { service: TICKET_SERVICE_PARAM})
       end
 
       # Checks to ensure the API config has all necessary fields
