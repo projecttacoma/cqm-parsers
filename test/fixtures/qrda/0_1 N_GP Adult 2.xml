@@ -340,7 +340,6 @@
   <act classCode="ACT" moodCode="EVN">
     <!--Encounter performed Act -->
     <templateId root="2.16.840.1.113883.10.20.24.3.133" extension="2017-08-01"/>
-    <id root="d57528e0-26f0-0136-9a42-6a00008fee71" />
     <code code="ENC" codeSystem="2.16.840.1.113883.5.6" displayName="Encounter" codeSystemName="ActClass"/>
     <entryRelationship typeCode="SUBJ">
       <encounter classCode="ENC" moodCode="EVN">
