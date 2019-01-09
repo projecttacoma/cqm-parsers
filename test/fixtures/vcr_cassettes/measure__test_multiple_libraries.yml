@@ -2,21 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
     body:
-      encoding: UTF-8
-      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
+      encoding: US-ASCII
+      string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '44'
-      Content-Type:
-      - application/x-www-form-urlencoded
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
@@ -40,24 +34,24 @@ http_interactions:
       Content-Length:
       - '65'
       Date:
-      - Thu, 03 Jan 2019 20:21:16 GMT
+      - Wed, 09 Jan 2019 21:25:31 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!Yn2sI76/Jfh/5MDm9OGvBt4MxRMcjgJoXiMnGF8AWRrq17i37XEkCNE3AOrxcWtRbuvhShiK2L3O/IE=;
-        expires=Thu, 03-Jan-2019 22:21:17 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!qhRIyUeCP8wZqG7NtNHn4GsLooFbU8ozCsfljIc/muLHVk9YABrBymjDPrERdfnBCUsYWPhAFnE1lZM=;
+        expires=Wed, 09-Jan-2019 23:25:31 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas
+      string: TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:17 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:31 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -89,10 +83,10 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!ryX6r3sMwNYUelHNtNHn4GsLooFbU+ulouyzJzToILbGS3kKiWxkXDmktuzs0DindHb4SscorUJtLN8=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!9VBq0mor9TSN2UfNtNHn4GsLooFbUxzoQ5PkInjmYon4jGl7hukRrhkotQLZRCMmUALNG8Q2ieI4UPA=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -101,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838772-N4odUx969gXXh47YFeHD-cas
+      string: ST-816534-Iv9HfFs1pv4Hm5ihBOhh-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -138,24 +132,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:31 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!/KBQulLUWuybFpPNtNHn4GsLooFbU1CZ8zWZPoRg5xoDPf+eDtQWEw1RNFAvDLRMeMjhNtOLPhEkStI=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!zuFLjmpDJEXte6fNtNHn4GsLooFbU4rbcYmeHHPEwxjXarL1Wqzjnuch56EwWdAtHwkHQpoCJasTgHc=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838774-5ieuTe67OsbuNJY7OwAN-cas
+      string: ST-816537-1ctQIBlfrbcMwiEmFIAs-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -187,59 +181,10 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!ZkCSuz9uRmptHTrm9OGvBt4MxRMcjkem7Q6uFx8XnGTTu5NHK+w1JX5R4R1d1qPMtYctnCkmInxBCT4=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-838773-YGLFwAdeT0BA5ivlCUiB-cas
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!/gRXqccapcC+Vafm9OGvBt4MxRMcjrzB2k5FQcyVf/N+XkJkoPSuMFUjkjaXmH+IxFtD1CYYhJQJzhc=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!9td6ErQOWa8hDdzm9OGvBt4MxRMcjpapOEyjg0IX0UV3x7ZTWDFbv4sDXAIbTSjL3SS70iEZeYUKv2Y=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -248,12 +193,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838779-0kudAPOkxz3QwGJxWX66-cas
+      string: ST-816535-iUdxFXOdKYMgGoaCHx7O-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -285,59 +230,10 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!lFpVQk7ome5sJFPNtNHn4GsLooFbU8cCYW21CuieAxa/HsLmwdQjen9CInfbNVCdIHre8S1N1fxcggU=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-838775-YYRMAJxj7QfegRALOUms-cas
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!MUApVbrmQNTIL5PNtNHn4GsLooFbU5nB7t3Gg6tk0b9GaK85AcFhtRrr0X3e5Tn0BPwLWGnpkRx8kHA=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!X20ZBttsy8/yQRPm9OGvBt4MxRMcjr2jBLw96cyhotClDNj2atKMIRo34C/6mTdUjCUOi2Y7Zau8Z9Q=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -346,12 +242,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838780-uF0RHOHEriCCKGigXoRf-cas
+      string: ST-816536-ED3kmXGsBfbmZCGTRdVy-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -383,24 +279,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!mOc6BATo7dC5rH/m9OGvBt4MxRMcjv5vsJbkBokRmydoMfuOI8g/oHx6to193lmdYPL/Mmb9zFpYHnc=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!hbMpwMeuhFKWR2Dm9OGvBt4MxRMcjtU00VdSrN7XWRHXhcYp+vfGEaZ97mrz104eCAevnIJv2qQocM0=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838781-ICIjlu0DnzlrjWVSbmxo-cas
+      string: ST-816540-lq5bmJclabCRVBfLwg0u-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -432,24 +328,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!9WPe24m1oGcRswbNtNHn4GsLooFbU+9DHvlp7Jnl/96TXd+2oa/IK82DvwgouRyrZ+0n7zszSA5hPQo=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!AXayV0lTOj34gwLNtNHn4GsLooFbU0pvKECa1dZ+Z1nR3Q6Hm4XszWqlOKLe6+TBwsi1ay4tI43FaZM=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838778-WYgm9jN7H5jVHZeN6gKw-cas
+      string: ST-816541-7UKxjMcca2A26WNCIVfZ-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -481,24 +377,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!Lv9oZcnOAXHsNJ3m9OGvBt4MxRMcjvB5uXZ+rQXCDorCHEys3p0Zug3xcDHEIu8H0Bd8FiSdOqUwZ+4=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!mVkkAgD2LTEJ1uXm9OGvBt4MxRMcjpuqVLO0akbIHW1FOKHnK1iT9fbwtMOgbeQpEAtmEy3rxeBBqmE=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838777-MdyjSxU415reyehCpl39-cas
+      string: ST-816539-f1dfeKkEsqtIBv7dBesr-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229080-UumbjkC5iejSWSiNGoG1wXgCaPfGGNk4T6gYnc0alxfVsdj1hv-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -530,24 +426,122 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!4T8S8LFzQtRrqPfm9OGvBt4MxRMcjlNwYTR07ZHEtIgwqDCjesTy92KQJoXIYtgrkxr4rfH/ad8UQvk=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!NAqKtat9LW88QkDNtNHn4GsLooFbU3+JLEnjNXtRY0bM0Htp3R011H72juHW3xYLvQfZ4BGCFK09Htc=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838776-A3WeqrkIdafg311ucZ2m-cas
+      string: ST-816543-lVPCfc0S6AzULDJzcv9M-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!NfUiOE0AqviGDz7NtNHn4GsLooFbU34ZP2RWsrSTt0R2tv+uGDVM2YDHUtKWn9aYyyN4W9DYmpXvs1M=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-816544-x65fdVoDctTJLlZsjueh-cas
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177934-EIzxjVNe7LgOmbfRrI93ZcMmvuEHaFxNcXPkeJdJQ3s9YUCgkv-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!e7bv632sjkb26NPNtNHn4GsLooFbUxf6mRioLaVzWSEdTvEa7S+uKizqIvZ9gxKiSYJG0j6QiImHcvE=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-816542-znQNsjMpS7bDEeewdPU1-cas
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:32 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-838774-5ieuTe67OsbuNJY7OwAN-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-816537-1ctQIBlfrbcMwiEmFIAs-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -569,9 +563,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!rZGNQLc4vo14X8jNtNHn4GsLooFbU9Rsnke8ZktIppzt71r8cBglCDMkpBvyWLzR+NR9U8S5uepideg=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=B91DA1F643FB6C080ECAE6F1D6B973FD;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!/kN6EzYev0ZFYjjm9OGvBt4MxRMcjnMzTCnteWE2s33r8ob7x+NqocGEVP30OZiGGF3SPO6lntP3mJs=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      - JSESSIONID=80B7ECB88FF99741A6657706236F4D61;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -581,13 +575,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1765'
+      - '1356'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -595,28 +589,24 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.836" displayName="Race" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="1002-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="American Indian or Alaska Native"/>
-                    <ns0:Concept code="2028-9" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Asian"/>
-                    <ns0:Concept code="2054-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Black or African American"/>
-                    <ns0:Concept code="2076-8" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Native Hawaiian or Other Pacific Islander"/>
-                    <ns0:Concept code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="White"/>
-                    <ns0:Concept code="2131-1" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Other Race"/>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
                 </ns0:ConceptList>
-                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-838780-uF0RHOHEriCCKGigXoRf-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-816539-f1dfeKkEsqtIBv7dBesr-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -638,9 +628,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!OkR+mdVWHY30zi/NtNHn4GsLooFbU0hu9TT4Di1GZcORhV4d9gQ4BXz1sp39bZKr7glXZjF/ntR3nSg=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=DCC74369C25EADABFE210273FFBD81E4;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!GWtgQs6KOVC2Z6nm9OGvBt4MxRMcjtMoWEBFqtf18GrTnXmjtoFFyW8WNpzv8SYQq1hgxJjDQWPN6II=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      - JSESSIONID=EAA4E2CA9FA63F3B52156B2A9125FACE;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -652,7 +642,7 @@ http_interactions:
       Content-Length:
       - '1128'
       Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -678,10 +668,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-838773-YGLFwAdeT0BA5ivlCUiB-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-816542-znQNsjMpS7bDEeewdPU1-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -703,9 +693,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!LAzd573VgdXSS8nm9OGvBt4MxRMcji8tyvWbwffnIbR4DSDM7K6AGv7gjjrYBc0qphE78hS9zRzfTsA=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=F87DCE18D800BAA2FD5B5EB562FBD4B2;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!g6tGW2QXnNibc8nm9OGvBt4MxRMcjuA2vklHm5SoQ+DwT5X1uRThesJJD17926mpCs75ELpvv9OD57s=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A0BE61F3145455D8921D49ECB7889CFE;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -715,9 +705,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1356'
+      - '1765'
       Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -729,24 +719,28 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.836" displayName="Race" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
-                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
+                    <ns0:Concept code="1002-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="American Indian or Alaska Native"/>
+                    <ns0:Concept code="2028-9" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Asian"/>
+                    <ns0:Concept code="2054-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Black or African American"/>
+                    <ns0:Concept code="2076-8" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Native Hawaiian or Other Pacific Islander"/>
+                    <ns0:Concept code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="White"/>
+                    <ns0:Concept code="2131-1" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Other Race"/>
                 </ns0:ConceptList>
-                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1012&profile=MU2%20Update%202016-04-01&ticket=ST-838776-A3WeqrkIdafg311ucZ2m-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-816536-ED3kmXGsBfbmZCGTRdVy-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -768,296 +762,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!BR9ZrkFlZ3550yvNtNHn4GsLooFbU1EZYPzwkoxPoI5whNiP2zII5p12egXhr8sMTYTWimgKsFLpK1o=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=A8D59F42C67DEBF2684515652B2CD1C3;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '3845'
-      Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.198.12.1012" displayName="Group A Streptococcus Test" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="11268-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes [Presence] in Throat by Organism specific culture"/>
-                    <ns0:Concept code="17656-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes [Presence] in Unspecified specimen by Organism specific culture"/>
-                    <ns0:Concept code="17898-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Bacteria identified in Throat by Aerobe culture"/>
-                    <ns0:Concept code="18481-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat"/>
-                    <ns0:Concept code="31971-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen"/>
-                    <ns0:Concept code="49610-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes DNA [Identifier] in Unspecified specimen by Probe and target amplification method"/>
-                    <ns0:Concept code="5036-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes rRNA [Presence] in Unspecified specimen by DNA probe"/>
-                    <ns0:Concept code="60489-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes DNA [Presence] in Throat by Probe and target amplification method"/>
-                    <ns0:Concept code="626-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Bacteria identified in Throat by Culture"/>
-                    <ns0:Concept code="6557-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence"/>
-                    <ns0:Concept code="6558-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen by Immunoassay"/>
-                    <ns0:Concept code="6559-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen by Immunofluorescence"/>
-                    <ns0:Concept code="68954-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes rRNA [Presence] in Throat by DNA probe"/>
-                    <ns0:Concept code="78012-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.198.11.1023:Group A Streptococcus Test)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.102.12.1012&profile=MU2%20Update%202016-04-01&ticket=ST-838775-YYRMAJxj7QfegRALOUms-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!Nl6EtOjhNuBX0gbm9OGvBt4MxRMcjr56JosacUImU5n8daFydYXzFfo+DjS05NNgoxNnLzsQx9ld5bo=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=893A8657AEE6AF28B4565B6026266180;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '4133'
-      Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.102.12.1012" displayName="Acute Tonsillitis" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="17741008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute tonsillitis (disorder)"/>
-                    <ns0:Concept code="195666007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute erythematous tonsillitis (disorder)"/>
-                    <ns0:Concept code="195668008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute ulcerative tonsillitis (disorder)"/>
-                    <ns0:Concept code="195669000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute catarrhal tonsillitis (disorder)"/>
-                    <ns0:Concept code="195670004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute gangrenous tonsillitis (disorder)"/>
-                    <ns0:Concept code="195671000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute bacterial tonsillitis (disorder)"/>
-                    <ns0:Concept code="195672007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pneumococcal tonsillitis (disorder)"/>
-                    <ns0:Concept code="195673002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute staphylococcal tonsillitis (disorder)"/>
-                    <ns0:Concept code="195676005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute viral tonsillitis (disorder)"/>
-                    <ns0:Concept code="195677001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Recurrent acute tonsillitis (disorder)"/>
-                    <ns0:Concept code="302911003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute lingual tonsillitis (disorder)"/>
-                    <ns0:Concept code="J03.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute streptococcal tonsillitis, unspecified"/>
-                    <ns0:Concept code="J03.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent streptococcal tonsillitis"/>
-                    <ns0:Concept code="J03.80" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute tonsillitis due to other specified organisms"/>
-                    <ns0:Concept code="J03.81" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent tonsillitis due to other specified organisms"/>
-                    <ns0:Concept code="J03.90" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute tonsillitis, unspecified"/>
-                    <ns0:Concept code="J03.91" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent tonsillitis, unspecified"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.102.11.1034:Acute Tonsillitis),(2.16.840.1.113883.3.464.1003.102.11.1036:Acute Tonsillitis)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.212&profile=MU2%20Update%202016-04-01&ticket=ST-838779-0kudAPOkxz3QwGJxWX66-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!ba2ypCQatymjaYfNtNHn4GsLooFbU1NG/db3xdnGsFfigtQRXCbwpRaDjVz+ajf+cCCC8mXGvEkZMuA=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=35E518178B49D66101445C41F3B7E94E;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '14441'
-      Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.117.1.7.1.212" displayName="Hemorrhagic Stroke" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="195155004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from carotid siphon and bifurcation (disorder)"/>
-                    <ns0:Concept code="195160000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracranial subarachnoid hemorrhage from vertebral artery (disorder)"/>
-                    <ns0:Concept code="195165005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Basal ganglia hemorrhage (disorder)"/>
-                    <ns0:Concept code="195167002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="External capsule hemorrhage (disorder)"/>
-                    <ns0:Concept code="195168007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebral hemorrhage with intraventricular hemorrhage (disorder)"/>
-                    <ns0:Concept code="195169004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebral hemorrhage, multiple localized (disorder)"/>
-                    <ns0:Concept code="20908003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subcortical cerebral hemorrhage (disorder)"/>
-                    <ns0:Concept code="230706003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hemorrhagic cerebral infarction (disorder)"/>
-                    <ns0:Concept code="230707007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anterior cerebral circulation hemorrhagic infarction (disorder)"/>
-                    <ns0:Concept code="230708002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Posterior cerebral circulation hemorrhagic infarction (disorder)"/>
-                    <ns0:Concept code="230709005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Massive supratentorial cerebral hemorrhage (disorder)"/>
-                    <ns0:Concept code="230710000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Lobar cerebral hemorrhage (disorder)"/>
-                    <ns0:Concept code="230711001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Thalamic hemorrhage (disorder)"/>
-                    <ns0:Concept code="230712008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Lacunar hemorrhage (disorder)"/>
-                    <ns0:Concept code="23276006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Ventricular hemorrhage (disorder)"/>
-                    <ns0:Concept code="270907008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Spontaneous intracranial subarachnoid hemorrhage (disorder)"/>
-                    <ns0:Concept code="274100004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebral hemorrhage (disorder)"/>
-                    <ns0:Concept code="276277008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from multiple aneurysms (disorder)"/>
-                    <ns0:Concept code="276278003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from anterior cerebral artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276280009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from middle cerebral artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276281008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior cerebral artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276282001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from anterior communicating artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276283006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior communicating artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276284000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from basilar artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276285004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior inferior cerebellar artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276286003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from carotid artery aneurysm (disorder)"/>
-                    <ns0:Concept code="276722003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebellar and posterior fossa hemorrhage (disorder)"/>
-                    <ns0:Concept code="28318001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Basilar hemorrhage (disorder)"/>
-                    <ns0:Concept code="42429001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebromeningeal hemorrhage (disorder)"/>
-                    <ns0:Concept code="425957003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Non-traumatic intracerebral ventricular hemorrhage (disorder)"/>
-                    <ns0:Concept code="449020009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intraparenchymal hemorrhage of brain (disorder)"/>
-                    <ns0:Concept code="49422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cortical hemorrhage (disorder)"/>
-                    <ns0:Concept code="52201006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Internal capsule hemorrhage (disorder)"/>
-                    <ns0:Concept code="73020009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebral hemisphere hemorrhage (disorder)"/>
-                    <ns0:Concept code="75038005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebellar hemorrhage (disorder)"/>
-                    <ns0:Concept code="7713009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intrapontine hemorrhage (disorder)"/>
-                    <ns0:Concept code="95454007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Brain stem hemorrhage (disorder)"/>
-                    <ns0:Concept code="I60.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified carotid siphon and bifurcation"/>
-                    <ns0:Concept code="I60.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right carotid siphon and bifurcation"/>
-                    <ns0:Concept code="I60.02" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left carotid siphon and bifurcation"/>
-                    <ns0:Concept code="I60.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified middle cerebral artery"/>
-                    <ns0:Concept code="I60.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right middle cerebral artery"/>
-                    <ns0:Concept code="I60.12" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left middle cerebral artery"/>
-                    <ns0:Concept code="I60.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from anterior communicating artery"/>
-                    <ns0:Concept code="I60.30" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified posterior communicating artery"/>
-                    <ns0:Concept code="I60.31" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right posterior communicating artery"/>
-                    <ns0:Concept code="I60.32" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left posterior communicating artery"/>
-                    <ns0:Concept code="I60.4" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from basilar artery"/>
-                    <ns0:Concept code="I60.50" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified vertebral artery"/>
-                    <ns0:Concept code="I60.51" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right vertebral artery"/>
-                    <ns0:Concept code="I60.52" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left vertebral artery"/>
-                    <ns0:Concept code="I60.6" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from other intracranial arteries"/>
-                    <ns0:Concept code="I60.7" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified intracranial artery"/>
-                    <ns0:Concept code="I60.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other nontraumatic subarachnoid hemorrhage"/>
-                    <ns0:Concept code="I60.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage, unspecified"/>
-                    <ns0:Concept code="I61.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, subcortical"/>
-                    <ns0:Concept code="I61.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, cortical"/>
-                    <ns0:Concept code="I61.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, unspecified"/>
-                    <ns0:Concept code="I61.3" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in brain stem"/>
-                    <ns0:Concept code="I61.4" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in cerebellum"/>
-                    <ns0:Concept code="I61.5" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, intraventricular"/>
-                    <ns0:Concept code="I61.6" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, multiple localized"/>
-                    <ns0:Concept code="I61.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other nontraumatic intracerebral hemorrhage"/>
-                    <ns0:Concept code="I61.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, unspecified"/>
-                </ns0:ConceptList>
-                <ns0:Source>The Joint Commission</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This grouping of value sets identifies patients who have had a hemorrhagic stroke, or stroke caused by hemorrhage.),(Data Element Scope: The intent of this data element is to identify patients who have a diagnosis of hemorrhagic stroke, or stroke caused by a hemorrhage.  Using the Quality Data Model, this particular element would map to the Principal Diagnosis attribute for the Encounter category.),(Inclusion Criteria: Only use codes which represent a diagnosis of hemorrhagic stroke, or stroke caused by hemorrhage.  This is a grouping of  ICD10CM and SNOMED-CT codes.),(Exclusion Criteria: None.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.117.1.7.1.234:Hemorrhagic Stroke ICD10CM),(2.16.840.1.113883.3.117.1.7.1.235:Hemorrhagic Stroke SNOMED CT)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-838781-ICIjlu0DnzlrjWVSbmxo-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!ozrT8jmVtpsPerfm9OGvBt4MxRMcjsnrmcITk6v/6mFlHwB4vAexIPw4/eHGUdn9uIgCN83bYpOA2Jg=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=3BE7282711EECF8A208C0ACA34102621;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!Iu9wGv1X/0BOH5TNtNHn4GsLooFbUwT6y2RJE6szsy4rIi4/lErfcgSZPJB9HJzuhw0D+wT1vR0BFng=;
+        expires=Wed, 09-Jan-2019 23:25:32 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A7E58E476C08A577F8E7F39421F13DBF;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1069,11 +776,11 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1234,10 +941,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1061&profile=MU2%20Update%202016-04-01&ticket=ST-838772-N4odUx969gXXh47YFeHD-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.102.12.1012&profile=MU2%20Update%202016-04-01&ticket=ST-816540-lq5bmJclabCRVBfLwg0u-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1259,9 +966,377 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!+H0PT5jY5yclcwTm9OGvBt4MxRMcjvFfF6lC11zCohsoX+wLEiye3Q8cGeVOnQMkceMIkwP+NeC+vsA=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=D19DC636378D4B94C4EE7C5CAD71D7FA;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!eRTTp2zUjGFT9tfNtNHn4GsLooFbU0XduX1oKto9DCkYNvg4YdwrGjKesebpGzfrZBWA44MTNGCrS0w=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=C0B5D3CDBEF04A4268AA75389250B97A;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '4133'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.102.12.1012" displayName="Acute Tonsillitis" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="17741008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute tonsillitis (disorder)"/>
+                    <ns0:Concept code="195666007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute erythematous tonsillitis (disorder)"/>
+                    <ns0:Concept code="195668008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute ulcerative tonsillitis (disorder)"/>
+                    <ns0:Concept code="195669000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute catarrhal tonsillitis (disorder)"/>
+                    <ns0:Concept code="195670004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute gangrenous tonsillitis (disorder)"/>
+                    <ns0:Concept code="195671000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute bacterial tonsillitis (disorder)"/>
+                    <ns0:Concept code="195672007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pneumococcal tonsillitis (disorder)"/>
+                    <ns0:Concept code="195673002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute staphylococcal tonsillitis (disorder)"/>
+                    <ns0:Concept code="195676005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute viral tonsillitis (disorder)"/>
+                    <ns0:Concept code="195677001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Recurrent acute tonsillitis (disorder)"/>
+                    <ns0:Concept code="302911003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute lingual tonsillitis (disorder)"/>
+                    <ns0:Concept code="J03.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute streptococcal tonsillitis, unspecified"/>
+                    <ns0:Concept code="J03.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent streptococcal tonsillitis"/>
+                    <ns0:Concept code="J03.80" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute tonsillitis due to other specified organisms"/>
+                    <ns0:Concept code="J03.81" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent tonsillitis due to other specified organisms"/>
+                    <ns0:Concept code="J03.90" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute tonsillitis, unspecified"/>
+                    <ns0:Concept code="J03.91" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute recurrent tonsillitis, unspecified"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.102.11.1034:Acute Tonsillitis),(2.16.840.1.113883.3.464.1003.102.11.1036:Acute Tonsillitis)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1012&profile=MU2%20Update%202016-04-01&ticket=ST-816534-Iv9HfFs1pv4Hm5ihBOhh-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!j6ysCnnkgw0lXDrm9OGvBt4MxRMcjoPir4JA62V9qcy5AK5FZAaAllkiTdOya2qFqfieizrl+RFBH/E=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=F576638A94FAB922B5305F0756EE47E0;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '3845'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.198.12.1012" displayName="Group A Streptococcus Test" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="11268-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes [Presence] in Throat by Organism specific culture"/>
+                    <ns0:Concept code="17656-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes [Presence] in Unspecified specimen by Organism specific culture"/>
+                    <ns0:Concept code="17898-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Bacteria identified in Throat by Aerobe culture"/>
+                    <ns0:Concept code="18481-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat"/>
+                    <ns0:Concept code="31971-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen"/>
+                    <ns0:Concept code="49610-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes DNA [Identifier] in Unspecified specimen by Probe and target amplification method"/>
+                    <ns0:Concept code="5036-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes rRNA [Presence] in Unspecified specimen by DNA probe"/>
+                    <ns0:Concept code="60489-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes DNA [Presence] in Throat by Probe and target amplification method"/>
+                    <ns0:Concept code="626-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Bacteria identified in Throat by Culture"/>
+                    <ns0:Concept code="6557-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat by Immunofluorescence"/>
+                    <ns0:Concept code="6558-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen by Immunoassay"/>
+                    <ns0:Concept code="6559-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Unspecified specimen by Immunofluorescence"/>
+                    <ns0:Concept code="68954-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes rRNA [Presence] in Throat by DNA probe"/>
+                    <ns0:Concept code="78012-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Streptococcus pyogenes Ag [Presence] in Throat by Rapid immunoassay"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.198.11.1023:Group A Streptococcus Test)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.102.12.1011&profile=MU2%20Update%202016-04-01&ticket=ST-816544-x65fdVoDctTJLlZsjueh-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!HH20XlB5nGObIcHm9OGvBt4MxRMcjlJmsMOfd4AlpJKeDvzlNs486hkNuZylQYIJEEnC/baKhzZoXZQ=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=44B778192E8A682F0329FD4514321E5F;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '4105'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.102.12.1011" displayName="Acute Pharyngitis" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1532007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral pharyngitis (disorder)"/>
+                    <ns0:Concept code="195655000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute gangrenous pharyngitis (disorder)"/>
+                    <ns0:Concept code="195656004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute phlegmonous pharyngitis (disorder)"/>
+                    <ns0:Concept code="195657008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute ulcerative pharyngitis (disorder)"/>
+                    <ns0:Concept code="195658003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute bacterial pharyngitis (disorder)"/>
+                    <ns0:Concept code="195659006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pneumococcal pharyngitis (disorder)"/>
+                    <ns0:Concept code="195660001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute staphylococcal pharyngitis (disorder)"/>
+                    <ns0:Concept code="195662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute viral pharyngitis (disorder)"/>
+                    <ns0:Concept code="232399005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute herpes simplex pharyngitis (disorder)"/>
+                    <ns0:Concept code="232400003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute herpes zoster pharyngitis (disorder)"/>
+                    <ns0:Concept code="363746003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pharyngitis (disorder)"/>
+                    <ns0:Concept code="40766000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Enteroviral lymphonodular pharyngitis (disorder)"/>
+                    <ns0:Concept code="43878008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Streptococcal sore throat (disorder)"/>
+                    <ns0:Concept code="58031004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Suppurative pharyngitis (disorder)"/>
+                    <ns0:Concept code="J02.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Streptococcal pharyngitis"/>
+                    <ns0:Concept code="J02.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute pharyngitis due to other specified organisms"/>
+                    <ns0:Concept code="J02.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute pharyngitis, unspecified"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.102.11.1031:Acute Pharyngitis),(2.16.840.1.113883.3.464.1003.102.11.1033:Acute Pharyngitis)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.212&profile=MU2%20Update%202016-04-01&ticket=ST-816541-7UKxjMcca2A26WNCIVfZ-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Edxeg3pzvxNOOQDNtNHn4GsLooFbU1TCuTfp8qrv5P7Kvjrg48w8Cwzkcyy/UGkg2Olea8o85xPBJvU=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=353579BAB6747C4568B40875CA6A6209;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '14441'
+      Date:
+      - Wed, 09 Jan 2019 21:25:32 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.117.1.7.1.212" displayName="Hemorrhagic Stroke" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="195155004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from carotid siphon and bifurcation (disorder)"/>
+                    <ns0:Concept code="195160000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracranial subarachnoid hemorrhage from vertebral artery (disorder)"/>
+                    <ns0:Concept code="195165005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Basal ganglia hemorrhage (disorder)"/>
+                    <ns0:Concept code="195167002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="External capsule hemorrhage (disorder)"/>
+                    <ns0:Concept code="195168007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebral hemorrhage with intraventricular hemorrhage (disorder)"/>
+                    <ns0:Concept code="195169004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebral hemorrhage, multiple localized (disorder)"/>
+                    <ns0:Concept code="20908003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subcortical cerebral hemorrhage (disorder)"/>
+                    <ns0:Concept code="230706003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hemorrhagic cerebral infarction (disorder)"/>
+                    <ns0:Concept code="230707007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anterior cerebral circulation hemorrhagic infarction (disorder)"/>
+                    <ns0:Concept code="230708002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Posterior cerebral circulation hemorrhagic infarction (disorder)"/>
+                    <ns0:Concept code="230709005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Massive supratentorial cerebral hemorrhage (disorder)"/>
+                    <ns0:Concept code="230710000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Lobar cerebral hemorrhage (disorder)"/>
+                    <ns0:Concept code="230711001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Thalamic hemorrhage (disorder)"/>
+                    <ns0:Concept code="230712008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Lacunar hemorrhage (disorder)"/>
+                    <ns0:Concept code="23276006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Ventricular hemorrhage (disorder)"/>
+                    <ns0:Concept code="270907008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Spontaneous intracranial subarachnoid hemorrhage (disorder)"/>
+                    <ns0:Concept code="274100004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebral hemorrhage (disorder)"/>
+                    <ns0:Concept code="276277008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from multiple aneurysms (disorder)"/>
+                    <ns0:Concept code="276278003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from anterior cerebral artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276280009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from middle cerebral artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276281008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior cerebral artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276282001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from anterior communicating artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276283006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior communicating artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276284000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from basilar artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276285004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from posterior inferior cerebellar artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276286003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subarachnoid hemorrhage from carotid artery aneurysm (disorder)"/>
+                    <ns0:Concept code="276722003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intracerebellar and posterior fossa hemorrhage (disorder)"/>
+                    <ns0:Concept code="28318001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Basilar hemorrhage (disorder)"/>
+                    <ns0:Concept code="42429001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebromeningeal hemorrhage (disorder)"/>
+                    <ns0:Concept code="425957003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Non-traumatic intracerebral ventricular hemorrhage (disorder)"/>
+                    <ns0:Concept code="449020009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intraparenchymal hemorrhage of brain (disorder)"/>
+                    <ns0:Concept code="49422009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cortical hemorrhage (disorder)"/>
+                    <ns0:Concept code="52201006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Internal capsule hemorrhage (disorder)"/>
+                    <ns0:Concept code="73020009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebral hemisphere hemorrhage (disorder)"/>
+                    <ns0:Concept code="75038005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cerebellar hemorrhage (disorder)"/>
+                    <ns0:Concept code="7713009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intrapontine hemorrhage (disorder)"/>
+                    <ns0:Concept code="95454007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Brain stem hemorrhage (disorder)"/>
+                    <ns0:Concept code="I60.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified carotid siphon and bifurcation"/>
+                    <ns0:Concept code="I60.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right carotid siphon and bifurcation"/>
+                    <ns0:Concept code="I60.02" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left carotid siphon and bifurcation"/>
+                    <ns0:Concept code="I60.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified middle cerebral artery"/>
+                    <ns0:Concept code="I60.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right middle cerebral artery"/>
+                    <ns0:Concept code="I60.12" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left middle cerebral artery"/>
+                    <ns0:Concept code="I60.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from anterior communicating artery"/>
+                    <ns0:Concept code="I60.30" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified posterior communicating artery"/>
+                    <ns0:Concept code="I60.31" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right posterior communicating artery"/>
+                    <ns0:Concept code="I60.32" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left posterior communicating artery"/>
+                    <ns0:Concept code="I60.4" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from basilar artery"/>
+                    <ns0:Concept code="I60.50" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified vertebral artery"/>
+                    <ns0:Concept code="I60.51" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from right vertebral artery"/>
+                    <ns0:Concept code="I60.52" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from left vertebral artery"/>
+                    <ns0:Concept code="I60.6" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from other intracranial arteries"/>
+                    <ns0:Concept code="I60.7" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage from unspecified intracranial artery"/>
+                    <ns0:Concept code="I60.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other nontraumatic subarachnoid hemorrhage"/>
+                    <ns0:Concept code="I60.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic subarachnoid hemorrhage, unspecified"/>
+                    <ns0:Concept code="I61.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, subcortical"/>
+                    <ns0:Concept code="I61.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, cortical"/>
+                    <ns0:Concept code="I61.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in hemisphere, unspecified"/>
+                    <ns0:Concept code="I61.3" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in brain stem"/>
+                    <ns0:Concept code="I61.4" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage in cerebellum"/>
+                    <ns0:Concept code="I61.5" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, intraventricular"/>
+                    <ns0:Concept code="I61.6" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, multiple localized"/>
+                    <ns0:Concept code="I61.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other nontraumatic intracerebral hemorrhage"/>
+                    <ns0:Concept code="I61.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Nontraumatic intracerebral hemorrhage, unspecified"/>
+                </ns0:ConceptList>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This grouping of value sets identifies patients who have had a hemorrhagic stroke, or stroke caused by hemorrhage.),(Data Element Scope: The intent of this data element is to identify patients who have a diagnosis of hemorrhagic stroke, or stroke caused by a hemorrhage.  Using the Quality Data Model, this particular element would map to the Principal Diagnosis attribute for the Encounter category.),(Inclusion Criteria: Only use codes which represent a diagnosis of hemorrhagic stroke, or stroke caused by hemorrhage.  This is a grouping of  ICD10CM and SNOMED-CT codes.),(Exclusion Criteria: None.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.117.1.7.1.234:Hemorrhagic Stroke ICD10CM),(2.16.840.1.113883.3.117.1.7.1.235:Hemorrhagic Stroke SNOMED CT)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1061&profile=MU2%20Update%202016-04-01&ticket=ST-816535-iUdxFXOdKYMgGoaCHx7O-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Suh865dODeq6WCjm9OGvBt4MxRMcjqFJdW/D54RunS0s/AHjP04z6QBTFy7qkcJUVouCiKixXty4bH0=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=C140BB333AB7E8DF913D6CB55D3B66A4;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1273,11 +1348,11 @@ http_interactions:
       Content-Length:
       - '37578'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1368,10 +1443,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.196.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-838778-WYgm9jN7H5jVHZeN6gKw-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.196.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-816543-lVPCfc0S6AzULDJzcv9M-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1393,9 +1468,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!p5WFpmwyegQAGhjm9OGvBt4MxRMcjobjRqhoAGTInWKRH3nHFILMXZOSO+Khsl4eOZHbp+N+paG76HM=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=70D95182A6324ECB3190C18D90DFB625;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!VUfNfBDv0s7Kv2vm9OGvBt4MxRMcjhZS6GpBGQnJyvvQG+NKsijmLtUWk4a2FA22HkqI9N86y4tArzs=;
+        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - JSESSIONID=C3C22237E18975843ECD703FA62EDE96;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1407,11 +1482,11 @@ http_interactions:
       Content-Length:
       - '57095'
       Date:
-      - Thu, 03 Jan 2019 20:21:17 GMT
+      - Wed, 09 Jan 2019 21:25:32 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1737,86 +1812,5 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.102.12.1011&profile=MU2%20Update%202016-04-01&ticket=ST-838777-MdyjSxU415reyehCpl39-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!78e6qN8kfLitHnPNtNHn4GsLooFbU9gXIOUDrg0AzAmp/Ipt29gYW1nWbBiEtPV7VBnqDvlQFC0o7zk=;
-        expires=Thu, 03-Jan-2019 22:21:18 GMT; path=/; Httponly; Secure
-      - JSESSIONID=F9A50AA2D4942693A1C7E502CE7DCC3C;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '4105'
-      Date:
-      - Thu, 03 Jan 2019 20:21:18 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.102.12.1011" displayName="Acute Pharyngitis" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="1532007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral pharyngitis (disorder)"/>
-                    <ns0:Concept code="195655000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute gangrenous pharyngitis (disorder)"/>
-                    <ns0:Concept code="195656004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute phlegmonous pharyngitis (disorder)"/>
-                    <ns0:Concept code="195657008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute ulcerative pharyngitis (disorder)"/>
-                    <ns0:Concept code="195658003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute bacterial pharyngitis (disorder)"/>
-                    <ns0:Concept code="195659006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pneumococcal pharyngitis (disorder)"/>
-                    <ns0:Concept code="195660001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute staphylococcal pharyngitis (disorder)"/>
-                    <ns0:Concept code="195662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute viral pharyngitis (disorder)"/>
-                    <ns0:Concept code="232399005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute herpes simplex pharyngitis (disorder)"/>
-                    <ns0:Concept code="232400003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute herpes zoster pharyngitis (disorder)"/>
-                    <ns0:Concept code="363746003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute pharyngitis (disorder)"/>
-                    <ns0:Concept code="40766000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Enteroviral lymphonodular pharyngitis (disorder)"/>
-                    <ns0:Concept code="43878008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Streptococcal sore throat (disorder)"/>
-                    <ns0:Concept code="58031004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Suppurative pharyngitis (disorder)"/>
-                    <ns0:Concept code="J02.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Streptococcal pharyngitis"/>
-                    <ns0:Concept code="J02.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute pharyngitis due to other specified organisms"/>
-                    <ns0:Concept code="J02.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute pharyngitis, unspecified"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.102.11.1031:Acute Pharyngitis),(2.16.840.1.113883.3.464.1003.102.11.1033:Acute Pharyngitis)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:18 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
 recorded_with: VCR 3.0.3

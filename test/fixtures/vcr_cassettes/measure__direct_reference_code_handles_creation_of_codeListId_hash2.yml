@@ -2,21 +2,15 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
     body:
-      encoding: UTF-8
-      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
+      encoding: US-ASCII
+      string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '44'
-      Content-Type:
-      - application/x-www-form-urlencoded
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
@@ -40,24 +34,24 @@ http_interactions:
       Content-Length:
       - '65'
       Date:
-      - Thu, 03 Jan 2019 20:21:14 GMT
+      - Wed, 09 Jan 2019 21:25:34 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!xkk5c1hcwl5Bm93m9OGvBt4MxRMcjuI8qsbmyTkZhWOrl+fcJbg642mGNOJEV13U2wN5anfOCqHAcmQ=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!IEC5NQ+vVHES7wnNtNHn4GsLooFbUzObX1WPZMN2xxpTdKonq3dK3WFlFvROfF6QvK1R3yjPdvrdvEo=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas
+      string: TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -89,59 +83,10 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!n4UDdw9afsYI77vm9OGvBt4MxRMcjnkDqYb/gG9i6k/cPhpk6Lx3uNpMgdIegfvwN+yV0PQAk0XyxMw=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-838703-cgIGvK5aEBclXPHwbTJE-cas
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!oUaAhVRqQJ5zBq/NtNHn4GsLooFbUyRMu+K7UZBmloHrSR7Ow7NRtZXhTOkM4fF0tYmgq9MG82N/TNc=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!gjYodmqn0ggyLW/m9OGvBt4MxRMcjvC9N7CKfWYpY0HbYfSA0cwEJ2PF9VxmHTr3XN8NPOf3oDyDXwY=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -150,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838708-nDNqADldGOPK5RbRXauz-cas
+      string: ST-816563-ZveTsjsbAcNnKKcfaDLN-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -187,24 +132,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:34 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!5TEpGwi1bBbxtnDNtNHn4GsLooFbUxQUwKctEP91RsmlQxfeo3QBOfbjhRwqHyRbGpEfdNz+ETnF+q8=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!o+xMt4rrMVDta7XNtNHn4GsLooFbU5kKV7SXKJlUnt54/Z1aPbYXBVdCTIHYNgaOitsULglMTSuwtxk=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838704-aqyz22gMizXdXgmf2HGR-cas
+      string: ST-816564-UMlgfCK92VnzFzp5pfbD-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -236,24 +181,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!1VJHMihg2Ip2z+7NtNHn4GsLooFbU9mJVmUHNVQRW4HxG9jN40GBntS7NsaL1EayQBF5LzAw5sUbMLs=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!6CSEV7HvSJab2VbNtNHn4GsLooFbU1eRhyp/kwZQUSXupkYVmGTEWAz9aR3eXQpXbx1y1X7JwiC0DCw=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838706-GUV1xrIsYu16A1f5uOw2-cas
+      string: ST-816565-nfbNQZWS9JxIsDY746NH-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -285,24 +230,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!KI9ofNsL4+DDV4Xm9OGvBt4MxRMcjhIW0SYZWB7ryUHs+LkWJ/ibXH6Vyw7sQRokV1WspU6AThlBHWo=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!5de4ysvnqJy68Krm9OGvBt4MxRMcjs2B/pRulDG8JdvnOsc/Ez0UCKbnLbIxjwWB/n24EDOmErxpDj0=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838705-jwE54B1pGq0l5zF6YdUF-cas
+      string: ST-816567-UEMb6ov9WGPe6n12DWee-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -334,24 +279,24 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!y33FsRVQkkzs9hfNtNHn4GsLooFbU5qqs3c9Vc5JAQ1jvwWOEJ3/GXY9rppQWt0tlDSuVG/8o0Cr/Lw=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!gMsXfBGJQ0CAKF7NtNHn4GsLooFbUzcMFw0ygaKsDIHn7XpiQBLfSOf0KA7mufqa1IFS9bVLGnIt4EE=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838707-59n2ofK4KzXMpHx5u0Sb-cas
+      string: ST-816566-5io7bMV0pNli56NC4Okc-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -383,59 +328,10 @@ http_interactions:
       Content-Length:
       - '34'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!oGAUfyWtxzUEIqjm9OGvBt4MxRMcjlFf4y5yIx/HmBXPB8jYv8GCgVyWEQu/Mt9tovDP9RXPGZLEuOw=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-838709-cU3Ol0fCRhR1LD6aM4rg-cas
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-229077-yMzZfdCj6MscpBe5qefzC7kH4Wvfez9LRN7OTpfPSGHzTelv4R-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!gO8L6JsWT2lU31nm9OGvBt4MxRMcjjkkQm3XBNR8T5coHyHfvPy/97jfN1NS/CqD09CINCLydZTvYEI=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!WM1NS0jOd6eUaqbm9OGvBt4MxRMcjmkQ48Kpw5kz5qpfkR9e8cm14u5ROX0meWc4XXxW/IPMbzeLSa8=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -444,12 +340,110 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-838710-7Nbw7lI2AhTPCdfVcnHd-cas
+      string: ST-816569-p2SywSWm04spQi9CeaRg-cas
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Wed, 09 Jan 2019 21:25:34 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!4eBnzMIKEOtb51fNtNHn4GsLooFbU5Jqqs9L+YQbS5rdSqAgi5IfNMWxVoS4YhjQ64kJ73W8mQt5ZZY=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-816570-l6u6ermNJNdlihIoIpj6-cas
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177938-cJj2hI41TsZs6W0UE2wrQJ362v32vyQb7ZooofwC0LMV07jrGo-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Wed, 09 Jan 2019 21:25:34 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Mf/iKt8PblStGcrm9OGvBt4MxRMcjiKoCNnF6Bfytv7xJ+LKUvgAkBibTXyt4iPTj0676wUp3HgUVxg=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-816568-XjwdEYztlYOTwcdMwcNA-cas
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&profile=MU2%20Update%202016-04-01&ticket=ST-838704-aqyz22gMizXdXgmf2HGR-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-816568-XjwdEYztlYOTwcdMwcNA-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -471,9 +465,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!Z3kWMEtfp7rBJ8nm9OGvBt4MxRMcjhJAJ3ddmAQGm+aZ97rGg9cammKM8PaxEit8Ck+Mkduibv0nF1g=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=0EE2D31DA39D91AFB6A7AE1DA59CA806;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!I619uOHoYPA0vS/m9OGvBt4MxRMcjkpWdtxPhXm9g8rBHT6drS/3gGduaqQ7KcDcZOC9kcySJ5qVjHo=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=16976D693EEE50771598C655573E8A01;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -483,13 +477,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1110'
+      - '1128'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -497,23 +491,24 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.837" displayName="Ethnicity" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Hispanic or Latino"/>
+                    <ns0:Concept code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Not Hispanic or Latino"/>
                 </ns0:ConceptList>
-                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
+                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2016-03-31</ns0:RevisionDate>
+                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.269&profile=MU2%20Update%202016-04-01&ticket=ST-838703-cgIGvK5aEBclXPHwbTJE-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-816570-l6u6ermNJNdlihIoIpj6-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -535,9 +530,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!48hhC0amOW2jh7TNtNHn4GsLooFbU/IgjxpsoGM/ql+c64JFEAgjyhhpEstE4etevrU2MOhKmImU/BQ=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=D7055AB1BD20E40844C3EBCB1DD332CD;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!u8w3+B1teUPD7h3m9OGvBt4MxRMcjlje9DBkbqmOrvHfUmdHA00cY55dCwRkErGcgk6N8h+6jMB5ok0=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=D6FEE9EF23A291CB3B58BA471A13EE14;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -547,9 +542,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '7522'
+      - '1356'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -561,54 +556,24 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="1116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic aggressive type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="111891008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis B without hepatic coma (disorder)"/>
-                    <ns0:Concept code="13265006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute fulminating type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="186624004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta agent (coinfection) with hepatic coma (disorder)"/>
-                    <ns0:Concept code="186626002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta-agent (coinfection) without hepatic coma (disorder)"/>
-                    <ns0:Concept code="186639003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B without delta-agent (disorder)"/>
-                    <ns0:Concept code="235864009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with hepatitis D (disorder)"/>
-                    <ns0:Concept code="235865005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis D superinfection of hepatitis B carrier (disorder)"/>
-                    <ns0:Concept code="235869004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B with hepatitis D (disorder)"/>
-                    <ns0:Concept code="235871004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B carrier (finding)"/>
-                    <ns0:Concept code="26206000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to viral hepatitis B (disorder)"/>
-                    <ns0:Concept code="38662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic persistent type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="424099008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to acute hepatitis B (disorder)"/>
-                    <ns0:Concept code="424340000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to chronic hepatitis B (disorder)"/>
-                    <ns0:Concept code="442134007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B associated with Human immunodeficiency virus infection (disorder)"/>
-                    <ns0:Concept code="442374005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B and hepatitis C (disorder)"/>
-                    <ns0:Concept code="446698005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactivation of hepatitis B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="50167007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic active type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="53425008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anicteric type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="60498001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Congenital viral hepatitis B infection (disorder)"/>
-                    <ns0:Concept code="61977001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="66071002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis type B (disorder)"/>
-                    <ns0:Concept code="76795007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="B16.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent with hepatic coma"/>
-                    <ns0:Concept code="B16.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent without hepatic coma"/>
-                    <ns0:Concept code="B16.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent with hepatic coma"/>
-                    <ns0:Concept code="B16.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent and without hepatic coma"/>
-                    <ns0:Concept code="B18.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B with delta-agent"/>
-                    <ns0:Concept code="B18.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B without delta-agent"/>
-                    <ns0:Concept code="B19.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B without hepatic coma"/>
-                    <ns0:Concept code="B19.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B with hepatic coma"/>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
                 </ns0:ConceptList>
-                <ns0:Source>Optum</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used to identify patients with acute or chronic Hepatitis B infection.),(Data Element Scope: The intent of this data element is identify patients with acute or chronic Hepatitis B infection.  Using the Quality Data Model, this particular element would map to the "Diagnosis, Active".),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients with acute or chronic Hepatitis B infection.),(Exclusion Criteria: Patients with evidence of current or past acute or chronic Hepatitis B infection.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.271:Hepatitis B),(2.16.840.1.113883.3.67.1.101.1.272:Hepatitis B)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-08-25</ns0:RevisionDate>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:15 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-838707-59n2ofK4KzXMpHx5u0Sb-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-816569-p2SywSWm04spQi9CeaRg-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -630,9 +595,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!laPSaMfVYhs+Dp/NtNHn4GsLooFbU3zazyT8z4ntGhN6ARn/8VR+WEYEhDOob9ZzNgRL/lUtL1xHtUo=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=648E355DBC131C5F0166DCDC6ABCDEE4;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!RDlW+jB81G61GPHNtNHn4GsLooFbU+MiFvpOxBq2xSZPlZvU4rnTtTjl4UeSmUA1xm8jSdKgAzW5vj4=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=3CEDB43CA75472AD5A8C8DB51E9694C5;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -644,11 +609,11 @@ http_interactions:
       Content-Length:
       - '1765'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -674,10 +639,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-838710-7Nbw7lI2AhTPCdfVcnHd-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&profile=MU2%20Update%202016-04-01&ticket=ST-816563-ZveTsjsbAcNnKKcfaDLN-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -699,9 +664,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!P5EIjZbce2BCs5nNtNHn4GsLooFbU7rJIezqkNy/JyGLKI1ETU03INYAVjgYJEPMz9cOfGOQhFqtj5U=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=DEF1221C5F334376B27A2FD461BB0CD8;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!cmD3Ec2YqAjqEMHNtNHn4GsLooFbU6F9JQqR+x2feLxbi+efZGucT9PpQoihItq4rd1TVnezm2ohMrE=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A9850E0EFF98DD454CB1D58D4259BF77;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -711,74 +676,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1128'
+      - '1110'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.837" displayName="Ethnicity" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Hispanic or Latino"/>
-                    <ns0:Concept code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Not Hispanic or Latino"/>
-                </ns0:ConceptList>
-                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
-                <ns0:Type>Extensional</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1078.5&profile=MU2%20Update%202016-04-01&ticket=ST-838708-nDNqADldGOPK5RbRXauz-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!Ue6TmtDffX8SiULNtNHn4GsLooFbU9G/sn3lys7Q108GZx8OyEcvTvBH+gJPNq15nsRpZqFiiCcLkTc=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=26365181B72EF8B77619F995BDBC4B8D;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '22956'
-      Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -790,194 +690,23 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1078.5" displayName="Delivery - Procedure" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="10745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of transverse presentation (procedure)"/>
-                    <ns0:Concept code="10D00Z0" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Classical, Open Approach"/>
-                    <ns0:Concept code="10D00Z1" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Low Cervical, Open Approach"/>
-                    <ns0:Concept code="10D00Z2" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Extraperitoneal, Open Approach"/>
-                    <ns0:Concept code="10D07Z3" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Low Forceps, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D07Z4" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Mid Forceps, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D07Z5" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, High Forceps, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D07Z6" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Vacuum, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D07Z7" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Internal Version, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D07Z8" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Other, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D17ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Retained, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D18ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Retained, Via Natural or Artificial Opening Endoscopic"/>
-                    <ns0:Concept code="10D27ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Ectopic, Via Natural or Artificial Opening"/>
-                    <ns0:Concept code="10D28ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Ectopic, Via Natural or Artificial Opening Endoscopic"/>
-                    <ns0:Concept code="10E0XZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Delivery of Products of Conception, External Approach"/>
-                    <ns0:Concept code="11466000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cesarean section (procedure)"/>
-                    <ns0:Concept code="14119008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Braxton Hicks obstetrical version with extraction (procedure)"/>
-                    <ns0:Concept code="15413009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps delivery with episiotomy (procedure)"/>
-                    <ns0:Concept code="16819009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of face presentation (procedure)"/>
-                    <ns0:Concept code="177128002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Induction and delivery procedures (procedure)"/>
-                    <ns0:Concept code="177141003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective cesarean section (procedure)"/>
-                    <ns0:Concept code="177142005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective upper segment cesarean section (procedure)"/>
-                    <ns0:Concept code="177143000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective lower segment cesarean section (procedure)"/>
-                    <ns0:Concept code="177152009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction delivery with version (procedure)"/>
-                    <ns0:Concept code="177157003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Spontaneous breech delivery (procedure)"/>
-                    <ns0:Concept code="177158008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Assisted breech delivery (procedure)"/>
-                    <ns0:Concept code="177161009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps cephalic delivery (procedure)"/>
-                    <ns0:Concept code="177162002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps cephalic delivery with rotation (procedure)"/>
-                    <ns0:Concept code="177164001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Midforceps cephalic delivery with rotation (procedure)"/>
-                    <ns0:Concept code="177167008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barton forceps cephalic delivery with rotation (procedure)"/>
-                    <ns0:Concept code="177168003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="DeLee forceps cephalic delivery with rotation (procedure)"/>
-                    <ns0:Concept code="177170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Piper forceps delivery (procedure)"/>
-                    <ns0:Concept code="177173009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High vacuum delivery (procedure)"/>
-                    <ns0:Concept code="177174003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low vacuum delivery (procedure)"/>
-                    <ns0:Concept code="177175002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vacuum delivery before full dilation of cervix (procedure)"/>
-                    <ns0:Concept code="177176001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Trial of vacuum delivery (procedure)"/>
-                    <ns0:Concept code="177179008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
-                    <ns0:Concept code="177180006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manipulative cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
-                    <ns0:Concept code="177181005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Non-manipulative cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
-                    <ns0:Concept code="177184002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Normal delivery procedure (procedure)"/>
-                    <ns0:Concept code="177203002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manual removal of products of conception from delivered uterus (procedure)"/>
-                    <ns0:Concept code="17860005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low forceps delivery with episiotomy (procedure)"/>
-                    <ns0:Concept code="18625004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low forceps delivery (procedure)"/>
-                    <ns0:Concept code="19390001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech delivery with forceps to aftercoming head (procedure)"/>
-                    <ns0:Concept code="22633006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal delivery, medical personnel present (procedure)"/>
-                    <ns0:Concept code="236973005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery procedure (procedure)"/>
-                    <ns0:Concept code="236974004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Instrumental delivery (procedure)"/>
-                    <ns0:Concept code="236975003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nonrotational forceps delivery (procedure)"/>
-                    <ns0:Concept code="236976002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Outlet forceps delivery (procedure)"/>
-                    <ns0:Concept code="236977006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery, face to pubes (procedure)"/>
-                    <ns0:Concept code="236978001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery to the aftercoming head (procedure)"/>
-                    <ns0:Concept code="236985002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency lower segment cesarean section (procedure)"/>
-                    <ns0:Concept code="236986001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency upper segment cesarean section (procedure)"/>
-                    <ns0:Concept code="236989008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abdominal delivery for shoulder dystocia (procedure)"/>
-                    <ns0:Concept code="237311001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech delivery (procedure)"/>
-                    <ns0:Concept code="25296001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Scanzoni maneuver (procedure)"/>
-                    <ns0:Concept code="25828002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mid forceps delivery with episiotomy (procedure)"/>
-                    <ns0:Concept code="26313002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by vacuum extraction with episiotomy (procedure)"/>
-                    <ns0:Concept code="265639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Midforceps delivery without rotation (procedure)"/>
-                    <ns0:Concept code="274130007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency cesarean section (procedure)"/>
-                    <ns0:Concept code="275168001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neville-Barnes forceps delivery (procedure)"/>
-                    <ns0:Concept code="275169009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Simpson's forceps delivery (procedure)"/>
-                    <ns0:Concept code="287976008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech/instrumental delivery operations (procedure)"/>
-                    <ns0:Concept code="29613008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by double application of forceps (procedure)"/>
-                    <ns0:Concept code="302382009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction with internal podalic version (procedure)"/>
-                    <ns0:Concept code="302383004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery (procedure)"/>
-                    <ns0:Concept code="30476003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barton's forceps delivery (procedure)"/>
-                    <ns0:Concept code="306727001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech presentation, delivery, no version (procedure)"/>
-                    <ns0:Concept code="359940006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech extraction (procedure)"/>
-                    <ns0:Concept code="359943008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech delivery (procedure)"/>
-                    <ns0:Concept code="384729004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of vertex presentation (procedure)"/>
-                    <ns0:Concept code="38479009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Frank breech delivery (procedure)"/>
-                    <ns0:Concept code="386622003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Duhrssen's incisions of cervix to assist delivery (procedure)"/>
-                    <ns0:Concept code="387711001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pubiotomy to assist delivery (procedure)"/>
-                    <ns0:Concept code="398307005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low cervical cesarean section (procedure)"/>
-                    <ns0:Concept code="40219000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Malstrom's extraction with episiotomy (procedure)"/>
-                    <ns0:Concept code="416055001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Total breech extraction (procedure)"/>
-                    <ns0:Concept code="417121007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction (procedure)"/>
-                    <ns0:Concept code="45718005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal delivery with forceps including postpartum care (procedure)"/>
-                    <ns0:Concept code="54973000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Total breech delivery with forceps to aftercoming head (procedure)"/>
-                    <ns0:Concept code="5556001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manually assisted spontaneous delivery (procedure)"/>
-                    <ns0:Concept code="57271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Extraperitoneal cesarean section (procedure)"/>
-                    <ns0:Concept code="59400" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care"/>
-                    <ns0:Concept code="59409" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only (with or without episiotomy and/or forceps)"/>
-                    <ns0:Concept code="59410" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only (with or without episiotomy and/or forceps); including postpartum care"/>
-                    <ns0:Concept code="59510" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, cesarean delivery, and postpartum care"/>
-                    <ns0:Concept code="59514" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only"/>
-                    <ns0:Concept code="59515" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only; including postpartum care"/>
-                    <ns0:Concept code="59610" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care, after previous cesarean delivery"/>
-                    <ns0:Concept code="59612" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps)"/>
-                    <ns0:Concept code="59614" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps); including postpartum care"/>
-                    <ns0:Concept code="59618" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, cesarean delivery, and postpartum care, following attempted vaginal delivery after previous cesarean delivery"/>
-                    <ns0:Concept code="59620" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only, following attempted vaginal delivery after previous cesarean delivery"/>
-                    <ns0:Concept code="59622" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only, following attempted vaginal delivery after previous cesarean delivery; including postpartum care"/>
-                    <ns0:Concept code="61586001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by vacuum extraction (procedure)"/>
-                    <ns0:Concept code="62508004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mid forceps delivery (procedure)"/>
-                    <ns0:Concept code="69162008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cleidotomy (procedure)"/>
-                    <ns0:Concept code="69422002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Trial forceps delivery (procedure)"/>
-                    <ns0:Concept code="71166009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery with rotation of fetal head (procedure)"/>
-                    <ns0:Concept code="72492007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Footling breech delivery (procedure)"/>
-                    <ns0:Concept code="84195007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Classical cesarean section (procedure)"/>
-                    <ns0:Concept code="85403009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery, medical personnel present (procedure)"/>
-                    <ns0:Concept code="89053004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal cesarean section (procedure)"/>
-                    <ns0:Concept code="89346004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Kielland rotation (procedure)"/>
-                    <ns0:Concept code="89849000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps delivery (procedure)"/>
-                    <ns0:Concept code="90438006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Malstrom's extraction (procedure)"/>
-                </ns0:ConceptList>
-                <ns0:Source>Optum</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used in the outpatient setting to identify patients who had a live birth or delivery.),(Data Element Scope: The intent of this data element is identify patients who had a live birth or delivery.  Using the Quality Data Model, this particular element would map to the "Procedure, Performed" element.),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients who had a live birth or delivery.),(Exclusion Criteria: None)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.2433:Delivery),(2.16.840.1.113883.3.67.1.101.1.277:Delivery),(2.16.840.1.113883.3.67.1.101.1.82:Delivery)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-09-08</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-838709-cU3Ol0fCRhR1LD6aM4rg-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!pwDRQgcKxtIR/fnm9OGvBt4MxRMcjsi7CgYZOU8Q6MlWPNEQK6gvRfvecDVIJgfcNAav6uQ03pR4Nl8=;
-        expires=Thu, 03-Jan-2019 22:21:15 GMT; path=/; Httponly; Secure
-      - JSESSIONID=748E580F3485950F7CFE5D6AF4B66D9D;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '1356'
-      Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
                 <ns0:ConceptList>
                     <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
-                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
                 </ns0:ConceptList>
                 <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+                <ns0:RevisionDate>2016-03-31</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-838705-jwE54B1pGq0l5zF6YdUF-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-816564-UMlgfCK92VnzFzp5pfbD-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -999,9 +728,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!Mdqk5FKJ2V1qYRHm9OGvBt4MxRMcjhgyzDSJtggn6Uc4OG3U7Rgy7/r/xSoC47jJf2geLIhtoOBypeI=;
-        expires=Thu, 03-Jan-2019 22:21:16 GMT; path=/; Httponly; Secure
-      - JSESSIONID=BC41178573670EC86FF8AA5739C38DB8;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!o/s08bZqMz8fHlTNtNHn4GsLooFbU0L23cNLLSyP+deZtOrFaBMRguZx7vvkY0o9aiqvD4pcTIGW3mw=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=6A369D0757D136BB81C319A06CF7825D;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1013,11 +742,11 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1178,10 +907,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:35 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.278&profile=MU2%20Update%202016-04-01&ticket=ST-838706-GUV1xrIsYu16A1f5uOw2-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.269&profile=MU2%20Update%202016-04-01&ticket=ST-816565-nfbNQZWS9JxIsDY746NH-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1203,9 +932,274 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!YiX1VUaZkP+zBxPm9OGvBt4MxRMcjuKMnbnVe7fMTNsEC04jrwm3wlMfSdZpI6+su43/9F7UOa5gJLo=;
-        expires=Thu, 03-Jan-2019 22:21:16 GMT; path=/; Httponly; Secure
-      - JSESSIONID=8F21C172874ED166D52F2CB41469F301;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!41qSWIuquBFMwC7NtNHn4GsLooFbU9xBW8ow0qegsCFJIPdecwagPalplZzSUE8rbn+rn1m+P7ogl/A=;
+        expires=Wed, 09-Jan-2019 23:25:35 GMT; path=/; Httponly; Secure
+      - JSESSIONID=5758BE305270DAB95247792F202E185A;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '7522'
+      Date:
+      - Wed, 09 Jan 2019 21:25:35 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic aggressive type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="111891008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis B without hepatic coma (disorder)"/>
+                    <ns0:Concept code="13265006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute fulminating type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="186624004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta agent (coinfection) with hepatic coma (disorder)"/>
+                    <ns0:Concept code="186626002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta-agent (coinfection) without hepatic coma (disorder)"/>
+                    <ns0:Concept code="186639003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B without delta-agent (disorder)"/>
+                    <ns0:Concept code="235864009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with hepatitis D (disorder)"/>
+                    <ns0:Concept code="235865005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis D superinfection of hepatitis B carrier (disorder)"/>
+                    <ns0:Concept code="235869004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B with hepatitis D (disorder)"/>
+                    <ns0:Concept code="235871004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B carrier (finding)"/>
+                    <ns0:Concept code="26206000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to viral hepatitis B (disorder)"/>
+                    <ns0:Concept code="38662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic persistent type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="424099008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to acute hepatitis B (disorder)"/>
+                    <ns0:Concept code="424340000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to chronic hepatitis B (disorder)"/>
+                    <ns0:Concept code="442134007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B associated with Human immunodeficiency virus infection (disorder)"/>
+                    <ns0:Concept code="442374005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B and hepatitis C (disorder)"/>
+                    <ns0:Concept code="446698005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactivation of hepatitis B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="50167007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic active type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="53425008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anicteric type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="60498001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Congenital viral hepatitis B infection (disorder)"/>
+                    <ns0:Concept code="61977001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="66071002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis type B (disorder)"/>
+                    <ns0:Concept code="76795007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="B16.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent with hepatic coma"/>
+                    <ns0:Concept code="B16.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent without hepatic coma"/>
+                    <ns0:Concept code="B16.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent with hepatic coma"/>
+                    <ns0:Concept code="B16.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent and without hepatic coma"/>
+                    <ns0:Concept code="B18.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B with delta-agent"/>
+                    <ns0:Concept code="B18.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B without delta-agent"/>
+                    <ns0:Concept code="B19.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B without hepatic coma"/>
+                    <ns0:Concept code="B19.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B with hepatic coma"/>
+                </ns0:ConceptList>
+                <ns0:Source>Optum</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used to identify patients with acute or chronic Hepatitis B infection.),(Data Element Scope: The intent of this data element is identify patients with acute or chronic Hepatitis B infection.  Using the Quality Data Model, this particular element would map to the "Diagnosis, Active".),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients with acute or chronic Hepatitis B infection.),(Exclusion Criteria: Patients with evidence of current or past acute or chronic Hepatitis B infection.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.271:Hepatitis B),(2.16.840.1.113883.3.67.1.101.1.272:Hepatitis B)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-08-25</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1078.5&profile=MU2%20Update%202016-04-01&ticket=ST-816567-UEMb6ov9WGPe6n12DWee-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!5nWnNPvGRXNLLqPm9OGvBt4MxRMcjp6bjgPKBkoyldI+kAybBimddd6KhFwpBeVS2+XNJzr+W3KPFJA=;
+        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - JSESSIONID=C3BE4A96DF6A0AF501A28E145CCE7482;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '22956'
+      Date:
+      - Wed, 09 Jan 2019 21:25:35 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1078.5" displayName="Delivery - Procedure" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="10745001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of transverse presentation (procedure)"/>
+                    <ns0:Concept code="10D00Z0" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Classical, Open Approach"/>
+                    <ns0:Concept code="10D00Z1" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Low Cervical, Open Approach"/>
+                    <ns0:Concept code="10D00Z2" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Extraperitoneal, Open Approach"/>
+                    <ns0:Concept code="10D07Z3" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Low Forceps, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D07Z4" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Mid Forceps, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D07Z5" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, High Forceps, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D07Z6" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Vacuum, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D07Z7" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Internal Version, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D07Z8" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Other, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D17ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Retained, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D18ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Retained, Via Natural or Artificial Opening Endoscopic"/>
+                    <ns0:Concept code="10D27ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Ectopic, Via Natural or Artificial Opening"/>
+                    <ns0:Concept code="10D28ZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Extraction of Products of Conception, Ectopic, Via Natural or Artificial Opening Endoscopic"/>
+                    <ns0:Concept code="10E0XZZ" codeSystem="2.16.840.1.113883.6.4" codeSystemName="ICD10PCS" codeSystemVersion="2016" displayName="Delivery of Products of Conception, External Approach"/>
+                    <ns0:Concept code="11466000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cesarean section (procedure)"/>
+                    <ns0:Concept code="14119008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Braxton Hicks obstetrical version with extraction (procedure)"/>
+                    <ns0:Concept code="15413009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps delivery with episiotomy (procedure)"/>
+                    <ns0:Concept code="16819009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of face presentation (procedure)"/>
+                    <ns0:Concept code="177128002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Induction and delivery procedures (procedure)"/>
+                    <ns0:Concept code="177141003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective cesarean section (procedure)"/>
+                    <ns0:Concept code="177142005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective upper segment cesarean section (procedure)"/>
+                    <ns0:Concept code="177143000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Elective lower segment cesarean section (procedure)"/>
+                    <ns0:Concept code="177152009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction delivery with version (procedure)"/>
+                    <ns0:Concept code="177157003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Spontaneous breech delivery (procedure)"/>
+                    <ns0:Concept code="177158008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Assisted breech delivery (procedure)"/>
+                    <ns0:Concept code="177161009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps cephalic delivery (procedure)"/>
+                    <ns0:Concept code="177162002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps cephalic delivery with rotation (procedure)"/>
+                    <ns0:Concept code="177164001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Midforceps cephalic delivery with rotation (procedure)"/>
+                    <ns0:Concept code="177167008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barton forceps cephalic delivery with rotation (procedure)"/>
+                    <ns0:Concept code="177168003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="DeLee forceps cephalic delivery with rotation (procedure)"/>
+                    <ns0:Concept code="177170007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Piper forceps delivery (procedure)"/>
+                    <ns0:Concept code="177173009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High vacuum delivery (procedure)"/>
+                    <ns0:Concept code="177174003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low vacuum delivery (procedure)"/>
+                    <ns0:Concept code="177175002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vacuum delivery before full dilation of cervix (procedure)"/>
+                    <ns0:Concept code="177176001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Trial of vacuum delivery (procedure)"/>
+                    <ns0:Concept code="177179008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
+                    <ns0:Concept code="177180006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manipulative cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
+                    <ns0:Concept code="177181005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Non-manipulative cephalic vaginal delivery with abnormal presentation of head at delivery without instrument (procedure)"/>
+                    <ns0:Concept code="177184002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Normal delivery procedure (procedure)"/>
+                    <ns0:Concept code="177203002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manual removal of products of conception from delivered uterus (procedure)"/>
+                    <ns0:Concept code="17860005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low forceps delivery with episiotomy (procedure)"/>
+                    <ns0:Concept code="18625004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low forceps delivery (procedure)"/>
+                    <ns0:Concept code="19390001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech delivery with forceps to aftercoming head (procedure)"/>
+                    <ns0:Concept code="22633006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal delivery, medical personnel present (procedure)"/>
+                    <ns0:Concept code="236973005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery procedure (procedure)"/>
+                    <ns0:Concept code="236974004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Instrumental delivery (procedure)"/>
+                    <ns0:Concept code="236975003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nonrotational forceps delivery (procedure)"/>
+                    <ns0:Concept code="236976002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Outlet forceps delivery (procedure)"/>
+                    <ns0:Concept code="236977006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery, face to pubes (procedure)"/>
+                    <ns0:Concept code="236978001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery to the aftercoming head (procedure)"/>
+                    <ns0:Concept code="236985002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency lower segment cesarean section (procedure)"/>
+                    <ns0:Concept code="236986001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency upper segment cesarean section (procedure)"/>
+                    <ns0:Concept code="236989008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abdominal delivery for shoulder dystocia (procedure)"/>
+                    <ns0:Concept code="237311001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech delivery (procedure)"/>
+                    <ns0:Concept code="25296001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Scanzoni maneuver (procedure)"/>
+                    <ns0:Concept code="25828002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mid forceps delivery with episiotomy (procedure)"/>
+                    <ns0:Concept code="26313002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by vacuum extraction with episiotomy (procedure)"/>
+                    <ns0:Concept code="265639000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Midforceps delivery without rotation (procedure)"/>
+                    <ns0:Concept code="274130007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency cesarean section (procedure)"/>
+                    <ns0:Concept code="275168001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neville-Barnes forceps delivery (procedure)"/>
+                    <ns0:Concept code="275169009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Simpson's forceps delivery (procedure)"/>
+                    <ns0:Concept code="287976008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech/instrumental delivery operations (procedure)"/>
+                    <ns0:Concept code="29613008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by double application of forceps (procedure)"/>
+                    <ns0:Concept code="302382009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction with internal podalic version (procedure)"/>
+                    <ns0:Concept code="302383004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery (procedure)"/>
+                    <ns0:Concept code="30476003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barton's forceps delivery (procedure)"/>
+                    <ns0:Concept code="306727001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech presentation, delivery, no version (procedure)"/>
+                    <ns0:Concept code="359940006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech extraction (procedure)"/>
+                    <ns0:Concept code="359943008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Partial breech delivery (procedure)"/>
+                    <ns0:Concept code="384729004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery of vertex presentation (procedure)"/>
+                    <ns0:Concept code="38479009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Frank breech delivery (procedure)"/>
+                    <ns0:Concept code="386622003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Duhrssen's incisions of cervix to assist delivery (procedure)"/>
+                    <ns0:Concept code="387711001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pubiotomy to assist delivery (procedure)"/>
+                    <ns0:Concept code="398307005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Low cervical cesarean section (procedure)"/>
+                    <ns0:Concept code="40219000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Malstrom's extraction with episiotomy (procedure)"/>
+                    <ns0:Concept code="416055001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Total breech extraction (procedure)"/>
+                    <ns0:Concept code="417121007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Breech extraction (procedure)"/>
+                    <ns0:Concept code="45718005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal delivery with forceps including postpartum care (procedure)"/>
+                    <ns0:Concept code="54973000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Total breech delivery with forceps to aftercoming head (procedure)"/>
+                    <ns0:Concept code="5556001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Manually assisted spontaneous delivery (procedure)"/>
+                    <ns0:Concept code="57271003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Extraperitoneal cesarean section (procedure)"/>
+                    <ns0:Concept code="59400" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care"/>
+                    <ns0:Concept code="59409" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only (with or without episiotomy and/or forceps)"/>
+                    <ns0:Concept code="59410" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only (with or without episiotomy and/or forceps); including postpartum care"/>
+                    <ns0:Concept code="59510" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, cesarean delivery, and postpartum care"/>
+                    <ns0:Concept code="59514" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only"/>
+                    <ns0:Concept code="59515" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only; including postpartum care"/>
+                    <ns0:Concept code="59610" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, vaginal delivery (with or without episiotomy, and/or forceps) and postpartum care, after previous cesarean delivery"/>
+                    <ns0:Concept code="59612" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps)"/>
+                    <ns0:Concept code="59614" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Vaginal delivery only, after previous cesarean delivery (with or without episiotomy and/or forceps); including postpartum care"/>
+                    <ns0:Concept code="59618" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Routine obstetric care including antepartum care, cesarean delivery, and postpartum care, following attempted vaginal delivery after previous cesarean delivery"/>
+                    <ns0:Concept code="59620" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only, following attempted vaginal delivery after previous cesarean delivery"/>
+                    <ns0:Concept code="59622" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Cesarean delivery only, following attempted vaginal delivery after previous cesarean delivery; including postpartum care"/>
+                    <ns0:Concept code="61586001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by vacuum extraction (procedure)"/>
+                    <ns0:Concept code="62508004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mid forceps delivery (procedure)"/>
+                    <ns0:Concept code="69162008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cleidotomy (procedure)"/>
+                    <ns0:Concept code="69422002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Trial forceps delivery (procedure)"/>
+                    <ns0:Concept code="71166009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Forceps delivery with rotation of fetal head (procedure)"/>
+                    <ns0:Concept code="72492007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Footling breech delivery (procedure)"/>
+                    <ns0:Concept code="84195007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Classical cesarean section (procedure)"/>
+                    <ns0:Concept code="85403009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery, medical personnel present (procedure)"/>
+                    <ns0:Concept code="89053004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Vaginal cesarean section (procedure)"/>
+                    <ns0:Concept code="89346004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Kielland rotation (procedure)"/>
+                    <ns0:Concept code="89849000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="High forceps delivery (procedure)"/>
+                    <ns0:Concept code="90438006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Delivery by Malstrom's extraction (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>Optum</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used in the outpatient setting to identify patients who had a live birth or delivery.),(Data Element Scope: The intent of this data element is identify patients who had a live birth or delivery.  Using the Quality Data Model, this particular element would map to the "Procedure, Performed" element.),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients who had a live birth or delivery.),(Exclusion Criteria: None)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.2433:Delivery),(2.16.840.1.113883.3.67.1.101.1.277:Delivery),(2.16.840.1.113883.3.67.1.101.1.82:Delivery)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-09-08</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.278&profile=MU2%20Update%202016-04-01&ticket=ST-816566-5io7bMV0pNli56NC4Okc-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!XG8Wrl0g3kTyfr7m9OGvBt4MxRMcjmIY8VbbXDLGQq9Tw38b8QgzxREx6wlQo5mZgH+rfxqu4WblrJ8=;
+        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - JSESSIONID=325A4BC4854FC1F9B782A36AB82BE82D;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1217,7 +1211,7 @@ http_interactions:
       Content-Length:
       - '76809'
       Date:
-      - Thu, 03 Jan 2019 20:21:15 GMT
+      - Wed, 09 Jan 2019 21:25:35 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1615,5 +1609,5 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Thu, 03 Jan 2019 20:21:16 GMT
+  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
 recorded_with: VCR 3.0.3

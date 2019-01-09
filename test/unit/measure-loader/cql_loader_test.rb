@@ -85,15 +85,11 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 1, measures.length
       measure = measures[0]
 
-      binding.pry
-
       assert_equal 'Diabetes: Medical Attention for Nephropathy', measure.title
       assert_equal 3, measure.cql_libraries.length
-      hospice_deps = measure.cql_libraries.select { |lib| lib[:library_name] == 'Hospice' }[0].statement_dependencies
-      # hospice_deps = measure.cql_libraries.find_by(library_name: 'Hospice').statement_dependencies
+      hospice_deps = measure.cql_libraries.find_by(library_name: 'Hospice').statement_dependencies
       assert_equal 1, hospice_deps.length
-      assert_equal [], hospice_deps.select { |statement| statement[:statement_name] == 'Has Hospice' }[0].statement_references
-      # assert_equal [], hospice_deps.find_by(statement_name: 'Has Hospice').statement_references
+      assert_equal [], hospice_deps.find_by(statement_name: 'Has Hospice').statement_references
     end
   end
 

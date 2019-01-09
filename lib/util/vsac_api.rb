@@ -121,7 +121,7 @@ module Util
         # parse xml response and get text content of each profile element
         doc = Nokogiri::XML(profiles_response)
         profile_list = doc.at_xpath("/ProfileList")
-        return profile_list.xpath("//profile").map { |profile| profile.text }
+        return profile_list.xpath("//profile").map(&:text)
       end
 
       ##
@@ -186,7 +186,6 @@ module Util
       # Returns a list of release names in a program. These are kept in the order that VSAC provides them in.
       def get_program_release_names(program = nil)
         program_details = get_program_details(program)
-        releases = []
         return program_details['release'].map { |release| release['name'] }
       end
 
@@ -243,7 +242,7 @@ module Util
       def get_multiple_valueset_raw_responses(needed_value_sets)
         service_tickets = get_service_tickets(needed_value_sets.size)
 
-        hydra = Typhoeus::Hydra.new
+        hydra = Typhoeus::Hydra.new # Hydra executes multiple HTTP requests at once
         requests = needed_value_sets.map do |n| 
           request = create_valueset_request(n[:value_set][:oid], service_tickets.pop, n[:vs_vsac_options])
           hydra.queue(request)
@@ -260,7 +259,7 @@ module Util
         raise VSACNoCredentialsError.new unless @ticket_granting_ticket
         raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
         
-        hydra = Typhoeus::Hydra.new
+        hydra = Typhoeus::Hydra.new # Hydra executes multiple HTTP requests at once
         requests = amount.times.map do
           request = create_service_ticket_request
           hydra.queue(request)
