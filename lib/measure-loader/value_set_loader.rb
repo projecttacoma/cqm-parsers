@@ -56,7 +56,7 @@ module Measures
 
     def make_specific_value_set_options(value_set)
       # If we are allowing measure_defined value sets, determine vsac_options for this value set based on elm info.
-      if @vsac_options[:measure_defined] == true
+      if @vsac_options[:measure_defined]
         return { profile: value_set[:profile] } unless value_set[:profile].nil?
         return { version: value_set[:version] } unless value_set[:version].nil?
       end
@@ -67,7 +67,6 @@ module Measures
       doc = Nokogiri::XML(vsac_xml_response)
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
-      raise error "BLAH" if vs_element.nil?
       vs = CQM::ValueSet.new(
         oid: vs_element["ID"],
         display_name: vs_element["displayName"],

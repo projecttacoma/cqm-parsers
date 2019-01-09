@@ -13,7 +13,6 @@ require 'log4r'
 require 'memoist'
 require 'protected_attributes'
 require 'pry'
-require 'clipboard'
 require 'typhoeus'
 
 PROJECT_ROOT = File.expand_path("../../", __FILE__)
@@ -21,7 +20,6 @@ require_relative File.join(PROJECT_ROOT, 'lib', 'hqmf-parser')
 
 require 'minitest/autorun'
 require "minitest/reporters"
-require 'webmock/minitest'
 
 require 'bundler/setup'
 

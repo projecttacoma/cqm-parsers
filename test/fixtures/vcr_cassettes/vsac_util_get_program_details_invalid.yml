@@ -7,47 +7,46 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 404
       message: ''
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
       Content-Type:
       - application/json
       Content-Length:
       - '39'
       Date:
-      - Mon, 17 Dec 2018 16:08:24 GMT
+      - Wed, 09 Jan 2019 21:13:19 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!7lo9SWZZOd6+myrNtNHn4GsLooFbU9gkH2aAxusT8YZ/hRZI/LOsjcAFGgk7FsHie7r91dcgcLP/7Y4=;
-        expires=Mon, 17-Dec-2018 18:08:24 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!Sz7BxGRybcaJvtvNtNHn4GsLooFbU5I4Cxdl9mgKATZdLk4GHjGtgUtogKnLNXvlR1fgiUOfi+6lD9c=;
+        expires=Wed, 09-Jan-2019 23:13:20 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
       string: '{"status":"info","message":"Not found"}'
     http_version: 
-  recorded_at: Mon, 17 Dec 2018 16:08:24 GMT
+  recorded_at: Wed, 09 Jan 2019 21:13:20 GMT
 recorded_with: VCR 3.0.3

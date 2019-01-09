@@ -8,6 +8,7 @@ require_relative 'util/counter.rb'
 require_relative 'util/code_system_helper'
 require_relative 'util/hqmf_template_helper'
 require_relative 'util/vsac_api'
+require_relative 'util/util'
 
 require_relative 'hqmf-model/utilities.rb'
 
@@ -116,6 +117,7 @@ require_relative 'qrda-import/patient_importer.rb'
 require_relative 'ext/data_element.rb'
 require_relative 'ext/code.rb'
 
+require_relative 'measure-loader/helpers'
 require_relative 'measure-loader/cql_loader'
 require_relative 'measure-loader/elm_dependency_finder'
 require_relative 'measure-loader/elm_parser'

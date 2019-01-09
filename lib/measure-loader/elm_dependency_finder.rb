@@ -4,8 +4,8 @@ module Measures
 
       def find_dependencies(cql_library_files, main_cql_library_id)
         elms = cql_library_files.map(&:elm)
-        all_elms_dep_map = Hash[elms.map { |elm| [elm_id(elm), make_statement_deps_for_elm(elm)] }]
-        needed_deps_map = Hash[elms.map { |elm| [elm_id(elm), {}] }]
+        all_elms_dep_map = Hash[elms.map { |elm| [Helpers.elm_id(elm), make_statement_deps_for_elm(elm)] }]
+        needed_deps_map = Hash[elms.map { |elm| [Helpers.elm_id(elm), {}] }]
 
         needed_deps_map[main_cql_library_id] = all_elms_dep_map[main_cql_library_id]
         needed_deps_map[main_cql_library_id].each_value do |stmnts|
@@ -16,12 +16,8 @@ module Measures
 
       private
 
-      def elm_id(elm)
-        return elm['library']['identifier']['id']
-      end
-
       def make_library_alias_to_path_hash(elm)
-        lib_alias_to_path = { nil => elm_id(elm) } # nil value used for statements without libraryName
+        lib_alias_to_path = { nil => Helpers.elm_id(elm) } # nil value used for statements without libraryName
         (elm.dig('library','includes','def') || []).each do |library_hash|
           lib_alias_to_path[library_hash['localIdentifier']] = library_hash['path']
         end
@@ -54,13 +50,13 @@ module Measures
       end
       
       def deep_add_external_library_deps(statement, needed_deps_map, all_elms_dep_map)
-        s_library = statement[:library_name]
-        s_name = statement[:statement_name]
+        statement_library = statement[:library_name]
+        statement_name = statement[:statement_name]
 
-        return unless needed_deps_map.dig(s_library, s_name).nil? # return if key already exists
+        return unless needed_deps_map.dig(statement_library, statement_name).nil? # return if key already exists
 
-        deps_to_add = all_elms_dep_map[s_library][s_name]
-        needed_deps_map.deep_merge!(s_library => { s_name => deps_to_add })
+        deps_to_add = all_elms_dep_map[statement_library][statement_name]
+        needed_deps_map.deep_merge!(statement_library => { statement_name => deps_to_add })
 
         deps_to_add.each { |stmnt| deep_add_external_library_deps(stmnt, needed_deps_map, all_elms_dep_map) }
       end

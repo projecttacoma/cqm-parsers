@@ -21,7 +21,6 @@ group :development, :test do
 end
 
 group :development do
-  gem 'clipboard'
   gem 'rake'
 end
 

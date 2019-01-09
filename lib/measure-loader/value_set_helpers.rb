@@ -13,7 +13,9 @@ module Measures
             value_sets_from_single_code_references.each do |value_set|
               # If Data Criteria contains a matching code system, check if the correct code exists in the data critera values.
               # If both values match, set the Data Criteria's 'code_list_id' to the single_code_object_guid.
-              raise StandardError "Expected a singleton" unless value_set.concepts.length == 1
+              unless value_set.concepts.length == 1
+                raise StandardError "This function should only be called on valuesets with one concept (single code references)."
+              end
               concept = value_set.concepts[0]
               next unless concept.code_system_name.starts_with?(code_system.to_s) && code_list.include?(concept.code)
               data_criteria[:code_list_id] = value_set.oid
@@ -38,19 +40,9 @@ module Measures
         end
       end
 
-      # Removes 'urn:oid:' from ELM for Bonnie and Parse the JSON
+      # Removes 'urn:oid:' from ELM
       def remove_urnoid(json)
-        if json.is_a? Array
-          json.each { |val| remove_urnoid(val) }
-        elsif json.is_a?(Hash)
-          json.each_pair do |k,v|
-            if v && v.is_a?(String)
-              json[k] = v.gsub 'urn:oid:', '' 
-            else
-              remove_urnoid(v)
-            end
-          end
-        end
+        Utilities.deep_traverse_hash(json) { |hash, k, v| hash[k] = v.gsub('urn:oid:', '') if v.is_a?(String) }
       end
 
       def load_value_sets_and_process(cql_libraries, value_set_loader, measure_id = nil)
@@ -84,7 +76,6 @@ module Measures
         value_sets.each do |value_set|
           code_sets = {}
           value_set.concepts.each do |concept|
-            # //TODO: move away from code system names?? not sure if relevant here
             code_sets[concept.code_system_name] ||= []
             code_sets[concept.code_system_name] << concept.code
           end

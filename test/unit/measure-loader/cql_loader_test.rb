@@ -10,6 +10,72 @@ class CQLLoaderTest < Minitest::Test
     @measure_details = { 'episode_of_care'=> false }
   end
 
+  def test_stratifications_and_observations
+    VCR.use_cassette('measure__stratifications_and_observations', 
+                     match_requests_on: [:method, :uri_no_st]) do
+      measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
+      measure_file = File.new File.join(@fixtures_path, 'CMS32v7.zip')
+      loader = Measures::CqlLoader.new(measure_details, @vsac_options, get_ticket_granting_ticket)
+      measures = loader.extract_measures(measure_file)
+      assert_equal 1, measures.length
+      measure = measures[0]
+
+      assert_equal measure.measure_scoring, 'CONTINUOUS_VARIABLE'
+      assert_equal measure.calculation_method, 'EPISODE_OF_CARE'
+
+      assert_equal measure.cql_libraries.size, 1
+
+      # check the main library name and find new library structure using it
+      assert_equal measure.main_cql_library, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      
+      # check the new library structure
+      main_library = measure.cql_libraries.select(&:is_main_library).first
+      assert(!main_library.nil?)
+      assert_equal main_library.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      assert_equal main_library.library_version, '7.2.002'
+      assert_equal main_library.statement_dependencies.size, 13
+      # assert_equal(main_library.cql).to start_with('library MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients')
+      assert_equal main_library.is_main_library, true
+
+      # check the references used by the "Initial Population"
+      ipp_dep = main_library.statement_dependencies.select { |dep| dep.statement_name == 'Initial Population' }.first
+      assert(!ipp_dep.nil?)
+      assert_equal ipp_dep.statement_references.size, 1
+      assert ipp_dep.statement_references.map(&:statement_name).include?('ED Visit')
+
+      # check population set
+      assert_equal measure.population_sets.size, 1
+      population_set = measure.population_sets[0]
+      assert_equal population_set.id, 'PopulationCriteria1'
+      assert_equal population_set.title, 'Population Criteria Section'
+      assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
+      assert_equal population_set.populations.IPP.statement_name, 'Initial Population'
+      assert_equal population_set.populations.MSRPOPL.statement_name, 'Measure Population'
+      assert_equal population_set.populations.MSRPOPLEX.statement_name, 'Measure Population Exclusions'
+
+      # check stratifications
+      assert_equal population_set.stratifications.size, 3
+      assert_equal population_set.stratifications[0].id, 'PopulationCriteria1 - Stratification 1'
+      # assert_equal population_set.stratifications[0].title, 'Stratification 1'
+      assert_equal population_set.stratifications[0].statement.statement_name, 'Stratification 1'
+      assert_equal population_set.stratifications[1].id, 'PopulationCriteria1 - Stratification 2'
+      # assert_equal population_set.stratifications[1].title, 'Stratification 2'
+      assert_equal population_set.stratifications[1].statement.statement_name, 'Stratification 2'
+      assert_equal population_set.stratifications[2].id, 'PopulationCriteria1 - Stratification 3'
+      # assert_equal population_set.stratifications[2].title, 'Stratification 3'
+      assert_equal population_set.stratifications[2].statement.statement_name, 'Stratification 3'
+
+      # check observation
+      assert_equal population_set.observations.size, 1
+      assert_equal population_set.observations[0].observation_function.statement_name, 'Measure Observation'
+      assert_equal population_set.observations[0].observation_parameter.statement_name, 'Measure Population'
+
+      # check valuesets
+      # note if you call value_sets.count or .size you will be making a db call
+      assert_equal measure.value_sets.each.count, 9
+    end
+  end
+
   def test_definition_with_same_name_as_a_library_definition
     VCR.use_cassette('measure__definition_with_same_name_as_a_library_definition', 
                      match_requests_on: [:method, :uri_no_st]) do
@@ -19,11 +85,15 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 1, measures.length
       measure = measures[0]
 
+      binding.pry
+
       assert_equal 'Diabetes: Medical Attention for Nephropathy', measure.title
       assert_equal 3, measure.cql_libraries.length
-      hospice_deps = measure.cql_libraries.find_by(library_name: 'Hospice').statement_dependencies
+      hospice_deps = measure.cql_libraries.select { |lib| lib[:library_name] == 'Hospice' }[0].statement_dependencies
+      # hospice_deps = measure.cql_libraries.find_by(library_name: 'Hospice').statement_dependencies
       assert_equal 1, hospice_deps.length
-      assert_equal [], hospice_deps.find_by(statement_name: 'Has Hospice').statement_references
+      assert_equal [], hospice_deps.select { |statement| statement[:statement_name] == 'Has Hospice' }[0].statement_references
+      # assert_equal [], hospice_deps.find_by(statement_name: 'Has Hospice').statement_references
     end
   end
 
@@ -132,4 +202,5 @@ class CQLLoaderTest < Minitest::Test
       assert_equal "BonnieNesting01", measure.cql_libraries[3].elm["library"]["identifier"]["id"]
     end
   end
+
 end

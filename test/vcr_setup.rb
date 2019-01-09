@@ -1,4 +1,6 @@
 require 'vcr'
+require 'webmock/minitest'
+
 # VCR records HTTP interactions to cassettes that can be replayed during unit tests
 # allowing for faster, more predictible web interactions
 VCR.configure do |c|
@@ -19,7 +21,6 @@ VCR.configure do |c|
 
   # Add a custom matcher for use with the bulk request by typheous, so we can ignore service ticket
   c.register_request_matcher :uri_no_st do |req1, req2|
-    # binding.pry
     remove_service_ticket_from_uri(req1.uri) == remove_service_ticket_from_uri(req2.uri)
   end
 end

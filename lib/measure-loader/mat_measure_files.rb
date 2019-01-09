@@ -20,7 +20,10 @@ module Measures
       @cql_libraries = cql_libraries
       @human_readable = human_readable
 
-      raise MeasureLoadingException.new("Measure missing all components.") if @hqmf_xml.nil? || @human_readable.nil? || @cql_libraries.nil? || @cql_libraries.empty?
+      
+      raise MeasureLoadingException.new("Measure package missing required element: HQMF XML File") if @hqmf_xml.nil?
+      raise MeasureLoadingException.new("Measure package missing required element: Human Readable Document") if @human_readable.nil?
+      raise MeasureLoadingException.new("Measure package missing required element: CQL Libraries") if @cql_libraries.nil? || @cql_libraries.empty?
     end
 
     def self.create_from_zip_file(zip_file)
@@ -29,9 +32,9 @@ module Measures
       folders.sort_by! { |h| h[:depth] }
       raise MeasureLoadingException.new("Multiple measure folders at top level") if folders[0][:depth] == folders.dig(1,:depth)
       
-      measure_folder, *composite_measure_folders = folders
+      measure_folder, *component_measure_folders = folders
       measure_assets = make_measure_artifacts(parse_measure_files(measure_folder))
-      measure_assets.components = composite_measure_folders.collect {|f| make_measure_artifacts(parse_measure_files(f))}
+      measure_assets.components = component_measure_folders.collect {|f| make_measure_artifacts(parse_measure_files(f))}
 
       return measure_assets
     end
@@ -55,7 +58,7 @@ module Measures
             next if '__MACOSX'.in? pn.each_filename  # ignore anything in a __MACOSX folder
             next unless pn.basename.extname.in? ['.xml','.cql','.json','.html']
             folders[pn.dirname][:files] << { basename: pn.basename, contents: f.get_input_stream.read }
-            folders[pn.dirname][:depth] =  pn.each_filename.count
+            folders[pn.dirname][:depth] =  pn.each_filename.count # this is just a count of how many folders are in the path
           end
         end
         return folders
@@ -64,7 +67,7 @@ module Measures
       def make_measure_artifacts(measure_files)
         library_count = measure_files[:cqls].length
         unless (measure_files[:elm_xmls].length == library_count && measure_files[:elms].length == library_count)
-          raise MeasureLoadingException.new("Each library must have a cql file, an eml file, and an elm annotation file.")
+          raise MeasureLoadingException.new("Each library must have a CQL file, an ELM JSON file, and an ELM XML file.")
         end
 
         cql_libraries = []
@@ -73,7 +76,7 @@ module Measures
           elm = measure_files[:elms][i]
           cql = measure_files[:cqls][i]
 
-          id, version = get_library_version(cql, elm, elm_annotation)
+          id, version = verify_library_versions_match_and_get_version(cql, elm, elm_annotation)
           cql_libraries << CqlLibraryFiles.new(id, version, cql, elm, elm_annotation)
         end
 
@@ -114,13 +117,13 @@ module Measures
         return measure_files
       end
 
-      def get_library_version(cql, elm, elm_annotation)
+      def verify_library_versions_match_and_get_version(cql, elm, elm_annotation)
         identifier = elm_annotation.at_xpath('/xmlns:library/xmlns:identifier')
         id = identifier['id']
         version = identifier['version']
 
-        if (elm['library']['identifier']['id'] != id ||
-            elm['library']['identifier']['version'] != version ||
+        if (Helpers.elm_id(elm)!= id ||
+            Helpers.elm_version(elm) != version ||
             !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
            )
           raise MeasureLoadingException.new("Cql library assets must all have same version.")

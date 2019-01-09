@@ -25,15 +25,19 @@ module Measures
         end
         hqmf_model_hash[:populations].select { |p| p.key?(:stratification_index) }.each do |stratification|
           cqm_strat = convert_to_cqm_stratification(stratification, hqmf_model_hash[:cql_measure_library], hqmf_model_hash[:populations_cql_map])
-          measure.population_sets[bonnie_stratification[:population_index]].stratifications << cqm_strat
+          measure.population_sets[stratification[:population_index]].stratifications << cqm_strat
         end
 
         # add observation info
-        hqmf_model_hash[:observations].each do |bonnie_observation|
+        hqmf_model_hash[:observations].each do |observation|
           observation = CQM::Observation.new(
             observation_function: CQM::StatementReference.new(
               library_name: hqmf_model_hash[:cql_measure_library],
-              statement_name: bonnie_observation[:function_name]
+              statement_name: observation[:function_name]
+            ),
+            observation_parameter: CQM::StatementReference.new(
+              library_name: hqmf_model_hash[:cql_measure_library],
+              statement_name: observation[:parameter]
             )
           )
           # add observation to each population set
@@ -45,26 +49,26 @@ module Measures
 
       private
 
-      def convert_to_cqm_stratification(bonnie_stratification, main_cql_library, populations_cql_map)
+      def convert_to_cqm_stratification(stratification, main_cql_library, populations_cql_map)
         return CQM::Stratification.new(
-          title: bonnie_stratification[:title],
-          id: bonnie_stratification[:id],
+          title: stratification[:title],
+          id: stratification[:id],
           statement: CQM::StatementReference.new(
             library_name: main_cql_library,
-            statement_name: get_cql_statement_for_population_key(populations_cql_map, bonnie_stratification[:STRAT])
+            statement_name: get_cql_statement_for_population_key(populations_cql_map, stratification[:STRAT])
           )
         )
       end
 
-      def convert_population_to_population_set(bonnie_population, measure_scoring, main_cql_library, populations_cql_map)
+      def convert_population_to_population_set(population, measure_scoring, main_cql_library, populations_cql_map)
         population_set = CQM::PopulationSet.new(
-          title: bonnie_population[:title],
-          id: bonnie_population[:id]
+          title: population[:title],
+          id: population[:id]
         )
         
         # construct the population map and fill it
         population_map = construct_population_map(measure_scoring)
-        bonnie_population.each_pair do |population_name, population_key|
+        population.each_pair do |population_name, population_key|
           # make sure it isnt metadata or an OBSERV or SDE list
           next if population_name.in? [:id, :title, :OBSERV, :supplemental_data_elements]
           population_map[population_name] = CQM::StatementReference.new(
@@ -76,8 +80,8 @@ module Measures
         population_set.populations = population_map
 
         # add SDEs
-        if bonnie_population.key?('supplemental_data_elements')
-          bonnie_population['supplemental_data_elements'].each do |sde_statement|
+        if population.key?('supplemental_data_elements')
+          population['supplemental_data_elements'].each do |sde_statement|
             population_set.supplemental_data_elements << CQM::StatementReference.new(
               library_name: main_cql_library,
               statement_name: sde_statement

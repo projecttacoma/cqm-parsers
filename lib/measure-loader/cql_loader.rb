@@ -10,15 +10,15 @@ module Measures
     def extract_measures(measure_zip)
       measure_files = MATMeasureFiles.create_from_zip_file(measure_zip) 
 
-      component_measures = []
+      measures = []
       if measure_files.components.present?
         measure, component_measures = create_measure_and_components(measure_files)
+        measures << component_measures
       else
         measure = create_measure(measure_files)
       end
-
       measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(measure_zip.read))
-      measures = component_measures << measure
+      measures << measure
       return measures
     end
 
@@ -48,7 +48,8 @@ module Measures
     def create_measure(measure_files)
       hqmf_model = HQMF::Parser::V2CQLParser.new.parse(measure_files.hqmf_xml)
 
-      measure_files.cql_libraries.each { |cql_lib_files| modify_elm_vs_stuff(cql_lib_files.elm) }
+      # update the valueset info in each elm (update version and remove urn:oid)
+      measure_files.cql_libraries.each { |cql_lib_files| modify_elm_valueset_information(cql_lib_files.elm) }
       cql_libraries = create_cql_libraries(measure_files.cql_libraries, hqmf_model.cql_measure_library)
       vs_items = ValueSetHelpers.load_value_sets_and_process(cql_libraries, @value_set_loader, hqmf_model.hqmf_set_id)
       hqmf_model.backfill_patient_characteristics_with_codes(vs_items[:all_codes_and_code_names])
@@ -104,7 +105,7 @@ module Measures
       end
     end
 
-    def modify_elm_vs_stuff(elm)
+    def modify_elm_valueset_information(elm)
       ValueSetHelpers.remove_urnoid(elm)
       ValueSetHelpers.modify_value_set_versions(elm)
       return nil

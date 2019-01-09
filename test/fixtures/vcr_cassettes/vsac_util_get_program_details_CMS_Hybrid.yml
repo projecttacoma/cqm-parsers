@@ -7,42 +7,41 @@ http_interactions:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
       message: ''
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
       Content-Type:
       - application/json
       Content-Length:
       - '395'
       Date:
-      - Mon, 17 Dec 2018 16:08:23 GMT
+      - Wed, 09 Jan 2019 21:13:19 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!NxLXKTjDZ4AqdVzm9OGvBt4MxRMcjmgFvsOiLyVogQeRL0R7CoxN+cIfwZUScfcjFGnhB5e3AV/w6lA=;
-        expires=Mon, 17-Dec-2018 18:08:24 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!nn1nhFs6gno6+gnNtNHn4GsLooFbU8uUDXqK7brihQt/PPwEBW6O4Edo/LZxP7MK64KYgWULX8+d5tA=;
+        expires=Wed, 09-Jan-2019 23:13:20 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -53,5 +52,5 @@ http_interactions:
         be feasibly extracted for use in risk-adjusted hospital-level hybrid outcome
         measures.","release":[{"name":"CMS 2018 IQR Voluntary Hybrid Reporting","releaseDate":20171117}]}'
     http_version: 
-  recorded_at: Mon, 17 Dec 2018 16:08:24 GMT
+  recorded_at: Wed, 09 Jan 2019 21:13:20 GMT
 recorded_with: VCR 3.0.3

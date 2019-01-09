@@ -1,4 +1,3 @@
-require 'rest_client'
 require 'typhoeus'
 require 'uri'
 
@@ -14,6 +13,13 @@ module Util
       def initialize(oid)
         super("Value Set (#{oid}) was not found.")
         @oid = oid
+      end
+    end
+
+    # When VSAC responds with a 404
+    class VSACNotFoundError < VSACError
+      def initialize
+        super('Resource not found.')
       end
     end
 
@@ -81,11 +87,10 @@ module Util
       def initialize(options)
         # check that :config exists and has needed fields
         raise VSACArgumentError.new("Required param :config is missing or empty.") if options[:config].nil?
-        symbolized_config = options[:config].symbolize_keys
-        unless check_config symbolized_config
+        @config = options[:config].symbolize_keys
+        unless check_config @config
           raise VSACArgumentError.new("Required param :config is missing required URLs.")
         end
-        @config = symbolized_config
 
         # if a ticket_granting_ticket was passed in, check it and raise errors if found
         # username and password will be ignored
@@ -95,12 +100,8 @@ module Util
             raise VSACArgumentError.new("Optional param :ticket_granting_ticket is missing :ticket or :expires")
           end
 
-          # check if it has expired
-          if Time.now > provided_ticket_granting_ticket[:expires]
-            raise VSACTicketExpiredError.new
-          end
+          raise VSACTicketExpiredError.new if Time.now > provided_ticket_granting_ticket[:expires]
 
-          # ticket granting ticket looks good
           @ticket_granting_ticket = { ticket: provided_ticket_granting_ticket[:ticket],
                                       expires: provided_ticket_granting_ticket[:expires] }
 
@@ -115,17 +116,12 @@ module Util
       #
       # Returns a list of profile names. These are kept in the order that VSAC provides them in.
       def get_profile_names
-        profiles_response = RestClient.get("#{@config[:utility_url]}/profiles")
-        profiles = []
+        profiles_response = http_get("#{@config[:utility_url]}/profiles")
 
         # parse xml response and get text content of each profile element
         doc = Nokogiri::XML(profiles_response)
         profile_list = doc.at_xpath("/ProfileList")
-        profile_list.xpath("//profile").each do |profile|
-          profiles << profile.text
-        end
-
-        return profiles
+        return profile_list.xpath("//profile").map { |profile| profile.text }
       end
 
       ##
@@ -133,16 +129,9 @@ module Util
       #
       # Returns a list of program names. These are kept in the order that VSAC provides them in.
       def get_program_names
-        programs_response = RestClient.get("#{@config[:utility_url]}/programs")
-        program_names = []
-
-        # parse json response and return the names of the programs
+        programs_response = http_get("#{@config[:utility_url]}/programs")
         programs_info = JSON.parse(programs_response)['Program']
-        programs_info.each do |program|
-          program_names << program['name']
-        end
-
-        return program_names
+        return programs_info.map { |program| program['name'] }
       end
 
       ##
@@ -155,16 +144,10 @@ module Util
       # Returns the JSON parsed response for program details.
       def get_program_details(program = nil)
         # if no program was provided use the one in the config or default in constant
-        if program.nil?
-          program = @config.fetch(:program, DEFAULT_PROGRAM)
-        end
-
-        begin
-          # parse json response and return it
-          return JSON.parse(RestClient.get("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}"))
-        rescue RestClient::ResourceNotFound
-          raise VSACProgramNotFoundError.new(program)
-        end
+        program = @config.fetch(:program, DEFAULT_PROGRAM) if program.nil?
+        return http_get_json("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}")
+      rescue VSACNotFoundError
+        raise VSACProgramNotFoundError.new(program)
       end
 
       ##
@@ -182,23 +165,15 @@ module Util
       # Returns the name of the latest profile for the given program.
       def get_latest_profile_for_program(program = nil)
         # if no program was provided use the one in the config or default in constant
-        if program.nil?
-          program = @config.fetch(:program, DEFAULT_PROGRAM)
-        end
+        program = @config.fetch(:program, DEFAULT_PROGRAM) if program.nil?
 
-        begin
-          # parse json response and return it
-          parsed_response = JSON.parse(RestClient.get("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}/latest%20profile"))
+        # parse json response and return it
+        parsed_response = http_get_json("#{@config[:utility_url]}/program/#{ERB::Util.url_encode(program)}/latest%20profile")
 
-          # As of 5/17/18 VSAC does not return 404 when an invalid profile is provided. It just doesnt fill the name
-          # attribute in the 200 response. We need to check this.
-          raise VSACProgramNotFoundError.new(program) if parsed_response['name'].nil?
-          return parsed_response['name']
-
-        # keeping this rescue block in case the API is changed to return 404 for invalid profile
-        rescue RestClient::ResourceNotFound
-          raise VSACProgramNotFoundError.new(program)
-        end
+        # As of 5/17/18 VSAC does not return 404 when an invalid profile is provided. It just doesnt fill the name
+        # attribute in the 200 response. We need to check this.
+        raise VSACProgramNotFoundError.new(program) if parsed_response['name'].nil?
+        return parsed_response['name']
       end
 
       ##
@@ -212,57 +187,23 @@ module Util
       def get_program_release_names(program = nil)
         program_details = get_program_details(program)
         releases = []
-
-        # pull just the release names out
-        program_details['release'].each do |release|
-          releases << release['name']
-        end
-
-        return releases
+        return program_details['release'].map { |release| release['name'] }
       end
 
       ##
       # Gets a valueset. This requires credentials.
       #
       def get_valueset(oid, options = {})
-        # base parameter oid is always needed
-        params = { id: oid }
-
-        # release parameter, should be used moving forward
-        unless options[:release].nil?
-          params[:release] = options[:release]
-        end
-
-        # profile parameter, may be needed for getting draft value sets
-        if !options[:profile].nil?
-          params[:profile] = options[:profile]
-          unless options[:include_draft].nil?
-            params[:includeDraft] = !options[:include_draft].nil? ? 'yes' : 'no'
-          end
-        else
-          unless options[:include_draft].nil?
-            raise VSACArgumentError.new("Option :include_draft requires :profile to be provided.")
-          end
-        end
-
-        # version parameter, rarely used
-        unless options[:version].nil?
-          params[:version] = options[:version]
-        end
-
-        # get a new service ticket
-        params[:ticket] = get_ticket
-
-        # run request
-        begin
-          return RestClient.get("#{@config[:content_url]}/RetrieveMultipleValueSets", params: params)
-        rescue RestClient::ResourceNotFound
-          raise VSNotFoundError.new(oid)
-        rescue RestClient::InternalServerError
-          raise VSACError.new("Server error response from VSAC for (#{oid}).")
-        end
+        needed_vs = {value_set: {oid: oid}, vs_vsac_options: options}
+        return get_multiple_valuesets([needed_vs])[0]
       end
 
+      ##
+      # Get multiple valuesets (executed in parallel). Requires credentials.
+      #
+      # Parameter needed_value_sets is an array of hashes, each hash should have at least:
+      # hash = {vs_vsac_options: ___, value_set: {oid: ___} }
+      #
       def get_multiple_valuesets(needed_value_sets)
         raise VSACNoCredentialsError.new unless @ticket_granting_ticket
         raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
@@ -278,32 +219,10 @@ module Util
 
       private
 
-      def get_ticket
-        # if there is no ticket granting ticket then we should raise an error
-        raise VSACNoCredentialsError.new unless @ticket_granting_ticket
-        # if the ticket granting ticket has expired, throw an error
-        raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
-
-        # attempt to get a ticket
-        begin
-          ticket = RestClient.post("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}", service: TICKET_SERVICE_PARAM)
-          return ticket.to_s
-        rescue RestClient::Unauthorized
-          @ticket_granting_ticket[:expires] = Time.now
-          raise VSACTicketExpiredError.new
-        end
-      end
-
-      def get_ticket_granting_ticket(username, password)
-        ticket = RestClient.post("#{@config[:auth_url]}/Ticket", username: username, password: password)
-        return { ticket: String.new(ticket), expires: Time.now + 8.hours }
-      rescue RestClient::Unauthorized
-        raise VSACInvalidCredentialsError.new
-      end
-
+      # Given a raw valueset response, process and validate
       def process_and_validate_vsac_response(vs_response, expected_oid)
         raise VSNotFoundError.new(expected_oid) if vs_response.response_code == 404
-        raise VSACError.new("Error code #{vs_response.response_code} from VSAC for #{expected_oid}.") unless vs_response.response_code == 200
+        validate_http_status_for_ticket_based_request(vs_response.response_code)
 
         vs_data = vs_response.body.force_encoding("utf-8")
         begin
@@ -320,6 +239,7 @@ module Util
         return vs_data
       end
 
+      # Execute bulk requests for valuesets, return the raw Typheous responses (requests executed in parallel)
       def get_multiple_valueset_raw_responses(needed_value_sets)
         service_tickets = get_service_tickets(needed_value_sets.size)
 
@@ -335,6 +255,7 @@ module Util
         return responses
       end
 
+      # Bulk get an amount of service tickets (requests executed in parallel)
       def get_service_tickets(amount)
         raise VSACNoCredentialsError.new unless @ticket_granting_ticket
         raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
@@ -348,17 +269,16 @@ module Util
 
         hydra.run
         tickets = requests.map do |request|
-          response_code = request.response.response_code
-          raise VSACError.new("Error code #{response_code} when getting service ticket.") unless response_code == 200
+          validate_http_status_for_ticket_based_request(request.response.response_code)
           request.response.body
         end
         return tickets
       end
 
+      # Create a typheous request for a valueset (this must be executed later)
       def create_valueset_request(oid, ticket, options = {})
         # base parameter oid is always needed
         params = { id: oid }
-
         # release parameter, should be used moving forward
         params[:release] = options[:release] unless options[:release].nil?
 
@@ -373,16 +293,57 @@ module Util
 
         # version parameter, rarely used
         params[:version] = options[:version] unless options[:version].nil?
-
         params[:ticket] = ticket
 
         return Typhoeus::Request.new("#{@config[:content_url]}/RetrieveMultipleValueSets", params: params)
       end
 
+      # Create a typheous request for a service ticket (this must be executed later)
       def create_service_ticket_request
         return Typhoeus::Request.new("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}", 
                                      method: :post,
                                      params: { service: TICKET_SERVICE_PARAM})
+      end
+
+      # Use your username and password to retrive a ticket granting ticket from VSAC
+      def get_ticket_granting_ticket(username, password)
+        response = Typhoeus.post("#{@config[:auth_url]}/Ticket", params: {username: username, password: password})
+        raise VSACInvalidCredentialsError.new if response.response_code == 401
+        validate_http_status(response.response_code)
+        return { ticket: String.new(response.body), expires: Time.now + 8.hours }
+      end
+
+      # Raise errors if http_status is not OK (200), and expire TGT if auth fails
+      def validate_http_status_for_ticket_based_request(http_status)
+        if http_status == 401
+          @ticket_granting_ticket[:expires] = Time.now
+          raise VSACTicketExpiredError.new
+        end
+        validate_http_status(http_status)
+      end
+
+      # Raise errors if http_status is not OK (200)
+      def validate_http_status(http_status)
+        return if http_status == 200
+        if http_status == 0
+          raise VSACError.new("Error communicating with VSAC.")
+        elsif http_status == 404
+          raise VSACNotFoundError.new
+        else
+          raise VSACError.new("HTTP Error code #{http_status} received from VSAC.")
+        end
+      end
+
+      # Convenience function to perform an http get request (raises errors on failure)
+      def http_get(url)
+        response = Typhoeus.get(url)
+        validate_http_status(response.response_code)
+        return response.body
+      end
+
+      # Convenience function to perform an http get request and convert to JSON (raises errors on failure)
+      def http_get_json(url)
+        return JSON.parse(http_get(url))
       end
 
       # Checks to ensure the API config has all necessary fields
