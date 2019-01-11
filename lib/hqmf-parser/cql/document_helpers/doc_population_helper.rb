@@ -74,8 +74,6 @@ module HQMF2CQL
         stratified_population['title'] = title_def ? "#{title_def.value} - Stratification #{criteria_def_index + 1}" : "Population #{index}"
         stratified_population['population_index'] = population_index
         stratified_population['stratification_index'] = criteria_def_index
-        precondition_criteria_xpath = 'cda:stratifierCriteria/cda:precondition/cda:criteriaReference/cda:id'
-        stratified_population['precondition_criteria'] = criteria_def.at_xpath(precondition_criteria_xpath).attr('extension')
         @stratifications << stratified_population
       end
     end

@@ -34,7 +34,7 @@ class CQLLoaderTest < Minitest::Test
       assert_equal main_library.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
       assert_equal main_library.library_version, '7.2.002'
       assert_equal main_library.statement_dependencies.size, 13
-      # assert_equal(main_library.cql).to start_with('library MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients')
+      assert main_library.cql.starts_with?('library MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients')
       assert_equal main_library.is_main_library, true
 
       # check the references used by the "Initial Population"
