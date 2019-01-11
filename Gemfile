@@ -9,7 +9,6 @@ gem 'typhoeus'
 
 gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'measure_object_updates_rebase'
 
-
 # gem 'cqm-models', :path => '../cqm-models'
 
 group :development, :test do

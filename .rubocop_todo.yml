@@ -581,6 +581,10 @@ Naming/FileName:
   Exclude:
     - 'lib/hqmf-parser.rb'
 
+Naming/MethodName:
+  Exclude:
+    - 'test/unit/measure-loader/cql_loader_test.rb'
+
 # Offense count: 7
 # Configuration parameters: NamePrefix, NamePrefixBlacklist, NameWhitelist, MethodDefinitionMacros.
 # NamePrefix: is_, has_, have_
@@ -626,6 +630,10 @@ Performance/StringReplacement:
   Exclude:
     - 'lib/hqmf-parser/converter/pass1/data_criteria_converter.rb'
     - 'test/unit/hqmf/model/data_criteria_test.rb'
+
+Performance/TimesMap:
+  Exclude:
+    - 'lib/util/vsac_api.rb'
 
 # Offense count: 49
 # Cop supports --auto-correct.
@@ -779,6 +787,7 @@ Style/GuardClause:
     - 'lib/hqmf-parser/2.0/field_value_helper.rb'
     - 'lib/hqmf-parser/converter/pass1/document_converter.rb'
     - 'lib/hqmf-parser/converter/pass1/population_criteria_converter.rb'
+    - 'lib/util/vsac_api.rb'
     - 'test/unit/hqmf/2.0/hqmf_vs_simple_test.rb'
 
 # Offense count: 405
@@ -915,6 +924,7 @@ Style/NumericPredicate:
     - 'lib/hqmf-parser/converter/pass2/comparison_converter.rb'
     - 'lib/hqmf-parser/cql/data_criteria_helpers/dc_definition_from_template_or_type_extract.rb'
     - 'lib/hqmf-parser/cql/document_helpers/doc_population_helper.rb'
+    - 'lib/util/vsac_api.rb'
     - 'test/fixtures/1.0/measures/extract_measures.rb'
     - 'test/unit/hqmf/2.0/hqmf_vs_simple_test.rb'
     - 'test/unit/hqmf/model/hqmf_v1_v2_roundtrip_test.rb'
@@ -1088,6 +1098,7 @@ Style/SymbolProc:
     - 'lib/hqmf-parser/converter/pass1/document_converter.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_precondition.rb'
     - 'lib/hqmf-parser/converter/pass1/simple_restriction.rb'
+    - 'lib/measure-loader/mat_measure_files.rb'
     - 'test/unit/hqmf/1.0/document_v1_test.rb'
     - 'test/unit/hqmf/2.0/document_v2_test.rb'
 

@@ -55,20 +55,27 @@ class CQLLoaderTest < Minitest::Test
 
       # check stratifications
       assert_equal population_set.stratifications.size, 3
-      assert_equal population_set.stratifications[0].id, 'PopulationCriteria1 - Stratification 1'
-      # assert_equal population_set.stratifications[0].title, 'Stratification 1'
+      assert_equal population_set.stratifications[0].title, 'Stratification 1'
       assert_equal population_set.stratifications[0].statement.statement_name, 'Stratification 1'
-      assert_equal population_set.stratifications[1].id, 'PopulationCriteria1 - Stratification 2'
-      # assert_equal population_set.stratifications[1].title, 'Stratification 2'
+      assert_equal population_set.stratifications[0].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      assert_equal population_set.stratifications[1].title, 'Stratification 2'
       assert_equal population_set.stratifications[1].statement.statement_name, 'Stratification 2'
-      assert_equal population_set.stratifications[2].id, 'PopulationCriteria1 - Stratification 3'
-      # assert_equal population_set.stratifications[2].title, 'Stratification 3'
+      assert_equal population_set.stratifications[1].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      assert_equal population_set.stratifications[2].title, 'Stratification 3'
       assert_equal population_set.stratifications[2].statement.statement_name, 'Stratification 3'
+      assert_equal population_set.stratifications[2].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
 
       # check observation
       assert_equal population_set.observations.size, 1
       assert_equal population_set.observations[0].observation_function.statement_name, 'Measure Observation'
       assert_equal population_set.observations[0].observation_parameter.statement_name, 'Measure Population'
+
+      # check SDE
+      assert_equal population_set.supplemental_data_elements.size, 4
+      assert_equal population_set.supplemental_data_elements[0].statement_name, 'SDE Ethnicity'
+      assert_equal population_set.supplemental_data_elements[1].statement_name, 'SDE Payer'
+      assert_equal population_set.supplemental_data_elements[2].statement_name, 'SDE Race'
+      assert_equal population_set.supplemental_data_elements[3].statement_name, 'SDE Sex'
 
       # check valuesets
       # note if you call value_sets.count or .size you will be making a db call

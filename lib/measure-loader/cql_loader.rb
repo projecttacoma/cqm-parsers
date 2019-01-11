@@ -40,7 +40,7 @@ module Measures
     def add_component_cql_library_files_to_composite_measure_files(measure_files)
       component_cql_library_files = measure_files.components.flat_map(&:cql_libraries)
       measure_files.cql_libraries.push(*component_cql_library_files)
-      measure_files.cql_libraries.uniq! { |cla| cla.id + cla.version }
+      measure_files.cql_libraries.uniq! { |cl| cl.id + cl.version }
       return nil
     end
 
@@ -58,7 +58,7 @@ module Measures
       hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
       ValueSetHelpers.set_data_criteria_code_list_ids(hqmf_model_hash, vs_items[:value_sets_from_single_code_references])
 
-      measure = create_measure_from_hqmf_model_hash(hqmf_model_hash)
+      measure = create_measure_from_hqmf(measure_files.hqmf_xml, hqmf_model_hash)
       measure.cql_libraries = cql_libraries
       vs_items[:value_set_models].each { |vsm| measure.value_sets.push vsm }
       measure.composite = measure_files.components.present?
@@ -66,9 +66,9 @@ module Measures
       return measure
     end
 
-    def create_measure_from_hqmf_model_hash(hqmf_model_hash)
+    def create_measure_from_hqmf(hqmf_xml, hqmf_model_hash)
       measure_scoring = @measure_details[:continuous_variable] ? 'CONTINUOUS_VARIABLE' : 'PROPORTION'
-      measure = HQMFMeasureLoader.create_measure_model(hqmf_model_hash, measure_scoring)
+      measure = HQMFMeasureLoader.create_measure_model(hqmf_xml, hqmf_model_hash, measure_scoring)
       measure.measure_scoring = measure_scoring
       measure.calculation_method = @measure_details[:episode_of_care] ? 'EPISODE_OF_CARE' : 'PATIENT'
       measure.calculate_sdes = @measure_details[:calculate_sdes]

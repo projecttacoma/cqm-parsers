@@ -4,7 +4,7 @@ module Measures
   module HQMFMeasureLoader
     class << self
 
-      def create_measure_model(hqmf_model_hash, measure_scoring)
+      def create_measure_model(hqmf_xml, hqmf_model_hash, measure_scoring)
         measure = CQM::Measure.new
 
         measure.measure_attributes = hqmf_model_hash[:attributes]
@@ -20,16 +20,10 @@ module Measures
         measure.source_data_criteria = hqmf_model_hash[:source_data_criteria]
         measure.data_criteria = hqmf_model_hash[:data_criteria]
 
-        hqmf_model_hash[:populations].reject { |p| p.key?(:stratification_index) }.each do |population|
-          measure.population_sets << convert_population_to_population_set(population, measure_scoring, measure.main_cql_library, hqmf_model_hash[:populations_cql_map])
-        end
-        hqmf_model_hash[:populations].select { |p| p.key?(:stratification_index) }.each do |stratification|
-          cqm_strat = convert_to_cqm_stratification(stratification, hqmf_model_hash[:cql_measure_library], hqmf_model_hash[:populations_cql_map])
-          measure.population_sets[stratification[:population_index]].stratifications << cqm_strat
-        end
+        measure.population_sets = extract_population_set_models(hqmf_xml, measure_scoring)
 
         # add observation info
-        hqmf_model_hash[:observations].each do |observation|
+        (hqmf_model_hash[:observations] || []).each do |observation|
           observation = CQM::Observation.new(
             observation_function: CQM::StatementReference.new(
               library_name: hqmf_model_hash[:cql_measure_library],
@@ -49,47 +43,62 @@ module Measures
 
       private
 
-      def convert_to_cqm_stratification(stratification, main_cql_library, populations_cql_map)
-        return CQM::Stratification.new(
-          title: stratification[:title],
-          id: stratification[:id],
-          statement: CQM::StatementReference.new(
-            library_name: main_cql_library,
-            statement_name: get_cql_statement_for_population_key(populations_cql_map, stratification[:STRAT])
-          )
-        )
-      end
-
-      def convert_population_to_population_set(population, measure_scoring, main_cql_library, populations_cql_map)
-        population_set = CQM::PopulationSet.new(
-          title: population[:title],
-          id: population[:id]
-        )
-        
-        # construct the population map and fill it
-        population_map = construct_population_map(measure_scoring)
-        population.each_pair do |population_name, population_key|
-          # make sure it isnt metadata or an OBSERV or SDE list
-          next if population_name.in? [:id, :title, :OBSERV, :supplemental_data_elements]
-          population_map[population_name] = CQM::StatementReference.new(
-            library_name: main_cql_library,
-            statement_name: get_cql_statement_for_population_key(populations_cql_map, population_key)
-          )
-        end
-
-        population_set.populations = population_map
-
-        # add SDEs
-        if population.key?('supplemental_data_elements')
-          population['supplemental_data_elements'].each do |sde_statement|
-            population_set.supplemental_data_elements << CQM::StatementReference.new(
-              library_name: main_cql_library,
-              statement_name: sde_statement
+      def extract_population_set_models(hqmf_xml, measure_scoring)
+        populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')
+        return populations.map do |population|
+          ps_hash = extract_population_set(population)
+          population_set = CQM::PopulationSet.new(title: ps_hash[:title], id: ps_hash[:id])
+  
+          population_set.populations = construct_population_map(measure_scoring)  
+          ps_hash[:populations].each do |pop_code,statement_ref_string|
+            population_set.populations[pop_code] = modelize_statement_ref_string(statement_ref_string)
+          end
+  
+          ps_hash[:supplemental_data_elements].each do |statement_ref_string|
+            population_set.supplemental_data_elements << modelize_statement_ref_string(statement_ref_string)
+          end
+          
+          ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
+            population_set.stratifications << CQM::Stratification.new(
+              title: "Stratification #{index+1}",
+              statement: modelize_statement_ref_string(statement_ref_string)
             )
           end
+          population_set
         end
+      end
 
-        return population_set
+      def extract_population_set(population_hqmf_node)
+        ps = { populations: {}, stratifications: [], supplemental_data_elements: [] }
+        ps[:id] = population_hqmf_node.at_css('id').attr('extension')
+        ps[:title] = population_hqmf_node.at_css('title').attr('value')
+        criteria_components = population_hqmf_node.css('component').flat_map(&:children)
+        criteria_components.each do |cc|
+          statement_ref = cc.at_css('precondition/criteriaReference/id')
+          next if statement_ref.nil?
+          statement_ref_string = statement_ref.attr('extension')
+          case cc.name
+          when 'initialPopulationCriteria'
+            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_string
+          when 'denominatorCriteria'
+            ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_string
+          when 'numeratorCriteria'
+            ps[:populations][HQMF::PopulationCriteria::NUMER] = statement_ref_string
+          when 'numeratorExclusionCriteria'
+            ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string
+          when 'denominatorExclusionCriteria'
+            ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string
+          when 'measurePopulationCriteria'
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string
+          when 'measurePopulationExclusionCriteria'
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string
+          when 'stratifierCriteria'
+            ps[:stratifications] << statement_ref_string
+          when 'supplementalDataElement'
+            ps[:supplemental_data_elements] << statement_ref_string
+          end
+        end
+        return ps
       end
 
       def construct_population_map(measure_scoring)
@@ -106,17 +115,13 @@ module Measures
           raise StandardError("Unknown measure scoring type encountered #{measure_scoring}")
         end
       end
-
-      def get_cql_statement_for_population_key(populations_cql_map, population_key)
-        if population_key.include?('_')
-          pop_name, pop_index = population_key.split('_')
-          pop_index = pop_index.to_i
-        else
-          pop_name = population_key
-          pop_index = 0
-        end
-
-        populations_cql_map[pop_name.to_sym][pop_index]
+  
+      def modelize_statement_ref_string(statement_ref_string)
+        library_name, statement_name = statement_ref_string.split('.', 2)
+        return CQM::StatementReference.new(
+          library_name: library_name,
+          statement_name: Utilities.remove_enclosing_quotes(statement_name)
+        )
       end
 
     end
