@@ -129,8 +129,8 @@ module Util
       #
       # Returns a list of program names. These are kept in the order that VSAC provides them in.
       def get_program_names
-        programs_response = http_get("#{@config[:utility_url]}/programs")
-        programs_info = JSON.parse(programs_response)['Program']
+        programs_response = http_get_json("#{@config[:utility_url]}/programs")
+        programs_info = programs_response['Program']
         return programs_info.map { |program| program['name'] }
       end
 

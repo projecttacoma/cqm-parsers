@@ -19,7 +19,6 @@ module Measures
       @hqmf_xml = hqmf_xml
       @cql_libraries = cql_libraries
       @human_readable = human_readable
-
       
       raise MeasureLoadingException.new("Measure package missing required element: HQMF XML File") if @hqmf_xml.nil?
       raise MeasureLoadingException.new("Measure package missing required element: Human Readable Document") if @human_readable.nil?

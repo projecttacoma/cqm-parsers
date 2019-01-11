@@ -8,7 +8,7 @@ module Measures
     end
 
     # Returns an array of measures, will contain a single measure if it is a non-composite measure
-    def extract_measures()
+    def extract_measures
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip) 
 
       measures = []
