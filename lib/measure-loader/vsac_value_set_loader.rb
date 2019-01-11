@@ -1,6 +1,6 @@
 module Measures
   # Utility class for loading value sets
-  class ValueSetLoader
+  class VSACValueSetLoader
     attr_accessor :vsac_options, :vs_data_cache
 
     def initialize(vsac_options, vsac_ticket_granting_ticket)

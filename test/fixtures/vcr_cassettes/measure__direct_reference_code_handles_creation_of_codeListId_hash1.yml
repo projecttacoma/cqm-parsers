@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: ''
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -32,61 +32,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '65'
+      - '62'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:18 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!VDAcc9ZpugEG7e/NtNHn4GsLooFbUwvVoxNjZ1CkgG++j0udxG7sjSfn50FDyqEfKzJcVov9xSF/6ng=;
-        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!LcCvHRCNcbzSBeTNtNHn4GsLooFbU8GYiRSD5cK/2cXwcNc/od4ttubzRq8VnQp9v1SJm+qNuKPgRlw=;
-        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!fq68ug92R7pgucnm9OGvBt4MxRMcjj3HRmJCTUB5SBizIDRgm69qsp/s3rLzjXrUG+hzbbv+P6+NvXA=;
+        expires=Fri, 11-Jan-2019 20:37:18 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -95,12 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816549-G4yjvXHMRdVESfuIRXTj-cas
+      string: TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:33 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:18 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -130,159 +81,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:18 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!DvFXyqtozgsT6gPNtNHn4GsLooFbU9gXv68uNMAcEH17gdIaOH8eoItGq0nfHeD4BV3PJ8Buq8YyGKA=;
-        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816555-MIOgyLPBftGgybTkyMOO-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!UmYRnKCZwj7V3Tfm9OGvBt4MxRMcjoo6yYptfQxykzbBriXvX+VBuamETgxEQgzP2JtGB/K3K81ZVe0=;
-        expires=Wed, 09-Jan-2019 23:25:33 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816554-3uXbZw4wMEbMF9g4Pmjv-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!CrhNWne1DWrcFvfNtNHn4GsLooFbUy7vtdKLVzsgXdHPK/GBpWe6PeHCadGeXicCq0JnPes44DuMl4s=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816556-yivQbBE4sDEqZgYwB2VF-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!j6LCi6EY0Cc0DPXm9OGvBt4MxRMcjhWFoehtLksjsYM9luVmh59oWCMp0355VmBvBfKh4GrVVMaYPKc=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!YZ6ojyfYCAElOJDNtNHn4GsLooFbU/dx6C7heNyfJgyb3Bl4CwBtecUtwN81n8KLp3FUhSX7svWubZk=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -291,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816552-ASArXX0J9ePryYEyyGau-cas
+      string: ST-660-TbN1ErU6bLacf7Uo9byd-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -326,12 +130,61 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!DkajtDwEMtyOrI3m9OGvBt4MxRMcjs9kejwvd/h9nQQMUZlRWAJoWBmdvTekYL0ouT3JZimCQmj60oI=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!p4xp8h8yct2QnzDm9OGvBt4MxRMcjraGg/vN9wipakDteOXP1+el1lEsi6F0zVPBZGc/XDHhaeUoQW4=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-659-X2cQoswMYg3SV3O5rq6N-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:19 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!P5h1uQBN24zmQnDNtNHn4GsLooFbU/Q/632ylFv3Wjx267Vic+aHmw539OUd2Za46D7r23XSaENJqa0=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -340,12 +193,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816553-WVJTvE3kOjquCOjAUZtc-cas
+      string: ST-661-bosinjYzXAQC6XxfeirU-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -375,12 +228,61 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!1LC8H2r9ThI8CUnm9OGvBt4MxRMcjlNNfIYa1M4+s9PJKAiLE1GY9NSv1S5NONWScttnKsVWL+Rx1UY=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!NBLJdN7vPIUyWyjNtNHn4GsLooFbU0+s0zQr3SUl+LFlBfW8F++Z5AYGIuEi3gN32gPQ1nT7nC/dOk8=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-664-DxGECDFiLomokuax5bzv-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:18 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!ZtDNX83UKwhOsLDNtNHn4GsLooFbUyHEYa2hkSP2Q4JpxknsB21OBVbvr0jJ8J18vEehweY99I3WkmU=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -389,12 +291,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816551-fjJxlhKdHBs7V5oSface-cas
+      string: ST-663-NYg7gZgRl6LxuOV4Rm63-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177936-0CPuKx2canMLYbPIAqQceF22BywZ9D22YYKw9jUtSxT63h9Fd4-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -424,12 +326,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!4a7qnbZCZgoEa+Lm9OGvBt4MxRMcjpmC1H3xS/zpSXeMzirnpsXzYs2vsmsOng4VRnfikcKf0s/5EwY=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!Tf8WFNLL4zG12LPm9OGvBt4MxRMcjpL4GmK8V8pJPnPRIKY3xp8Q+srgrxS+qslKsBe8DiVE2dCpitQ=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -438,12 +340,110 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816550-YzZqcqrQmrdyduIrU1PS-cas
+      string: ST-662-VKZ6sMqxrdtWmlFmfnbs-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:19 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!CNAR+KZGZgiqrzLm9OGvBt4MxRMcjsjz8MgnZUKaRRoDzv4Uw7FqUQSM/bDbcODYMV+JeWY+H+DVGiQ=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-665-s6ZoVEbcCeobArFrk4rl-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-811-42Lrpxh1bY7IdF0OfgmUKNUuwBqNxOCqLADxrYyi9hgimy5baT-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:19 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!g90fhjna1ZwyphXm9OGvBt4MxRMcjv0kc/Z/PhfModyj0iG828VcDXVNzRr2DsPc1vBsowjGnD9p8dg=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-666-UBpM7wLX3bPC9k2PEFp6-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-816551-fjJxlhKdHBs7V5oSface-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&profile=MU2%20Update%202016-04-01&ticket=ST-666-UBpM7wLX3bPC9k2PEFp6-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -465,9 +465,73 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!1ERiU1dKrPEb/bTNtNHn4GsLooFbU812nZQcwvemQL7bNl7AY9Y15TvBiwbIKG6XOXURynlGvQyqi8E=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=AFA4099F6AB121F7A462B15B2CB51A65;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!15+MFqI8T0uSxX7m9OGvBt4MxRMcji4qwXMhZHmjhn2wFGrCDnqzyGqI5F5oUEewKMjdNuBjgWMTZME=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=FCB9132B7387C8789A4A15C25E72B464;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1110'
+      Date:
+      - Fri, 11 Jan 2019 18:37:18 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                </ns0:ConceptList>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2016-03-31</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-661-bosinjYzXAQC6XxfeirU-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!kaE6nIyFuC7DzUXNtNHn4GsLooFbU7HqX1zsMYlGBwWUibsEQh7NakxviMqQ9Rm9d6iRjUYx3r99s5U=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=FC672B42F43105F8A85D7EC4663316BF;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -479,11 +543,11 @@ http_interactions:
       Content-Length:
       - '1128'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -505,10 +569,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-816556-yivQbBE4sDEqZgYwB2VF-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-664-DxGECDFiLomokuax5bzv-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -530,9 +594,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!9ykQa5OBIbuYki7NtNHn4GsLooFbU9Ln8pdUppWQdPXZDjpqjWHn83n6dWUPXW0ksP8a8UGRD74ggcM=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=39D843784CF9CE3E134BBDEAF738E2C1;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!dc3mhVSufCaPMbfNtNHn4GsLooFbU3MNCZx57vqkHa9L5Y+fkxCnXI64NMQKv1RHRm7JGk6eecKDQyk=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=C4DC44A0FA57A0F37B5F4CBD84362EC1;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -544,7 +608,7 @@ http_interactions:
       Content-Length:
       - '1765'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -574,10 +638,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&profile=MU2%20Update%202016-04-01&ticket=ST-816550-YzZqcqrQmrdyduIrU1PS-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-663-NYg7gZgRl6LxuOV4Rm63-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -599,9 +663,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!fGJjo7C8U2uu0b7m9OGvBt4MxRMcjo1L4gIwG7QZHDQ2enHOLk5N4exOcKVBl8nWIhBryi+P+rSVQfM=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=A1073023BFCD5F4C9C3BD9A651202505;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!CvHQY6nxyrHcN2nNtNHn4GsLooFbU/LdzipsinyNdmGBZeh0JmxWRcWbnxQ4jC4cJLUozv49gmGYad0=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=CA09C31B4827D3344510E26C24FB3C5B;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -611,9 +675,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1110'
+      - '1356'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -625,23 +689,24 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
                 <ns0:ConceptList>
                     <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
                 </ns0:ConceptList>
                 <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2016-03-31</ns0:RevisionDate>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-816555-MIOgyLPBftGgybTkyMOO-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.269&profile=MU2%20Update%202016-04-01&ticket=ST-659-X2cQoswMYg3SV3O5rq6N-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -663,9 +728,104 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!VLIO/ykqv/LHI9Dm9OGvBt4MxRMcjk8NMZRhEjCtjmBgpC1l28ZuySELf2rHuh2zs6DnhlhAEXeSK5o=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=024E2F12F065C83B5AA2F3F1A9A2AA1B;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!L/Kfn3nnPOr07Q3NtNHn4GsLooFbU78N7DYsCpiESYJofYHSkAk6WPALSQiMeLzY2IrvBuL1+7eQkEw=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A6EBD6F2E5CE9F9737C6FB78156A0974;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '7522'
+      Date:
+      - Fri, 11 Jan 2019 18:37:19 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.114 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic aggressive type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="111891008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis B without hepatic coma (disorder)"/>
+                    <ns0:Concept code="13265006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute fulminating type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="186624004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta agent (coinfection) with hepatic coma (disorder)"/>
+                    <ns0:Concept code="186626002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta-agent (coinfection) without hepatic coma (disorder)"/>
+                    <ns0:Concept code="186639003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B without delta-agent (disorder)"/>
+                    <ns0:Concept code="235864009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with hepatitis D (disorder)"/>
+                    <ns0:Concept code="235865005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis D superinfection of hepatitis B carrier (disorder)"/>
+                    <ns0:Concept code="235869004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B with hepatitis D (disorder)"/>
+                    <ns0:Concept code="235871004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B carrier (finding)"/>
+                    <ns0:Concept code="26206000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to viral hepatitis B (disorder)"/>
+                    <ns0:Concept code="38662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic persistent type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="424099008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to acute hepatitis B (disorder)"/>
+                    <ns0:Concept code="424340000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to chronic hepatitis B (disorder)"/>
+                    <ns0:Concept code="442134007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B associated with Human immunodeficiency virus infection (disorder)"/>
+                    <ns0:Concept code="442374005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B and hepatitis C (disorder)"/>
+                    <ns0:Concept code="446698005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactivation of hepatitis B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="50167007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic active type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="53425008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anicteric type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="60498001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Congenital viral hepatitis B infection (disorder)"/>
+                    <ns0:Concept code="61977001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="66071002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis type B (disorder)"/>
+                    <ns0:Concept code="76795007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute type B viral hepatitis (disorder)"/>
+                    <ns0:Concept code="B16.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent with hepatic coma"/>
+                    <ns0:Concept code="B16.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent without hepatic coma"/>
+                    <ns0:Concept code="B16.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent with hepatic coma"/>
+                    <ns0:Concept code="B16.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent and without hepatic coma"/>
+                    <ns0:Concept code="B18.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B with delta-agent"/>
+                    <ns0:Concept code="B18.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B without delta-agent"/>
+                    <ns0:Concept code="B19.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B without hepatic coma"/>
+                    <ns0:Concept code="B19.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B with hepatic coma"/>
+                </ns0:ConceptList>
+                <ns0:Source>Optum</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used to identify patients with acute or chronic Hepatitis B infection.),(Data Element Scope: The intent of this data element is identify patients with acute or chronic Hepatitis B infection.  Using the Quality Data Model, this particular element would map to the "Diagnosis, Active".),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients with acute or chronic Hepatitis B infection.),(Exclusion Criteria: Patients with evidence of current or past acute or chronic Hepatitis B infection.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.271:Hepatitis B),(2.16.840.1.113883.3.67.1.101.1.272:Hepatitis B)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-08-25</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-662-VKZ6sMqxrdtWmlFmfnbs-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!YQ17G5H6X6VhT0rm9OGvBt4MxRMcjseDKtIUsHbR38wlshXcHj0t4jJ1AqnPnYKlfek2klGKBenVk6o=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=2086E25FD4C2A2C0D8CBCB231BEEBAEC;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -677,11 +837,11 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -842,10 +1002,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-816554-3uXbZw4wMEbMF9g4Pmjv-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1078.5&profile=MU2%20Update%202016-04-01&ticket=ST-665-s6ZoVEbcCeobArFrk4rl-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -867,169 +1027,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!QpNUKiZ0G9qfeNvNtNHn4GsLooFbUzC71Yo/rk/ufcJis04zVwRIkrOUZJG7Ojm44VAHIvZjLDDlZqo=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=383C3E0C09CA6E82B7B4FB5BB8672E6C;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '1356'
-      Date:
-      - Wed, 09 Jan 2019 21:25:34 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
-                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
-                </ns0:ConceptList>
-                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
-                <ns0:Type>Extensional</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.269&profile=MU2%20Update%202016-04-01&ticket=ST-816553-WVJTvE3kOjquCOjAUZtc-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!HccabOivM/vQjtTNtNHn4GsLooFbU+J4fQg3eOkfUTVF5YvKplkg5xra3yd7dR5iQgH+zeq8IZ76wlA=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=49DC0D8F0E67A586FFDE5613AF1A709C;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '7522'
-      Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.67.1.101.1.269" displayName="Hepatitis B" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="1116000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic aggressive type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="111891008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis B without hepatic coma (disorder)"/>
-                    <ns0:Concept code="13265006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute fulminating type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="186624004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta agent (coinfection) with hepatic coma (disorder)"/>
-                    <ns0:Concept code="186626002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with delta-agent (coinfection) without hepatic coma (disorder)"/>
-                    <ns0:Concept code="186639003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B without delta-agent (disorder)"/>
-                    <ns0:Concept code="235864009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute hepatitis B with hepatitis D (disorder)"/>
-                    <ns0:Concept code="235865005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis D superinfection of hepatitis B carrier (disorder)"/>
-                    <ns0:Concept code="235869004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic viral hepatitis B with hepatitis D (disorder)"/>
-                    <ns0:Concept code="235871004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B carrier (finding)"/>
-                    <ns0:Concept code="26206000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to viral hepatitis B (disorder)"/>
-                    <ns0:Concept code="38662009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic persistent type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="424099008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to acute hepatitis B (disorder)"/>
-                    <ns0:Concept code="424340000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatic coma due to chronic hepatitis B (disorder)"/>
-                    <ns0:Concept code="442134007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B associated with Human immunodeficiency virus infection (disorder)"/>
-                    <ns0:Concept code="442374005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hepatitis B and hepatitis C (disorder)"/>
-                    <ns0:Concept code="446698005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactivation of hepatitis B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="50167007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic active type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="53425008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anicteric type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="60498001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Congenital viral hepatitis B infection (disorder)"/>
-                    <ns0:Concept code="61977001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="66071002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Viral hepatitis type B (disorder)"/>
-                    <ns0:Concept code="76795007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute type B viral hepatitis (disorder)"/>
-                    <ns0:Concept code="B16.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent with hepatic coma"/>
-                    <ns0:Concept code="B16.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B with delta-agent without hepatic coma"/>
-                    <ns0:Concept code="B16.2" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent with hepatic coma"/>
-                    <ns0:Concept code="B16.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Acute hepatitis B without delta-agent and without hepatic coma"/>
-                    <ns0:Concept code="B18.0" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B with delta-agent"/>
-                    <ns0:Concept code="B18.1" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Chronic viral hepatitis B without delta-agent"/>
-                    <ns0:Concept code="B19.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B without hepatic coma"/>
-                    <ns0:Concept code="B19.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified viral hepatitis B with hepatic coma"/>
-                </ns0:ConceptList>
-                <ns0:Source>Optum</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This set of values contain codes commonly used to identify patients with acute or chronic Hepatitis B infection.),(Data Element Scope: The intent of this data element is identify patients with acute or chronic Hepatitis B infection.  Using the Quality Data Model, this particular element would map to the "Diagnosis, Active".),(Inclusion Criteria: The codes used in this value set can be reasonably used to identify patients with acute or chronic Hepatitis B infection.),(Exclusion Criteria: Patients with evidence of current or past acute or chronic Hepatitis B infection.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.67.1.101.1.271:Hepatitis B),(2.16.840.1.113883.3.67.1.101.1.272:Hepatitis B)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-08-25</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1078.5&profile=MU2%20Update%202016-04-01&ticket=ST-816552-ASArXX0J9ePryYEyyGau-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!w5DzH9BYcJ/SfKLm9OGvBt4MxRMcjhHC0xC1/ZEWzGu5wrKG/jeNn4+wNfQDtfGeva9cArljRnufUh4=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=26C818C94E9BF16EF1E591177FE780AA;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!5EeRqrTv3Hzizuzm9OGvBt4MxRMcjmgEClwPELZEBXCB+DrZA1gxW3/9tDfiFZN6FFuCcv9/MYbhRd8=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=B43D4A5EA36174FE39A2A955370092CA;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1041,11 +1041,11 @@ http_interactions:
       Content-Length:
       - '22956'
       Date:
-      - Wed, 09 Jan 2019 21:25:34 GMT
+      - Fri, 11 Jan 2019 18:37:18 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1172,10 +1172,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.278&profile=MU2%20Update%202016-04-01&ticket=ST-816549-G4yjvXHMRdVESfuIRXTj-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.67.1.101.1.278&profile=MU2%20Update%202016-04-01&ticket=ST-660-TbN1ErU6bLacf7Uo9byd-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1197,9 +1197,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!cCREluGTocjZ+BvNtNHn4GsLooFbUyoxO9dCxJuIwJXxwR/bIBkQ1noHiIU4Y5UllvR2il8Csq4RCSc=;
-        expires=Wed, 09-Jan-2019 23:25:34 GMT; path=/; Httponly; Secure
-      - JSESSIONID=833DA14C2B601F20153C094DA90D14D9;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!KH72o8lCwNF+b7vNtNHn4GsLooFbU2c0Idbcrn8glqdaVPbtO9lbfRcDUs1+5nw7j/cKnluFJmEkYkc=;
+        expires=Fri, 11-Jan-2019 20:37:19 GMT; path=/; Httponly; Secure
+      - JSESSIONID=F8A2718C6854BE7E0963DD6AE7EF745F;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1211,11 +1211,11 @@ http_interactions:
       Content-Length:
       - '76809'
       Date:
-      - Wed, 09 Jan 2019 21:25:33 GMT
+      - Fri, 11 Jan 2019 18:37:19 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1609,5 +1609,5 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:34 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:19 GMT
 recorded_with: VCR 3.0.3

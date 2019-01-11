@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: ''
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -32,12 +32,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '65'
+      - '62'
       Date:
-      - Wed, 09 Jan 2019 21:14:07 GMT
+      - Fri, 11 Jan 2019 18:37:03 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!rRi/mqIF5a4Ed4rNtNHn4GsLooFbU7SR/IoLR1+MHuRw1oc/cwPoxrn+/iccyLhIMrBHvUMQW19EDiE=;
-        expires=Wed, 09-Jan-2019 23:14:07 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!XTNJ/zRICFqfqTTNtNHn4GsLooFbU/unjm46bnYKbc3JkWC8k69cWf5vxjB+QHIhRB0fQMsYrGOJ/Gc=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -46,12 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-177322-t5KNLwTzAr3qbj7V15xHzpHJLELua03S4667RZuurGja3fyVLi-cas
+      string: TGT-798-Ivend2a0WcjQrxf1Me5iwddy2XSngAifSCb1F26zZAjbWImeHY-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:14:07 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177322-t5KNLwTzAr3qbj7V15xHzpHJLELua03S4667RZuurGja3fyVLi-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-798-Ivend2a0WcjQrxf1Me5iwddy2XSngAifSCb1F26zZAjbWImeHY-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -81,12 +81,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:14:07 GMT
+      - Fri, 11 Jan 2019 18:37:03 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!7J7Ao5OqW2+GwzTm9OGvBt4MxRMcjsI62RMgApiKwpvmUualW+TXUcHr2GBArWp/bgvEToNIZTglvjw=;
-        expires=Wed, 09-Jan-2019 23:14:08 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!Kvy6FLxSAZJEc5Tm9OGvBt4MxRMcjn/sVmWvZDMLVesXA1DvbtWmUfgbA/nXIP4KeLypbwoLS+e+1Bs=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -95,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-814576-hqyNaZCc4zknyY5BMO0q-cas
+      string: ST-609-2FY145VcHOngyadpaOog-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:14:08 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=bad.oid&ticket=ST-814576-hqyNaZCc4zknyY5BMO0q-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=bad.oid&ticket=ST-609-2FY145VcHOngyadpaOog-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -122,9 +122,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!dBIfqxROyK4TYKnNtNHn4GsLooFbU5/kzc7UQfItQTQFahWoj6vuzStgKfd2tP3grrrSFzPlmMviXSg=;
-        expires=Wed, 09-Jan-2019 23:14:08 GMT; path=/; Httponly; Secure
-      - JSESSIONID=75E7F94C0EE1E3F2BE779B89CD97DBEC;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!K1WT7gOLgbdGaBrNtNHn4GsLooFbU9LFuZ2N+0H9H//L5g0XrrbPqyLQhKbz1WMAWmGMyMBQfe2Nk/0=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
+      - JSESSIONID=90FB8C87DEAE41678A887D492E2CBC66;path=/vsac;HttpOnly;Secure
       Warning:
       - '111 NAV: Unknown value set'
       Cache-Control:
@@ -138,7 +138,7 @@ http_interactions:
       Transfer-Encoding:
       - chunked
       Date:
-      - Wed, 09 Jan 2019 21:14:07 GMT
+      - Fri, 11 Jan 2019 18:37:03 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -149,5 +149,5 @@ http_interactions:
       encoding: UTF-8
       string: ''
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:14:08 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 recorded_with: VCR 3.0.3

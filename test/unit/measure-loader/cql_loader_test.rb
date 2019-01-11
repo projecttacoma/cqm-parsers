@@ -14,72 +14,67 @@ class CQLLoaderTest < Minitest::Test
     VCR.use_cassette('measure__stratifications_and_observations', 
                      match_requests_on: [:method, :uri_no_st]) do
       measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
-      measure_file = File.new File.join(@fixtures_path, 'CMS32v7.zip')
-      loader = Measures::CqlLoader.new(measure_details, @vsac_options, get_ticket_granting_ticket)
-      measures = loader.extract_measures(measure_file)
+      # measure_file = File.new File.join(@fixtures_path, 'CMS32v7.zip')
+      measure_file = File.new File.join(@fixtures_path, 'CMS111_v5_6_Artifacts.zip')
+
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
+      measures = loader.extract_measures
       assert_equal 1, measures.length
       measure = measures[0]
 
-      assert_equal measure.measure_scoring, 'CONTINUOUS_VARIABLE'
-      assert_equal measure.calculation_method, 'EPISODE_OF_CARE'
+      assert_equal 'CONTINUOUS_VARIABLE', measure.measure_scoring
+      assert_equal 'EPISODE_OF_CARE', measure.calculation_method
 
-      assert_equal measure.cql_libraries.size, 1
+      assert_equal 2, measure.cql_libraries.size
 
       # check the main library name and find new library structure using it
-      assert_equal measure.main_cql_library, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', measure.main_cql_library
       
       # check the new library structure
       main_library = measure.cql_libraries.select(&:is_main_library).first
       assert(!main_library.nil?)
-      assert_equal main_library.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
-      assert_equal main_library.library_version, '7.2.002'
-      assert_equal main_library.statement_dependencies.size, 13
-      assert main_library.cql.starts_with?('library MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients')
-      assert_equal main_library.is_main_library, true
+      assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', main_library.library_name
+      assert_equal '7.3.002', main_library.library_version
+      assert_equal 16, main_library.statement_dependencies.size
+      assert main_library.cql.starts_with?('library MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients')
 
       # check the references used by the "Initial Population"
       ipp_dep = main_library.statement_dependencies.select { |dep| dep.statement_name == 'Initial Population' }.first
       assert(!ipp_dep.nil?)
-      assert_equal ipp_dep.statement_references.size, 1
-      assert ipp_dep.statement_references.map(&:statement_name).include?('ED Visit')
+      assert_equal 2, ipp_dep.statement_references.size
+      assert_equal ["Inpatient Encounter", "ED Visit with Admit Order"], ipp_dep.statement_references.map(&:statement_name)
 
       # check population set
-      assert_equal measure.population_sets.size, 1
+      assert_equal 1, measure.population_sets.size
       population_set = measure.population_sets[0]
-      assert_equal population_set.id, 'PopulationCriteria1'
-      assert_equal population_set.title, 'Population Criteria Section'
+      assert_equal 'PopulationCriteria1', population_set.id
+      assert_equal 'Population Criteria Section', population_set.title
       assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
-      assert_equal population_set.populations.IPP.statement_name, 'Initial Population'
-      assert_equal population_set.populations.MSRPOPL.statement_name, 'Measure Population'
-      assert_equal population_set.populations.MSRPOPLEX.statement_name, 'Measure Population Exclusions'
+      assert_equal 'Initial Population', population_set.populations.IPP.statement_name
+      assert_equal 'Measure Population', population_set.populations.MSRPOPL.statement_name
+      assert_equal 'Measure Population Exclusions', population_set.populations.MSRPOPLEX.statement_name
 
       # check stratifications
-      assert_equal population_set.stratifications.size, 3
-      assert_equal population_set.stratifications[0].title, 'Stratification 1'
-      assert_equal population_set.stratifications[0].statement.statement_name, 'Stratification 1'
-      assert_equal population_set.stratifications[0].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
-      assert_equal population_set.stratifications[1].title, 'Stratification 2'
-      assert_equal population_set.stratifications[1].statement.statement_name, 'Stratification 2'
-      assert_equal population_set.stratifications[1].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
-      assert_equal population_set.stratifications[2].title, 'Stratification 3'
-      assert_equal population_set.stratifications[2].statement.statement_name, 'Stratification 3'
-      assert_equal population_set.stratifications[2].statement.library_name, 'MedianTimefromEDArrivaltoEDDepartureforDischargedEDPatients'
+      assert_equal 2, population_set.stratifications.size
+      assert_equal 'Stratification 1', population_set.stratifications[0].title
+      assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
+      assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[0].statement.library_name
+      assert_equal 'Stratification 2', population_set.stratifications[1].title
+      assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
+      assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[1].statement.library_name
 
       # check observation
       assert_equal population_set.observations.size, 1
-      assert_equal population_set.observations[0].observation_function.statement_name, 'Measure Observation'
-      assert_equal population_set.observations[0].observation_parameter.statement_name, 'Measure Population'
+      assert_equal 'Measure Observation', population_set.observations[0].observation_function.statement_name
+      assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
 
       # check SDE
-      assert_equal population_set.supplemental_data_elements.size, 4
-      assert_equal population_set.supplemental_data_elements[0].statement_name, 'SDE Ethnicity'
-      assert_equal population_set.supplemental_data_elements[1].statement_name, 'SDE Payer'
-      assert_equal population_set.supplemental_data_elements[2].statement_name, 'SDE Race'
-      assert_equal population_set.supplemental_data_elements[3].statement_name, 'SDE Sex'
+      assert_equal ["SDE Ethnicity", "SDE Payer", "SDE Race", "SDE Sex"], population_set.supplemental_data_elements.map(&:statement_name)
 
       # check valuesets
       # note if you call value_sets.count or .size you will be making a db call
-      assert_equal measure.value_sets.each.count, 9
+      assert_equal 12, measure.value_sets.each.count
     end
   end
 
@@ -87,8 +82,10 @@ class CQLLoaderTest < Minitest::Test
     VCR.use_cassette('measure__definition_with_same_name_as_a_library_definition', 
                      match_requests_on: [:method, :uri_no_st]) do
       measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options, get_ticket_granting_ticket)
-      measures = loader.extract_measures(measure_file)
+
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       assert_equal 1, measures.length
       measure = measures[0]
 
@@ -106,13 +103,14 @@ class CQLLoaderTest < Minitest::Test
     ['1','2'].each do |cassette_number|
       VCR.use_cassette('measure__direct_reference_code_handles_creation_of_codeListId_hash'+cassette_number,
                        match_requests_on: [:method, :uri_no_st]) do
-        loader = Measures::CqlLoader.new(@measure_details, @vsac_options, get_ticket_granting_ticket)
-        measures = loader.extract_measures(measure_file)
+        value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+        loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+        measures = loader.extract_measures
         measure = measures[0]
     
         # Confirm that the source data criteria with the direct reference code is equal to the expected hash
-        assert_equal measure.source_data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D_source][:code_list_id], "drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381"
-        assert_equal measure.data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D][:code_list_id], "drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381"
+        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.source_data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D_source][:code_list_id]
+        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D][:code_list_id]
       end
     end
   end
@@ -120,9 +118,10 @@ class CQLLoaderTest < Minitest::Test
   def test_unique_characters_stored_correctly
     VCR.use_cassette('measure__unique_characters_stored_correctly',
                      match_requests_on: [:method, :uri_no_st]) do
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options_w_draft, get_ticket_granting_ticket)
       measure_file = File.new File.join(@fixtures_path, 'TOB2_v5_5_Artifacts.zip')
-      measures = loader.extract_measures(measure_file)
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       measure = measures[0]
       
       annotations = measure.cql_libraries.find_by(library_name: 'TobaccoUseTreatmentProvidedorOfferedTOB2TobaccoUseTreatmentTOB2a').elm_annotations
@@ -130,7 +129,7 @@ class CQLLoaderTest < Minitest::Test
       clause_text = annotations[:statements][36][:children][0][:children][0][:children][0][:text]
 
       assert(define_name != 'Type of Tobacco Used - Cigar &amp; Pipe')
-      assert_equal define_name, 'Type of Tobacco Used - Cigar & Pipe'
+      assert_equal 'Type of Tobacco Used - Cigar & Pipe', define_name
       assert !clause_text.include?('define "Type of Tobacco Used - Cigar &amp; Pipe"')
       assert clause_text.include?('define "Type of Tobacco Used - Cigar & Pipe"')
     end
@@ -139,9 +138,10 @@ class CQLLoaderTest < Minitest::Test
   def test_measure_including_draft
     VCR.use_cassette("measure__measure_including_draft",
                      match_requests_on: [:method, :uri_no_st]) do
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options_w_draft, get_ticket_granting_ticket)
       measure_file = File.new File.join(@fixtures_path, 'DRAFT_CMS2_CQL.zip')
-      measures = loader.extract_measures(measure_file)
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       measure = measures[0]
 
       assert_equal "Screening for Depression", measure.title
@@ -158,9 +158,10 @@ class CQLLoaderTest < Minitest::Test
   def test_measure
     VCR.use_cassette("measure__test_measure",
                      match_requests_on: [:method, :uri_no_st]) do
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options_w_draft, get_ticket_granting_ticket)
       measure_file = File.new File.join(@fixtures_path, 'BCS_v5_0_Artifacts.zip')
-      measures = loader.extract_measures(measure_file)
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       measure = measures[0]
 
       assert_equal "BCSTest", measure.title
@@ -173,9 +174,10 @@ class CQLLoaderTest < Minitest::Test
   def test_5_4_CQL_measure
     VCR.use_cassette("measure__test_5_4_CQL_measure",
                      match_requests_on: [:method, :uri_no_st]) do
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options, get_ticket_granting_ticket)
       measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts.zip')
-      measures = loader.extract_measures(measure_file)
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       measure = measures[0]
 
       assert_equal "Test 158", measure.title
@@ -190,9 +192,10 @@ class CQLLoaderTest < Minitest::Test
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries",
                      match_requests_on: [:method, :uri_no_st]) do
-      loader = Measures::CqlLoader.new(@measure_details, @vsac_options, get_ticket_granting_ticket)
       measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_fixed.zip')
-      measures = loader.extract_measures(measure_file)
+      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
       measure = measures[0]
 
       assert_equal 4, measure.cql_libraries.size

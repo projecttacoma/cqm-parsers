@@ -7,7 +7,7 @@ class ValueSetHelpersTest < Minitest::Test
     expected_hash = {a: "abc", b: "123", c: {i: "123"}, d: [{j: "123"}], n: nil}
 
     Measures::ValueSetHelpers.remove_urnoid(orig_hash)
-    assert_equal orig_hash, expected_hash
+    assert_equal expected_hash, orig_hash
   end
 
 end

@@ -34,14 +34,14 @@ http_interactions:
       Content-Length:
       - '533'
       Date:
-      - Wed, 09 Jan 2019 21:13:19 GMT
+      - Fri, 11 Jan 2019 18:37:47 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!f9QgSgUhjjHIvV7NtNHn4GsLooFbUzkdOv/9vAKc/ryHKmAQkQoLSKouV0UvRACtuj48YWVpu6ksJhA=;
-        expires=Wed, 09-Jan-2019 23:13:20 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!jV4L/pPyEni3QofNtNHn4GsLooFbU9hMcUd6uoiCvErbcvMWP3jRiEQfh8fbh3Fn+6JJMrEfJoCNC4A=;
+        expires=Fri, 11-Jan-2019 20:37:47 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -53,5 +53,5 @@ http_interactions:
         R2.1 2018-06-15","releaseDate":20180615},{"name":"C-CDA R2.1 2018-02-01","releaseDate":20180201},{"name":"C-CDA
         R2.1 2017-06-09","releaseDate":20170609},{"name":"C-CDA R1.1 2016-06-23","releaseDate":20160623}]}'
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:13:20 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:47 GMT
 recorded_with: VCR 3.0.3

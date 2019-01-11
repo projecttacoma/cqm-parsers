@@ -1,23 +1,24 @@
 module Measures
   class CqlLoader
 
-    def initialize(measure_details, vsac_options, vsac_ticket_granting_ticket)
+    def initialize(measure_zip, measure_details, value_set_loader)
+      @measure_zip = measure_zip
       @measure_details = measure_details.deep_symbolize_keys
-      @value_set_loader = ValueSetLoader.new(vsac_options, vsac_ticket_granting_ticket)
+      @value_set_loader = value_set_loader
     end
 
     # Returns an array of measures, will contain a single measure if it is a non-composite measure
-    def extract_measures(measure_zip)
-      measure_files = MATMeasureFiles.create_from_zip_file(measure_zip) 
+    def extract_measures()
+      measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip) 
 
       measures = []
       if measure_files.components.present?
         measure, component_measures = create_measure_and_components(measure_files)
-        measures << component_measures
+        measures.push(*component_measures)
       else
         measure = create_measure(measure_files)
       end
-      measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(measure_zip.read))
+      measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
       measures << measure
       return measures
     end
@@ -25,14 +26,14 @@ module Measures
     private
 
     def create_measure_and_components(measure_files)
-      add_component_cql_library_files_to_composite_measure_files(measure_files) 
+      add_component_cql_library_files_to_composite_measure_files(measure_files)
+      measure = create_measure(measure_files)
       component_measures = measure_files.components.map { |comp_files| create_measure(comp_files) }
       component_measures.each do |component_measure|
         # Set the components' hqmf_set_id to: <composite_hqmf_set_id>&<component_hqmf_set_id>
         component_measure.hqmf_set_id = measure.hqmf_set_id + '&' + component_measure.hqmf_set_id
         component_measure.component = true
       end
-      measure = create_measure(measure_files)
       measure.component_hqmf_set_ids = component_measures.map(&:hqmf_set_id)
       return measure, component_measures
     end

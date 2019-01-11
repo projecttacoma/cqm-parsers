@@ -306,7 +306,12 @@ module Util
 
       # Use your username and password to retrive a ticket granting ticket from VSAC
       def get_ticket_granting_ticket(username, password)
-        response = Typhoeus.post("#{@config[:auth_url]}/Ticket", params: {username: username, password: password})
+        response = Typhoeus.post(
+          "#{@config[:auth_url]}/Ticket", 
+          # looks like typheous sometimes switches the order of username/password when encoding
+          # which vsac cant handle (!?), so encode first
+          body: URI.encode_www_form(username: username, password: password)
+        )
         raise VSACInvalidCredentialsError.new if response.response_code == 401
         validate_http_status(response.response_code)
         return { ticket: String.new(response.body), expires: Time.now + 8.hours }

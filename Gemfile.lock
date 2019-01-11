@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/projecttacoma/cqm-models.git
-  revision: d119d511773c92f04db6ac74acbc0f7ce4aa07db
+  revision: 46591ad39d6797ab0f0aff886314b237d1086607
   branch: measure_object_updates_rebase
   specs:
     cqm-models (1.0.2)

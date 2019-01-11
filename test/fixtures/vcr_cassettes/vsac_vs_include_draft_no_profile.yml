@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: ''
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -32,12 +32,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '65'
+      - '62'
       Date:
-      - Wed, 09 Jan 2019 21:14:08 GMT
+      - Fri, 11 Jan 2019 18:37:03 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!zMxikbVVIakb/1/NtNHn4GsLooFbU0yVMZ9oVcnjH2y12oVXIv1woIkmhQzp3YRhVcCbX5eYo8xcWp8=;
-        expires=Wed, 09-Jan-2019 23:14:08 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!Iip+2+B3YRdJU6TNtNHn4GsLooFbU6mYuv/JvOvA/FxVBNAPJYeulp056hXwYfxupPiPMQSLemYyFdU=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -46,12 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-177324-kzIFGMFyLIeviWMhkB9YQPPg3M2kraIvU9o5fLUrcYVggWkmQj-cas
+      string: TGT-797-XoxvkiOqc9i6ofYOrfXdFOc3HEYifdBZQKzvTI4IbNyioe3nrb-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:14:08 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177324-kzIFGMFyLIeviWMhkB9YQPPg3M2kraIvU9o5fLUrcYVggWkmQj-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-797-XoxvkiOqc9i6ofYOrfXdFOc3HEYifdBZQKzvTI4IbNyioe3nrb-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -81,21 +81,21 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:14:08 GMT
+      - Fri, 11 Jan 2019 18:37:04 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!zo+kYhk8Dbm+XFTm9OGvBt4MxRMcjpm+n93NEZ2woNCjUcDtpOmY4tvD7aIWtGxreUbpwzr0AXKiGYY=;
-        expires=Wed, 09-Jan-2019 23:14:08 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!ZdYSHkXp9K1Lv93m9OGvBt4MxRMcjmT3/ya2Pn9VKfUzad5QX/0B5lRlPKOIp74KkSqhUpVJJguyHZM=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-814578-rpH76ycygfZAyr3yK5P0-cas
+      string: ST-608-IouVyT5Y3EO6mEWcTzfU-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:14:08 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 recorded_with: VCR 3.0.3

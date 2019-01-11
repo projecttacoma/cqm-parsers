@@ -1,11 +1,11 @@
 ---
 http_interactions:
 - request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20Hybrid
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: ''
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -30,14 +30,14 @@ http_interactions:
       Expires:
       - '0'
       Content-Type:
-      - application/json
+      - text/plain;charset=utf-8
       Content-Length:
-      - '395'
+      - '62'
       Date:
-      - Fri, 11 Jan 2019 18:37:47 GMT
+      - Fri, 11 Jan 2019 18:37:46 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!0tqXSWcRQsoChifNtNHn4GsLooFbU6fcJlLE4NkVF6IJHcokLDZTNaWM4GoKsMLFHBcw/htXah4znHY=;
-        expires=Fri, 11-Jan-2019 20:37:48 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!8nf8zAY285pdQKjNtNHn4GsLooFbU1eG9z9L8AuQLFfaS++y1AAmo2SiwxDB9Pvt2Hg9D9NShvXo/aY=;
+        expires=Fri, 11-Jan-2019 20:37:47 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -46,11 +46,7 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: '{"name":"CMS Hybrid","description":"Core Clinical Data Elements and
-        Hybrid Measures use a set of core clinical data elements, clinical variables
-        from electronic health records (EHRs), that are routinely collected and can
-        be feasibly extracted for use in risk-adjusted hospital-level hybrid outcome
-        measures.","release":[{"name":"CMS 2018 IQR Voluntary Hybrid Reporting","releaseDate":20171117}]}'
+      string: TGT-831-quiOIILnwWO0G7oouS4RExFfgdoCNBivwSbAsPCVeoxw1gBM3U-cas
     http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:48 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:47 GMT
 recorded_with: VCR 3.0.3

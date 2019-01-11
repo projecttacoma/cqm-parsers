@@ -2,10 +2,10 @@
 http_interactions:
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket?password=<VSAC_PASSWORD>&username=<VSAC_USERNAME>
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: ''
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -32,12 +32,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '65'
+      - '62'
       Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!ua1j1KRd3utdw6vNtNHn4GsLooFbUzmNMZGbmyn5ww/9bhs3K0fHoZzfcudty6qkIbY27YSZgp714eg=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!KI9VpS119h0zFoTNtNHn4GsLooFbU6eMJQApZ1XklFyDiOkLoNMJ3TMm1u70VlY11+UWBEJZVSb7Jq4=;
+        expires=Fri, 11-Jan-2019 20:37:21 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -46,12 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas
+      string: TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:21 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -81,61 +81,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!UANzhYDTZ8gyE8vm9OGvBt4MxRMcjiKsw8azDQglGE34tHmwTcvryptGT4wfBX38Hj4IlXuaTZxPFyE=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816573-btoaA1kYffSYaBz1GoVd-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!Yt8KbtOXx88Fj7/NtNHn4GsLooFbU1uwIpNDSRd4pMZ4QRAAWQZUhMcVFTKukMxIlad+wtUDiTRBzcs=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!fmRTKUDdmrixh6LNtNHn4GsLooFbU46Hk7t3x/Mnlt/0cES50oJDvZUPWkZ6lY8r4g3/STtplWhKkSE=;
+        expires=Fri, 11-Jan-2019 20:37:21 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -144,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816574-udzDyOUdpFIQTQ9dqu6T-cas
+      string: ST-675-7frJw47htgdTIOvbgU6t-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -179,26 +130,26 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!IJVsjlorXEIdjMXNtNHn4GsLooFbU9WsP1BxUFcjuF8NzDwgBjoenlhv83bHT+iyVpddfL/7geYqDYw=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!+XK1fkybR+AkYrLm9OGvBt4MxRMcjvZkJ/wepYR4UMLe8MCy2xM4r/Zib5VyaTmzA116wIdNzrPvYv0=;
+        expires=Fri, 11-Jan-2019 20:37:21 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816575-R9IzG2Az75klBt67DGbt-cas
+      string: ST-682-7Ar1HCfHFdzD5d52ftcl-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -228,12 +179,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:22 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!mrClhX7I1WHR7Mnm9OGvBt4MxRMcjt0rEkmc9Gp1sanMwmxo8tb5m9gR9+T9/aRtOIFoQnI3fbDZvzs=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!2xLbiDpRBVeKXITm9OGvBt4MxRMcji0Bxc7avGzT8PErc36zcPp2uI72deDkaQy5los4znAka5k5+jU=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -242,12 +193,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816577-itwdez1Wla07MTIc3Sf9-cas
+      string: ST-683-XLl3BYWvNzBbynAIBbzb-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -277,26 +228,26 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!MKA1TkBh+8LjhhXm9OGvBt4MxRMcjsi4HlOrF7WwbpgnBI6tjB29lIl4m/pLWmqEEzBMGQxjFNWVrLQ=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!nH64z28rIdEu39bm9OGvBt4MxRMcjjvajNsxcUVgP1Uvr8qHlhjbAOtJ4O8LXoWB6ULYadUyrmZWG5E=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816576-0BlotCkY1SDf7mwP4VJM-cas
+      string: ST-684-B1Fi0sOgw3lwdoVEzf2v-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -326,208 +277,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!D5dxJI68eMNOCg3NtNHn4GsLooFbU1oIXRJi1q0sHeym86bAeOOutN7tfZKF7zx/uClY1QcWg0DXar8=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816578-w61pnm43g9jiE5stAgkg-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!axWZkYM13m+VPj3NtNHn4GsLooFbU4MsggR/0V2VEFImRMCe6U6r6QGK2XMyAfp90LWLpLg8GIKk+tc=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816581-4b4AjtyfCC4vcH73Kvz0-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!9p0jqpyNEVEFTwTNtNHn4GsLooFbU0nFLs1TpuCKCVRAb87MkeQWuco3Tyv4yn61C7kLgZmnaPvpEyg=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816580-P3OtoyA9RenpPFQYclnt-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!qSeGW/A83dqPufDm9OGvBt4MxRMcjieCXXsWg8BdEgnTo4kgUKvllW0BxWUBPcj3yB017d4WRr1yHag=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-816582-Bnlnm6n4CfcKycpajloj-cas
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '34'
-      Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!bncNg9z8xTTO43fNtNHn4GsLooFbUzBScbL9DJtbiDmiDVuzewW898uXptrL4zV3M81glA4iluzZ6OI=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!vsIQICLGVIj9lizm9OGvBt4MxRMcjipoPmkgSZfUPADw19CzLAWi1xYJZsqk8/9g+mUYiUTYosFCJSQ=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -536,12 +291,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816579-IilhtK5HBZhTavHd6m2N-cas
+      string: ST-677-0yKTEvsddmnPJotfKsGO-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-177941-pFYjrzSrc4k649s7eBvfSsOAfmiMRG7K3v9UuTzsq9NQoAIa5Y-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -571,12 +326,208 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '34'
+      - '31'
       Date:
-      - Wed, 09 Jan 2019 21:25:35 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!7fdWqDC670B6hiLNtNHn4GsLooFbU3dfyXz4Xh3sgXtwLPV3retP+j/s6hWu81H56642pv8Cq3JuQLU=;
-        expires=Wed, 09-Jan-2019 23:25:36 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!+49fVaduw7Rnj8bm9OGvBt4MxRMcjnoQQbvQjijGL8AHpZDJ5u0THsb5VwHiqW99a7Ddy3lMsMr0FYA=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-676-MqBzcvV9Q5hCsdYNqsb7-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:21 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!JliYogzZlaIsjdvm9OGvBt4MxRMcjmLXUuhJhXGuH8KclQtEeQWKtZ7bXmOIQ0IqeChNSiHzfZDhi3M=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-678-7z4bU5wfFQDAa19Fq4e7-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:21 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!pq8d05QgoyPN2njNtNHn4GsLooFbU1zrZGh35PxeeIBbDyoFZ0z/cFJ5lcCII27jU30vC0tqPNq9RfE=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-681-ghheOjcwfLRbyzzBdvSF-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:22 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!KE1XTrhmblcD5CjNtNHn4GsLooFbUwWVbJqI7zuhxMZyd1dfl7LxzJ+kq9vXemv2cuOg6duZSHVq2uA=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-680-AARGTPekEigpI1fwR7fw-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:21 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!HCHQaUaDSDuAvOfNtNHn4GsLooFbU6TQar6q6Unfbpim0JZEyjRWwgpR+mU5yw9s5PvPED1hOa8QL14=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -585,12 +536,61 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-816583-Wqro5bTrKcI7IRO1qE3Y-cas
+      string: ST-685-9PdVSouBKkL3UrtVM1tE-cas
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:36 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-814-KLoTz26kgtv9CXL95bZ5NYo9yIf7taP11tJO4z9uYG4RPoteR3-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '31'
+      Date:
+      - Fri, 11 Jan 2019 18:37:22 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!+DV6Qb7omWlGZOzNtNHn4GsLooFbU1DRa3TFnNiRxhb2B3NPFT6O0qmd0Xp0+RoFXYIcus35I6iVRg8=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-679-1rfJI5eI99rSQRbzDYJc-cas
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816583-Wqro5bTrKcI7IRO1qE3Y-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1005&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-678-7z4bU5wfFQDAa19Fq4e7-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -612,9 +612,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!pPOqameD/l7xPGzNtNHn4GsLooFbUzPaKzMSEcnb8k1dmcuoW8uAX8GpCLl5wXSq9Xda+cD9iMDrl+c=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=5B3E71BCCCFC28B8580A4D4933D8AF1B;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!pCUs3ooTxn/7arDNtNHn4GsLooFbU26s4BIXUT+tiBA/Pm+pLmwxPEU6LQQnSJmkPiWcy9hnDYLWBzA=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=E7D33647CF79FF9D9E0A85B2ABED1C1D;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -624,13 +624,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1356'
+      - '2963'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -638,24 +638,32 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.198.12.1005" displayName="Bilateral Mastectomy" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
-                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
+                    <ns0:Concept code="14693006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral subcutaneous mammectomy (procedure)"/>
+                    <ns0:Concept code="14714006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy with excision of bilateral regional lymph nodes (procedure)"/>
+                    <ns0:Concept code="17086001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Modified radical mastectomy, bilateral (procedure)"/>
+                    <ns0:Concept code="22418005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral simple mastectomy (procedure)"/>
+                    <ns0:Concept code="27865001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy (procedure)"/>
+                    <ns0:Concept code="456903003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral extended radical mastectomy (procedure)"/>
+                    <ns0:Concept code="52314009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy extended simple (procedure)"/>
+                    <ns0:Concept code="60633004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral subcutaneous mammectomy with synchronous implant (procedure)"/>
+                    <ns0:Concept code="76468001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral radical mastectomy (procedure)"/>
                 </ns0:ConceptList>
-                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
-                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains codes to identify a bilateral mastectomy.),(Data Element Scope: This value set was intended to identify patients who had a bilateral mastectomy.),(Inclusion Criteria: Includes codes that indicate a bilateral mastectomy.),(Exclusion Criteria: Excludes codes that indicate a unilateral mastectomy or are unspecified.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.198.11.1005:Bilateral Mastectomy)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816579-IilhtK5HBZhTavHd6m2N-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-683-XLl3BYWvNzBbynAIBbzb-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -677,9 +685,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!mi2dZgVozsoGoD/m9OGvBt4MxRMcjg6WBkw2Sj0GTEYsxT6HsltyLy59Y+8Dc/r5PTcsi5C/M5QkocQ=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=C6D00DFB3B63405B11AD17BB4DF2431A;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!tj6EkU7S/6Dys/Lm9OGvBt4MxRMcjmvk1pYZPEwuwPAu6zVvIUPzOgSsURiXgPOZvbksII2gy9F5Jrs=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=62A60FDE371A3C6CE0FE73D61C2837AA;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -691,11 +699,11 @@ http_interactions:
       Content-Length:
       - '1765'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -717,14 +725,14 @@ http_interactions:
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816574-udzDyOUdpFIQTQ9dqu6T-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-684-B1Fi0sOgw3lwdoVEzf2v-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -746,9 +754,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!J1KLglZlX4fnoSXm9OGvBt4MxRMcjoKIyeUU1RMhu5lmpK2gbuv9Q2fStYDgSifSXQU8KhKt2++ckew=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=F7B3D3A877F8AC8EB10F4FD5060AEE8C;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!eF1zGetsfQrHW8vNtNHn4GsLooFbU696Rv3K4m3HVmpqurHRSfv1EETe/1TIA/8yMKdyoEihiDp8f/o=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=D3F54BF5A0058F0073AEEA4E373B1A52;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -758,13 +766,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1128'
+      - '1356'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.114 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -772,88 +780,24 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.837" displayName="Ethnicity" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Hispanic or Latino"/>
-                    <ns0:Concept code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Not Hispanic or Latino"/>
-                </ns0:ConceptList>
-                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
-                <ns0:Type>Extensional</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816581-4b4AjtyfCC4vcH73Kvz0-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!xyuDuLHQdETcZO7m9OGvBt4MxRMcjnDEcIDJ5ew2qeL8wKyNNpohqxbkBmir+dROFjypbyj7VE0xCWo=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=A895C59822BDF6F81D11C77F0167FE49;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '1110'
-      Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
                 <ns0:ConceptList>
                     <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
                 </ns0:ConceptList>
                 <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1016&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816578-w61pnm43g9jiE5stAgkg-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1016&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-680-AARGTPekEigpI1fwR7fw-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -875,9 +819,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!W8GMfQ5Ff3YGJWXNtNHn4GsLooFbU2vvJGiiy0KNbHXo9lEMIv54EsDfZBaPDmGRNHnUtdq3DaRxQvs=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=FC641655A8F59704CD86518DD7298332;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!llBvu8wcFPvMBYjm9OGvBt4MxRMcjprfNXJMw/Fy4CGHPuYVANk4ZoKPZgeudagweILvoLsoLRmGPRM=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=FFC88A8E6081F6727FADAA903D30774A;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -889,7 +833,7 @@ http_interactions:
       Content-Length:
       - '9961'
       Date:
-      - Wed, 09 Jan 2019 21:25:37 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -930,14 +874,14 @@ http_interactions:
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1005&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816577-itwdez1Wla07MTIc3Sf9-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.108.12.1018&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-679-1rfJI5eI99rSQRbzDYJc-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -959,9 +903,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!LfuRaO7H1nwAKF/NtNHn4GsLooFbU4bX+2Xyr/wpft7xwLlVSdQFlnogXQi02yc02aG7vtDtiyyWpDU=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=7569BC8413E42B61F64DA25F02C242D4;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!dep4PT0BDdOLG+Pm9OGvBt4MxRMcjjCS2FtLN4J7wkL6cQ3Rz7isecdf8SG9RDVPLs2xW2KU9TyD6bA=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=48E4E8C769C0B9667C5A5B2FCA15BCE9;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -971,82 +915,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '2963'
+      - '17612'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.198.12.1005" displayName="Bilateral Mastectomy" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="14693006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral subcutaneous mammectomy (procedure)"/>
-                    <ns0:Concept code="14714006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy with excision of bilateral regional lymph nodes (procedure)"/>
-                    <ns0:Concept code="17086001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Modified radical mastectomy, bilateral (procedure)"/>
-                    <ns0:Concept code="22418005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral simple mastectomy (procedure)"/>
-                    <ns0:Concept code="27865001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy (procedure)"/>
-                    <ns0:Concept code="456903003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral extended radical mastectomy (procedure)"/>
-                    <ns0:Concept code="52314009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral mastectomy extended simple (procedure)"/>
-                    <ns0:Concept code="60633004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral subcutaneous mammectomy with synchronous implant (procedure)"/>
-                    <ns0:Concept code="76468001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Bilateral radical mastectomy (procedure)"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains codes to identify a bilateral mastectomy.),(Data Element Scope: This value set was intended to identify patients who had a bilateral mastectomy.),(Inclusion Criteria: Includes codes that indicate a bilateral mastectomy.),(Exclusion Criteria: Excludes codes that indicate a unilateral mastectomy or are unspecified.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.198.11.1005:Bilateral Mastectomy)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1048&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816580-P3OtoyA9RenpPFQYclnt-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!kTdTSW47FwKlFnDm9OGvBt4MxRMcjnUUcbhlKjEUkW5GIcE7lp+fG0DVEv3dob1CYkEAPnSiee/FMMA=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=3E209DE7A4C0D2240E1EF15072374C40;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '4206'
-      Date:
-      - Wed, 09 Jan 2019 21:25:37 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1058,38 +929,116 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.108.12.1018" displayName="Mammography" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="12843005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent hospital visit by physician (procedure)"/>
-                    <ns0:Concept code="18170008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent nursing facility visit (procedure)"/>
-                    <ns0:Concept code="185349003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Encounter for &quot;check-up&quot; (procedure)"/>
-                    <ns0:Concept code="185463005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Visit out of hours (procedure)"/>
-                    <ns0:Concept code="185465003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Weekend visit (procedure)"/>
-                    <ns0:Concept code="19681004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nursing evaluation of patient and report (procedure)"/>
-                    <ns0:Concept code="207195004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="History and physical examination with evaluation and management of nursing facility patient (procedure)"/>
-                    <ns0:Concept code="270427003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient-initiated encounter (procedure)"/>
-                    <ns0:Concept code="270430005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Provider-initiated encounter (procedure)"/>
-                    <ns0:Concept code="308335008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient encounter procedure (procedure)"/>
-                    <ns0:Concept code="390906007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up encounter (procedure)"/>
-                    <ns0:Concept code="406547006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Urgent follow-up (procedure)"/>
-                    <ns0:Concept code="439708006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Home visit (procedure)"/>
-                    <ns0:Concept code="87790002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up inpatient consultation visit (procedure)"/>
-                    <ns0:Concept code="90526000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Initial evaluation and management of healthy individual (procedure)"/>
+                    <ns0:Concept code="24604-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram diagnostic limited"/>
+                    <ns0:Concept code="24605-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram diagnostic"/>
+                    <ns0:Concept code="24606-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram screening"/>
+                    <ns0:Concept code="24610-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram limited"/>
+                    <ns0:Concept code="26175-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram screening"/>
+                    <ns0:Concept code="26176-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram screening"/>
+                    <ns0:Concept code="26177-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram screening"/>
+                    <ns0:Concept code="26287-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram limited"/>
+                    <ns0:Concept code="26289-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram limited"/>
+                    <ns0:Concept code="26291-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram limited"/>
+                    <ns0:Concept code="26346-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram diagnostic"/>
+                    <ns0:Concept code="26347-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram diagnostic"/>
+                    <ns0:Concept code="26348-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram diagnostic"/>
+                    <ns0:Concept code="26349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram diagnostic limited"/>
+                    <ns0:Concept code="26350-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram diagnostic limited"/>
+                    <ns0:Concept code="26351-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram diagnostic limited"/>
+                    <ns0:Concept code="36319-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram 4 views"/>
+                    <ns0:Concept code="36625-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram"/>
+                    <ns0:Concept code="36626-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram"/>
+                    <ns0:Concept code="36627-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram"/>
+                    <ns0:Concept code="36642-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram 2 views"/>
+                    <ns0:Concept code="36962-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram axillary"/>
+                    <ns0:Concept code="37005-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram magnification"/>
+                    <ns0:Concept code="37006-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram MLO"/>
+                    <ns0:Concept code="37016-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram roll"/>
+                    <ns0:Concept code="37017-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram roll"/>
+                    <ns0:Concept code="37028-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram tangential"/>
+                    <ns0:Concept code="37029-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram tangential"/>
+                    <ns0:Concept code="37030-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram tangential"/>
+                    <ns0:Concept code="37037-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram true lateral"/>
+                    <ns0:Concept code="37038-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram true lateral"/>
+                    <ns0:Concept code="37052-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram XCCL"/>
+                    <ns0:Concept code="37053-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram XCCL"/>
+                    <ns0:Concept code="37539-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram grid"/>
+                    <ns0:Concept code="37542-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram magnification"/>
+                    <ns0:Concept code="37543-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram magnification"/>
+                    <ns0:Concept code="37551-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram spot"/>
+                    <ns0:Concept code="37552-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram spot"/>
+                    <ns0:Concept code="37553-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram spot compression"/>
+                    <ns0:Concept code="37554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram magnification and spot"/>
+                    <ns0:Concept code="37768-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram 2 views"/>
+                    <ns0:Concept code="37769-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram magnification and spot"/>
+                    <ns0:Concept code="37770-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram tangential"/>
+                    <ns0:Concept code="37771-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram true lateral"/>
+                    <ns0:Concept code="37772-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram XCCL"/>
+                    <ns0:Concept code="37773-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram magnification"/>
+                    <ns0:Concept code="37774-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram"/>
+                    <ns0:Concept code="37775-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram roll"/>
+                    <ns0:Concept code="38067-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram nipple profile"/>
+                    <ns0:Concept code="38070-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant Mammogram"/>
+                    <ns0:Concept code="38071-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram"/>
+                    <ns0:Concept code="38072-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - left Mammogram"/>
+                    <ns0:Concept code="38090-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram W air"/>
+                    <ns0:Concept code="38091-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram W air"/>
+                    <ns0:Concept code="38807-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram spot"/>
+                    <ns0:Concept code="38820-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - right Mammogram"/>
+                    <ns0:Concept code="38854-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram magnification and spot"/>
+                    <ns0:Concept code="38855-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram true lateral"/>
+                    <ns0:Concept code="39150-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram Post Localization"/>
+                    <ns0:Concept code="39152-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram diagnostic"/>
+                    <ns0:Concept code="39153-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram screening"/>
+                    <ns0:Concept code="39154-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram diagnostic"/>
+                    <ns0:Concept code="42168-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram diagnostic"/>
+                    <ns0:Concept code="42169-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram diagnostic"/>
+                    <ns0:Concept code="42174-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram screening"/>
+                    <ns0:Concept code="42415-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram Post Wire Placement"/>
+                    <ns0:Concept code="42416-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram Post Wire Placement"/>
+                    <ns0:Concept code="46335-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram Single view"/>
+                    <ns0:Concept code="46336-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram Single view"/>
+                    <ns0:Concept code="46337-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram Single view"/>
+                    <ns0:Concept code="46338-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram Single view"/>
+                    <ns0:Concept code="46339-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram"/>
+                    <ns0:Concept code="46342-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram"/>
+                    <ns0:Concept code="46350-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram diagnostic"/>
+                    <ns0:Concept code="46351-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram displacement"/>
+                    <ns0:Concept code="46354-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram screening"/>
+                    <ns0:Concept code="46355-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram screening"/>
+                    <ns0:Concept code="46356-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram screening"/>
+                    <ns0:Concept code="46380-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Implant - unilateral Mammogram"/>
+                    <ns0:Concept code="48475-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram diagnostic"/>
+                    <ns0:Concept code="48492-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram screening"/>
+                    <ns0:Concept code="69150-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - left Mammogram diagnostic"/>
+                    <ns0:Concept code="69251-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram Post Wire Placement"/>
+                    <ns0:Concept code="69259-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - right Mammogram diagnostic"/>
+                    <ns0:Concept code="72137-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram-tomosynthesis diagnostic"/>
+                    <ns0:Concept code="72138-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram-tomosynthesis diagnostic"/>
+                    <ns0:Concept code="72139-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram-tomosynthesis diagnostic"/>
+                    <ns0:Concept code="72140-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram-tomosynthesis screening"/>
+                    <ns0:Concept code="72141-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram-tomosynthesis screening"/>
+                    <ns0:Concept code="72142-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram-tomosynthesis screening"/>
+                    <ns0:Concept code="G0202" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Screening mammography, producing direct digital image, bilateral, all views"/>
+                    <ns0:Concept code="G0204" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Diagnostic mammography, producing direct 2-d digital image, bilateral, all views"/>
+                    <ns0:Concept code="G0206" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Diagnostic mammography, producing direct 2-d digital image, unilateral, all views"/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set indentifies patients who have had a face-to-face interaction with a member of their medical care team.),(Data Element Scope: This value set was intended to map to the QDM data type of encounter.),(Inclusion Criteria: Includes both initial and follow up visits. Includes home visits, inpatient and outpatient visits, and nursing facility visits.),(Exclusion Criteria: Excludes visits that are not performed in-person, including telehealth services.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1216:Face-to-Face Interaction)</ns0:Definition>
+                <ns0:Purpose>(Clinical Focus: This value set contains codes that identify a mammogram.),(Data Element Scope: This value set was intended to identify patients who had a mammogram.),(Inclusion Criteria: Includes codes that identify a mammogram.),(Exclusion Criteria: None)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.108.11.1046:Mammography),(2.16.840.1.113883.3.464.1003.108.11.1047:Mammography)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1001&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816576-0BlotCkY1SDf7mwP4VJM-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.560.100.2&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-685-9PdVSouBKkL3UrtVM1tE-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1111,9 +1060,73 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!SHsrMAZQCLdH/G3NtNHn4GsLooFbU+UtoHLvDkfoDueugZPAA2ZkCh2+ALPehWifSm/hNCeZlU1K49U=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=EDD6D900AC4DBBB305876CF8455EE27C;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!A5Ea0U3fb63gHPfNtNHn4GsLooFbU0SjIEQ2dpC0iQxzCpFzinGTAeir3E289nhfN78NXoQZiXIoaAg=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A9CD7D5CD44212F16DAF45CF292542B6;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1110'
+      Date:
+      - Fri, 11 Jan 2019 18:37:22 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.560.100.2" displayName="Female" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                </ns0:ConceptList>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Concepts that represent Female when assessing quality measures),(Data Element Scope: Gender),(Inclusion Criteria: Appropriate female gender concepts),(Exclusion Criteria: Concepts representing Male gender)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1001&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-677-0yKTEvsddmnPJotfKsGO-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!3kEURta1xCKjWsnNtNHn4GsLooFbUzkiM76A2ehC1Uh1M+eA2IUbgwpFZhllNiumvdRqQvZTvZ+jKoo=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=87FA5E38EC3F70CC572E93477BE2B20E;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1125,11 +1138,11 @@ http_interactions:
       Content-Length:
       - '9392'
       Date:
-      - Wed, 09 Jan 2019 21:25:37 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1162,14 +1175,14 @@ http_interactions:
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816582-Bnlnm6n4CfcKycpajloj-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-682-7Ar1HCfHFdzD5d52ftcl-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1191,9 +1204,153 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!LHIix/6QQKkaMTHNtNHn4GsLooFbUzC1Kz+uyPDBPsS/+Z6KkIXjkd2PTmJLnAOOqW61JkNj33wKC6c=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=9FF8ABCFC029D671BEDCDED995268131;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!bc8KqSxxsXtZDz3m9OGvBt4MxRMcjodThgK+uGRs7krlYbiXlMqwcD9eig+7VlMEO2F2yb7Bs/t6ZwY=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=94597277EE346170F0DE2A56FCCF01D9;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1128'
+      Date:
+      - Fri, 11 Jan 2019 18:37:22 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.837" displayName="Ethnicity" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Hispanic or Latino"/>
+                    <ns0:Concept code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Not Hispanic or Latino"/>
+                </ns0:ConceptList>
+                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1048&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-675-7frJw47htgdTIOvbgU6t-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!IxtL2hOv4tyqgdPm9OGvBt4MxRMcjlHLMZ29eiIL+Awe+43x+8ERYmj97BBQYY6jpJUy3keDhqnQvPs=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=8E7949D4F1420D6D1EBA81ADB30B7373;path=/vsac;HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '4206'
+      Date:
+      - Fri, 11 Jan 2019 18:37:21 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="12843005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent hospital visit by physician (procedure)"/>
+                    <ns0:Concept code="18170008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent nursing facility visit (procedure)"/>
+                    <ns0:Concept code="185349003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Encounter for &quot;check-up&quot; (procedure)"/>
+                    <ns0:Concept code="185463005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Visit out of hours (procedure)"/>
+                    <ns0:Concept code="185465003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Weekend visit (procedure)"/>
+                    <ns0:Concept code="19681004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nursing evaluation of patient and report (procedure)"/>
+                    <ns0:Concept code="207195004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="History and physical examination with evaluation and management of nursing facility patient (procedure)"/>
+                    <ns0:Concept code="270427003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient-initiated encounter (procedure)"/>
+                    <ns0:Concept code="270430005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Provider-initiated encounter (procedure)"/>
+                    <ns0:Concept code="308335008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient encounter procedure (procedure)"/>
+                    <ns0:Concept code="390906007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up encounter (procedure)"/>
+                    <ns0:Concept code="406547006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Urgent follow-up (procedure)"/>
+                    <ns0:Concept code="439708006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Home visit (procedure)"/>
+                    <ns0:Concept code="87790002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up inpatient consultation visit (procedure)"/>
+                    <ns0:Concept code="90526000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Initial evaluation and management of healthy individual (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set indentifies patients who have had a face-to-face interaction with a member of their medical care team.),(Data Element Scope: This value set was intended to map to the QDM data type of encounter.),(Inclusion Criteria: Includes both initial and follow up visits. Includes home visits, inpatient and outpatient visits, and nursing facility visits.),(Exclusion Criteria: Excludes visits that are not performed in-person, including telehealth services.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1216:Face-to-Face Interaction)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-681-ghheOjcwfLRbyzzBdvSF-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!5vvUvBalcYT+gQXNtNHn4GsLooFbUybGReqyvTwAfFBr5PXAwrkIG4p0VVfqP5EER/mAYSLJy+32Hzw=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=AB0122AC274CFC98E8032E405830CC83;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1205,11 +1362,11 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1366,14 +1523,14 @@ http_interactions:
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1020&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816575-R9IzG2Az75klBt67DGbt-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.198.12.1020&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-676-MqBzcvV9Q5hCsdYNqsb7-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1395,9 +1552,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!t5c/F7sM+jgy2rDm9OGvBt4MxRMcjrD65R9WOx6kq2CzEnNqLo6tEB1kikrWO06emBXgmrXovmytNKM=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=8919E6D9BDF4DCFF589E2944225E0141;path=/vsac;HttpOnly;Secure
+      - BIGipServervsacweb_p=!NeW9oUHaTx7q///m9OGvBt4MxRMcjkJ3BBP4ctEdppcE1mZ/6kbdwi8ryySDg56QlE+VQRQCeL335S4=;
+        expires=Fri, 11-Jan-2019 20:37:22 GMT; path=/; Httponly; Secure
+      - JSESSIONID=BFB9692CB7F2557C7AB90DCAD5448C65;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1409,11 +1566,11 @@ http_interactions:
       Content-Length:
       - '8756'
       Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
+      - Fri, 11 Jan 2019 18:37:21 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1467,166 +1624,9 @@ http_interactions:
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.108.12.1018&includeDraft=yes&profile=MU2%20Update%202016-04-01&ticket=ST-816573-btoaA1kYffSYaBz1GoVd-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!T297Ey4OTIeYJnLNtNHn4GsLooFbU7QxiHfKM1FPCczY3np/x1roUMJj4jlW3o3WXbA8g9lSXQnHryw=;
-        expires=Wed, 09-Jan-2019 23:25:37 GMT; path=/; Httponly; Secure
-      - JSESSIONID=ECCFE13DA4CCF0A5C5354977D1AD8823;path=/vsac;HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '17612'
-      Date:
-      - Wed, 09 Jan 2019 21:25:36 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.108.12.1018" displayName="Mammography" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="24604-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram diagnostic limited"/>
-                    <ns0:Concept code="24605-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram diagnostic"/>
-                    <ns0:Concept code="24606-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram screening"/>
-                    <ns0:Concept code="24610-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram limited"/>
-                    <ns0:Concept code="26175-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram screening"/>
-                    <ns0:Concept code="26176-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram screening"/>
-                    <ns0:Concept code="26177-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram screening"/>
-                    <ns0:Concept code="26287-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram limited"/>
-                    <ns0:Concept code="26289-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram limited"/>
-                    <ns0:Concept code="26291-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram limited"/>
-                    <ns0:Concept code="26346-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram diagnostic"/>
-                    <ns0:Concept code="26347-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram diagnostic"/>
-                    <ns0:Concept code="26348-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram diagnostic"/>
-                    <ns0:Concept code="26349-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram diagnostic limited"/>
-                    <ns0:Concept code="26350-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram diagnostic limited"/>
-                    <ns0:Concept code="26351-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram diagnostic limited"/>
-                    <ns0:Concept code="36319-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram 4 views"/>
-                    <ns0:Concept code="36625-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram"/>
-                    <ns0:Concept code="36626-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram"/>
-                    <ns0:Concept code="36627-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram"/>
-                    <ns0:Concept code="36642-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram 2 views"/>
-                    <ns0:Concept code="36962-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram axillary"/>
-                    <ns0:Concept code="37005-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram magnification"/>
-                    <ns0:Concept code="37006-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram MLO"/>
-                    <ns0:Concept code="37016-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram roll"/>
-                    <ns0:Concept code="37017-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram roll"/>
-                    <ns0:Concept code="37028-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram tangential"/>
-                    <ns0:Concept code="37029-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram tangential"/>
-                    <ns0:Concept code="37030-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram tangential"/>
-                    <ns0:Concept code="37037-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram true lateral"/>
-                    <ns0:Concept code="37038-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram true lateral"/>
-                    <ns0:Concept code="37052-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram XCCL"/>
-                    <ns0:Concept code="37053-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram XCCL"/>
-                    <ns0:Concept code="37539-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram grid"/>
-                    <ns0:Concept code="37542-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram magnification"/>
-                    <ns0:Concept code="37543-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram magnification"/>
-                    <ns0:Concept code="37551-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram spot"/>
-                    <ns0:Concept code="37552-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram spot"/>
-                    <ns0:Concept code="37553-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram spot compression"/>
-                    <ns0:Concept code="37554-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram magnification and spot"/>
-                    <ns0:Concept code="37768-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram 2 views"/>
-                    <ns0:Concept code="37769-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram magnification and spot"/>
-                    <ns0:Concept code="37770-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram tangential"/>
-                    <ns0:Concept code="37771-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram true lateral"/>
-                    <ns0:Concept code="37772-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram XCCL"/>
-                    <ns0:Concept code="37773-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram magnification"/>
-                    <ns0:Concept code="37774-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram"/>
-                    <ns0:Concept code="37775-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram roll"/>
-                    <ns0:Concept code="38067-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram nipple profile"/>
-                    <ns0:Concept code="38070-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant Mammogram"/>
-                    <ns0:Concept code="38071-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram"/>
-                    <ns0:Concept code="38072-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - left Mammogram"/>
-                    <ns0:Concept code="38090-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram W air"/>
-                    <ns0:Concept code="38091-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram W air"/>
-                    <ns0:Concept code="38807-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram spot"/>
-                    <ns0:Concept code="38820-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - right Mammogram"/>
-                    <ns0:Concept code="38854-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram magnification and spot"/>
-                    <ns0:Concept code="38855-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram true lateral"/>
-                    <ns0:Concept code="39150-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram Post Localization"/>
-                    <ns0:Concept code="39152-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram diagnostic"/>
-                    <ns0:Concept code="39153-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram screening"/>
-                    <ns0:Concept code="39154-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram diagnostic"/>
-                    <ns0:Concept code="42168-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram diagnostic"/>
-                    <ns0:Concept code="42169-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram diagnostic"/>
-                    <ns0:Concept code="42174-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram screening"/>
-                    <ns0:Concept code="42415-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram Post Wire Placement"/>
-                    <ns0:Concept code="42416-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram Post Wire Placement"/>
-                    <ns0:Concept code="46335-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral Mammogram Single view"/>
-                    <ns0:Concept code="46336-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left Mammogram Single view"/>
-                    <ns0:Concept code="46337-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right Mammogram Single view"/>
-                    <ns0:Concept code="46338-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram Single view"/>
-                    <ns0:Concept code="46339-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram"/>
-                    <ns0:Concept code="46342-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast FFD mammogram"/>
-                    <ns0:Concept code="46350-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram diagnostic"/>
-                    <ns0:Concept code="46351-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram displacement"/>
-                    <ns0:Concept code="46354-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram screening"/>
-                    <ns0:Concept code="46355-4" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram screening"/>
-                    <ns0:Concept code="46356-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - unilateral Mammogram screening"/>
-                    <ns0:Concept code="46380-2" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Implant - unilateral Mammogram"/>
-                    <ns0:Concept code="48475-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram diagnostic"/>
-                    <ns0:Concept code="48492-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - bilateral Mammogram screening"/>
-                    <ns0:Concept code="69150-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - left Mammogram diagnostic"/>
-                    <ns0:Concept code="69251-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast Mammogram Post Wire Placement"/>
-                    <ns0:Concept code="69259-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast implant - right Mammogram diagnostic"/>
-                    <ns0:Concept code="72137-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram-tomosynthesis diagnostic"/>
-                    <ns0:Concept code="72138-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram-tomosynthesis diagnostic"/>
-                    <ns0:Concept code="72139-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram-tomosynthesis diagnostic"/>
-                    <ns0:Concept code="72140-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - right FFD mammogram-tomosynthesis screening"/>
-                    <ns0:Concept code="72141-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - left FFD mammogram-tomosynthesis screening"/>
-                    <ns0:Concept code="72142-3" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Breast - bilateral FFD mammogram-tomosynthesis screening"/>
-                    <ns0:Concept code="G0202" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Screening mammography, producing direct digital image, bilateral, all views"/>
-                    <ns0:Concept code="G0204" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Diagnostic mammography, producing direct 2-d digital image, bilateral, all views"/>
-                    <ns0:Concept code="G0206" codeSystem="2.16.840.1.113883.6.285" codeSystemName="HCPCS" codeSystemVersion="2016" displayName="Diagnostic mammography, producing direct 2-d digital image, unilateral, all views"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains codes that identify a mammogram.),(Data Element Scope: This value set was intended to identify patients who had a mammogram.),(Inclusion Criteria: Includes codes that identify a mammogram.),(Exclusion Criteria: None)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.108.11.1046:Mammography),(2.16.840.1.113883.3.464.1003.108.11.1047:Mammography)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2019-01-09</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Wed, 09 Jan 2019 21:25:37 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:22 GMT
 recorded_with: VCR 3.0.3
