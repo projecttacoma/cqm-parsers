@@ -3,7 +3,8 @@ source "https://rubygems.org"
 gemspec :development_group => :test
 
 gem 'mustache'
-gem 'cqm-models', '~> 1.0.1'
+# gem 'cqm-models', '~> 1.0.1'
+gem 'cqm-models', :git => 'https://github.com/projecttacoma/cqm-models', :branch => 'patient_generation'
 gem 'mongoid', '~> 6.4.2'
 
 group :development, :test do
@@ -24,5 +25,6 @@ group :test do
   gem 'webmock'
   gem 'minitest', '~> 5.3'
   gem 'minitest-reporters'
+  gem 'nokogiri-diff'
   gem 'awesome_print', :require => 'ap'
 end

@@ -1,5 +1,7 @@
 require_relative '../../test_helper'
 require 'cqm/models'
+require 'nokogiri/diff'
+require 'byebug'
 
 module QRDA
   module Cat1
@@ -85,18 +87,37 @@ module QRDA
       end
 
       def test_patient_roundtrip
-        add_adverse_event(@patient)
-        add_allergy_intolerance(@patient)
+        stacked_patients = QDM::PatientGeneration.generate_exhastive_data_element_patients(true)
 
-        exported_qrda = generate_doc(@patient)
-
-        confirm_adverse_event(exported_qrda)
-        confirm_allergy_intolerance(exported_qrda)
-
-        imported_patient = Cat1::PatientImporter.instance.parse_cat1(exported_qrda)
-
-        compare_adverse_event(imported_patient) 
-        compare_allergy_intolerance(imported_patient)       
+        stacked_patients.each do |original_patient| 
+          begin
+            exported_qrda = generate_doc(original_patient)
+    
+            imported_patient = Cat1::PatientImporter.instance.parse_cat1(exported_qrda)
+            # Roundtrip does not preserv extendedData
+            imported_patient.extendedData = original_patient.extendedData      
+            re_exported_qrda = generate_doc(imported_patient)
+          rescue Exception => e
+            puts("IMPORT/EXPORT ERROR: #{e}")
+          end
+        
+          if (exported_qrda && re_exported_qrda)
+            # Iterate over all of the differences between the two QRDAs
+            exported_qrda.diff(re_exported_qrda) do |change,node|
+              # If change represents and addition or deletion
+              if(change == "+" || change == "-")
+                # Ignore guid changes
+                if((!node.parent.to_s.include? "effectiveTime") && (!node.parent.to_s.include? "extension=") && (!node.parent.to_s.include? "root=") &&
+                  (!((node.parent.name.include? "time") && ((node.parent.parent.name.include? "legalAuthenticator") || (node.parent.parent.name.include? "author")))))
+                  puts "#{change} #{node.to_html}".ljust(30) + node.parent.path
+                end
+              end
+            end
+          else
+            puts("WARNING: #{original_patient.familyName} QRDA not compared")
+          end
+        end
+   
       end
 
       def compare_time(exported_time, imported_time)
