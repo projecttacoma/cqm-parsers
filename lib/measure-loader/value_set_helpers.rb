@@ -31,11 +31,11 @@ module Measures
         (elm.dig('library','valueSets','def') || []).each do |value_set|
           # If value set has a version and it starts with 'urn:hl7:profile:' then set to nil
           if value_set['version']&.include?('urn:hl7:profile:')
-            value_set['profile'] = URI.decode(value_set['version'].split('urn:hl7:profile:').last)
+            value_set['profile'] = URI.decode_www_form_component(value_set['version'].split('urn:hl7:profile:').last)
             value_set['version'] = nil
           # If value has a version and it starts with 'urn:hl7:version:' then strip that and keep the actual version value.
           elsif value_set['version']&.include?('urn:hl7:version:')
-            value_set['version'] = URI.decode(value_set['version'].split('urn:hl7:version:').last)
+            value_set['version'] = URI.decode_www_form_component(value_set['version'].split('urn:hl7:version:').last)
           end
         end
       end

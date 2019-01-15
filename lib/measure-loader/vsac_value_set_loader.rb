@@ -50,8 +50,7 @@ module Measures
       return "Profile:#{vs_vsac_options[:profile]}" if vs_vsac_options[:profile]
       return vs_vsac_options[:version] if vs_vsac_options[:version]
       return "Release:#{vs_vsac_options[:release]}" if vs_vsac_options[:release]
-
-      raise ValueSetException.new("Unable to determine query version.")
+      return ""
     end
 
     def make_specific_value_set_options(value_set)

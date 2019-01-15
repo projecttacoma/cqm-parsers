@@ -8,12 +8,12 @@ class CQLLoaderTest < Minitest::Test
     @vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
     @vsac_options_w_draft = { include_draft: true, profile: APP_CONFIG['vsac']['default_profile'] }
     @measure_details = { 'episode_of_care'=> false }
+
+    @vcr_options = {match_requests_on: [:method, :uri_no_st]}
   end
 
   def test_invalid_composite_measure_with_component_measure_missing_xml_file
-    VCR.use_cassette('measure__test_invalid_composite_measure_with_component_measure_missing_xml_file',
-                     match_requests_on: [:method, :uri_no_st]) do
-
+    VCR.use_cassette('measure__test_invalid_composite_measure_with_component_measure_missing_xml_file', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_file.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
@@ -24,9 +24,7 @@ class CQLLoaderTest < Minitest::Test
   end
 
   def test_invalid_composite_measure_with_missing_component_measure
-    VCR.use_cassette('measure__invalid_composite_measure_with_missing_component_measure',
-                     match_requests_on: [:method, :uri_no_st]) do
-
+    VCR.use_cassette('measure__invalid_composite_measure_with_missing_component_measure', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_component.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
@@ -37,9 +35,7 @@ class CQLLoaderTest < Minitest::Test
   end
 
   def test_invalid_composite_measure_with_missing_composite_measure_files
-    VCR.use_cassette('measure__invalid_composite_measure_with_missing_composite_measure_files',
-                     match_requests_on: [:method, :uri_no_st]) do
-
+    VCR.use_cassette('measure__invalid_composite_measure_with_missing_composite_measure_files', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_composite_files.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
@@ -50,9 +46,7 @@ class CQLLoaderTest < Minitest::Test
   end
 
   def test_loading_composite_measure
-    VCR.use_cassette('measure__load_composite_measure',
-                     match_requests_on: [:method, :uri_no_st]) do
-
+    VCR.use_cassette('measure__load_composite_measure', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
