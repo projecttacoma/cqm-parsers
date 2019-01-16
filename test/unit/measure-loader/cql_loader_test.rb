@@ -8,6 +8,8 @@ class CQLLoaderTest < Minitest::Test
     @vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
     @vsac_options_w_draft = { include_draft: true, profile: APP_CONFIG['vsac']['default_profile'] }
     @measure_details = { 'episode_of_care'=> false }
+
+    @vcr_options = {match_requests_on: [:method, :uri_no_st]}
   end
 
   def test_stratifications_and_observations

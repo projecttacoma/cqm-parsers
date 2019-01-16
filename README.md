@@ -6,6 +6,26 @@ cqm-parsers
 
 This project contains libraries for parsing HQMF documents.
 
+
+
+
+####MAT Package Loading
+To load measures from a MAT package file into the measure model, use the `Measures::CqlLoader` class. It can be used to create an array of measure models. For a composite measure, the array will contain the component measures and the last element will be the composite measure. For a non-composite measure (most measures), the array will contain one item.
+Example measure loading:
+
+```ruby
+vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
+measure_details = { 'episode_of_care'=> false }
+measure_file = File.new File.join('some/path/CMS158_v5_4_Artifacts.zip')
+
+value_set_loader = Measures::VSACValueSetLoader.new(vsac_options, get_ticket_granting_ticket)
+loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
+measures = loader.extract_measures    #this is now an array of the measures
+```
+Note that a different value set loader could be passed in; for example if you had a file containing value sets you could create a loader that read the value sets from file instead of fetching them from VSAC.
+
+
+
 License
 =======
 

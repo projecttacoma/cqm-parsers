@@ -78,7 +78,7 @@ module Measures
 
     def create_cql_libraries(cql_library_files, main_cql_lib)
       cql_statement_dependencies_all_libs = ElmDependencyFinder.find_dependencies(cql_library_files, main_cql_lib)
-      
+
       cql_libraries = cql_library_files.map do |cql_lib_files|
         cql_statement_dependencies = cql_statement_dependencies_all_libs[cql_lib_files.id]
         is_main_cql_lib = cql_lib_files.id == main_cql_lib
