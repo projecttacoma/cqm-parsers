@@ -1,6 +1,7 @@
 require_relative '../../test_helper'
 require 'cqm/models'
 require 'nokogiri/diff'
+require 'cqm_validators'
 require 'byebug'
 
 module QRDA
@@ -88,11 +89,18 @@ module QRDA
 
       def test_patient_roundtrip
         stacked_patients = QDM::PatientGeneration.generate_exhastive_data_element_patients(true)
+        schematron_file = File.new('/Users/mmayer/git/workspace3/cqm-validators/lib/schematron/qrda/cat_1_r5/HL7 QRDA Category I STU 5.sch')
+        validator = CqmValidators::Schematron::Validator.new('qrda_schematron_validator', schematron_file.path)
 
         stacked_patients.each do |original_patient| 
           begin
             exported_qrda = generate_doc(original_patient)
-    
+
+            errors = validator.validate(exported_qrda)
+            byebug
+            errors.each do |error|
+              puts(error.message)
+            end
             imported_patient = Cat1::PatientImporter.instance.parse_cat1(exported_qrda)
             # Roundtrip does not preserv extendedData
             imported_patient.extendedData = original_patient.extendedData      
