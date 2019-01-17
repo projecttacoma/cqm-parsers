@@ -54,7 +54,7 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 8, measures.length      
       composite_measure = measures[7]
       component_measures = measures[0..6]
-      
+
       assert_equal true, composite_measure.composite
       component_measures.each {|m| assert_equal false, m.composite}
 
