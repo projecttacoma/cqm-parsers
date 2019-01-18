@@ -60,7 +60,7 @@ module Measures
           
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
-              stratification_id: "#{index+1}",
+              stratification_id: (index+1).to_s,
               title: "Stratification #{index+1}",
               statement: modelize_statement_ref_string(statement_ref_string)
             )
