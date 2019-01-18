@@ -49,7 +49,7 @@ class CQLLoaderTest < Minitest::Test
       # check population set
       assert_equal 1, measure.population_sets.size
       population_set = measure.population_sets[0]
-      assert_equal 'PopulationCriteria1', population_set.id
+      assert_equal 'PopulationCriteria1', population_set.population_set_id
       assert_equal 'Population Criteria Section', population_set.title
       assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
       assert_equal 'Initial Population', population_set.populations.IPP.statement_name
@@ -58,9 +58,11 @@ class CQLLoaderTest < Minitest::Test
 
       # check stratifications
       assert_equal 2, population_set.stratifications.size
+      assert_equal '1', population_set.stratifications[0].stratification_id
       assert_equal 'Stratification 1', population_set.stratifications[0].title
       assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[0].statement.library_name
+      assert_equal '2', population_set.stratifications[1].stratification_id
       assert_equal 'Stratification 2', population_set.stratifications[1].title
       assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[1].statement.library_name

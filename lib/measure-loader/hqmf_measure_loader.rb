@@ -47,7 +47,7 @@ module Measures
         populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')
         return populations.map do |population|
           ps_hash = extract_population_set(population)
-          population_set = CQM::PopulationSet.new(title: ps_hash[:title], id: ps_hash[:id])
+          population_set = CQM::PopulationSet.new(title: ps_hash[:title], population_set_id: ps_hash[:id])
   
           population_set.populations = construct_population_map(measure_scoring)  
           ps_hash[:populations].each do |pop_code,statement_ref_string|
@@ -60,6 +60,7 @@ module Measures
           
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
+              stratification_id: "#{index+1}",
               title: "Stratification #{index+1}",
               statement: modelize_statement_ref_string(statement_ref_string)
             )
