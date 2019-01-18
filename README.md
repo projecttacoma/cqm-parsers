@@ -1,10 +1,11 @@
 [![codecov](https://codecov.io/gh/projecttacoma/cqm-parsers/branch/master/graph/badge.svg)](https://codecov.io/gh/projecttacoma/cqm-parsers)
+[![Gem Version](https://badge.fury.io/rb/cqm-parsers.svg)](https://badge.fury.io/rb/cqm-parsers)
 
 
 cqm-parsers
 ===========
 
-This project contains libraries for parsing HQMF documents.
+This project contains libraries for parsing HQMF documents and parsing MAT packages.
 
 
 
