@@ -1,0 +1,916 @@
+{
+  "AWATestComposite": {
+    "Patient": [],
+    "SDE Ethnicity": [],
+    "SDE Payer": [],
+    "SDE Race": [],
+    "SDE Sex": [],
+    "Is In ComponentMeasurePneumococcal Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Is In ComponentMeasurePneumococcal Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureColorectal Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureDepression Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureFalls Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Is In ComponentMeasureFalls Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureInfluenza Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Denominator Exceptions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureInfluenza Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureOsteoporosis Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Is In ComponentMeasureOsteoporosis Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureColorectal Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Is In ComponentMeasureDepression Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator Exceptions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Is In ComponentMeasureBreast Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Is In ComponentMeasureBreast Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Numerator"
+      }
+    ],
+    "Initial Population": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Initial Population"
+      }
+    ],
+    "Measure Population Exclusions": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator Exclusions"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator Exclusions"
+      }
+    ],
+    "Measure Population": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Denominator"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Denominator"
+      }
+    ],
+    "Numerator Score": [
+      {
+        "library_name": "CompositeFunctions",
+        "statement_name": "ToScore"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasurePneumococcal Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureColorectal Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureDepression Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureFalls Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureOsteoporosis Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureInfluenza Numerator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureBreast Numerator"
+      }
+    ],
+    "Denominator Score": [
+      {
+        "library_name": "CompositeFunctions",
+        "statement_name": "ToScore"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasurePneumococcal Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureColorectal Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureDepression Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureFalls Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureOsteoporosis Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureInfluenza Denominator"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Is In ComponentMeasureBreast Denominator"
+      }
+    ],
+    "Measure Observation": [
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Numerator Score"
+      },
+      {
+        "library_name": "AWATestComposite",
+        "statement_name": "Denominator Score"
+      }
+    ]
+  },
+  "CompositeFunctions": {
+    "ToScore": []
+  },
+  "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination",
+        "statement_name": "Initial Population"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "Hospice",
+        "statement_name": "Has Hospice"
+      }
+    ],
+    "Numerator": []
+  },
+  "Hospice": {
+    "Has Hospice": []
+  },
+  "MATGlobalCommonFunctions": {
+    "CalendarAgeInYearsAt": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "ToDate"
+      }
+    ],
+    "ToDate": []
+  },
+  "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "Hospice",
+        "statement_name": "Has Hospice"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Malignant Neoplasm"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Total Colectomy Performed"
+      }
+    ],
+    "Malignant Neoplasm": [],
+    "Total Colectomy Performed": [],
+    "Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Colonoscopy Performed"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Fecal Occult Blood Test Performed"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Flexible Sigmoidoscopy Performed"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "Fecal Immunochemical Test DNA Performed"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer",
+        "statement_name": "CT Colonography Performed"
+      }
+    ],
+    "Colonoscopy Performed": [],
+    "Fecal Occult Blood Test Performed": [],
+    "Flexible Sigmoidoscopy Performed": [],
+    "Fecal Immunochemical Test DNA Performed": [],
+    "CT Colonography Performed": []
+  },
+  "AnnualWellnessAssessmentPreventiveCareScreeningforDepression": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Initial Population"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Has Diagnosis of Depression"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Has Diagnosis of Bipolar"
+      }
+    ],
+    "Has Diagnosis of Depression": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Has Diagnosis of Bipolar": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Depression Screening Encounter within 12 Months Prior to AWV"
+      }
+    ],
+    "Depression Screening Encounter within 12 Months Prior to AWV": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Denominator Exceptions": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Has No Depression Screening Due to Medical Reason"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Has No Depression Screening Due to Patient Refusal"
+      }
+    ],
+    "Has No Depression Screening Due to Medical Reason": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Depression Screening Encounter within 12 Months Prior to AWV"
+      }
+    ],
+    "Has No Depression Screening Due to Patient Refusal": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Annual Wellness Visit Encounter"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "statement_name": "Depression Screening Encounter within 12 Months Prior to AWV"
+      }
+    ]
+  },
+  "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Initial Population"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Not Ambulatory 12 Months Before or During AWV"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Not Ambulatory 12 Months or More Before AWV"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Ambulatory Status Assessed 12 Months Before or During AWV"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Hospice 12 Months Before or During AWV"
+      }
+    ],
+    "Not Ambulatory 12 Months Before or During AWV": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Ambulatory Status Assessed 12 Months Before or During AWV"
+      }
+    ],
+    "Ambulatory Status Assessed 12 Months Before or During AWV": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Not Ambulatory 12 Months or More Before AWV": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Hospice 12 Months Before or During AWV": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ]
+  },
+  "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "Hospice",
+        "statement_name": "Has Hospice"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Osteoporosis Diagnosis"
+      }
+    ],
+    "Osteoporosis Diagnosis": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Numerator": []
+  },
+  "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Encounter During Influenza Season"
+      }
+    ],
+    "Encounter During Influenza Season": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Influenza Season": [],
+    "Denominator Exceptions": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Patient Declined Influenza Vaccination"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Medical Patient or System Reason for Not Performing Influenza Vaccination"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Medical Patient or System Reason for Not Administering Influenza Vaccine"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Diagnosis of Allergy to Egg"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Egg Substance Allergy"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Diagnosis of Allergy to Influenza Vaccine"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Diagnosis of Intolerance to Influenza Vaccine"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Intolerance of Influenza Vaccination Procedure"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Allergy or Intolerance to Influenza Vaccine"
+      }
+    ],
+    "Patient Declined Influenza Vaccination": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ],
+    "Influenza Season Including August and September of the Prior Year": [],
+    "Medical Patient or System Reason for Not Performing Influenza Vaccination": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ],
+    "Medical Patient or System Reason for Not Administering Influenza Vaccine": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ],
+    "Diagnosis of Allergy to Egg": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Egg Substance Allergy": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Diagnosis of Allergy to Influenza Vaccine": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Diagnosis of Intolerance to Influenza Vaccine": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Intolerance of Influenza Vaccination Procedure": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Allergy or Intolerance to Influenza Vaccine": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season"
+      }
+    ],
+    "Numerator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Vaccination Procedure"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Immunization Administered"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Patient Reported Previous Receipt of Influenza Vaccine"
+      }
+    ],
+    "Influenza Vaccination Procedure": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ],
+    "Influenza Immunization Administered": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ],
+    "Patient Reported Previous Receipt of Influenza Vaccine": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination",
+        "statement_name": "Influenza Season Including August and September of the Prior Year"
+      }
+    ]
+  },
+  "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer": {
+    "Initial Population": [
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Annual Wellness Visit Encounter"
+      }
+    ],
+    "Annual Wellness Visit Encounter": [],
+    "Denominator": [
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Initial Population"
+      },
+      {
+        "library_name": "MATGlobalCommonFunctions",
+        "statement_name": "CalendarAgeInYearsAt"
+      }
+    ],
+    "Denominator Exclusions": [
+      {
+        "library_name": "Hospice",
+        "statement_name": "Has Hospice"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Unilateral Mastectomy Procedure"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Right Mastectomy"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Left Mastectomy"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "History Bilateral Mastectomy"
+      },
+      {
+        "library_name": "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer",
+        "statement_name": "Bilateral Mastectomy Procedure"
+      }
+    ],
+    "Unilateral Mastectomy Procedure": [],
+    "Right Mastectomy": [],
+    "Left Mastectomy": [],
+    "History Bilateral Mastectomy": [],
+    "Bilateral Mastectomy Procedure": [],
+    "Numerator": []
+  }
+}

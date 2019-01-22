@@ -7,6 +7,8 @@ require 'ostruct'
 require_relative 'util/counter.rb'
 require_relative 'util/code_system_helper'
 require_relative 'util/hqmf_template_helper'
+require_relative 'util/vsac_api'
+require_relative 'util/util'
 
 require_relative 'hqmf-model/utilities.rb'
 
@@ -114,3 +116,13 @@ require_relative 'qrda-import/data-element-importers/substance_administered_impo
 require_relative 'qrda-import/patient_importer.rb'
 require_relative 'ext/data_element.rb'
 require_relative 'ext/code.rb'
+
+require_relative 'measure-loader/helpers'
+require_relative 'measure-loader/cql_loader'
+require_relative 'measure-loader/elm_dependency_finder'
+require_relative 'measure-loader/elm_parser'
+require_relative 'measure-loader/exceptions'
+require_relative 'measure-loader/hqmf_measure_loader'
+require_relative 'measure-loader/mat_measure_files'
+require_relative 'measure-loader/value_set_helpers'
+require_relative 'measure-loader/vsac_value_set_loader'

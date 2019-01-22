@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/projecttacoma/cqm-models.git
+  revision: 3b916105ff7f38956cd2fff695cecc73cc3a36fe
+  branch: master
+  specs:
+    cqm-models (1.0.2)
+
+GIT
   remote: https://github.com/projecttacoma/simplexml_parser.git
   revision: 1e8429773abb3e297c03133ae202900f35a6f9ed
   branch: master
@@ -22,8 +29,8 @@ PATH
       mustache
       nokogiri (~> 1.8.5)
       protected_attributes (~> 1.0.5)
-      rest-client (~> 1.8.0)
       rubyzip (~> 1.2.2)
+      typhoeus
       uuid (~> 2.3.7)
       zip-zip (~> 0.3)
 
@@ -55,16 +62,19 @@ GEM
       json
       simplecov
       url
+    coderay (1.1.2)
     concurrent-ruby (1.0.5)
-    cqm-models (0.8.4)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     docile (1.3.1)
     domain_name (0.5.20180417)
       unf (>= 0.0.5, < 1.0.0)
     erubis (2.7.0)
+    ethon (0.11.0)
+      ffi (>= 1.3.0)
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
+    ffi (1.9.25)
     hashdiff (0.3.7)
     health-data-standards (4.1.0)
       activesupport (~> 4.2.0)
@@ -92,6 +102,7 @@ GEM
     macaddr (1.7.1)
       systemu (~> 2.6.2)
     memoist (0.9.3)
+    method_source (0.8.2)
     mime-types (2.99.3)
     mini_portile2 (2.3.0)
     minitest (5.11.3)
@@ -109,7 +120,7 @@ GEM
       tzinfo (>= 0.3.37)
     mongoid-tree (2.0.1)
       mongoid (>= 4.0, < 6.0)
-    mustache (1.0.5)
+    mustache (1.1.0)
     netrc (0.11.0)
     nokogiri (1.8.5)
       mini_portile2 (~> 2.3.0)
@@ -120,6 +131,12 @@ GEM
     powerpack (0.1.2)
     protected_attributes (1.0.9)
       activemodel (>= 4.0.1, < 5.0)
+    pry (0.10.4)
+      coderay (~> 1.1.0)
+      method_source (~> 0.8.1)
+      slop (~> 3.4)
+    pry-nav (0.2.4)
+      pry (>= 0.9.10, < 0.11.0)
     public_suffix (3.0.3)
     rainbow (3.0.0)
     rake (12.3.1)
@@ -142,6 +159,7 @@ GEM
       json (>= 1.8, < 3)
       simplecov-html (~> 0.10.0)
     simplecov-html (0.10.2)
+    slop (3.6.0)
     systemu (2.6.5)
     tailor (1.1.5)
       log_switch (>= 0.3.0)
@@ -154,6 +172,8 @@ GEM
     thread_safe (0.3.6)
     tilt (1.4.1)
     tins (1.16.3)
+    typhoeus (1.3.1)
+      ethon (>= 0.9.0)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     unf (0.1.4)
@@ -180,12 +200,14 @@ DEPENDENCIES
   byebug (~> 6.0.2)
   cane (~> 2.3.0)
   codecov
-  cqm-models (~> 0.8.4)
+  cqm-models!
   cqm-parsers!
   factory_girl (~> 4.1.0)
   minitest (~> 5.3)
   minitest-reporters
   mongoid (~> 5.0.0)
+  pry
+  pry-nav
   rake
   rubocop (~> 0.52.1)
   simplecov
@@ -195,4 +217,4 @@ DEPENDENCIES
   webmock
 
 BUNDLED WITH
-   1.17.1
+   1.17.3

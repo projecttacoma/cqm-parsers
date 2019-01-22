@@ -2,17 +2,22 @@ source 'https://rubygems.org'
 
 gemspec :development_group => :test
 
-gem 'cqm-models', '~> 0.8.4'
 gem 'mongoid', '~> 5.0.0'
+
+# gem 'cqm-models', '~> 0.8.4'
+gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'master'
+# gem 'cqm-models', :path => '../cqm-models'
 
 group :development, :test do
   gem 'bundler-audit'
   gem 'rubocop', '~> 0.52.1', require: false
+  gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22, :ruby_23]
+  gem 'pry'
+  gem 'pry-nav'
 end
 
 group :development do
   gem 'rake'
-  gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22, :ruby_23]
 end
 
 group :test do

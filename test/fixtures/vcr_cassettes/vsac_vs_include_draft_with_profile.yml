@@ -4,99 +4,89 @@ http_interactions:
     method: post
     uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
-      encoding: UTF-8
+      encoding: US-ASCII
       string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '43'
-      Content-Type:
-      - application/x-www-form-urlencoded
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
       message: ''
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '66'
+      - '62'
       Date:
-      - Mon, 17 Dec 2018 16:08:21 GMT
+      - Fri, 11 Jan 2019 18:37:03 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!tVEU7MCH2pUjQM/m9OGvBt4MxRMcjvDmiP6huzzFHHB0tfV4lfji0fLl4v2LLTcHfZFKNa+KAE1/4MI=;
-        expires=Mon, 17-Dec-2018 18:08:21 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!R+pQsySW5vTqAgHNtNHn4GsLooFbU52eXNner5aY8x+MS5vlaLtZiUY8c8uojW4vy7A4DpCPMUNzDRY=;
+        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-1702338-rMvKZunSZzP9OOmDd0DgHQIVfmdZI9jMgN9QYQ4VhLdez9HVtl-cas
+      string: TGT-799-xOif6KHyOf0PYEPjdoshCPvwpbLKyBp9krSOMaBJQUvcTJR5UP-cas
     http_version: 
-  recorded_at: Mon, 17 Dec 2018 16:08:21 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1702338-rMvKZunSZzP9OOmDd0DgHQIVfmdZI9jMgN9QYQ4VhLdez9HVtl-cas
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-799-xOif6KHyOf0PYEPjdoshCPvwpbLKyBp9krSOMaBJQUvcTJR5UP-cas?service=http://umlsks.nlm.nih.gov
     body:
-      encoding: UTF-8
-      string: service=http%3A%2F%2Fumlsks.nlm.nih.gov
+      encoding: US-ASCII
+      string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
-      Content-Length:
-      - '39'
-      Content-Type:
-      - application/x-www-form-urlencoded
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
       message: ''
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '35'
+      - '31'
       Date:
-      - Mon, 17 Dec 2018 16:08:21 GMT
+      - Fri, 11 Jan 2019 18:37:04 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!HEIwqwU3v4V8urTm9OGvBt4MxRMcjpT2gaf8LLGL0ytDU3VYkSvw6oVGPk2kQk21xw0+6AqtW28JJkk=;
-        expires=Mon, 17-Dec-2018 18:08:21 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!LCQ5gExqnsTiR0nNtNHn4GsLooFbU5P9hK684Z1Af7lMPKdsvLm9/593eAseTSuMEDW+P3Xfyjcris8=;
+        expires=Fri, 11-Jan-2019 20:37:05 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -105,53 +95,52 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-5088728-SgcC2f4xFdVaYsGDvEBf-cas
+      string: ST-610-M2bVx625taemBH1KR6ag-cas
     http_version: 
-  recorded_at: Mon, 17 Dec 2018 16:08:21 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:05 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=eCQM%20Update%202018-05-04&ticket=ST-5088728-SgcC2f4xFdVaYsGDvEBf-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=eCQM%20Update%202018-05-04&ticket=ST-610-M2bVx625taemBH1KR6ag-cas
     body:
       encoding: US-ASCII
       string: ''
     headers:
-      Accept:
-      - "*/*; q=0.5, application/xml"
-      Accept-Encoding:
-      - gzip, deflate
       User-Agent:
-      - Ruby
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
   response:
     status:
       code: 200
       message: ''
     headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!DVqSjsdJCxXzXMXm9OGvBt4MxRMcjl+LgnQPXfAKi3rGWhTATmetWxO4F43XxnZ88HITnMVOK6Ot8UQ=;
+        expires=Fri, 11-Jan-2019 20:37:05 GMT; path=/; Httponly; Secure
+      - JSESSIONID=E80FCFCF6D3E5099C86CDA3281AA41D7;path=/vsac;HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
       - no-cache
       Expires:
       - '0'
-      X-Xss-Protection:
-      - 1; mode=block
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      Set-Cookie:
-      - BIGipServervsacweb_p=!okTAKFrYs39Lhsrm9OGvBt4MxRMcjqK9jU5pS4ZNoqm6viUdA220hX5JFCDXlkCoTBDL4lVoK3c8cNg=;
-        expires=Mon, 17-Dec-2018 18:08:21 GMT; path=/; Httponly; Secure
-      - JSESSIONID=9BED3A30EE4363C5F08F0339EDA49E15;path=/vsac;HttpOnly;Secure
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
       - '1356'
       Date:
-      - Mon, 17 Dec 2018 16:08:21 GMT
+      - Fri, 11 Jan 2019 18:37:05 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.110 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -169,9 +158,9 @@ http_interactions:
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2018-12-17</ns0:RevisionDate>
+                <ns0:RevisionDate>2019-01-11</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 17 Dec 2018 16:08:21 GMT
+  recorded_at: Fri, 11 Jan 2019 18:37:05 GMT
 recorded_with: VCR 3.0.3
