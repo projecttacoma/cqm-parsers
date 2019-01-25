@@ -68,9 +68,7 @@ module Measures
     end
 
     def create_measure_from_hqmf(hqmf_xml, hqmf_model_hash)
-      measure_scoring = @measure_details[:continuous_variable] ? 'CONTINUOUS_VARIABLE' : 'PROPORTION'
-      measure = HQMFMeasureLoader.create_measure_model(hqmf_xml, hqmf_model_hash, measure_scoring)
-      measure.measure_scoring = measure_scoring
+      measure = HQMFMeasureLoader.create_measure_model(hqmf_xml, hqmf_model_hash)
       measure.calculation_method = @measure_details[:episode_of_care] ? 'EPISODE_OF_CARE' : 'PATIENT'
       measure.calculate_sdes = @measure_details[:calculate_sdes]
       return measure

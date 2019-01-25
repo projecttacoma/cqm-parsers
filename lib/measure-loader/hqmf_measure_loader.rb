@@ -4,7 +4,7 @@ module Measures
   module HQMFMeasureLoader
     class << self
 
-      def create_measure_model(hqmf_xml, hqmf_model_hash, measure_scoring)
+      def create_measure_model(hqmf_xml, hqmf_model_hash)
         measure = CQM::Measure.new
 
         measure.measure_attributes = hqmf_model_hash[:attributes]
@@ -20,7 +20,8 @@ module Measures
         measure.source_data_criteria = hqmf_model_hash[:source_data_criteria]
         measure.data_criteria = hqmf_model_hash[:data_criteria]
 
-        measure.population_sets = extract_population_set_models(hqmf_xml, measure_scoring)
+        measure.measure_scoring = extract_measure_scoring(hqmf_xml)
+        measure.population_sets = extract_population_set_models(hqmf_xml, measure.measure_scoring)
 
         # add observation info
         (hqmf_model_hash[:observations] || []).each do |observation|
@@ -42,6 +43,19 @@ module Measures
       end
 
       private
+
+      def extract_measure_scoring(hqmf_xml)
+        map_from_hqmf_name_to_full_name = {
+          'PROPOR' => 'PROPORTION',
+          'RATIO' => 'RATIO',
+          'CONTVAR' => 'CONTINUOUS_VARIABLE',
+          'COHORT' => 'COHORT'
+        }
+        scoring = hqmf_xml.at_xpath("/xmlns:QualityMeasureDocument/xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/@code='MSRSCORE']/xmlns:value").attr('code')
+        scoring_full_name = map_from_hqmf_name_to_full_name[scoring]
+        raise StandardError("Unknown measure scoring type encountered #{scoring}") if scoring_full_name.nil?
+        return scoring_full_name
+      end
 
       def extract_population_set_models(hqmf_xml, measure_scoring)
         populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')

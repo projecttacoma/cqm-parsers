@@ -17,7 +17,7 @@ class CQLLoaderTest < Minitest::Test
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_file.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
-      assert_raises Measures::MeasureLoadingException do
+      assert_raises Measures::MeasureLoadingInvalidPackageException do
         loader.extract_measures
       end
     end
@@ -39,7 +39,7 @@ class CQLLoaderTest < Minitest::Test
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_composite_files.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
-      assert_raises Measures::MeasureLoadingException do
+      assert_raises Measures::MeasureLoadingInvalidPackageException do
         loader.extract_measures
       end
     end
