@@ -33,6 +33,7 @@ module Measures
         # Set the components' hqmf_set_id to: <composite_hqmf_set_id>&<component_hqmf_set_id>
         component_measure.hqmf_set_id = measure.hqmf_set_id + '&' + component_measure.hqmf_set_id
         component_measure.component = true
+        component_measure.composite_hqmf_set_id = measure.hqmf_set_id
       end
       measure.component_hqmf_set_ids = component_measures.map(&:hqmf_set_id)
       return measure, component_measures

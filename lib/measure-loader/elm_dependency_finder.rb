@@ -56,10 +56,10 @@ module Measures
         return unless needed_deps_map.dig(statement_library, statement_name).nil? # return if key already exists
 
         if all_elms_dep_map[statement_library].nil?
-          raise MeasureLoadingException.new("Elm library #{statement_library} referenced but not found.")
+          raise MeasureLoadingInvalidPackageException.new("Elm library #{statement_library} referenced but not found.")
         end
         if all_elms_dep_map[statement_library][statement_name].nil?
-          raise MeasureLoadingException.new("Elm statement #{statement_library.statement_name} referenced but not found.")
+          raise MeasureLoadingInvalidPackageException.new("Elm statement #{statement_library.statement_name} referenced but not found.")
         end
         deps_to_add = all_elms_dep_map[statement_library][statement_name]
         needed_deps_map.deep_merge!(statement_library => { statement_name => deps_to_add })
