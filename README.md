@@ -42,6 +42,10 @@ bundle exec rake test
 
 ```
 
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see [tags on this repository](https://github.com/projecttacoma/bonnie/tags). 
+
 ## License
 
 Copyright 2018 The MITRE Corporation
