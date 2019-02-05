@@ -59,7 +59,7 @@ module Measures
           raise MeasureLoadingInvalidPackageException.new("Elm library #{statement_library} referenced but not found.")
         end
         if all_elms_dep_map[statement_library][statement_name].nil?
-          raise MeasureLoadingInvalidPackageException.new("Elm statement #{statement_library.statement_name} referenced but not found.")
+          raise MeasureLoadingException.new("Elm statement '#{statement_name}' referenced but not found in library '#{statement_library}'.")
         end
         deps_to_add = all_elms_dep_map[statement_library][statement_name]
         needed_deps_map.deep_merge!(statement_library => { statement_name => deps_to_add })

@@ -18,7 +18,7 @@ class CQLLoaderTest < Minitest::Test
       # measure_file = File.new File.join(@fixtures_path, 'CMS32v7.zip')
       measure_file = File.new File.join(@fixtures_path, 'CMS111_v5_6_Artifacts.zip')
 
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options:@vsac_options, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -85,7 +85,7 @@ class CQLLoaderTest < Minitest::Test
     VCR.use_cassette('measure__definition_with_same_name_as_a_library_definition', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
 
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options:@vsac_options, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -104,7 +104,7 @@ class CQLLoaderTest < Minitest::Test
     
     ['1','2'].each do |cassette_number|
       VCR.use_cassette('measure__direct_reference_code_handles_creation_of_codeListId_hash'+cassette_number, @vcr_options) do
-        value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+        value_set_loader = Measures::VSACValueSetLoader.new(options:@vsac_options, ticket_granting_ticket: get_ticket_granting_ticket)
         loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
         measures = loader.extract_measures
         measure = measures[0]
@@ -119,7 +119,7 @@ class CQLLoaderTest < Minitest::Test
   def test_unique_characters_stored_correctly
     VCR.use_cassette('measure__unique_characters_stored_correctly', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'TOB2_v5_5_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -138,7 +138,7 @@ class CQLLoaderTest < Minitest::Test
   def test_measure_including_draft
     VCR.use_cassette("measure__measure_including_draft", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'DRAFT_CMS2_CQL.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -157,7 +157,7 @@ class CQLLoaderTest < Minitest::Test
   def test_measure
     VCR.use_cassette("measure__test_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'BCS_v5_0_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options_w_draft, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -172,7 +172,7 @@ class CQLLoaderTest < Minitest::Test
   def test_5_4_CQL_measure
     VCR.use_cassette("measure__test_5_4_CQL_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options:@vsac_options, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -189,7 +189,7 @@ class CQLLoaderTest < Minitest::Test
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_fixed.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(@vsac_options, get_ticket_granting_ticket)
+      value_set_loader = Measures::VSACValueSetLoader.new(options:@vsac_options, ticket_granting_ticket: get_ticket_granting_ticket)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -202,6 +202,18 @@ class CQLLoaderTest < Minitest::Test
       assert_equal "BonnieLib110", measure.cql_libraries[1].elm["library"]["identifier"]["id"]
       assert_equal "BonnieLib200", measure.cql_libraries[2].elm["library"]["identifier"]["id"]
       assert_equal "BonnieNesting01", measure.cql_libraries[3].elm["library"]["identifier"]["id"]
+    end
+  end
+
+  def test_invalid_hqmf_elm_valueset_mismatch
+    # in the CQL file, the 'Alcohol and Drug Dependence Treatment' value set oid was changed from
+    # '2.16.840.1.113883.3.464.1003.106.12.1005' to '2.16.840.1.113883.3.464.1003.106.12.1001',
+    # no changes in the HQMF.
+    measure_file = File.new File.join(@fixtures_path, 'IETCQL_v5_0_missing_vs_oid_Artifacts.zip')
+    value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: nil)
+    loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+    assert_raises Measures::MeasureLoadingInvalidPackageException do
+      loader.extract_measures
     end
   end
 

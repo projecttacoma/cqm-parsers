@@ -13,6 +13,9 @@ module Measures
         measure.hqmf_set_id = hqmf_model_hash[:hqmf_set_id]
         measure.hqmf_version_number = hqmf_model_hash[:hqmf_version_number]
         measure.cms_id = hqmf_model_hash[:cms_id]
+        if measure.cms_id.present?
+          binding.pry
+        end
         measure.title = hqmf_model_hash[:title]
         measure.description = hqmf_model_hash[:description]
         measure.measure_period = hqmf_model_hash[:measure_period]
@@ -108,6 +111,8 @@ module Measures
           when 'measurePopulationExclusionCriteria'
             ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string
           when 'stratifierCriteria'
+            # Ignore Supplemental Data Elements
+            next if cc.at_css('component[@typeCode="COMP"]/measureAttribute/code[@code="SDE"]').present?
             ps[:stratifications] << statement_ref_string
           when 'supplementalDataElement'
             ps[:supplemental_data_elements] << statement_ref_string

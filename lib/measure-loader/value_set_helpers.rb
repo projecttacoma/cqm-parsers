@@ -45,16 +45,18 @@ module Measures
         Utilities.deep_traverse_hash(json) { |hash, k, v| hash[k] = v.gsub('urn:oid:', '') if v.is_a?(String) }
       end
 
-      def load_value_sets_and_process(cql_libraries, value_set_loader, measure_id = nil)
-        elms = cql_libraries.map(&:elm)
+      def list_of_valuesets_referenced_by_elm(elms)
         elm_value_sets = []
         elms.each do |elm|
           (elm.dig('library','valueSets','def') || []).each do |value_set|
             elm_value_sets << {oid: value_set['id'], version: value_set['version'], profile: value_set['profile']}
           end
         end
+        return elm_value_sets
+      end
 
-        value_set_models = value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets, measure_id)
+      def load_value_sets_and_process(elms, elm_valuesets, value_set_loader, measure_id = nil)
+        value_set_models = value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_valuesets, measure_id)
 
         # Get code systems and codes for all value sets in the elm.
         value_sets_from_single_code_references = make_fake_valuesets_from_single_code_references(elms)

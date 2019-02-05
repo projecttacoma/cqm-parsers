@@ -3,12 +3,13 @@ module Measures
   class VSACValueSetLoader
     attr_accessor :vsac_options, :vs_data_cache
 
-    def initialize(vsac_options, vsac_ticket_granting_ticket)
-      @vsac_options = vsac_options
-      @vsac_ticket_granting_ticket = vsac_ticket_granting_ticket
-
+    def initialize(options)
+      options.symbolize_keys!
+      @vsac_options = options[:options]
+      @vsac_ticket_granting_ticket = options[:ticket_granting_ticket]
+      @vsac_username = options[:username]
+      @vsac_password = options[:password]
       @vs_data_cache = {}
-      @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: vsac_ticket_granting_ticket)
     end
 
     def retrieve_and_modelize_value_sets_from_vsac(value_sets, measure_id = nil)
@@ -31,7 +32,7 @@ module Measures
         end
       end
 
-      vs_responses = @api.get_multiple_valuesets(needed_value_sets)
+      vs_responses = vs_api.get_multiple_valuesets(needed_value_sets)
 
       [needed_value_sets,vs_responses].transpose.each do |needed_vs,vs_data|
         vs_model = modelize_value_set(vs_data, needed_vs[:query_version])
@@ -44,6 +45,20 @@ module Measures
     end
 
     private
+
+    def vs_api()
+      return @api if @api.present?
+      @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: @vsac_ticket_granting_ticket, username: @vsac_username, password: @vsac_password)
+      return @api
+    end
+
+    def get_ticket_granting_ticket(vsac_username, vsac_password)
+      raise Util::VSAC::VSACNoCredentialsError.new if vsac_username.nil? || vsac_password.nil?
+
+      api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: vsac_username, password: vsac_password)
+      ticket_granting_ticket = api.ticket_granting_ticket
+      return ticket_granting_ticket
+    end
 
     def determine_query_version(vs_vsac_options, measure_id)
       return "Draft-#{measure_id}" if vs_vsac_options[:include_draft] == true
