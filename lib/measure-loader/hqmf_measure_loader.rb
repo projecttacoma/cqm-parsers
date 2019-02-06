@@ -13,9 +13,6 @@ module Measures
         measure.hqmf_set_id = hqmf_model_hash[:hqmf_set_id]
         measure.hqmf_version_number = hqmf_model_hash[:hqmf_version_number]
         measure.cms_id = hqmf_model_hash[:cms_id]
-        if measure.cms_id.present?
-          binding.pry
-        end
         measure.title = hqmf_model_hash[:title]
         measure.description = hqmf_model_hash[:description]
         measure.measure_period = hqmf_model_hash[:measure_period]
@@ -78,7 +75,7 @@ module Measures
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
               stratification_id: (index+1).to_s,
-              title: "Stratification #{index+1}",
+              title: "#{population_set.population_set_id}: Stratification #{index+1}",
               statement: modelize_statement_ref_string(statement_ref_string)
             )
           end
