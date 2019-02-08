@@ -20,6 +20,8 @@ module Measures
       end
       measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
       measures << measure
+
+      update_population_set_and_strat_titles(measures, @measure_details[:population_titles])
       return measures
     end
 
@@ -124,6 +126,23 @@ module Measures
       ValueSetHelpers.remove_urnoid(elm)
       ValueSetHelpers.modify_value_set_versions(elm)
       return nil
+    end
+
+    def update_population_set_and_strat_titles(measures, population_titles)
+      # Note RE composite measures: components and composite must have same population sets and strats
+      population_set_count = measures[0].population_sets.size
+      stratification_count = measures[0].population_sets[0].stratifications.size
+      measures.each do |measure|
+        population_titles&.each_with_index do |title, i|
+          if i < population_set_count
+            measure.population_sets[i].title = title
+          else
+            pop_set_idx = (i - population_set_count) / stratification_count
+            strat_idx = i - ((pop_set_idx * stratification_count) + population_set_count)
+            measure.population_sets[pop_set_idx].stratifications[strat_idx].title = title
+          end
+        end
+      end
     end
 
   end
