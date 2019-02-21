@@ -59,9 +59,12 @@ module Measures
 
       def extract_population_set_models(hqmf_xml, measure_scoring)
         populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')
-        return populations.map do |population|
+        return populations.map.with_index do |population, pop_index|
           ps_hash = extract_population_set(population)
-          population_set = CQM::PopulationSet.new(title: ps_hash[:title], population_set_id: ps_hash[:id])
+          population_set = CQM::PopulationSet.new(
+            title: ps_hash[:title],
+            population_set_id: "PopulationSet_#{pop_index+1}"
+          )
   
           population_set.populations = construct_population_map(measure_scoring)  
           ps_hash[:populations].each do |pop_code,statement_ref_string|
@@ -74,8 +77,8 @@ module Measures
           
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
-              stratification_id: (index+1).to_s,
-              title: "#{population_set.population_set_id}: Stratification #{index+1}",
+              stratification_id: "#{population_set.population_set_id}_Stratification_#{index+1}",
+              title: "PopSet#{pop_index+1} Stratification #{index+1}",
               statement: modelize_statement_ref_string(statement_ref_string)
             )
           end
@@ -103,6 +106,8 @@ module Measures
             ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string
           when 'denominatorExclusionCriteria'
             ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string
+          when 'denominatorExceptionCriteria'
+            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_string
           when 'measurePopulationCriteria'
             ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string
           when 'measurePopulationExclusionCriteria'

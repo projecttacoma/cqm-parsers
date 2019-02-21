@@ -129,6 +129,8 @@ module Measures
     end
 
     def update_population_set_and_strat_titles(measures, population_titles)
+      # Sample population_titles: [pop set 1 title, pop set 2 title, pop set 1 strat 1 title, 
+      #                   pop set 1 strat 2 title, pop set 2 strat 1 title, pop set 2 strat 2 title]
       # Note RE composite measures: components and composite must have same population sets and strats
       population_set_count = measures[0].population_sets.size
       stratification_count = measures[0].population_sets[0].stratifications.size
