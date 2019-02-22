@@ -38,13 +38,17 @@ module Measures
         # add observation info, note population_sets needs to have been added to the measure by now
         (hqmf_model_hash[:observations] || []).each do |observation|
           observation = CQM::Observation.new(
+            hqmf_id: observation[:function_hqmf_oid],
+            aggregation_type: observation[:function_aggregation_type],
             observation_function: CQM::StatementReference.new(
               library_name: hqmf_model_hash[:cql_measure_library],
-              statement_name: observation[:function_name]
+              statement_name: observation[:function_name],
+              hqmf_id: observation[:function_hqmf_oid]
             ),
             observation_parameter: CQM::StatementReference.new(
               library_name: hqmf_model_hash[:cql_measure_library],
-              statement_name: observation[:parameter]
+              statement_name: observation[:parameter],
+              hqmf_id: observation[:function_hqmf_oid]
             )
           )
           # add observation to each population set
@@ -114,25 +118,25 @@ module Measures
           statement_ref_string = statement_ref.attr('extension')
           case cc.name
           when 'initialPopulationCriteria'
-            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'denominatorCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'numeratorCriteria'
-            ps[:populations][HQMF::PopulationCriteria::NUMER] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::NUMER] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'numeratorExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'denominatorExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'denominatorExceptionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'measurePopulationCriteria'
-            ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'measurePopulationExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'stratifierCriteria'
             # Ignore Supplemental Data Elements
             next if holds_supplemental_data_elements(cc)
-            ps[:stratifications] << statement_ref_string
+            ps[:stratifications] << statement_ref_string + ".#{cc.at_css('id').attr('root')}"
           when 'supplementalDataElement'
             ps[:supplemental_data_elements] << statement_ref_string
           end
@@ -160,10 +164,11 @@ module Measures
       end
 
       def modelize_statement_ref_string(statement_ref_string)
-        library_name, statement_name = statement_ref_string.split('.', 2)
+        library_name, statement_name, population_hqmf_id = statement_ref_string.split('.', 3)
         return CQM::StatementReference.new(
           library_name: library_name,
-          statement_name: Utilities.remove_enclosing_quotes(statement_name)
+          statement_name: Utilities.remove_enclosing_quotes(statement_name),
+          hqmf_id: population_hqmf_id
         )
       end
 
