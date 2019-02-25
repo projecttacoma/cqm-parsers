@@ -55,26 +55,25 @@ module Measures
       # update the valueset info in each elm (update version and remove urn:oid)
       measure_files.cql_libraries.each { |cql_lib_files| modify_elm_valueset_information(cql_lib_files.elm) }
       cql_libraries = create_cql_libraries(measure_files.cql_libraries, hqmf_model.cql_measure_library)
-      vs_items = generate_vs_items_and_verify_valuesets_complete(cql_libraries, hqmf_model)
+      elms = cql_libraries.map(&:elm)
+      
+      elm_valuesets = ValueSetHelpers.list_of_valuesets_referenced_by_elm(elms)
+      verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
+      value_set_models, all_codes_and_code_names, value_sets_from_single_code_references = 
+        ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, hqmf_model.hqmf_set_id)
 
-      hqmf_model.backfill_patient_characteristics_with_codes(vs_items[:all_codes_and_code_names])
+      hqmf_model.backfill_patient_characteristics_with_codes(all_codes_and_code_names)
       ## this to_json is needed, it doesn't actually produce json, it just makes a hash that is better
       ## suited for our uses (e.g. source_data_criteria goes from an array to a hash keyed by id)
       hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
-      ValueSetHelpers.set_data_criteria_code_list_ids(hqmf_model_hash, vs_items[:value_sets_from_single_code_references])
+      ValueSetHelpers.set_data_criteria_code_list_ids(hqmf_model_hash, value_sets_from_single_code_references)
       
       measure = create_measure_from_hqmf(measure_files.hqmf_xml, hqmf_model_hash)
-      vs_items[:value_set_models].each { |vsm| measure.value_sets.push vsm }
+      value_set_models.each { |vsm| measure.value_sets.push vsm }
       measure.cql_libraries = cql_libraries
       measure.composite = measure_files.components.present?
 
       return measure
-    end
-
-    def verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, measure_hqmf_model)
-      # Exclude patient birthdate and expired OIDs used by SimpleXML parser for AGE_AT handling and bad oid protection in missing VS check
-      missing = (measure_hqmf_model.all_code_set_oids - elm_valuesets.map {|v| v[:oid]} - ['2.16.840.1.113883.3.117.1.7.1.70', '2.16.840.1.113883.3.117.1.7.1.309'])
-      raise MeasureLoadingInvalidPackageException.new("The HQMF file references the following valuesets not present in the CQL: #{missing}") unless missing.empty?
     end
 
     def create_measure_from_hqmf(hqmf_xml, hqmf_model_hash)
@@ -93,14 +92,6 @@ module Measures
         modelize_cql_library(cql_lib_files, cql_statement_dependencies, is_main_cql_lib)
       end
       return cql_libraries
-    end
-
-    def generate_vs_items_and_verify_valuesets_complete(cql_libraries, hqmf_model)
-      elms = cql_libraries.map(&:elm)
-      elm_valuesets = ValueSetHelpers.list_of_valuesets_referenced_by_elm(elms)
-      verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
-      vs_items = ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, hqmf_model.hqmf_set_id)
-      return vs_items
     end
 
     def modelize_cql_library(cql_lib_files, cql_statement_dependencies, is_main_cql_lib)
@@ -149,5 +140,12 @@ module Measures
       end
     end
 
+    def verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, measure_hqmf_model)
+      # Exclude patient birthdate OID (2.16.840.1.113883.3.117.1.7.1.70) and patient expired
+      # OID (2.16.840.1.113883.3.117.1.7.1.309) used by SimpleXML parser for AGE_AT handling
+      # and bad oid protection in missing VS check
+      missing = (measure_hqmf_model.all_code_set_oids - elm_valuesets.map {|v| v[:oid]} - ['2.16.840.1.113883.3.117.1.7.1.70', '2.16.840.1.113883.3.117.1.7.1.309'])
+      raise MeasureLoadingInvalidPackageException.new("The HQMF file references the following valuesets not present in the CQL: #{missing}") unless missing.empty?
+    end
   end
 end

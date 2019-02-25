@@ -114,13 +114,17 @@ module Measures
             ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string
           when 'stratifierCriteria'
             # Ignore Supplemental Data Elements
-            next if cc.at_css('component[@typeCode="COMP"]/measureAttribute/code[@code="SDE"]').present?
+            next if holds_supplemental_data_elements(cc)
             ps[:stratifications] << statement_ref_string
           when 'supplementalDataElement'
             ps[:supplemental_data_elements] << statement_ref_string
           end
         end
         return ps
+      end
+
+      def holds_supplemental_data_elements(criteria_component_node)
+        return criteria_component_node.at_css('component[@typeCode="COMP"]/measureAttribute/code[@code="SDE"]').present?
       end
 
       def construct_population_map(measure_scoring)

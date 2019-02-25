@@ -64,11 +64,7 @@ module Measures
 
         all_codes_and_code_names = get_all_codes_and_code_names(value_set_models)
 
-        return {
-          all_codes_and_code_names: all_codes_and_code_names.as_json, 
-          value_sets_from_single_code_references: value_sets_from_single_code_references,
-          value_set_models: value_set_models
-        }
+        return value_set_models, all_codes_and_code_names.as_json, value_sets_from_single_code_references
       end
       
       private
