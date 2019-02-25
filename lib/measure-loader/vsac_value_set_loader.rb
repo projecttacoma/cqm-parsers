@@ -46,7 +46,7 @@ module Measures
 
     private
 
-    def vs_api()
+    def vs_api
       return @api if @api.present?
       @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: @vsac_ticket_granting_ticket, username: @vsac_username, password: @vsac_password)
       return @api

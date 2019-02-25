@@ -21,7 +21,7 @@ module Measures
       measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
       measures << measure
 
-      update_population_set_and_strat_titles(measures, @measure_details[:population_titles])
+      measures.each { |m| update_population_set_and_strat_titles(m, @measure_details[:population_titles]) }
       return measures
     end
 
@@ -128,22 +128,24 @@ module Measures
       return nil
     end
 
-    def update_population_set_and_strat_titles(measures, population_titles)
+    def update_population_set_and_strat_titles(measure, population_titles)
       # Sample population_titles: [pop set 1 title, pop set 2 title, pop set 1 strat 1 title, 
       #                   pop set 1 strat 2 title, pop set 2 strat 1 title, pop set 2 strat 2 title]
       # Note RE composite measures: components and composite must have same population sets and strats
-      population_set_count = measures[0].population_sets.size
-      stratification_count = measures[0].population_sets[0].stratifications.size
-      measures.each do |measure|
-        population_titles&.each_with_index do |title, i|
-          if i < population_set_count
-            measure.population_sets[i].title = title
-          else
-            pop_set_idx = (i - population_set_count) / stratification_count
-            strat_idx = i - ((pop_set_idx * stratification_count) + population_set_count)
-            measure.population_sets[pop_set_idx].stratifications[strat_idx].title = title
-          end
-        end
+      return if population_titles.nil? || population_titles.empty?
+      title_idx = 0
+      measure.population_sets.each do |population_set|
+        population_set.title = population_titles[title_idx] if population_titles[title_idx].present?
+        title_idx += 1
+        break if title_idx >= population_titles.size
+      end
+
+      return if title_idx >= population_titles.size
+
+      measure.population_sets.flat_map(&:stratifications).each do |strat|
+        strat.title = population_titles[title_idx] if population_titles[title_idx].present?
+        title_idx += 1
+        break if title_idx >= population_titles.size
       end
     end
 
