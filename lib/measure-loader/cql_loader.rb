@@ -21,8 +21,29 @@ module Measures
       measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
       measures << measure
 
-      measures.each { |m| update_population_set_and_strat_titles(m, @measure_details[:population_titles]) }
+      measures.each { |m| CqlLoader.update_population_set_and_strat_titles(m, @measure_details[:population_titles]) }
       return measures
+    end
+
+    def self.update_population_set_and_strat_titles(measure, population_titles)
+      # Sample population_titles: [pop set 1 title, pop set 2 title, pop set 1 strat 1 title,
+      #                   pop set 1 strat 2 title, pop set 2 strat 1 title, pop set 2 strat 2 title]
+      # Note RE composite measures: components and composite must have same population sets and strats
+      return if population_titles.nil? || population_titles.empty?
+      title_idx = 0
+      measure.population_sets.each do |population_set|
+        population_set.title = population_titles[title_idx] if population_titles[title_idx].present?
+        title_idx += 1
+        break if title_idx >= population_titles.size
+      end
+
+      return if title_idx >= population_titles.size
+
+      measure.population_sets.flat_map(&:stratifications).each do |strat|
+        strat.title = population_titles[title_idx] if population_titles[title_idx].present?
+        title_idx += 1
+        break if title_idx >= population_titles.size
+      end
     end
 
     private
@@ -56,7 +77,7 @@ module Measures
       measure_files.cql_libraries.each { |cql_lib_files| modify_elm_valueset_information(cql_lib_files.elm) }
       cql_libraries = create_cql_libraries(measure_files.cql_libraries, hqmf_model.cql_measure_library)
       elms = cql_libraries.map(&:elm)
-      
+
       elm_valuesets = ValueSetHelpers.list_of_valuesets_referenced_by_elm(elms)
       verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
       value_set_models, all_codes_and_code_names, value_sets_from_single_code_references = 
@@ -117,27 +138,6 @@ module Measures
       ValueSetHelpers.remove_urnoid(elm)
       ValueSetHelpers.modify_value_set_versions(elm)
       return nil
-    end
-
-    def update_population_set_and_strat_titles(measure, population_titles)
-      # Sample population_titles: [pop set 1 title, pop set 2 title, pop set 1 strat 1 title, 
-      #                   pop set 1 strat 2 title, pop set 2 strat 1 title, pop set 2 strat 2 title]
-      # Note RE composite measures: components and composite must have same population sets and strats
-      return if population_titles.nil? || population_titles.empty?
-      title_idx = 0
-      measure.population_sets.each do |population_set|
-        population_set.title = population_titles[title_idx] if population_titles[title_idx].present?
-        title_idx += 1
-        break if title_idx >= population_titles.size
-      end
-
-      return if title_idx >= population_titles.size
-
-      measure.population_sets.flat_map(&:stratifications).each do |strat|
-        strat.title = population_titles[title_idx] if population_titles[title_idx].present?
-        title_idx += 1
-        break if title_idx >= population_titles.size
-      end
     end
 
     def verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, measure_hqmf_model)
