@@ -51,7 +51,7 @@ class CQLLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
-      assert_equal 8, measures.length      
+      assert_equal 8, measures.length
       composite_measure = measures[7]
       component_measures = measures[0..6]
 
@@ -63,6 +63,17 @@ class CQLLoaderTest < Minitest::Test
         assert composite_measure.component_hqmf_set_ids.include?(measure.hqmf_set_id)
       end
       assert_equal 7, composite_measure.component_hqmf_set_ids.count
+
+
+      top_level_libs = ["AWATestComposite", "CompositeFunctions"]
+      libs_from_composites = ["AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination", "Hospice", "MATGlobalCommonFunctions",
+        "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer", "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
+        "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk", "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
+        "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination", "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer"]
+      assert_equal top_level_libs, composite_measure.cql_libraries.select(&:is_top_level).map(&:library_name)
+      assert_equal libs_from_composites, composite_measure.cql_libraries.reject(&:is_top_level).map(&:library_name)
+
+      assert_equal component_measures[3].cql_libraries.size, component_measures[3].cql_libraries.select(&:is_top_level).size
     end
   end
 end

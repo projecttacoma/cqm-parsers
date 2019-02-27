@@ -9,7 +9,7 @@ module Measures
 
     # Returns an array of measures, will contain a single measure if it is a non-composite measure
     def extract_measures
-      measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip) 
+      measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
 
       measures = []
       if measure_files.components.present?
@@ -49,18 +49,35 @@ module Measures
     private
 
     def create_measure_and_components(measure_files)
+      top_level_library_ids = measure_files.cql_libraries.map { |lib| "#{lib.id}_v#{lib.version}" }
       add_component_cql_library_files_to_composite_measure_files(measure_files)
       measure = create_measure(measure_files)
+      component_measures = create_component_measures(measure_files, measure.hqmf_set_id)
+      measure.component_hqmf_set_ids = component_measures.map(&:hqmf_set_id)
+      unset_top_level_flag_on_cql_libraries_imported_from_components(measure, top_level_library_ids)
+
+      return measure, component_measures
+    end
+
+    def create_component_measures(measure_files, composite_measure_hqmf_set_id)
       component_measures = measure_files.components.map { |comp_files| create_measure(comp_files) }
       component_measures.each do |component_measure|
         # Set the components' hqmf_set_id to: <composite_hqmf_set_id>&<component_hqmf_set_id>
-        component_measure.hqmf_set_id = measure.hqmf_set_id + '&' + component_measure.hqmf_set_id
+        component_measure.hqmf_set_id = "#{composite_measure_hqmf_set_id}&#{component_measure.hqmf_set_id}"
         component_measure.component = true
-        component_measure.composite_hqmf_set_id = measure.hqmf_set_id
+        component_measure.composite_hqmf_set_id = composite_measure_hqmf_set_id
       end
-      measure.component_hqmf_set_ids = component_measures.map(&:hqmf_set_id)
-      return measure, component_measures
+      return component_measures
     end
+
+    def unset_top_level_flag_on_cql_libraries_imported_from_components(composite_measure, top_level_library_ids)
+      composite_measure.cql_libraries.each do |lib|
+        unless "#{lib.library_name}_v#{lib.library_version}".in? top_level_library_ids
+          lib.is_top_level = false # is_top_level defaults to true
+        end
+      end
+    end
+
 
     def add_component_cql_library_files_to_composite_measure_files(measure_files)
       component_cql_library_files = measure_files.components.flat_map(&:cql_libraries)
@@ -69,7 +86,7 @@ module Measures
       return nil
     end
 
-    # Creates and returns a measure 
+    # Creates and returns a measure
     def create_measure(measure_files)
       hqmf_model = HQMF::Parser::V2CQLParser.new.parse(measure_files.hqmf_xml)
 
@@ -80,7 +97,7 @@ module Measures
 
       elm_valuesets = ValueSetHelpers.list_of_valuesets_referenced_by_elm(elms)
       verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
-      value_set_models, all_codes_and_code_names, value_sets_from_single_code_references = 
+      value_set_models, all_codes_and_code_names, value_sets_from_single_code_references =
         ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, hqmf_model.hqmf_set_id)
 
       hqmf_model.backfill_patient_characteristics_with_codes(all_codes_and_code_names)
@@ -88,7 +105,7 @@ module Measures
       ## suited for our uses (e.g. source_data_criteria goes from an array to a hash keyed by id)
       hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
       ValueSetHelpers.set_data_criteria_code_list_ids(hqmf_model_hash, value_sets_from_single_code_references)
-      
+
       measure = create_measure_from_hqmf(measure_files.hqmf_xml, hqmf_model_hash)
       value_set_models.each { |vsm| measure.value_sets.push vsm }
       measure.cql_libraries = cql_libraries

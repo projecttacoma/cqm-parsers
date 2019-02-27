@@ -186,6 +186,9 @@ class CQLLoaderTest < Minitest::Test
       assert_equal "40280582-57B5-1CC0-0157-B53816CC0046", measure.hqmf_id
       assert_equal 1, measure.population_sets.size
       assert_equal 4, measure.population_criteria.keys.count
+
+      assert_equal measure.cql_libraries.size, measure.cql_libraries.select(&:is_top_level).size
+
     end
   end
 

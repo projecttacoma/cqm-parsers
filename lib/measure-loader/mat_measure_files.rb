@@ -19,7 +19,7 @@ module Measures
       @hqmf_xml = hqmf_xml
       @cql_libraries = cql_libraries
       @human_readable = human_readable
-      
+
       raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: HQMF XML File") if @hqmf_xml.nil?
       raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: Human Readable Document") if @human_readable.nil?
       raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: CQL Libraries") if @cql_libraries.nil? || @cql_libraries.empty?
@@ -30,7 +30,7 @@ module Measures
       raise MeasureLoadingInvalidPackageException.new("No measure found") if folders.empty?
       folders.sort_by! { |h| h[:depth] }
       raise MeasureLoadingInvalidPackageException.new("Multiple measure folders at top level") if folders[0][:depth] == folders.dig(1,:depth)
-      
+
       measure_folder, *component_measure_folders = folders
       measure_assets = make_measure_artifacts(parse_measure_files(measure_folder))
       measure_assets.components = component_measure_folders.collect {|f| make_measure_artifacts(parse_measure_files(f))}

@@ -1,7 +1,7 @@
 GIT
   remote: https://github.com/projecttacoma/cqm-models.git
-  revision: 3b916105ff7f38956cd2fff695cecc73cc3a36fe
-  branch: master
+  revision: e86f6771e994ad8f25d64fe3dcaf98883439f42e
+  branch: fixes_for_bonnie_integration
   specs:
     cqm-models (1.0.2)
 
