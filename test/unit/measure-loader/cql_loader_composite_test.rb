@@ -64,12 +64,13 @@ class CQLLoaderTest < Minitest::Test
       end
       assert_equal 7, composite_measure.component_hqmf_set_ids.count
 
-
       top_level_libs = ["AWATestComposite", "CompositeFunctions"]
-      libs_from_composites = ["AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination", "Hospice", "MATGlobalCommonFunctions",
+      libs_from_composites = [
+        "AnnualWellnessAssessmentPreventiveCarePneumococcalVaccination", "Hospice", "MATGlobalCommonFunctions",
         "AnnualWellnessAssessmentPreventiveCareScreeningforColorectalCancer", "AnnualWellnessAssessmentPreventiveCareScreeningforDepression",
         "AnnualWellnessAssessmentPreventiveCareScreeningforFallsRisk", "AnnualWellnessAssessmentPreventiveCareScreeningforOsteoporosis",
-        "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination", "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer"]
+        "AnnualWellnessAssessmentPreventiveCareInfluenzaVaccination", "AnnualWellnessAssessmentPreventiveCareScreeningforBreastCancer"
+      ]
       assert_equal top_level_libs, composite_measure.cql_libraries.select(&:is_top_level).map(&:library_name)
       assert_equal libs_from_composites, composite_measure.cql_libraries.reject(&:is_top_level).map(&:library_name)
 

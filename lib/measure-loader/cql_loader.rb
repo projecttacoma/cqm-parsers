@@ -78,7 +78,6 @@ module Measures
       end
     end
 
-
     def add_component_cql_library_files_to_composite_measure_files(measure_files)
       component_cql_library_files = measure_files.components.flat_map(&:cql_libraries)
       measure_files.cql_libraries.push(*component_cql_library_files)
