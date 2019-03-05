@@ -4,7 +4,7 @@ module Measures
   module HQMFMeasureLoader
     class << self
 
-      def create_measure_model(hqmf_xml, hqmf_model_hash, measure_scoring)
+      def create_measure_model(hqmf_xml, hqmf_model_hash)
         measure = CQM::Measure.new
 
         measure.measure_attributes = hqmf_model_hash[:attributes]
@@ -20,7 +20,8 @@ module Measures
         measure.source_data_criteria = hqmf_model_hash[:source_data_criteria]
         measure.data_criteria = hqmf_model_hash[:data_criteria]
 
-        measure.population_sets = extract_population_set_models(hqmf_xml, measure_scoring)
+        measure.measure_scoring = extract_measure_scoring(hqmf_xml)
+        measure.population_sets = extract_population_set_models(hqmf_xml, measure.measure_scoring)
 
         # add observation info
         (hqmf_model_hash[:observations] || []).each do |observation|
@@ -43,11 +44,27 @@ module Measures
 
       private
 
+      def extract_measure_scoring(hqmf_xml)
+        map_from_hqmf_name_to_full_name = {
+          'PROPOR' => 'PROPORTION',
+          'RATIO' => 'RATIO',
+          'CONTVAR' => 'CONTINUOUS_VARIABLE',
+          'COHORT' => 'COHORT'
+        }
+        scoring = hqmf_xml.at_xpath("/xmlns:QualityMeasureDocument/xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/@code='MSRSCORE']/xmlns:value").attr('code')
+        scoring_full_name = map_from_hqmf_name_to_full_name[scoring]
+        raise StandardError("Unknown measure scoring type encountered #{scoring}") if scoring_full_name.nil?
+        return scoring_full_name
+      end
+
       def extract_population_set_models(hqmf_xml, measure_scoring)
         populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')
-        return populations.map do |population|
+        return populations.map.with_index do |population, pop_index|
           ps_hash = extract_population_set(population)
-          population_set = CQM::PopulationSet.new(title: ps_hash[:title], population_set_id: ps_hash[:id])
+          population_set = CQM::PopulationSet.new(
+            title: ps_hash[:title],
+            population_set_id: "PopulationSet_#{pop_index+1}"
+          )
   
           population_set.populations = construct_population_map(measure_scoring)  
           ps_hash[:populations].each do |pop_code,statement_ref_string|
@@ -60,8 +77,8 @@ module Measures
           
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
-              stratification_id: (index+1).to_s,
-              title: "Stratification #{index+1}",
+              stratification_id: "#{population_set.population_set_id}_Stratification_#{index+1}",
+              title: "PopSet#{pop_index+1} Stratification #{index+1}",
               statement: modelize_statement_ref_string(statement_ref_string)
             )
           end
@@ -89,17 +106,25 @@ module Measures
             ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string
           when 'denominatorExclusionCriteria'
             ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string
+          when 'denominatorExceptionCriteria'
+            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_string
           when 'measurePopulationCriteria'
             ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string
           when 'measurePopulationExclusionCriteria'
             ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string
           when 'stratifierCriteria'
+            # Ignore Supplemental Data Elements
+            next if holds_supplemental_data_elements(cc)
             ps[:stratifications] << statement_ref_string
           when 'supplementalDataElement'
             ps[:supplemental_data_elements] << statement_ref_string
           end
         end
         return ps
+      end
+
+      def holds_supplemental_data_elements(criteria_component_node)
+        return criteria_component_node.at_css('component[@typeCode="COMP"]/measureAttribute/code[@code="SDE"]').present?
       end
 
       def construct_population_map(measure_scoring)
