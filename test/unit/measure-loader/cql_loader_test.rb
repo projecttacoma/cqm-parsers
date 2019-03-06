@@ -76,7 +76,7 @@ class CQLLoaderTest < Minitest::Test
 
       # check valuesets
       # note if you call value_sets.count or .size you will be making a db call
-      assert_equal 12, measure.value_sets.each.count
+      assert_equal 10, measure.value_sets.each.count
     end
   end
 
