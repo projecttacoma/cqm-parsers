@@ -7,6 +7,7 @@ module Measures
       @vs_model_cache = {}
       value_set_loader.vs_model_cache = @vs_model_cache
       @value_set_loader = value_set_loader
+
     end
 
     # Returns an array of measures, will contain a single measure if it is a non-composite measure
