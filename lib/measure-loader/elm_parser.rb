@@ -6,6 +6,7 @@ module Measures
 
     def self.parse(doc)
       @doc = doc
+      @localid_to_type_map = generate_localid_to_type_map
       ret = {
         statements: [],
         identifier: {}
@@ -36,7 +37,7 @@ module Measures
       node.children.each do |child|
         # Nodes with the 'a' prefix are not leaf nodes
         if child.namespace.respond_to?(:prefix) && child.namespace.prefix == 'a'
-          node_type = extract_node_type(child)
+          node_type = @localid_to_type_map[child['r']] unless child['r'].nil?
           # Parses the current child recursively. child_define_name will bubble up to indicate which
           # statement is currently being traversed.
           node, child_define_name = parse_node(child)
@@ -63,16 +64,13 @@ module Measures
       return ret, define_name
     end
     
-    def self.extract_node_type(child)
-      ref_node = nil
-      node_type = nil
-      # Tries to pair the current annotation node with an elm node.
+    def self.generate_localid_to_type_map
+      localid_to_type_map = {}
       @fields.each do |field|
-        ref_node ||= @doc.at_css(field + '[localId="'+child['r']+'"]') unless child['r'].nil?
+        nodes = @doc.css(field + '[localId][xsi|type]')
+        nodes.each {|node| localid_to_type_map[node['localId']] = node['xsi:type']}
       end
-      # Tries to extract the current node's type.
-      node_type = ref_node['xsi:type'] unless ref_node.nil?
-      node_type
+      return localid_to_type_map
     end
 
   end
