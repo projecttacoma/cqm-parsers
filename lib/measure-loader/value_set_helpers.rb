@@ -56,8 +56,8 @@ module Measures
         return elm_value_sets
       end
 
-      def load_value_sets_and_process(elms, elm_valuesets, value_set_loader, vs_model_cache, measure_id = nil)
-        value_set_models = value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_valuesets, measure_id)
+      def load_value_sets_and_process(elms, elm_valuesets, value_set_loader, vs_model_cache)
+        value_set_models = value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_valuesets)
 
         # Get code systems and codes for all value sets in the elm.
         value_sets_from_single_code_references = make_fake_valuesets_from_single_code_references(elms, vs_model_cache)

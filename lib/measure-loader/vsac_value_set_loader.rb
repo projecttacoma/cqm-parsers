@@ -12,13 +12,13 @@ module Measures
       @vs_model_cache = {}
     end
 
-    def retrieve_and_modelize_value_sets_from_vsac(value_sets, measure_id = nil)
+    def retrieve_and_modelize_value_sets_from_vsac(value_sets)
       vs_models = []
       needed_value_sets = []
 
       value_sets.each do |value_set|
         vs_vsac_options = make_specific_value_set_options(value_set)
-        query_version = determine_query_version(vs_vsac_options, measure_id)
+        query_version = determine_query_version(vs_vsac_options)
 
         cache_key = [value_set[:oid], query_version]
         vs_model = @vs_model_cache[cache_key]
@@ -52,8 +52,8 @@ module Measures
       return @api
     end
 
-    def determine_query_version(vs_vsac_options, measure_id)
-      return "Draft-#{measure_id}" if vs_vsac_options[:include_draft] == true
+    def determine_query_version(vs_vsac_options)
+      return "Draft" if vs_vsac_options[:include_draft] == true
       return "Profile:#{vs_vsac_options[:profile]}" if vs_vsac_options[:profile]
       return vs_vsac_options[:version] if vs_vsac_options[:version]
       return "Release:#{vs_vsac_options[:release]}" if vs_vsac_options[:release]
