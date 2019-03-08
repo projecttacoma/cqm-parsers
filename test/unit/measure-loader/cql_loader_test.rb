@@ -169,7 +169,7 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 5, measure.population_criteria.keys.count
       assert_equal "C1EA44B5-B922-49C5-B41C-6509A6A86158", measure.hqmf_set_id
       measure.value_sets.each do |value_set|
-        assert_equal ("Draft-" + measure.hqmf_set_id), value_set.version
+        assert_equal ("Draft"), value_set.version
       end
     end
   end

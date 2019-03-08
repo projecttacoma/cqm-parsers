@@ -105,9 +105,9 @@ module Measures
                                          code_system_oid: code_system_def['id'],
                                          display_name: code_reference['name'])
               vs_model_cache[cache_key] = CQM::ValueSet.new(oid: code_hash,
-                                           display_name: code_reference['name'],
-                                           version: '',
-                                           concepts: [concept])
+                                                            display_name: code_reference['name'],
+                                                            version: '',
+                                                            concepts: [concept])
             end
             value_sets_from_single_code_references << vs_model_cache[cache_key]
           end
