@@ -2,7 +2,6 @@ module Measures
   class ElmParser
     # Fields are combined with the refId to find elm node that corrosponds to the current annotation node.
     @fields = ['expression', 'operand', 'suchThat']
-    @html_hash = {"&amp;": '&', "&quot;": '"', "&lt;": '<', "&gt;": '>', "&apos;": "'"}
 
     def self.parse(doc)
       @doc = doc
@@ -14,7 +13,7 @@ module Measures
       # extract library identifier data
       ret[:identifier][:id] = @doc.css("identifier").attr("id").value
       ret[:identifier][:version] = @doc.css("identifier").attr("version").value
-      
+
       # extracts the fields of type "annotation" and their children.
       annotations = @doc.css("annotation")
       annotations.each do |node|
@@ -26,7 +25,7 @@ module Measures
       end
       ret
     end
-    
+
     # Recursive function that traverses the annotation tree and constructs a representation
     # that will be compatible with the front end.
     def self.parse_node(node)
@@ -35,35 +34,28 @@ module Measures
       }
       define_name = nil
       node.children.each do |child|
-        # Nodes with the 'a' prefix are not leaf nodes
-        if child.namespace.respond_to?(:prefix) && child.namespace.prefix == 'a'
+        if child.is_a?(Nokogiri::XML::Text) # leaf node
+          clause_text = child.content.gsub(/\t/, "  ")
+          clause = {
+            text: clause_text
+          }
+          clause[:ref_id] = child['r'] unless child['r'].nil?
+          ret[:children] << clause
+          define_name = clause_text.split("\"")[1] if clause_text.strip.starts_with?("define")
+        else
           node_type = @localid_to_type_map[child['r']] unless child['r'].nil?
           # Parses the current child recursively. child_define_name will bubble up to indicate which
           # statement is currently being traversed.
           node, child_define_name = parse_node(child)
           node[:node_type] = node_type  unless node_type.nil?
           node[:ref_id] = child['r'] unless child['r'].nil?
-          define_name = child_define_name unless child_define_name.nil? 
           ret[:children] << node
-        else
-          if (/^define/ =~ child.to_html)
-            define_name = child.to_html.split("\"")[1]
-            # Modify special characters back in the the define_name
-            @html_hash.each { |k,v| define_name.gsub!(k.to_s, v) }
-          end
-          clause_text = child.to_html.gsub(/\t/, "  ")
-          # Modify special characters back in the clause text
-          @html_hash.each { |k,v| clause_text.gsub!(k.to_s, v) }
-          clause = {
-            text: clause_text
-          }
-          clause[:ref_id] = child['r'] unless child['r'].nil?
-          ret[:children] << clause
+          define_name = child_define_name unless child_define_name.nil?
         end
       end
       return ret, define_name
     end
-    
+
     def self.generate_localid_to_type_map
       localid_to_type_map = {}
       @fields.each do |field|
@@ -72,6 +64,5 @@ module Measures
       end
       return localid_to_type_map
     end
-
   end
 end
