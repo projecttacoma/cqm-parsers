@@ -1101,6 +1101,7 @@ Style/SymbolProc:
     - 'lib/measure-loader/mat_measure_files.rb'
     - 'test/unit/hqmf/1.0/document_v1_test.rb'
     - 'test/unit/hqmf/2.0/document_v2_test.rb'
+    - 'test/unit/measure-loader/elm_parser_test.rb'
 
 # Offense count: 6
 # Cop supports --auto-correct.
