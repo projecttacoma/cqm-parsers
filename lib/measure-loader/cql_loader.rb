@@ -4,6 +4,8 @@ module Measures
     def initialize(measure_zip, measure_details, value_set_loader)
       @measure_zip = measure_zip
       @measure_details = measure_details.deep_symbolize_keys
+      @vs_model_cache = {}
+      value_set_loader.vs_model_cache = @vs_model_cache
       @value_set_loader = value_set_loader
     end
 
@@ -94,10 +96,10 @@ module Measures
       cql_libraries = create_cql_libraries(measure_files.cql_libraries, hqmf_model.cql_measure_library)
       elms = cql_libraries.map(&:elm)
 
-      elm_valuesets = ValueSetHelpers.list_of_valuesets_referenced_by_elm(elms)
+      elm_valuesets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
       value_set_models, all_codes_and_code_names, value_sets_from_single_code_references =
-        ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, hqmf_model.hqmf_set_id)
+        ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, @vs_model_cache)
 
       hqmf_model.backfill_patient_characteristics_with_codes(all_codes_and_code_names)
       ## this to_json is needed, it doesn't actually produce json, it just makes a hash that is better

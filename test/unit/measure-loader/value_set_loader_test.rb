@@ -133,7 +133,7 @@ class VSACValueSetLoaderTest < Minitest::Test
 
       error = assert_raises Util::VSAC::VSEmptyError do
         value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets,'fake-measure-id')
+        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
       end
       assert_equal '2.16.840.1.113762.1.4.1179.2', error.oid
     end
@@ -146,7 +146,7 @@ class VSACValueSetLoaderTest < Minitest::Test
 
       error = assert_raises Util::VSAC::VSNotFoundError do
         value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets,'fake-measure-id')
+        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
       end
       assert_equal '2.16.840.1.113762.1.4.1179.2f', error.oid
     end
