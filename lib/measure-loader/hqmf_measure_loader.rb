@@ -4,21 +4,32 @@ module Measures
   module HQMFMeasureLoader
     class << self
 
-      def create_measure_model(hqmf_xml, hqmf_model_hash)
-        measure = CQM::Measure.new
+      def extract_basic_fields(hqmf_xml)
+        qmd = hqmf_xml.at_css('/QualityMeasureDocument')
 
-        measure.measure_attributes = hqmf_model_hash[:attributes]
-        measure.main_cql_library = hqmf_model_hash[:cql_measure_library]
-        measure.hqmf_id = hqmf_model_hash[:hqmf_id]
-        measure.hqmf_set_id = hqmf_model_hash[:hqmf_set_id]
-        measure.hqmf_version_number = hqmf_model_hash[:hqmf_version_number]
-        measure.cms_id = hqmf_model_hash[:cms_id]
-        measure.title = hqmf_model_hash[:title]
-        measure.description = hqmf_model_hash[:description]
-        measure.measure_period = hqmf_model_hash[:measure_period]
+        cms_identifier = qmd.at_xpath('xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eCQM Identifier (Measure Authoring Tool)"]]/xmlns:value')['value']
+        hqmf_version_number = qmd.at_css('/versionNumber')['value']
+        cms_id = "CMS#{cms_identifier}v#{hqmf_version_number.to_i}"
+        main_cql_library = qmd.at_css('/component/populationCriteriaSection/component/initialPopulationCriteria/*/*/id')["extension"].split('.').first
+
+        return {
+          hqmf_id: qmd.at_css('/id')['root'],
+          hqmf_set_id: qmd.at_css('/setId')['root'],
+          title: qmd.at_css('/title')['value'],
+          description: qmd.at_css('/text')['value'],
+          main_cql_library: main_cql_library,
+          hqmf_version_number: hqmf_version_number,
+          cms_id: cms_id
+        }
+      end
+
+      def add_stuff_to_measure_model(measure, hqmf_xml, hqmf_model_hash)
+        measure.measure_attributes = hqmf_model_hash[:attributes] #do we need this??
+
+
+
+        measure.measure_period = hqmf_model_hash[:measure_period] #do we need this?? its hardcoded
         measure.population_criteria = hqmf_model_hash[:population_criteria]
-        measure.source_data_criteria = hqmf_model_hash[:source_data_criteria]
-        measure.data_criteria = hqmf_model_hash[:data_criteria]
 
         measure.measure_scoring = extract_measure_scoring(hqmf_xml)
         measure.population_sets = extract_population_set_models(hqmf_xml, measure.measure_scoring)
@@ -38,8 +49,6 @@ module Measures
           # add observation to each population set
           measure.population_sets.each { |population_set| population_set.observations << observation }
         end
-
-        return measure
       end
 
       private
@@ -65,16 +74,16 @@ module Measures
             title: ps_hash[:title],
             population_set_id: "PopulationSet_#{pop_index+1}"
           )
-  
-          population_set.populations = construct_population_map(measure_scoring)  
+
+          population_set.populations = construct_population_map(measure_scoring)
           ps_hash[:populations].each do |pop_code,statement_ref_string|
             population_set.populations[pop_code] = modelize_statement_ref_string(statement_ref_string)
           end
-  
+
           ps_hash[:supplemental_data_elements].each do |statement_ref_string|
             population_set.supplemental_data_elements << modelize_statement_ref_string(statement_ref_string)
           end
-          
+
           ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
             population_set.stratifications << CQM::Stratification.new(
               stratification_id: "#{population_set.population_set_id}_Stratification_#{index+1}",
@@ -141,7 +150,7 @@ module Measures
           raise StandardError("Unknown measure scoring type encountered #{measure_scoring}")
         end
       end
-  
+
       def modelize_statement_ref_string(statement_ref_string)
         library_name, statement_name = statement_ref_string.split('.', 2)
         return CQM::StatementReference.new(

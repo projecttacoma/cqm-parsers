@@ -1,0 +1,214 @@
+{
+  "patient_characteristic::": {
+    "model_name": "PatientCharacteristic",
+    "oid": "2.16.840.1.113883.10.20.28.4.53"
+  },
+  "patient_characteristic_birthdate::": {
+    "model_name": "PatientCharacteristicBirthdate",
+    "oid": "2.16.840.1.113883.10.20.28.4.54"
+  },
+  "patient_characteristic::clinical_trial_participant": {
+    "model_name": "PatientCharacteristicClinicalTrialParticipant",
+    "oid": "2.16.840.1.113883.10.20.28.4.6"
+  },
+  "patient_characteristic_gender::": {
+    "model_name": "PatientCharacteristicSex",
+    "oid": "2.16.840.1.113883.10.20.28.4.55"
+  },
+  "patient_characteristic_ethnicity::": {
+    "model_name": "PatientCharacteristicEthnicity",
+    "oid": "2.16.840.1.113883.10.20.28.4.56"
+  },
+  "patient_characteristic_expired::": {
+    "model_name": "PatientCharacteristicExpired",
+    "oid": "2.16.840.1.113883.10.20.28.4.57"
+  },
+  "patient_characteristic_payer::": {
+    "model_name": "PatientCharacteristicPayer",
+    "oid": "2.16.840.1.113883.10.20.28.4.58"
+  },
+  "patient_characteristic_race::": {
+    "model_name": "PatientCharacteristicRace",
+    "oid": "2.16.840.1.113883.10.20.28.4.59"
+  },
+  "encounter::performed": {
+    "model_name": "EncounterPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.5"
+  },
+  "encounter::ordered": {
+    "model_name": "EncounterOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.27"
+  },
+  "encounter::recommended": {
+    "model_name": "EncounterRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.28"
+  },
+  "procedure::performed": {
+    "model_name": "ProcedurePerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.67"
+  },
+  "procedure::ordered": {
+    "model_name": "ProcedureOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.66"
+  },
+  "procedure::recommended": {
+    "model_name": "ProcedureRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.68"
+  },
+  "diagnosis::": {
+    "model_name": "Diagnosis",
+    "oid": "2.16.840.1.113883.10.20.28.4.110"
+  },
+  "family_history::": {
+    "model_name": "FamilyHistory",
+    "oid": "2.16.840.1.113883.10.20.28.4.111"
+  },
+  "diagnostic_study::performed": {
+    "model_name": "DiagnosticStudyPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.23"
+  },
+  "diagnostic_study::ordered": {
+    "model_name": "DiagnosticStudyOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.22"
+  },
+  "diagnostic_study::recommended": {
+    "model_name": "DiagnosticStudyRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.24"
+  },
+  "medication::dispensed": {
+    "model_name": "MedicationDispensed",
+    "oid": "2.16.840.1.113883.10.20.28.4.49"
+  },
+  "medication::ordered": {
+    "model_name": "MedicationOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.51"
+  },
+  "medication::discharge": {
+    "model_name": "MedicationDischarge",
+    "oid": "2.16.840.1.113883.10.20.28.4.48"
+  },
+  "medication::active": {
+    "model_name": "MedicationActive",
+    "oid": "2.16.840.1.113883.10.20.28.4.44"
+  },
+  "medication::administered": {
+    "model_name": "MedicationAdministered",
+    "oid": "2.16.840.1.113883.10.20.28.4.45"
+  },
+  "immunization::administered": {
+    "model_name": "ImmunizationAdministered",
+    "oid": "2.16.840.1.113883.10.20.28.4.112"
+  },
+  "immunization::order": {
+    "model_name": "ImmunizationOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.113"
+  },
+  "physical_exam::ordered": {
+    "model_name": "PhysicalExamOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.61"
+  },
+  "physical_exam::performed": {
+    "model_name": "PhysicalExamPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.62"
+  },
+  "physical_exam::recommended": {
+    "model_name": "PhysicalExamRecommended",
+    "oid": "22.16.840.1.113883.10.20.28.4.63"
+  },
+  "laboratory_test::performed": {
+    "model_name": "LaboratoryTestPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.42"
+  },
+  "laboratory_test::ordered": {
+    "model_name": "LaboratoryTestOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.41"
+  },
+  "laboratory_test::recommended": {
+    "model_name": "LaboratoryTestRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.43"
+  },
+  "care_goal::": {
+    "model_name": "CareGoal",
+    "oid": "2.16.840.1.113883.10.20.28.4.7"
+  },
+  "device::applied": {
+    "model_name": "DeviceApplied",
+    "oid": "2.16.840.1.113883.10.20.28.4.13"
+  },
+  "device::ordered": {
+    "model_name": "DeviceOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.15"
+  },
+  "device::recommended": {
+    "model_name": "DeviceRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.16"
+  },
+  "substance::administered": {
+    "model_name": "SubstanceAdministered",
+    "oid": "2.16.840.1.113883.10.20.28.4.73"
+  },
+  "substance::ordered": {
+    "model_name": "SubstanceOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.77"
+  },
+  "substance::recommended": {
+    "model_name": "SubstanceRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.78"
+  },
+  "intervention::ordered": {
+    "model_name": "InterventionOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.35"
+  },
+  "intervention::performed": {
+    "model_name": "InterventionPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.36"
+  },
+  "intervention::recommended": {
+    "model_name": "InterventionRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.37"
+  },
+  "symptom::": {
+    "model_name": "Symptom",
+    "oid": "2.16.840.1.113883.10.20.28.4.116"
+  },
+  "provider_care_experience::": {
+    "model_name": "ProviderCareExperience",
+    "oid": "2.16.840.1.113883.10.20.28.4.70"
+  },
+  "patient_care_experience::": {
+    "model_name": "PatientCareExperience",
+    "oid": "2.16.840.1.113883.10.20.28.4.52"
+  },
+  "provider_characteristic::": {
+    "model_name": "ProviderCharacteristic",
+    "oid": "2.16.840.1.113883.10.20.28.4.71"
+  },
+  "assessment::ordered": {
+    "model_name": "AssessmentOrder",
+    "oid": "2.16.840.1.113883.10.20.28.4.131"
+  },
+  "assessment::performed": {
+    "model_name": "AssessmentPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.117"
+  },
+  "assessment::recommended": {
+    "model_name": "AssessmentRecommended",
+    "oid": "2.16.840.1.113883.10.20.28.4.118"
+  },
+  "adverse_event::": {
+    "model_name": "AdverseEvent",
+    "oid": "2.16.840.1.113883.10.20.28.4.120"
+  },
+  "allergy_intolerance::": {
+    "model_name": "AllergyIntolerance",
+    "oid": "2.16.840.1.113883.10.20.28.4.119"
+  },
+  "participation::": {
+    "model_name": "Participation",
+    "oid": "2.16.840.1.113883.10.20.28.4.130"
+  },
+  "communication::performed": {
+    "model_name": "CommunicationPerformed",
+    "oid": "2.16.840.1.113883.10.20.28.4.132"
+  }
+}
