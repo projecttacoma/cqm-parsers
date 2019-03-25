@@ -4,37 +4,38 @@ module Measures
   module HQMFMeasureLoader
     class << self
 
-      def extract_basic_fields(hqmf_xml)
+      def extract_fields(hqmf_xml)
         qmd = hqmf_xml.at_css('/QualityMeasureDocument')
-
-        cms_identifier = qmd.at_xpath('xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eCQM Identifier (Measure Authoring Tool)"]]/xmlns:value')['value']
+        hqmf_id = qmd.at_css('/id')['root'].upcase
+        hqmf_set_id = qmd.at_css('/setId')['root'].upcase
+        title = qmd.at_css('/title')['value']
+        description = qmd.at_css('/text')['value']
+        cms_identifier = extract_cms_identifier(qmd)
         hqmf_version_number = qmd.at_css('/versionNumber')['value']
         cms_id = "CMS#{cms_identifier}v#{hqmf_version_number.to_i}"
-        main_cql_library = qmd.at_css('/component/populationCriteriaSection/component/initialPopulationCriteria/*/*/id')["extension"].split('.').first
+        main_cql_library = qmd.at_css('/component/populationCriteriaSection/component/initialPopulationCriteria/*/*/id')['extension'].split('.').first
+        measure_scoring = extract_measure_scoring(qmd)
+        population_sets = extract_population_set_models(qmd, measure_scoring)
 
         return {
-          hqmf_id: qmd.at_css('/id')['root'],
-          hqmf_set_id: qmd.at_css('/setId')['root'],
-          title: qmd.at_css('/title')['value'],
-          description: qmd.at_css('/text')['value'],
+          hqmf_id: hqmf_id,
+          hqmf_set_id: hqmf_set_id,
+          title: title,
+          description: description,
           main_cql_library: main_cql_library,
           hqmf_version_number: hqmf_version_number,
-          cms_id: cms_id
+          cms_id: cms_id,
+          measure_scoring: measure_scoring,
+          population_sets: population_sets
         }
       end
 
-      def add_stuff_to_measure_model(measure, hqmf_xml, hqmf_model_hash)
-        measure.measure_attributes = hqmf_model_hash[:attributes] #do we need this??
-
-
-
-        measure.measure_period = hqmf_model_hash[:measure_period] #do we need this?? its hardcoded
+      def add_fields_from_hqmf_model_hash(measure, hqmf_model_hash)
+        measure.measure_attributes = hqmf_model_hash[:attributes]
+        measure.measure_period = hqmf_model_hash[:measure_period]
         measure.population_criteria = hqmf_model_hash[:population_criteria]
 
-        measure.measure_scoring = extract_measure_scoring(hqmf_xml)
-        measure.population_sets = extract_population_set_models(hqmf_xml, measure.measure_scoring)
-
-        # add observation info
+        # add observation info, note population_sets needs to have been added to the measure by now
         (hqmf_model_hash[:observations] || []).each do |observation|
           observation = CQM::Observation.new(
             observation_function: CQM::StatementReference.new(
@@ -53,21 +54,28 @@ module Measures
 
       private
 
-      def extract_measure_scoring(hqmf_xml)
+      def extract_cms_identifier(qmd)
+        cms_identifier =
+          (qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eCQM Identifier (Measure Authoring Tool)"]]/xmlns:value') ||
+          qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eMeasure Identifier (Measure Authoring Tool)"]]/xmlns:value'))
+        return cms_identifier['value']
+      end
+
+      def extract_measure_scoring(qmd)
         map_from_hqmf_name_to_full_name = {
           'PROPOR' => 'PROPORTION',
           'RATIO' => 'RATIO',
           'CONTVAR' => 'CONTINUOUS_VARIABLE',
           'COHORT' => 'COHORT'
         }
-        scoring = hqmf_xml.at_xpath("/xmlns:QualityMeasureDocument/xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/@code='MSRSCORE']/xmlns:value").attr('code')
+        scoring = qmd.at_xpath("./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/@code='MSRSCORE']/xmlns:value").attr('code')
         scoring_full_name = map_from_hqmf_name_to_full_name[scoring]
         raise StandardError("Unknown measure scoring type encountered #{scoring}") if scoring_full_name.nil?
         return scoring_full_name
       end
 
-      def extract_population_set_models(hqmf_xml, measure_scoring)
-        populations = hqmf_xml.css('/QualityMeasureDocument/component/populationCriteriaSection')
+      def extract_population_set_models(qmd, measure_scoring)
+        populations = qmd.css('/component/populationCriteriaSection')
         return populations.map.with_index do |population, pop_index|
           ps_hash = extract_population_set(population)
           population_set = CQM::PopulationSet.new(

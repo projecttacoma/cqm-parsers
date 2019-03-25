@@ -5,8 +5,8 @@ gemspec :development_group => :test
 gem 'mongoid', '~> 5.0.0'
 
 # gem 'cqm-models', '~> 0.8.4'
-# gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'data_criteria_changes'
-gem 'cqm-models', :path => '../cqm-models'
+gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'defaults_update'
+# gem 'cqm-models', :path => '../cqm-models'
 
 group :development, :test do
   gem 'bundler-audit'

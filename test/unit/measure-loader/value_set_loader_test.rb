@@ -6,9 +6,9 @@ class VSACValueSetLoaderTest < Minitest::Test
   def setup
     @fixtures_path = File.join('test', 'fixtures', 'vs_loading')
 
-    @measure_file_base = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts.zip')
-    @measure_file_with_profiles = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_With_Profiles.zip')
-    @measure_file_version = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_Version.zip')
+    @measure_file_base = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_updated.zip')
+    @measure_file_with_profiles = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_With_Profiles_updated.zip')
+    @measure_file_version = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_Version_updated.zip')
     @empty_measure_details = {}
 
     @vcr_options = {match_requests_on: [:method, :uri_no_st]}

@@ -1,4 +1,11 @@
 GIT
+  remote: https://github.com/projecttacoma/cqm-models.git
+  revision: 5fa5c8e4965e43782df298d9efdc28d441237afd
+  branch: defaults_update
+  specs:
+    cqm-models (1.0.2)
+
+GIT
   remote: https://github.com/projecttacoma/simplexml_parser.git
   revision: 1e8429773abb3e297c03133ae202900f35a6f9ed
   branch: master
@@ -6,11 +13,6 @@ GIT
     simplexml_parser (1.0.1)
       health-data-standards (~> 4.0)
       tilt (~> 1.4)
-
-PATH
-  remote: ../cqm-models
-  specs:
-    cqm-models (1.0.2)
 
 PATH
   remote: .
