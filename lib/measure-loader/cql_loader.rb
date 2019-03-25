@@ -99,7 +99,7 @@ module Measures
       measure.calculation_method = @measure_details[:episode_of_care] ? 'EPISODE_OF_CARE' : 'PATIENT'
       measure.calculate_sdes = @measure_details[:calculate_sdes]
 
-      hqmf_model = HQMF::Parser::V2CQLParser.new.parse(hqmf_xml) # TODO move away from using V2CQLParser
+      hqmf_model = HQMF::Parser::V2CQLParser.new.parse(hqmf_xml) # TODO: move away from using V2CQLParser
 
       elms = measure.cql_libraries.map(&:elm)
       elm_valuesets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)

@@ -26,9 +26,7 @@ module Measures
                         model_fields_for_single_code_reference_data_criteria(criteria)
                       end
       hqmf_template_oid = criteria.at_css('templateId/item')['root']
-      modelBase = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid)
-      # return nil if modelBase.nil?
-      model = modelBase.new(model_fields)
+      model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid).new(model_fields)
       model.description = model.hqmfTitle + ": " + model.description
       return model
     end

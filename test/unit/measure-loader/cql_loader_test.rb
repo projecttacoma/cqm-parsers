@@ -130,7 +130,7 @@ class CQLLoaderTest < Minitest::Test
         measure = measures[0]
 
         # Confirm that the source data criteria with the direct reference code is equal to the expected hash
-        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.source_data_criteria.select{ |sdc| sdc.hqmfOid == '2.16.840.1.113883.10.20.28.4.42' }[0].codeListId
+        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.source_data_criteria.select { |sdc| sdc.hqmfOid == '2.16.840.1.113883.10.20.28.4.42' }[0].codeListId
       end
     end
   end
