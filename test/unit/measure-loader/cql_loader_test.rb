@@ -119,6 +119,28 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
+  def test_source_data_criteria_creation
+    VCR.use_cassette('measure__source_data_criteria_creation', @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      assert_equal 1, measures.length
+      measure = measures[0]
+
+      assert_equal measure.source_data_criteria.map(&:hqmfTitle), ["Encounter, Performed", "Procedure, Performed", "Patient Characteristic Sex", "Medication, Active", "Diagnosis", "Intervention, Order", "Intervention, Performed", "Patient Characteristic Race", "Patient Characteristic Payer", "Patient Characteristic Ethnicity", "Laboratory Test, Performed"]
+      assert_equal measure.source_data_criteria[0].description, "Encounter, Performed: Face-to-FaceInteraction"
+      assert_equal measure.source_data_criteria[0].codeListId, "2.16.840.1.113883.3.464.1003.101.12.1048"
+      assert_equal measure.source_data_criteria[0].hqmfOid, "2.16.840.1.113883.10.20.28.4.5"
+
+      # Test direct reference code elements are filled with info from hitting vsac
+      assert_equal measure.source_data_criteria[10].description, "Laboratory Test, Performed: UrineProteinTests"
+      assert_equal measure.source_data_criteria[10].codeListId, "2.16.840.1.113883.3.464.1003.109.12.1024"
+      assert_equal measure.source_data_criteria[4].description, "Diagnosis: KidneyFailure"
+      assert_equal measure.source_data_criteria[4].codeListId, "2.16.840.1.113883.3.464.1003.109.12.1028"
+    end
+  end
+
   def test_direct_reference_code_handles_creation_of_codelistid_hash
     measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts_Update.zip')
 
