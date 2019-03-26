@@ -21,17 +21,17 @@ module Measures
     def modelize_data_criteria_entry(entry)
       criteria = entry.at_xpath('./*[xmlns:templateId/xmlns:item]')
       model_fields =  if entry.at_css('localVariableName').present?
-                        model_fields_for_standard_data_criteria(criteria, entry)
+                        extract_fields_from_standard_data_criteria(criteria, entry)
                       else
-                        model_fields_for_single_code_reference_data_criteria(criteria)
+                        extract_fields_from_single_code_reference_data_criteria(criteria)
                       end
       hqmf_template_oid = criteria.at_css('templateId/item')['root']
       model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid).new(model_fields)
-      model.description = model.hqmfTitle + ": " + model.description
+      model.description = model.hqmfTitle + ': ' + model.description
       return model
     end
 
-    def model_fields_for_standard_data_criteria(criteria, entry)
+    def extract_fields_from_standard_data_criteria(criteria, entry)
       entry_variable_name_prefix = entry.at_css('localVariableName')['value'].split('_').first
       node_with_valueset = (criteria.at_css('value[valueSet]') || criteria.at_css('code[valueSet]'))
       code_list_id = node_with_valueset.present? ? node_with_valueset['valueSet'] : nil
@@ -41,7 +41,7 @@ module Measures
       }
     end
 
-    def model_fields_for_single_code_reference_data_criteria(criteria)
+    def extract_fields_from_single_code_reference_data_criteria(criteria)
       single_code_reference = criteria.at_css('code[codeSystem][code]')
       system_id = "#{single_code_reference['codeSystem']}_#{single_code_reference['codeSystemVersion']}".to_sym
       concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym]

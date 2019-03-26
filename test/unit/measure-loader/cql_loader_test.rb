@@ -128,16 +128,28 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 1, measures.length
       measure = measures[0]
 
-      assert_equal measure.source_data_criteria.map(&:hqmfTitle), ["Encounter, Performed", "Procedure, Performed", "Patient Characteristic Sex", "Medication, Active", "Diagnosis", "Intervention, Order", "Intervention, Performed", "Patient Characteristic Race", "Patient Characteristic Payer", "Patient Characteristic Ethnicity", "Laboratory Test, Performed"]
-      assert_equal measure.source_data_criteria[0].description, "Encounter, Performed: Face-to-FaceInteraction"
-      assert_equal measure.source_data_criteria[0].codeListId, "2.16.840.1.113883.3.464.1003.101.12.1048"
-      assert_equal measure.source_data_criteria[0].hqmfOid, "2.16.840.1.113883.10.20.28.4.5"
+      assert_equal measure.source_data_criteria.map(&:hqmfTitle), [
+          'Encounter, Performed',
+          'Procedure, Performed',
+          'Patient Characteristic Sex',
+          'Medication, Active',
+          'Diagnosis',
+          'Intervention, Order',
+          'Intervention, Performed',
+          'Patient Characteristic Race',
+          'Patient Characteristic Payer',
+          'Patient Characteristic Ethnicity',
+          'Laboratory Test, Performed'
+          ]
+      assert_equal measure.source_data_criteria[0].description, 'Encounter, Performed: Face-to-FaceInteraction'
+      assert_equal measure.source_data_criteria[0].codeListId, '2.16.840.1.113883.3.464.1003.101.12.1048'
+      assert_equal measure.source_data_criteria[0].hqmfOid, '2.16.840.1.113883.10.20.28.4.5'
 
       # Test direct reference code elements are filled with info from hitting vsac
-      assert_equal measure.source_data_criteria[10].description, "Laboratory Test, Performed: UrineProteinTests"
-      assert_equal measure.source_data_criteria[10].codeListId, "2.16.840.1.113883.3.464.1003.109.12.1024"
-      assert_equal measure.source_data_criteria[4].description, "Diagnosis: KidneyFailure"
-      assert_equal measure.source_data_criteria[4].codeListId, "2.16.840.1.113883.3.464.1003.109.12.1028"
+      assert_equal measure.source_data_criteria[10].description, 'Laboratory Test, Performed: UrineProteinTests'
+      assert_equal measure.source_data_criteria[10].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
+      assert_equal measure.source_data_criteria[4].description, 'Diagnosis: KidneyFailure'
+      assert_equal measure.source_data_criteria[4].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1028'
     end
   end
 
@@ -203,8 +215,8 @@ class CQLLoaderTest < Minitest::Test
       measures = loader.extract_measures
       measure = measures[0]
 
-      assert_equal "Initiation and Engagement of Alcohol and Other Drug Dependence Treatment", measure.title
-      assert_equal "40280382-6258-7581-0162-92A37A9B15DF", measure.hqmf_id
+      assert_equal 'Initiation and Engagement of Alcohol and Other Drug Dependence Treatment', measure.title
+      assert_equal '40280382-6258-7581-0162-92A37A9B15DF', measure.hqmf_id
       assert_equal 2, measure.population_sets.size
       assert_equal 12, measure.population_criteria.keys.count
       assert_equal measure.cql_libraries.size, measure.cql_libraries.select(&:is_top_level).size
