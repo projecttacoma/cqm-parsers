@@ -27,7 +27,7 @@ module Measures
                       end
       hqmf_template_oid = criteria.at_css('templateId/item')['root']
       model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid).new(model_fields)
-      model.description = model.hqmfTitle + ': ' + model.description
+      model.description = model.qdmTitle + ': ' + model.description
       return model
     end
 
