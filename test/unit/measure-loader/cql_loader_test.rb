@@ -129,18 +129,18 @@ class CQLLoaderTest < Minitest::Test
       measure = measures[0]
 
       assert_equal measure.source_data_criteria.map(&:hqmfTitle), [
-          'Encounter, Performed',
-          'Procedure, Performed',
-          'Patient Characteristic Sex',
-          'Medication, Active',
-          'Diagnosis',
-          'Intervention, Order',
-          'Intervention, Performed',
-          'Patient Characteristic Race',
-          'Patient Characteristic Payer',
-          'Patient Characteristic Ethnicity',
-          'Laboratory Test, Performed'
-          ]
+        'Encounter, Performed',
+        'Procedure, Performed',
+        'Patient Characteristic Sex',
+        'Medication, Active',
+        'Diagnosis',
+        'Intervention, Order',
+        'Intervention, Performed',
+        'Patient Characteristic Race',
+        'Patient Characteristic Payer',
+        'Patient Characteristic Ethnicity',
+        'Laboratory Test, Performed'
+      ]
       assert_equal measure.source_data_criteria[0].description, 'Encounter, Performed: Face-to-FaceInteraction'
       assert_equal measure.source_data_criteria[0].codeListId, '2.16.840.1.113883.3.464.1003.101.12.1048'
       assert_equal measure.source_data_criteria[0].hqmfOid, '2.16.840.1.113883.10.20.28.4.5'
