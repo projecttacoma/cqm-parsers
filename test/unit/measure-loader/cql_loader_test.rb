@@ -128,7 +128,7 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 1, measures.length
       measure = measures[0]
 
-      assert_equal measure.source_data_criteria.map(&:hqmfTitle), [
+      assert_equal measure.source_data_criteria.map(&:qdmTitle), [
         'Encounter, Performed',
         'Procedure, Performed',
         'Patient Characteristic Sex',
