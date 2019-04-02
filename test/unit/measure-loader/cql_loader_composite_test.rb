@@ -2,7 +2,7 @@ require 'test_helper'
 require 'vcr_setup.rb'
 
 class CQLLoaderTest < Minitest::Test
-  
+
   def setup
     @fixtures_path = File.join('test', 'fixtures', 'measureloading')
     @vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }

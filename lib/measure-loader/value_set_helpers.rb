@@ -2,30 +2,6 @@ module Measures
   module ValueSetHelpers
     class << self
 
-      def set_data_criteria_code_list_ids(hqmf_model_hash, value_sets_from_single_code_references)
-        # Loop over data criteria to search for data criteria that is using a single reference code.
-        # Once found set the Data Criteria's 'code_list_id' to our fake oid. Do the same for source data criteria.
-        hqmf_model_hash[:data_criteria].each do |data_criteria_name, data_criteria|
-          next unless data_criteria[:inline_code_list] && !data_criteria[:code_list_id]
-          # Check to see if inline_code_list contains the correct code_system and code for a direct reference code.
-          data_criteria[:inline_code_list].each do |code_system, code_list|
-            # Loop over all single code reference objects.
-            value_sets_from_single_code_references.each do |value_set|
-              # If Data Criteria contains a matching code system, check if the correct code exists in the data critera values.
-              # If both values match, set the Data Criteria's 'code_list_id' to the single_code_object_guid.
-              unless value_set.concepts.length == 1
-                raise StandardError "This function should only be called on valuesets with one concept (single code references)."
-              end
-              concept = value_set.concepts[0]
-              next unless concept.code_system_name.starts_with?(code_system.to_s) && code_list.include?(concept.code)
-              data_criteria[:code_list_id] = value_set.oid
-              # Modify the matching source data criteria
-              hqmf_model_hash[:source_data_criteria]["#{data_criteria_name}_source".to_sym][:code_list_id] = value_set.oid
-            end
-          end
-        end
-      end
-
       # Adjusting value set version data. If version is profile, set the version to nil
       def modify_value_set_versions(elm)
         (elm.dig('library','valueSets','def') || []).each do |value_set|

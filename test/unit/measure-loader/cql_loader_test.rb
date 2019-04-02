@@ -2,7 +2,7 @@ require 'test_helper'
 require 'vcr_setup.rb'
 
 class CQLLoaderTest < Minitest::Test
-  
+
   def setup
     @fixtures_path = File.join('test', 'fixtures', 'measureloading')
     @vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
@@ -30,7 +30,7 @@ class CQLLoaderTest < Minitest::Test
 
       # check the main library name and find new library structure using it
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', measure.main_cql_library
-      
+
       # check the new library structure
       main_library = measure.cql_libraries.select(&:is_main_library).first
       assert(!main_library.nil?)
@@ -83,7 +83,7 @@ class CQLLoaderTest < Minitest::Test
   def test_population_titles
     VCR.use_cassette('measure__population_titles', @vcr_options) do
       measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true, 'population_titles' => ['ps1','ps2','ps1strat1','ps1strat2','ps2strat1'] }
-      measure_file = File.new File.join(@fixtures_path, 'IETCQL_v5_0_Artifacts.zip')
+      measure_file = File.new File.join(@fixtures_path, 'CMS137v7.zip')
 
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
@@ -119,19 +119,52 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
+  def test_source_data_criteria_creation
+    VCR.use_cassette('measure__source_data_criteria_creation', @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      assert_equal 1, measures.length
+      measure = measures[0]
+
+      assert_equal measure.source_data_criteria.map(&:qdmTitle), [
+        'Encounter, Performed',
+        'Procedure, Performed',
+        'Patient Characteristic Sex',
+        'Medication, Active',
+        'Diagnosis',
+        'Intervention, Order',
+        'Intervention, Performed',
+        'Patient Characteristic Race',
+        'Patient Characteristic Payer',
+        'Patient Characteristic Ethnicity',
+        'Laboratory Test, Performed'
+      ]
+      assert_equal measure.source_data_criteria[0].description, 'Encounter, Performed: Face-to-FaceInteraction'
+      assert_equal measure.source_data_criteria[0].codeListId, '2.16.840.1.113883.3.464.1003.101.12.1048'
+      assert_equal measure.source_data_criteria[0].hqmfOid, '2.16.840.1.113883.10.20.28.4.5'
+
+      # Test direct reference code elements are filled with info from hitting vsac
+      assert_equal measure.source_data_criteria[10].description, 'Laboratory Test, Performed: UrineProteinTests'
+      assert_equal measure.source_data_criteria[10].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
+      assert_equal measure.source_data_criteria[4].description, 'Diagnosis: KidneyFailure'
+      assert_equal measure.source_data_criteria[4].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1028'
+    end
+  end
+
   def test_direct_reference_code_handles_creation_of_codelistid_hash
     measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts_Update.zip')
-    
+
     ['1','2'].each do |cassette_number|
       VCR.use_cassette('measure__direct_reference_code_handles_creation_of_codeListId_hash'+cassette_number, @vcr_options) do
         value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
         loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
         measures = loader.extract_measures
         measure = measures[0]
-    
+
         # Confirm that the source data criteria with the direct reference code is equal to the expected hash
-        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.source_data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D_source][:code_list_id]
-        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.data_criteria[:prefix_5195_3_LaboratoryTestPerformed_70C9F083_14BD_4331_99D7_201F8589059D][:code_list_id]
+        assert_equal 'drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381', measure.source_data_criteria.select { |sdc| sdc.hqmfOid == '2.16.840.1.113883.10.20.28.4.42' }[0].codeListId
       end
     end
   end
@@ -143,7 +176,7 @@ class CQLLoaderTest < Minitest::Test
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
-      
+
       annotations = measure.cql_libraries.find_by(library_name: 'TobaccoUseTreatmentProvidedorOfferedTOB2TobaccoUseTreatmentTOB2a').elm_annotations
       define_name = annotations[:statements][36][:define_name]
       clause_text = annotations[:statements][36][:children][0][:children][0][:children][0][:text]
@@ -176,16 +209,16 @@ class CQLLoaderTest < Minitest::Test
 
   def test_measure
     VCR.use_cassette("measure__test_measure", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'BCS_v5_0_Artifacts.zip')
+      measure_file = File.new File.join(@fixtures_path, 'CMS137v7.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
 
-      assert_equal "BCSTest", measure.title
-      assert_equal "40280582-57B5-1CC0-0157-B53816CC0046", measure.hqmf_id
-      assert_equal 1, measure.population_sets.size
-      assert_equal 4, measure.population_criteria.keys.count
+      assert_equal 'Initiation and Engagement of Alcohol and Other Drug Dependence Treatment', measure.title
+      assert_equal '40280382-6258-7581-0162-92A37A9B15DF', measure.hqmf_id
+      assert_equal 2, measure.population_sets.size
+      assert_equal 12, measure.population_criteria.keys.count
       assert_equal measure.cql_libraries.size, measure.cql_libraries.select(&:is_top_level).size
     end
   end
@@ -209,7 +242,7 @@ class CQLLoaderTest < Minitest::Test
 
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_fixed.zip')
+      measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_updated.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
