@@ -6,9 +6,9 @@ class VSACValueSetLoaderTest < Minitest::Test
   def setup
     @fixtures_path = File.join('test', 'fixtures', 'vs_loading')
 
-    @measure_file_base = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts.zip')
-    @measure_file_with_profiles = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_With_Profiles.zip')
-    @measure_file_version = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_Version.zip')
+    @measure_file_base = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_updated.zip')
+    @measure_file_with_profiles = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_With_Profiles_updated.zip')
+    @measure_file_version = File.new File.join(@fixtures_path, 'DocofMeds_v5_1_Artifacts_Version_updated.zip')
     @empty_measure_details = {}
 
     @vcr_options = {match_requests_on: [:method, :uri_no_st]}
@@ -133,7 +133,7 @@ class VSACValueSetLoaderTest < Minitest::Test
 
       error = assert_raises Util::VSAC::VSEmptyError do
         value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets,'fake-measure-id')
+        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
       end
       assert_equal '2.16.840.1.113762.1.4.1179.2', error.oid
     end
@@ -146,7 +146,7 @@ class VSACValueSetLoaderTest < Minitest::Test
 
       error = assert_raises Util::VSAC::VSNotFoundError do
         value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets,'fake-measure-id')
+        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
       end
       assert_equal '2.16.840.1.113762.1.4.1179.2f', error.oid
     end

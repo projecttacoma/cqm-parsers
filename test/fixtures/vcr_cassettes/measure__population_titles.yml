@@ -32,12 +32,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '63'
+      - '64'
       Date:
-      - Mon, 25 Feb 2019 16:35:31 GMT
+      - Mon, 25 Mar 2019 19:01:26 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!6X9P+s4efu/KJofm9OGvBt4MxRMcjiJO7Otjv1Fnj7Jnq7VRF1hbmJ1/MHqPugxEpfEKwSUMpN7MwWc=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!ncGtjG27vyIusjPm9OGvBt4MxRMcjjhfDoGHzMFDD5G4ItcOlJUxrnRGd9uOnlYdYzB4dFb0Smbbsls=;
+        expires=Mon, 25-Mar-2019 21:01:26 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -46,12 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas
+      string: TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:26 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -81,12 +81,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!vhBo4Wmg836Bamjm9OGvBt4MxRMcjhzasToqYBf1BjsC99/dzY6srjp6rZynnHbK8Neqpr0/M9lOhGA=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!WxYfibocPP4QTV/m9OGvBt4MxRMcjnQinqzKfsrJZtQ3HVOZvM+/2INxHk0r+Kb1cCAQuLAUCbRvwBg=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -95,12 +95,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7559-6qCMocMSoJQOdySLCT9g-cas
+      string: ST-138780-tGgzWzdJTXDYIran2kXH-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -130,12 +130,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!I+3kt9HypHu+GKrNtNHn4GsLooFbU/Z6TMvVB0yaAi5LE5ScI3Qpj4CrvLOkB9+3yQeB/hw7RW5Hwe8=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!jvvlU0piAuz/lkjNtNHn4GsLooFbU2lKnOy4ksz+JcPUfPGZPdELd92Wiq7RTqpeLlP+r439XkAL5hg=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -144,12 +144,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7563-s9e0A2Q05J7cfUaJszdI-cas
+      string: ST-138778-Rb5O5A1utNf4vDrQM7Fi-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -179,12 +179,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!rLPCcuAQaJtoKIjNtNHn4GsLooFbU0OQRyclSStqQFaPd/Oc788dsnTSCSjrglNo1G2g2umFQpVmGCU=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!knhJd7nB0XxH+vXNtNHn4GsLooFbU/eat9tnza0jqJN2IPCHTGHPaOuWtx9MiVujUvJQ903cDxvRuoE=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -193,12 +193,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7565-PWc5ilZkkeNwnZq4gP9T-cas
+      string: ST-138776-PfPEz14aYvvbl7HaDOC0-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -228,12 +228,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!JNsSnH+OfOXKIirNtNHn4GsLooFbUyQ8IV0AzhuulZvJIi+gEi4F2OhH8Q0KBfbzP+08WLIIQMUxARM=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!/3DeuCYwjdpvUlPNtNHn4GsLooFbU9r+ODBW7EJmtDUtnnFYA1Pv3MPEqnTtMXNO+Cy1sV9vyDLBs98=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -242,12 +242,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7561-eyBf4IdkWLl9BTMojbO2-cas
+      string: ST-138779-XS0arV2OGobKubUsl3qb-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -277,12 +277,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!HR5QG0TgSWRA83XNtNHn4GsLooFbU6HGEyKDf92u+W9Rq4MNOVfP+6/vNprWUNNjHBdjGNKuLYlUo4c=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!XWWJgTGlGJLo5RPm9OGvBt4MxRMcjnlLIpss8Qom7NIPVFNgGE/pS1IquhgCw/pS0jfTpdc4GuJj+FI=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -291,12 +291,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7562-ixF2YmtY1giaylhbc4wB-cas
+      string: ST-138782-bztJmbRA7jd6epsWgJAM-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -326,12 +326,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!Lxx9xI7V96c29Dzm9OGvBt4MxRMcjmFbLmRcxTjlG/qdDiQvMKTvYd6uPtpsDMYAaKJrxW9hykGn7Zk=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!DHIRoyKZPvYTownNtNHn4GsLooFbU2RRBqQMn/uJSlFgF8SzZe2RAHqxsnZNZLzDfI0DRDSyqi4EorQ=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -340,12 +340,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7564-qMyIy36VfnT4zmtgcPF3-cas
+      string: ST-138777-j697oPlvl16Oxw3Dh4dF-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -375,12 +375,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!uzcKy08/UVqTqNzm9OGvBt4MxRMcjgwi1hTRLaCq2HPN6Vjl3ZdRufC37KWIH5ri+cWXdONLLWQitn4=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!HCRwIrPycO3hnJDNtNHn4GsLooFbU6ZBtwmDepSYxdUT380Wc8g0ZyaAkueQ7oc6qG+8/nguoNvxRNc=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -389,12 +389,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7566-3SUmdjRgbEXQpRZKLuA7-cas
+      string: ST-138774-J5QT9ruPhaxu4lYKHZDa-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -424,12 +424,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!LuxSvrbhj4pOh6LNtNHn4GsLooFbUzpXpqOIe7CvZXTjl0YGauFoovCgOybxA+mP/PcZNSOEk2+mXfw=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!xmYmZEPNzJj5Y7nNtNHn4GsLooFbU95SnQx+9vE2fGMZvklRyjU3Gh7EPNB8r2ArBYcyFEq5A1OV8zI=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -438,12 +438,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7567-4CViVe6IfGJLigB7ZZ9D-cas
+      string: ST-138775-rQsEDblGa3Vl7JZvl7Fh-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -473,12 +473,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!3uOcEBnf+wIFaLfNtNHn4GsLooFbUxIMnknn3S0ImVlJUG/xsahfoH45YRYtlfCsrdrlur6DBjaBF6w=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!XlKppgSKdfdXigLm9OGvBt4MxRMcjoOJCcEoacMYKLVCXHRPvGIVt1rBXKDz6WIQqPVE0nw1NojnA0g=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -487,12 +487,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7570-fEjZzhvtVpF4PePfb60A-cas
+      string: ST-138784-ks2hnz4osnekgCmla0gz-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -522,12 +522,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!Oi9gsOtO9XjJmlnNtNHn4GsLooFbUwdyw3YwPiMtYTI7i1v8jFj/O49r8L7UOnG9j/7PBp+9XQUAF7Q=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!Dj7JLFKY0bLD19fm9OGvBt4MxRMcjnsDVwFF8Yw9fQ8D6NbMZBsP1jas+dIMPUT+/hpAldj9ow60c+w=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -536,12 +536,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7568-c3qhQRXgNPSVOgPwFEci-cas
+      string: ST-138772-LdgOCYKgudujIKN1lsfI-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -571,12 +571,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!SOWJdJaYbGpv4l7NtNHn4GsLooFbU5LpJDt4pfRSW9IgkjuUK2abzMx5Fw9kFcjWVHuzpQYB4TlLe+w=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!4togoWiKyVVl6OfNtNHn4GsLooFbU+Z7dV+dvg7SLoK8o3jkyjs2KrGEqZJTpVzSBFOfsLvfAGVlbss=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -585,12 +585,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7569-6ZMToGARsMANNO0DGBWe-cas
+      string: ST-138781-YwIjXb002pchzN4PvQI4-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -620,12 +620,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!WJYVw8HWe2EN1nLm9OGvBt4MxRMcjoYZQkmQDMsbmYiVCnd+rNmfV0cWfOYR7LYPe/rPh/50YHEmDOY=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!0SlhLnEFlgkQmWnm9OGvBt4MxRMcjpYsXCDKx1SvtCgCpB1FsASN0VLvtZrq/I8XDe5CKrLvs/4IsVw=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -634,12 +634,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7572-VADMOLrs0LGUIFwZhbev-cas
+      string: ST-138773-MDeXms9qGeleRAzddoz3-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -669,12 +669,12 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!liTd1QsNt+d9gfDm9OGvBt4MxRMcjn3DhlzCXgICc0uDDufaH5vBPBAZ++Z2o1Sxs9CCRHL8V2WX0r4=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!JiHvPP+ZvNEq8p/m9OGvBt4MxRMcjgxd1o5xyvrVs74U8IHcKWX++vcqrdPDgDkBAgkvMBLAwvGviXA=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -683,12 +683,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7571-C9w1pfvLWc4HLrouaHi7-cas
+      string: ST-138783-U5eB4mdCIndhQ5jMa1TF-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -718,26 +718,26 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!BEC2JQyZfMYTBVvm9OGvBt4MxRMcjoqbnLSGA5kbbnEeE6M75IZmZ9ivRu5xok+RihoKnxp3RyzAJmQ=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!hbCX+r7mw+++j2bm9OGvBt4MxRMcjtdJ2TFHIUjWuMbAw5+bY/zcVZpNIyp0AvQBsqenhBenEUsjaYo=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7573-JdVB2gngiLyel1ub9gC7-cas
+      string: ST-138785-iEi5ngmjjtbYT44HbHmv-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8147-5HRV0w1Jz4XwZRhzFTbUEGypzOqNVSyYbb4mQAsPfp1yadS4Dm-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -767,26 +767,173 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '32'
+      - '34'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       Set-Cookie:
-      - BIGipServervsacweb_p=!AUBpvjvl+ruFNELm9OGvBt4MxRMcjjzfpMov6zc9NURtNg2Wg8wOTnRvU8wEoXFSe4xnChiXupyXb9k=;
-        expires=Mon, 25-Feb-2019 18:35:32 GMT; path=/; Httponly; Secure
+      - BIGipServervsacweb_p=!ONvnbrKyEaiHXHHm9OGvBt4MxRMcjjJx6TFQa5MXRs6t2/2oazHPPhhQqntqOMq5393TdpzrAyq60ks=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.111 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-7574-D4X5bB7kho6XjY6nQB9j-cas
+      string: ST-138786-D0RgqYboS7n2ZNItysJT-cas
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:32 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!HaCqryvODGO6cJbNtNHn4GsLooFbU1FDNnnK+6auU5Co8xe2k/rHTdibc2Wkh8Ic029PXOZ1g1BYlr8=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-138787-OzIF3qwmzKuQyR3YwlTo-cas
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Ka4mNPJMl41s/jPm9OGvBt4MxRMcjj7qSPZLDlYE9TXGg7Z+SwzaHG0ezcTNIUU1WY3+ue9b5KzLnow=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.112 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-138788-fHfpUowXfLigcVYYJdYd-cas
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-22959-NHqTFW39zdgnjC9cW0MjHKPcbVchyk1xmKqqDwjiWuFafsrMkr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '34'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!J4OCCPdflJtYYD7NtNHn4GsLooFbUzjfwLBKGglLvbk/O/E7svpuEkW8BPnSMKynSf7//o4fP00Y4dQ=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-138789-7ki6vm52xgUlCipCzb0q-cas
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-7566-3SUmdjRgbEXQpRZKLuA7-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1110.23&profile=MU2%20Update%202016-04-01&ticket=ST-138787-OzIF3qwmzKuQyR3YwlTo-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -808,9 +955,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!1wRv/WQ+VPvG79zm9OGvBt4MxRMcjiPhELaOfhStnWeInQFLv8bkRgBhW860vQjgujN4WKAkncJg4oo=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=FF3146C8FB5AECF4CAD1378B0FEB48D6; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!g274EsA8vlWEP6Pm9OGvBt4MxRMcjjAb8zjNiU7glMDRqF75TqMYYf6PuftBIK/2UpOHdI4h2LOiWNM=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=0313F108AAF0F388C639A2D3FB9AFBD0; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -820,13 +967,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1356'
+      - '3311'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -834,24 +981,33 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1110.23" displayName="Intensive Care Unit" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
-                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
+                    <ns0:Concept code="309904001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intensive care unit (environment)"/>
+                    <ns0:Concept code="309905000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Adult intensive care unit (environment)"/>
+                    <ns0:Concept code="309907008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cardiac intensive care unit (environment)"/>
+                    <ns0:Concept code="309908003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Metabolic intensive care unit (environment)"/>
+                    <ns0:Concept code="309909006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neurological intensive care unit (environment)"/>
+                    <ns0:Concept code="309910001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pediatric intensive care unit (environment)"/>
+                    <ns0:Concept code="309911002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Respiratory intensive care unit (environment)"/>
+                    <ns0:Concept code="418433008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Surgical intensive care unit (environment)"/>
+                    <ns0:Concept code="426439001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Burns intensive care unit (environment)"/>
+                    <ns0:Concept code="441994008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Medical intensive care unit (environment)"/>
+                    <ns0:Concept code="448391000124102" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Trauma intensive care unit (environment)"/>
                 </ns0:ConceptList>
-                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent codes for intensive care units (ICU).),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed. The intent of this data element is to identify patients in intensive care units. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing adult and pediatric intensive care units (ICU).),(Exclusion Criteria: Excludes codes for neonatal intensive care units (NICU).)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+                <ns0:RevisionDate>2018-02-01</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1010&profile=MU2%20Update%202016-04-01&ticket=ST-7559-6qCMocMSoJQOdySLCT9g-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1010&profile=MU2%20Update%202016-04-01&ticket=ST-138783-U5eB4mdCIndhQ5jMa1TF-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -873,9 +1029,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!k2zWjwi/38+r/gXm9OGvBt4MxRMcjhEqoWcvU9vfux9nZXt1t6lrHtxL9zMwgoNlOHIhdk86/zXYlCI=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=26704BD20211D4FD87E492755827BF21; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!C0mawA1KZTyJKoTm9OGvBt4MxRMcjtUh35g0eTIYQw/N2SLaF3NZMsERG0ZBwQHPDPhRuEJD6CdfpyI=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=7FB743CB4D1998CB47BBB723776A322A; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -885,13 +1041,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '5268'
+      - '5272'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -909,7 +1065,7 @@ http_interactions:
                     <ns0:Concept code="99285" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Emergency department visit for the evaluation and management of a patient, which requires these 3 key components within the constraints imposed by the urgency of the patient's clinical condition and/or mental status: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of high severity and pose an immediate significant threat to life or physiologic function."/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent patients who have had an interaction with a member of their medical care team in the emergency department.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with care provided to new and established patients in the emergency department. This is a value set grouping that includes CPT and SNOMED CT codes.),(Exclusion Criteria: Excludes services not performed in the emergency department, including critical care and observation services.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent patients who have had an interaction with a member of their medical care team in the emergency department.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with care provided to new and established patients in the emergency department. This is a value set grouping that includes CPT and SNOMED CT codes.),(Exclusion Criteria: Excludes services not performed in the emergency department, including critical care and observation services.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1050:Emergency Department Visit),(2.16.840.1.113883.3.464.1003.101.11.1263:Emergency Department Visits)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -918,10 +1074,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1059&profile=MU2%20Update%202016-04-01&ticket=ST-7562-ixF2YmtY1giaylhbc4wB-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1004&profile=MU2%20Update%202016-04-01&ticket=ST-138778-Rb5O5A1utNf4vDrQM7Fi-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -943,9 +1099,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!fSIjcp9DtkVs5JTm9OGvBt4MxRMcjqKBCNojRjh7mZwSZVJxQ9wLgioehIWCmgzFa8pZR2590oAyb74=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=B17E15DF05FB082E856A15DD3EF38FEB; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!FLpY0UGuUH/uS1TNtNHn4GsLooFbU5xWKx0j/heS7wBBOsAA8S6G1GpBVqAOdQBaUCkStcLJ7uAPdbU=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=313B5E26D7766E734AC27389AF9E2955; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -955,149 +1111,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '3230'
+      - '3517'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1059" displayName="Detoxification Visit" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="182969009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dependent drug detoxification (regime/therapy)"/>
-                    <ns0:Concept code="20093000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol rehabilitation and detoxification (regime/therapy)"/>
-                    <ns0:Concept code="23915005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Combined alcohol and drug rehabilitation and detoxification (regime/therapy)"/>
-                    <ns0:Concept code="414054004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence home detoxification (regime/therapy)"/>
-                    <ns0:Concept code="414056002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence self detoxification (regime/therapy)"/>
-                    <ns0:Concept code="56876005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug rehabilitation and detoxification (regime/therapy)"/>
-                    <ns0:Concept code="61480009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug detoxification (regime/therapy)"/>
-                    <ns0:Concept code="64297001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Detoxication psychiatric therapy for alcoholism (regime/therapy)"/>
-                    <ns0:Concept code="67516001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Detoxification therapy (regime/therapy)"/>
-                    <ns0:Concept code="87106005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Combined alcohol and drug detoxification (regime/therapy)"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent detoxification visits.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying alcohol and drug detoxification. This is a grouping of SNOMED CT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1228:Detoxification Visit)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1007&profile=MU2%20Update%202016-04-01&ticket=ST-7561-eyBf4IdkWLl9BTMojbO2-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!PcOsR5HK22dq483NtNHn4GsLooFbU3TxOK8mf14szKIUIUbRDExOS9AUVA7Uz9631puVpSAJOok89hM=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=4300EBF09240FDABE276BDD026DC98AA; Path=/vsac; HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '1644'
-      Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1007" displayName="Discharge Services - Hospital Inpatient" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="99238" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Hospital discharge day management; 30 minutes or less"/>
-                    <ns0:Concept code="99239" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Hospital discharge day management; more than 30 minutes"/>
-                </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital discharge services.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying hospital discharge day management. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1035:Discharge Services - Hospital Inpatient)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1004&profile=MU2%20Update%202016-04-01&ticket=ST-7572-VADMOLrs0LGUIFwZhbev-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!++v6YnqnRkF0d97NtNHn4GsLooFbU7DkxWGCHiANFPlI14W7F0xoomP6yNLqN+J0VwuOwSD6aHgrFrA=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=D5F72D4F664337CDBEC3B80080C1F29C; Path=/vsac; HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '3513'
-      Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1116,7 +1132,7 @@ http_interactions:
                     <ns0:Concept code="99223" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Initial hospital care, per day, for the evaluation and management of a patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the problem(s) requiring admission are of high severity. Typically, 70 minutes are spent at the bedside and on the patient's hospital floor or unit."/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital visits.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with initial hospital care for the evaluation and management of a patient. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital visits.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with initial hospital care for the evaluation and management of a patient. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1020:Hospital Inpatient Visit - Initial)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -1125,10 +1141,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1002&profile=MU2%20Update%202016-04-01&ticket=ST-7573-JdVB2gngiLyel1ub9gC7-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1002&profile=MU2%20Update%202016-04-01&ticket=ST-138779-XS0arV2OGobKubUsl3qb-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1150,9 +1166,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!b9WQ/dp5a56rfpXNtNHn4GsLooFbU/utGNmO+NA9lWYXqFYhifhXj92Paq3mzYy2QlXDEF1uqvqI34s=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=C03BB791BC337DC137309CF1B157B70A; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!7EcBbICj3Nlxpy3NtNHn4GsLooFbUxbMBbkUTwAue+jmcf2DDyu9CO0Dl6jFkQmjTIyKHcl9yPajMlk=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=A7A5E4391DE377BE4CF78C25687AB423; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1162,9 +1178,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '3646'
+      - '3650'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1183,7 +1199,7 @@ http_interactions:
                     <ns0:Concept code="99220" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Initial observation care, per day, for the evaluation and management of a patient, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the problem(s) requiring admission to &quot;observation status&quot; are of high severity. Typically, 70 minutes are spent at the bedside and on the patient's hospital floor or unit."/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent initial inpatient hospital observation care.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with initial observation care for the evaluation and management of a patient. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent initial inpatient hospital observation care.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with initial observation care for the evaluation and management of a patient. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1010:Hospital Observation Care - Initial)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -1192,10 +1208,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-7565-PWc5ilZkkeNwnZq4gP9T-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.666.5.307&profile=MU2%20Update%202016-04-01&ticket=ST-138788-fHfpUowXfLigcVYYJdYd-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1217,9 +1233,140 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!dN3hY5sb26PXqLrm9OGvBt4MxRMcjrXII4Rktfkl1gAnj8WvJJW7R4C2bEoCSAERA+Iuq69SNcYSvec=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=201952C0FF7156310867ACDE037D7C38; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!cvNfASlnFdfMh3nm9OGvBt4MxRMcjp/CDOtl5is6+U3XYbJv7KrHQMtzH5K84mp/iH3qhI2kvRflGzc=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=33996A1A4B9307C5990E616C008EFF7D; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1692'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.666.5.307" displayName="Encounter Inpatient" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="183452005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency hospital admission (procedure)"/>
+                    <ns0:Concept code="32485007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission (procedure)"/>
+                    <ns0:Concept code="8715000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, elective (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>Lantana</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent the most common inpatient encounter types.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an inpatient encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing inpatient encounter.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1108.15&profile=MU2%20Update%202016-04-01&ticket=ST-138786-D0RgqYboS7n2ZNItysJT-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!NUpJZVYZI1y3sJPNtNHn4GsLooFbU2OzAHxAXnDz9DEd5t+2ltDyCUqfLW3z4nBY1VlOAJC5TnqoZk4=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=EB1D92B8D98CF974F3476E6495E1D962; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1631'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1108.15" displayName="Hospice care ambulatory" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="385763009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospice care (regime/therapy)"/>
+                    <ns0:Concept code="385765002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospice care management (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>Mathematica</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent patients receiving hospice care outside of a hospital or long term care facility.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Procedure, Order or Intervention, Order. The intent of this value set is to identify all patients receiving hospice care outside of a hospital or long term care facility. ),(Inclusion Criteria: Includes only relevant concepts associated with hospice care concepts.),(Exclusion Criteria: Excludes concepts for palliative care or comfort measures.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-138777-j697oPlvl16Oxw3Dh4dF-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!VFY2Lyw4yLyFT+fm9OGvBt4MxRMcjggOJ4+itvtFtPavMv/SsWe3sh0mFuwtZm2L0XTfx9Qj/5uAFRs=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=B68C71DE890D9C2EDB54FB37544EBE40; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1231,7 +1378,7 @@ http_interactions:
       Content-Length:
       - '1765'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1261,10 +1408,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1006&profile=MU2%20Update%202016-04-01&ticket=ST-7568-c3qhQRXgNPSVOgPwFEci-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1006&profile=MU2%20Update%202016-04-01&ticket=ST-138784-ks2hnz4osnekgCmla0gz-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1286,9 +1433,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!LD2b7liSkwTIeCfm9OGvBt4MxRMcjkMMZvS4wD3yt2aJ+cJyZUFxVkIwlcthdmytE9QsZf4sil4CBo0=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=D950F516E09BB2AFA96BB297A469F309; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!SBYyp0FudWZ5HmbNtNHn4GsLooFbUxS42C2zMADb+pmgK4pcFnqfgMT3bwjwTbuDNjqt9TYzAkSMSfs=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=215CE4052873095B1B082C3EBA90C414; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1298,9 +1445,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '3865'
+      - '3869'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1319,7 +1466,7 @@ http_interactions:
                     <ns0:Concept code="99236" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Observation or inpatient hospital care, for the evaluation and management of a patient including admission and discharge on the same date, which requires these 3 key components: A comprehensive history; A comprehensive examination; and Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually the presenting problem(s) requiring admission are of high severity. Typically, 55 minutes are spent at the bedside and on the patient's hospital floor or unit."/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital same day discharge services.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying observation or inpatient care for the evaluation and management of a patient that results in discharge on the same date of admission. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital same day discharge services.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying observation or inpatient care for the evaluation and management of a patient that results in discharge on the same date of admission. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1030:Discharge Services - Hospital Inpatient Same Day Discharge)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -1328,10 +1475,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1048&profile=MU2%20Update%202016-04-01&ticket=ST-7571-C9w1pfvLWc4HLrouaHi7-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-138789-7ki6vm52xgUlCipCzb0q-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1353,9 +1500,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!rKE3ZJBRZ85cKkLNtNHn4GsLooFbU2z2tXV5HXqcdJ0ZlozsNj8LfSa/GcfZDZiV45IPWw9MVvSlz5I=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=8635C7D0D8B2B0C58F5213C3BA236C92; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!xGxIt2f0iGr2mxDNtNHn4GsLooFbU76UifboLWcNr+nXQ8DEkXGB1UKY3y7aQEmDfH840OAJs630iM0=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=3563E59128FB29FD2283BE5AAF3E7525; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1365,9 +1512,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '4206'
+      - '1405'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1379,38 +1526,23 @@ http_interactions:
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1048" displayName="Face-to-Face Interaction" version="N/A">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.117.1.7.1.292" displayName="Emergency Department Visit" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="12843005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent hospital visit by physician (procedure)"/>
-                    <ns0:Concept code="18170008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Subsequent nursing facility visit (procedure)"/>
-                    <ns0:Concept code="185349003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Encounter for &quot;check-up&quot; (procedure)"/>
-                    <ns0:Concept code="185463005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Visit out of hours (procedure)"/>
-                    <ns0:Concept code="185465003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Weekend visit (procedure)"/>
-                    <ns0:Concept code="19681004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nursing evaluation of patient and report (procedure)"/>
-                    <ns0:Concept code="207195004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="History and physical examination with evaluation and management of nursing facility patient (procedure)"/>
-                    <ns0:Concept code="270427003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient-initiated encounter (procedure)"/>
-                    <ns0:Concept code="270430005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Provider-initiated encounter (procedure)"/>
-                    <ns0:Concept code="308335008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient encounter procedure (procedure)"/>
-                    <ns0:Concept code="390906007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up encounter (procedure)"/>
-                    <ns0:Concept code="406547006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Urgent follow-up (procedure)"/>
-                    <ns0:Concept code="439708006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Home visit (procedure)"/>
-                    <ns0:Concept code="87790002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Follow-up inpatient consultation visit (procedure)"/>
-                    <ns0:Concept code="90526000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Initial evaluation and management of healthy individual (procedure)"/>
+                    <ns0:Concept code="4525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency department patient visit (procedure)"/>
                 </ns0:ConceptList>
-                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set indentifies patients who have had a face-to-face interaction with a member of their medical care team.),(Data Element Scope: This value set was intended to map to the QDM data type of encounter.),(Inclusion Criteria: Includes both initial and follow up visits. Includes home visits, inpatient and outpatient visits, and nursing facility visits.),(Exclusion Criteria: Excludes visits that are not performed in-person, including telehealth services.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1216:Face-to-Face Interaction)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent procedures representing an emergency department encounter.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an emergency department encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with an emergency department visit encounter using the SNOMED CT code system.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-7569-6ZMToGARsMANNO0DGBWe-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-138782-bztJmbRA7jd6epsWgJAM-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1432,9 +1564,74 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!C7oaOuX1eltiBabm9OGvBt4MxRMcjmO8f5zF/3ResPfhTQyUlycLJtFL+9mkRSLl0y/ofSIpwfMWz2g=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=7C65B45848019E8076D7AE7DA456FE08; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!xwP5mBWbExaBmDrm9OGvBt4MxRMcjrQ+Q4LVZAb0VVXFbkH958lQBGdxv8vvQijMRfuoZtPe9M5hdjU=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=732DB1A920E0B4F308BC89216A423AA5; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1356'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
+                </ns0:ConceptList>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-138774-J5QT9ruPhaxu4lYKHZDa-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!25xWQPf9w9J6Tgnm9OGvBt4MxRMcjldbtt0Q0rkNdKZnVJzBvRb57cTAz0rHCx0DiBkhSIzbemePHrs=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=69E859F8C60C7C6F1640538E2E0B13EC; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1446,11 +1643,11 @@ http_interactions:
       Content-Length:
       - '1128'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
+      - "/Common/vsacweb_p 10.1.5.112 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1472,10 +1669,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.106.12.1005&profile=MU2%20Update%202016-04-01&ticket=ST-7574-D4X5bB7kho6XjY6nQB9j-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.106.12.1005&profile=MU2%20Update%202016-04-01&ticket=ST-138772-LdgOCYKgudujIKN1lsfI-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1497,9 +1694,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!LUg9gBvI54YlJtjNtNHn4GsLooFbU1iItkFpchbDfUMA1o2giNfT4xvlpoYnzVfgpYWeHCYNtbERUQ8=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=95B343FD14F3CF3AC3D4922D0274E719; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!AAO0zyIS/9F9g5Lm9OGvBt4MxRMcjl0zm2OYC7Ibln/yhDBBg4S/IuOwHUmYFh6CGX0EPhMvrP6Kkhw=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=219030B88D4294DB738C538FF71B2860; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1509,9 +1706,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '8345'
+      - '8349'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1563,7 +1760,7 @@ http_interactions:
                     <ns0:Concept code="707166002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol reduction program (regime/therapy)"/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent treatment for alcohol and drug dependence.),(Data Element Scope: This value set may use Quality Data Model (QDM) category related to Encounter.),(Inclusion Criteria: Includes only relevant concepts associated with assessment, management, and both psychosocial and pharmacological treatment of alcohol and drug dependence. This is a grouping of SNOMED CT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent treatment for alcohol and drug dependence.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter.),(Inclusion Criteria: Includes only relevant concepts associated with assessment, management, and both psychosocial and pharmacological treatment of alcohol and drug dependence. This is a grouping of SNOMED CT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.106.11.1012:Alcohol and Drug Dependence Treatment)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -1572,10 +1769,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.526.3.1496&profile=MU2%20Update%202016-04-01&ticket=ST-7570-fEjZzhvtVpF4PePfb60A-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-138785-iEi5ngmjjtbYT44HbHmv-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1597,76 +1794,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!IXB/lNKda6WnlWvNtNHn4GsLooFbU3IYkHwOmsZNI+x/3eTTFF+YK7CB8bwfICS7nb6aCpeXOvVSQ4Y=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=228C70EBE50AE11547D7D540CF7899F5; Path=/vsac; HttpOnly;Secure
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/xml;charset=utf-8
-      Content-Length:
-      - '1766'
-      Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.111 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: |
-        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
-            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.526.3.1496" displayName="Psych Visit - Psychotherapy" version="N/A">
-                <ns0:ConceptList>
-                    <ns0:Concept code="90832" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 30 minutes with patient and/or family member"/>
-                    <ns0:Concept code="90834" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 45 minutes with patient and/or family member"/>
-                    <ns0:Concept code="90837" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 60 minutes with patient and/or family member"/>
-                </ns0:ConceptList>
-                <ns0:Source>PCPI Foundation</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent visits for psychotherapy.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter.),(Inclusion Criteria: Includes only relevant concepts associated with visits for individual psychotherapy services.),(Exclusion Criteria: Excludes group psychotherapy or family psychotherapy.)</ns0:Purpose>
-                <ns0:Definition>(2.16.840.1.113883.3.526.2.1927:Psych Visit - Psychotherapy)</ns0:Definition>
-                <ns0:Type>Grouping</ns0:Type>
-                <ns0:Binding>Dynamic</ns0:Binding>
-                <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
-            </ns0:DescribedValueSet>
-        </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
-- request:
-    method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-7564-qMyIy36VfnT4zmtgcPF3-cas
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Set-Cookie:
-      - BIGipServervsacweb_p=!qM6htZr6kSwz45rm9OGvBt4MxRMcjqOjVsY5DE11eGeNfrtV2/qDafzfPmCDOLnC6cPjjF/60W7EaCA=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=18827B2BFBD269A93DFA48B7C9440D33; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!8+ZKEdsfGeEG8LPNtNHn4GsLooFbUxkf/9cdCkSZu2w5JgqBDSLZj82nMDC3PrHsHIB1Z6NsW8SR/fM=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=FE9A52315AC5E40E789296F468D9D363; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1678,7 +1808,7 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1843,10 +1973,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-7563-s9e0A2Q05J7cfUaJszdI-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1007&profile=MU2%20Update%202016-04-01&ticket=ST-138775-rQsEDblGa3Vl7JZvl7Fh-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1868,9 +1998,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!RTo65eA03lwhxQXNtNHn4GsLooFbU9PIhv6eP4aYoK9LWwsLH2R1/cgw9eptrBknFa9ayZh4Bt8IQ3g=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=FC77DA6803EBD622E61DE4FAFDB4227D; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!0ueOBIAutNE0A6HNtNHn4GsLooFbU+BBN/iUWQKipfDl5azSvf2V83Om/6Gk6S/qxq7EskkaQ1la89w=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=542336716241AD2BAA532E47D1974425; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1880,9 +2010,229 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '9516'
+      - '1648'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1007" displayName="Discharge Services - Hospital Inpatient" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="99238" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Hospital discharge day management; 30 minutes or less"/>
+                    <ns0:Concept code="99239" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Hospital discharge day management; more than 30 minutes"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent inpatient hospital discharge services.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying hospital discharge day management. This is a grouping of CPT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1035:Discharge Services - Hospital Inpatient)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1059&profile=MU2%20Update%202016-04-01&ticket=ST-138781-YwIjXb002pchzN4PvQI4-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Ymis8zZLFSJMunnNtNHn4GsLooFbU6/68w5CrJ7YwXXwA07YliKPLoqdLv4HqVTDk4iN0y7yK30FfY4=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=1D3500B41182345EAEF1B663E2E3BFCC; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '3234'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.101.12.1059" displayName="Detoxification Visit" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="182969009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dependent drug detoxification (regime/therapy)"/>
+                    <ns0:Concept code="20093000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol rehabilitation and detoxification (regime/therapy)"/>
+                    <ns0:Concept code="23915005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Combined alcohol and drug rehabilitation and detoxification (regime/therapy)"/>
+                    <ns0:Concept code="414054004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence home detoxification (regime/therapy)"/>
+                    <ns0:Concept code="414056002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence self detoxification (regime/therapy)"/>
+                    <ns0:Concept code="56876005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug rehabilitation and detoxification (regime/therapy)"/>
+                    <ns0:Concept code="61480009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug detoxification (regime/therapy)"/>
+                    <ns0:Concept code="64297001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Detoxication psychiatric therapy for alcoholism (regime/therapy)"/>
+                    <ns0:Concept code="67516001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Detoxification therapy (regime/therapy)"/>
+                    <ns0:Concept code="87106005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Combined alcohol and drug detoxification (regime/therapy)"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent detoxification visits.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with identifying alcohol and drug detoxification. This is a grouping of SNOMED CT codes.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1228:Detoxification Visit)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.526.3.1496&profile=MU2%20Update%202016-04-01&ticket=ST-138776-PfPEz14aYvvbl7HaDOC0-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!kapy9ANRurghfbLm9OGvBt4MxRMcjqvIpgZ16CbMqg4nbJEPnnNkBu2VAiq9672ByX+59wUIekwLS5k=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=201B04ACD28DC964D4325725BD2601AE; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '4346'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.111 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.526.3.1496" displayName="Psych Visit - Psychotherapy" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="183381005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="General psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="183382003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychotherapy - behavioral (regime/therapy)"/>
+                    <ns0:Concept code="183383008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychotherapy - cognitive (regime/therapy)"/>
+                    <ns0:Concept code="18512000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Individual psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="302242004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Long-term psychodynamic psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="304820009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Developmental psychodynamic psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="304822001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychodynamic-interpersonal psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="314034001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychodynamic psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="38678006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Client-centered psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="401157001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Brief solution focused psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="443730003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Interpersonal psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="75516001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="90102008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Social psychotherapy (regime/therapy)"/>
+                    <ns0:Concept code="90832" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 30 minutes with patient and/or family member"/>
+                    <ns0:Concept code="90834" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 45 minutes with patient and/or family member"/>
+                    <ns0:Concept code="90837" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Psychotherapy, 60 minutes with patient and/or family member"/>
+                </ns0:ConceptList>
+                <ns0:Source>PCPI Foundation</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent visits for psychotherapy.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter.),(Inclusion Criteria: Includes only relevant concepts associated with visits for individual psychotherapy services.),(Exclusion Criteria: Excludes group psychotherapy or family psychotherapy.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.526.2.1777:Psych Visit Psychotherapy),(2.16.840.1.113883.3.526.2.1927:Psych Visit - Psychotherapy)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2019-03-15</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.101.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-138780-tGgzWzdJTXDYIran2kXH-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Qu30pJ6M4iHFPIzm9OGvBt4MxRMcjsZ6KOoWC61vp9vmvXa7GSAxJnYpw4WUWtrxAhB/QUF1qTls5mM=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=ACDDD05DFC0E226106D2E3E0F3760C7B; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '9520'
+      Date:
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1914,7 +2264,7 @@ http_interactions:
                     <ns0:Concept code="99215" codeSystem="2.16.840.1.113883.6.12" codeSystemName="CPT" codeSystemVersion="2016" displayName="Office or other outpatient visit for the evaluation and management of an established patient, which requires at least 2 of these 3 key components: A comprehensive history; A comprehensive examination; Medical decision making of high complexity. Counseling and/or coordination of care with other physicians, other qualified health care professionals, or agencies are provided consistent with the nature of the problem(s) and the patient's and/or family's needs. Usually, the presenting problem(s) are of moderate to high severity. Typically, 40 minutes are spent face-to-face with the patient and/or family."/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent patients who have had an office or other outpatient visit.),(Data Element Scope: This value set may use Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with comprehensive history, evaluation, and management of a patient in an office or outpatient facility. Patient can be presenting with problems that are minor to high severity. This is a grouping value set of CPT codes.),(Exclusion Criteria: Excludes non-office visits, including telehealth services.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent patients who have had an office or other outpatient visit.),(Data Element Scope: This value set may use the Quality Data Model (QDM) datatype related to Encounter, Performed.),(Inclusion Criteria: Includes only relevant concepts associated with comprehensive history, evaluation, and management of a patient in an office or outpatient facility. Patient can be presenting with problems that are minor to high severity. This is a grouping value set of CPT codes.),(Exclusion Criteria: Excludes non-office visits, including telehealth services.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.101.11.1005:Office Visit),(2.16.840.1.113883.3.464.1003.101.11.1264:Office visits, include weekend, after hours)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -1923,10 +2273,10 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:27 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.106.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-7567-4CViVe6IfGJLigB7ZZ9D-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.106.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-138773-MDeXms9qGeleRAzddoz3-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1948,9 +2298,9 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!sWuqhlOT7kN0AJLNtNHn4GsLooFbUyWgIMtn55+wV/tLfNtNwYies1PJjD98xYmvGagxcrQRjgC5UqQ=;
-        expires=Mon, 25-Feb-2019 18:35:33 GMT; path=/; Httponly; Secure
-      - JSESSIONID=03F73E3A3E91840ED7A13722A07FDCE9; Path=/vsac; HttpOnly;Secure
+      - BIGipServervsacweb_p=!eK9kCKSA+SjMCHDm9OGvBt4MxRMcju5HxaNcBXirSFrCdczdLowNoBhi7EhPJ0w13Ao8j9jhIFZ9qhY=;
+        expires=Mon, 25-Mar-2019 21:01:27 GMT; path=/; Httponly; Secure
+      - JSESSIONID=ECE5CB132D5B0CD622E0AA05DEB5297E; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1960,9 +2310,9 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '94626'
+      - '104920'
       Date:
-      - Mon, 25 Feb 2019 16:35:32 GMT
+      - Mon, 25 Mar 2019 19:01:27 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
@@ -1977,17 +2327,21 @@ http_interactions:
             <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.106.12.1001" displayName="Alcohol and Drug Dependence" version="N/A">
                 <ns0:ConceptList>
                     <ns0:Concept code="10028000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Uncomplicated sedative, hypnotic AND/OR anxiolytic withdrawal (disorder)"/>
+                    <ns0:Concept code="10327003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine-induced mood disorder (disorder)"/>
                     <ns0:Concept code="10741871000119101" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol dependence in pregnancy (disorder)"/>
                     <ns0:Concept code="10755041000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol dependence in childbirth (disorder)"/>
                     <ns0:Concept code="10755161000119102" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence in childbirth (disorder)"/>
                     <ns0:Concept code="1081000119105" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid dependence, on agonist therapy (disorder)"/>
                     <ns0:Concept code="110281001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic drug abuse (disorder)"/>
                     <ns0:Concept code="11061003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance use disorder (disorder)"/>
+                    <ns0:Concept code="111479008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Organic mental disorder (disorder)"/>
                     <ns0:Concept code="111480006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic dementia (disorder)"/>
+                    <ns0:Concept code="11387009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="125851000119106" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Continuous sedative abuse (disorder)"/>
                     <ns0:Concept code="1383008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen mood disorder (disorder)"/>
                     <ns0:Concept code="145101000119102" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Intravenous cocaine abuse (disorder)"/>
                     <ns0:Concept code="145841000119107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Episodic phencyclidine abuse (disorder)"/>
+                    <ns0:Concept code="14784000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="15167005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol abuse (disorder)"/>
                     <ns0:Concept code="15277004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="153491000119103" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence, continuous (disorder)"/>
@@ -2000,6 +2354,16 @@ http_interactions:
                     <ns0:Concept code="191476005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol withdrawal hallucinosis (disorder)"/>
                     <ns0:Concept code="191477001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pathological alcohol intoxication (disorder)"/>
                     <ns0:Concept code="191478006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcoholic paranoia (disorder)"/>
+                    <ns0:Concept code="191480000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol withdrawal syndrome (disorder)"/>
+                    <ns0:Concept code="191483003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced psychosis (disorder)"/>
+                    <ns0:Concept code="191484009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced paranoia or hallucinatory states (disorder)"/>
+                    <ns0:Concept code="191485005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced paranoid state (disorder)"/>
+                    <ns0:Concept code="191486006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced hallucinosis (disorder)"/>
+                    <ns0:Concept code="191492000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced delirium (disorder)"/>
+                    <ns0:Concept code="191493005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced dementia (disorder)"/>
+                    <ns0:Concept code="191494004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced amnestic syndrome (disorder)"/>
+                    <ns0:Concept code="191495003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced depressive state (disorder)"/>
+                    <ns0:Concept code="191496002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced personality disorder (disorder)"/>
                     <ns0:Concept code="191802004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute alcoholic intoxication in alcoholism (disorder)"/>
                     <ns0:Concept code="191804003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Continuous acute alcoholic intoxication in alcoholism (disorder)"/>
                     <ns0:Concept code="191805002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Episodic acute alcoholic intoxication in alcoholism (disorder)"/>
@@ -2032,6 +2396,9 @@ http_interactions:
                     <ns0:Concept code="191882002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nondependent alcohol abuse, continuous (disorder)"/>
                     <ns0:Concept code="191883007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nondependent alcohol abuse, episodic (disorder)"/>
                     <ns0:Concept code="191928000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of antidepressant drug (disorder)"/>
+                    <ns0:Concept code="19303008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol myopathy (disorder)"/>
+                    <ns0:Concept code="19445006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid-induced psychotic disorder with hallucinations (disorder)"/>
+                    <ns0:Concept code="1973000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced psychotic disorder with delusions (disorder)"/>
                     <ns0:Concept code="199252002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence during pregnancy - baby delivered (disorder)"/>
                     <ns0:Concept code="199253007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence in the puerperium - baby delivered (disorder)"/>
                     <ns0:Concept code="199254001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug dependence during pregnancy - baby not yet delivered (disorder)"/>
@@ -2042,6 +2409,11 @@ http_interactions:
                     <ns0:Concept code="21647008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine dependence (disorder)"/>
                     <ns0:Concept code="21831000119109" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine psychosis (disorder)"/>
                     <ns0:Concept code="21841000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine induced mental problem (disorder)"/>
+                    <ns0:Concept code="230334008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced tic (disorder)"/>
+                    <ns0:Concept code="230443000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Narcotic withdrawal epilepsy (disorder)"/>
+                    <ns0:Concept code="231451006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced intensive care psychosis (disorder)"/>
+                    <ns0:Concept code="231458000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of steroids (disorder)"/>
+                    <ns0:Concept code="231459008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of nonpsychotropic analgesic drugs (disorder)"/>
                     <ns0:Concept code="231461004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hypnotic or anxiolytic abuse (disorder)"/>
                     <ns0:Concept code="231462006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barbiturate abuse (disorder)"/>
                     <ns0:Concept code="231467000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Absinthe addiction (disorder)"/>
@@ -2058,6 +2430,7 @@ http_interactions:
                     <ns0:Concept code="231480002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opium dependence (disorder)"/>
                     <ns0:Concept code="231481003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Controlled drug dependence (disorder)"/>
                     <ns0:Concept code="231482005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Active drug dependence (disorder)"/>
+                    <ns0:Concept code="236751006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced impotence (disorder)"/>
                     <ns0:Concept code="237228001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pregnancy and drug dependence (disorder)"/>
                     <ns0:Concept code="2403008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance dependence (disorder)"/>
                     <ns0:Concept code="25508008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pathological drug intoxication (disorder)"/>
@@ -2070,35 +2443,56 @@ http_interactions:
                     <ns0:Concept code="268727002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of non-dependence-producing substances (disorder)"/>
                     <ns0:Concept code="275471001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychostimulant dependence (disorder)"/>
                     <ns0:Concept code="27956007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine intoxication (disorder)"/>
+                    <ns0:Concept code="280982009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of laxatives (disorder)"/>
+                    <ns0:Concept code="280983004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of vitamins (disorder)"/>
+                    <ns0:Concept code="280984005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of herbal medicine (disorder)"/>
+                    <ns0:Concept code="280986007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of antacids (disorder)"/>
+                    <ns0:Concept code="281004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dementia associated with alcoholism (disorder)"/>
+                    <ns0:Concept code="28368009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic hallucinosis (disorder)"/>
                     <ns0:Concept code="284591009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Persistent alcohol abuse (disorder)"/>
+                    <ns0:Concept code="288281000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of herbal medicine or folk remedy (disorder)"/>
                     <ns0:Concept code="28864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced mood disorder (disorder)"/>
+                    <ns0:Concept code="29212009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="29733004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid-induced mood disorder (disorder)"/>
                     <ns0:Concept code="301643003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced persisting amnestic disorder (disorder)"/>
                     <ns0:Concept code="302507002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative amnestic disorder (disorder)"/>
+                    <ns0:Concept code="30310000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nicotine-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="304605000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Methanol abuse (disorder)"/>
                     <ns0:Concept code="30491001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine delusional disorder (disorder)"/>
-                    <ns0:Concept code="308742005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol withdrawal-induced convulsion (disorder)"/>
+                    <ns0:Concept code="30871003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Flashbacks (disorder)"/>
+                    <ns0:Concept code="309279000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Caffeine-induced organic mental disorder (disorder)"/>
+                    <ns0:Concept code="310202009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Arylcyclohexylamine-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="311173003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine-related disorder (disorder)"/>
                     <ns0:Concept code="312098001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-related disorder (disorder)"/>
+                    <ns0:Concept code="312936002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anxiolytic-induced organic mental disorder (disorder)"/>
+                    <ns0:Concept code="313915006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hypnotic-induced organic mental disorder (disorder)"/>
                     <ns0:Concept code="31715000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine delirium (disorder)"/>
                     <ns0:Concept code="31956009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine dependence (disorder)"/>
                     <ns0:Concept code="32009006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen hallucinosis (disorder)"/>
                     <ns0:Concept code="32358001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine delusional disorder (disorder)"/>
+                    <ns0:Concept code="32552001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic delusional disorder (disorder)"/>
                     <ns0:Concept code="32875003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant-induced persisting dementia (disorder)"/>
+                    <ns0:Concept code="33845003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Idiosyncratic drug effect (disorder)"/>
                     <ns0:Concept code="33871004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine-induced psychotic disorder with hallucinations (disorder)"/>
-                    <ns0:Concept code="361149008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hypnotic intoxication (disorder)"/>
+                    <ns0:Concept code="34938008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="361150008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic withdrawal delirium (disorder)"/>
                     <ns0:Concept code="361151007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative withdrawal delirium (disorder)"/>
                     <ns0:Concept code="363101005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug withdrawal (disorder)"/>
+                    <ns0:Concept code="37331004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic mood disorder (disorder)"/>
                     <ns0:Concept code="37344009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis abuse (disorder)"/>
                     <ns0:Concept code="38247002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen dependence (disorder)"/>
+                    <ns0:Concept code="39003006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic delirium (disorder)"/>
+                    <ns0:Concept code="396344000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic intoxication (disorder)"/>
                     <ns0:Concept code="39807006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis intoxication delirium (disorder)"/>
                     <ns0:Concept code="39951001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis-induced anxiety disorder (disorder)"/>
+                    <ns0:Concept code="403590001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cutaneous Munchausen syndrome by proxy (disorder)"/>
                     <ns0:Concept code="40571009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen intoxication delirium (disorder)"/>
+                    <ns0:Concept code="41083005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced sleep disorder (disorder)"/>
                     <ns0:Concept code="416073003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Long duration flashbacks (disorder)"/>
                     <ns0:Concept code="416714005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Episodic flashbacks (disorder)"/>
                     <ns0:Concept code="417143004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Short duration flashbacks (disorder)"/>
                     <ns0:Concept code="417360004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Duplicative flashbacks (disorder)"/>
+                    <ns0:Concept code="42344001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced psychosis (disorder)"/>
                     <ns0:Concept code="425339005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barbiturate withdrawal (disorder)"/>
                     <ns0:Concept code="425533007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Episodic drug abuse (disorder)"/>
                     <ns0:Concept code="425885002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Continuous phencyclidine abuse (disorder)"/>
@@ -2114,11 +2508,13 @@ http_interactions:
                     <ns0:Concept code="428370001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychostimulant withdrawal (disorder)"/>
                     <ns0:Concept code="429001000124103" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Catha edulis abuse (disorder)"/>
                     <ns0:Concept code="429299000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Combined drug dependence, continuous (disorder)"/>
+                    <ns0:Concept code="429672007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Drug-induced mood disorder (disorder)"/>
                     <ns0:Concept code="429692000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine abuse, episodic (disorder)"/>
                     <ns0:Concept code="43497001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine-induced mood disorder (disorder)"/>
                     <ns0:Concept code="434971000124109" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine induced psychotic disorder (disorder)"/>
                     <ns0:Concept code="441527004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Stimulant abuse (disorder)"/>
                     <ns0:Concept code="441681009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dependence on unknown drug (disorder)"/>
+                    <ns0:Concept code="442351006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mental disorder due to drug (disorder)"/>
                     <ns0:Concept code="442406005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Stimulant dependence (disorder)"/>
                     <ns0:Concept code="445273005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Polysubstance abuse (disorder)"/>
                     <ns0:Concept code="46721000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic personality disorder (disorder)"/>
@@ -2130,32 +2526,40 @@ http_interactions:
                     <ns0:Concept code="50320000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen intoxication (disorder)"/>
                     <ns0:Concept code="50722006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine delusional disorder (disorder)"/>
                     <ns0:Concept code="50933003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen delusional disorder (disorder)"/>
+                    <ns0:Concept code="50983008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Panic disorder with agoraphobia, mild agoraphobic avoidance AND panic attacks in partial remission (disorder)"/>
                     <ns0:Concept code="51339003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Polysubstance dependence (disorder)"/>
                     <ns0:Concept code="51443000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine-induced psychotic disorder with hallucinations (disorder)"/>
                     <ns0:Concept code="51493001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="52866005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid intoxication delirium (disorder)"/>
                     <ns0:Concept code="53050002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen-induced organic mental disorder (disorder)"/>
+                    <ns0:Concept code="53936005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced mood disorder (disorder)"/>
                     <ns0:Concept code="5444000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic intoxication delirium (disorder)"/>
                     <ns0:Concept code="55967005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="5602001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid abuse (disorder)"/>
+                    <ns0:Concept code="56194001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Caffeine-induced sleep disorder (disorder)"/>
                     <ns0:Concept code="57588009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced sleep disorder (disorder)"/>
                     <ns0:Concept code="58727001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine dependence (disorder)"/>
                     <ns0:Concept code="59651006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced persisting dementia (disorder)"/>
-                    <ns0:Concept code="60901005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant intoxication (disorder)"/>
                     <ns0:Concept code="61104008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant-induced organic mental disorder (disorder)"/>
+                    <ns0:Concept code="61144001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced psychotic disorder with delusions (disorder)"/>
                     <ns0:Concept code="6348008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine-induced psychotic disorder with hallucinations (disorder)"/>
                     <ns0:Concept code="63649001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis delusional disorder (disorder)"/>
                     <ns0:Concept code="63983005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant-induced psychotic disorder with hallucinations (disorder)"/>
                     <ns0:Concept code="64386003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative abuse (disorder)"/>
                     <ns0:Concept code="6525002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dependent drug abuse (disorder)"/>
+                    <ns0:Concept code="66214007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Substance abuse (disorder)"/>
                     <ns0:Concept code="66590003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol dependence (disorder)"/>
+                    <ns0:Concept code="69482004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Korsakoff's psychosis (disorder)"/>
                     <ns0:Concept code="699449003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Methamphetamine abuse (disorder)"/>
                     <ns0:Concept code="70328006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine delirium (disorder)"/>
                     <ns0:Concept code="70340006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant abuse (disorder)"/>
                     <ns0:Concept code="703845008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Buprenorphine dependence (disorder)"/>
-                    <ns0:Concept code="703848005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis withdrawal (disorder)"/>
                     <ns0:Concept code="703849002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Benzodiazepine withdrawal (disorder)"/>
+                    <ns0:Concept code="7052005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol hallucinosis (disorder)"/>
+                    <ns0:Concept code="70655008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Caffeine-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="7071007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Phencyclidine abuse (disorder)"/>
+                    <ns0:Concept code="70932007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine-induced sexual dysfunction (disorder)"/>
+                    <ns0:Concept code="71328000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid-induced sexual dysfunction (disorder)"/>
                     <ns0:Concept code="7200002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcoholism (disorder)"/>
                     <ns0:Concept code="73097000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol amnestic disorder (disorder)"/>
                     <ns0:Concept code="74851005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hallucinogen abuse (disorder)"/>
@@ -2166,7 +2570,6 @@ http_interactions:
                     <ns0:Concept code="7761000119106" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychotic disorder due to amphetamine use (disorder)"/>
                     <ns0:Concept code="78267003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine abuse (disorder)"/>
                     <ns0:Concept code="78358001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine withdrawal (disorder)"/>
-                    <ns0:Concept code="79578000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol paranoia (disorder)"/>
                     <ns0:Concept code="80868005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cocaine withdrawal (disorder)"/>
                     <ns0:Concept code="82339009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="83168008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic amnestic disorder (disorder)"/>
@@ -2175,11 +2578,11 @@ http_interactions:
                     <ns0:Concept code="85005007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Cannabis dependence (disorder)"/>
                     <ns0:Concept code="85561006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Uncomplicated alcohol withdrawal (disorder)"/>
                     <ns0:Concept code="8635005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol withdrawal delirium (disorder)"/>
-                    <ns0:Concept code="86391000119101" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant dependence, continuous (disorder)"/>
-                    <ns0:Concept code="86401000119104" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant dependence, episodic (disorder)"/>
                     <ns0:Concept code="87132004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Opioid withdrawal (disorder)"/>
                     <ns0:Concept code="8837000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine delirium (disorder)"/>
                     <ns0:Concept code="89451009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhalant-induced mood disorder (disorder)"/>
+                    <ns0:Concept code="90755006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nicotine withdrawal (disorder)"/>
+                    <ns0:Concept code="90790003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Avoidant disorder of adolescence (disorder)"/>
                     <ns0:Concept code="91388009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance abuse (disorder)"/>
                     <ns0:Concept code="95635002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Caffeine withdrawal (disorder)"/>
                     <ns0:Concept code="95661003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Ergotamine withdrawal (disorder)"/>
@@ -2443,7 +2846,7 @@ http_interactions:
                     <ns0:Concept code="F19.29" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other psychoactive substance dependence with unspecified psychoactive substance-induced disorder"/>
                 </ns0:ConceptList>
                 <ns0:Source>National Committee for Quality Assurance</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent alcohol and drug dependence.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Diagnosis.),(Inclusion Criteria: Includes only relevant concepts associated with alcohol and drug abuse and dependence. This is a grouping of ICD-10CM and SNOMED CT codes.),(Exclusion Criteria: Excludes codes related to alcohol and drug use.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent alcohol and drug dependence.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Diagnosis. ),(Inclusion Criteria: Includes only relevant concepts associated with alcohol and drug abuse and dependence. This is a grouping of ICD-10CM and SNOMED CT codes.),(Exclusion Criteria: Excludes codes related to alcohol and drug use.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.464.1003.106.11.1001:Alcohol and Drug Dependence),(2.16.840.1.113883.3.464.1003.106.11.1003:Alcohol and Drug Dependence)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -2452,5 +2855,5 @@ http_interactions:
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
     http_version: 
-  recorded_at: Mon, 25 Feb 2019 16:35:33 GMT
+  recorded_at: Mon, 25 Mar 2019 19:01:28 GMT
 recorded_with: VCR 3.0.3
