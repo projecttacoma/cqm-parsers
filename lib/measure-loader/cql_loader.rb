@@ -3,11 +3,12 @@ module Measures
 
     # Set store_valueset to false if you do not want to load Value Sets directly from VSAC
     # By default, CQL Loader will load Value Sets from VSAC.
-    def initialize(measure_zip, measure_details, value_set_loader, store_valueset = true)
+    def initialize(measure_zip, measure_details, value_set_loader = nil, store_valueset = true)
       @measure_zip = measure_zip
       @measure_details = measure_details.deep_symbolize_keys
       @store_valueset = store_valueset
       @vs_model_cache = {}
+      return unless store_valueset
       value_set_loader.vs_model_cache = @vs_model_cache
       @value_set_loader = value_set_loader
     end
