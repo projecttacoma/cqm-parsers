@@ -1,9 +1,12 @@
 module Measures
   class CqlLoader
 
-    def initialize(measure_zip, measure_details, value_set_loader)
+    # Set store_valueset to false if you do not want to load Value Sets directly from VSAC
+    # By default, CQL Loader will load Value Sets from VSAC.
+    def initialize(measure_zip, measure_details, value_set_loader, store_valueset = true)
       @measure_zip = measure_zip
       @measure_details = measure_details.deep_symbolize_keys
+      @store_valueset = store_valueset
       @vs_model_cache = {}
       value_set_loader.vs_model_cache = @vs_model_cache
       @value_set_loader = value_set_loader
@@ -102,15 +105,21 @@ module Measures
       hqmf_model = HQMF::Parser::V2CQLParser.new.parse(hqmf_xml) # TODO: move away from using V2CQLParser
 
       elms = measure.cql_libraries.map(&:elm)
-      elm_valuesets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
-      verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
-      value_set_models, all_codes_and_code_names, value_sets_from_single_code_references =
-        ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, @vs_model_cache)
-      measure.value_sets = value_set_models
-      measure.source_data_criteria = SourceDataCriteriaLoader.new(hqmf_xml, value_sets_from_single_code_references).extract_data_criteria
 
-      # TODO: Update this block once we move away from V2CQLParser
-      hqmf_model.backfill_patient_characteristics_with_codes(all_codes_and_code_names)
+      if @store_valueset
+        elm_valuesets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
+        verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
+        value_set_models, all_codes_and_code_names, value_sets_from_single_code_references =
+          ValueSetHelpers.load_value_sets_and_process(elms, elm_valuesets, @value_set_loader, @vs_model_cache)
+        measure.value_sets = value_set_models
+        measure.source_data_criteria = SourceDataCriteriaLoader.new(hqmf_xml, value_sets_from_single_code_references).extract_data_criteria
+        
+        # TODO: Update this block once we move away from V2CQLParser
+        hqmf_model.backfill_patient_characteristics_with_codes(all_codes_and_code_names)
+      else
+        measure.source_data_criteria = SourceDataCriteriaLoader.new(hqmf_xml, ValueSetHelpers.make_fake_valuesets_from_single_code_references(elms, @vs_model_cache)).extract_data_criteria
+      end
+
       ## this to_json is needed, it doesn't actually produce json, it just makes a hash that is better
       ## suited for our uses (e.g. source_data_criteria goes from an array to a hash keyed by id)
       hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
