@@ -270,4 +270,16 @@ class CQLLoaderTest < Minitest::Test
       loader.extract_measures
     end
   end
+
+  def test_no_value_set_loader
+    measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts.zip')
+    loader = Measures::CqlLoader.new(measure_file, @measure_details)
+    measures = loader.extract_measures
+    measure = measures[0]
+
+    # value sets should only contain the fake drc generated valuesets
+    assert_equal ["drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381"], measure.value_sets.map(&:oid)
+    # source data criteria that rely on drc should still work
+    assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Laboratory Test, Performed: Hepatitis B virus surface Ag [Presence] in Serum" }.count
+  end
 end
