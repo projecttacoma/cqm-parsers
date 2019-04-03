@@ -88,19 +88,19 @@ module Measures
           )
 
           population_set.populations = construct_population_map(measure_scoring)
-          ps_hash[:populations].each do |pop_code,statement_ref_string|
-            population_set.populations[pop_code] = modelize_statement_ref_string(statement_ref_string)
+          ps_hash[:populations].each do |pop_code,statement_ref_hash|
+            population_set.populations[pop_code] = CQM::StatementReference.new(statement_ref_hash)
           end
 
-          ps_hash[:supplemental_data_elements].each do |statement_ref_string|
-            population_set.supplemental_data_elements << modelize_statement_ref_string(statement_ref_string)
+          ps_hash[:supplemental_data_elements].each do |statement_ref_hash|
+            population_set.supplemental_data_elements << CQM::StatementReference.new(statement_ref_hash)
           end
 
-          ps_hash[:stratifications].each_with_index do |statement_ref_string, index|
+          ps_hash[:stratifications].each_with_index do |statement_ref_hash, index|
             population_set.stratifications << CQM::Stratification.new(
               stratification_id: "#{population_set.population_set_id}_Stratification_#{index+1}",
               title: "PopSet#{pop_index+1} Stratification #{index+1}",
-              statement: modelize_statement_ref_string(statement_ref_string)
+              statement: CQM::StatementReference.new(statement_ref_hash)
             )
           end
           population_set
@@ -115,30 +115,32 @@ module Measures
         criteria_components.each do |cc|
           statement_ref = cc.at_css('precondition/criteriaReference/id')
           next if statement_ref.nil?
-          statement_ref_string = statement_ref.attr('extension')
+          statement_ref_hash = { library_name: statement_ref.attr('extension').split('.')[0],
+                                 statement_name: Utilities.remove_enclosing_quotes(statement_ref.attr('extension').split('.')[1]),
+                                 hqmf_id: cc.at_css('id').attr('root') }
           case cc.name
           when 'initialPopulationCriteria'
-            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_hash
           when 'denominatorCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_hash
           when 'numeratorCriteria'
-            ps[:populations][HQMF::PopulationCriteria::NUMER] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::NUMER] = statement_ref_hash
           when 'numeratorExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::NUMEX] = statement_ref_hash
           when 'denominatorExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::DENEX] = statement_ref_hash
           when 'denominatorExceptionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::DENEXCEP] = statement_ref_hash
           when 'measurePopulationCriteria'
-            ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPL] = statement_ref_hash
           when 'measurePopulationExclusionCriteria'
-            ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:populations][HQMF::PopulationCriteria::MSRPOPLEX] = statement_ref_hash
           when 'stratifierCriteria'
             # Ignore Supplemental Data Elements
             next if holds_supplemental_data_elements(cc)
-            ps[:stratifications] << statement_ref_string + ".#{cc.at_css('id').attr('root')}"
+            ps[:stratifications] << statement_ref_hash
           when 'supplementalDataElement'
-            ps[:supplemental_data_elements] << statement_ref_string
+            ps[:supplemental_data_elements] << statement_ref_hash
           end
         end
         return ps
@@ -162,16 +164,6 @@ module Measures
           raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
         end
       end
-
-      def modelize_statement_ref_string(statement_ref_string)
-        library_name, statement_name, population_hqmf_id = statement_ref_string.split('.', 3)
-        return CQM::StatementReference.new(
-          library_name: library_name,
-          statement_name: Utilities.remove_enclosing_quotes(statement_name),
-          hqmf_id: population_hqmf_id
-        )
-      end
-
     end
   end
 end
