@@ -70,7 +70,7 @@ module Measures
         }
         scoring = qmd.at_xpath("./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/@code='MSRSCORE']/xmlns:value").attr('code')
         scoring_full_name = map_from_hqmf_name_to_full_name[scoring]
-        raise StandardError("Unknown measure scoring type encountered #{scoring}") if scoring_full_name.nil?
+        raise StandardError.new("Unknown measure scoring type encountered #{scoring}") if scoring_full_name.nil?
         return scoring_full_name
       end
 
@@ -155,7 +155,7 @@ module Measures
         when 'COHORT'
           CQM::CohortPopulationMap.new
         else
-          raise StandardError("Unknown measure scoring type encountered #{measure_scoring}")
+          raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
         end
       end
 
