@@ -98,6 +98,7 @@ module Measures
 
           ps_hash[:stratifications].each_with_index do |statement_ref_hash, index|
             population_set.stratifications << CQM::Stratification.new(
+              hqmf_id: statement_ref_hash[:hqmf_id],
               stratification_id: "#{population_set.population_set_id}_Stratification_#{index+1}",
               title: "PopSet#{pop_index+1} Stratification #{index+1}",
               statement: CQM::StatementReference.new(statement_ref_hash)
