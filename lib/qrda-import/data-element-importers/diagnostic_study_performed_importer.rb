@@ -7,8 +7,8 @@ module QRDA
         @code_xpath = './cda:code'
         @relevant_period_xpath = "./cda:effectiveTime"
         @author_datetime_xpath = "./cda:author/cda:time"
-        @result_xpath = "./cda:entryRelationship[@typeCode='REFR']/cda:observation/cda:value"
-        @result_datetime_xpath = "./cda:entryRelationship[@typeCode='REFR']/cda:observation/cda:effectiveTime"
+        @result_xpath = "./cda:entryRelationship[@typeCode='REFR']/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.22.4.2']/cda:value"
+        @result_datetime_xpath = "./cda:entryRelationship[@typeCode='REFR']/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.22.4.2']/cda:effectiveTime"
         @status_xpath = "./cda:entryRelationship/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.93']/cda:value"
         @method_xpath = './cda:methodCode'
         @facility_location_xpath = "./cda:participant[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.100']/cda:participantRole[@classCode='SDLOC']/cda:code"
