@@ -32,34 +32,6 @@ module Measures
         return elm_value_sets
       end
 
-      def load_value_sets_and_process(elms, elm_valuesets, value_set_loader, vs_model_cache)
-        value_set_models = value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_valuesets)
-
-        # Get code systems and codes for all value sets in the elm.
-        value_sets_from_single_code_references = make_fake_valuesets_from_single_code_references(elms, vs_model_cache)
-        value_set_models.push(*value_sets_from_single_code_references)
-
-        all_codes_and_code_names = get_all_codes_and_code_names(value_set_models)
-
-        return value_set_models, all_codes_and_code_names.as_json, value_sets_from_single_code_references
-      end
-      
-      private
-
-      def get_all_codes_and_code_names(value_sets)
-        all_codes_and_code_names = {}
-        value_sets.each do |value_set|
-          code_sets = {}
-          value_set.concepts.each do |concept|
-            code_sets[concept.code_system_name] ||= []
-            code_sets[concept.code_system_name] << concept.code
-          end
-          all_codes_and_code_names[value_set.oid] = code_sets
-        end
-
-        return all_codes_and_code_names
-      end
-
       # Add single code references by finding the codes from the elm and creating new ValueSet objects
       # With a generated GUID as a fake oid.
       def make_fake_valuesets_from_single_code_references(elms, vs_model_cache)
