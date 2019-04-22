@@ -52,23 +52,31 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 'Population Criteria Section', population_set.title
       assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
       assert_equal 'Initial Population', population_set.populations.IPP.statement_name
+      assert_equal '93C1E91C-806B-4F57-946D-D145D1BD08E2', population_set.populations.IPP.hqmf_id
       assert_equal 'Measure Population', population_set.populations.MSRPOPL.statement_name
+      assert_equal '4725E77E-3D0F-46AC-A175-8DEFDE19EC8A', population_set.populations.MSRPOPL.hqmf_id
       assert_equal 'Measure Population Exclusions', population_set.populations.MSRPOPLEX.statement_name
+      assert_equal '31E49A75-5D9F-441D-96D0-FE2FED1B006B', population_set.populations.MSRPOPLEX.hqmf_id
 
       # check stratifications
       assert_equal 2, population_set.stratifications.size
       assert_equal 'PopulationSet_1_Stratification_1', population_set.stratifications[0].stratification_id
       assert_equal 'PopSet1 Stratification 1', population_set.stratifications[0].title
+      assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].hqmf_id
       assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
+      assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].statement.hqmf_id
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[0].statement.library_name
       assert_equal 'PopulationSet_1_Stratification_2', population_set.stratifications[1].stratification_id
       assert_equal 'PopSet1 Stratification 2', population_set.stratifications[1].title
+      assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].hqmf_id
       assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
+      assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].statement.hqmf_id
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[1].statement.library_name
 
       # check observation
       assert_equal population_set.observations.size, 1
       assert_equal 'Measure Observation', population_set.observations[0].observation_function.statement_name
+      assert_equal '2D7701F3-F93D-4994-84F6-0FA00FAA81C9', population_set.observations[0].hqmf_id
       assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
 
       # check SDE
