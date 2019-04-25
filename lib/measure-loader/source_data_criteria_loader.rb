@@ -12,7 +12,7 @@ module Measures
 
       # We create the sdc in such a way that "negative" ones look positive in our array by now,
       # so using uniq should give us an array of all positive criteria with no duplicates
-      source_data_criteria.uniq!(&:hqmfOid)
+      source_data_criteria.uniq!(&:codeListId)
       return source_data_criteria
     end
 
@@ -42,7 +42,7 @@ module Measures
     end
 
     def extract_fields_from_single_code_reference_data_criteria(criteria)
-      single_code_reference = criteria.at_css('code[codeSystem][code]')
+      single_code_reference = criteria.at_css('value[codeSystem][code]') || criteria.at_css('code[codeSystem][code]')
       system_id = "#{single_code_reference['codeSystem']}_#{single_code_reference['codeSystemVersion']}".to_sym
       concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym]
       value_set = concept._parent
