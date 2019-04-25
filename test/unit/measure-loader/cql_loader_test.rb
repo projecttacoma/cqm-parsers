@@ -52,23 +52,31 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 'Population Criteria Section', population_set.title
       assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
       assert_equal 'Initial Population', population_set.populations.IPP.statement_name
+      assert_equal '93C1E91C-806B-4F57-946D-D145D1BD08E2', population_set.populations.IPP.hqmf_id
       assert_equal 'Measure Population', population_set.populations.MSRPOPL.statement_name
+      assert_equal '4725E77E-3D0F-46AC-A175-8DEFDE19EC8A', population_set.populations.MSRPOPL.hqmf_id
       assert_equal 'Measure Population Exclusions', population_set.populations.MSRPOPLEX.statement_name
+      assert_equal '31E49A75-5D9F-441D-96D0-FE2FED1B006B', population_set.populations.MSRPOPLEX.hqmf_id
 
       # check stratifications
       assert_equal 2, population_set.stratifications.size
       assert_equal 'PopulationSet_1_Stratification_1', population_set.stratifications[0].stratification_id
       assert_equal 'PopSet1 Stratification 1', population_set.stratifications[0].title
+      assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].hqmf_id
       assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
+      assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].statement.hqmf_id
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[0].statement.library_name
       assert_equal 'PopulationSet_1_Stratification_2', population_set.stratifications[1].stratification_id
       assert_equal 'PopSet1 Stratification 2', population_set.stratifications[1].title
+      assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].hqmf_id
       assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
+      assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].statement.hqmf_id
       assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[1].statement.library_name
 
       # check observation
       assert_equal population_set.observations.size, 1
       assert_equal 'Measure Observation', population_set.observations[0].observation_function.statement_name
+      assert_equal '2D7701F3-F93D-4994-84F6-0FA00FAA81C9', population_set.observations[0].hqmf_id
       assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
 
       # check SDE
@@ -131,25 +139,40 @@ class CQLLoaderTest < Minitest::Test
       assert_equal measure.source_data_criteria.map(&:qdmTitle), [
         'Encounter, Performed',
         'Procedure, Performed',
+        'Procedure, Performed',
         'Patient Characteristic Sex',
+        'Encounter, Performed',
         'Medication, Active',
         'Diagnosis',
+        'Encounter, Performed',
+        'Diagnosis',
+        'Encounter, Performed',
         'Intervention, Order',
         'Intervention, Performed',
         'Patient Characteristic Race',
+        'Encounter, Performed',
+        'Diagnosis',
         'Patient Characteristic Payer',
+        'Encounter, Performed',
+        'Diagnosis',
+        'Intervention, Performed',
+        'Encounter, Performed',
+        'Procedure, Performed',
         'Patient Characteristic Ethnicity',
-        'Laboratory Test, Performed'
+        'Laboratory Test, Performed',
+        'Diagnosis',
+        'Encounter, Performed',
+        'Diagnosis'
       ]
       assert_equal measure.source_data_criteria[0].description, 'Encounter, Performed: Face-to-FaceInteraction'
       assert_equal measure.source_data_criteria[0].codeListId, '2.16.840.1.113883.3.464.1003.101.12.1048'
       assert_equal measure.source_data_criteria[0].hqmfOid, '2.16.840.1.113883.10.20.28.4.5'
 
       # Test direct reference code elements are filled with info from hitting vsac
-      assert_equal measure.source_data_criteria[10].description, 'Laboratory Test, Performed: UrineProteinTests'
-      assert_equal measure.source_data_criteria[10].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
-      assert_equal measure.source_data_criteria[4].description, 'Diagnosis: KidneyFailure'
-      assert_equal measure.source_data_criteria[4].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1028'
+      assert_equal measure.source_data_criteria[22].description, 'Laboratory Test, Performed: UrineProteinTests'
+      assert_equal measure.source_data_criteria[22].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
+      assert_equal measure.source_data_criteria[6].description, 'Diagnosis: KidneyFailure'
+      assert_equal measure.source_data_criteria[6].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1028'
     end
   end
 
@@ -281,5 +304,44 @@ class CQLLoaderTest < Minitest::Test
     assert_equal ["drc-7ee14d7345fffbb069f02964b797739799926010eabc92da859da05e7ab54381"], measure.value_sets.map(&:oid)
     # source data criteria that rely on drc should still work
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Laboratory Test, Performed: Hepatitis B virus surface Ag [Presence] in Serum" }.count
+  end
+
+  def test_negated_source_criteria_with_drc
+    VCR.use_cassette('measure__negated_source_criteria_with_drc', @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS22v7.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      assert_equal 1, measures.length
+      measure = measures[0]
+
+      assert_equal measure.source_data_criteria.map(&:qdmTitle), [
+        'Encounter, Performed',
+        'Patient Characteristic Payer',
+        'Intervention, Order',
+        'Diagnostic Study, Order',
+        'Patient Characteristic Sex',
+        'Intervention, Order',
+        'Intervention, Order',
+        'Intervention, Order',
+        'Intervention, Order',
+        'Intervention, Order',
+        'Intervention, Order',
+        'Patient Characteristic Ethnicity',
+        'Patient Characteristic Race',
+        'Intervention, Order',
+        'Laboratory Test, Order',
+        'Medication, Order',
+        'Diagnosis',
+        'Physical Exam, Performed',
+        'Physical Exam, Performed'
+      ]
+
+      # Test direct reference code elements are correct
+      assert_equal measure.source_data_criteria[17].description, 'Physical Exam, Performed: Systolic blood pressure'
+      assert_equal measure.source_data_criteria[17].codeListId, 'drc-a5a03993b6f7f05e4e80041738dcdf2bbc8b59dc7e387dbf85b6f58b8e78dcf9'
+      assert_equal measure.source_data_criteria[18].description, 'Physical Exam, Performed: Diastolic blood pressure'
+      assert_equal measure.source_data_criteria[18].codeListId, 'drc-c5d1ebc9ecb1d73d1ecec416e73261a59884cac2ccacc28edb1e9cd8b658c64e'
+    end
   end
 end
