@@ -12,7 +12,7 @@ Gem::Specification.new do |s|
   s.version = '0.2.2'
 
   s.add_dependency 'mustache'
-  s.add_dependency 'rest-client', '~>1.8.0'
+  s.add_dependency 'rest-client', '~>2.0.1'
   s.add_dependency 'erubis', '~> 2.7.0'
   s.add_dependency 'mongoid', '~> 5.0.0'
   s.add_dependency 'mongoid-tree', '~> 2.0.0'
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'protected_attributes', '~> 1.0.5'
   s.add_dependency 'uuid', '~> 2.3.7'
   s.add_dependency 'builder', '~> 3.1'
-  s.add_dependency 'nokogiri', '~> 1.8.5'
+  s.add_dependency 'nokogiri', '~> 1.10.3'
   s.add_dependency 'highline', "~> 1.7.0"
 
   s.add_dependency 'rubyzip', '~> 1.2.2'
