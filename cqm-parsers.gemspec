@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'protected_attributes_continued', '~> 1.4.0'
   s.add_dependency 'uuid', '~> 2.3.7'
   s.add_dependency 'builder', '~> 3.1'
-  s.add_dependency 'nokogiri', '~> 1.8.5'
+  s.add_dependency 'nokogiri', '~> 1.10.3'
   s.add_dependency 'highline', "~> 1.7.0"
 
   s.add_dependency 'rubyzip', '~> 1.2.2'
