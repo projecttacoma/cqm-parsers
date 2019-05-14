@@ -18,7 +18,7 @@ PATH
       mongoid (~> 6.4.2)
       mongoid-tree (~> 2.1.1)
       mustache
-      nokogiri (>= 1.8.5, < 1.11.0)
+      nokogiri (~> 1.10.3)
       protected_attributes_continued (~> 1.4.0)
       rubyzip (~> 1.2.2)
       typhoeus
