@@ -263,6 +263,23 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
+  def test_5_4_CQL_measure_with_dcr
+    VCR.use_cassette("measure__test_5_4_CQL_measure_with_dcr", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS117v8.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      measure = measures[0]
+
+      assert_equal "Childhood Immunization Status", measure.title
+      assert_equal "40280382-6A17-9FBF-016A-513598AF15AD", measure.hqmf_id
+      assert_equal "B2802B7A-3580-4BE8-9458-921AEA62B78C", measure.hqmf_set_id
+      assert_equal 1, measure.population_sets.size
+      assert_equal 4, measure.population_criteria.keys.count
+      assert_equal 3, measure.cql_libraries.size
+    end
+  end
+
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_updated.zip')
