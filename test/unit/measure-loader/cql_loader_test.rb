@@ -344,4 +344,26 @@ class CQLLoaderTest < Minitest::Test
       assert_equal measure.source_data_criteria[18].codeListId, 'drc-c5d1ebc9ecb1d73d1ecec416e73261a59884cac2ccacc28edb1e9cd8b658c64e'
     end
   end
+
+  def test_ratio_measure
+    VCR.use_cassette("measure_test_ratio", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Ratio.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      # Make sure measure loaded without hqmf parsing error
+      assert_equal measures.count, 1
+    end
+  end
+
+  def test_proportional_measure
+    VCR.use_cassette("measure_test_proportional", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Proportional.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      # Make sure measure loaded without hqmf parsing error
+      assert_equal measures.count, 1
+    end
+  end
 end
