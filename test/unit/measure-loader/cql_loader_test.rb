@@ -351,7 +351,6 @@ class CQLLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
-      measure = measures[0]
       # Make sure measure loaded without hqmf parsing error
       assert_equal measures.count, 1
     end
@@ -363,7 +362,6 @@ class CQLLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
-      measure = measures[0]
       # Make sure measure loaded without hqmf parsing error
       assert_equal measures.count, 1
     end
