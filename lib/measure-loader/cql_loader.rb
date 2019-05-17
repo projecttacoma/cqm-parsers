@@ -115,6 +115,10 @@ module Measures
       hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
       HQMFMeasureLoader.add_fields_from_hqmf_model_hash(measure, hqmf_model_hash)
 
+      elms.each do |elm|
+        ValueSetHelpers.modify_code_system_ids(elm)
+      end
+
       return measure
     end
 

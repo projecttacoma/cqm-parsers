@@ -2,6 +2,14 @@ module Measures
   module ValueSetHelpers
     class << self
 
+      # Set the code_systems id to the code system name. this for code equivalence in cql-execution
+      def modify_code_system_ids(elm)
+        return if elm['library']['codeSystems'].nil?
+        (elm.dig('library','codeSystems','def') || []).each do |code_systems|
+          code_systems['id'] = code_systems['name']
+        end
+      end
+
       # Adjusting value set version data. If version is profile, set the version to nil
       def modify_value_set_versions(elm)
         (elm.dig('library','valueSets','def') || []).each do |value_set|
@@ -49,7 +57,6 @@ module Measures
             if vs_model_cache[cache_key].nil?
               concept = CQM::Concept.new(code: code_reference['id'],
                                          code_system_name: code_system_def['name'],
-                                         code_system_version: code_system_def['version'],
                                          code_system_oid: code_system_def['id'],
                                          display_name: code_reference['name'])
               vs_model_cache[cache_key] = CQM::ValueSet.new(oid: code_hash,
