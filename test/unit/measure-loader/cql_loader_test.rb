@@ -277,7 +277,7 @@ class CQLLoaderTest < Minitest::Test
 
   def test_ratio_cv_measure
     VCR.use_cassette("measure__test_proportional_cv_measure", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_artifacts.zip')
+      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
