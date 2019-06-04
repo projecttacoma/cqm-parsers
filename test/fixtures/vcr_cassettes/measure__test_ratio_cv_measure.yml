@@ -1,0 +1,1808 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
+    body:
+      encoding: US-ASCII
+      string: username=<VSAC_USERNAME>&password=<VSAC_PASSWORD>
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '63'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Akqk8w6NUQt0elXNtNHn4GsLooFbU7cxDkfdc2ucY4wm2wP3AUxULljyKGkkM/rjOS3r16NqRFDYGrA=;
+        expires=Thu, 30-May-2019 21:29:56 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!X02m1SuAeBiRz7Dm9OGvBt4MxRMcjlCOKWTk+C84TEDsKzni92Kpg4vU3Nogel4UMoaPpjk4enTARfE=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31318-df1Fxw2UUbGdDtZUbywk-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!2C/gL2vaPrzvr4HNtNHn4GsLooFbUzoMbWaef+E2lHwQqii9dKGbOiT8B451tTXFABLCEhYdAQ1VN4o=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31319-ZKjyvWPuRFaaPv2DcrrD-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!IQdiZNqTFoKD4dXm9OGvBt4MxRMcjhFlZHwsDmfxTJ7UGZ7gQZfcpuZK4Pczn4Byi9M0chPGrpRxS0E=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31316-n1UTr1JMsoj424Yd2oUH-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!RyzmCPhrXbcc7vLm9OGvBt4MxRMcjlm7rcHNg9qVbggYVzQ+JxHR6lIL5hVMUk+CAZ7Hwm2imYE4Syk=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31317-VRT3p9CEcUBgCZnOfoN1-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!xn39KLk4nvsz4LTNtNHn4GsLooFbUwUcFLxr54gfwwFhh+0RuWKryy8vpxZIfxa2fG0NPEAFXq3D5zA=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31325-GJIeB27fA74QpnFIMQLc-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!ecBiOf16P9rOB1nNtNHn4GsLooFbU7RK5phm0CgaEUkhyNAK9cN1mFVQgUqQU+jlLizYwVm78b4djI4=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31324-HgDvFNXHWUKdDDxGEgrj-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!pJDVDZFG7Gdk60Pm9OGvBt4MxRMcjlan2HcuooBJgkvAyFmd+BfAP8o6pwq4IqS+q0AhB3/jUV39Q1g=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31320-vPmBRVLAc7iuSuyitXUj-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!Po6Y/w3u7yh8pU7NtNHn4GsLooFbU0xvA8U2u4fQva4+mRgdjEY8IiBl4HaMAMtp3U4ETLok5sg3D2U=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31321-n7QEMNhtYMy7jdZeqdvy-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!e3/DtzsDUyvFgA7m9OGvBt4MxRMcjiSyBX2BaKvxc0L/Q/zTLmNsOXrltpSuN3XheL72UWzCp/kGLOo=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31323-T4bnkOWTf0wW4m3l7yev-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-8716-UrbIQJq3m7B7yONSxE4dgr5fLxpoanAgYiCemlegNTnOcCCtZr-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '33'
+      Date:
+      - Thu, 30 May 2019 19:29:56 GMT
+      Set-Cookie:
+      - BIGipServervsacweb_p=!HIRYXZvhfzV98+Hm9OGvBt4MxRMcjhsIOXatRAo1qggrAdd3Cx/6yOEWKNn8QVgWTQFlguGF+VW40RA=;
+        expires=Thu, 30-May-2019 21:29:57 GMT; path=/; Httponly; Secure
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-31322-osIHjyewScpxnfWSwRLb-cas
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:55 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-31320-vPmBRVLAc7iuSuyitXUj-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!KbjD5iYm0bNA7DLNtNHn4GsLooFbU3I2Tlz+I4Dk5wtJ2NCI6XgAqnyGF+CoA0uA9smIXZpLgWqQ7FM=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=485646A44E0384893913D1CEDC10D552; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1356'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="HL7V3.0_2014-08" displayName="Male"/>
+                </ns0:ConceptList>
+                <ns0:Source>Office of the National Coordinator for Health Information Technology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-31317-VRT3p9CEcUBgCZnOfoN1-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!SjBr7FUQr8K/DAbNtNHn4GsLooFbUxN5QwgFkOJAtmgO2stqkE/qnsMhT8iNhsmiMxLohjtqIvSGkAo=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=1549DE5079FAD8A093494B57F328A8E9; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1128'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.837" displayName="Ethnicity" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="2135-2" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Hispanic or Latino"/>
+                    <ns0:Concept code="2186-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Not Hispanic or Latino"/>
+                </ns0:ConceptList>
+                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-31319-ZKjyvWPuRFaaPv2DcrrD-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!fpbDQTsXbezX6f3m9OGvBt4MxRMcjiwtTdTceOqvclNT7yui9RFcnJqTC+L9c6VlffLut2R0mZklBK0=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=BFBC6FD9E6CDEBCB1D2B8DC1B1989555; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1405'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.117.1.7.1.292" displayName="Emergency Department Visit" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="4525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency department patient visit (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent procedures representing an emergency department encounter.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an emergency department encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with an emergency department visit encounter using the SNOMED CT code system.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.666.5.307&profile=MU2%20Update%202016-04-01&ticket=ST-31318-df1Fxw2UUbGdDtZUbywk-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!/9G4gpPCBw/wWnDm9OGvBt4MxRMcjkhZR02dsoJLFT5yIofrCqKs+JZhedETxTTyn0dk2MAo0Rpy7gw=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=643C2238CCF8C2043D798D6F15019383; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1692'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.666.5.307" displayName="Encounter Inpatient" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="183452005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency hospital admission (procedure)"/>
+                    <ns0:Concept code="32485007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission (procedure)"/>
+                    <ns0:Concept code="8715000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, elective (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>Lantana</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent the most common inpatient encounter types.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an inpatient encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing inpatient encounter.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.143&profile=MU2%20Update%202016-04-01&ticket=ST-31316-n1UTr1JMsoj424Yd2oUH-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!oPAd2iBCtSlWo6DNtNHn4GsLooFbU0mdWoiimcaeUQCYdm2iTr3m6klevqXvmFY+C/XGg7Ffbt3v3k0=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=79CE48C0BB5DB5542BB6FD668FFABFA3; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1739'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1111.143" displayName="Observation Services" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="448851000124103" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission from observation unit (procedure)"/>
+                    <ns0:Concept code="448951000124107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Admission to observation unit (procedure)"/>
+                    <ns0:Concept code="76464004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, for observation (procedure)"/>
+                </ns0:ConceptList>
+                <ns0:Source>The Joint Commission</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent observation encounter types.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an observation encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing inpatient encounter.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2018-03-21</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-31325-GJIeB27fA74QpnFIMQLc-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!6yKWZHswo1Owy6Tm9OGvBt4MxRMcjjOjH4GmVJpoItILLDCTL4ad7caLDFH/obSdmARAk3RUw2aRxUI=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=0508A00AAB974801D4870FD72B9AC13F; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '1765'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.836" displayName="Race" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1002-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="American Indian or Alaska Native"/>
+                    <ns0:Concept code="2028-9" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Asian"/>
+                    <ns0:Concept code="2054-5" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Black or African American"/>
+                    <ns0:Concept code="2076-8" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Native Hawaiian or Other Pacific Islander"/>
+                    <ns0:Concept code="2106-3" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="White"/>
+                    <ns0:Concept code="2131-1" codeSystem="2.16.840.1.113883.6.238" codeSystemName="CDCREC" codeSystemVersion="1.0" displayName="Other Race"/>
+                </ns0:ConceptList>
+                <ns0:Source>Centers for Disease Control National Center for Health Statistics</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: ),(Data Element Scope: ),(Inclusion Criteria: ),(Exclusion Criteria: )</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1045.134&profile=MU2%20Update%202016-04-01&ticket=ST-31321-n7QEMNhtYMy7jdZeqdvy-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!RBOTYyUNFRcMyv7NtNHn4GsLooFbU/ZZG47CmpfaOiIrW/PqdjKoTu0B5hDiGj5bbR7MT7Z2JpRot2Q=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=413409303B5C342520C1380ABC487FCE; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '2915'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1045.134" displayName="Glucose Lab Test" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="15074-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Moles/volume] in Blood"/>
+                    <ns0:Concept code="1557-8" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Fasting glucose [Mass/volume] in Venous blood"/>
+                    <ns0:Concept code="1558-6" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Fasting glucose [Mass/volume] in Serum or Plasma"/>
+                    <ns0:Concept code="2339-0" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Mass/volume] in Blood"/>
+                    <ns0:Concept code="2345-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Mass/volume] in Serum or Plasma"/>
+                    <ns0:Concept code="39480-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Moles/volume] in Venous blood"/>
+                    <ns0:Concept code="39481-7" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Moles/volume] in Arterial blood"/>
+                    <ns0:Concept code="41651-1" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Mass/volume] in Arterial blood"/>
+                    <ns0:Concept code="41652-9" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Glucose [Mass/volume] in Venous blood"/>
+                </ns0:ConceptList>
+                <ns0:Source>Yale</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values contains lab tests commonly used for a blood/serum/plasma glucose lab test using a Mass/volume measurement.),(Data Element Scope: The intent of this data element is to identify patients who had a lab test on a source of blood/serum/plasma glucose. Using the Quality Data Model, this particular element would map to 'Laboratory Test, Result' or 'Laboratory Test, Order' datatype.),(Inclusion Criteria: Glucose lab test using the source of blood/serum/plasma based on a measurement scale of Mass/volume.),(Exclusion Criteria: Glucose lab test using the source of capillary blood or any other specimen source)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2017-11-16</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-31323-T4bnkOWTf0wW4m3l7yev-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!DZWoZrB9duKvvZvm9OGvBt4MxRMcjoVesAQEKYT7MWhR6Ffbq91/EXh4YXWDJcodZIsq+HbTAROUmHU=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=AAA5652B2FA56CF33EA9D94DD9750B1B; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '24136'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.114222.4.11.3591" displayName="Payer" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="MEDICARE"/>
+                    <ns0:Concept code="11" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare (Managed Care)"/>
+                    <ns0:Concept code="111" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare HMO"/>
+                    <ns0:Concept code="112" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare PPO"/>
+                    <ns0:Concept code="113" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare POS"/>
+                    <ns0:Concept code="119" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare Managed Care Other"/>
+                    <ns0:Concept code="12" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare (Non-managed Care)"/>
+                    <ns0:Concept code="121" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare FFS"/>
+                    <ns0:Concept code="122" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare Drug Benefit"/>
+                    <ns0:Concept code="123" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare Medical Savings Account (MSA)"/>
+                    <ns0:Concept code="129" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare Non-managed Care Other"/>
+                    <ns0:Concept code="19" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare Other"/>
+                    <ns0:Concept code="2" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="MEDICAID"/>
+                    <ns0:Concept code="21" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid (Managed Care)"/>
+                    <ns0:Concept code="211" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid HMO"/>
+                    <ns0:Concept code="212" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid PPO"/>
+                    <ns0:Concept code="213" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid PCCM (Primary Care Case Management)"/>
+                    <ns0:Concept code="219" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid Managed Care Other"/>
+                    <ns0:Concept code="22" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid (Non-managed Care Plan)"/>
+                    <ns0:Concept code="23" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid/SCHIP"/>
+                    <ns0:Concept code="25" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid - Out of State"/>
+                    <ns0:Concept code="29" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicaid Other"/>
+                    <ns0:Concept code="3" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="OTHER GOVERNMENT (Federal/State/Local) (excluding Department of Corrections)"/>
+                    <ns0:Concept code="31" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Department of Defense"/>
+                    <ns0:Concept code="311" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE (CHAMPUS)"/>
+                    <ns0:Concept code="3111" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE Prime-HMO"/>
+                    <ns0:Concept code="3112" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE Extra-PPO"/>
+                    <ns0:Concept code="3113" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE Standard - Fee For Service"/>
+                    <ns0:Concept code="3114" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE For Life--Medicare Supplement"/>
+                    <ns0:Concept code="3115" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE Reserve Select"/>
+                    <ns0:Concept code="3116" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Uniformed Services Family Health Plan (USFHP) -- HMO"/>
+                    <ns0:Concept code="3119" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Department of Defense - (other)"/>
+                    <ns0:Concept code="312" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Military Treatment Facility"/>
+                    <ns0:Concept code="3121" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Enrolled Prime-HMO"/>
+                    <ns0:Concept code="3122" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Non-enrolled Space Available"/>
+                    <ns0:Concept code="3123" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="TRICARE For Life (TFL)"/>
+                    <ns0:Concept code="313" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Dental --Stand Alone"/>
+                    <ns0:Concept code="32" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Department of Veterans Affairs"/>
+                    <ns0:Concept code="321" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Veteran care--Care provided to Veterans"/>
+                    <ns0:Concept code="3211" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Direct Care--Care provided in VA facilities"/>
+                    <ns0:Concept code="3212" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indirect Care--Care provided outside VA facilities"/>
+                    <ns0:Concept code="32121" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Fee Basis"/>
+                    <ns0:Concept code="32122" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Foreign Fee/Foreign Medical Program(FMP)"/>
+                    <ns0:Concept code="32123" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Contract Nursing Home/Community Nursing Home"/>
+                    <ns0:Concept code="32124" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="State Veterans Home"/>
+                    <ns0:Concept code="32125" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Sharing Agreements"/>
+                    <ns0:Concept code="32126" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other Federal Agency"/>
+                    <ns0:Concept code="322" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Non-veteran care"/>
+                    <ns0:Concept code="3221" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Civilian Health and Medical Program for the VA (CHAMPVA)"/>
+                    <ns0:Concept code="3222" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Spina Bifida Health Care Program (SB)"/>
+                    <ns0:Concept code="3223" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Children of Women Vietnam Veterans (CWVV)"/>
+                    <ns0:Concept code="3229" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other non-veteran care"/>
+                    <ns0:Concept code="33" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indian Health Service or Tribe"/>
+                    <ns0:Concept code="331" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indian Health Service - Regular"/>
+                    <ns0:Concept code="332" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indian Health Service - Contract"/>
+                    <ns0:Concept code="333" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indian Health Service - Managed Care"/>
+                    <ns0:Concept code="334" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Indian Tribe - Sponsored Coverage"/>
+                    <ns0:Concept code="34" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="HRSA Program"/>
+                    <ns0:Concept code="341" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Title V (MCH Block Grant)"/>
+                    <ns0:Concept code="342" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Migrant Health Program"/>
+                    <ns0:Concept code="343" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Ryan White Act"/>
+                    <ns0:Concept code="349" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other"/>
+                    <ns0:Concept code="35" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Black Lung"/>
+                    <ns0:Concept code="36" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="State Government"/>
+                    <ns0:Concept code="361" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="State SCHIP program (codes for individual states)"/>
+                    <ns0:Concept code="362" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Specific state programs (list/ local code)"/>
+                    <ns0:Concept code="369" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="State, not otherwise specified (other state)"/>
+                    <ns0:Concept code="37" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Local Government"/>
+                    <ns0:Concept code="371" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Local - Managed care"/>
+                    <ns0:Concept code="3711" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="HMO"/>
+                    <ns0:Concept code="3712" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="PPO"/>
+                    <ns0:Concept code="3713" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="POS"/>
+                    <ns0:Concept code="372" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="FFS/Indemnity"/>
+                    <ns0:Concept code="379" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Local, not otherwise specified (other local, county)"/>
+                    <ns0:Concept code="38" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other Government (Federal, State, Local not specified)"/>
+                    <ns0:Concept code="381" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified managed care"/>
+                    <ns0:Concept code="3811" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - HMO"/>
+                    <ns0:Concept code="3812" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - PPO"/>
+                    <ns0:Concept code="3813" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - POS"/>
+                    <ns0:Concept code="3819" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - not specified managed care"/>
+                    <ns0:Concept code="382" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - FFS"/>
+                    <ns0:Concept code="389" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Federal, State, Local not specified - Other"/>
+                    <ns0:Concept code="39" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other Federal"/>
+                    <ns0:Concept code="4" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="DEPARTMENTS OF CORRECTIONS"/>
+                    <ns0:Concept code="41" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Corrections Federal"/>
+                    <ns0:Concept code="42" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Corrections State"/>
+                    <ns0:Concept code="43" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Corrections Local"/>
+                    <ns0:Concept code="44" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Corrections Unknown Level"/>
+                    <ns0:Concept code="5" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="PRIVATE HEALTH INSURANCE"/>
+                    <ns0:Concept code="51" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Managed Care (Private)"/>
+                    <ns0:Concept code="511" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Commercial Managed Care - HMO"/>
+                    <ns0:Concept code="512" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Commercial Managed Care - PPO"/>
+                    <ns0:Concept code="513" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Commercial Managed Care - POS"/>
+                    <ns0:Concept code="514" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Exclusive Provider Organization"/>
+                    <ns0:Concept code="515" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Gatekeeper PPO (GPPO)"/>
+                    <ns0:Concept code="519" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Managed Care, Other (non HMO)"/>
+                    <ns0:Concept code="52" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Private Health Insurance - Indemnity"/>
+                    <ns0:Concept code="521" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Commercial Indemnity"/>
+                    <ns0:Concept code="522" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Self-insured (ERISA) Administrative Services Only (ASO) plan"/>
+                    <ns0:Concept code="523" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Medicare supplemental policy (as second payer)"/>
+                    <ns0:Concept code="529" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Private health insurance-other commercial Indemnity"/>
+                    <ns0:Concept code="53" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Managed Care (private) or private health insurance (indemnity), not otherwise specified"/>
+                    <ns0:Concept code="54" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Organized Delivery System"/>
+                    <ns0:Concept code="55" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Small Employer Purchasing Group"/>
+                    <ns0:Concept code="59" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other Private Insurance"/>
+                    <ns0:Concept code="6" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BLUE CROSS/BLUE SHIELD"/>
+                    <ns0:Concept code="61" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Managed Care"/>
+                    <ns0:Concept code="611" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Managed Care - HMO"/>
+                    <ns0:Concept code="612" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Managed Care - PPO"/>
+                    <ns0:Concept code="613" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Managed Care - POS"/>
+                    <ns0:Concept code="619" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Managed Care - Other"/>
+                    <ns0:Concept code="62" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="BC Indemnity"/>
+                    <ns0:Concept code="7" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="MANAGED CARE, UNSPECIFIED (to be used only if one can't distinguish public from private)"/>
+                    <ns0:Concept code="71" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="HMO"/>
+                    <ns0:Concept code="72" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="PPO"/>
+                    <ns0:Concept code="73" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="POS"/>
+                    <ns0:Concept code="79" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other Managed Care, Unknown if public or private"/>
+                    <ns0:Concept code="8" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="NO PAYMENT from an Organization/Agency/Program/Private Payer Listed"/>
+                    <ns0:Concept code="81" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Self-pay"/>
+                    <ns0:Concept code="82" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="No Charge"/>
+                    <ns0:Concept code="821" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Charity"/>
+                    <ns0:Concept code="822" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Professional Courtesy"/>
+                    <ns0:Concept code="823" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Research/Clinical Trial"/>
+                    <ns0:Concept code="83" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Refusal to Pay/Bad Debt"/>
+                    <ns0:Concept code="84" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Hill Burton Free Care"/>
+                    <ns0:Concept code="85" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Research/Donor"/>
+                    <ns0:Concept code="89" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="No Payment, Other"/>
+                    <ns0:Concept code="9" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="MISCELLANEOUS/OTHER"/>
+                    <ns0:Concept code="91" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Foreign National"/>
+                    <ns0:Concept code="92" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other (Non-government)"/>
+                    <ns0:Concept code="93" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Disability Insurance"/>
+                    <ns0:Concept code="94" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Long-term Care Insurance"/>
+                    <ns0:Concept code="95" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Worker's Compensation"/>
+                    <ns0:Concept code="951" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Worker's Comp HMO"/>
+                    <ns0:Concept code="953" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Worker's Comp Fee-for-Service"/>
+                    <ns0:Concept code="954" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Worker's Comp Other Managed Care"/>
+                    <ns0:Concept code="959" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Worker's Comp, Other unspecified"/>
+                    <ns0:Concept code="96" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Auto Insurance (no fault)"/>
+                    <ns0:Concept code="98" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Other specified (includes Hospice - Unspecified plan)"/>
+                    <ns0:Concept code="99" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="No Typology Code available for payment source"/>
+                    <ns0:Concept code="9999" codeSystem="2.16.840.1.113883.3.221.5" codeSystemName="SOP" codeSystemVersion="5.0" displayName="Unavailable / Unknown"/>
+                </ns0:ConceptList>
+                <ns0:Source>HL7 Terminology</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Categories of types of health care payor entities as defined by the US Public Health Data Consortium SOP code system),(Data Element Scope: @code in CCDA r2.1 template Planned Coverage [act: identifier urn:oid:2.16.840.1.113883.10.20.22.4.129 (open)] DYNAMIC),(Inclusion Criteria: All codes in the code system),(Exclusion Criteria: none)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2018-07-18</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.1260.1.1978&profile=MU2%20Update%202016-04-01&ticket=ST-31322-osIHjyewScpxnfWSwRLb-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!6cP5NS/ny2WPO4nNtNHn4GsLooFbU8Nf++fYvQEaUjtxfb5LHz5n+Y79SBB1/YqW9aHUsdSfErfVGAo=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=1AA980B43AD813BDFD7DA155079C924B; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '41151'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.1260.1.1978" displayName="Antidiabetics" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="1043561" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / saxagliptin Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1043563" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / saxagliptin 2.5 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1043570" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / saxagliptin 5 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1043578" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 500 MG / saxagliptin 5 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1100701" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin Oral Tablet"/>
+                    <ns0:Concept code="1100702" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin 5 MG Oral Tablet"/>
+                    <ns0:Concept code="1153649" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose Oral Product"/>
+                    <ns0:Concept code="1153650" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose Pill"/>
+                    <ns0:Concept code="1156197" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide / Metformin Pill"/>
+                    <ns0:Concept code="1156200" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide Oral Product"/>
+                    <ns0:Concept code="1156201" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide Pill"/>
+                    <ns0:Concept code="1157240" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / pioglitazone Oral Product"/>
+                    <ns0:Concept code="1157241" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / pioglitazone Pill"/>
+                    <ns0:Concept code="1157242" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / rosiglitazone Oral Product"/>
+                    <ns0:Concept code="1157243" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / rosiglitazone Pill"/>
+                    <ns0:Concept code="1157268" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol Oral Product"/>
+                    <ns0:Concept code="1157269" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol Pill"/>
+                    <ns0:Concept code="1157407" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide Oral Product"/>
+                    <ns0:Concept code="1157408" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide Pill"/>
+                    <ns0:Concept code="1157459" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Glargine Injectable Product"/>
+                    <ns0:Concept code="1157462" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart Protamine, Human / Insulin, Aspart, Human Injectable Product"/>
+                    <ns0:Concept code="1157463" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart, Human Injectable Product"/>
+                    <ns0:Concept code="1157987" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone Oral Product"/>
+                    <ns0:Concept code="1157988" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone Pill"/>
+                    <ns0:Concept code="1158518" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="saxagliptin Oral Product"/>
+                    <ns0:Concept code="1158519" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="saxagliptin Pill"/>
+                    <ns0:Concept code="1159662" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="sitagliptin Oral Product"/>
+                    <ns0:Concept code="1159663" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="sitagliptin Pill"/>
+                    <ns0:Concept code="1160696" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin detemir Injectable Product"/>
+                    <ns0:Concept code="1161597" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / pioglitazone Oral Product"/>
+                    <ns0:Concept code="1161598" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / pioglitazone Pill"/>
+                    <ns0:Concept code="1161599" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / repaglinide Oral Product"/>
+                    <ns0:Concept code="1161600" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / repaglinide Pill"/>
+                    <ns0:Concept code="1161603" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / rosiglitazone Oral Product"/>
+                    <ns0:Concept code="1161604" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / rosiglitazone Pill"/>
+                    <ns0:Concept code="1161605" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / saxagliptin Oral Product"/>
+                    <ns0:Concept code="1161606" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / saxagliptin Pill"/>
+                    <ns0:Concept code="1161607" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / sitagliptin Oral Product"/>
+                    <ns0:Concept code="1161608" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / sitagliptin Pill"/>
+                    <ns0:Concept code="1161690" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Pramlintide Injectable Product"/>
+                    <ns0:Concept code="1163230" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="liraglutide Injectable Product"/>
+                    <ns0:Concept code="1163231" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone Oral Product"/>
+                    <ns0:Concept code="1163232" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone Pill"/>
+                    <ns0:Concept code="1163790" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="exenatide Injectable Product"/>
+                    <ns0:Concept code="1164670" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin Oral Product"/>
+                    <ns0:Concept code="1164671" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin Pill"/>
+                    <ns0:Concept code="1164824" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human Injectable Product"/>
+                    <ns0:Concept code="1165205" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide / Metformin Oral Product"/>
+                    <ns0:Concept code="1165206" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide / Metformin Pill"/>
+                    <ns0:Concept code="1165207" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide Oral Product"/>
+                    <ns0:Concept code="1165208" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide Pill"/>
+                    <ns0:Concept code="1165845" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide / Metformin Oral Product"/>
+                    <ns0:Concept code="1242963" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="exenatide 2 MG Injection"/>
+                    <ns0:Concept code="1243016" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin / Metformin Oral Product"/>
+                    <ns0:Concept code="1243017" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin / Metformin Pill"/>
+                    <ns0:Concept code="1243018" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin / Metformin Oral Tablet"/>
+                    <ns0:Concept code="1243020" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin 2.5 MG / Metformin hydrochloride 1000 MG Oral Tablet"/>
+                    <ns0:Concept code="1243027" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="1243034" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Linagliptin 2.5 MG / Metformin hydrochloride 850 MG Oral Tablet"/>
+                    <ns0:Concept code="1243826" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / sitagliptin Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1243827" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / sitagliptin 100 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1243842" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / sitagliptin 50 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1243846" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 500 MG / sitagliptin 50 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="1652639" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin Lispro 100 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="1652644" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin Lispro 100 UNT/ML Cartridge"/>
+                    <ns0:Concept code="197495" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Chlorpropamide 100 MG Oral Tablet"/>
+                    <ns0:Concept code="197496" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Chlorpropamide 250 MG Oral Tablet"/>
+                    <ns0:Concept code="197737" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 1.25 MG Oral Tablet"/>
+                    <ns0:Concept code="198292" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Tolazamide 250 MG Oral Tablet"/>
+                    <ns0:Concept code="198293" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Tolazamide 500 MG Oral Tablet"/>
+                    <ns0:Concept code="198294" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Tolbutamide 500 MG Oral Tablet"/>
+                    <ns0:Concept code="199149" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose 50 MG Oral Tablet"/>
+                    <ns0:Concept code="199150" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose 100 MG Oral Tablet"/>
+                    <ns0:Concept code="199245" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 1 MG Oral Tablet"/>
+                    <ns0:Concept code="199246" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 2 MG Oral Tablet"/>
+                    <ns0:Concept code="199247" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 4 MG Oral Tablet"/>
+                    <ns0:Concept code="200132" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose 25 MG Oral Tablet"/>
+                    <ns0:Concept code="200256" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide 1 MG Oral Tablet"/>
+                    <ns0:Concept code="200257" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide 0.5 MG Oral Tablet"/>
+                    <ns0:Concept code="200258" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide 2 MG Oral Tablet"/>
+                    <ns0:Concept code="205329" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol 25 MG Oral Tablet"/>
+                    <ns0:Concept code="205330" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol 50 MG Oral Tablet"/>
+                    <ns0:Concept code="205331" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol 100 MG Oral Tablet"/>
+                    <ns0:Concept code="242120" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Lispro 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="245264" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, isophane 85 UNT/ML / Regular Insulin, Human 15 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="245265" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, isophane 50 UNT/ML / Regular Insulin, Human 50 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="249220" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human 500 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="252960" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 4.5 MG Oral Tablet"/>
+                    <ns0:Concept code="259111" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Lispro 25 UNT/ML / Insulin, Protamine Lispro, Human 75 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="260265" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Lispro 50 UNT/ML / Insulin, Protamine Lispro, Human 50 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="310488" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 10 MG Oral Tablet"/>
+                    <ns0:Concept code="310489" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Glipizide 2.5 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="310490" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 5 MG Oral Tablet"/>
+                    <ns0:Concept code="310534" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 2.5 MG Oral Tablet"/>
+                    <ns0:Concept code="310536" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 3 MG Oral Tablet"/>
+                    <ns0:Concept code="310537" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 5 MG Oral Tablet"/>
+                    <ns0:Concept code="310539" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 6 MG Oral Tablet"/>
+                    <ns0:Concept code="311028" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, isophane 100 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="311034" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="311040" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart, Human 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="311041" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Glargine 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="311048" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, isophane 70 UNT/ML / Regular Insulin, Human 30 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="311919" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="nateglinide 120 MG Oral Tablet"/>
+                    <ns0:Concept code="312440" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone 30 MG Oral Tablet"/>
+                    <ns0:Concept code="312441" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone 45 MG Oral Tablet"/>
+                    <ns0:Concept code="312859" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone 2 MG Oral Tablet"/>
+                    <ns0:Concept code="312860" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="312861" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone 8 MG Oral Tablet"/>
+                    <ns0:Concept code="314000" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 1.5 MG Oral Tablet"/>
+                    <ns0:Concept code="314006" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Glipizide 5 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="314142" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="nateglinide 60 MG Oral Tablet"/>
+                    <ns0:Concept code="315107" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Glipizide 10 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="317573" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone 15 MG Oral Tablet"/>
+                    <ns0:Concept code="351297" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart Protamine, Human 70 UNT/ML / Insulin, Aspart, Human 30 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="359125" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human 15 UNT/ML"/>
+                    <ns0:Concept code="359126" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human 10 UNT/ML"/>
+                    <ns0:Concept code="359127" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human 20 UNT/ML"/>
+                    <ns0:Concept code="370504" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Acarbose Oral Tablet"/>
+                    <ns0:Concept code="372320" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide Oral Tablet"/>
+                    <ns0:Concept code="372333" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide Oral Tablet"/>
+                    <ns0:Concept code="372926" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="miglitol Oral Tablet"/>
+                    <ns0:Concept code="373759" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="repaglinide Oral Tablet"/>
+                    <ns0:Concept code="373801" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="rosiglitazone Oral Tablet"/>
+                    <ns0:Concept code="374606" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pioglitazone Oral Tablet"/>
+                    <ns0:Concept code="376915" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human Injectable Solution"/>
+                    <ns0:Concept code="378729" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / rosiglitazone Oral Tablet"/>
+                    <ns0:Concept code="378730" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide / Metformin Oral Tablet"/>
+                    <ns0:Concept code="378857" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin, isophane / Regular Insulin, Human Injectable Suspension"/>
+                    <ns0:Concept code="378864" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin Glargine Injectable Solution"/>
+                    <ns0:Concept code="378914" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart, Human Injectable Solution"/>
+                    <ns0:Concept code="379056" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart Protamine, Human / Insulin, Aspart, Human Injectable Suspension"/>
+                    <ns0:Concept code="379804" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 2.5 MG Oral Tablet"/>
+                    <ns0:Concept code="392660" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, isophane 75 UNT/ML / Regular Insulin, Human 25 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="484321" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin detemir Injectable Solution"/>
+                    <ns0:Concept code="484322" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin detemir 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="485210" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Glulisine, Human 100 UNT/ML Injectable Solution"/>
+                    <ns0:Concept code="486505" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Pramlintide Injectable Solution"/>
+                    <ns0:Concept code="577093" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / pioglitazone Oral Tablet"/>
+                    <ns0:Concept code="602543" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / rosiglitazone Oral Tablet"/>
+                    <ns0:Concept code="602544" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 1 MG / rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="602549" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 2 MG / rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="602550" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 4 MG / rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="647236" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride / pioglitazone Oral Tablet"/>
+                    <ns0:Concept code="647237" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 2 MG / pioglitazone 30 MG Oral Tablet"/>
+                    <ns0:Concept code="647239" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 4 MG / pioglitazone 30 MG Oral Tablet"/>
+                    <ns0:Concept code="665033" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="sitagliptin 100 MG Oral Tablet"/>
+                    <ns0:Concept code="665038" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="sitagliptin 25 MG Oral Tablet"/>
+                    <ns0:Concept code="665042" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="sitagliptin 50 MG Oral Tablet"/>
+                    <ns0:Concept code="700516" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / sitagliptin Oral Tablet"/>
+                    <ns0:Concept code="700835" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide Extended Release Oral Tablet"/>
+                    <ns0:Concept code="706895" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 2 MG / rosiglitazone 8 MG Oral Tablet"/>
+                    <ns0:Concept code="706896" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="glimepiride 4 MG / rosiglitazone 8 MG Oral Tablet"/>
+                    <ns0:Concept code="763013" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder"/>
+                    <ns0:Concept code="763014" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder"/>
+                    <ns0:Concept code="763015" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="{90 (insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder) / 90 (insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder) } Pack"/>
+                    <ns0:Concept code="763019" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="{90 (insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder [Exubera]) / 90 (insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder [Exubera]) } Pack [Exubera Combination Pack 12]"/>
+                    <ns0:Concept code="763020" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="{180 (insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder) / 90 (insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder) } Pack"/>
+                    <ns0:Concept code="763080" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="{180 (insulin human, rDNA origin 1 MG/ACTUAT Inhalant Powder [Exubera]) / 90 (insulin human, rDNA origin 3 MG/ACTUAT Inhalant Powder [Exubera]) } Pack [Exubera Kit]"/>
+                    <ns0:Concept code="802742" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / repaglinide Oral Tablet"/>
+                    <ns0:Concept code="833159" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Insulin, Aspart Protamine, Human 50 UNT/ML / Insulin, Aspart, Human 50 UNT/ML Injectable Suspension"/>
+                    <ns0:Concept code="847186" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin, isophane / Regular Insulin, Human Prefilled Syringe"/>
+                    <ns0:Concept code="847187" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML insulin human, isophane 70 UNT/ML / Regular Insulin, Human 30 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847191" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin, Aspart Protamine, Human 70 UNT/ML / Insulin, Aspart, Human 30 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847196" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="insulin, isophane Prefilled Syringe"/>
+                    <ns0:Concept code="847202" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Regular Insulin, Human Prefilled Syringe"/>
+                    <ns0:Concept code="847203" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Regular Insulin, Human 100 UNT/ML Prefilled Syringe"/>
+                    <ns0:Concept code="847211" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin Lispro 50 UNT/ML / Insulin, Protamine Lispro, Human 50 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847230" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin Glargine 100 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847239" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML insulin detemir 100 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847252" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin Lispro 25 UNT/ML / Insulin, Protamine Lispro, Human 75 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847256" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="1.5 ML insulin human, isophane 70 UNT/ML / Regular Insulin, Human 30 UNT/ML Prefilled Syringe"/>
+                    <ns0:Concept code="847259" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML Insulin, Glulisine, Human 100 UNT/ML Pen Injector"/>
+                    <ns0:Concept code="847278" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="1.5 ML insulin human, isophane 100 UNT/ML Prefilled Syringe"/>
+                    <ns0:Concept code="847417" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="1.5 ML Regular Insulin, Human 100 UNT/ML Prefilled Syringe"/>
+                    <ns0:Concept code="847910" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="60 ACTUAT exenatide 0.01 MG/ACTUAT Pen Injector"/>
+                    <ns0:Concept code="847915" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="60 ACTUAT exenatide 0.005 MG/ACTUAT Pen Injector"/>
+                    <ns0:Concept code="858035" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="saxagliptin Oral Tablet"/>
+                    <ns0:Concept code="858036" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="saxagliptin 5 MG Oral Tablet"/>
+                    <ns0:Concept code="858042" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="saxagliptin 2.5 MG Oral Tablet"/>
+                    <ns0:Concept code="860975" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 500 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="860981" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 750 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="861004" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 1000 MG Oral Tablet"/>
+                    <ns0:Concept code="861007" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="861010" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 850 MG Oral Tablet"/>
+                    <ns0:Concept code="861025" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 100 MG/ML Oral Solution"/>
+                    <ns0:Concept code="861039" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="pramlintide acetate 0.6 MG/ML Injectable Solution"/>
+                    <ns0:Concept code="861042" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="2.7 ML pramlintide acetate 1 MG/ML Pen Injector"/>
+                    <ns0:Concept code="861044" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="1.5 ML pramlintide acetate 1 MG/ML Pen Injector"/>
+                    <ns0:Concept code="861731" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 2.5 MG / Metformin hydrochloride 250 MG Oral Tablet"/>
+                    <ns0:Concept code="861736" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="861740" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glipizide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="861743" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 1.25 MG / Metformin hydrochloride 250 MG Oral Tablet"/>
+                    <ns0:Concept code="861748" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 2.5 MG / Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="861753" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Glyburide 5 MG / Metformin hydrochloride 500 MG Oral Tablet"/>
+                    <ns0:Concept code="861760" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 1000 MG / rosiglitazone 2 MG Oral Tablet"/>
+                    <ns0:Concept code="861763" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 1000 MG / rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="861769" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 1000 MG / sitagliptin 50 MG Oral Tablet"/>
+                    <ns0:Concept code="861783" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / pioglitazone 15 MG Oral Tablet"/>
+                    <ns0:Concept code="861787" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / repaglinide 1 MG Oral Tablet"/>
+                    <ns0:Concept code="861790" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / repaglinide 2 MG Oral Tablet"/>
+                    <ns0:Concept code="861795" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / rosiglitazone 1 MG Oral Tablet"/>
+                    <ns0:Concept code="861806" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / rosiglitazone 2 MG Oral Tablet"/>
+                    <ns0:Concept code="861816" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / rosiglitazone 4 MG Oral Tablet"/>
+                    <ns0:Concept code="861819" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 500 MG / sitagliptin 50 MG Oral Tablet"/>
+                    <ns0:Concept code="861822" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin hydrochloride 850 MG / pioglitazone 15 MG Oral Tablet"/>
+                    <ns0:Concept code="897122" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="3 ML liraglutide 6 MG/ML Pen Injector"/>
+                    <ns0:Concept code="899988" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="Metformin / pioglitazone Extended Release Oral Tablet"/>
+                    <ns0:Concept code="899989" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / pioglitazone 15 MG Extended Release Oral Tablet"/>
+                    <ns0:Concept code="899996" codeSystem="2.16.840.1.113883.6.88" codeSystemName="RXNORM" codeSystemVersion="2016-01" displayName="24 HR Metformin hydrochloride 1000 MG / pioglitazone 30 MG Extended Release Oral Tablet"/>
+                </ns0:ConceptList>
+                <ns0:Source>IMPAQ International</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This set of values contain RxNorm codes that identify medications that are commonly used in the treatment for Diabetes Mellitus.),(Data Element Scope: The intent of this data element is to identify patients who are on active anti-diabetic medication therapy. Using the Quality Data Model, this particular element would map to the "Medication, Administered" element.),(Inclusion Criteria: Drugs that contain an anti-diabetic ingredient  and are indicated for the treatment of Diabetes Mellitus should be included.),(Exclusion Criteria: The drug concepts should be limited to those which are appropriate for human use and available to be prescribed in the US. Medication that are off the market (inactive) for more than three years prior to the start of the measurement period should be excluded.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2018-08-17</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+- request:
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.464.1003.103.12.1001&profile=MU2%20Update%202016-04-01&ticket=ST-31324-HgDvFNXHWUKdDDxGEgrj-cas
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Set-Cookie:
+      - BIGipServervsacweb_p=!9Or6BlbDZ78ch2jNtNHn4GsLooFbU3IY5VrpNgXvtwQ70Mnkd2QWZuSFu50Z/QuZZjsZw/7yX7lyJg8=;
+        expires=Thu, 30-May-2019 21:29:58 GMT; path=/; Httponly; Secure
+      - JSESSIONID=1A145126088E1D74F7DF9EEC12D7E8ED; Path=/vsac; HttpOnly;Secure
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Content-Length:
+      - '56681'
+      Date:
+      - Thu, 30 May 2019 19:29:58 GMT
+      X-Vip-Info:
+      - 130.14.16.40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.110 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113883.3.464.1003.103.12.1001" displayName="Diabetes" version="N/A">
+                <ns0:ConceptList>
+                    <ns0:Concept code="102781000119107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sensory neuropathy due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="104941000119109" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Retinal ischemia due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="109171000119104" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Retinal edema due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="1481000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 2 without retinopathy (disorder)"/>
+                    <ns0:Concept code="190330002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type 1 diabetes mellitus with hyperosmolar coma (disorder)"/>
+                    <ns0:Concept code="190331003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type 2 diabetes mellitus with hyperosmolar coma (disorder)"/>
+                    <ns0:Concept code="190368000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus with ulcer (disorder)"/>
+                    <ns0:Concept code="190369008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus with gangrene (disorder)"/>
+                    <ns0:Concept code="190372001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus maturity onset (disorder)"/>
+                    <ns0:Concept code="190388001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with multiple complications (disorder)"/>
+                    <ns0:Concept code="190389009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with ulcer (disorder)"/>
+                    <ns0:Concept code="190390000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with gangrene (disorder)"/>
+                    <ns0:Concept code="199229001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pre-existing type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="199230006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pre-existing type 2 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="23045005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Insulin dependent diabetes mellitus type IA (disorder)"/>
+                    <ns0:Concept code="237599002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Insulin treated type 2 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="237604008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Maturity onset diabetes of the young, type 2 (disorder)"/>
+                    <ns0:Concept code="237618001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Insulin-dependent diabetes mellitus secretory diarrhea syndrome (disorder)"/>
+                    <ns0:Concept code="250.00" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus without mention of complication, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.01" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus without mention of complication, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.02" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus without mention of complication, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.03" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus without mention of complication, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.10" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ketoacidosis, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.11" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ketoacidosis, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.12" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ketoacidosis, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.13" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ketoacidosis, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.20" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with hyperosmolarity, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.21" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with hyperosmolarity, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.22" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with hyperosmolarity, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.23" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with hyperosmolarity, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.30" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other coma, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.31" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other coma, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.32" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other coma, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.33" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other coma, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.40" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with renal manifestations, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.41" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with renal manifestations, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.42" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with renal manifestations, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.43" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with renal manifestations, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.50" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.51" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.52" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ophthalmic manifestations, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.53" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with ophthalmic manifestations, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.60" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with neurological manifestations, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.61" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with neurological manifestations, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.62" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with neurological manifestations, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.63" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with neurological manifestations, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.70" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.71" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.72" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with peripheral circulatory disorders, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.73" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with peripheral circulatory disorders, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.80" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other specified manifestations, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.81" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other specified manifestations, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.82" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other specified manifestations, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.83" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with other specified manifestations, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="250.90" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with unspecified complication, type II or unspecified type, not stated as uncontrolled"/>
+                    <ns0:Concept code="250.91" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with unspecified complication, type I [juvenile type], not stated as uncontrolled"/>
+                    <ns0:Concept code="250.92" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with unspecified complication, type II or unspecified type, uncontrolled"/>
+                    <ns0:Concept code="250.93" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes with unspecified complication, type I [juvenile type], uncontrolled"/>
+                    <ns0:Concept code="28032008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Insulin dependent diabetes mellitus type IB (disorder)"/>
+                    <ns0:Concept code="31321000119102" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 1 without retinopathy (disorder)"/>
+                    <ns0:Concept code="313435000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus without complication (disorder)"/>
+                    <ns0:Concept code="313436004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus without complication (disorder)"/>
+                    <ns0:Concept code="314771006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus with hypoglycemic coma (disorder)"/>
+                    <ns0:Concept code="314772004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with hypoglycemic coma (disorder)"/>
+                    <ns0:Concept code="314893005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type I diabetes mellitus with arthropathy (disorder)"/>
+                    <ns0:Concept code="314894004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2014-09" displayName="Type I diabetes mellitus with neuropathic arthropathy (disorder)"/>
+                    <ns0:Concept code="314902007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with peripheral angiopathy (disorder)"/>
+                    <ns0:Concept code="314903002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with arthropathy (disorder)"/>
+                    <ns0:Concept code="314904008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus with neuropathic arthropathy (disorder)"/>
+                    <ns0:Concept code="357.2" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Polyneuropathy in diabetes"/>
+                    <ns0:Concept code="359642000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 2 in nonobese (disorder)"/>
+                    <ns0:Concept code="362.01" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Background diabetic retinopathy"/>
+                    <ns0:Concept code="362.02" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Proliferative diabetic retinopathy"/>
+                    <ns0:Concept code="362.03" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Nonproliferative diabetic retinopathy NOS"/>
+                    <ns0:Concept code="362.04" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Mild nonproliferative diabetic retinopathy"/>
+                    <ns0:Concept code="362.05" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Moderate nonproliferative diabetic retinopathy"/>
+                    <ns0:Concept code="362.06" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Severe nonproliferative diabetic retinopathy"/>
+                    <ns0:Concept code="362.07" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetic macular edema"/>
+                    <ns0:Concept code="366.41" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetic cataract"/>
+                    <ns0:Concept code="395204000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hyperosmolar non-ketotic state in type 2 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="420486006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Exudative maculopathy associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="420789003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetic retinopathy associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="420918009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mononeuropathy associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="421164006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hypoglycemic coma in type II diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="421468001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neurological disorder associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="421750000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Ketoacidosis in type II diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="421847006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Ketoacidotic coma in type II diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="421920002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetic cataract associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="422014003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Disorder due to type 2 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="427571000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amyotrophy due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="44054006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 2 (disorder)"/>
+                    <ns0:Concept code="46635009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 1 (disorder)"/>
+                    <ns0:Concept code="4783006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Maternal diabetes mellitus with hypoglycemia affecting fetus OR newborn (disorder)"/>
+                    <ns0:Concept code="609562003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Maturity onset diabetes of the young, type 1 (disorder)"/>
+                    <ns0:Concept code="609564002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pre-existing type 1 diabetes mellitus in pregnancy (disorder)"/>
+                    <ns0:Concept code="609567009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Pre-existing type 2 diabetes mellitus in pregnancy (disorder)"/>
+                    <ns0:Concept code="60961000119107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Nonproliferative diabetic retinopathy due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="60971000119101" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Proliferative retinopathy due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="60991000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Blindness due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="648.00" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus of mother, complicating pregnancy, childbirth, or the puerperium, unspecified as to episode of care or not applicable"/>
+                    <ns0:Concept code="648.01" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus of mother, complicating pregnancy, childbirth, or the puerperium, delivered, with or without mention of antepartum condition"/>
+                    <ns0:Concept code="648.02" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus of mother, complicating pregnancy, childbirth, or the puerperium, delivered, with mention of postpartum complication"/>
+                    <ns0:Concept code="648.03" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus of mother, complicating pregnancy, childbirth, or the puerperium, antepartum condition or complication"/>
+                    <ns0:Concept code="648.04" codeSystem="2.16.840.1.113883.6.103" codeSystemName="ICD9CM" codeSystemVersion="2013" displayName="Diabetes mellitus of mother, complicating pregnancy, childbirth, or the puerperium, postpartum condition or complication"/>
+                    <ns0:Concept code="691000119103" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Erectile dysfunction associated with type I diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="703138006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type II diabetes mellitus in remission (disorder)"/>
+                    <ns0:Concept code="75682002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus due to insulin receptor antibodies (disorder)"/>
+                    <ns0:Concept code="76751001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus in mother complicating pregnancy, childbirth AND/OR puerperium (disorder)"/>
+                    <ns0:Concept code="781000119106" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetic neuropathic arthropathy associated with type 2 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="81531005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diabetes mellitus type 2 in obese (disorder)"/>
+                    <ns0:Concept code="82571000119107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Traction retinal detachment due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="82581000119105" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Rubeosis iridis due to type 1 diabetes mellitus (disorder)"/>
+                    <ns0:Concept code="9859006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Type 2 diabetes mellitus with acanthosis nigricans (disorder)"/>
+                    <ns0:Concept code="E10.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with ketoacidosis without coma"/>
+                    <ns0:Concept code="E10.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with ketoacidosis with coma"/>
+                    <ns0:Concept code="E10.21" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic nephropathy"/>
+                    <ns0:Concept code="E10.22" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic chronic kidney disease"/>
+                    <ns0:Concept code="E10.29" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other diabetic kidney complication"/>
+                    <ns0:Concept code="E10.311" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with unspecified diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E10.319" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with unspecified diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E10.321" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E10.329" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E10.331" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E10.339" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E10.341" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E10.349" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E10.351" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with proliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E10.359" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with proliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E10.36" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic cataract"/>
+                    <ns0:Concept code="E10.39" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other diabetic ophthalmic complication"/>
+                    <ns0:Concept code="E10.40" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic neuropathy, unspecified"/>
+                    <ns0:Concept code="E10.41" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic mononeuropathy"/>
+                    <ns0:Concept code="E10.42" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic polyneuropathy"/>
+                    <ns0:Concept code="E10.43" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic autonomic (poly)neuropathy"/>
+                    <ns0:Concept code="E10.44" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic amyotrophy"/>
+                    <ns0:Concept code="E10.49" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other diabetic neurological complication"/>
+                    <ns0:Concept code="E10.51" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic peripheral angiopathy without gangrene"/>
+                    <ns0:Concept code="E10.52" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic peripheral angiopathy with gangrene"/>
+                    <ns0:Concept code="E10.59" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other circulatory complications"/>
+                    <ns0:Concept code="E10.610" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic neuropathic arthropathy"/>
+                    <ns0:Concept code="E10.618" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other diabetic arthropathy"/>
+                    <ns0:Concept code="E10.620" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with diabetic dermatitis"/>
+                    <ns0:Concept code="E10.621" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with foot ulcer"/>
+                    <ns0:Concept code="E10.622" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other skin ulcer"/>
+                    <ns0:Concept code="E10.628" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other skin complications"/>
+                    <ns0:Concept code="E10.630" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with periodontal disease"/>
+                    <ns0:Concept code="E10.638" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other oral complications"/>
+                    <ns0:Concept code="E10.641" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with hypoglycemia with coma"/>
+                    <ns0:Concept code="E10.649" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with hypoglycemia without coma"/>
+                    <ns0:Concept code="E10.65" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with hyperglycemia"/>
+                    <ns0:Concept code="E10.69" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with other specified complication"/>
+                    <ns0:Concept code="E10.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus with unspecified complications"/>
+                    <ns0:Concept code="E10.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 1 diabetes mellitus without complications"/>
+                    <ns0:Concept code="E11.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with hyperosmolarity without nonketotic hyperglycemic-hyperosmolar coma (NKHHC)"/>
+                    <ns0:Concept code="E11.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with hyperosmolarity with coma"/>
+                    <ns0:Concept code="E11.21" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic nephropathy"/>
+                    <ns0:Concept code="E11.22" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic chronic kidney disease"/>
+                    <ns0:Concept code="E11.29" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other diabetic kidney complication"/>
+                    <ns0:Concept code="E11.311" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with unspecified diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E11.319" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with unspecified diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E11.321" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E11.329" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E11.331" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E11.339" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E11.341" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E11.349" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E11.351" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with proliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E11.359" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with proliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E11.36" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic cataract"/>
+                    <ns0:Concept code="E11.39" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other diabetic ophthalmic complication"/>
+                    <ns0:Concept code="E11.40" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic neuropathy, unspecified"/>
+                    <ns0:Concept code="E11.41" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic mononeuropathy"/>
+                    <ns0:Concept code="E11.42" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic polyneuropathy"/>
+                    <ns0:Concept code="E11.43" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic autonomic (poly)neuropathy"/>
+                    <ns0:Concept code="E11.44" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic amyotrophy"/>
+                    <ns0:Concept code="E11.49" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other diabetic neurological complication"/>
+                    <ns0:Concept code="E11.51" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic peripheral angiopathy without gangrene"/>
+                    <ns0:Concept code="E11.52" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic peripheral angiopathy with gangrene"/>
+                    <ns0:Concept code="E11.59" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other circulatory complications"/>
+                    <ns0:Concept code="E11.610" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic neuropathic arthropathy"/>
+                    <ns0:Concept code="E11.618" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other diabetic arthropathy"/>
+                    <ns0:Concept code="E11.620" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with diabetic dermatitis"/>
+                    <ns0:Concept code="E11.621" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with foot ulcer"/>
+                    <ns0:Concept code="E11.622" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other skin ulcer"/>
+                    <ns0:Concept code="E11.628" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other skin complications"/>
+                    <ns0:Concept code="E11.630" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with periodontal disease"/>
+                    <ns0:Concept code="E11.638" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other oral complications"/>
+                    <ns0:Concept code="E11.641" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with hypoglycemia with coma"/>
+                    <ns0:Concept code="E11.649" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with hypoglycemia without coma"/>
+                    <ns0:Concept code="E11.65" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with hyperglycemia"/>
+                    <ns0:Concept code="E11.69" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with other specified complication"/>
+                    <ns0:Concept code="E11.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus with unspecified complications"/>
+                    <ns0:Concept code="E11.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Type 2 diabetes mellitus without complications"/>
+                    <ns0:Concept code="E13.00" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with hyperosmolarity without nonketotic hyperglycemic-hyperosmolar coma (NKHHC)"/>
+                    <ns0:Concept code="E13.01" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with hyperosmolarity with coma"/>
+                    <ns0:Concept code="E13.10" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with ketoacidosis without coma"/>
+                    <ns0:Concept code="E13.11" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with ketoacidosis with coma"/>
+                    <ns0:Concept code="E13.21" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic nephropathy"/>
+                    <ns0:Concept code="E13.22" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic chronic kidney disease"/>
+                    <ns0:Concept code="E13.29" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other diabetic kidney complication"/>
+                    <ns0:Concept code="E13.311" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with unspecified diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E13.319" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with unspecified diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E13.321" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with mild nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E13.329" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with mild nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E13.331" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with moderate nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E13.339" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with moderate nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E13.341" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with severe nonproliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E13.349" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with severe nonproliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E13.351" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with proliferative diabetic retinopathy with macular edema"/>
+                    <ns0:Concept code="E13.359" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with proliferative diabetic retinopathy without macular edema"/>
+                    <ns0:Concept code="E13.36" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic cataract"/>
+                    <ns0:Concept code="E13.39" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other diabetic ophthalmic complication"/>
+                    <ns0:Concept code="E13.40" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic neuropathy, unspecified"/>
+                    <ns0:Concept code="E13.41" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic mononeuropathy"/>
+                    <ns0:Concept code="E13.42" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic polyneuropathy"/>
+                    <ns0:Concept code="E13.43" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic autonomic (poly)neuropathy"/>
+                    <ns0:Concept code="E13.44" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic amyotrophy"/>
+                    <ns0:Concept code="E13.49" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other diabetic neurological complication"/>
+                    <ns0:Concept code="E13.51" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic peripheral angiopathy without gangrene"/>
+                    <ns0:Concept code="E13.52" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic peripheral angiopathy with gangrene"/>
+                    <ns0:Concept code="E13.59" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other circulatory complications"/>
+                    <ns0:Concept code="E13.610" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic neuropathic arthropathy"/>
+                    <ns0:Concept code="E13.618" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other diabetic arthropathy"/>
+                    <ns0:Concept code="E13.620" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with diabetic dermatitis"/>
+                    <ns0:Concept code="E13.621" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with foot ulcer"/>
+                    <ns0:Concept code="E13.622" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other skin ulcer"/>
+                    <ns0:Concept code="E13.628" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other skin complications"/>
+                    <ns0:Concept code="E13.630" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with periodontal disease"/>
+                    <ns0:Concept code="E13.638" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other oral complications"/>
+                    <ns0:Concept code="E13.641" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with hypoglycemia with coma"/>
+                    <ns0:Concept code="E13.649" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with hypoglycemia without coma"/>
+                    <ns0:Concept code="E13.65" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with hyperglycemia"/>
+                    <ns0:Concept code="E13.69" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with other specified complication"/>
+                    <ns0:Concept code="E13.8" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus with unspecified complications"/>
+                    <ns0:Concept code="E13.9" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other specified diabetes mellitus without complications"/>
+                    <ns0:Concept code="O24.011" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in pregnancy, first trimester"/>
+                    <ns0:Concept code="O24.012" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in pregnancy, second trimester"/>
+                    <ns0:Concept code="O24.013" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in pregnancy, third trimester"/>
+                    <ns0:Concept code="O24.019" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in pregnancy, unspecified trimester"/>
+                    <ns0:Concept code="O24.02" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in childbirth"/>
+                    <ns0:Concept code="O24.03" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 1, in the puerperium"/>
+                    <ns0:Concept code="O24.111" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in pregnancy, first trimester"/>
+                    <ns0:Concept code="O24.112" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in pregnancy, second trimester"/>
+                    <ns0:Concept code="O24.113" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in pregnancy, third trimester"/>
+                    <ns0:Concept code="O24.119" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in pregnancy, unspecified trimester"/>
+                    <ns0:Concept code="O24.12" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in childbirth"/>
+                    <ns0:Concept code="O24.13" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Pre-existing diabetes mellitus, type 2, in the puerperium"/>
+                    <ns0:Concept code="O24.311" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in pregnancy, first trimester"/>
+                    <ns0:Concept code="O24.312" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in pregnancy, second trimester"/>
+                    <ns0:Concept code="O24.313" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in pregnancy, third trimester"/>
+                    <ns0:Concept code="O24.319" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in pregnancy, unspecified trimester"/>
+                    <ns0:Concept code="O24.32" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in childbirth"/>
+                    <ns0:Concept code="O24.33" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Unspecified pre-existing diabetes mellitus in the puerperium"/>
+                    <ns0:Concept code="O24.811" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in pregnancy, first trimester"/>
+                    <ns0:Concept code="O24.812" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in pregnancy, second trimester"/>
+                    <ns0:Concept code="O24.813" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in pregnancy, third trimester"/>
+                    <ns0:Concept code="O24.819" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in pregnancy, unspecified trimester"/>
+                    <ns0:Concept code="O24.82" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in childbirth"/>
+                    <ns0:Concept code="O24.83" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Other pre-existing diabetes mellitus in the puerperium"/>
+                </ns0:ConceptList>
+                <ns0:Source>National Committee for Quality Assurance</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: This value set contains concepts that identify patients who have a diagnosis of diabetes.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Diagnosis.),(Inclusion Criteria: Includes only relevant concepts associated with identifying patients who have type I or type II diabetes.),(Exclusion Criteria: Excludes patients who have gestational diabetes or steroid-induced diabetes.)</ns0:Purpose>
+                <ns0:Definition>(2.16.840.1.113883.3.464.1003.103.11.1025:Type 1 Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1026:Type 1 Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1027:Type 1 Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1030:Type II Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1031:Type II Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1032:Other Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1033:Other Diabetes),(2.16.840.1.113883.3.464.1003.103.11.1034:Type II Diabetes)</ns0:Definition>
+                <ns0:Type>Grouping</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2019-03-15</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+    http_version: 
+  recorded_at: Thu, 30 May 2019 19:29:56 GMT
+recorded_with: VCR 3.0.3

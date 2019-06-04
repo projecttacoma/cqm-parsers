@@ -263,6 +263,30 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
+  def test_proportional_cv_measure
+    VCR.use_cassette("measure__test_ratio_cv_measure", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Artifacts.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      measure = measures[0]
+
+      assert_equal 'Hospital Harm Hyperglycemia in Hospitalized Patients', measure.title
+    end
+  end
+
+  def test_ratio_cv_measure
+    VCR.use_cassette("measure__test_proportional_cv_measure", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Artifacts.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      measure = measures[0]
+
+      assert_equal 'CVmulti', measure.title
+    end
+  end
+
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_updated.zip')
