@@ -12,7 +12,7 @@ module Measures
 
       # We create the sdc in such a way that "negative" ones look positive in our array by now,
       # so using uniq should give us an array of all positive criteria with no duplicates
-      source_data_criteria.uniq!(&:codeListId)
+      source_data_criteria.uniq! { |sdc| "#{sdc.codeListId}_#{sdc.hqmfOid}" }
       return source_data_criteria
     end
 
