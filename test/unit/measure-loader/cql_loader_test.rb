@@ -136,6 +136,13 @@ class CQLLoaderTest < Minitest::Test
       assert_equal 1, measures.length
       measure = measures[0]
 
+      # when the same valueset is used for multiple source data criteria, make sure both are saved.
+      intervention_dc = measure.source_data_criteria.select { |sdc| sdc.codeListId == '2.16.840.1.113762.1.4.1108.15' }
+      assert_equal intervention_dc.map(&:qdmTitle), [
+        'Intervention, Order',
+        'Intervention, Performed'
+      ]
+
       assert_equal measure.source_data_criteria.map(&:qdmTitle), [
         'Encounter, Performed',
         'Procedure, Performed',
@@ -148,6 +155,7 @@ class CQLLoaderTest < Minitest::Test
         'Diagnosis',
         'Encounter, Performed',
         'Intervention, Order',
+        'Intervention, Performed',
         'Intervention, Performed',
         'Patient Characteristic Race',
         'Encounter, Performed',
@@ -169,8 +177,8 @@ class CQLLoaderTest < Minitest::Test
       assert_equal measure.source_data_criteria[0].hqmfOid, '2.16.840.1.113883.10.20.28.4.5'
 
       # Test direct reference code elements are filled with info from hitting vsac
-      assert_equal measure.source_data_criteria[22].description, 'Laboratory Test, Performed: UrineProteinTests'
-      assert_equal measure.source_data_criteria[22].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
+      assert_equal measure.source_data_criteria[23].description, 'Laboratory Test, Performed: UrineProteinTests'
+      assert_equal measure.source_data_criteria[23].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1024'
       assert_equal measure.source_data_criteria[6].description, 'Diagnosis: KidneyFailure'
       assert_equal measure.source_data_criteria[6].codeListId, '2.16.840.1.113883.3.464.1003.109.12.1028'
     end
