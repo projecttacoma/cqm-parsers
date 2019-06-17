@@ -12,23 +12,23 @@ Gem::Specification.new do |s|
   s.version = '1.0.0'
 
   s.add_dependency 'mustache'
-  s.add_dependency 'erubis', '~> 2.7.0'
-  s.add_dependency 'mongoid', '~> 6.4.2'
-  s.add_dependency 'mongoid-tree', '~> 2.1.1'
+  s.add_dependency 'erubis', '~> 2.7'
+  s.add_dependency 'mongoid', '~> 6.4'
+  s.add_dependency 'mongoid-tree', '~> 2.1'
   s.add_dependency 'activesupport', '~> 5.0'
 
-  s.add_dependency 'protected_attributes_continued', '~> 1.4.0'
-  s.add_dependency 'uuid', '~> 2.3.7'
+  s.add_dependency 'protected_attributes_continued', '~> 1.4'
+  s.add_dependency 'uuid', '~> 2.3'
   s.add_dependency 'builder', '~> 3.1'
-  s.add_dependency 'nokogiri', '>= 1.8.5', '< 1.11.0'
-  s.add_dependency 'highline', "~> 1.7.0"
+  s.add_dependency 'nokogiri', '~> 1.10'
+  s.add_dependency 'highline', "~> 1.7"
 
-  s.add_dependency 'rubyzip', '~> 1.2.2'
-  s.add_dependency 'typhoeus'
+  s.add_dependency 'rubyzip', '~> 1.2'
+  s.add_dependency 'typhoeus', '~> 1.3'
   s.add_dependency 'zip-zip', '~> 0.3'
 
-  s.add_dependency 'log4r', '~> 1.1.10'
-  s.add_dependency 'memoist', '~> 0.9.1'
+  s.add_dependency 'log4r', '~> 1.1'
+  s.add_dependency 'memoist', '~> 0.9'
 
   s.files = Dir.glob('lib/**/*.rb') + Dir.glob('lib/**/*.json') + Dir.glob('lib/**/*.mustache') + Dir.glob('lib/**/*.rake') + ["Gemfile", "README.md", "Rakefile"]
 end

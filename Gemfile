@@ -2,8 +2,6 @@ source 'https://rubygems.org'
 
 gemspec :development_group => :test
 
-gem 'mongoid', '~> 6.4.2'
-
 # gem 'cqm-models', '~> 1.0.2'
 gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'master'
 # gem 'cqm-models', :path => '../cqm-models'
