@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = ["The MITRE Corporation"]
   s.license = 'Apache-2.0'
 
-  s.version = '1.1.0'
+  s.version = '2.0.0'
 
   s.add_dependency 'mustache'
   s.add_dependency 'erubis', '~> 2.7.0'
