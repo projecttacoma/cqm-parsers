@@ -26,7 +26,9 @@ module Measures
                         extract_fields_from_single_code_reference_data_criteria(criteria)
                       end
       hqmf_template_oid = criteria.at_css('templateId/item')['root']
-      model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid).new(model_fields)
+      model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid)
+      raise "No datatype found for oid #{hqmf_template_oid}. Verify the QDM version of the measure package is correct." if model.nil?
+      model = model.new(model_fields)
       model.description = model.qdmTitle + ': ' + model.description
       return model
     end
