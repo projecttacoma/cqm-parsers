@@ -47,7 +47,7 @@ bundle exec rake test
 
 Starting with version **2.0.0** released on !!date!!, cqm-parsers versioning has the format **X.Y.Z**, where:
 
-* **X** maps to a version of QDM. See the table below to see the existing mapping to QDM versions.
+* **X** maps to a version of the CQL-based HQMF IG. See the table below to see the existing mapping to CQL-based HQMF IG versions.
 
   | X | CQL-based HQMF IG|
   | --- | --- |
