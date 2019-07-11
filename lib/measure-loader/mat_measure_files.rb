@@ -19,29 +19,31 @@ module Measures
       @hqmf_xml = hqmf_xml
       @cql_libraries = cql_libraries
       @human_readable = human_readable
-      
-      raise MeasureLoadingException.new("Measure package missing required element: HQMF XML File") if @hqmf_xml.nil?
-      raise MeasureLoadingException.new("Measure package missing required element: Human Readable Document") if @human_readable.nil?
-      raise MeasureLoadingException.new("Measure package missing required element: CQL Libraries") if @cql_libraries.nil? || @cql_libraries.empty?
+
+      raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: HQMF XML File") if @hqmf_xml.nil?
+      raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: Human Readable Document") if @human_readable.nil?
+      raise MeasureLoadingInvalidPackageException.new("Measure package missing required element: CQL Libraries") if @cql_libraries.nil? || @cql_libraries.empty?
     end
 
     def self.create_from_zip_file(zip_file)
       folders = unzip_measure_zip_into_hash(zip_file).values
-      raise MeasureLoadingException.new("No measure found") if folders.empty?
+      raise MeasureLoadingInvalidPackageException.new("No measure found") if folders.empty?
       folders.sort_by! { |h| h[:depth] }
-      raise MeasureLoadingException.new("Multiple measure folders at top level") if folders[0][:depth] == folders.dig(1,:depth)
-      
+      raise MeasureLoadingInvalidPackageException.new("Multiple measure folders at top level") if folders[0][:depth] == folders.dig(1,:depth)
+
       measure_folder, *component_measure_folders = folders
       measure_assets = make_measure_artifacts(parse_measure_files(measure_folder))
       measure_assets.components = component_measure_folders.collect {|f| make_measure_artifacts(parse_measure_files(f))}
 
       return measure_assets
+    rescue StandardError => e
+      raise MeasureLoadingInvalidPackageException.new("Error processing package file: #{e.message}")
     end
 
     def self.valid_zip?(zip_file)
       create_from_zip_file(zip_file)
       return true
-    rescue StandardError
+    rescue MeasureLoadingInvalidPackageException
       return false
     end
 
@@ -66,7 +68,7 @@ module Measures
       def make_measure_artifacts(measure_files)
         library_count = measure_files[:cqls].length
         unless (measure_files[:elm_xmls].length == library_count && measure_files[:elms].length == library_count)
-          raise MeasureLoadingException.new("Each library must have a CQL file, an ELM JSON file, and an ELM XML file.")
+          raise MeasureLoadingInvalidPackageException.new("Each library must have a CQL file, an ELM JSON file, and an ELM XML file.")
         end
 
         cql_libraries = []
@@ -93,26 +95,26 @@ module Measures
             begin
               measure_files[:elms] << JSON.parse(file[:contents], max_nesting: 1000)
             rescue StandardError
-              raise MeasureLoadingException.new("Unable to parse json file #{basename}")
+              raise MeasureLoadingInvalidPackageException.new("Unable to parse json file #{basename}")
             end
           when '.html'
-            raise MeasureLoadingException.new("Multiple HumanReadable docs found in same folder") unless measure_files[:human_readable].nil?
+            raise MeasureLoadingInvalidPackageException.new("Multiple HumanReadable docs found in same folder") unless measure_files[:human_readable].nil?
             measure_files[:human_readable] = file[:contents]
           when '.xml'
             begin
               doc = Nokogiri::XML(file[:contents]) { |config| config.noblanks }
             rescue StandardError
-              raise MeasureLoadingException.new("Unable to parse xml file #{basename}")
+              raise MeasureLoadingInvalidPackageException.new("Unable to parse xml file #{basename}")
             end
             if doc.root.name == 'QualityMeasureDocument'
-              raise MeasureLoadingException.new("Multiple QualityMeasureDocuments found in same folder") unless measure_files[:hqmf_xml].nil?
+              raise MeasureLoadingInvalidPackageException.new("Multiple QualityMeasureDocuments found in same folder") unless measure_files[:hqmf_xml].nil?
               measure_files[:hqmf_xml] = doc
             elsif doc.root.name == 'library'
               measure_files[:elm_xmls] << doc
             end
           end
         end
-        raise MeasureLoadingException.new("Measure folder found with no hqmf") if measure_files[:hqmf_xml].nil?
+        raise MeasureLoadingInvalidPackageException.new("Measure folder found with no hqmf") if measure_files[:hqmf_xml].nil?
         return measure_files
       end
 
@@ -125,7 +127,7 @@ module Measures
             Helpers.elm_version(elm) != version ||
             !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
            )
-          raise MeasureLoadingException.new("Cql library assets must all have same version.")
+          raise MeasureLoadingInvalidPackageException.new("Cql library assets must all have same version.")
         end
 
         return id, version
