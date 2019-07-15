@@ -1,7 +1,7 @@
 require 'pathname'
 require 'fileutils'
 require 'json'
-require 'hqmf-parser'
+require 'cqm-parsers'
 
 namespace :hqmf do
 
