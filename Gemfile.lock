@@ -1,10 +1,3 @@
-GIT
-  remote: https://github.com/projecttacoma/cqm-models.git
-  revision: d0167a91e5cc984c38cd3982d847ec81b8be5ac4
-  branch: 2019-standards-update
-  specs:
-    cqm-models (2.0.0)
-
 PATH
   remote: .
   specs:
@@ -55,6 +48,7 @@ GEM
       url
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
+    cqm-models (3.0.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     docile (1.3.1)
@@ -162,7 +156,7 @@ DEPENDENCIES
   byebug (~> 6.0.2)
   cane (~> 2.3.0)
   codecov
-  cqm-models!
+  cqm-models (~> 3.0.0)
   cqm-parsers!
   factory_girl (~> 4.1.0)
   minitest (~> 5.3)
