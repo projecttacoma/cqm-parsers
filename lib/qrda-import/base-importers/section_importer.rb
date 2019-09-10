@@ -38,8 +38,11 @@ module QRDA
 
       def create_entry(entry_element, _nrh = NarrativeReferenceHandler.new)
         entry = @entry_class.new
-        @entry_id_map[extract_id(entry_element, @id_xpath).value] ||= []
-        @entry_id_map[extract_id(entry_element, @id_xpath).value] << entry.id
+        entry_qrda_id = extract_id(entry_element, @id_xpath)
+        # Create a hash to map all of entry.ids to the same QRDA ids. This will be used to merge QRDA entries
+        # that represent the same event. 
+        @entry_id_map["#{entry_qrda_id.value}_#{entry_qrda_id.namingSystem}"] ||= []
+        @entry_id_map["#{entry_qrda_id.value}_#{entry_qrda_id.namingSystem}"] << entry.id
         entry.dataElementCodes = extract_codes(entry_element, @code_xpath)
         extract_dates(entry_element, entry)
         if @result_xpath
@@ -55,7 +58,7 @@ module QRDA
         id_element = parent_element.at_xpath(id_xpath)
         return unless id_element
         # If an extension is not included, use the root as the value.  Other wise use the extension
-        value = id_element['extension'] ? id_element['extension'] : id_element['root']
+        value = id_element['extension'] || id_element['root']
         identifier = QDM::Id.new(value: value, namingSystem: id_element['root'])
         identifier
       end
