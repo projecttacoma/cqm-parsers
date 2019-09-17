@@ -58,12 +58,29 @@ module QRDA
                                                             dataElementCodes: @allergy_intolerance_codes)
       end
 
+      def add_medication_active(patient)
+        @medication_active_relevant_period = QDM::Interval.new(Time.new(2012, 1, 2, 4, 0, 0), Time.new(2012, 1, 2, 5, 0, 0))
+        @medication_active_codes = [QDM::Code.new('123', 'RxNorm')]
+        @medication_active_dosage = QDM::Quantity.new(1.0, '{fake_unit}')
+        patient.dataElements << QDM::MedicationActive.new(relevantPeriod: @medication_active_relevant_period,
+                                                          dosage: @medication_active_dosage,
+                                                          dataElementCodes: @medication_active_codes)
+      end
+
       def confirm_adverse_event(doc)
         assert_equal 1, doc.xpath("//cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.146']").size
       end
 
       def confirm_allergy_intolerance(doc)
         assert_equal 1, doc.xpath("//cda:entry/cda:observation[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.147']").size
+      end
+
+      def confirm_medication_active(doc)
+        assert_equal 1, doc.xpath("//cda:entry/cda:substanceAdministration[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.41']").size
+        dosage = doc.at_css('templateId[root="2.16.840.1.113883.10.20.24.3.41"] ~ doseQuantity')
+        # Assert that the unit was not reported for the medication, since the dosage is precoordinated in the code
+        assert_equal nil, dosage['unit']
+        assert_equal "1.0", dosage['value']
       end
 
       def compare_adverse_event(imported_patient)
@@ -84,19 +101,32 @@ module QRDA
         compare_codes(@allergy_intolerance_codes, allergy_intolerance.dataElementCodes)
       end
 
+      def compare_medication_active(imported_patient)
+        medication_actives = imported_patient.get_data_elements('medication', 'active')
+        assert_equal 1, medication_actives.size
+        medication_active = medication_actives[0]
+        compare_interval(@medication_active_relevant_period, medication_active.relevantPeriod)
+        compare_codes(@medication_active_codes, medication_active.dataElementCodes)
+        assert_equal 1, medication_active.dosage.value
+        assert_equal nil, medication_active.dosage.unit
+      end
+
       def test_patient_roundtrip
         add_adverse_event(@patient)
         add_allergy_intolerance(@patient)
+        add_medication_active(@patient)
 
         exported_qrda = generate_doc(@patient)
 
         confirm_adverse_event(exported_qrda)
         confirm_allergy_intolerance(exported_qrda)
+        confirm_medication_active(exported_qrda)
 
         imported_patient = Cat1::PatientImporter.instance.parse_cat1(exported_qrda)
 
-        compare_adverse_event(imported_patient) 
-        compare_allergy_intolerance(imported_patient)       
+        compare_adverse_event(imported_patient)
+        compare_allergy_intolerance(imported_patient)
+        compare_medication_active(imported_patient)
       end
 
       def compare_time(exported_time, imported_time)
