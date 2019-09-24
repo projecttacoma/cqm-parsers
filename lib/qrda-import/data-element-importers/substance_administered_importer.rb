@@ -1,9 +1,9 @@
 module QRDA
   module Cat1
-    class SubstanceAdministeredImporter < MedicationAdministeredImporter
+    class SubstanceAdministeredImporter < MedicationImporter
       def initialize(entry_finder = QRDA::Cat1::EntryFinder.new("./cda:entry/cda:substanceAdministration[cda:templateId/@root = '2.16.840.1.113883.10.20.24.3.42']"))
         super(entry_finder)
-        @entry_does_not_have_reason = true
+        @route_xpath = "./cda:routeCode"
         @entry_class = QDM::SubstanceAdministered
       end
 
