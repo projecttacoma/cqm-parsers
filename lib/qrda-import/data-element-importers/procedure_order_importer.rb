@@ -10,6 +10,7 @@ module QRDA
         @anatomical_approach_site_xpath = "./cda:approachSiteCode"
         @anatomical_location_site_xpath = "./cda:targetSiteCode"
         @ordinality_xpath = "./cda:priorityCode"
+        @reason_xpath = "./cda:entryRelationship[@typeCode='RSON']/cda:observation[cda:templateId/@root='2.16.840.1.113883.10.20.24.3.88']/cda:value"
         @entry_class = QDM::ProcedureOrder
       end
 
@@ -19,6 +20,7 @@ module QRDA
         procedure_order.anatomicalApproachSite = code_if_present(entry_element.at_xpath(@anatomical_approach_site_xpath))
         procedure_order.anatomicalLocationSite = code_if_present(entry_element.at_xpath(@anatomical_location_site_xpath))
         procedure_order.ordinality = code_if_present(entry_element.at_xpath(@ordinality_xpath))
+        procedure_order.reason = extract_reason(entry_element)
         procedure_order
       end
 
