@@ -9,6 +9,7 @@ module QRDA
         @relevant_period_xpath = "./cda:effectiveTime"
         @anatomical_location_site_xpath = "./cda:targetSiteCode"
         @anatomical_approach_site_xpath = "./cda:approachSiteCode"
+        @reason_xpath = "./cda:entryRelationship[@typeCode='RSON']/cda:observation[cda:templateId/@root='2.16.840.1.113883.10.20.24.3.88']/cda:value"
         @entry_class = QDM::DeviceApplied
       end
 
@@ -16,6 +17,7 @@ module QRDA
         device_applied = super
         device_applied.anatomicalLocationSite = code_if_present(entry_element.at_xpath(@anatomical_location_site_xpath))
         device_applied.anatomicalApproachSite = code_if_present(entry_element.at_xpath(@anatomical_approach_site_xpath))
+        device_applied.reason = extract_reason(entry_element)
         device_applied
       end
 
