@@ -24,7 +24,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'nokogiri', '>= 1.8.5', '< 1.11.0'
   s.add_dependency 'highline', "~> 1.7.0"
 
-  s.add_dependency 'rubyzip', '>= 1.2.2', '< 2.1.0'
+  s.add_dependency 'rubyzip', '~> 1.3'
   s.add_dependency 'typhoeus'
   s.add_dependency 'zip-zip', '~> 0.3'
 
