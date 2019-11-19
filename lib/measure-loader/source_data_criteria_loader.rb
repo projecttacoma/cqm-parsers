@@ -46,7 +46,7 @@ module Measures
     def extract_fields_from_single_code_reference_data_criteria(criteria)
       single_code_reference = criteria.at_css('value[codeSystem][code]') || criteria.at_css('code[codeSystem][code]')
       system_id = "#{single_code_reference['codeSystem']}_#{single_code_reference['codeSystemVersion']}".to_sym
-      concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym] || get_concept_from_playing_entity_code(criteria.at_css('playingEntity/code'))
+      concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym] || get_concept_from_participation(criteria.at_css('participation'))
       value_set = concept._parent
       return {
         description: concept.display_name,
@@ -54,11 +54,12 @@ module Measures
       }
     end
 
-    # QDM datatype template in MAT which has includeSubTemplate(codes are nested into participation > role > playingEntity)
-    # this method gets the codes from playingEntity > code and form the code concept
-    def get_concept_from_playing_entity_code(playing_entity_code)
-      system_id = "#{playing_entity_code['codeSystem']}_#{playing_entity_code['codeSystemVersion']}".to_sym
-      @single_code_concepts[system_id][playing_entity_code['code'].to_sym]
+    # If QDM datatype template in MAT has includeSubTemplate, code gets nested into participation
+    # this method gets the codes from participation and form the code concept
+    def get_concept_from_participation(participation)
+      code_element = participation.at_css('code')
+      system_id = "#{code_element['codeSystem']}_#{code_element['codeSystemVersion']}".to_sym
+      @single_code_concepts[system_id][code_element['code'].to_sym]
     end
 
     def map_single_code_concepts(value_sets_from_single_code_references)
