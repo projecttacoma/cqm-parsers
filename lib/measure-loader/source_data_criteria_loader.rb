@@ -54,7 +54,7 @@ module Measures
       }
     end
 
-    # When includeSubTemplate is true in MAT(QDM datatype template, codes are nested into participation > role > playingEntity)
+    # QDM datatype template in MAT which has includeSubTemplate(codes are nested into participation > role > playingEntity)
     # this method gets the codes from playingEntity > code and form the code concept
     def get_concept_from_playing_entity_code(playing_entity_code)
       system_id = "#{playing_entity_code['codeSystem']}_#{playing_entity_code['codeSystemVersion']}".to_sym
