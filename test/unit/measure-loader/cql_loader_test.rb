@@ -345,8 +345,7 @@ class CQLLoaderTest < Minitest::Test
     measure = measures[0]
 
     # value sets should only contain the fake drc generated valuesets
-    assert_equal ["drc-c48426f721cede4d865df946157d5e2dc90bd32763ffcb982ca45b3bd97a29db",
-                    "drc-7d7da17150a47034168a1372592dc014b452ce8d960b2ecd2b7f426cf4912dc3"], measure.value_sets.map(&:oid)
+    assert_equal ["drc-c48426f721cede4d865df946157d5e2dc90bd32763ffcb982ca45b3bd97a29db", "drc-7d7da17150a47034168a1372592dc014b452ce8d960b2ecd2b7f426cf4912dc3"], measure.value_sets.map(&:oid)
     # source data criteria that rely on drc should still work
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Allergy/Intolerance: Substance with beta adrenergic receptor antagonist mechanism of action (substance)" }.count
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Patient Characteristic Birthdate: Birth date" }.count
