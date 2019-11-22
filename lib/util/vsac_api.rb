@@ -138,7 +138,7 @@ module Util
       # Gets the details for a program. This may be used without credentials.
       #
       # Optional parameter program is the program to request from the API. If it is not provided it will look for
-      # a :program in the config passed in during construction. If there is no :program in the config it will use 
+      # a :program in the config passed in during construction. If there is no :program in the config it will use
       # the DEFAULT_PROGRAM constant for the program.
       #
       # Returns the JSON parsed response for program details.
@@ -159,7 +159,7 @@ module Util
       #   }
       #
       # Optional parameter program is the program to request from the API. If it is not provided it will look for
-      # a :program in the config passed in during construction. If there is no :program in the config it will use 
+      # a :program in the config passed in during construction. If there is no :program in the config it will use
       # the DEFAULT_PROGRAM constant for the program.
       #
       # Returns the name of the latest profile for the given program.
@@ -242,8 +242,8 @@ module Util
       def get_multiple_valueset_raw_responses(needed_value_sets)
         service_tickets = get_service_tickets(needed_value_sets.size)
 
-        hydra = Typhoeus::Hydra.new # Hydra executes multiple HTTP requests at once
-        requests = needed_value_sets.map do |n| 
+        hydra = Typhoeus::Hydra.new(max_concurrency: 1) # Hydra executes multiple HTTP requests at once
+        requests = needed_value_sets.map do |n|
           request = create_valueset_request(n[:value_set][:oid], service_tickets.pop, n[:vs_vsac_options])
           hydra.queue(request)
           request
@@ -258,7 +258,7 @@ module Util
       def get_service_tickets(amount)
         raise VSACNoCredentialsError.new unless @ticket_granting_ticket
         raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
-        
+
         hydra = Typhoeus::Hydra.new # Hydra executes multiple HTTP requests at once
         requests = amount.times.map do
           request = create_service_ticket_request
@@ -299,7 +299,7 @@ module Util
 
       # Create a typheous request for a service ticket (this must be executed later)
       def create_service_ticket_request
-        return Typhoeus::Request.new("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}", 
+        return Typhoeus::Request.new("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}",
                                      method: :post,
                                      params: { service: TICKET_SERVICE_PARAM})
       end
@@ -307,7 +307,7 @@ module Util
       # Use your username and password to retrive a ticket granting ticket from VSAC
       def get_ticket_granting_ticket(username, password)
         response = Typhoeus.post(
-          "#{@config[:auth_url]}/Ticket", 
+          "#{@config[:auth_url]}/Ticket",
           # looks like typheous sometimes switches the order of username/password when encoding
           # which vsac cant handle (!?), so encode first
           body: URI.encode_www_form(username: username, password: password)
