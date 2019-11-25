@@ -9,7 +9,7 @@ Gem::Specification.new do |s|
   s.authors = ["The MITRE Corporation"]
   s.license = 'Apache-2.0'
 
-  s.version = '0.2.2'
+  s.version = '0.2.1.1'
 
   s.add_dependency 'cqm-models', '~> 3.0.0'
   s.add_dependency 'mustache'
