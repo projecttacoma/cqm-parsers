@@ -1,10 +1,16 @@
+GIT
+  remote: https://github.com/projecttacoma/cqm-models.git
+  revision: 1c6eddf8f0c51fde342d88ea8e7cafec6885ea2b
+  branch: cql-change-BONNIEMAT-608
+  specs:
+    cqm-models (3.0.0)
+
 PATH
   remote: .
   specs:
     cqm-parsers (0.2.1.1)
       activesupport (~> 4.2.0)
       builder (~> 3.1)
-      cqm-models (~> 3.0.0)
       erubis (~> 2.7.0)
       highline (~> 1.7.0)
       log4r (~> 1.1.10)
@@ -49,7 +55,6 @@ GEM
       url
     coderay (1.1.2)
     concurrent-ruby (1.0.5)
-    cqm-models (3.0.0)
     crack (0.4.3)
       safe_yaml (~> 1.0.0)
     docile (1.3.1)
@@ -58,7 +63,7 @@ GEM
       ffi (>= 1.3.0)
     factory_girl (4.1.0)
       activesupport (>= 3.0.0)
-    ffi (1.11.1)
+    ffi (1.11.3)
     hashdiff (0.3.7)
     highline (1.7.10)
     i18n (0.9.5)
@@ -86,8 +91,8 @@ GEM
       tzinfo (>= 0.3.37)
     mongoid-tree (2.0.1)
       mongoid (>= 4.0, < 6.0)
-    mustache (1.1.0)
-    nokogiri (1.10.5)
+    mustache (1.1.1)
+    nokogiri (1.10.7)
       mini_portile2 (~> 2.4.0)
     origin (2.3.1)
     parallel (1.17.0)
@@ -157,6 +162,7 @@ DEPENDENCIES
   byebug (~> 6.0.2)
   cane (~> 2.3.0)
   codecov
+  cqm-models!
   cqm-parsers!
   factory_girl (~> 4.1.0)
   minitest (~> 5.3)
