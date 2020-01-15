@@ -271,33 +271,27 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
-  def test_5_4_CQL_measure_with_drc
-    VCR.use_cassette("measure__test_5_4_CQL_measure_with_drc", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'CMS117v8.zip')
+  def test_proportional_cv_measure
+    VCR.use_cassette("measure__test_ratio_cv_measure", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
 
-      assert_equal "Childhood Immunization Status", measure.title
-      assert_equal "40280382-6A17-9FBF-016A-513598AF15AD", measure.hqmf_id
-      assert_equal "B2802B7A-3580-4BE8-9458-921AEA62B78C", measure.hqmf_set_id
+      assert_equal 'Hospital Harm Hyperglycemia in Hospitalized Patients', measure.title
+    end
+  end
 
-      sdc_with_unnested_drc_code = measure.source_data_criteria.where(description: 'Patient Characteristic Birthdate: Birth date').first
-      unnested_drc_vs_code = value_set_loader.vs_model_cache[[sdc_with_unnested_drc_code.codeListId, ""]]
-      assert_equal '21112-8', unnested_drc_vs_code.concepts.first.code
+  def test_ratio_cv_measure
+    VCR.use_cassette("measure__test_proportional_cv_measure", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Artifacts.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      measure = measures[0]
 
-      sdc_with_unnested_drc_value = measure.source_data_criteria.where(description: 'Diagnosis: Pneumococcal vaccine adverse reaction (disorder)').first
-      unnested_drc_vs_value = value_set_loader.vs_model_cache[[sdc_with_unnested_drc_value.codeListId, ""]]
-      assert_equal '293116002', unnested_drc_vs_value.concepts.first.code
-
-      sdc_with_nested_drc = measure.source_data_criteria.where(description: 'Immunization, Administered: rotavirus, live, monovalent vaccine').first
-      nested_drc_vs = value_set_loader.vs_model_cache[[sdc_with_nested_drc.codeListId, ""]]
-      assert_equal '119', nested_drc_vs.concepts.first.code
-
-      assert_equal 1, measure.population_sets.size
-      assert_equal 4, measure.population_criteria.keys.count
-      assert_equal 3, measure.cql_libraries.size
+      assert_equal 'CVmulti', measure.title
     end
   end
 
@@ -344,6 +338,19 @@ class CQLLoaderTest < Minitest::Test
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Laboratory Test, Performed: Hepatitis B virus surface Ag [Presence] in Serum" }.count
   end
 
+  def test_extract_fields_from_single_code_reference_data_criteria
+    measure_file = File.new File.join(@fixtures_path, 'CMS144_v5_8_Artifacts_20191104.zip')
+    loader = Measures::CqlLoader.new(measure_file, @measure_details)
+    measures = loader.extract_measures
+    measure = measures[0]
+
+    # value sets should only contain the fake drc generated valuesets
+    assert_equal ["drc-c48426f721cede4d865df946157d5e2dc90bd32763ffcb982ca45b3bd97a29db", "drc-7d7da17150a47034168a1372592dc014b452ce8d960b2ecd2b7f426cf4912dc3"], measure.value_sets.map(&:oid)
+    # source data criteria that rely on drc should still work
+    assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Allergy/Intolerance: Substance with beta adrenergic receptor antagonist mechanism of action (substance)" }.count
+    assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Patient Characteristic Birthdate: Birth date" }.count
+  end
+
   def test_negated_source_criteria_with_drc
     VCR.use_cassette('measure__negated_source_criteria_with_drc', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS22v7.zip')
@@ -380,28 +387,6 @@ class CQLLoaderTest < Minitest::Test
       assert_equal measure.source_data_criteria[17].codeListId, 'drc-a5a03993b6f7f05e4e80041738dcdf2bbc8b59dc7e387dbf85b6f58b8e78dcf9'
       assert_equal measure.source_data_criteria[18].description, 'Physical Exam, Performed: Diastolic blood pressure'
       assert_equal measure.source_data_criteria[18].codeListId, 'drc-c5d1ebc9ecb1d73d1ecec416e73261a59884cac2ccacc28edb1e9cd8b658c64e'
-    end
-  end
-
-  def test_ratio_measure
-    VCR.use_cassette("measure_test_ratio", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Ratio.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
-      measures = loader.extract_measures
-      # Make sure measure loaded without hqmf parsing error
-      assert_equal measures.count, 1
-    end
-  end
-
-  def test_proportional_measure
-    VCR.use_cassette("measure_test_proportional", @vcr_options) do
-      measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Proportional.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
-      measures = loader.extract_measures
-      # Make sure measure loaded without hqmf parsing error
-      assert_equal measures.count, 1
     end
   end
 end
