@@ -271,6 +271,36 @@ class CQLLoaderTest < Minitest::Test
     end
   end
 
+  def test_5_4_CQL_measure_with_drc
+    VCR.use_cassette("measure__test_5_4_CQL_measure_with_drc", @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS117v8.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
+      measures = loader.extract_measures
+      measure = measures[0]
+
+      assert_equal "Childhood Immunization Status", measure.title
+      assert_equal "40280382-6A17-9FBF-016A-513598AF15AD", measure.hqmf_id
+      assert_equal "B2802B7A-3580-4BE8-9458-921AEA62B78C", measure.hqmf_set_id
+
+      sdc_with_unnested_drc_code = measure.source_data_criteria.where(description: 'Patient Characteristic Birthdate: Birth date').first
+      unnested_drc_vs_code = value_set_loader.vs_model_cache[[sdc_with_unnested_drc_code.codeListId, ""]]
+      assert_equal '21112-8', unnested_drc_vs_code.concepts.first.code
+
+      sdc_with_unnested_drc_value = measure.source_data_criteria.where(description: 'Diagnosis: Pneumococcal vaccine adverse reaction (disorder)').first
+      unnested_drc_vs_value = value_set_loader.vs_model_cache[[sdc_with_unnested_drc_value.codeListId, ""]]
+      assert_equal '293116002', unnested_drc_vs_value.concepts.first.code
+
+      sdc_with_nested_drc = measure.source_data_criteria.where(description: 'Immunization, Administered: rotavirus, live, monovalent vaccine').first
+      nested_drc_vs = value_set_loader.vs_model_cache[[sdc_with_nested_drc.codeListId, ""]]
+      assert_equal '119', nested_drc_vs.concepts.first.code
+
+      assert_equal 1, measure.population_sets.size
+      assert_equal 4, measure.population_criteria.keys.count
+      assert_equal 3, measure.cql_libraries.size
+    end
+  end
+
   def test_proportional_cv_measure
     VCR.use_cassette("measure__test_ratio_cv_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Artifacts.zip')
