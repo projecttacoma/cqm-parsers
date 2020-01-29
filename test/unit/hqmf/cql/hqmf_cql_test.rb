@@ -11,7 +11,7 @@ class HQMF2CQLTest < Minitest::Test
   # Create a blank folder for the errors
   FileUtils.rm_rf(RESULTS_DIR) if File.directory?(RESULTS_DIR)
   FileUtils.mkdir_p RESULTS_DIR
-  
+
   # Automatically generate one test method per measure file
   measure_files = File.join(HQMF_CQL_ROOT, '*.xml')
 
@@ -25,7 +25,7 @@ class HQMF2CQLTest < Minitest::Test
   end
 
   def do_test(measure_filename, measure_name)
-    
+
     model = HQMF2CQL::Document.new(File.open(measure_filename).read).to_model
 
     diff = ''
@@ -45,10 +45,13 @@ class HQMF2CQLTest < Minitest::Test
   end
 
   def test_measure_observation_parsing_multiple_observation
-    skip "Parser always associates the first observ function with populations"
     filename = File.join(HQMF_CQL_ROOT, 'QDM5_4_v5_6_CV_2_Measure.xml')
     document = HQMF2CQL::Document.new(File.open(filename).read).to_model
-    assert document.observations.length == 2
+    assert document.observations.length == 4
+    assert_equal(document.observations[0][:function_name], 'Measure Observation 1')
+    assert_equal(document.observations[1][:function_name], 'Measure Observation 2')
+    assert_equal(document.observations[2][:function_name], 'Measure Observation 3')
+    assert_equal(document.observations[3][:function_name], 'Measure Observation 4')
   end
 
 end

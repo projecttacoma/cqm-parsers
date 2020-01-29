@@ -11,7 +11,7 @@ module HQMF2CQL
     end
 
     # Extracts potential measure observations from the CQL based HQMF.
-    # This function needs to return a boolean so that it will continue to work with 
+    # This function needs to return a boolean so that it will continue to work with
     # HQMF2::DocumentPopulationHelper::extract_populations_and_criteria
     # This function is being overridden because in CQL the observations are no longer data criteria in the HQMF.
     def extract_observations
@@ -22,10 +22,10 @@ module HQMF2CQL
       observation_section = @doc.xpath('/cda:QualityMeasureDocument/cda:component/cda:measureObservationSection',
                                        HQMF2::Document::NAMESPACES)
       unless observation_section.empty?
-        observation_section.each do |entry|
+        observation_section.xpath('cda:definition').each do |obs_def|
           # Need to add population criteria for observations
           criteria_id = 'OBSERV'
-          criteria = HQMF2::PopulationCriteria.new(entry.xpath('cda:definition'), @document, @id_generator)
+          criteria = HQMF2::PopulationCriteria.new(obs_def, @document, @id_generator)
           criteria.type = 'OBSERV'
           if @ids_by_hqmf_id["#{criteria.hqmf_id}"]
             criteria.create_human_readable_id(@ids_by_hqmf_id[criteria.hqmf_id])
@@ -39,14 +39,14 @@ module HQMF2CQL
           cql_define_function = {}
           # The at_xpath(...).values returns an array of a single element.
           # The match returns an array and since we don't want the double quotes we take the second element
-          cql_define_function[:function_name] = entry.at_xpath("*/cda:measureObservationDefinition/cda:value/cda:expression").values.first.match('\\"([A-Za-z0-9 ]+)\\"')[1]
-          cql_define_function[:function_aggregation_type] = entry.at_xpath("*/cda:measureObservationDefinition/cda:methodCode/cda:item").attributes['code'].value
-          cql_define_function[:function_hqmf_oid] = entry.at_xpath("*/cda:measureObservationDefinition/cda:id").attributes['root'].value
+          cql_define_function[:function_name] = obs_def.at_xpath("cda:measureObservationDefinition/cda:value/cda:expression").values.first.match('\\"([A-Za-z0-9 ]+)\\"')[1]
+          cql_define_function[:function_aggregation_type] = obs_def.at_xpath("cda:measureObservationDefinition/cda:methodCode/cda:item").attributes['code'].value
+          cql_define_function[:function_hqmf_oid] = obs_def.at_xpath("cda:measureObservationDefinition/cda:id").attributes['root'].value
           # The criteria_reference_id is the id of the measurePopulationCriteria that should be used for this observation function
-          measure_population_id = entry.at_xpath("*/cda:measureObservationDefinition/cda:component/cda:criteriaReference/cda:id").attributes['root'].value
+          measure_population_id = obs_def.at_xpath("cda:measureObservationDefinition/cda:component/cda:criteriaReference/cda:id").attributes['root'].value
           # Get the name of the parameter to the  observation function within the measurePopulationCriteria section
 
-          measure_population_name = entry.at_xpath("*/cda:measureObservationDefinition/cda:component/cda:criteriaReference/cda:id").attributes['extension'].value 
+          measure_population_name = obs_def.at_xpath("cda:measureObservationDefinition/cda:component/cda:criteriaReference/cda:id").attributes['extension'].value
           criteria_reference_id = @doc.at_xpath("cda:QualityMeasureDocument/cda:component/cda:populationCriteriaSection/cda:component/cda:#{measure_population_name}Criteria/cda:id[@root = \"#{measure_population_id}\"]/../cda:precondition/cda:criteriaReference/cda:id")
           cql_define_function[:parameter] = criteria_reference_id.attributes['extension'].value.match('\\"([A-Za-z0-9 ]+)\\"')[1]
 
