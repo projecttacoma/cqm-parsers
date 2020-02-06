@@ -26,7 +26,9 @@ module Measures
                         extract_fields_from_single_code_reference_data_criteria(criteria)
                       end
       hqmf_template_oid = criteria.at_css('templateId/item')['root']
-      model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid).new(model_fields)
+      model = QDM::ModelFinder.by_hqmf_oid(hqmf_template_oid)
+      raise "No datatype found for oid #{hqmf_template_oid}. Verify the QDM version of the measure package is correct." if model.nil?
+      model = model.new(model_fields)
       model.description = model.qdmTitle + ': ' + model.description
       return model
     end
@@ -42,14 +44,22 @@ module Measures
     end
 
     def extract_fields_from_single_code_reference_data_criteria(criteria)
-      single_code_reference = criteria.css('value[codeSystem][code]').last || criteria.css('code[codeSystem][code]').last
+      single_code_reference = criteria.at_css('value[codeSystem][code]') || criteria.at_css('code[codeSystem][code]')
       system_id = "#{single_code_reference['codeSystem']}_#{single_code_reference['codeSystemVersion']}".to_sym
-      concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym]
+      concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym] || get_concept_from_participation(criteria.at_css('participation'))
       value_set = concept._parent
       return {
         description: concept.display_name,
         codeListId: value_set.oid
       }
+    end
+
+    # If QDM datatype template in MAT has includeSubTemplate, code gets nested into participation
+    # this method gets the codes from participation and form the code concept
+    def get_concept_from_participation(participation)
+      code_element = participation.at_css('code')
+      system_id = "#{code_element['codeSystem']}_#{code_element['codeSystemVersion']}".to_sym
+      @single_code_concepts[system_id][code_element['code'].to_sym]
     end
 
     def map_single_code_concepts(value_sets_from_single_code_references)

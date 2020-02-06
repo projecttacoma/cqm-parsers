@@ -53,7 +53,7 @@ module Measures
 
       def unzip_measure_zip_into_hash(zip_file)
         folders = Hash.new { |h, k| h[k] = {files: []} }
-        Zip::File.open zip_file do |file|
+        Zip::File.open zip_file.path do |file|
           file.each do |f|
             pn = Pathname(f.name)
             next if '__MACOSX'.in? pn.each_filename  # ignore anything in a __MACOSX folder
