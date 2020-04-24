@@ -74,7 +74,7 @@ module HQMF2
       fail 'Measure Observations criteria is missing computed expression(s) ' if exp.nil?
       parts = exp.to_s.split('-')
       dc = parse_parts_to_dc(parts)
-      @doc.add_data_criteria(dc)
+      @doc.add_data_criteria(dc) unless dc.nil?
       # Update reference_ids with any newly referenced data criteria
       dc.children_criteria.each { |cc| @doc.add_reference_id(cc) } unless dc&.children_criteria.nil?
       dc
