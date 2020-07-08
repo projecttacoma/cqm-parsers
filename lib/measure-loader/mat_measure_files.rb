@@ -26,14 +26,11 @@ module Measures
     end
 
     def self.create_from_zip_file(zip_file)
-      folders = unzip_measure_zip_into_hash(zip_file).values
-      raise MeasureLoadingInvalidPackageException.new("No measure found") if folders.empty?
-      folders.sort_by! { |h| h[:depth] }
-      raise MeasureLoadingInvalidPackageException.new("Multiple measure folders at top level") if folders[0][:depth] == folders.dig(1,:depth)
+      measure_folder = unzip_measure_zip_into_hash(zip_file).values
+      raise MeasureLoadingInvalidPackageException.new("No measure found") if measure_folder.empty?
+      raise MeasureLoadingInvalidPackageException.new("Multiple measure folders at top level") if measure_folder[0][:depth] == measure_folder.dig(1,:depth)
 
-      measure_folder, *component_measure_folders = folders
-      measure_assets = make_measure_artifacts(parse_measure_files(measure_folder))
-      measure_assets.components = component_measure_folders.collect {|f| make_measure_artifacts(parse_measure_files(f))}
+      measure_assets = measure_folder[0][:files] # make_measure_artifacts(parse_measure_files(measure_folder))
 
       return measure_assets
     rescue StandardError => e
@@ -57,12 +54,13 @@ module Measures
           file.each do |f|
             pn = Pathname(f.name)
             next if '__MACOSX'.in? pn.each_filename  # ignore anything in a __MACOSX folder
-            next unless pn.basename.extname.in? ['.xml','.cql','.json','.html']
+            next unless pn.basename.extname.in? ['.html','.json']
             folders[pn.dirname][:files] << { basename: pn.basename, contents: f.get_input_stream.read }
             folders[pn.dirname][:depth] =  pn.each_filename.count # this is just a count of how many folders are in the path
           end
         end
-        return folders
+
+        folders
       end
 
       def make_measure_artifacts(measure_files)

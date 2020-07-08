@@ -1,3 +1,5 @@
+require_relative '../util/bundle_utils'
+
 module Measures
   class CqlLoader
 
@@ -9,22 +11,13 @@ module Measures
       @value_set_loader.vs_model_cache = @vs_model_cache if @value_set_loader.present?
     end
 
-    # Returns an array of measures, will contain a single measure if it is a non-composite measure
+    # extracts & returns a measures
     def extract_measures
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
-
-      measures = []
-      if measure_files.components.present?
-        measure, component_measures = create_measure_and_components(measure_files)
-        measures.push(*component_measures)
-      else
-        measure = create_measure(measure_files)
-      end
-      measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
-      measures << measure
-
-      measures.each { |m| CqlLoader.update_population_set_and_strat_titles(m, @measure_details[:population_titles]) }
-      return measures
+      measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
+      measure = create_measure(measure_bundle)
+      # measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
+      measure
     end
 
     def self.update_population_set_and_strat_titles(measure, population_titles)
@@ -88,34 +81,29 @@ module Measures
     end
 
     # Creates and returns a measure
-    def create_measure(measure_files)
-      hqmf_xml = measure_files.hqmf_xml
-      # update the valueset info in each elm (update version and remove urn:oid)
-      measure_files.cql_libraries.each { |cql_lib_files| modify_elm_valueset_information(cql_lib_files.elm) }
+    def create_measure(measure_bundle)
+      measure_resource = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Measure').first
+      library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
+      libraries = []
+      library_resources.each do |library_resource|
+        libraries << FHIR::Library.transform_json(library_resource['resource'])
+      end
 
-      measure = CQM::Measure.new(HQMFMeasureLoader.extract_fields(hqmf_xml))
-      measure.cql_libraries = create_cql_libraries(measure_files.cql_libraries, measure.main_cql_library)
-      measure.composite = measure_files.components.present?
-      measure.calculation_method = @measure_details[:episode_of_care] ? 'EPISODE_OF_CARE' : 'PATIENT'
-      measure.calculate_sdes = @measure_details[:calculate_sdes]
+      vs_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'ValueSet')
+      value_sets = []
+      vs_resources.each do |vs_resource|
+        fhir_vs = FHIR::ValueSet.transform_json(vs_resource['resource'])
+        value_sets << CQM::ValueSet.new(fhir_value_set: fhir_vs)
+      end
 
-      hqmf_model = HQMF::Parser::V2CQLParser.new.parse(hqmf_xml) # TODO: move away from using V2CQLParser
-
-      elms = measure.cql_libraries.map(&:elm)
-      elm_valuesets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
-      verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, hqmf_model)
-
-      value_sets_from_single_code_references = ValueSetHelpers.make_fake_valuesets_from_single_code_references(elms, @vs_model_cache)
-      measure.source_data_criteria = SourceDataCriteriaLoader.new(hqmf_xml, value_sets_from_single_code_references).extract_data_criteria
-      measure.value_sets = value_sets_from_single_code_references
-      measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_valuesets)) if @value_set_loader.present?
-
-      ## this to_json is needed, it doesn't actually produce json, it just makes a hash that is better
-      ## suited for our uses (e.g. source_data_criteria goes from an array to a hash keyed by id)
-      hqmf_model_hash = hqmf_model.to_json.deep_symbolize_keys!
-      HQMFMeasureLoader.add_fields_from_hqmf_model_hash(measure, hqmf_model_hash)
-
-      return measure
+      fhir_measure = FHIR::Measure.transform_json(measure_resource['resource'])
+      cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
+                                     libraries: libraries,
+                                     value_sets: value_sets)
+      # measure.libraries = libraries
+      # TODO: hardcoded for now. this will be taken from bundle once available
+      cqm_measure.set_id = '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F'
+      cqm_measure
     end
 
     def create_cql_libraries(cql_library_files, main_cql_lib)
