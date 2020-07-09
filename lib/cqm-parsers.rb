@@ -2,6 +2,7 @@
 require 'nokogiri'
 require 'json'
 require 'ostruct'
+require 'fhir/mongoid/models'
 
 # require_relative
 require_relative 'util/counter.rb'
