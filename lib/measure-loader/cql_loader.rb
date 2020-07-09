@@ -16,7 +16,7 @@ module Measures
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
       measure = create_measure(measure_bundle)
-      # measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
+      measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
       measure
     end
 
@@ -84,10 +84,7 @@ module Measures
     def create_measure(measure_bundle)
       measure_resource = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Measure').first
       library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
-      libraries = []
-      library_resources.each do |library_resource|
-        libraries << FHIR::Library.transform_json(library_resource['resource'])
-      end
+      libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
 
       vs_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'ValueSet')
       value_sets = []
@@ -100,7 +97,6 @@ module Measures
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
                                      libraries: libraries,
                                      value_sets: value_sets)
-      # measure.libraries = libraries
       # TODO: hardcoded for now. this will be taken from bundle once available
       cqm_measure.set_id = '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F'
       cqm_measure
