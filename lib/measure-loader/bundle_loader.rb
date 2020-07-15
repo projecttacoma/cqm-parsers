@@ -1,4 +1,3 @@
-require_relative '../util/bundle_utils'
 require 'base64'
 
 module Measures
@@ -12,7 +11,7 @@ module Measures
       @value_set_loader.vs_model_cache = @vs_model_cache if @value_set_loader.present?
     end
 
-    # extracts & returns a cqm measure, a wrapper around FHIR Measure containing Bonnie specific information.
+    # extracts & returns a cqm measure, a wrapperslac around FHIR Measure containing Bonnie specific information.
     def extract_measures
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
@@ -132,6 +131,7 @@ module Measures
         library_version: cql_lib_files.version,
         elm: cql_lib_files.elm,
         elm_annotations: ElmParser.parse(cql_lib_files.elm_xml),
+        cql: cql_lib_files.cql,
         statement_dependencies: modelize_cql_statement_dependencies(cql_statement_dependencies),
         is_main_library: is_main_cql_lib
       )

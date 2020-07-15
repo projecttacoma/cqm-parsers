@@ -10,6 +10,7 @@ require_relative 'util/code_system_helper'
 require_relative 'util/hqmf_template_helper'
 require_relative 'util/vsac_api'
 require_relative 'util/util'
+require_relative 'util/bundle_utils'
 
 require_relative 'hqmf-model/utilities.rb'
 
