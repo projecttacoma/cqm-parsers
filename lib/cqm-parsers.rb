@@ -74,7 +74,7 @@ require_relative 'hqmf-parser/parser'
 require_relative 'ext/data_element.rb'
 
 require_relative 'measure-loader/helpers'
-require_relative 'measure-loader/cql_loader'
+require_relative 'measure-loader/bundle_loader'
 require_relative 'measure-loader/elm_dependency_finder'
 require_relative 'measure-loader/elm_parser'
 require_relative 'measure-loader/exceptions'

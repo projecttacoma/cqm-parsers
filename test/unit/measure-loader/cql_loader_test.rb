@@ -14,7 +14,7 @@ class CQLLoaderTest < Minitest::Test
 
   def test_extract_measure
     measure_file = File.new File.join(@fixtures_path, 'EXM_104_v6_0_Artifacts.zip')
-    loader = Measures::CqlLoader.new(measure_file, @measure_details)
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
     measure = loader.extract_measures
 
     assert_equal 'EXM_104', measure.fhir_measure.title.value

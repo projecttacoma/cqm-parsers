@@ -26,7 +26,7 @@ measure_file = File.new File.join('some/path/CMS158_v5_4_Artifacts.zip')
 value_set_loader = Measures::VSACValueSetLoader.new(vsac_options, get_ticket_granting_ticket)
 
 # Initialize the CqlLoader with the needed parameters.
-loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
+loader = Measures::BundleLoader.new(measure_file, measure_details, value_set_loader)
 # Build an array of measure models.
 measures = loader.extract_measures
 
