@@ -4,7 +4,7 @@ module Measures
   class MATMeasureFiles
     attr_accessor :hqmf_xml, :cql_libraries, :human_readable, :components
 
-    class CqlLibraryFiles
+    class LogicLibraryContent
       attr_accessor :id, :version, :cql, :elm, :elm_xml
       def initialize(id, version, cql, elm, elm_xml)
         @id = id
@@ -44,6 +44,23 @@ module Measures
       return false
     end
 
+    def self.parse_cql_elm(library)
+      elm_xml, elm, cql, id, version = nil
+      library['content'].each do |content|
+        case content['contentType']['value']
+        when 'application/elm+xml'
+          elm_xml = Nokogiri::XML(Base64.decode64(Base64.decode64(content['data']['value']))) { |config| config.noblanks }
+          id, version = get_library_identifier(elm_xml)
+        when 'application/elm+json'
+          elm = JSON.parse(Base64.decode64(Base64.decode64(content['data']['value'])), max_nesting: 1000)
+        when 'text/cql'
+          cql = Base64.decode64(Base64.decode64(content['data']['value']))
+        end
+      end
+      verify_library_versions_match(cql, elm, id, version)
+      LogicLibraryContent.new(id,version, cql, elm, elm_xml)
+    end
+
     class << self
 
       private
@@ -75,8 +92,9 @@ module Measures
           elm = measure_files[:elms][i]
           cql = measure_files[:cqls][i]
 
-          id, version = verify_library_versions_match_and_get_version(cql, elm, elm_annotation)
-          cql_libraries << CqlLibraryFiles.new(id, version, cql, elm, elm_annotation)
+          id, version = get_library_identifier(elm_annotation)
+          verify_library_versions_match(cql, elm, id, version)
+          cql_libraries << LogicLibraryContent.new(id, version, cql, elm, elm_annotation)
         end
 
         return new(measure_files[:hqmf_xml], cql_libraries, measure_files[:human_readable])
@@ -116,19 +134,19 @@ module Measures
         return measure_files
       end
 
-      def verify_library_versions_match_and_get_version(cql, elm, elm_annotation)
+      def get_library_identifier(elm_annotation)
         identifier = elm_annotation.at_xpath('/xmlns:library/xmlns:identifier')
         id = identifier['id']
         version = identifier['version']
+        return id, version
+      end
 
-        if (Helpers.elm_id(elm)!= id ||
+      def verify_library_versions_match(cql, elm, id, version)
+        if Helpers.elm_id(elm) != id ||
             Helpers.elm_version(elm) != version ||
             !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
-           )
           raise MeasureLoadingInvalidPackageException.new("Cql library assets must all have same version.")
         end
-
-        return id, version
       end
 
     end

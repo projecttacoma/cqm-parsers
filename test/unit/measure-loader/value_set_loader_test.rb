@@ -35,7 +35,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_draft_no_profile_version', @vcr_options) do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -46,7 +46,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_draft_profile', @vcr_options) do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -57,7 +57,7 @@ class VSACValueSetLoaderTest < Minitest::Test
                      match_requests_on: [:method, :uri_no_st]) do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -67,7 +67,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_no_profile_version', @vcr_options) do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -78,7 +78,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       vsac_options = { measure_defined: true }
 
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 173, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -88,7 +88,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_release', @vcr_options) do
       vsac_options = { release: 'eCQM Update 2018 EP-EC and EH' }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 162, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -98,7 +98,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_with_username_password', @vcr_options) do
       vsac_options = { release: 'eCQM Update 2018 EP-EC and EH' }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, username: ENV['VSAC_USERNAME'], password: ENV['VSAC_PASSWORD'])
-      loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 162, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -108,7 +108,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_profile', @vcr_options) do
       vsac_options = { measure_defined: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 163, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -118,7 +118,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     VCR.use_cassette('vs_loading_version', @vcr_options) do
       vsac_options = { measure_defined: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-      loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
+      loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 148, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
@@ -157,7 +157,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     # any network connection attempts. This tests the VSACValueSetLoader 'lazy' authentiacation.
     measure_file = File.new File.join(@fixtures_path, 'IETCQL_v5_0_missing_vs_oid_Artifacts.zip')
     value_set_loader = Measures::VSACValueSetLoader.new(options: {}, username: 'fake', password: 'fake')
-    loader = Measures::CqlLoader.new(measure_file, {}, value_set_loader)
+    loader = Measures::BundleLoader.new(measure_file, {}, value_set_loader)
     assert_raises Measures::MeasureLoadingInvalidPackageException do
       loader.extract_measures
     end

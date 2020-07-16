@@ -10,6 +10,7 @@ require_relative 'util/code_system_helper'
 require_relative 'util/hqmf_template_helper'
 require_relative 'util/vsac_api'
 require_relative 'util/util'
+require_relative 'util/bundle_utils'
 
 require_relative 'hqmf-model/utilities.rb'
 
@@ -74,7 +75,7 @@ require_relative 'hqmf-parser/parser'
 require_relative 'ext/data_element.rb'
 
 require_relative 'measure-loader/helpers'
-require_relative 'measure-loader/cql_loader'
+require_relative 'measure-loader/bundle_loader'
 require_relative 'measure-loader/elm_dependency_finder'
 require_relative 'measure-loader/elm_parser'
 require_relative 'measure-loader/exceptions'

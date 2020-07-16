@@ -1,7 +1,7 @@
 require 'test_helper'
 require 'vcr_setup.rb'
 
-class CQLLoaderTest < Minitest::Test
+class BundleLoaderTest < Minitest::Test
 
   def setup
     @fixtures_path = File.join('test', 'fixtures', 'measureloading')
@@ -14,13 +14,46 @@ class CQLLoaderTest < Minitest::Test
 
   def test_extract_measure
     measure_file = File.new File.join(@fixtures_path, 'EXM_104_v6_0_Artifacts.zip')
-    loader = Measures::CqlLoader.new(measure_file, @measure_details)
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
     measure = loader.extract_measures
 
     assert_equal 'EXM_104', measure.fhir_measure.title.value
-    assert_equal '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F', measure.set_id
-    assert_equal 5, measure.libraries.size
-    assert_equal 19, measure.value_set_ids.count
+    assert_equal '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F', measure.set_id, 'Measure set Id does not match expected value.'
+    assert_equal 5, measure.libraries.size, 'Mismatching library size.'
+    assert_equal 19, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
+    assert_equal 5, measure.cql_libraries.size, 'Mismatching number of cql libraries.'
+  end
+
+  def test_parse_elm
+    setup
+    measure_file = File.new File.join(@fixtures_path, 'EXM_104_v6_0_Artifacts.zip')
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
+    measure = loader.extract_measures
+
+    assert_equal 5, measure.cql_libraries.size
+
+    measure.cql_libraries.each do |lib|
+      assert lib.cql != nil
+      assert lib.elm != nil
+      assert lib.elm_annotations != nil
+
+      assert lib.cql.include?('using FHIR version')
+
+      assert_kind_of Hash, lib.elm
+      elm_identifier = lib.elm['library']['identifier']
+      assert elm_identifier != nil
+      assert elm_identifier['id'] != nil
+      assert elm_identifier['version'] != nil
+
+      assert_kind_of Hash, lib.elm_annotations
+      elm_annotations_identifier = lib.elm_annotations[:identifier]
+      assert elm_annotations_identifier != nil
+      assert elm_annotations_identifier[:id] != nil
+      assert elm_annotations_identifier[:version] != nil
+
+      assert lib.library_name == elm_annotations_identifier[:id] && lib.library_name == elm_identifier['id'], 'Mismatch Library IDs.'
+      assert lib.library_version == elm_annotations_identifier[:version] && lib.library_version == elm_identifier['version'], 'Mismatch Library Versions.'
+    end
   end
 
   # def test_stratifications_and_observations

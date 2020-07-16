@@ -10,7 +10,7 @@ class ElmDependencyFinderTest < Minitest::Test
 
   def test_finding_deps_for_composite_elms
     elms = JSON.parse(File.read(File.join(@fixtures_path, 'composite_measure_elms.json')))
-    cql_library_files = elms.map { |elm| Measures::MATMeasureFiles::CqlLibraryFiles.new(nil,nil,nil,elm,nil) }
+    cql_library_files = elms.map { |elm| Measures::MATMeasureFiles::LogicLibraryContent.new(nil, nil, nil, elm, nil) }
     found_deps = Measures::ElmDependencyFinder.find_dependencies(cql_library_files, "AWATestComposite")
     expected_deps = JSON.parse(File.read(File.join(@fixtures_path,'composite_measure_expected_deps.json')))
 
