@@ -11,7 +11,7 @@ module Measures
       @value_set_loader.vs_model_cache = @vs_model_cache if @value_set_loader.present?
     end
 
-    # extracts & returns a cqm measure, a wrapperslac around FHIR Measure containing Bonnie specific information.
+    # extracts & returns cqm measure, a wrapper augmenting the FHIR Measure model with Bonnie specific information.
     def extract_measures
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
