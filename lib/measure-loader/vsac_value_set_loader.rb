@@ -2,6 +2,7 @@ module Measures
   # Utility class for loading value sets
   class VSACValueSetLoader
     attr_accessor :vsac_options, :vs_model_cache
+    VS_URL_PRIFIX = 'http://cts.nlm.nih.gov/fhir/ValueSet/'
 
     def initialize(options)
       options.symbolize_keys!
@@ -17,15 +18,16 @@ module Measures
       needed_value_sets = []
 
       value_sets.each do |value_set|
-        vs_vsac_options = make_specific_value_set_options(value_set)
+        raw_value_set = value_set.dup
+        vs_vsac_options = make_specific_value_set_options(raw_value_set)
         query_version = determine_query_version(vs_vsac_options)
-
-        cache_key = [value_set[:oid], query_version]
+        raw_value_set[:oid] = get_value_set_oid_from_url(raw_value_set[:oid])
+        cache_key = [raw_value_set[:oid], query_version]
         vs_model = @vs_model_cache[cache_key]
         if vs_model.present?
           vs_models << vs_model
         else
-          needed_value_sets << {value_set:  value_set,
+          needed_value_sets << {value_set:  raw_value_set,
                                 vs_vsac_options: vs_vsac_options,
                                 query_version: query_version,
                                 cache_key: cache_key}
@@ -73,25 +75,41 @@ module Measures
       doc = Nokogiri::XML(vsac_xml_response)
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
-      vs = CQM::ValueSet.new(
-        oid: vs_element["ID"],
-        display_name: vs_element["displayName"],
-        version: vs_element["version"] == "N/A" ? query_version : vs_element["version"],
-        concepts: extract_concepts(vs_element)
+      fhir_value_set = FHIR::ValueSet.new(
+        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil ),
+        name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
+        version: FHIR::PrimitiveString.transform_json(
+          vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil),
+        compose: prepare_code_system_concepts(vs_element)
       )
-      return vs
+
+      CQM::ValueSet.new(fhir_value_set: fhir_value_set)
     end
 
-    def extract_concepts(vs_element)
-      concepts = vs_element.xpath("//vs:Concept").collect do |con|
-        CQM::Concept.new(code: con["code"],
-                         code_system_name: con["codeSystemName"],
-                         code_system_version: con["codeSystemVersion"],
-                         code_system_oid: con["codeSystem"],
-                         display_name: con["displayName"])
+    def prepare_code_system_concepts(vs_element)
+      code_systems = vs_element.xpath("//vs:Concept").group_by { |concetp| concetp['codeSystemName']}
+      vsc_include = []
+      code_systems.each do |code_system, concepts|
+        vs_concepts = concepts.collect do |concept|
+          FHIR::ValueSetComposeIncludeConcept.new(
+            code: FHIR::PrimitiveCode.transform_json(concept['code'], nil ),
+            display: FHIR::PrimitiveString.transform_json(concept['displayName'], nil)
+          )
+        end
+
+        vsc_include << FHIR::ValueSetComposeInclude.new(
+          system: FHIR::PrimitiveCode.transform_json(code_system, nil),
+          version: FHIR::PrimitiveCode.transform_json(concepts[0]['codeSystemVersion'], nil),
+          concept: vs_concepts
+        )
       end
-      return concepts
+      FHIR::ValueSetCompose.new(include: vsc_include)
     end
 
+    def get_value_set_oid_from_url(value_set_url)
+      value_set_oid_regex = /([0-2])((\.0)|(\.[1-9][0-9]*))*$/
+      value_set_oid = value_set_url.match(value_set_oid_regex)
+      value_set_oid.to_s
+    end
   end
 end

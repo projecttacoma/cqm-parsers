@@ -32,13 +32,13 @@ module Measures
         return elm_value_sets
       end
 
-      # Add single code references by finding the codes from the elm and creating new ValueSet objects
+      # Add single code references(DRC) by finding the codes from the elm and creating new ValueSet objects
       # With a generated GUID as a fake oid.
-      def make_fake_valuesets_from_single_code_references(elms, vs_model_cache)
+      def make_fake_valuesets_from_drc(elms, vs_model_cache)
         value_sets_from_single_code_references = []
 
         elms.each do |elm|
-          # Loops over all single codes and saves them as fake valuesets.
+          # Loops over all single codes and saves them as fake ValueSets.
           (elm.dig('library','codes','def') || []).each do |code_reference|
             # look up the referenced code system
             code_system_def = elm['library']['codeSystems']['def'].find { |code_sys| code_sys['name'] == code_reference['codeSystem']['name'] }
@@ -47,22 +47,31 @@ module Measures
 
             cache_key = [code_hash, '']
             if vs_model_cache[cache_key].nil?
-              concept = CQM::Concept.new(code: code_reference['id'],
-                                         code_system_name: code_system_def['name'],
-                                         code_system_version: code_system_def['version'],
-                                         code_system_oid: code_system_def['id'],
-                                         display_name: code_reference['name'])
-              vs_model_cache[cache_key] = CQM::ValueSet.new(oid: code_hash,
-                                                            display_name: code_reference['name'],
-                                                            version: '',
-                                                            concepts: [concept])
+              vs_compose = prepare_value_set_compose(code_reference, code_system_def)
+              fhir_value_set = FHIR::ValueSet.new(compose: vs_compose, fhirId: code_hash)
+              cqm_value_set = CQM::ValueSet.new(fhir_value_set: fhir_value_set)
+              vs_model_cache[cache_key] = cqm_value_set
             end
             value_sets_from_single_code_references << vs_model_cache[cache_key]
           end
         end
-        return value_sets_from_single_code_references
+        value_sets_from_single_code_references
       end
 
+      def prepare_value_set_compose(code_reference, code_system_def)
+        vs_concept = FHIR::ValueSetComposeIncludeConcept.new(
+          code: FHIR::PrimitiveCode.transform_json(code_reference['id'], nil ),
+          display: FHIR::PrimitiveString.transform_json(code_reference['name'], nil)
+        )
+
+        vsc_include = FHIR::ValueSetComposeInclude.new(
+          system: FHIR::PrimitiveCode.transform_json(code_system_def['name'], nil),
+          version: FHIR::PrimitiveCode.transform_json(code_system_def['version'], nil),
+          concept: [vs_concept]
+        )
+
+        FHIR::ValueSetCompose.new(include: [vsc_include])
+      end
     end
   end
 end

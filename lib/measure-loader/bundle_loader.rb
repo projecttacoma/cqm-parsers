@@ -87,6 +87,9 @@ module Measures
     # Creates and returns a measure
     def create_measure(measure_bundle)
       measure_resource = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Measure').first
+
+      guid_identifier = get_guid_from_measure_resource(measure_resource)
+
       fhir_measure = FHIR::Measure.transform_json(measure_resource['resource'])
 
       library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
@@ -100,13 +103,16 @@ module Measures
       end
 
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
-                                     libraries: libraries,
-                                     value_sets: value_sets)
+                                     libraries: libraries)
 
       cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
+      elms = cqm_measure.cql_libraries.map(&:elm)
+      elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
+      fake_valuesets_from_drc = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
+      cqm_measure.value_sets = fake_valuesets_from_drc
+      cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
 
-      # TODO: hardcoded for now. this will be taken from bundle once available
-      cqm_measure.set_id = '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F'
+      cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
     end
 
@@ -148,6 +154,14 @@ module Measures
       ValueSetHelpers.remove_urnoid(elm)
       ValueSetHelpers.modify_value_set_versions(elm)
       return nil
+    end
+
+    def get_guid_from_measure_resource(measure_resource)
+      guid_identifier = measure_resource['resource']['identifier'].select{ |identifier|
+        identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
+      }
+      raise MeasureLoadingInvalidPackageException.new('GUID for measure is missing') if guid_identifier.empty?
+      guid_identifier.first['value']
     end
 
     # @deprecated
