@@ -95,13 +95,6 @@ module Measures
       library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
       libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
 
-      vs_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'ValueSet')
-      value_sets = []
-      vs_resources.each do |vs_resource|
-        fhir_vs = FHIR::ValueSet.transform_json(vs_resource['resource'])
-        value_sets << CQM::ValueSet.new(fhir_value_set: fhir_vs)
-      end
-
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
                                      libraries: libraries)
 
