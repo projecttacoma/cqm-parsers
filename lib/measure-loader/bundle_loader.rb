@@ -101,8 +101,7 @@ module Measures
       cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
       elms = cqm_measure.cql_libraries.map(&:elm)
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
-      fake_valuesets_from_drc = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
-      cqm_measure.value_sets = fake_valuesets_from_drc
+      cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
 
       cqm_measure.set_id = guid_identifier.upcase
