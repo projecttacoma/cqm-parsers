@@ -76,6 +76,7 @@ module Measures
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
       fhir_value_set = FHIR::ValueSet.new(
+        fhirId: vs_element['ID'],
         url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil ),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
