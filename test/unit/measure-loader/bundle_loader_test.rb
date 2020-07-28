@@ -13,20 +13,23 @@ class BundleLoaderTest < Minitest::Test
   end
 
   def test_extract_measure
-    measure_file = File.new File.join(@fixtures_path, 'EXM_104_v6_0_Artifacts.zip')
-    loader = Measures::BundleLoader.new(measure_file, @measure_details)
-    measure = loader.extract_measures
+    VCR.use_cassette('vsac_response_for_load_CMS104', @vcr_options) do
+      measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::BundleLoader.new(measure_file, @measure_details, value_set_loader)
+      measure = loader.extract_measures
 
-    assert_equal 'EXM_104', measure.fhir_measure.title.value
-    assert_equal '3F72D58F-4BCF-4AA3-A05E-EDC73197BG5F', measure.set_id, 'Measure set Id does not match expected value.'
-    assert_equal 5, measure.libraries.size, 'Mismatching library size.'
-    assert_equal 19, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
-    assert_equal 5, measure.cql_libraries.size, 'Mismatching number of cql libraries.'
+      assert_equal 'CMS104', measure.fhir_measure.title.value
+      assert_equal '42BF391F-38A3-4C0F-9ECE-DCD47E9609D9', measure.set_id, 'Measure set Id does not match expected value.'
+      assert_equal 5, measure.libraries.size, 'Mismatching library size.'
+      assert_equal 46, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
+      assert_equal 5, measure.cql_libraries.size, 'Mismatching number of cql libraries.'
+    end
   end
 
   def test_parse_elm
     setup
-    measure_file = File.new File.join(@fixtures_path, 'EXM_104_v6_0_Artifacts.zip')
+    measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
     loader = Measures::BundleLoader.new(measure_file, @measure_details)
     measure = loader.extract_measures
 
