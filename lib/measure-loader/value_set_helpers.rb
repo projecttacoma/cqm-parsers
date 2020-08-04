@@ -60,7 +60,7 @@ module Measures
 
       def prepare_value_set_compose(code_reference, code_system_def)
         vs_concept = FHIR::ValueSetComposeIncludeConcept.new(
-          code: FHIR::PrimitiveCode.transform_json(code_reference['id'], nil ),
+          code: FHIR::PrimitiveCode.transform_json(code_reference['id'], nil),
           display: FHIR::PrimitiveString.transform_json(code_reference['name'], nil)
         )
 
