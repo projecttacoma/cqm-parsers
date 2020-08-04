@@ -55,6 +55,7 @@ module Measures
           elm = JSON.parse(Base64.decode64(Base64.decode64(content['data']['value'])), max_nesting: 1000)
         when 'text/cql'
           cql = Base64.decode64(Base64.decode64(content['data']['value']))
+          raise MeasureLoadingInvalidPackageException.new("Library FHIR version does not match FHIR 4.0.1.") unless cql.to_s.downcase.include? "using FHIR version '4.0.1'".downcase
         end
       end
       verify_library_versions_match(cql, elm, id, version)
