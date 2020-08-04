@@ -111,7 +111,7 @@ module Measures
     def parse_cql_elm(libraries, measure_lib_name, measure_lib_version)
       logic_library_content = []
       libraries.each do |lib|
-        logic_library_content << MATMeasureFiles::parse_cql_elm(lib)
+        logic_library_content << MATMeasureFiles.parse_lib_contents(lib)
       end
 
       elm_statement_dependencies = ElmDependencyFinder.find_dependencies(logic_library_content, measure_lib_name)
@@ -149,7 +149,7 @@ module Measures
     end
 
     def get_guid_from_measure_resource(measure_resource)
-      guid_identifier = measure_resource['resource']['identifier'].select{ |identifier|
+      guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
       }
       raise MeasureLoadingInvalidPackageException.new('GUID for measure is missing') if guid_identifier.empty?

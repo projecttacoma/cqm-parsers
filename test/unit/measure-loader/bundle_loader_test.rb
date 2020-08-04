@@ -36,23 +36,23 @@ class BundleLoaderTest < Minitest::Test
     assert_equal 5, measure.cql_libraries.size
 
     measure.cql_libraries.each do |lib|
-      assert lib.cql != nil
-      assert lib.elm != nil
-      assert lib.elm_annotations != nil
+      assert !lib.cql.nil?
+      assert !lib.elm.nil?
+      assert !lib.elm_annotations.nil?
 
       assert lib.cql.include?('using FHIR version')
 
       assert_kind_of Hash, lib.elm
       elm_identifier = lib.elm['library']['identifier']
-      assert elm_identifier != nil
-      assert elm_identifier['id'] != nil
-      assert elm_identifier['version'] != nil
+      assert !elm_identifier.nil?
+      assert !elm_identifier['id'].nil?
+      assert !elm_identifier['version'].nil?
 
       assert_kind_of Hash, lib.elm_annotations
       elm_annotations_identifier = lib.elm_annotations[:identifier]
-      assert elm_annotations_identifier != nil
-      assert elm_annotations_identifier[:id] != nil
-      assert elm_annotations_identifier[:version] != nil
+      assert !elm_annotations_identifier.nil?
+      assert !elm_annotations_identifier[:id].nil?
+      assert !elm_annotations_identifier[:version].nil?
 
       assert lib.library_name == elm_annotations_identifier[:id] && lib.library_name == elm_identifier['id'], 'Mismatch Library IDs.'
       assert lib.library_version == elm_annotations_identifier[:version] && lib.library_version == elm_identifier['version'], 'Mismatch Library Versions.'
@@ -435,5 +435,5 @@ class BundleLoaderTest < Minitest::Test
   #     assert_equal measure.source_data_criteria[18].description, 'Physical Exam, Performed: Diastolic blood pressure'
   #     assert_equal measure.source_data_criteria[18].codeListId, 'drc-c5d1ebc9ecb1d73d1ecec416e73261a59884cac2ccacc28edb1e9cd8b658c64e'
   #   end
-  #end
+  # end
 end
