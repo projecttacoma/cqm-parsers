@@ -77,10 +77,11 @@ module Measures
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
       fhir_value_set = FHIR::ValueSet.new(
         fhirId: vs_element['ID'],
-        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil ),
+        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
-          vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil),
+          vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil
+        ),
         compose: prepare_code_system_concepts(vs_element)
       )
 
@@ -93,7 +94,7 @@ module Measures
       code_systems.each do |code_system, concepts|
         vs_concepts = concepts.collect do |concept|
           FHIR::ValueSetComposeIncludeConcept.new(
-            code: FHIR::PrimitiveCode.transform_json(concept['code'], nil ),
+            code: FHIR::PrimitiveCode.transform_json(concept['code'], nil),
             display: FHIR::PrimitiveString.transform_json(concept['displayName'], nil)
           )
         end

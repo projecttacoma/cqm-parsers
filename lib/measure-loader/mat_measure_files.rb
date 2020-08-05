@@ -4,6 +4,8 @@ module Measures
   class MATMeasureFiles
     attr_accessor :hqmf_xml, :cql_libraries, :human_readable, :components
 
+    FHIR_VERSION = '4.0.1'
+
     class LogicLibraryContent
       attr_accessor :id, :version, :cql, :elm, :elm_xml
       def initialize(id, version, cql, elm, elm_xml)
@@ -44,7 +46,7 @@ module Measures
       return false
     end
 
-    def self.parse_cql_elm(library)
+    def self.parse_lib_contents(library)
       elm_xml, elm, cql, id, version = nil
       library['content'].each do |content|
         case content['contentType']['value']
@@ -55,6 +57,7 @@ module Measures
           elm = JSON.parse(Base64.decode64(Base64.decode64(content['data']['value'])), max_nesting: 1000)
         when 'text/cql'
           cql = Base64.decode64(Base64.decode64(content['data']['value']))
+          raise MeasureLoadingInvalidPackageException.new("One or more Libraries FHIR version does not match FHIR #{FHIR_VERSION}.") unless cql.to_s.downcase.include? "using FHIR version '#{FHIR_VERSION}'".downcase
         end
       end
       verify_library_versions_match(cql, elm, id, version)
@@ -143,8 +146,8 @@ module Measures
 
       def verify_library_versions_match(cql, elm, id, version)
         if Helpers.elm_id(elm) != id ||
-            Helpers.elm_version(elm) != version ||
-            !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
+           Helpers.elm_version(elm) != version ||
+           !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
           raise MeasureLoadingInvalidPackageException.new("Cql library assets must all have same version.")
         end
       end

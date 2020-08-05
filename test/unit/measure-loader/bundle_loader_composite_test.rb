@@ -13,6 +13,7 @@ class BundleLoaderTest < Minitest::Test
   end
 
   def test_invalid_composite_measure_with_component_measure_missing_xml_file
+    skip "Bonnie-on-FHIR does not support composite measures."
     VCR.use_cassette('measure__test_invalid_composite_measure_with_component_measure_missing_xml_file', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_file.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
@@ -24,6 +25,7 @@ class BundleLoaderTest < Minitest::Test
   end
 
   def test_invalid_composite_measure_with_missing_component_measure
+    skip "Bonnie-on-FHIR does not support composite measures."
     VCR.use_cassette('measure__invalid_composite_measure_with_missing_component_measure', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_component.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
@@ -35,6 +37,7 @@ class BundleLoaderTest < Minitest::Test
   end
 
   def test_invalid_composite_measure_with_missing_composite_measure_files
+    skip "Bonnie-on-FHIR does not support composite measures."
     VCR.use_cassette('measure__invalid_composite_measure_with_missing_composite_measure_files', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts_missing_composite_files.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
@@ -46,6 +49,7 @@ class BundleLoaderTest < Minitest::Test
   end
 
   def test_loading_composite_measure
+    skip "Bonnie-on-FHIR does not support composite measures."
     VCR.use_cassette('measure__load_composite_measure', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMSAWA_v5_6_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
