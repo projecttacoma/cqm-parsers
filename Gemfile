@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gemspec :development_group => :test
 
-gem 'mongoid', '~> 7.1'
+gem 'mongoid', '~> 6.4.2'
 
 # gem 'cqm-models', '~> 3.0.0'
 # gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'master'
