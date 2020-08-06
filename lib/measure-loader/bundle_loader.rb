@@ -152,7 +152,7 @@ module Measures
       guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
       }
-      raise MeasureLoadingInvalidPackageException.new('GUID for measure is missing') if guid_identifier.empty?
+      raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
       guid_identifier.first['value']
     end
 
