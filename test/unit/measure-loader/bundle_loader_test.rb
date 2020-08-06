@@ -59,6 +59,16 @@ class BundleLoaderTest < Minitest::Test
     end
   end
 
+  def test_missing_guid_raises
+    setup
+    measure_file = File.new File.join(@fixtures_path, 'fhir', 'CMS104_v6_0_Artifacts-msr-missing-guid.zip')
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
+    err = assert_raises Measures::MeasureLoadingInvalidPackageException do
+      loader.extract_measures
+    end
+    assert err.message.include? 'Measure Resource does not contain GUID Identifier.'
+  end
+
   # def test_stratifications_and_observations
   #   VCR.use_cassette('measure__stratifications_and_observations', @vcr_options) do
   #     measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
