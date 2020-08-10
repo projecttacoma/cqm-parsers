@@ -89,6 +89,7 @@ module Measures
       measure_resource = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Measure').first
 
       guid_identifier = get_guid_from_measure_resource(measure_resource)
+      cms_id = get_cms_id_from_measure_resource(measure_resource)
 
       fhir_measure = FHIR::Measure.transform_json(measure_resource['resource'])
 
@@ -96,7 +97,9 @@ module Measures
       libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
 
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
-                                     libraries: libraries)
+                                     libraries: libraries,
+                                     cms_id: cms_id,
+                                     title: fhir_measure.title.value)
 
       cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
       elms = cqm_measure.cql_libraries.map(&:elm)
@@ -156,6 +159,14 @@ module Measures
       }
       raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
       guid_identifier.first['value']
+    end
+
+    def get_cms_id_from_measure_resource(measure_resource)
+      cms_identifier = measure_resource['resource']['identifier'].select { |identifier|
+        identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms'
+      }
+      raise MeasureLoadingInvalidPackageException.new('CMS ID for measure is missing') if cms_identifier.empty?
+      cms_identifier.first['value']
     end
 
     # @deprecated
