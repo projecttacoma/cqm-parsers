@@ -35,8 +35,6 @@ module Measures
       measure_assets = measure_folder[0][:files] # make_measure_artifacts(parse_measure_files(measure_folder))
 
       return measure_assets
-    rescue StandardError => e
-      raise MeasureLoadingInvalidPackageException.new("Error processing package file: #{e.message}")
     end
 
     def self.valid_zip?(zip_file)
@@ -81,6 +79,8 @@ module Measures
         end
 
         folders
+      rescue
+        raise MeasureLoadingInvalidPackageException.new("The uploaded file is not a zip file.")
       end
 
       def make_measure_artifacts(measure_files)
