@@ -103,6 +103,7 @@ module Measures
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
+      cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure)}.flatten
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
