@@ -43,7 +43,7 @@ class MATMeasureFilesTest < Minitest::Test
     err = assert_raises Measures::MeasureLoadingInvalidPackageException do
       Measures::MATMeasureFiles.parse_lib_contents fhir_lib
     end
-    assert err.message.include? "Library FHIR version does not match FHIR 4.0.1"
+    assert err.message.include? "One or more Libraries FHIR version does not match FHIR"
   end
 
   def test_valid_lib_fhir_version_does_not_raise
