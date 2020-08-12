@@ -106,9 +106,11 @@ module Measures
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
-      value_sets = cqm_measure.value_sets.compact
+
       # TODO: uncomment once we have TS models integrated in bonnie.
-      # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(value_sets)}.flatten
+      # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure.value_sets.compact)}.flatten
+
+      cqm_measure.population_sets = parse_population_sets(fhir_measure)
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
@@ -169,6 +171,60 @@ module Measures
       raise MeasureLoadingInvalidPackageException.new('CMS ID for measure is missing') if cms_identifier.empty?
       cms_identifier.first['value']
     end
+
+    def parse_population_sets(fhir_measure)
+      return fhir_measure.group.map.with_index do |group, index|
+        population_set = CQM::PopulationSet.new(
+            title: 'Population Criteria Selection',
+            population_set_id: "PopulationSet_#{index+1}"
+        )
+        # Figure out population map
+        population_set.populations = new_population_map(fhir_measure.scoring.coding.first.code.value)
+
+        group.population.each do |pop|
+          stmt_ref = CQM::StatementReference.new(
+              library_name: fhir_measure.name.value,
+              statement_name: pop.criteria.expression.value
+          )
+          case pop.code.coding.first.code.value
+          when 'initial-population'
+            population_set.populations[CQM::Measure::IPP] = stmt_ref
+          when 'numerator'
+            population_set.populations[CQM::Measure::NUMER] = stmt_ref
+          when 'numerator-exclusion'
+            population_set.populations[CQM::Measure::NUMEX] = stmt_ref
+          when 'denominator'
+            population_set.populations[CQM::Measure::DENOM] = stmt_ref
+          when 'denominator-exclusion'
+            population_set.populations[CQM::Measure::DENEX] = stmt_ref
+          when 'denominator-exception'
+            population_set.populations[CQM::Measure::DENEXCEP] = stmt_ref
+          when 'measure-population'
+            population_set.populations[CQM::Measure::MSRPOPL] = stmt_ref
+          when 'measure-population-exclusion'
+            population_set.populations[CQM::Measure::MSRPOPLEX] = stmt_ref
+          when 'measure-observation'
+            population_set.populations[CQM::Measure::OBSERV] = stmt_ref
+          end
+        end
+        population_set
+      end
+    end
+
+  def new_population_map(measure_scoring)
+    case measure_scoring
+    when 'proportion'
+      CQM::ProportionPopulationMap.new
+    when 'ratio'
+      CQM::RatioPopulationMap.new
+    when 'continuous-variable'
+      CQM::ContinuousVariablePopulationMap.new
+    when 'cohort'
+      CQM::CohortPopulationMap.new
+    else
+      raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
+    end
+  end
 
     # @deprecated
     # def verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, measure_hqmf_model)
