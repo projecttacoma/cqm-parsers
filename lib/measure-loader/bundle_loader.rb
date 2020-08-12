@@ -12,7 +12,7 @@ module Measures
     end
 
     # extracts & returns cqm measure, a wrapper augmenting the FHIR Measure model with Bonnie specific information.
-    def extract_measures
+    def extract_measure
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
       measure = create_measure(measure_bundle)
@@ -106,8 +106,9 @@ module Measures
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
-      fhir_value_sets = cqm_measure.value_sets.map(&:fhir_value_set).compact
-      cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(fhir_value_sets)}.flatten
+      value_sets = cqm_measure.value_sets.compact
+      # TODO: uncomment once we have TS models integrated in bonnie.
+      # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(value_sets)}.flatten
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure

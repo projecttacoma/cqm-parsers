@@ -48,9 +48,7 @@ module Measures
             cache_key = [code_hash, '']
             if vs_model_cache[cache_key].nil?
               vs_compose = prepare_value_set_compose(code_reference, code_system_def)
-              fhir_value_set = FHIR::ValueSet.new(compose: vs_compose, fhirId: code_hash)
-              cqm_value_set = CQM::ValueSet.new(fhir_value_set: fhir_value_set)
-              vs_model_cache[cache_key] = cqm_value_set
+              vs_model_cache[cache_key] = FHIR::ValueSet.new(compose: vs_compose, fhirId: code_hash)
             end
             value_sets_from_single_code_references << vs_model_cache[cache_key]
           end
