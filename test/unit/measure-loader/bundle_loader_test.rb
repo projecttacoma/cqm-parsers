@@ -17,7 +17,7 @@ class BundleLoaderTest < Minitest::Test
       measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::BundleLoader.new(measure_file, @measure_details, value_set_loader)
-      measure = loader.extract_measures
+      measure = loader.extract_measure
 
       assert_equal 'CMS104', measure.fhir_measure.title.value
       assert_equal '42BF391F-38A3-4C0F-9ECE-DCD47E9609D9', measure.set_id, 'Measure set Id does not match expected value.'
@@ -35,7 +35,7 @@ class BundleLoaderTest < Minitest::Test
     setup
     measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
     loader = Measures::BundleLoader.new(measure_file, @measure_details)
-    measure = loader.extract_measures
+    measure = loader.extract_measure
 
     assert_equal 5, measure.cql_libraries.size
 
@@ -68,7 +68,7 @@ class BundleLoaderTest < Minitest::Test
     measure_file = File.new File.join(@fixtures_path, 'fhir', 'CMS104_v6_0_Artifacts-msr-missing-guid.zip')
     loader = Measures::BundleLoader.new(measure_file, @measure_details)
     err = assert_raises Measures::MeasureLoadingInvalidPackageException do
-      loader.extract_measures
+      loader.extract_measure
     end
     assert err.message.include? 'Measure Resource does not contain GUID Identifier.'
   end
