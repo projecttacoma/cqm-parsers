@@ -106,7 +106,6 @@ module Measures
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
-      cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure)}.flatten
 
       # TODO: uncomment once we have TS models integrated in bonnie.
       # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure.value_sets.compact)}.flatten
@@ -169,8 +168,7 @@ module Measures
       cms_identifier = measure_resource['resource']['identifier'].select { |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms'
       }
-      raise MeasureLoadingInvalidPackageException.new('CMS ID for measure is missing') if cms_identifier.empty?
-      cms_identifier.first['value']
+      cms_identifier.first['value'] if cms_identifier.present?
     end
 
     def parse_population_sets(fhir_measure)
