@@ -165,11 +165,12 @@ module Measures
     end
 
     def get_cms_id_from_measure_resource(measure_resource)
-      cms_identifier = measure_resource['resource']['identifier'].select { |identifier|
+      cms_identifier = measure_resource['resource']['identifier'].find do |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms'
-      }
-      raise MeasureLoadingInvalidPackageException.new('CMS ID for measure is missing') if cms_identifier.empty?
-      cms_identifier.first['value']
+      end
+
+      resource_version = "v#{measure_resource['resource']['version'].to_i}"
+      cms_identifier.present? ? "CMS#{cms_identifier['value']}#{resource_version}" : resource_version
     end
 
     def parse_population_sets(fhir_measure)
