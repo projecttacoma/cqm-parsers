@@ -75,7 +75,6 @@ class BundleLoaderTest < Minitest::Test
     assert err.message.include? 'Measure Resource does not contain GUID Identifier.'
   end
 
-
   def test_parse_observation
     setup
     measure_bundle_zip = File.new File.join(@fixtures_path, 'fhir', 'ContinuousFhir.zip')
@@ -83,6 +82,7 @@ class BundleLoaderTest < Minitest::Test
     measure = loader.extract_measure
 
     assert !measure.population_sets.empty?
+
     pop_set_1 = measure.population_sets.first
     assert !pop_set_1.observations.empty?
     assert_equal 1, pop_set_1.observations.size
@@ -91,6 +91,7 @@ class BundleLoaderTest < Minitest::Test
     assert_equal 'count', pop_set_1.observations.first.observation_function.statement_name
     assert_equal 'ContinuousFhir', pop_set_1.observations.first.observation_parameter.library_name
     assert_equal 'measure-population-identifier', pop_set_1.observations.first.observation_parameter.statement_name
+
     pop_set_2 = measure.population_sets.last
     assert !pop_set_1.observations.empty?
     assert_equal 1, pop_set_2.observations.size
