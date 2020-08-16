@@ -216,7 +216,17 @@ module Measures
             )
           end
         end
-        population_set
+        group.stratifier.map.with_index do |stratum, i|
+          population_set.stratifications << CQM::Stratification.new(
+              title: "PopSet#{index+1} Stratification #{i+1}",
+              stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
+              statement: CQM::StatementReference.new(
+                  library_name: fhir_measure.name.value,
+                  statement_name: stratum.criteria.expression.value
+              )
+          )
+        end
+      population_set
       end
     end
 
