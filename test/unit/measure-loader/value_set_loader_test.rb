@@ -36,11 +36,11 @@ class VSACValueSetLoaderTest < Minitest::Test
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
-      measure = loader.extract_measures
-      value_set = measure.value_sets.select { |vs| vs.fhir_value_set.fhirId == '2.16.840.1.113883.3.117.1.7.1.93'}
+      measure = loader.extract_measure
+      value_set = measure.value_sets.select { |vs| vs.fhirId == '2.16.840.1.113883.3.117.1.7.1.93'}
       assert_equal 1, value_set.length
-      assert_equal 21, value_set[0].fhir_value_set.compose.include[0].concept.length
-      assert_equal 'Patient Refusal', value_set[0].fhir_value_set.name.value
+      assert_equal 21, value_set[0].compose.include[0].concept.length
+      assert_equal 'Patient Refusal', value_set[0].name.value
       assert_equal 46, measure.value_sets.length
     end
   end
