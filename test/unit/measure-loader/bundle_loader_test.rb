@@ -30,6 +30,8 @@ class BundleLoaderTest < Minitest::Test
       # TODO: uncomment once we have TS models integrated in bonnie.
       # assert_equal 10, measure.source_data_criteria.length, 'Mismatching number of source_data_criteria.'
       # assert_equal [CQM::DataElement], measure.source_data_criteria.map(&:class).uniq, 'Mismatching source_data_criteria object type.'
+
+      assert_equal "CMS104v8", measure.cms_id, 'Mismatching cms_id.'
     end
   end
 
