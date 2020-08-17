@@ -67,6 +67,16 @@ class BundleLoaderTest < Minitest::Test
     end
   end
 
+  def test_invalid_json_raises
+    setup
+    measure_file = File.new File.join(@fixtures_path, 'fhir', 'invalid_measure_bundle_json.zip')
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
+    err = assert_raises Measures::MeasureLoadingInvalidPackageException do
+      loader.extract_measure
+    end
+    assert err.message.include? 'The uploaded files do not appear to be in the correct format.'
+  end
+
   def test_missing_guid_raises
     setup
     measure_file = File.new File.join(@fixtures_path, 'fhir', 'CMS104_v6_0_Artifacts-msr-missing-guid.zip')
