@@ -41,11 +41,12 @@ GEM
     byebug (6.0.2)
     cane (2.3.0)
       parallel
-    codecov (0.1.14)
+    codecov (0.2.5)
+      colorize
       json
       simplecov
-      url
     coderay (1.1.2)
+    colorize (0.8.1)
     concurrent-ruby (1.1.6)
     cqm-models (3.0.1)
     crack (0.4.3)
@@ -61,7 +62,7 @@ GEM
     highline (1.7.10)
     i18n (1.8.5)
       concurrent-ruby (~> 1.0)
-    json (2.1.0)
+    json (2.3.1)
     log4r (1.1.10)
     log_switch (1.0.0)
     macaddr (1.7.2)
@@ -130,7 +131,6 @@ GEM
     tzinfo (1.2.7)
       thread_safe (~> 0.1)
     unicode-display_width (1.4.0)
-    url (0.3.2)
     uuid (2.3.9)
       macaddr (~> 1.0)
     vcr (3.0.3)
