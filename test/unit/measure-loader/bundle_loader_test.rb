@@ -20,6 +20,7 @@ class BundleLoaderTest < Minitest::Test
       measure = loader.extract_measure
 
       assert_equal 'CMS104', measure.fhir_measure.title.value
+      assert_equal 'CMS104v8', measure.cms_id
       assert_equal '42BF391F-38A3-4C0F-9ECE-DCD47E9609D9', measure.set_id, 'Measure set Id does not match expected value.'
       assert_equal 5, measure.libraries.size, 'Mismatching library size.'
       # Not sure whether this association was a hmbt at one point or if this was never passing, but

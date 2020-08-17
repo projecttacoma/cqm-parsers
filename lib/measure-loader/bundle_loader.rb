@@ -99,7 +99,8 @@ module Measures
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
                                      libraries: libraries,
                                      cms_id: cms_id,
-                                     title: fhir_measure.title.value)
+                                     title: fhir_measure.title.value,
+                                     description: fhir_measure.description.value)
 
       cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
       elms = cqm_measure.cql_libraries.map(&:elm)
