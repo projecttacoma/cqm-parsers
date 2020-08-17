@@ -174,13 +174,15 @@ module Measures
     end
 
     def parse_population_sets(fhir_measure)
-      return fhir_measure.group.map.with_index do |group, index|
+      scoring_type = fhir_measure.scoring.coding.first.code.value
+
+      fhir_measure.group.map.with_index do |group, index|
         population_set = CQM::PopulationSet.new(
             title: 'Population Criteria Selection',
             population_set_id: "PopulationSet_#{index+1}"
         )
-        # Figure out population map
-        population_set.populations = new_population_map(fhir_measure.scoring.coding.first.code.value)
+
+        population_set.populations = new_population_map(scoring_type)
 
         group.population.each do |pop|
           stmt_ref = CQM::StatementReference.new(
@@ -205,27 +207,54 @@ module Measures
           when 'measure-population-exclusion'
             population_set.populations[CQM::Measure::MSRPOPLEX] = stmt_ref
           when 'measure-observation'
-            population_set.populations[CQM::Measure::OBSERV] = stmt_ref
+            population_set.observations << CQM::Observation.new(
+              observation_function: stmt_ref,
+              aggregation_type: get_observation_population_aggregation_type(pop),
+              observation_parameter: CQM::StatementReference.new(
+                  library_name: fhir_measure.name.value,
+                  statement_name: get_observation_population_parameter(pop)
+              )
+            )
           end
         end
-        population_set
+        group.stratifier.map.with_index do |stratum, i|
+          population_set.stratifications << CQM::Stratification.new(
+              title: "PopSet#{index+1} Stratification #{i+1}",
+              stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
+              statement: CQM::StatementReference.new(
+                  library_name: fhir_measure.name.value,
+                  statement_name: stratum.criteria.expression.value
+              )
+          )
+        end
+      population_set
       end
     end
 
-  def new_population_map(measure_scoring)
-    case measure_scoring
-    when 'proportion'
-      CQM::ProportionPopulationMap.new
-    when 'ratio'
-      CQM::RatioPopulationMap.new
-    when 'continuous-variable'
-      CQM::ContinuousVariablePopulationMap.new
-    when 'cohort'
-      CQM::CohortPopulationMap.new
-    else
-      raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
+    def new_population_map(measure_scoring)
+      case measure_scoring
+      when 'proportion'
+        CQM::ProportionPopulationMap.new
+      when 'ratio'
+        CQM::RatioPopulationMap.new
+      when 'continuous-variable'
+        CQM::ContinuousVariablePopulationMap.new
+      when 'cohort'
+        CQM::CohortPopulationMap.new
+      else
+        raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
+      end
     end
-  end
+
+    def get_observation_population_parameter(observation_population)
+      observation_population.extension.select{ |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference'}.first.valueString.value
+      end
+
+    def get_observation_population_aggregation_type(observation_population)
+      observation_population.extension.select{ |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod'}.first.valueCode.value
+    end
 
     # @deprecated
     # def verify_hqmf_valuesets_match_elm_valuesets(elm_valuesets, measure_hqmf_model)
