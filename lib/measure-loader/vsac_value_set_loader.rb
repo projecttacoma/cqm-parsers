@@ -78,6 +78,7 @@ module Measures
       FHIR::ValueSet.new(
         fhirId: vs_element['ID'],
         url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil),
+        title: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
           vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil
