@@ -11,7 +11,6 @@ require 'nokogiri'
 require 'ostruct'
 require 'log4r'
 require 'memoist'
-require 'protected_attributes'
 require 'pry'
 require 'typhoeus'
 
