@@ -96,13 +96,17 @@ module Measures
       library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
       libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
 
+      # Dependent on Measure resource specifying only 1 url in its library element.
+      measure_lib_name, measure_lib_version = get_measure_lib_name_version(fhir_measure.library.first.value, libraries)
+
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
                                      libraries: libraries,
                                      cms_id: cms_id,
                                      title: fhir_measure.title.value,
+                                     main_cql_library: measure_lib_name,
                                      description: fhir_measure.description.value)
 
-      cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
+      cqm_measure.cql_libraries = parse_cql_elm(libraries, measure_lib_name, measure_lib_version)
       elms = cqm_measure.cql_libraries.map(&:elm)
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
@@ -261,6 +265,11 @@ module Measures
         e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod'
       end
       type.first.valueCode.value
+    end
+
+    def get_measure_lib_name_version(fhir_measure_lib, libraries)
+      main_measure_lib = libraries.find { |lib| lib.url.value == fhir_measure_lib}
+      return main_measure_lib.name.value, main_measure_lib.version.value
     end
 
     # @deprecated
