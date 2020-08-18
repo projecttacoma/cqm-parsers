@@ -13,3 +13,5 @@ Style/RedundantReturn:
   Enabled: false
 Style/WordArray:
   Enabled: false
+Performance/RegexpMatch:
+  Enabled: false

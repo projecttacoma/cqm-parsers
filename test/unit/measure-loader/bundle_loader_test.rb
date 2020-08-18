@@ -96,23 +96,23 @@ class BundleLoaderTest < Minitest::Test
 
     assert !measure.population_sets.empty?
 
-    pop_set_1 = measure.population_sets.first
-    assert !pop_set_1.observations.empty?
-    assert_equal 1, pop_set_1.observations.size
-    assert_equal 'count', pop_set_1.observations.first.aggregation_type, 'Wrong aggregation type'
-    assert_equal 'ContinuousFhir', pop_set_1.observations.first.observation_function.library_name
-    assert_equal 'count', pop_set_1.observations.first.observation_function.statement_name
-    assert_equal 'ContinuousFhir', pop_set_1.observations.first.observation_parameter.library_name
-    assert_equal 'measure-population-identifier', pop_set_1.observations.first.observation_parameter.statement_name
+    pop_set1 = measure.population_sets.first
+    assert !pop_set1.observations.empty?
+    assert_equal 1, pop_set1.observations.size
+    assert_equal 'count', pop_set1.observations.first.aggregation_type, 'Wrong aggregation type'
+    assert_equal 'ContinuousFhir', pop_set1.observations.first.observation_function.library_name
+    assert_equal 'count', pop_set1.observations.first.observation_function.statement_name
+    assert_equal 'ContinuousFhir', pop_set1.observations.first.observation_parameter.library_name
+    assert_equal 'measure-population-identifier', pop_set1.observations.first.observation_parameter.statement_name
 
-    pop_set_2 = measure.population_sets.last
-    assert !pop_set_1.observations.empty?
-    assert_equal 1, pop_set_2.observations.size
-    assert_equal 'sum', pop_set_2.observations.first.aggregation_type, 'Wrong aggregation type'
-    assert_equal 'ContinuousFhir', pop_set_2.observations.first.observation_function.library_name
-    assert_equal 'count', pop_set_2.observations.first.observation_function.statement_name
-    assert_equal 'ContinuousFhir', pop_set_2.observations.first.observation_parameter.library_name
-    assert_equal 'measure-population-identifier', pop_set_2.observations.first.observation_parameter.statement_name
+    pop_set2 = measure.population_sets.last
+    assert !pop_set2.observations.empty?
+    assert_equal 1, pop_set2.observations.size
+    assert_equal 'sum', pop_set2.observations.first.aggregation_type, 'Wrong aggregation type'
+    assert_equal 'ContinuousFhir', pop_set2.observations.first.observation_function.library_name
+    assert_equal 'count', pop_set2.observations.first.observation_function.statement_name
+    assert_equal 'ContinuousFhir', pop_set2.observations.first.observation_parameter.library_name
+    assert_equal 'measure-population-identifier', pop_set2.observations.first.observation_parameter.statement_name
 
   end
 

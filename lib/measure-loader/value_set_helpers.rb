@@ -49,7 +49,7 @@ module Measures
             if vs_model_cache[cache_key].nil?
               vs_compose = prepare_value_set_compose(code_reference, code_system_def)
               vs_model_cache[cache_key] = FHIR::ValueSet.new(
-                name: FHIR::PrimitiveString.transform_json(code_reference['name'], nil ),
+                name: FHIR::PrimitiveString.transform_json(code_reference['name'], nil),
                 title: FHIR::PrimitiveString.transform_json(code_reference['display'], nil),
                 version: FHIR::PrimitiveString.new(value: ''),
                 compose: vs_compose,
