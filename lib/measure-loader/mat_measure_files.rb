@@ -79,7 +79,7 @@ module Measures
         end
 
         folders
-      rescue
+      rescue StandardError
         raise MeasureLoadingInvalidPackageException.new("The uploaded file is not a zip file.")
       end
 

@@ -145,7 +145,7 @@ module Measures
     end
 
     def modelize_cql_statement_dependencies(cql_statment_deps)
-      return cql_statment_deps.map do |name, refs|
+      cql_statment_deps.map do |name, refs|
         refs = refs.map { |ref| CQM::StatementReference.new(ref) }
         CQM::StatementDependency.new(statement_name: name, statement_references: refs)
       end
@@ -154,15 +154,17 @@ module Measures
     def modify_elm_valueset_information(elm)
       ValueSetHelpers.remove_urnoid(elm)
       ValueSetHelpers.modify_value_set_versions(elm)
-      return nil
+      nil
     end
 
     def get_guid_from_measure_resource(measure_resource)
-      guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
+      guid_identifier = measure_resource['resource']['identifier'].select do |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
-      }
+      end
       raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
       guid_identifier.first['value']
+    rescue StandardError
+      raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.')
     end
 
     def get_cms_id_from_measure_resource(measure_resource)
@@ -179,16 +181,16 @@ module Measures
 
       fhir_measure.group.map.with_index do |group, index|
         population_set = CQM::PopulationSet.new(
-            title: 'Population Criteria Selection',
-            population_set_id: "PopulationSet_#{index+1}"
+          title: 'Population Criteria Selection',
+          population_set_id: "PopulationSet_#{index+1}"
         )
 
         population_set.populations = new_population_map(scoring_type)
 
         group.population.each do |pop|
           stmt_ref = CQM::StatementReference.new(
-              library_name: fhir_measure.name.value,
-              statement_name: pop.criteria.expression.value
+            library_name: fhir_measure.name.value,
+            statement_name: pop.criteria.expression.value
           )
           case pop.code.coding.first.code.value
           when 'initial-population'
@@ -212,23 +214,23 @@ module Measures
               observation_function: stmt_ref,
               aggregation_type: get_observation_population_aggregation_type(pop),
               observation_parameter: CQM::StatementReference.new(
-                  library_name: fhir_measure.name.value,
-                  statement_name: get_observation_population_parameter(pop)
+                library_name: fhir_measure.name.value,
+                statement_name: get_observation_population_parameter(pop)
               )
             )
           end
         end
         group.stratifier.map.with_index do |stratum, i|
           population_set.stratifications << CQM::Stratification.new(
-              title: "PopSet#{index+1} Stratification #{i+1}",
-              stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
-              statement: CQM::StatementReference.new(
-                  library_name: fhir_measure.name.value,
-                  statement_name: stratum.criteria.expression.value
-              )
+            title: "PopSet#{index+1} Stratification #{i+1}",
+            stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
+            statement: CQM::StatementReference.new(
+              library_name: fhir_measure.name.value,
+              statement_name: stratum.criteria.expression.value
+            )
           )
         end
-      population_set
+        population_set
       end
     end
 
@@ -248,13 +250,17 @@ module Measures
     end
 
     def get_observation_population_parameter(observation_population)
-      observation_population.extension.select{ |e|
-        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference'}.first.valueString.value
+      parameter = observation_population.extension.select do |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference'
       end
+      parameter.first.valueString.value
+    end
 
     def get_observation_population_aggregation_type(observation_population)
-      observation_population.extension.select{ |e|
-        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod'}.first.valueCode.value
+      type = observation_population.extension.select do |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod'
+      end
+      type.first.valueCode.value
     end
 
     # @deprecated
