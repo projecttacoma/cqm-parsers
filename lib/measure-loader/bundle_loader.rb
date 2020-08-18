@@ -158,11 +158,15 @@ module Measures
     end
 
     def get_guid_from_measure_resource(measure_resource)
-      guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
-        identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
-      }
-      raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
-      guid_identifier.first['value']
+      begin
+        guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
+          identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
+        }
+        raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
+        guid_identifier.first['value']
+      rescue
+        raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.')
+      end
     end
 
     def get_cms_id_from_measure_resource(measure_resource)
