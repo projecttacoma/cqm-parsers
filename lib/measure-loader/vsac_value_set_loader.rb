@@ -75,17 +75,16 @@ module Measures
       doc = Nokogiri::XML(vsac_xml_response)
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
-      fhir_value_set = FHIR::ValueSet.new(
+      FHIR::ValueSet.new(
         fhirId: vs_element['ID'],
         url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil),
+        title: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
           vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil
         ),
         compose: prepare_code_system_concepts(vs_element)
       )
-
-      CQM::ValueSet.new(fhir_value_set: fhir_value_set)
     end
 
     def prepare_code_system_concepts(vs_element)

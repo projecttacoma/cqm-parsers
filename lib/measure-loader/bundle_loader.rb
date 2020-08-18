@@ -12,7 +12,7 @@ module Measures
     end
 
     # extracts & returns cqm measure, a wrapper augmenting the FHIR Measure model with Bonnie specific information.
-    def extract_measures
+    def extract_measure
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
       measure = create_measure(measure_bundle)
@@ -89,6 +89,7 @@ module Measures
       measure_resource = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Measure').first
 
       guid_identifier = get_guid_from_measure_resource(measure_resource)
+      cms_id = get_cms_id_from_measure_resource(measure_resource)
 
       fhir_measure = FHIR::Measure.transform_json(measure_resource['resource'])
 
@@ -96,13 +97,21 @@ module Measures
       libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
 
       cqm_measure = CQM::Measure.new(fhir_measure: fhir_measure,
-                                     libraries: libraries)
+                                     libraries: libraries,
+                                     cms_id: cms_id,
+                                     title: fhir_measure.title.value,
+                                     description: fhir_measure.description.value)
 
       cqm_measure.cql_libraries = parse_cql_elm(libraries, fhir_measure.name.value, fhir_measure.version.value)
       elms = cqm_measure.cql_libraries.map(&:elm)
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
       cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
+
+      # TODO: uncomment once we have TS models integrated in bonnie.
+      # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure.value_sets.compact)}.flatten
+
+      cqm_measure.population_sets = parse_population_sets(fhir_measure)
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
@@ -152,8 +161,100 @@ module Measures
       guid_identifier = measure_resource['resource']['identifier'].select { |identifier|
         identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/guid'
       }
-      raise MeasureLoadingInvalidPackageException.new('GUID for measure is missing') if guid_identifier.empty?
+      raise MeasureLoadingInvalidPackageException.new('Measure Resource does not contain GUID Identifier.') if guid_identifier.empty?
       guid_identifier.first['value']
+    end
+
+    def get_cms_id_from_measure_resource(measure_resource)
+      cms_identifier = measure_resource['resource']['identifier'].find do |identifier|
+        identifier['system'] == 'http://hl7.org/fhir/cqi/ecqm/Measure/Identifier/cms'
+      end
+
+      resource_version = "v#{measure_resource['resource']['version'].to_i}"
+      cms_identifier.present? ? "CMS#{cms_identifier['value']}#{resource_version}" : resource_version
+    end
+
+    def parse_population_sets(fhir_measure)
+      scoring_type = fhir_measure.scoring.coding.first.code.value
+
+      fhir_measure.group.map.with_index do |group, index|
+        population_set = CQM::PopulationSet.new(
+            title: 'Population Criteria Selection',
+            population_set_id: "PopulationSet_#{index+1}"
+        )
+
+        population_set.populations = new_population_map(scoring_type)
+
+        group.population.each do |pop|
+          stmt_ref = CQM::StatementReference.new(
+              library_name: fhir_measure.name.value,
+              statement_name: pop.criteria.expression.value
+          )
+          case pop.code.coding.first.code.value
+          when 'initial-population'
+            population_set.populations[CQM::Measure::IPP] = stmt_ref
+          when 'numerator'
+            population_set.populations[CQM::Measure::NUMER] = stmt_ref
+          when 'numerator-exclusion'
+            population_set.populations[CQM::Measure::NUMEX] = stmt_ref
+          when 'denominator'
+            population_set.populations[CQM::Measure::DENOM] = stmt_ref
+          when 'denominator-exclusion'
+            population_set.populations[CQM::Measure::DENEX] = stmt_ref
+          when 'denominator-exception'
+            population_set.populations[CQM::Measure::DENEXCEP] = stmt_ref
+          when 'measure-population'
+            population_set.populations[CQM::Measure::MSRPOPL] = stmt_ref
+          when 'measure-population-exclusion'
+            population_set.populations[CQM::Measure::MSRPOPLEX] = stmt_ref
+          when 'measure-observation'
+            population_set.observations << CQM::Observation.new(
+              observation_function: stmt_ref,
+              aggregation_type: get_observation_population_aggregation_type(pop),
+              observation_parameter: CQM::StatementReference.new(
+                  library_name: fhir_measure.name.value,
+                  statement_name: get_observation_population_parameter(pop)
+              )
+            )
+          end
+        end
+        group.stratifier.map.with_index do |stratum, i|
+          population_set.stratifications << CQM::Stratification.new(
+              title: "PopSet#{index+1} Stratification #{i+1}",
+              stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
+              statement: CQM::StatementReference.new(
+                  library_name: fhir_measure.name.value,
+                  statement_name: stratum.criteria.expression.value
+              )
+          )
+        end
+      population_set
+      end
+    end
+
+    def new_population_map(measure_scoring)
+      case measure_scoring
+      when 'proportion'
+        CQM::ProportionPopulationMap.new
+      when 'ratio'
+        CQM::RatioPopulationMap.new
+      when 'continuous-variable'
+        CQM::ContinuousVariablePopulationMap.new
+      when 'cohort'
+        CQM::CohortPopulationMap.new
+      else
+        raise StandardError.new("Unknown measure scoring type encountered #{measure_scoring}")
+      end
+    end
+
+    def get_observation_population_parameter(observation_population)
+      observation_population.extension.select{ |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference'}.first.valueString.value
+      end
+
+    def get_observation_population_aggregation_type(observation_population)
+      observation_population.extension.select{ |e|
+        e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-aggregateMethod'}.first.valueCode.value
     end
 
     # @deprecated

@@ -17,13 +17,22 @@ class BundleLoaderTest < Minitest::Test
       measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
       value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       loader = Measures::BundleLoader.new(measure_file, @measure_details, value_set_loader)
-      measure = loader.extract_measures
+      measure = loader.extract_measure
 
       assert_equal 'CMS104', measure.fhir_measure.title.value
+      assert_equal 'CMS104v8', measure.cms_id
       assert_equal '42BF391F-38A3-4C0F-9ECE-DCD47E9609D9', measure.set_id, 'Measure set Id does not match expected value.'
       assert_equal 5, measure.libraries.size, 'Mismatching library size.'
-      assert_equal 46, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
+      # Not sure whether this association was a hmbt at one point or if this was never passing, but
+      # value_set_ids doesn't come with the embeds_many :value_sets relation.
+      # assert_equal 46, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
       assert_equal 5, measure.cql_libraries.size, 'Mismatching number of cql libraries.'
+
+      # TODO: uncomment once we have TS models integrated in bonnie.
+      # assert_equal 10, measure.source_data_criteria.length, 'Mismatching number of source_data_criteria.'
+      # assert_equal [CQM::DataElement], measure.source_data_criteria.map(&:class).uniq, 'Mismatching source_data_criteria object type.'
+
+      assert_equal "CMS104v8", measure.cms_id, 'Mismatching cms_id.'
     end
   end
 
@@ -31,7 +40,7 @@ class BundleLoaderTest < Minitest::Test
     setup
     measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
     loader = Measures::BundleLoader.new(measure_file, @measure_details)
-    measure = loader.extract_measures
+    measure = loader.extract_measure
 
     assert_equal 5, measure.cql_libraries.size
 
@@ -57,6 +66,54 @@ class BundleLoaderTest < Minitest::Test
       assert lib.library_name == elm_annotations_identifier[:id] && lib.library_name == elm_identifier['id'], 'Mismatch Library IDs.'
       assert lib.library_version == elm_annotations_identifier[:version] && lib.library_version == elm_identifier['version'], 'Mismatch Library Versions.'
     end
+  end
+
+  def test_invalid_json_raises
+    setup
+    measure_file = File.new File.join(@fixtures_path, 'fhir', 'invalid_measure_bundle_json.zip')
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
+    err = assert_raises Measures::MeasureLoadingInvalidPackageException do
+      loader.extract_measure
+    end
+    assert err.message.include? 'The uploaded files do not appear to be in the correct format.'
+  end
+
+  def test_missing_guid_raises
+    setup
+    measure_file = File.new File.join(@fixtures_path, 'fhir', 'CMS104_v6_0_Artifacts-msr-missing-guid.zip')
+    loader = Measures::BundleLoader.new(measure_file, @measure_details)
+    err = assert_raises Measures::MeasureLoadingInvalidPackageException do
+      loader.extract_measure
+    end
+    assert err.message.include? 'Measure Resource does not contain GUID Identifier.'
+  end
+
+  def test_parse_observation
+    setup
+    measure_bundle_zip = File.new File.join(@fixtures_path, 'fhir', 'ContinuousFhir.zip')
+    loader = Measures::BundleLoader.new(measure_bundle_zip, @measure_details)
+    measure = loader.extract_measure
+
+    assert !measure.population_sets.empty?
+
+    pop_set_1 = measure.population_sets.first
+    assert !pop_set_1.observations.empty?
+    assert_equal 1, pop_set_1.observations.size
+    assert_equal 'count', pop_set_1.observations.first.aggregation_type, 'Wrong aggregation type'
+    assert_equal 'ContinuousFhir', pop_set_1.observations.first.observation_function.library_name
+    assert_equal 'count', pop_set_1.observations.first.observation_function.statement_name
+    assert_equal 'ContinuousFhir', pop_set_1.observations.first.observation_parameter.library_name
+    assert_equal 'measure-population-identifier', pop_set_1.observations.first.observation_parameter.statement_name
+
+    pop_set_2 = measure.population_sets.last
+    assert !pop_set_1.observations.empty?
+    assert_equal 1, pop_set_2.observations.size
+    assert_equal 'sum', pop_set_2.observations.first.aggregation_type, 'Wrong aggregation type'
+    assert_equal 'ContinuousFhir', pop_set_2.observations.first.observation_function.library_name
+    assert_equal 'count', pop_set_2.observations.first.observation_function.statement_name
+    assert_equal 'ContinuousFhir', pop_set_2.observations.first.observation_parameter.library_name
+    assert_equal 'measure-population-identifier', pop_set_2.observations.first.observation_parameter.statement_name
+
   end
 
   # def test_stratifications_and_observations
