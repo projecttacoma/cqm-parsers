@@ -268,7 +268,7 @@ module Measures
     end
 
     def get_measure_lib_name_version(fhir_measure_lib, libraries)
-      main_measure_lib = libraries.find { |lib| lib.url.value == fhir_measure_lib}
+      main_measure_lib = libraries.find { |lib| lib.url.value.include?(fhir_measure_lib) }
       return main_measure_lib.name.value, main_measure_lib.version.value
     end
 
