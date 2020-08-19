@@ -20,7 +20,7 @@ class BundleLoaderTest < Minitest::Test
       measure = loader.extract_measure
 
       assert_equal 'CMS104', measure.fhir_measure.title.value
-      assert_equal 'CMS104v8', measure.cms_id
+      assert_equal "CMS104v8", measure.cms_id, 'Mismatching cms_id.'
       assert_equal '42BF391F-38A3-4C0F-9ECE-DCD47E9609D9', measure.set_id, 'Measure set Id does not match expected value.'
       assert_equal 5, measure.libraries.size, 'Mismatching library size.'
       # Not sure whether this association was a hmbt at one point or if this was never passing, but
@@ -31,8 +31,6 @@ class BundleLoaderTest < Minitest::Test
       # TODO: uncomment once we have TS models integrated in bonnie.
       # assert_equal 10, measure.source_data_criteria.length, 'Mismatching number of source_data_criteria.'
       # assert_equal [CQM::DataElement], measure.source_data_criteria.map(&:class).uniq, 'Mismatching source_data_criteria object type.'
-
-      assert_equal "CMS104v8", measure.cms_id, 'Mismatching cms_id.'
     end
   end
 
