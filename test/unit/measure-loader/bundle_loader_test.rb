@@ -27,6 +27,7 @@ class BundleLoaderTest < Minitest::Test
       # value_set_ids doesn't come with the embeds_many :value_sets relation.
       # assert_equal 46, measure.value_set_ids.count, 'Mismatching number of value set Ids.'
       assert_equal 5, measure.cql_libraries.size, 'Mismatching number of cql libraries.'
+      assert_equal 'DischargedonAntithromboticTherapy', measure.main_cql_library, "Did not correctly determine the main measure library name."
 
       # TODO: uncomment once we have TS models integrated in bonnie.
       # assert_equal 10, measure.source_data_criteria.length, 'Mismatching number of source_data_criteria.'

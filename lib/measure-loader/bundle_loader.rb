@@ -115,7 +115,7 @@ module Measures
       # TODO: uncomment once we have TS models integrated in bonnie.
       # cqm_measure.source_data_criteria = libraries.map{|lib| lib.create_data_elements(cqm_measure.value_sets.compact)}.flatten
 
-      cqm_measure.population_sets = parse_population_sets(fhir_measure)
+      cqm_measure.population_sets = parse_population_sets(fhir_measure, measure_lib_name)
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
@@ -180,7 +180,7 @@ module Measures
       cms_identifier.present? ? "CMS#{cms_identifier['value']}#{resource_version}" : resource_version
     end
 
-    def parse_population_sets(fhir_measure)
+    def parse_population_sets(fhir_measure, measure_lib_name)
       scoring_type = fhir_measure.scoring.coding.first.code.value
 
       fhir_measure.group.map.with_index do |group, index|
@@ -193,7 +193,7 @@ module Measures
 
         group.population.each do |pop|
           stmt_ref = CQM::StatementReference.new(
-            library_name: fhir_measure.name.value,
+            library_name: measure_lib_name,
             statement_name: pop.criteria.expression.value
           )
           case pop.code.coding.first.code.value
@@ -218,7 +218,7 @@ module Measures
               observation_function: stmt_ref,
               aggregation_type: get_observation_population_aggregation_type(pop),
               observation_parameter: CQM::StatementReference.new(
-                library_name: fhir_measure.name.value,
+                library_name: measure_lib_name,
                 statement_name: get_observation_population_parameter(pop)
               )
             )
@@ -229,7 +229,7 @@ module Measures
             title: "PopSet#{index+1} Stratification #{i+1}",
             stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
             statement: CQM::StatementReference.new(
-              library_name: fhir_measure.name.value,
+              library_name: measure_lib_name,
               statement_name: stratum.criteria.expression.value
             )
           )
@@ -267,8 +267,8 @@ module Measures
       type.first.valueCode.value
     end
 
-    def get_measure_lib_name_version(fhir_measure_lib, libraries)
-      main_measure_lib = libraries.find { |lib| lib.url.value.include?(fhir_measure_lib) }
+    def get_measure_lib_name_version(fhir_measure_lib_ref, libraries)
+      main_measure_lib = libraries.find { |lib| lib.url.value.include?(fhir_measure_lib_ref) }
       return main_measure_lib.name.value, main_measure_lib.version.value
     end
 
