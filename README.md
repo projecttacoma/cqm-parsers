@@ -4,11 +4,11 @@
 
 # cqm-parsers
 
-This project contains libraries for parsing HQMF documents and parsing MAT packages.
+This project contains libraries for parsing FHIR Measure Bundles packaged by the Measure Authoring Tool (MAT).
 
 ## Usage (MAT Package Loading)
 
-To load measures from a MAT package file into the measure model, use the `Measures::CqlLoader` class. It can be used to create an array of measure models. For a composite measure, the array will contain the component measures and the last element will be the composite measure. For a non-composite measure (most measures), the array will contain one item.
+To load measures from a MAT package file into the measure model, use the `Measures::BundleLoader` class. It can be used to create an array of measure models. For a non-composite measure (most measures), the array will contain one item. Although not currently supported, for a composite measure, the array will contain the component measures and the last element will be the composite measure.
 Example measure loading:
 
 ```ruby
