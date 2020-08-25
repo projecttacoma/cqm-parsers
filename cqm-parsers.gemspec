@@ -2,11 +2,11 @@
 
 Gem::Specification.new do |s|
   s.name = "cqm-parsers"
-  s.summary = "A library for parsing HQMF documents."
-  s.description = "A library for parsing HQMF documents."
-  s.email = "tacoma-list@lists.mitre.org"
+  s.summary = "A library for parsing FHIR Measure Bundles."
+  s.description = "A library for parsing FHIR Measure Bundles."
+  s.email = "sb-bonnie-help@semanticbits.com"
   s.homepage = "https://github.com/projecttacoma/cqm-parsers"
-  s.authors = ["The MITRE Corporation"]
+  s.authors = ["SemanticBits, LLC", "The MITRE Corporation"]
   s.license = 'Apache-2.0'
 
   s.version = '0.2.1.1'
