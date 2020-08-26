@@ -117,6 +117,8 @@ module Measures
 
       cqm_measure.population_sets = parse_population_sets(fhir_measure, measure_lib_name)
 
+      cqm_measure.calculation_method = 'EPISODE_OF_CARE' if @measure_details[:episode_of_care]
+
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
     end
