@@ -44,7 +44,7 @@ class BundleLoaderTest < Minitest::Test
     loader = Measures::BundleLoader.new(measure_file, @measure_details)
     measure = loader.extract_measure
 
-    assert_equal'EPISODE_OF_CARE', measure.calculation_method
+    assert_equal 'EPISODE_OF_CARE', measure.calculation_method
   end
 
   def test_parse_elm
