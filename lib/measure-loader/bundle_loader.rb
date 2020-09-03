@@ -15,9 +15,7 @@ module Measures
     def extract_measure
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
-      measure = create_measure(measure_bundle)
-      measure.package = CQM::MeasurePackage.new(file: BSON::Binary.new(@measure_zip.read))
-      measure
+      create_measure(measure_bundle)
     end
 
     def self.update_population_set_and_strat_titles(measure, population_titles)
