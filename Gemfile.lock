@@ -1,9 +1,9 @@
 GIT
   remote: https://github.com/MeasureAuthoringTool/fhir-mongoid-models.git
-  revision: df5a9ee3630090ff903e1e25414f5006e8a7cec1
+  revision: 8e665e78f82e3af76904adf2ea297b35565f900f
   branch: develop
   specs:
-    fhir-mongoid-models (0.0.1)
+    fhir-mongoid-models (0.0.2)
 
 PATH
   remote: .
