@@ -5,7 +5,7 @@ gemspec :development_group => :test
 gem 'mongoid', '~> 6.4.2'
 
 # gem 'cqm-models', '~> 3.0.0'
-# gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'master'
+# gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'MAT-1708'
 # gem 'cqm-models', :path => '../cqm-models'
 
 group :development, :test do
