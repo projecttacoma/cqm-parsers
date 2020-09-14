@@ -307,10 +307,8 @@ module Util
       # Use your API Key to retrive a ticket granting ticket from VSAC
       def get_ticket_granting_ticket(api_key)
         response = Typhoeus.post(
-            "#{@config[:auth_url]}/Ticket",
-            # looks like typheous sometimes switches the order of username/password when encoding
-            # which vsac cant handle (!?), so encode first
-            body: URI.encode_www_form(apikey: api_key)
+          "#{@config[:auth_url]}/Ticket",
+          body: URI.encode_www_form(apikey: api_key)
         )
         raise VSACInvalidCredentialsError.new if response.response_code == 401
         validate_http_status(response.response_code)
