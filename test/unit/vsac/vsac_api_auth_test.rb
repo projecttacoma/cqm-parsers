@@ -7,7 +7,7 @@ class VSACAPIAuthTest < Minitest::Test
 
   def test_valid_username_and_password_provided_does_not_raise
     VCR.use_cassette("vsac_auth_good_credentials") do
-      api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: ENV['VSAC_USERNAME'], password: ENV['VSAC_PASSWORD'])
+      api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], api_key: ENV['VSAC_API_KEY'])
       assert api.ticket_granting_ticket
       assert api.ticket_granting_ticket[:ticket]
       assert api.ticket_granting_ticket[:expires]
@@ -17,33 +17,15 @@ class VSACAPIAuthTest < Minitest::Test
   def test_invalid_username_and_password_provided
     VCR.use_cassette("vsac_auth_bad_credentials") do
       assert_raises Util::VSAC::VSACInvalidCredentialsError do
-        api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: 'baduser', password: 'badpass')
+        api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], api_key: 'badkey')
         assert api
       end
     end
   end
 
-  def test_empty_username_and_password_provided
+  def test_empty_api_key_provided
     api = nil
-    api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: nil, password: nil)
-
-    assert_raises Util::VSAC::VSACNoCredentialsError do
-      api.get_valueset('2.16.840.1.113762.1.4.1')
-    end
-  end
-
-  def test_provided_username_but_no_password
-    api = nil
-    api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: "vsacuser")
-
-    assert_raises Util::VSAC::VSACNoCredentialsError do
-      api.get_valueset('2.16.840.1.113762.1.4.1')
-    end
-  end
-
-  def test_provided_password_but_no_username
-    api = nil
-    api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], username: "vsacuser")
+    api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], api_key: nil)
 
     assert_raises Util::VSAC::VSACNoCredentialsError do
       api.get_valueset('2.16.840.1.113762.1.4.1')
@@ -53,8 +35,7 @@ class VSACAPIAuthTest < Minitest::Test
   def test_valid_ticket_granting_ticket_provided_and_used
     VCR.use_cassette("vsac_auth_good_credentials_and_simple_call") do
       api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'],
-                                    username: ENV['VSAC_USERNAME'],
-                                    password: ENV['VSAC_PASSWORD'])
+                                    api_key: ENV['VSAC_API_KEY'])
       assert api.ticket_granting_ticket
 
       reused_ticket_granting_ticket = {
