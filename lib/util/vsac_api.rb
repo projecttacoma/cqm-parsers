@@ -7,7 +7,7 @@ module Util
     class VSACError < StandardError
     end
 
-    # Error represnting a not found response from the API. Includes OID for reporting to user.
+    # Error representing a not found response from the API. Includes OID for reporting to user.
     class VSNotFoundError < VSACError
       attr_reader :oid
       def initialize(oid)
@@ -23,7 +23,7 @@ module Util
       end
     end
 
-    # Error represnting a program not found response from the API.
+    # Error representing a program not found response from the API.
     class VSACProgramNotFoundError < VSACError
       attr_reader :oid
       def initialize(program)
@@ -31,7 +31,7 @@ module Util
       end
     end
 
-    # Error represnting a response from the API that had no concepts.
+    # Error representing a response from the API that had no concepts.
     class VSEmptyError < VSACError
       attr_reader :oid
       def initialize(oid)
@@ -50,14 +50,14 @@ module Util
     # Raised when the user credentials were invalid.
     class VSACInvalidCredentialsError < VSACError
       def initialize
-        super('VSAC ULMS credentials are invalid.')
+        super('VSAC UMLS credentials are invalid.')
       end
     end
 
     # Raised when a call requiring auth is attempted when no ticket_granting_ticket or credentials were provided.
     class VSACNoCredentialsError < VSACError
       def initialize
-        super('VSAC ULMS credentials were not provided.')
+        super('VSAC UMLS credentials were not provided.')
       end
     end
 
@@ -93,7 +93,7 @@ module Util
         end
 
         # if a ticket_granting_ticket was passed in, check it and raise errors if found
-        # username and password will be ignored
+        # VSAC API Key will be ignored
         if !options[:ticket_granting_ticket].nil?
           provided_ticket_granting_ticket = options[:ticket_granting_ticket]
           if provided_ticket_granting_ticket[:ticket].nil? || provided_ticket_granting_ticket[:expires].nil?
@@ -105,9 +105,9 @@ module Util
           @ticket_granting_ticket = { ticket: provided_ticket_granting_ticket[:ticket],
                                       expires: provided_ticket_granting_ticket[:expires] }
 
-        # if username and password were provided use them to get a ticket granting ticket
-        elsif !options[:username].nil? && !options[:password].nil?
-          @ticket_granting_ticket = get_ticket_granting_ticket(options[:username], options[:password])
+          # if api key was provided use it to get a ticket granting ticket
+        elsif !options[:api_key].nil?
+          @ticket_granting_ticket = get_ticket_granting_ticket(options[:api_key])
         end
       end
 
@@ -304,13 +304,13 @@ module Util
                                      params: { service: TICKET_SERVICE_PARAM})
       end
 
-      # Use your username and password to retrive a ticket granting ticket from VSAC
-      def get_ticket_granting_ticket(username, password)
+      # Use your API Key to retrive a ticket granting ticket from VSAC
+      def get_ticket_granting_ticket(api_key)
         response = Typhoeus.post(
-          "#{@config[:auth_url]}/Ticket",
-          # looks like typheous sometimes switches the order of username/password when encoding
-          # which vsac cant handle (!?), so encode first
-          body: URI.encode_www_form(username: username, password: password)
+            "#{@config[:auth_url]}/Ticket",
+            # looks like typheous sometimes switches the order of username/password when encoding
+            # which vsac cant handle (!?), so encode first
+            body: URI.encode_www_form(apikey: api_key)
         )
         raise VSACInvalidCredentialsError.new if response.response_code == 401
         validate_http_status(response.response_code)
