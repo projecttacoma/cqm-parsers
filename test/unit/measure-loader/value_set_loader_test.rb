@@ -42,6 +42,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       assert_equal 'Patient Refusal', value_sets.first.name.value
       assert_equal 1, value_sets.length
       assert_equal 21, value_sets[0].compose.include[0].concept.length
+      assert_equal 'http://cts.nlm.nih.gov/fhir/ValueSet/2.16.840.1.113883.3.117.1.7.1.93', value_sets[0].url.value
       assert_equal 'Patient Refusal', value_sets[0].name.value
       assert_equal 46, measure.value_sets.length
     end
