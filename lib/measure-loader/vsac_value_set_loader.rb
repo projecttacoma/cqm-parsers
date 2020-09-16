@@ -76,7 +76,7 @@ module Measures
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
       FHIR::ValueSet.new(
         fhirId: vs_element['ID'],
-        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX} #{vs_element['ID']}", nil),
+        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX}#{vs_element['ID']}", nil),
         title: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
