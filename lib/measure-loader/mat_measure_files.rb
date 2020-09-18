@@ -47,12 +47,12 @@ module Measures
       library['content'].each do |content|
         case content['contentType']['value']
         when 'application/elm+xml'
-          elm_xml = Nokogiri::XML(Base64.decode64(Base64.decode64(content['data']['value']))) { |config| config.noblanks }
+          elm_xml = Nokogiri::XML(Base64.decode64(content['data']['value'])) { |config| config.noblanks }
           id, version = get_library_identifier(elm_xml)
         when 'application/elm+json'
-          elm = JSON.parse(Base64.decode64(Base64.decode64(content['data']['value'])), max_nesting: 1000)
+          elm = JSON.parse(Base64.decode64(content['data']['value']), max_nesting: 1000)
         when 'text/cql'
-          cql = Base64.decode64(Base64.decode64(content['data']['value']))
+          cql = Base64.decode64(content['data']['value'])
           raise MeasureLoadingInvalidPackageException.new("One or more Libraries FHIR version does not match FHIR #{FHIR_VERSION}.") unless cql.to_s.downcase.include? "using FHIR version '#{FHIR_VERSION}'".downcase
         end
       end
@@ -94,6 +94,12 @@ module Measures
            !(cql.include?("library #{id} version '#{version}'") || cql.include?("<library>#{id}</library><version>#{version}</version>"))
           raise MeasureLoadingInvalidPackageException.new("Cql library assets must all have same version.")
         end
+      end
+
+      def decode_content(content)
+        decoded = Base64.decode64(content)
+        return decoded if decoded.starts_with?('library') || decoded.starts_with?('<') || decoded.starts_with?('{')
+        return Base64.decode64(decoded)
       end
 
     end
