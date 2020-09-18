@@ -96,12 +96,6 @@ module Measures
         end
       end
 
-      def decode_content(content)
-        decoded = Base64.decode64(content)
-        return decoded if decoded.starts_with?('library') || decoded.starts_with?('<') || decoded.starts_with?('{')
-        return Base64.decode64(decoded)
-      end
-
     end
   end
 end
