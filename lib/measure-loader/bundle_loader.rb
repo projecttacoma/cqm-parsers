@@ -15,10 +15,12 @@ module Measures
     def extract_measure
       measure_files = MATMeasureFiles.create_from_zip_file(@measure_zip)
       measure_bundle = FHIR::BundleUtils.get_measure_bundle(measure_files)
-      create_measure(measure_bundle)
+      measure = create_measure(measure_bundle)
+      update_population_set_and_strat_titles(measure, @measure_details[:population_titles]) unless @measure_details[:population_titles].nil?
+      measure
     end
 
-    def self.update_population_set_and_strat_titles(measure, population_titles)
+    def update_population_set_and_strat_titles(measure, population_titles)
       # Sample population_titles: [pop set 1 title, pop set 2 title, pop set 1 strat 1 title,
       #                   pop set 1 strat 2 title, pop set 2 strat 1 title, pop set 2 strat 2 title]
       # Note RE composite measures: components and composite must have same population sets and strats
@@ -115,6 +117,8 @@ module Measures
       cqm_measure.population_sets = parse_population_sets(fhir_measure, measure_lib_name)
 
       cqm_measure.calculation_method = 'EPISODE_OF_CARE' if @measure_details[:episode_of_care]
+
+      cqm_measure.calculate_sdes = @measure_details[:calculate_sdes] unless @measure_details[:calculate_sdes].nil?
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure
