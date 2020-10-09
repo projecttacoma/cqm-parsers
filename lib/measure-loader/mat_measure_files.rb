@@ -47,12 +47,12 @@ module Measures
       library['content'].each do |content|
         case content['contentType']['value']
         when 'application/elm+xml'
-          elm_xml = Nokogiri::XML(Base64.decode64(Base64.decode64(content['data']['value']))) { |config| config.noblanks }
+          elm_xml = Nokogiri::XML(Base64.decode64(content['data']['value'])) { |config| config.noblanks }
           id, version = get_library_identifier(elm_xml)
         when 'application/elm+json'
-          elm = JSON.parse(Base64.decode64(Base64.decode64(content['data']['value'])), max_nesting: 1000)
+          elm = JSON.parse(Base64.decode64(content['data']['value']), max_nesting: 1000)
         when 'text/cql'
-          cql = Base64.decode64(Base64.decode64(content['data']['value']))
+          cql = Base64.decode64(content['data']['value'])
           raise MeasureLoadingInvalidPackageException.new("One or more Libraries FHIR version does not match FHIR #{FHIR_VERSION}.") unless cql.to_s.downcase.include? "using FHIR version '#{FHIR_VERSION}'".downcase
         end
       end
