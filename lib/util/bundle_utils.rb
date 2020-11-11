@@ -18,5 +18,17 @@ module FHIR
       resources
     end
 
+    def self.get_measurement_period(fhir_measure)
+      mp = {}
+      if fhir_measure.effectivePeriod
+        mp[:start] = fhir_measure.effectivePeriod.start&.value
+        mp[:end] = fhir_measure.effectivePeriod.end&.value
+      else
+        # Default measurement period
+        mp[:start] = '2020-01-01'
+        mp[:end] = '2020-12-31'
+      end
+      mp
+    end
   end
 end
