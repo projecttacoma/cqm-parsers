@@ -25,8 +25,8 @@ module FHIR
         mp[:end] = fhir_measure.effectivePeriod.end&.value
       else
         # Default measurement period
-        mp[:start] = '2020-01-01'
-        mp[:end] = '2020-12-31'
+        mp[:start] = '2019-01-01'
+        mp[:end] = '2019-12-31'
       end
       mp
     end
