@@ -121,6 +121,7 @@ module Measures
       cqm_measure.calculate_sdes = @measure_details[:calculate_sdes] unless @measure_details[:calculate_sdes].nil?
 
       cqm_measure.set_id = guid_identifier.upcase
+      cqm_measure.measure_period = FHIR::BundleUtils.get_measurement_period(fhir_measure)
       cqm_measure
     end
 
