@@ -21,12 +21,12 @@ module FHIR
     def self.get_measurement_period(fhir_measure)
       mp = {}
       if fhir_measure.effectivePeriod
-        mp[:start] = fhir_measure.effectivePeriod.start&.value
-        mp[:end] = fhir_measure.effectivePeriod.end&.value
+        mp[:start] = fhir_measure.effectivePeriod.start&.value << "T00:00:00"
+        mp[:end] = fhir_measure.effectivePeriod.end&.value << "T23:59:59"
       else
         # Default measurement period
-        mp[:start] = '2019-01-01'
-        mp[:end] = '2019-12-31'
+        mp[:start] = '2019-01-01T00:00:00'
+        mp[:end] = '2019-12-31T23:59:59'
       end
       mp
     end
