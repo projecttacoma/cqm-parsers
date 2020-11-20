@@ -12,7 +12,7 @@ before_install:
   - gem install bundler
 
 before_script:
-  - gem install rubocop -v 0.52.1
+  - gem install rubocop -v 1.3.1
 
 script:
   - bundle exec bundle-audit check --update

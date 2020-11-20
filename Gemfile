@@ -10,7 +10,7 @@ gem 'fhir-mongoid-models', git: 'https://github.com/MeasureAuthoringTool/fhir-mo
 
 group :development, :test do
   gem 'bundler-audit'
-  gem 'rubocop', '~> 0.52.1', require: false
+  gem 'rubocop', '~> 1.3.1', require: false
   gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22, :ruby_23]
   gem 'pry'
   gem 'pry-nav'
