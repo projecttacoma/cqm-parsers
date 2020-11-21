@@ -92,7 +92,7 @@ GEM
     nokogiri (1.10.10)
       mini_portile2 (~> 2.4.0)
     parallel (1.19.2)
-    parser (2.7.1.4)
+    parser (2.7.2.0)
       ast (~> 2.4.1)
     powerpack (0.1.2)
     pry (0.12.2)
