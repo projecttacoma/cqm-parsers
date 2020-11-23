@@ -189,7 +189,7 @@ module Measures
 
       fhir_measure.group.map.with_index do |group, index|
         population_set = CQM::PopulationSet.new(
-          title: 'Population Criteria Selection',
+          title: 'Population Criteria Section',
           population_set_id: "PopulationSet_#{index+1}"
         )
 
