@@ -101,110 +101,66 @@ class BundleLoaderTest < Minitest::Test
     assert err.message.include? 'Measure Resource does not contain GUID Identifier.'
   end
 
-  def test_parse_observation
-    setup
-    measure_bundle_zip = File.new File.join(@fixtures_path, 'fhir', 'ContinuousFhir.zip')
-    loader = Measures::BundleLoader.new(measure_bundle_zip, @measure_details)
-    measure = loader.extract_measure
+  def test_stratifications_and_observations
+    VCR.use_cassette('CMS111Test__stratifications_and_observations', @vcr_options) do
+      measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
+      measure_file = File.new File.join(@fixtures_path, ['CMS111Test', 'CMS111Test_v6_02_Artifacts.zip'])
 
-    assert !measure.population_sets.empty?
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      loader = Measures::BundleLoader.new(measure_file, measure_details, value_set_loader)
+      measure = loader.extract_measure
 
-    pop_set1 = measure.population_sets.first
-    assert !pop_set1.observations.empty?
-    assert_equal 1, pop_set1.observations.size
-    assert_equal 'count', pop_set1.observations.first.aggregation_type, 'Wrong aggregation type'
-    assert_equal 'ContinuousFhir', pop_set1.observations.first.observation_function.library_name
-    assert_equal 'count', pop_set1.observations.first.observation_function.statement_name
-    assert_equal 'ContinuousFhir', pop_set1.observations.first.observation_parameter.library_name
-    assert_equal 'measure-population-identifier', pop_set1.observations.first.observation_parameter.statement_name
+      assert_equal 'EPISODE_OF_CARE', measure.calculation_method
 
-    pop_set2 = measure.population_sets.last
-    assert !pop_set2.observations.empty?
-    assert_equal 1, pop_set2.observations.size
-    assert_equal 'sum', pop_set2.observations.first.aggregation_type, 'Wrong aggregation type'
-    assert_equal 'ContinuousFhir', pop_set2.observations.first.observation_function.library_name
-    assert_equal 'count', pop_set2.observations.first.observation_function.statement_name
-    assert_equal 'ContinuousFhir', pop_set2.observations.first.observation_parameter.library_name
-    assert_equal 'measure-population-identifier', pop_set2.observations.first.observation_parameter.statement_name
+      assert_equal 4, measure.cql_libraries.size
 
+      # check the main library name and find new library structure using it
+      assert_equal 'CMS111Test', measure.main_cql_library
+
+      # check the new library structure
+      main_library = measure.cql_libraries.select(&:is_main_library).first
+      assert(!main_library.nil?)
+      assert_equal 'CMS111Test', main_library.library_name
+      assert_equal '0.0.004', main_library.library_version
+      assert_equal 16, main_library.statement_dependencies.size
+      assert main_library.cql.starts_with?('library CMS111Test')
+
+      # check the references used by the "Initial Population"
+      ipp_dep = main_library.statement_dependencies.select { |dep| dep.statement_name == 'Initial Population' }.first
+      assert(!ipp_dep.nil?)
+      assert_equal 1, ipp_dep.statement_references.size
+      assert_equal ["ED Encounter with Decision to Admit"], ipp_dep.statement_references.map(&:statement_name)
+
+      # check population set
+      assert_equal 1, measure.population_sets.size
+      population_set = measure.population_sets[0]
+      assert_equal 'PopulationSet_1', population_set.population_set_id
+      assert_equal 'Population Criteria Section', population_set.title
+      assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
+      assert_equal 'Initial Population', population_set.populations.IPP.statement_name
+      assert_equal 'Measure Population', population_set.populations.MSRPOPL.statement_name
+      assert_equal 'Measure Population Exclusions', population_set.populations.MSRPOPLEX.statement_name
+
+      assert_equal 2, population_set.stratifications.size
+      assert_equal 'PopulationSet_1_Stratification_1', population_set.stratifications[0].stratification_id
+      assert_equal 'PopSet1 Stratification 1', population_set.stratifications[0].title
+      assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
+      assert_equal 'CMS111Test', population_set.stratifications[0].statement.library_name
+      assert_equal 'PopulationSet_1_Stratification_2', population_set.stratifications[1].stratification_id
+      assert_equal 'PopSet1 Stratification 2', population_set.stratifications[1].title
+      assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
+      assert_equal 'CMS111Test', population_set.stratifications[1].statement.library_name
+
+      # check observation
+      assert_equal population_set.observations.size, 1
+      assert_equal 'MeasureObservation', population_set.observations[0].observation_function.statement_name
+      assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
+
+      # check SDE
+      # assert_equal ["SDE Ethnicity", "SDE Payer", "SDE Race", "SDE Sex"], population_set.supplemental_data_elements.map(&:statement_name)
+    end
   end
 
-  # def test_stratifications_and_observations
-  #   VCR.use_cassette('measure__stratifications_and_observations', @vcr_options) do
-  #     measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
-  #     measure_file = File.new File.join(@fixtures_path, 'CMS111_v5_6_Artifacts.zip')
-  #
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
-  #     loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
-  #     measures = loader.extract_measures
-  #     assert_equal 1, measures.length
-  #     measure = measures[0]
-  #
-  #     assert_equal 'CONTINUOUS_VARIABLE', measure.measure_scoring
-  #     assert_equal 'EPISODE_OF_CARE', measure.calculation_method
-  #
-  #     assert_equal 2, measure.cql_libraries.size
-  #
-  #     # check the main library name and find new library structure using it
-  #     assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', measure.main_cql_library
-  #
-  #     # check the new library structure
-  #     main_library = measure.cql_libraries.select(&:is_main_library).first
-  #     assert(!main_library.nil?)
-  #     assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', main_library.library_name
-  #     assert_equal '7.3.002', main_library.library_version
-  #     assert_equal 16, main_library.statement_dependencies.size
-  #     assert main_library.cql.starts_with?('library MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients')
-  #
-  #     # check the references used by the "Initial Population"
-  #     ipp_dep = main_library.statement_dependencies.select { |dep| dep.statement_name == 'Initial Population' }.first
-  #     assert(!ipp_dep.nil?)
-  #     assert_equal 2, ipp_dep.statement_references.size
-  #     assert_equal ["Inpatient Encounter", "ED Visit with Admit Order"], ipp_dep.statement_references.map(&:statement_name)
-  #
-  #     # check population set
-  #     assert_equal 1, measure.population_sets.size
-  #     population_set = measure.population_sets[0]
-  #     assert_equal 'PopulationSet_1', population_set.population_set_id
-  #     assert_equal 'Population Criteria Section', population_set.title
-  #     assert population_set.populations.instance_of?(CQM::ContinuousVariablePopulationMap)
-  #     assert_equal 'Initial Population', population_set.populations.IPP.statement_name
-  #     assert_equal '93C1E91C-806B-4F57-946D-D145D1BD08E2', population_set.populations.IPP.hqmf_id
-  #     assert_equal 'Measure Population', population_set.populations.MSRPOPL.statement_name
-  #     assert_equal '4725E77E-3D0F-46AC-A175-8DEFDE19EC8A', population_set.populations.MSRPOPL.hqmf_id
-  #     assert_equal 'Measure Population Exclusions', population_set.populations.MSRPOPLEX.statement_name
-  #     assert_equal '31E49A75-5D9F-441D-96D0-FE2FED1B006B', population_set.populations.MSRPOPLEX.hqmf_id
-  #
-  #     # check stratifications
-  #     assert_equal 2, population_set.stratifications.size
-  #     assert_equal 'PopulationSet_1_Stratification_1', population_set.stratifications[0].stratification_id
-  #     assert_equal 'PopSet1 Stratification 1', population_set.stratifications[0].title
-  #     assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].hqmf_id
-  #     assert_equal 'Stratification 1', population_set.stratifications[0].statement.statement_name
-  #     assert_equal '4DB7BC72-5DD8-4EEB-AB62-D039567CF620', population_set.stratifications[0].statement.hqmf_id
-  #     assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[0].statement.library_name
-  #     assert_equal 'PopulationSet_1_Stratification_2', population_set.stratifications[1].stratification_id
-  #     assert_equal 'PopSet1 Stratification 2', population_set.stratifications[1].title
-  #     assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].hqmf_id
-  #     assert_equal 'Stratification 2', population_set.stratifications[1].statement.statement_name
-  #     assert_equal '46958FCE-9FF3-4F1A-89AB-0A21D1F47F52', population_set.stratifications[1].statement.hqmf_id
-  #     assert_equal 'MedianAdmitDecisionTimetoEDDepartureTimeforAdmittedPatients', population_set.stratifications[1].statement.library_name
-  #
-  #     # check observation
-  #     assert_equal population_set.observations.size, 1
-  #     assert_equal 'Measure Observation', population_set.observations[0].observation_function.statement_name
-  #     assert_equal '2D7701F3-F93D-4994-84F6-0FA00FAA81C9', population_set.observations[0].hqmf_id
-  #     assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
-  #
-  #     # check SDE
-  #     assert_equal ["SDE Ethnicity", "SDE Payer", "SDE Race", "SDE Sex"], population_set.supplemental_data_elements.map(&:statement_name)
-  #
-  #     # check valuesets
-  #     # note if you call value_sets.count or .size you will be making a db call
-  #     assert_equal 10, measure.value_sets.each.count
-  #   end
-  # end
-  #
   # def test_population_titles
   #   VCR.use_cassette('measure__population_titles', @vcr_options) do
   #     measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true, 'population_titles' => ['ps1','ps2','ps1strat1','ps1strat2','ps2strat1'] }

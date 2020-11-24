@@ -189,7 +189,7 @@ module Measures
 
       fhir_measure.group.map.with_index do |group, index|
         population_set = CQM::PopulationSet.new(
-          title: 'Population Criteria Selection',
+          title: 'Population Criteria Section',
           population_set_id: "PopulationSet_#{index+1}"
         )
 
@@ -223,7 +223,7 @@ module Measures
               aggregation_type: get_observation_population_aggregation_type(pop),
               observation_parameter: CQM::StatementReference.new(
                 library_name: measure_lib_name,
-                statement_name: get_observation_population_parameter(pop)
+                statement_name: get_observation_population_parameter(group.population, pop)
               )
             )
           end
@@ -257,11 +257,12 @@ module Measures
       end
     end
 
-    def get_observation_population_parameter(observation_population)
-      parameter = observation_population.extension.select do |e|
+    def get_observation_population_parameter(populations, measure_observation)
+      parameter = measure_observation.extension.detect do |e|
         e.url.value == 'http://hl7.org/fhir/us/cqfmeasures/StructureDefinition/cqfm-criteriaReference'
       end
-      parameter.first.valueString.value
+      measure_population = populations.detect { |population| population.fhirId == parameter.valueString.value }
+      measure_population.criteria.expression.value
     end
 
     def get_observation_population_aggregation_type(observation_population)
