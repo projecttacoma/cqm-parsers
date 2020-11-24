@@ -157,7 +157,7 @@ class BundleLoaderTest < Minitest::Test
       assert_equal 'Measure Population', population_set.observations[0].observation_parameter.statement_name
 
       # check SDE
-      #assert_equal ["SDE Ethnicity", "SDE Payer", "SDE Race", "SDE Sex"], population_set.supplemental_data_elements.map(&:statement_name)
+      # assert_equal ["SDE Ethnicity", "SDE Payer", "SDE Race", "SDE Sex"], population_set.supplemental_data_elements.map(&:statement_name)
     end
   end
 
