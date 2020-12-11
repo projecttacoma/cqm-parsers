@@ -12,7 +12,7 @@ module Measures
       @vs_model_cache = {}
     end
 
-    def retrieve_and_modelize_value_sets_from_vsac(value_sets)
+    def retrieve_and_modelize_value_sets_from_vsac(value_sets, code_system_by_name)
       vs_models = []
       needed_value_sets = []
 
@@ -36,7 +36,7 @@ module Measures
       vs_responses = load_api.get_multiple_valuesets(needed_value_sets)
 
       [needed_value_sets,vs_responses].transpose.each do |needed_vs,vs_data|
-        vs_model = modelize_value_set(vs_data, needed_vs[:query_version])
+        vs_model = modelize_value_set(vs_data, needed_vs[:query_version], code_system_by_name)
         @vs_model_cache[needed_vs[:cache_key]] = vs_model
         vs_models << vs_model
       end
@@ -70,24 +70,24 @@ module Measures
       return @vsac_options
     end
 
-    def modelize_value_set(vsac_xml_response, query_version)
+    def modelize_value_set(vsac_xml_response, query_version, code_system_by_name)
       doc = Nokogiri::XML(vsac_xml_response)
       doc.root.add_namespace_definition("vs","urn:ihe:iti:svs:2008")
       vs_element = doc.at_xpath("/vs:RetrieveValueSetResponse/vs:ValueSet|/vs:RetrieveMultipleValueSetsResponse/vs:DescribedValueSet")
       FHIR::ValueSet.new(
         fhirId: vs_element['ID'],
-        url: FHIR::PrimitiveString.transform_json("#{VS_URL_PRIFIX}#{vs_element['ID']}", nil),
+        url: FHIR::PrimitiveUri.transform_json("#{VS_URL_PRIFIX}#{vs_element['ID']}", nil),
         title: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         name: FHIR::PrimitiveString.transform_json(vs_element["displayName"], nil),
         version: FHIR::PrimitiveString.transform_json(
           vs_element["version"] == "N/A" ? query_version : vs_element["version"], nil
         ),
-        compose: prepare_code_system_concepts(vs_element)
+        compose: prepare_code_system_concepts(vs_element, code_system_by_name)
       )
     end
 
-    def prepare_code_system_concepts(vs_element)
-      code_systems = vs_element.xpath("//vs:Concept").group_by { |concetp| concetp['codeSystemName']}
+    def prepare_code_system_concepts(vs_element, code_system_by_name)
+      code_systems = vs_element.xpath("//vs:Concept").group_by { |concept| concept['codeSystemName']}
       vsc_include = []
       code_systems.each do |code_system, concepts|
         vs_concepts = concepts.collect do |concept|
@@ -97,9 +97,10 @@ module Measures
           )
         end
 
+        code_system_uri = code_system_by_name[code_system]
         vsc_include << FHIR::ValueSetComposeInclude.new(
-          system: FHIR::PrimitiveCode.transform_json(code_system, nil),
-          version: FHIR::PrimitiveCode.transform_json(concepts[0]['codeSystemVersion'], nil),
+          system: FHIR::PrimitiveUri.transform_json(code_system_uri, nil),
+          version: FHIR::PrimitiveString.transform_json(concepts[0]['codeSystemVersion'], nil),
           concept: vs_concepts
         )
       end

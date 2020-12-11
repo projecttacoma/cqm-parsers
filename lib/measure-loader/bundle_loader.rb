@@ -94,7 +94,7 @@ module Measures
       fhir_measure = FHIR::Measure.transform_json(measure_resource['resource'])
 
       library_resources = FHIR::BundleUtils.get_resources_by_name(bundle: measure_bundle, name: 'Library')
-      libraries = library_resources.map {|library_resource| FHIR::Library.transform_json(library_resource['resource'])}
+      libraries = library_resources.map { |library_resource| FHIR::Library.transform_json(library_resource['resource']) }
 
       # Dependent on Measure resource specifying only 1 url in its library element.
       measure_lib_name, measure_lib_version = get_measure_lib_name_version(fhir_measure.library.first.value, libraries)
@@ -109,10 +109,12 @@ module Measures
       cqm_measure.cql_libraries = parse_cql_elm(libraries, measure_lib_name, measure_lib_version)
       elms = cqm_measure.cql_libraries.map(&:elm)
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
-      cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
-      cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets)) if @value_set_loader.present?
 
-      cqm_measure.source_data_criteria = libraries.map {|lib| lib.create_data_elements(cqm_measure.value_sets.compact)}.flatten
+      code_systems_by_name = {}.merge(ValueSetHelpers.code_systems_by_name())
+      cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
+      cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets, code_systems_by_name)) if @value_set_loader.present?
+
+      cqm_measure.source_data_criteria = libraries.map { |lib| lib.create_data_elements(cqm_measure.value_sets.compact) }.flatten
 
       cqm_measure.population_sets = parse_population_sets(fhir_measure, measure_lib_name)
 
@@ -122,6 +124,8 @@ module Measures
 
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure.measure_period = FHIR::BundleUtils.get_measurement_period(fhir_measure)
+      # Order is important, store as arrays to preserve the order
+      cqm_measure.code_systems_by_name = code_systems_by_name.to_a
       cqm_measure
     end
 
@@ -190,7 +194,7 @@ module Measures
       fhir_measure.group.map.with_index do |group, index|
         population_set = CQM::PopulationSet.new(
           title: 'Population Criteria Section',
-          population_set_id: "PopulationSet_#{index+1}"
+          population_set_id: "PopulationSet_#{index + 1}"
         )
 
         population_set.populations = new_population_map(scoring_type)
@@ -230,8 +234,8 @@ module Measures
         end
         group.stratifier.map.with_index do |stratum, i|
           population_set.stratifications << CQM::Stratification.new(
-            title: "PopSet#{index+1} Stratification #{i+1}",
-            stratification_id: "#{population_set.population_set_id}_Stratification_#{i+1}",
+            title: "PopSet#{index + 1} Stratification #{i + 1}",
+            stratification_id: "#{population_set.population_set_id}_Stratification_#{i + 1}",
             statement: CQM::StatementReference.new(
               library_name: measure_lib_name,
               statement_name: stratum.criteria.expression.value
