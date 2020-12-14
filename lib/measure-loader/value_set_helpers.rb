@@ -83,10 +83,12 @@ module Measures
         # (it can be named slightly different than the original code system name)
         # Important : UI will also create a reverse Map from it URI -> name. The last name wins, so the order of elements is important
         return {
+          'medication-admin-status' => 'http://terminology.hl7.org/CodeSystem/medication-admin-status',
           'medication-statement-status' => 'http://hl7.org/fhir/CodeSystem/medication-statement-status',
           'medicationrequest-intent' => 'http://hl7.org/fhir/CodeSystem/medicationrequest-intent',
           'medicationrequest-status' => 'http://hl7.org/fhir/CodeSystem/medicationrequest-status',
           'discharge-disposition' => 'http://terminology.hl7.org/CodeSystem/discharge-disposition',
+          'encounter-status' => 'http://hl7.org/fhir/encounter-status',
           'event-status' => 'http://hl7.org/fhir/event-status',
           'condition-ver-status' => 'http://terminology.hl7.org/CodeSystem/condition-ver-status',
           'ConditionVerificationStatusCodes' => 'http://terminology.hl7.org/CodeSystem/condition-ver-status',
