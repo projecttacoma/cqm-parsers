@@ -46,7 +46,7 @@ module Measures
     def extract_fields_from_single_code_reference_data_criteria(criteria)
       single_code_reference = criteria.at_css('value[codeSystem][code]') || criteria.at_css('code[codeSystem][code]')
       system_id = "#{single_code_reference['codeSystem']}_#{single_code_reference['codeSystemVersion']}".to_sym
-      concept = @single_code_concepts[system_id][single_code_reference['code'].to_sym] || get_concept_from_participation(criteria.at_css('participation'))
+      concept = @single_code_concepts[system_id]&[single_code_reference['code'].to_sym] || get_concept_from_participation(criteria.at_css('participation'))
       value_set = concept._parent
       return {
         description: concept.display_name,
