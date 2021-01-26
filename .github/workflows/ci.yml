@@ -11,7 +11,7 @@ jobs:
 
     strategy:
       matrix:
-        ruby-version: [2.3.8]
+        ruby-version: [2.5]
         mongodb-version: [4.0.18, 4.4]
 
     steps:
