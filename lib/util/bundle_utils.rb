@@ -1,7 +1,7 @@
 module FHIR
   class BundleUtils
     def self.get_measure_bundle(measure_files)
-      measure_bundle = measure_files.select {|file| file[:basename].to_s == 'measure-json-bundle.json'}
+      measure_bundle = measure_files.select {|file| file[:basename].to_s.end_with?('json')}
       raise Measures::MeasureLoadingInvalidPackageException.new("The uploaded measure bundle does not contain the proper FHIR JSON file.") if measure_bundle.empty?
       raise Measures::MeasureLoadingInvalidPackageException.new("Multiple measure bundles were found.") if measure_bundle.length > 1
 

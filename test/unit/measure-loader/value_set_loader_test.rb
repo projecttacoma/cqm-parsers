@@ -20,10 +20,10 @@ class VSACValueSetLoaderTest < Minitest::Test
       vs_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
       needed_value_sets = [{oid: "2.16.840.1.113883.3.117.1.7.1.292", version: nil, profile: nil}]
 
-      valuesets = vs_loader.retrieve_and_modelize_value_sets_from_vsac(needed_value_sets)
+      valuesets = vs_loader.retrieve_and_modelize_value_sets_from_vsac(needed_value_sets, {})
 
       stub_request(:any, /\./).to_timeout # disable all network connections
-      valuesets_again = vs_loader.retrieve_and_modelize_value_sets_from_vsac(needed_value_sets)
+      valuesets_again = vs_loader.retrieve_and_modelize_value_sets_from_vsac(needed_value_sets, {})
       WebMock.reset!
 
       assert_equal valuesets, valuesets_again
