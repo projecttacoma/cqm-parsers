@@ -171,7 +171,7 @@ module Measures
             'v3.GTSAbbreviation' => 'http://terminology.hl7.org/ValueSet/v3-GTSAbbreviation',
             'EventTiming' => 'http://hl7.org/fhir/event-timing',
             'v3.TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
-            'TimingEvent' => 'ttp://terminology.hl7.org/CodeSystem/v3-TimingEvent',
+            'TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
             'DaysOfWeek' => 'http://hl7.org/fhir/days-of-week'
         }
       end
