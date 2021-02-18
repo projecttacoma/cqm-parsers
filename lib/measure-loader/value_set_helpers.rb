@@ -172,7 +172,8 @@ module Measures
             'EventTiming' => 'http://hl7.org/fhir/event-timing',
             'v3.TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
             'TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
-            'DaysOfWeek' => 'http://hl7.org/fhir/days-of-week'
+            'DaysOfWeek' => 'http://hl7.org/fhir/days-of-week',
+            'DoseAndRateType' => 'http://terminology.hl7.org/CodeSystem/dose-rate-type'
         }
       end
     end
