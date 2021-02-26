@@ -199,6 +199,8 @@ module Measures
 
         population_set.populations = new_population_map(scoring_type)
 
+        population_set.supplemental_data_elements = parse_supplemental_data_elements(measure_lib_name, fhir_measure)
+
         group.population.each do |pop|
           stmt_ref = CQM::StatementReference.new(
             library_name: measure_lib_name,
@@ -244,6 +246,19 @@ module Measures
         end
         population_set
       end
+    end
+
+    def parse_supplemental_data_elements(measure_lib_name, fhir_measure)
+      supplemental_data_elements = []
+      if @measure_details[:calculate_sdes]
+        fhir_measure.supplementalData&.each do |sd|
+          supplemental_data_elements << CQM::StatementReference.new(
+            library_name: measure_lib_name,
+            statement_name: sd.criteria.expression.value
+          )
+        end
+      end
+      supplemental_data_elements
     end
 
     def new_population_map(measure_scoring)
