@@ -173,7 +173,9 @@ module Measures
             'v3.TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
             'TimingEvent' => 'http://terminology.hl7.org/CodeSystem/v3-TimingEvent',
             'DaysOfWeek' => 'http://hl7.org/fhir/days-of-week',
-            'DoseAndRateType' => 'http://terminology.hl7.org/CodeSystem/dose-rate-type'
+            'DoseAndRateType' => 'http://terminology.hl7.org/CodeSystem/dose-rate-type',
+            'DaysOfWeek' => 'http://hl7.org/fhir/days-of-week',
+            'DiagnosticServiceSectionId' => 'http://terminology.hl7.org/CodeSystem/v2-0074'
         }
       end
     end
