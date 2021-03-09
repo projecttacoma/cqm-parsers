@@ -10,11 +10,13 @@ class ValueSetHelpersTest < Minitest::Test
     assert_equal expected_hash, orig_hash
   end
 
-  def test_code_systems_by_name
-    code_systems = Measures::ValueSetHelpers.code_systems_by_name()
+  def test_code_systems
+    code_systems = Measures::ValueSetHelpers.code_systems_mappings()
     assert code_systems != nil
-    assert_equal 84, code_systems.keys.size
-    assert_equal 84, code_systems.values.size
+    assert_equal 84, code_systems['by_name'].keys.size
+    assert_equal 84, code_systems['by_name'].values.size
+    assert_equal 78, code_systems['by_oid'].keys.size
+    assert_equal 78, code_systems['by_oid'].values.size
   end
 
 end
