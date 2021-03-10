@@ -13,10 +13,14 @@ class ValueSetHelpersTest < Minitest::Test
   def test_code_systems
     code_systems = Measures::ValueSetHelpers.code_systems_mappings()
     assert code_systems != nil
-    assert_equal 84, code_systems['by_name'].keys.size
-    assert_equal 84, code_systems['by_name'].values.size
-    assert_equal 78, code_systems['by_oid'].keys.size
-    assert_equal 78, code_systems['by_oid'].values.size
+    assert_equal 85, code_systems['by_name'].keys.size
+    assert_equal 85, code_systems['by_name'].values.size
+    assert_equal 79, code_systems['by_oid'].keys.size
+    assert_equal 79, code_systems['by_oid'].values.size
+    assert_equal 'http://snomed.info/sct', code_systems['by_oid']['2.16.840.1.113883.6.96']
+    assert_nil code_systems['by_oid']['WRONG_OID']
+    assert_equal 'http://snomed.info/sct', code_systems['by_name']['SNOMEDCT']
+    assert_nil code_systems['by_name']['WRONG_NAME']
   end
 
 end
