@@ -110,9 +110,9 @@ module Measures
       elms = cqm_measure.cql_libraries.map(&:elm)
       elm_value_sets = ValueSetHelpers.unique_list_of_valuesets_referenced_by_elms(elms)
 
-      code_systems_by_name = {}.merge(ValueSetHelpers.code_systems_by_name())
+      code_systems_mappings = {}.merge(ValueSetHelpers.code_systems_mappings())
       cqm_measure.value_sets = ValueSetHelpers.make_fake_valuesets_from_drc(elms, @vs_model_cache)
-      cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets, code_systems_by_name)) if @value_set_loader.present?
+      cqm_measure.value_sets.concat(@value_set_loader.retrieve_and_modelize_value_sets_from_vsac(elm_value_sets, code_systems_mappings)) if @value_set_loader.present?
 
       cqm_measure.source_data_criteria = libraries.map { |lib| lib.create_data_elements(cqm_measure.value_sets.compact) }.flatten
 
@@ -125,7 +125,7 @@ module Measures
       cqm_measure.set_id = guid_identifier.upcase
       cqm_measure.measure_period = FHIR::BundleUtils.get_measurement_period(fhir_measure)
       # Order is important, store as arrays to preserve the order
-      cqm_measure.code_systems_by_name = code_systems_by_name.to_a
+      cqm_measure.code_systems_by_name = code_systems_mappings['by_name'].to_a
       cqm_measure
     end
 

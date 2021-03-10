@@ -79,17 +79,21 @@ module Measures
 
       # Spreadsheet Example: https://docs.google.com/spreadsheets/d/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/edit#gid=0
       # Spreadsheet's JSON:  https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json
-      def code_systems_by_name()
+      def code_systems_mappings()
         code_systems_json = File.read(File.join(File.dirname(__FILE__), 'code_systems.json'))
-        mappings = {}
+        code_systems = { 'by_name' => {}, 'by_oid' => {} }
         JSON.parse(code_systems_json)['feed']['entry'].each do |e|
+          # gsx$oid - Code system OID
           # gsx$codesystemname - Code system name in MAT & VSAC
           # gsx$fhircodesystemname - Code system name in FHIR & Bonnie
-          # gsx$url - Cude system uri in FHIR 4
-          mappings[e['gsx$codesystemname']['$t']] = e['gsx$url']['$t'] if e.has_key?('gsx$codesystemname') && !e['gsx$codesystemname']['$t'].blank?
-          mappings[e['gsx$fhircodesystemname']['$t']] = e['gsx$url']['$t'] if e.has_key?('gsx$fhircodesystemname') && !e['gsx$fhircodesystemname']['$t'].blank?
+          # gsx$url - Code system uri in FHIR 4
+          code_system_oid = e['gsx$oid']['$t']
+          code_system_url = e['gsx$url']['$t']
+          code_systems['by_oid'][code_system_oid] = code_system_url
+          code_systems['by_name'][e['gsx$codesystemname']['$t']] = code_system_url if e.has_key?('gsx$codesystemname') && !e['gsx$codesystemname']['$t'].blank?
+          code_systems['by_name'][e['gsx$fhircodesystemname']['$t']] = code_system_url if e.has_key?('gsx$fhircodesystemname') && !e['gsx$fhircodesystemname']['$t'].blank?
         end
-        return mappings
+        return code_systems
       end
 
     end
