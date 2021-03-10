@@ -87,9 +87,9 @@ module Measures
           # gsx$codesystemname - Code system name in MAT & VSAC
           # gsx$fhircodesystemname - Code system name in FHIR & Bonnie
           # gsx$url - Code system uri in FHIR 4
-          code_system_oid = e['gsx$oid']['$t']
+          code_system_oid = e['gsx$oid']['$t'].sub('urn:oid:', '').strip
           code_system_url = e['gsx$url']['$t']
-          code_systems['by_oid'][code_system_oid] = code_system_url
+          code_systems['by_oid'][code_system_oid] = code_system_url unless code_system_oid.blank?
           code_systems['by_name'][e['gsx$codesystemname']['$t']] = code_system_url if e.has_key?('gsx$codesystemname') && !e['gsx$codesystemname']['$t'].blank?
           code_systems['by_name'][e['gsx$fhircodesystemname']['$t']] = code_system_url if e.has_key?('gsx$fhircodesystemname') && !e['gsx$fhircodesystemname']['$t'].blank?
         end
