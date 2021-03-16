@@ -1,3 +1,5 @@
+require 'singleton'
+
 module HQMF
   # Simple class to issue monotonically increasing integer identifiers
   class InstanceCounter
