@@ -15,8 +15,8 @@ class ValueSetHelpersTest < Minitest::Test
     assert code_systems != nil
     assert_equal 87, code_systems['by_name'].keys.size
     assert_equal 87, code_systems['by_name'].values.size
-    assert_equal 79, code_systems['by_oid'].keys.size
-    assert_equal 79, code_systems['by_oid'].values.size
+    assert_equal 81, code_systems['by_oid'].keys.size
+    assert_equal 81, code_systems['by_oid'].values.size
     assert_equal 'http://snomed.info/sct', code_systems['by_oid']['2.16.840.1.113883.6.96']
     assert_nil code_systems['by_oid']['WRONG_OID']
     assert_equal 'http://snomed.info/sct', code_systems['by_name']['SNOMEDCT']
