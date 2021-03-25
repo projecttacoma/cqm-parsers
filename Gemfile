@@ -6,7 +6,7 @@ gem 'mongoid', '~> 7.1'
 
 # gem 'cqm-models', '~> 3.0.0'
 # gem 'cqm-models', git: 'https://github.com/projecttacoma/cqm-models.git', branch: 'master'
-gem 'fhir-mongoid-models', git: 'https://github.com/MeasureAuthoringTool/fhir-mongoid-models.git', branch: 'develop'
+gem 'fhir-mongoid-models', '~> 0.0.4'
 
 group :development, :test do
   gem 'bundler-audit'
