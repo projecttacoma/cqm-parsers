@@ -1,5 +1,6 @@
 require 'vcr'
 require 'webmock/minitest'
+require 'addressable'
 
 # VCR records HTTP interactions to cassettes that can be replayed during unit tests
 # allowing for faster, more predictible web interactions
@@ -14,7 +15,7 @@ VCR.configure do |c|
   ENV['VSAC_API_KEY'] = "vcrpass" unless ENV['VSAC_API_KEY']
 
   # Ensure plain text passwords do not show up during logging
-  c.filter_sensitive_data('<VSAC_API_KEY>') {URI.escape(ENV['VSAC_API_KEY'])}
+  c.filter_sensitive_data('<VSAC_API_KEY>') { Addressable::URI.encode(ENV['VSAC_API_KEY']) }
   c.default_cassette_options = { record: :once }
 
   # Add a custom matcher for use with the bulk request by typheous, so we can ignore service ticket
