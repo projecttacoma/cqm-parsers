@@ -58,7 +58,7 @@ module Measures
             pn = Pathname(f.name)
             next if '__MACOSX'.in? pn.each_filename  # ignore anything in a __MACOSX folder
             next unless pn.basename.extname.in? ['.xml','.cql','.json','.html']
-            folders[pn.dirname][:files] << { basename: pn.basename, contents: f.get_input_stream.read }
+            folders[pn.dirname][:files] << { basename: pn.basename, contents: f.get_input_stream.read.force_encoding('UTF-8') }
             folders[pn.dirname][:depth] =  pn.each_filename.count # this is just a count of how many folders are in the path
           end
         end
