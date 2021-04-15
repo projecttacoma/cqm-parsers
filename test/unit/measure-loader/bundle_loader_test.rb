@@ -40,13 +40,15 @@ class BundleLoaderTest < Minitest::Test
 
   def test_episode_care_option
     setup
-    @measure_details = { 'episode_of_care'=> true }
+    VCR.use_cassette('vsac_response_for_test_episode_care_option_CMS104', @vcr_options) do
+      @measure_details = { 'episode_of_care'=> true }
 
-    measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
-    loader = Measures::BundleLoader.new(measure_file, @measure_details)
-    measure = loader.extract_measure
+      measure_file = File.new File.join(@fixtures_path, 'CMS104_v6_0_fhir_Artifacts.zip')
+      loader = Measures::BundleLoader.new(measure_file, @measure_details)
+      measure = loader.extract_measure
 
-    assert_equal 'EPISODE_OF_CARE', measure.calculation_method
+      assert_equal 'EPISODE_OF_CARE', measure.calculation_method
+    end
   end
 
   def test_parse_elm
