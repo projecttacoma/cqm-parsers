@@ -5,7 +5,7 @@ http_interactions:
     uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
     body:
       encoding: US-ASCII
-      string: apikey=<API_KEY>
+      string: apikey=<VSAC_API_KEY>
     headers:
       User-Agent:
       - Typhoeus - https://github.com/typhoeus/typhoeus
@@ -35,9 +35,426 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '65'
+      - '66'
       Date:
-      - Mon, 23 Nov 2020 21:15:59 GMT
+      - Thu, 15 Apr 2021 14:32:51 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.88 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:52 GMT
+- request:
+    method: get
+    uri: https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Content-Type:
+      - application/json; charset=UTF-8
+      X-Robots-Tag:
+      - noindex, nofollow, nosnippet
+      Access-Control-Allow-Origin:
+      - "*"
+      Expires:
+      - Thu, 15 Apr 2021 14:32:53 GMT
+      Date:
+      - Thu, 15 Apr 2021 14:32:53 GMT
+      Cache-Control:
+      - private, max-age=0, must-revalidate, no-transform
+      Vary:
+      - Accept, X-GData-Authorization, GData-Version
+      Gdata-Version:
+      - '1.0'
+      Last-Modified:
+      - Thu, 15 Apr 2021 14:32:53 GMT
+      Transfer-Encoding:
+      - chunked
+      P3p:
+      - CP="This is not a P3P policy! See g.co/p3phelp for more info."
+      Content-Security-Policy:
+      - 'base-uri ''self'';object-src ''self'';report-uri https://docs.google.com/spreadsheets/cspreport;script-src
+        ''report-sample'' ''nonce-tjdikxSsOpzDN4t6Ai4vQw'' ''unsafe-inline'' ''strict-dynamic''
+        https: http: ''unsafe-eval'';worker-src ''self'' blob:'
+      X-Content-Type-Options:
+      - nosniff
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Xss-Protection:
+      - 1; mode=block
+      Server:
+      - GSE
+      Set-Cookie:
+      - NID=213=BjSgC__L2ZlXWWpts5FERpLvfB-emzMvUMgeAm8mmDKpgAT5cTKT1zB0cz90nzPumA0VWT0XaFgUil1yCm7dBHjweOoxxBwa0cR4saUPcmmiVB7iGIdFIc0BxKP194jxa6lvPYMV0fSFNf9gfq5ulpHHeaIl8IbHwBLcJwZONfQ;
+        expires=Fri, 15-Oct-2021 14:32:52 GMT; path=/; domain=.google.com; HttpOnly
+      Alt-Svc:
+      - h3-29=":443"; ma=2592000,h3-T051=":443"; ma=2592000,h3-Q050=":443"; ma=2592000,h3-Q046=":443";
+        ma=2592000,h3-Q043=":443"; ma=2592000,quic=":443"; ma=2592000; v="46,43"
+    body:
+      encoding: UTF-8
+      string: '{"version":"1.0","encoding":"UTF-8","feed":{"xmlns":"http://www.w3.org/2005/Atom","xmlns$openSearch":"http://a9.com/-/spec/opensearchrss/1.0/","xmlns$gsx":"http://schemas.google.com/spreadsheets/2006/extended","id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"Sheet1"},"link":[{"rel":"alternate","type":"application/atom+xml","href":"https://docs.google.com/spreadsheets/d/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/pubhtml"},{"rel":"http://schemas.google.com/g/2005#feed","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values"},{"rel":"http://schemas.google.com/g/2005#post","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values"},{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt\u003djson"}],"author":[{"name":{"$t":"serhii.ilin"},"email":{"$t":"serhii.ilin@semanticbits.com"}}],"openSearch$totalResults":{"$t":"81"},"openSearch$startIndex":{"$t":"1"},"entry":[{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cokwr"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.96"},"content":{"type":"text","$t":"url:
+        http://snomed.info/sct, codesystemname: SNOMEDCT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cokwr"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.96"},"gsx$url":{"$t":"http://snomed.info/sct"},"gsx$codesystemname":{"$t":"SNOMEDCT"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cpzh4"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.1001"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActMood, codesystemname: ActMood,
+        fhircodesystemname: v3.ActMood"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cpzh4"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.1001"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActMood"},"gsx$codesystemname":{"$t":"ActMood"},"gsx$fhircodesystemname":{"$t":"v3.ActMood"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cre1l"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.1"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender, codesystemname:
+        AdministrativeGender, comment: Orignally it was http://hl7.org/fhir/ValueSet/v3-AdministrativeGender
+        in MAT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cre1l"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.1"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-AdministrativeGender"},"gsx$codesystemname":{"$t":"AdministrativeGender"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":"Orignally
+        it was http://hl7.org/fhir/ValueSet/v3-AdministrativeGender in MAT"}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/chk2m"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.88"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/rxnorm, codesystemname: RXNORM"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/chk2m"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.88"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/rxnorm"},"gsx$codesystemname":{"$t":"RXNORM"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ciyn3"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.1"},"content":{"type":"text","$t":"url:
+        http://loinc.org, codesystemname: LOINC"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ciyn3"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.1"},"gsx$url":{"$t":"http://loinc.org"},"gsx$codesystemname":{"$t":"LOINC"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ckd7g"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.12"},"content":{"type":"text","$t":"url:
+        http://www.ama-assn.org/go/cpt, codesystemname: CPT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ckd7g"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.12"},"gsx$url":{"$t":"http://www.ama-assn.org/go/cpt"},"gsx$codesystemname":{"$t":"CPT"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/clrrx"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.12.292"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/sid/cvx, codesystemname: CVX"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/clrrx"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.12.292"},"gsx$url":{"$t":"http://hl7.org/fhir/sid/cvx"},"gsx$codesystemname":{"$t":"CVX"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cyevm"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.238"},"content":{"type":"text","$t":"url:
+        http://cts.nlm.nih.gov/fhir/cs/cdcrec, codesystemname: CDCREC"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cyevm"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.238"},"gsx$url":{"$t":"http://cts.nlm.nih.gov/fhir/cs/cdcrec"},"gsx$codesystemname":{"$t":"CDCREC"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cztg3"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.259"},"content":{"type":"text","$t":"url:
+        http://cts.nlm.nih.gov/fhir/cs/hsloc, codesystemname: HSLOC"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cztg3"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.259"},"gsx$url":{"$t":"http://cts.nlm.nih.gov/fhir/cs/hsloc"},"gsx$codesystemname":{"$t":"HSLOC"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d180g"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.12.112"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v2/0112, codesystemname: DischargeDisposition"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d180g"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.12.112"},"gsx$url":{"$t":"http://hl7.org/fhir/v2/0112"},"gsx$codesystemname":{"$t":"DischargeDisposition"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d2mkx"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.4.642.1.1093"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/discharge-disposition, fhircodesystemname:
+        EncounterDischargeDisposition, comment: Original FHIR name is DischargeDisposition,
+        renamed due to collision"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d2mkx"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.4.642.1.1093"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/discharge-disposition"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EncounterDischargeDisposition"},"gsx$comment":{"$t":"Original
+        FHIR name is DischargeDisposition, renamed due to collision"}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cssly"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.285"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/hcpcs, codesystemname: HCPCS"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cssly"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.285"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/hcpcs"},"gsx$codesystemname":{"$t":"HCPCS"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cu76f"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.6.90"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/sid/icd-10-cm, codesystemname: ICD10CM"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cu76f"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.6.90"},"gsx$url":{"$t":"http://hl7.org/fhir/sid/icd-10-cm"},"gsx$codesystemname":{"$t":"ICD10CM"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cvlqs"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.3.221.5"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/sop, codesystemname: SOP"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cvlqs"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.3.221.5"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/sop"},"gsx$codesystemname":{"$t":"SOP"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cx0b9"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.4"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActCode, codesystemname: ActCode"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/cx0b9"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.4"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActCode"},"gsx$codesystemname":{"$t":"ActCode"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d9ney"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.7"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActPriority, codesystemname: ActPriority,
+        fhircodesystemname: v3.ActPriority"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d9ney"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.7"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActPriority"},"gsx$codesystemname":{"$t":"ActPriority"},"gsx$fhircodesystemname":{"$t":"v3.ActPriority"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/db1zf"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.8"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActReason, codesystemname: ActReason,
+        fhircodesystemname: ActReason"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/db1zf"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.8"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActReason"},"gsx$codesystemname":{"$t":"ActReason"},"gsx$fhircodesystemname":{"$t":"ActReason"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dcgjs"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.1002"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType, codesystemname:
+        ActRelationshipType, fhircodesystemname: v3.ActRelationshipType"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dcgjs"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.1002"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActRelationshipType"},"gsx$codesystemname":{"$t":"ActRelationshipType"},"gsx$fhircodesystemname":{"$t":"v3.ActRelationshipType"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ddv49"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.14"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-ActStatus, codesystemname: ActStatus,
+        fhircodesystemname: v3.ActStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ddv49"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.14"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-ActStatus"},"gsx$codesystemname":{"$t":"ActStatus"},"gsx$fhircodesystemname":{"$t":"v3.ActStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d415a"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.5.111"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-AddressUse, codesystemname: AddressUse,
+        fhircodesystemname: v3.AddressUse"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d415a"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.5.111"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-AddressUse"},"gsx$codesystemname":{"$t":"AddressUse"},"gsx$fhircodesystemname":{"$t":"v3.AddressUse"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d5fpr"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.4.642.1.1373"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical, fhircodesystemname:
+        AllergyIntoleranceClinicalStatusCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d5fpr"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.4.642.1.1373"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/allergyintolerance-clinical"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"AllergyIntoleranceClinicalStatusCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d6ua4"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.4.642.1.1371"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/allergyintolerance-verification, fhircodesystemname:
+        AllergyIntoleranceVerificationStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d6ua4"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.4.642.1.1371"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/allergyintolerance-verification"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"AllergyIntoleranceVerificationStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d88ul"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.4.642.1.1054"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/diagnosis-role, codesystemname: Diagnosis
+        Role, fhircodesystemname: DiagnosisRole"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/d88ul"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.4.642.1.1054"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/diagnosis-role"},"gsx$codesystemname":{"$t":"Diagnosis
+        Role"},"gsx$fhircodesystemname":{"$t":"DiagnosisRole"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dkvya"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:2.16.840.1.113883.4.642.1.1323"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/condition-ver-status, codesystemname:
+        ConditionVerificationStatusCodes, fhircodesystemname: ConditionVerificationStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dkvya"}],"gsx$oid":{"$t":"urn:oid:2.16.840.1.113883.4.642.1.1323"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/condition-ver-status"},"gsx$codesystemname":{"$t":"ConditionVerificationStatusCodes"},"gsx$fhircodesystemname":{"$t":"ConditionVerificationStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dmair"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.2"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/medicationrequest-category, codesystemname:
+        MedicationRequestCategory, fhircodesystemname: MedicationRequestCategoryCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dmair"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.2"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/medicationrequest-category"},"gsx$codesystemname":{"$t":"MedicationRequestCategory"},"gsx$fhircodesystemname":{"$t":"MedicationRequestCategoryCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dnp34"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.3"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/CodeSystem/medicationrequest-intent, fhircodesystemname:
+        medicationRequest Intent"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dnp34"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.3"},"gsx$url":{"$t":"http://hl7.org/fhir/CodeSystem/medicationrequest-intent"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"medicationRequest
+        Intent"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dp3nl"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.4"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/CodeSystem/medicationrequest-status, fhircodesystemname:
+        medicationrequest Status"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dp3nl"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.4"},"gsx$url":{"$t":"http://hl7.org/fhir/CodeSystem/medicationrequest-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"medicationrequest
+        Status"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/df9om"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.5"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/medication-admin-status, fhircodesystemname:
+        MedicationAdministration Status Codes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/df9om"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.5"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/medication-admin-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"MedicationAdministration
+        Status Codes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dgo93"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.6"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/CodeSystem/medication-statement-status, fhircodesystemname:
+        Medication Status Codes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dgo93"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.6"},"gsx$url":{"$t":"http://hl7.org/fhir/CodeSystem/medication-statement-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"Medication
+        Status Codes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/di2tg"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.7"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/encounter-status, fhircodesystemname: EncounterStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/di2tg"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.7"},"gsx$url":{"$t":"http://hl7.org/fhir/encounter-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EncounterStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/djhdx"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.8"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/event-status, fhircodesystemname: EventStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/djhdx"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.8"},"gsx$url":{"$t":"http://hl7.org/fhir/event-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EventStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dw4je"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.9"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/condition-clinical, fhircodesystemname:
+        ConditionClinicalStatusCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dw4je"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.9"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/condition-clinical"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ConditionClinicalStatusCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dxj3v"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.10"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/condition-category, fhircodesystemname:
+        ConditionCategoryCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dxj3v"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.10"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/condition-category"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ConditionCategoryCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dyxo8"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.11"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/us/core/CodeSystem/condition-category, fhircodesystemname:
+        USCoreConditionCategoryExtensionCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dyxo8"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.11"},"gsx$url":{"$t":"http://hl7.org/fhir/us/core/CodeSystem/condition-category"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"USCoreConditionCategoryExtensionCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e0c8p"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.12"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/request-status, fhircodesystemname: RequestStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e0c8p"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.12"},"gsx$url":{"$t":"http://hl7.org/fhir/request-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"RequestStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dqi9q"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.13"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/request-intent, fhircodesystemname: RequestIntent"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dqi9q"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.13"},"gsx$url":{"$t":"http://hl7.org/fhir/request-intent"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"RequestIntent"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/drwu7"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.14"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/admit-source, fhircodesystemname: AdmitSource"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/drwu7"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.14"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/admit-source"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"AdmitSource"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dtbek"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.15"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/reason-medication-given, fhircodesystemname:
+        ReasonMedicationGivenCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dtbek"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.15"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/reason-medication-given"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ReasonMedicationGivenCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dupz1"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.16"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation, fhircodesystemname:
+        GTSAbbreviation"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/dupz1"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.16"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-GTSAbbreviation"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"GTSAbbreviation"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e7d2q"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.17"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason, fhircodesystemname:
+        MedicationRequestStatusReasonCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e7d2q"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.17"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/medicationrequest-status-reason"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"MedicationRequestStatusReasonCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e8rn7"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.18"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/diagnostic-report-status, fhircodesystemname: DiagnosticReportStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e8rn7"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.18"},"gsx$url":{"$t":"http://hl7.org/fhir/diagnostic-report-status"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"DiagnosticReportStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ea67k"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.19"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/observation-category, fhircodesystemname:
+        ObservationCategoryCodes"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ea67k"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.19"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/observation-category"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ObservationCategoryCodes"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ebks1"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.20"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/sid/icd-9-cm, fhircodesystemname: ICD9CM"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ebks1"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.20"},"gsx$url":{"$t":"http://hl7.org/fhir/sid/icd-9-cm"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ICD9CM"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e1qt2"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.21"},"content":{"type":"text","$t":"url:
+        http://www.icd10data.com/icd10pcs, codesystemname: ICD10PCS"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e1qt2"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.21"},"gsx$url":{"$t":"http://www.icd10data.com/icd10pcs"},"gsx$codesystemname":{"$t":"ICD10PCS"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e35dj"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.22"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v2/0001, fhircodesystemname: AdministrativeSex"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e35dj"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.22"},"gsx$url":{"$t":"http://hl7.org/fhir/v2/0001"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"AdministrativeSex"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e4jxw"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.23"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/cdt, fhircodesystemname: CDT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e4jxw"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.23"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/cdt"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"CDT"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e5yid"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.24"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/sid/cvx, fhircodesystemname: CVX"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/e5yid"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.24"},"gsx$url":{"$t":"http://hl7.org/fhir/sid/cvx"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"CVX"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eilm2"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.25"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/Confidentiality, fhircodesystemname: Confidentiality"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eilm2"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.25"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/Confidentiality"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"Confidentiality"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ek06j"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.26"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/EntityNamePartQualifier, fhircodesystemname: EntityNamePartQualifier"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ek06j"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.26"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/EntityNamePartQualifier"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EntityNamePartQualifier"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eleqw"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.27"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/EntityNameUse, fhircodesystemname: EntityNameUse"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eleqw"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.27"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/EntityNameUse"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EntityNameUse"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/emtbd"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.28"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/LanguageAbilityMode, fhircodesystemname: LanguageAbilityMode"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/emtbd"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.28"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/LanguageAbilityMode"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"LanguageAbilityMode"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eczce"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.29"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/LanguageAbilityProficiency, fhircodesystemname: LanguageAbilityProficiency"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eczce"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.29"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/LanguageAbilityProficiency"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"LanguageAbilityProficiency"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eedwv"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.30"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/LivingArrangement, fhircodesystemname: LivingArrangement"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eedwv"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.30"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/LivingArrangement"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"LivingArrangement"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/efsh8"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.31"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/MaritalStatus, fhircodesystemname: MaritalStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/efsh8"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.31"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/MaritalStatus"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"MaritalStatus"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eh71p"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.32"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/MED-RT, codesystemname: MED-RT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eh71p"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.32"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/MED-RT"},"gsx$codesystemname":{"$t":"MED-RT"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/etu5e"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.33"},"content":{"type":"text","$t":"url:
+        http://ncimeta.nci.nih.gov, codesystemname: NCI"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/etu5e"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.33"},"gsx$url":{"$t":"http://ncimeta.nci.nih.gov"},"gsx$codesystemname":{"$t":"NCI"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ev8pv"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.34"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/ndfrt, codesystemname: NDFRT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ev8pv"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.34"},"gsx$url":{"$t":"http://hl7.org/fhir/ndfrt"},"gsx$codesystemname":{"$t":"NDFRT"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ewna8"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.35"},"content":{"type":"text","$t":"url:
+        http://nucc.org/provider-taxonomy, codesystemname: NUCCPT"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ewna8"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.35"},"gsx$url":{"$t":"http://nucc.org/provider-taxonomy"},"gsx$codesystemname":{"$t":"NUCCPT"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ey1up"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.36"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/NullFlavor, fhircodesystemname: NullFlavor"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ey1up"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.36"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/NullFlavor"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"NullFlavor"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eo7vq"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.37"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ObservationInterpretation, fhircodesystemname: ObservationInterpretation"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/eo7vq"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.37"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ObservationInterpretation"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ObservationInterpretation"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/epmg7"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.38"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ObservationValue, fhircodesystemname: ObservationValue"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/epmg7"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.38"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ObservationValue"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ObservationValue"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/er10k"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.39"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ParticipationFunction, fhircodesystemname: ParticipationFunction"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/er10k"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.39"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ParticipationFunction"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ParticipationFunction"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/esfl1"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.40"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ParticipationMode, fhircodesystemname: ParticipationMode"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/esfl1"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.40"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ParticipationMode"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ParticipationMode"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a59y2"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.41"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ParticipationType, fhircodesystemname: ParticipationType"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a59y2"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.41"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ParticipationType"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ParticipationType"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a6oij"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.42"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls/rxnorm, codesystemname: RXNORM"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a6oij"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.42"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls/rxnorm"},"gsx$codesystemname":{"$t":"RXNORM"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a832w"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.43"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/ReligiousAffiliation, fhircodesystemname: ReligiousAffiliation"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a832w"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.43"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/ReligiousAffiliation"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"ReligiousAffiliation"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a9hnd"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.44"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/RoleClass, fhircodesystemname: RoleClass"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a9hnd"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.44"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/RoleClass"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"RoleClass"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/9znoe"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.45"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/RoleCode, fhircodesystemname: RoleCode"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/9znoe"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.45"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/RoleCode"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"RoleCode"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a128v"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.46"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/RoleStatus, codesystemname: RoleStatus"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a128v"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.46"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/RoleStatus"},"gsx$codesystemname":{"$t":"RoleStatus"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a2gt8"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.47"},"content":{"type":"text","$t":"url:
+        http://unitsofmeasure.org, codesystemname: UCUM"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a2gt8"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.47"},"gsx$url":{"$t":"http://unitsofmeasure.org"},"gsx$codesystemname":{"$t":"UCUM"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a3vdp"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.48"},"content":{"type":"text","$t":"url:
+        http://www.nlm.nih.gov/research/umls, codesystemname: UMLS"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/a3vdp"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.48"},"gsx$url":{"$t":"http://www.nlm.nih.gov/research/umls"},"gsx$codesystemname":{"$t":"UMLS"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/agihe"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.49"},"content":{"type":"text","$t":"url:
+        http://fdasis.nlm.nih.gov, codesystemname: UNII"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/agihe"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.49"},"gsx$url":{"$t":"http://fdasis.nlm.nih.gov"},"gsx$codesystemname":{"$t":"UNII"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ahx1v"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.50"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/v3/MediaType, codesystemname: mediaType"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ahx1v"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.50"},"gsx$url":{"$t":"http://hl7.org/fhir/v3/MediaType"},"gsx$codesystemname":{"$t":"mediaType"},"gsx$fhircodesystemname":{"$t":""},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ajbm8"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.51"},"content":{"type":"text","$t":"url:
+        http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets, codesystemname: HCPCSReleaseCodeSets,
+        fhircodesystemname: HCPCS"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/ajbm8"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.51"},"gsx$url":{"$t":"http://www.cms.gov/Medicare/Coding/HCPCSReleaseCodeSets"},"gsx$codesystemname":{"$t":"HCPCSReleaseCodeSets"},"gsx$fhircodesystemname":{"$t":"HCPCS"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/akq6p"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.52"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/event-timing, fhircodesystemname: EventTiming"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/akq6p"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.52"},"gsx$url":{"$t":"http://hl7.org/fhir/event-timing"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"EventTiming"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/aaw7q"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.53"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v3-TimingEvent, fhircodesystemname:
+        v3.TimingEvent"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/aaw7q"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.53"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v3-TimingEvent"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"v3.TimingEvent"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/acas7"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.54"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/dose-rate-type, fhircodesystemname:
+        DoseAndRateType"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/acas7"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.54"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/dose-rate-type"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"DoseAndRateType"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/adpck"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.55"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/days-of-week, fhircodesystemname: DaysOfWeek"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/adpck"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.55"},"gsx$url":{"$t":"http://hl7.org/fhir/days-of-week"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"DaysOfWeek"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/af3x1"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.56"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v2-0074, fhircodesystemname: DiagnosticServiceSectionId"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/af3x1"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.56"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v2-0074"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"DiagnosticServiceSectionId"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/arr0q"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.57"},"content":{"type":"text","$t":"url:
+        http://terminology.hl7.org/CodeSystem/v2-0203, fhircodesystemname: IdentifierType"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/arr0q"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.57"},"gsx$url":{"$t":"http://terminology.hl7.org/CodeSystem/v2-0203"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"IdentifierType"},"gsx$comment":{"$t":""}},{"id":{"$t":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/at5l7"},"updated":{"$t":"2021-04-15T14:32:53.659Z"},"category":[{"scheme":"http://schemas.google.com/spreadsheets/2006","term":"http://schemas.google.com/spreadsheets/2006#list"}],"title":{"type":"text","$t":"urn:oid:NOT.IN.VSAC.58"},"content":{"type":"text","$t":"url:
+        http://hl7.org/fhir/identifier-use, fhircodesystemname: IdentifierUse"},"link":[{"rel":"self","type":"application/atom+xml","href":"https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values/at5l7"}],"gsx$oid":{"$t":"urn:oid:NOT.IN.VSAC.58"},"gsx$url":{"$t":"http://hl7.org/fhir/identifier-use"},"gsx$codesystemname":{"$t":""},"gsx$fhircodesystemname":{"$t":"IdentifierUse"},"gsx$comment":{"$t":""}}]}}'
+  recorded_at: Thu, 15 Apr 2021 14:32:53 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.86 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360285-6h9cERbK3DvrXaTQh0Ra-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.86 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360286-AYxqph4buC1uaJMCsWJ4-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.88 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360289-UNblwQcY3xZUmm16hDrN-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.88 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360288-y6fd4bOAdRWWKCAcyLgX-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
@@ -46,11 +463,11 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas
-  recorded_at: Mon, 23 Nov 2020 21:15:59 GMT
+      string: ST-3360287-m2OBmixjM4jb4mdF5Ewb-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -85,7 +502,295 @@ http_interactions:
       Content-Length:
       - '35'
       Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.86 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360290-Sbfe4VxXfbNvlzyPBsee-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.88 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360292-T3jbKLysscjz66AaIYht-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.87 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360291-ewi1KGiVRJhowUGPDK02-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.87 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360294-MwK4skJx5qvwC1fWWtYs-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.86 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360293-opHbws0USJui0dWuqXWe-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
+      X-Vip-Info:
+      - 2607:f220:41e:1016::40:443
+      X-Pool-Info:
+      - "/Common/vsacweb_p 10.1.5.87 8080"
+      Strict-Transport-Security:
+      - max-age=31536000; includeSubDomains; preload
+    body:
+      encoding: UTF-8
+      string: ST-3360295-E2owtIsSeaZl67Xb7Fl3-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
+- request:
+    method: post
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1640971-axYp9672PKfSSQHbPtDcZIvXFGRQXsS5ArNncx45a0edllLfIR-cas?service=http://umlsks.nlm.nih.gov
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      User-Agent:
+      - Typhoeus - https://github.com/typhoeus/typhoeus
+      Expect:
+      - ''
+  response:
+    status:
+      code: 200
+      message: ''
+    headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/plain;charset=utf-8
+      Content-Length:
+      - '35'
+      Date:
+      - Thu, 15 Apr 2021 14:32:54 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
@@ -94,539 +799,11 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-2136159-fUF2gc3BVK7H5t1nTb3P-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.89 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136160-Ou43dNkgQ05booQpA5WQ-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.86 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136163-uRPbehKeKGLvoKapH1eO-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.86 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136165-J3cLrpO0Rp2x4f1NP1uW-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.86 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136164-2ubh366xBNX4IwENx9us-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.86 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136166-7fnTFjvAUNELaQ0LmgoH-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.88 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136170-Kq3SkdlN4xVwbV376KSw-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.88 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136169-oNXuyNtlh7BI2C2S9Zbk-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:06 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.88 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136168-4b0ASb1C773fK17oKySo-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:06 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:07 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.48 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136173-gkttTcjEImElHkeWfM5o-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:07 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:07 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.48 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136175-PakxdbJhn0MfThASY2ir-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:07 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-434205-Z1bbVZnFI9Y6pUZdd1VshTBgsh7TPi7WY33RB7x2dhZmNgDkHk-cas?service=http://umlsks.nlm.nih.gov
-    body:
-      encoding: US-ASCII
-      string: ''
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      Vary:
-      - Access-Control-Request-Headers
-      - Access-Control-Request-Method
-      - Origin
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '35'
-      Date:
-      - Mon, 23 Nov 2020 21:16:07 GMT
-      X-Vip-Info:
-      - 2607:f220:41e:1016::40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.48 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: ST-2136174-cd0UTAEfc5bQFnI2lJsq-cas
-  recorded_at: Mon, 23 Nov 2020 21:16:07 GMT
+      string: ST-3360297-oifeB5MToaZ5bq0QaIGK-cas
+  recorded_at: Thu, 15 Apr 2021 14:32:54 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.164&profile=MU2%20Update%202016-04-01&ticket=ST-2136165-J3cLrpO0Rp2x4f1NP1uW-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.164&profile=MU2%20Update%202016-04-01&ticket=ST-3360297-oifeB5MToaZ5bq0QaIGK-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -651,7 +828,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=21DD7204E46FF658719177B5276D944C; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=203EDA71F61D9841DA09C4BB9932D52F; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -661,13 +838,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '2664'
+      - '1463'
       Date:
-      - Mon, 23 Nov 2020 21:16:08 GMT
+      - Thu, 15 Apr 2021 14:32:55 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -677,27 +854,21 @@ http_interactions:
         <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
             <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1111.164" displayName="Admit Inpatient" version="N/A">
                 <ns0:ConceptList>
-                    <ns0:Concept code="183767005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Listed for admission to hospital (finding)"/>
-                    <ns0:Concept code="183768000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Listed for General Medicine admission (finding)"/>
-                    <ns0:Concept code="183783005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Listed for General Surgery admission (finding)"/>
-                    <ns0:Concept code="183789009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Listed for Obstetric admission (finding)"/>
-                    <ns0:Concept code="185970004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient awaiting medical adm (finding)"/>
-                    <ns0:Concept code="185971000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient awaiting surgical adm (finding)"/>
                     <ns0:Concept code="434081000124108" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Patient requires hospitalization (finding)"/>
                     <ns0:Concept code="707852009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inpatient management required (finding)"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent a decision to admit a patient to an inpatient hospital setting.),(Data Element Scope: This value set is to identify a decision to admit a patient to an inpatient hospital setting.),(Inclusion Criteria: Includes only relevant concepts associated with codes representing a decision to admit a patient to an inpatient hospital setting using the SNOMED CT system.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts of an assessment result of decision to admit to inpatient hospitalization.),(Data Element Scope: The value set may use a model element related to Assessment.),(Inclusion Criteria: Includes concepts that represent an assessment that resulted in a decision to admit to an inpatient hospital setting.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2020-03-05</ns0:RevisionDate>
+                <ns0:RevisionDate>2021-02-20</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:08 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:55 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.295&profile=MU2%20Update%202016-04-01&ticket=ST-2136163-uRPbehKeKGLvoKapH1eO-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.295&profile=MU2%20Update%202016-04-01&ticket=ST-3360290-Sbfe4VxXfbNvlzyPBsee-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -722,7 +893,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=51D9B64831D2327DB075AB4819BCD062; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=77036E3601AB70AE2851F2E8D5C86671; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -732,13 +903,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '2120'
+      - '2069'
       Date:
-      - Mon, 23 Nov 2020 21:16:08 GMT
+      - Thu, 15 Apr 2021 14:32:55 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -750,10 +921,11 @@ http_interactions:
                 <ns0:ConceptList>
                     <ns0:Concept code="10378005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, emergency, from emergency room, accidental injury (procedure)"/>
                     <ns0:Concept code="19951005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, emergency, from emergency room, medical nature (procedure)"/>
+                    <ns0:Concept code="432661000124104" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, transfer from emergency department (procedure)"/>
                     <ns0:Concept code="73607007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, emergency, from emergency room (procedure)"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent procedures that are commonly used for capturing an emergency decision to admit a patient to an inpatient hospital setting.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify an emergency decision to admit a patient to an inpatient hospital setting.),(Inclusion Criteria: Includes only relevant concepts associated with codes representing an emergency decision to admit a patient to an inpatient hospital setting using the SNOMED CT system.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts of a decision to admit to hospital inpatient order.),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent an encounter of a decision to admit a patient to an inpatient hospital.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.117.1.7.1.294:Decision to Admit to Hospital Inpatient)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -761,10 +933,10 @@ http_interactions:
                 <ns0:RevisionDate>2017-05-04</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:09 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:55 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.163&profile=MU2%20Update%202016-04-01&ticket=ST-2136160-Ou43dNkgQ05booQpA5WQ-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.163&profile=MU2%20Update%202016-04-01&ticket=ST-3360288-y6fd4bOAdRWWKCAcyLgX-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -789,7 +961,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=3BA053AC6B62D4077AD86DB23366D99D; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=535346BFAF9843491F4430447FD8D913; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -799,13 +971,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '3230'
+      - '3047'
       Date:
-      - Mon, 23 Nov 2020 21:16:09 GMT
+      - Thu, 15 Apr 2021 14:32:55 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -828,17 +1000,17 @@ http_interactions:
                     <ns0:Concept code="78341-5" codeSystem="2.16.840.1.113883.6.1" codeSystemName="LOINC" codeSystemVersion="2.54" displayName="Emergency department Transfer summary note"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent an assessment performed to determine the need for an inpatient admission.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Assessment. The intent of this data element is to identify evaluation notes from an emergency decision to admit a patient to an inpatient hospital setting.),(Inclusion Criteria: Includes LOINC codes that represent an assessment performed to determine the need for an inpatient admission.),(Exclusion Criteria: None.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts of an assessment performed in the emergency department.),(Data Element Scope: This value set may use a model element related to Assessment.),(Inclusion Criteria: Includes concepts that represent an assessment that was performed in the emergency department.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
                 <ns0:RevisionDate>2020-03-05</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:10 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:56 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-2136159-fUF2gc3BVK7H5t1nTb3P-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-3360291-ewi1KGiVRJhowUGPDK02-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -863,7 +1035,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=DCCFAF9BC7EC10E79699BDD010AFA91C; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=D4AE7ADB54169142AD56BE5D5E8AA4B4; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -873,13 +1045,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1405'
+      - '1363'
       Date:
-      - Mon, 23 Nov 2020 21:16:10 GMT
+      - Thu, 15 Apr 2021 14:32:56 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -892,17 +1064,17 @@ http_interactions:
                     <ns0:Concept code="4525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency department patient visit (procedure)"/>
                 </ns0:ConceptList>
                 <ns0:Source>The Joint Commission</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent procedures representing an emergency department encounter.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an emergency department encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with an emergency department visit encounter using the SNOMED CT code system.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts for encounters in the emergency department (ED).),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent an encounter ocurring in the emergency department (ED).),(Exclusion Criteria: Excludes concepts that represent services not performed in the emergency department, including critical care and observation services.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
+                <ns0:RevisionDate>2021-02-20</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:10 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:56 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.666.5.307&profile=MU2%20Update%202016-04-01&ticket=ST-2136168-4b0ASb1C773fK17oKySo-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.666.5.307&profile=MU2%20Update%202016-04-01&ticket=ST-3360293-opHbws0USJui0dWuqXWe-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -927,7 +1099,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=2EC4BF16DF53EB2BCB60B2FB34DD3CD2; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=A068AEE23AE9296A6B347E833E344DED; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -937,13 +1109,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1692'
+      - '1562'
       Date:
-      - Mon, 23 Nov 2020 21:16:10 GMT
+      - Thu, 15 Apr 2021 14:32:56 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -958,17 +1130,17 @@ http_interactions:
                     <ns0:Concept code="8715000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital admission, elective (procedure)"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent the most common inpatient encounter types.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an inpatient encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing inpatient encounter.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts of  inpatient hospitalization encounters.),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent an encounter for inpatient hospitalizations.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
                 <ns0:RevisionDate>2020-03-07</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:11 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:56 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-2136164-2ubh366xBNX4IwENx9us-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&profile=MU2%20Update%202016-04-01&ticket=ST-3360289-UNblwQcY3xZUmm16hDrN-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -993,7 +1165,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=56204A00D14668CD91CFA755BBA3A7DA; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=67D9EEF9A44ABE3223B3DC4AF8C91936; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1005,11 +1177,11 @@ http_interactions:
       Content-Length:
       - '1128'
       Date:
-      - Mon, 23 Nov 2020 21:16:10 GMT
+      - Thu, 15 Apr 2021 14:32:56 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1030,10 +1202,10 @@ http_interactions:
                 <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:11 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:56 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.126&profile=MU2%20Update%202016-04-01&ticket=ST-2136169-oNXuyNtlh7BI2C2S9Zbk-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.126&profile=MU2%20Update%202016-04-01&ticket=ST-3360286-AYxqph4buC1uaJMCsWJ4-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1058,7 +1230,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=8CEB7C4175A80558E83502D02F9E5D45; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=231359951B31C13B106C199303A6DDBA; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1068,13 +1240,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '2603'
+      - '2385'
       Date:
-      - Mon, 23 Nov 2020 21:16:11 GMT
+      - Thu, 15 Apr 2021 14:32:56 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1093,17 +1265,17 @@ http_interactions:
                     <ns0:Concept code="73770003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Hospital-based outpatient emergency care center (environment)"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent hospital environments where a patient received inpatient or outpatient care.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category Encounter or attribute Admission Source. The intent of this data element is to identify hospital environments where a patient may receive inpatient or outpatient care.),(Inclusion Criteria: Includes only relevant concepts associated with hospital environment and all its children. Codes used are to be SNOMED CT codes only. ),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to identify concepts of  inpatient or outpatient hospital admission sources.),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent encounters of  inpatient or outpatient hospital admission sources.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
                 <ns0:RevisionDate>2020-03-05</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:12 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:57 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-2136170-Kq3SkdlN4xVwbV376KSw-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&profile=MU2%20Update%202016-04-01&ticket=ST-3360287-m2OBmixjM4jb4mdF5Ewb-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1128,7 +1300,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=75E97DDF7F80B8163D877B564C8A41F0; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=AE2495C5DE4AD3B69E41CA6962C3AA1A; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1140,11 +1312,11 @@ http_interactions:
       Content-Length:
       - '1356'
       Date:
-      - Mon, 23 Nov 2020 21:16:11 GMT
+      - Thu, 15 Apr 2021 14:32:57 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1165,10 +1337,10 @@ http_interactions:
                 <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:12 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:57 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-2136174-cd0UTAEfc5bQFnI2lJsq-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&profile=MU2%20Update%202016-04-01&ticket=ST-3360292-T3jbKLysscjz66AaIYht-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1193,7 +1365,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=04D4EA3325EEEA673B8DA7F202935CE8; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=10F7FF86422CEC213316B811D3B9D750; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1205,11 +1377,11 @@ http_interactions:
       Content-Length:
       - '24136'
       Date:
-      - Mon, 23 Nov 2020 21:16:13 GMT
+      - Thu, 15 Apr 2021 14:32:57 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1369,10 +1541,10 @@ http_interactions:
                 <ns0:RevisionDate>2018-07-18</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:13 GMT
+  recorded_at: Thu, 15 Apr 2021 14:32:58 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.299&profile=MU2%20Update%202016-04-01&ticket=ST-2136175-PakxdbJhn0MfThASY2ir-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.299&profile=MU2%20Update%202016-04-01&ticket=ST-3360294-MwK4skJx5qvwC1fWWtYs-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -1397,7 +1569,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=22D5CDEB1210F11CDC00F8C4455EC758; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=8B0B2367AC09B834785EE5802F9D57E4; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -1407,13 +1579,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '363472'
+      - '361689'
       Date:
-      - Mon, 23 Nov 2020 21:16:14 GMT
+      - Thu, 15 Apr 2021 14:33:05 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -1428,7 +1600,6 @@ http_interactions:
                     <ns0:Concept code="10349009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Multi-infarct dementia with delirium (disorder)"/>
                     <ns0:Concept code="10532003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Primary degenerative dementia of the Alzheimer type, presenile onset, with depression (disorder)"/>
                     <ns0:Concept code="105491000119107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Primary hyposomnia (disorder)"/>
-                    <ns0:Concept code="106013002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mental disorder of infancy, childhood or adolescence (disorder)"/>
                     <ns0:Concept code="106014008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Organic mental disorder of unknown etiology (disorder)"/>
                     <ns0:Concept code="109006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Anxiety disorder of childhood OR adolescence (disorder)"/>
                     <ns0:Concept code="109805003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Factitious cheilitis (disorder)"/>
@@ -1437,7 +1608,6 @@ http_interactions:
                     <ns0:Concept code="110281001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Chronic drug abuse (disorder)"/>
                     <ns0:Concept code="11061003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance use disorder (disorder)"/>
                     <ns0:Concept code="111475002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neurosis (disorder)"/>
-                    <ns0:Concept code="111476001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Mental disorder usually first evident in infancy, childhood AND/OR adolescence (disorder)"/>
                     <ns0:Concept code="111477005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactive attachment disorder of infancy OR early childhood, disinhibited type (disorder)"/>
                     <ns0:Concept code="111479008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Organic mental disorder (disorder)"/>
                     <ns0:Concept code="111480006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychoactive substance-induced organic dementia (disorder)"/>
@@ -1489,6 +1659,7 @@ http_interactions:
                     <ns0:Concept code="1581000119101" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Dementia of the Alzheimer type with behavioral disturbance (disorder)"/>
                     <ns0:Concept code="15945005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Psychogenic polydipsia (disorder)"/>
                     <ns0:Concept code="15977008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Adjustment disorder with academic inhibition (disorder)"/>
+                    <ns0:Concept code="160822004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Relationship problems (finding)"/>
                     <ns0:Concept code="162004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Severe manic bipolar I disorder without psychotic features (disorder)"/>
                     <ns0:Concept code="162204000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Late insomnia (disorder)"/>
                     <ns0:Concept code="162702000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="On examination - mentally confused (disorder)"/>
@@ -1557,7 +1728,6 @@ http_interactions:
                     <ns0:Concept code="191526005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Schizophrenic disorders (disorder)"/>
                     <ns0:Concept code="191527001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Simple schizophrenia (disorder)"/>
                     <ns0:Concept code="191531007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute exacerbation of chronic schizophrenia (disorder)"/>
-                    <ns0:Concept code="191539009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute exacerbation of chronic hebephrenic schizophrenia (disorder)"/>
                     <ns0:Concept code="191542003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Catatonic schizophrenia (disorder)"/>
                     <ns0:Concept code="191547009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute exacerbation of subchronic catatonic schizophrenia (disorder)"/>
                     <ns0:Concept code="191548004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute exacerbation of chronic catatonic schizophrenia (disorder)"/>
@@ -1700,7 +1870,6 @@ http_interactions:
                     <ns0:Concept code="192100008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Neurotic delinquency (disorder)"/>
                     <ns0:Concept code="192108001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Disturbance of anxiety and fearfulness in childhood and adolescence (disorder)"/>
                     <ns0:Concept code="192110004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Childhood and adolescent fearfulness disturbance (disorder)"/>
-                    <ns0:Concept code="192118006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Childhood and adolescent relationship problem (disorder)"/>
                     <ns0:Concept code="192123006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Academic underachievement disorder (disorder)"/>
                     <ns0:Concept code="192127007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Child attention deficit disorder (disorder)"/>
                     <ns0:Concept code="192138007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Developmental dyslexia (disorder)"/>
@@ -1753,7 +1922,6 @@ http_interactions:
                     <ns0:Concept code="229699006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Immature articulatory praxis (disorder)"/>
                     <ns0:Concept code="229700007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Developmental motor speech disorder (disorder)"/>
                     <ns0:Concept code="229715008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Deficits in attention motor control and perception (disorder)"/>
-                    <ns0:Concept code="229729009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Developmental language impairment (disorder)"/>
                     <ns0:Concept code="229733002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Expressive language disorder (disorder)"/>
                     <ns0:Concept code="229734008" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Expressive language delay (disorder)"/>
                     <ns0:Concept code="229736005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Receptive language delay (disorder)"/>
@@ -1796,7 +1964,6 @@ http_interactions:
                     <ns0:Concept code="231472009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Barbiturate dependence (disorder)"/>
                     <ns0:Concept code="231473004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Benzodiazepine dependence (disorder)"/>
                     <ns0:Concept code="231474005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Diazepam dependence (disorder)"/>
-                    <ns0:Concept code="231475006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Librium dependence (disorder)"/>
                     <ns0:Concept code="231485007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Post-schizophrenic depression (disorder)"/>
                     <ns0:Concept code="231487004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Persistent delusional disorder (disorder)"/>
                     <ns0:Concept code="231489001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Acute transient psychotic disorder (disorder)"/>
@@ -1932,7 +2099,6 @@ http_interactions:
                     <ns0:Concept code="288091000119109" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Behavioral insomnia of childhood, limit setting type (disorder)"/>
                     <ns0:Concept code="288101000119104" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Behavioral insomnia of childhood, sleep onset association type (disorder)"/>
                     <ns0:Concept code="288281000119100" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Abuse of herbal medicine or folk remedy (disorder)"/>
-                    <ns0:Concept code="28857002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Reactive attachment disorder of infancy OR early childhood (disorder)"/>
                     <ns0:Concept code="28864000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Sedative, hypnotic AND/OR anxiolytic-induced mood disorder (disorder)"/>
                     <ns0:Concept code="28884001" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Moderate bipolar I disorder, single manic episode (disorder)"/>
                     <ns0:Concept code="29212009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Alcohol-induced organic mental disorder (disorder)"/>
@@ -2386,7 +2552,6 @@ http_interactions:
                     <ns0:Concept code="81319007" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Severe bipolar II disorder, most recent episode major depressive without psychotic features (disorder)"/>
                     <ns0:Concept code="8185002" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Panic disorder with agoraphobia AND moderate panic attacks (disorder)"/>
                     <ns0:Concept code="81903006" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Inhibited male orgasm (disorder)"/>
-                    <ns0:Concept code="82096005" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Aggressive type unsocialized behavior disorder (disorder)"/>
                     <ns0:Concept code="82339009" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Amphetamine-induced anxiety disorder (disorder)"/>
                     <ns0:Concept code="82415003" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Agoraphobia without history of panic disorder without limited symptom attacks (disorder)"/>
                     <ns0:Concept code="82494000" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Panic disorder without agoraphobia with panic attacks in full remission (disorder)"/>
@@ -3267,7 +3432,7 @@ http_interactions:
                     <ns0:Concept code="Z91.5" codeSystem="2.16.840.1.113883.6.90" codeSystemName="ICD10CM" codeSystemVersion="2016" displayName="Personal history of self-harm"/>
                 </ns0:ConceptList>
                 <ns0:Source>Lantana</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set grouping contains concepts that represent diagnoses commonly used in the inpatient setting for psychiatric and mental health disorders.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category or attributes related to Diagnosis. The intent of this data element is to identify patients who have an active diagnosis of a psychiatric or mental health disorder.),(Inclusion Criteria: Includes only relevant concepts associated with representing an active diagnosis for psychiatric and mental health disorders using ICD-10-CM and SNOMED CT codes systems.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to group concepts of  psychiatric and mental health diagnoses.),(Data Element Scope: This value set may use a model element related to Diagnosis.),(Inclusion Criteria: Includes concepts that represent a diagnosis of a psychiatric and mental health disorder.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Definition>(2.16.840.1.113883.3.117.1.7.1.296:Psychiatric/Mental Health Diagnosis),(2.16.840.1.113883.3.117.1.7.1.298:Psychiatric/Mental Health Diagnosis)</ns0:Definition>
                 <ns0:Type>Grouping</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
@@ -3275,10 +3440,10 @@ http_interactions:
                 <ns0:RevisionDate>2017-08-16</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:14 GMT
+  recorded_at: Thu, 15 Apr 2021 14:33:05 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-2136173-gkttTcjEImElHkeWfM5o-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&profile=MU2%20Update%202016-04-01&ticket=ST-3360295-E2owtIsSeaZl67Xb7Fl3-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -3303,7 +3468,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=7DD201900281440E8C3B172B86B2819A; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=C11873B2D7775BBC371F69DECE530962; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -3315,11 +3480,11 @@ http_interactions:
       Content-Length:
       - '1765'
       Date:
-      - Mon, 23 Nov 2020 21:16:14 GMT
+      - Thu, 15 Apr 2021 14:33:05 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -3344,10 +3509,10 @@ http_interactions:
                 <ns0:RevisionDate>2012-10-25</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:15 GMT
+  recorded_at: Thu, 15 Apr 2021 14:33:05 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.143&profile=MU2%20Update%202016-04-01&ticket=ST-2136166-7fnTFjvAUNELaQ0LmgoH-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1111.143&profile=MU2%20Update%202016-04-01&ticket=ST-3360285-6h9cERbK3DvrXaTQh0Ra-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -3372,7 +3537,7 @@ http_interactions:
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - JSESSIONID=58C0E8457B62EB7947EA0A2DD0BF046E; Path=/vsac; HttpOnly;Secure
+      - JSESSIONID=059DAFDCEC40D21C88F529B9B01EA5B3; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -3382,13 +3547,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1337'
+      - '1229'
       Date:
-      - Mon, 23 Nov 2020 21:16:15 GMT
+      - Thu, 15 Apr 2021 14:33:05 GMT
       X-Vip-Info:
       - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.87 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -3401,12 +3566,12 @@ http_interactions:
                     <ns0:Concept code="448951000124107" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Admission to observation unit (procedure)"/>
                 </ns0:ConceptList>
                 <ns0:Source>The Joint Commission</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This value set contains concepts that represent observation encounter types.),(Data Element Scope: This value set may use the Quality Data Model (QDM) category related to Encounter. The intent of this data element is to identify patients who have had an observation encounter. ),(Inclusion Criteria: Includes only relevant concepts associated with SNOMED CT codes representing inpatient encounter.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts for encounters for observation in the inpatient setting.),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent an encounter for inpatient observation.),(Exclusion Criteria: No exclusions.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2020-03-05</ns0:RevisionDate>
+                <ns0:RevisionDate>2021-02-20</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-  recorded_at: Mon, 23 Nov 2020 21:16:15 GMT
+  recorded_at: Thu, 15 Apr 2021 14:33:06 GMT
 recorded_with: VCR 6.0.0

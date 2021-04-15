@@ -80,22 +80,30 @@ module Measures
       # Spreadsheet Example: https://docs.google.com/spreadsheets/d/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/edit#gid=0
       # Spreadsheet's JSON:  https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json
       def code_systems_mappings()
-        code_systems_json = File.read(File.join(File.dirname(__FILE__), 'code_systems.json'))
-        code_systems = { 'by_name' => {}, 'by_oid' => {} }
-        JSON.parse(code_systems_json)['feed']['entry'].each do |e|
-          # gsx$oid - Code system OID
-          # gsx$codesystemname - Code system name in MAT & VSAC
-          # gsx$fhircodesystemname - Code system name in FHIR & Bonnie
-          # gsx$url - Code system uri in FHIR 4
-          code_system_oid = e['gsx$oid']['$t'].sub('urn:oid:', '').strip
-          code_system_url = e['gsx$url']['$t']
-          code_systems['by_oid'][code_system_oid] = code_system_url unless code_system_oid.blank?
-          code_systems['by_name'][e['gsx$codesystemname']['$t']] = code_system_url if e.has_key?('gsx$codesystemname') && !e['gsx$codesystemname']['$t'].blank?
-          code_systems['by_name'][e['gsx$fhircodesystemname']['$t']] = code_system_url if e.has_key?('gsx$fhircodesystemname') && !e['gsx$fhircodesystemname']['$t'].blank?
+        expires_in = 86400 # cache expiry time: 24 hours
+        spreadsheet_location = 'https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json'
+        CacheUtils::Cache.fetch 'code_system_mappings', expires_in do
+          begin
+            response = Typhoeus.get spreadsheet_location
+            code_systems = { 'by_name' => {}, 'by_oid' => {} }
+            JSON.parse(response.body)['feed']['entry'].each do |e|
+              # gsx$oid - Code system OID
+              # gsx$codesystemname - Code system name in MAT & VSAC
+              # gsx$fhircodesystemname - Code system name in FHIR & Bonnie
+              # gsx$url - Code system uri in FHIR 4
+              code_system_oid = e['gsx$oid']['$t'].sub('urn:oid:', '').strip
+              code_system_url = e['gsx$url']['$t']
+              code_systems['by_oid'][code_system_oid] = code_system_url unless code_system_oid.blank?
+              code_systems['by_name'][e['gsx$codesystemname']['$t']] = code_system_url if e.has_key?('gsx$codesystemname') && !e['gsx$codesystemname']['$t'].blank?
+              code_systems['by_name'][e['gsx$fhircodesystemname']['$t']] = code_system_url if e.has_key?('gsx$fhircodesystemname') && !e['gsx$fhircodesystemname']['$t'].blank?
+            end
+            code_systems
+          rescue Exception => e
+            puts e.message
+            raise Measures::RestException.new("An error occurred while fetching the code system mappings, please try later.")
+          end
         end
-        return code_systems
       end
-
     end
   end
 end

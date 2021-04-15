@@ -16,10 +16,13 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
-      - nosniff
       - nosniff
       X-Xss-Protection:
       - 1; mode=block
@@ -32,26 +35,22 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '62'
+      - '66'
       Date:
-      - Fri, 11 Jan 2019 18:37:50 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!bZIpLmBmW0ZnJTDNtNHn4GsLooFbU2XjoHYPyf+qH05CLP7j3iIy/ZXXCK34SbsCf5ZSYtkUCiCrPDY=;
-        expires=Fri, 11-Jan-2019 20:37:50 GMT; path=/; Httponly; Secure
+      - Thu, 15 Apr 2021 14:29:57 GMT
       X-Vip-Info:
-      - 130.14.16.40:443
+      - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.87 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: TGT-833-UgMmuc9uWOeILbbG5swuaqGfcuxeNs6kT7cwcWieQtxebtzy1d-cas
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:50 GMT
+      string: TGT-1638996-6UclGzzhVLbjShZA94HvmwQ6Tlb011vtfgtSl2OdYcu9AcTAHM-cas
+  recorded_at: Thu, 15 Apr 2021 14:29:57 GMT
 - request:
     method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-833-UgMmuc9uWOeILbbG5swuaqGfcuxeNs6kT7cwcWieQtxebtzy1d-cas?service=http://umlsks.nlm.nih.gov
+    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-1638996-6UclGzzhVLbjShZA94HvmwQ6Tlb011vtfgtSl2OdYcu9AcTAHM-cas?service=http://umlsks.nlm.nih.gov
     body:
       encoding: US-ASCII
       string: ''
@@ -65,10 +64,13 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
-      - nosniff
       - nosniff
       X-Xss-Protection:
       - 1; mode=block
@@ -81,26 +83,22 @@ http_interactions:
       Content-Type:
       - text/plain;charset=utf-8
       Content-Length:
-      - '31'
+      - '35'
       Date:
-      - Fri, 11 Jan 2019 18:37:50 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!dYQNZ9KV6P88Wz7m9OGvBt4MxRMcjvG9UQli+EqEFWgJufXQopTBDMbxUp0uFadmt8in82u8omFFBw8=;
-        expires=Fri, 11-Jan-2019 20:37:50 GMT; path=/; Httponly; Secure
+      - Thu, 15 Apr 2021 14:29:57 GMT
       X-Vip-Info:
-      - 130.14.16.40:443
+      - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p 10.1.5.88 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: UTF-8
-      string: ST-854-cueCozNN2ObBn4MFYPOI-cas
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:50 GMT
+      string: ST-3358317-wQErFnhqppm92Inpfnbr-cas
+  recorded_at: Thu, 15 Apr 2021 14:29:57 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-854-cueCozNN2ObBn4MFYPOI-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-3358317-wQErFnhqppm92Inpfnbr-cas
     body:
       encoding: US-ASCII
       string: ''
@@ -114,17 +112,18 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
       - nosniff
-      - nosniff
       X-Xss-Protection:
       - 1; mode=block
       Set-Cookie:
-      - BIGipServervsacweb_p=!ZiM/7w5Jko5gYZHm9OGvBt4MxRMcjlcFOaheDLMu4heurOGNXbI1y6e25kJnzYyHBsiGdn6bOlPZGtg=;
-        expires=Fri, 11-Jan-2019 20:37:50 GMT; path=/; Httponly; Secure
-      - JSESSIONID=A3C6BC648D3384C199D5F26CE97A7F46;path=/vsac;HttpOnly;Secure
+      - JSESSIONID=87695E76FDD64EDF5CC212A7A3C16C7A; Path=/vsac; HttpOnly;Secure
       Cache-Control:
       - no-cache, no-store, max-age=0, must-revalidate
       Pragma:
@@ -134,13 +133,13 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1369'
+      - '1363'
       Date:
-      - Fri, 11 Jan 2019 18:37:50 GMT
+      - Thu, 15 Apr 2021 14:29:57 GMT
       X-Vip-Info:
-      - 130.14.16.40:443
+      - 2607:f220:41e:1016::40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p 10.1.5.89 8080"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
@@ -153,13 +152,12 @@ http_interactions:
                     <ns0:Concept code="4525004" codeSystem="2.16.840.1.113883.6.96" codeSystemName="SNOMEDCT" codeSystemVersion="2015-09" displayName="Emergency department patient visit (procedure)"/>
                 </ns0:ConceptList>
                 <ns0:Source>The Joint Commission</ns0:Source>
-                <ns0:Purpose>(Clinical Focus: This set of values identifies procedures representing an emergency department encounter.),(Data Element Scope: The intent of this data element is to identify patients who have had an emergency department encounter.  Using the Quality Data Model, this particular element will map to the "Encounter" category.),(Inclusion Criteria: Include codes representing an emergency department visit encounter utilizing the SNOMED CT code system.),(Exclusion Criteria: None)</ns0:Purpose>
+                <ns0:Purpose>(Clinical Focus: The purpose of this value set is to represent concepts for encounters in the emergency department (ED).),(Data Element Scope: This value set may use a model element related to Encounter.),(Inclusion Criteria: Includes concepts that represent an encounter ocurring in the emergency department (ED).),(Exclusion Criteria: Excludes concepts that represent services not performed in the emergency department, including critical care and observation services.)</ns0:Purpose>
                 <ns0:Type>Extensional</ns0:Type>
                 <ns0:Binding>Dynamic</ns0:Binding>
                 <ns0:Status>Active</ns0:Status>
-                <ns0:RevisionDate>2017-07-26</ns0:RevisionDate>
+                <ns0:RevisionDate>2021-02-20</ns0:RevisionDate>
             </ns0:DescribedValueSet>
         </ns0:RetrieveMultipleValueSetsResponse>
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:50 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Thu, 15 Apr 2021 14:29:58 GMT
+recorded_with: VCR 6.0.0

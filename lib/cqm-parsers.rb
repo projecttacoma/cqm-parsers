@@ -8,6 +8,7 @@ require 'fhir/mongoid/models'
 require_relative 'util/vsac_api'
 require_relative 'util/util'
 require_relative 'util/bundle_utils'
+require_relative 'util/cache_utils'
 
 require_relative 'ext/data_element.rb'
 

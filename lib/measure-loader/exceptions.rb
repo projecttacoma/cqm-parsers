@@ -7,4 +7,16 @@ module Measures
   end
   class MeasureLoadingException < StandardError
   end
-end 
+
+  class RestException < StandardError
+    def initialize(message)
+      super(message)
+    end
+  end
+
+  class EmptyBlockException < StandardError
+    def initialize(message)
+      super(message)
+    end
+  end
+end
