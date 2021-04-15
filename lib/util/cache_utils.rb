@@ -1,7 +1,7 @@
 module CacheUtils
   class Cache
-    @cache = {} # default cache expiry: 5 seconds
-    def self.fetch key, expires_in = 5, &block
+    @cache = {} # default cache expiry: 5 minutes
+    def self.fetch key, expires_in = 300, &block
       if @cache.key?(key) && (@cache[key][:expiration_time] > Time.now.to_i)
         @cache[key][:value]
       else
