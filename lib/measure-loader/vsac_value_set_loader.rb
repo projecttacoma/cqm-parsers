@@ -97,7 +97,7 @@ module Measures
           )
         end
         oid = concepts.first['codeSystem']
-        code_system_uri =  code_systems_mapping['by_oid'][oid] || code_systems_mapping['by_name'][code_system_name]
+        code_system_uri =  code_systems_mapping.dig('by_oid', oid) || code_systems_mapping.dig('by_name', code_system_name)
         vsc_include << FHIR::ValueSetComposeInclude.new(
           system: FHIR::PrimitiveUri.transform_json(code_system_uri, nil),
           version: FHIR::PrimitiveString.transform_json(concepts[0]['codeSystemVersion'], nil),
