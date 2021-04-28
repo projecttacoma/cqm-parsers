@@ -80,13 +80,13 @@ module Measures
       # Override with a value from config settings
       # Spreadsheet Example: https://docs.google.com/spreadsheets/d/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/edit#gid=0
       # Spreadsheet's JSON:  https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json
-      def get_spreadsheet_location()
+      def spreadsheet_location_config
         'https://spreadsheets.google.com/feeds/list/15Tje3oiUfYgU24RiX-fUs-hH08dFOvW7_ysyAN8vxuc/od6/public/values?alt=json'
       end
 
       def code_systems_mappings()
         expires_in = 86400 # cache expiry time: 24 hours
-        spreadsheet_location = get_spreadsheet_location
+        spreadsheet_location = spreadsheet_location_config
         CacheUtils::Cache.fetch 'code_system_mappings', expires_in do
           begin
             response = Typhoeus.get spreadsheet_location
