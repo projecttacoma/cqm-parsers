@@ -32,7 +32,7 @@ module HQMF1
       attr = @doc.attribute('F8D5AD22-F49E-4181-B886-E5B12BEA8966e')
       assert_equal 'MSRED', attr.code
       assert_equal '00001231', attr.value
-      assert_equal nil, attr.unit
+      assert_nil attr.unit
       assert_equal 'Measurement end date', attr.name
 
       attr = @doc.attribute_for_code('MSRTP')
@@ -59,7 +59,7 @@ module HQMF1
       assert_equal '64', ipp.preconditions[0].comparison.restrictions[0].range.low.value
       assert_equal 'a', ipp.preconditions[0].comparison.restrictions[0].range.low.unit
       assert_equal true, ipp.preconditions[0].comparison.restrictions[0].range.low.inclusive?
-      assert_equal nil, ipp.preconditions[0].comparison.restrictions[0].range.high
+      assert_nil ipp.preconditions[0].comparison.restrictions[0].range.high
 
       den = @doc.population_criteria_for_code('DENOM')
       assert_equal 1, den.preconditions.length
@@ -72,7 +72,7 @@ module HQMF1
       num = @doc.population_criteria_for_code('NUMER')
       assert_equal 1, num.preconditions.length
       assert_equal 'AND', num.preconditions[0].conjunction
-      assert_equal nil, num.preconditions[0].comparison
+      assert_nil num.preconditions[0].comparison
       assert_equal 2, num.preconditions[0].preconditions.length
       assert_equal 1, num.preconditions[0].restrictions.length
       assert_equal 'DURING', num.preconditions[0].restrictions[0].type

@@ -1,7 +1,7 @@
 require_relative '../../../test_helper'
 module HQMFModel
 
-  class PopulationCriteriaTest  < Minitest::Test    
+  class PopulationCriteriaTest  < Minitest::Test
     def setup
     end
 
@@ -15,7 +15,7 @@ module HQMFModel
     }
 
     ['IPP','DENOM','NUMER','DENEXCEP'].each do |id|
-      HQMF::PopulationCriteria.new(id, id, id, []).conjunction_code.must_equal expected[id]
+      expect(HQMF::PopulationCriteria.new(id, id, id, []).conjunction_code).must_equal expected[id]
     end
 
     assert_raises(RuntimeError) {
