@@ -1,7 +1,7 @@
 require_relative '../../../test_helper'
 module HQMFModel
 
-  class NQF0002Test  < Minitest::Test    
+  class NQF0002Test  < Minitest::Test
     def setup
       path = File.expand_path("../../../../fixtures/1.0/0002/0002.xml", __FILE__)
       @hqmf_contents = File.open(path).read
@@ -27,14 +27,14 @@ module HQMFModel
 
       json = hqmf.to_json
 
-      json[:id].must_equal "0002"
-      json[:title].must_equal "Appropriate Testing for Children with Pharyngitis"
+      _(json[:id]).must_equal "0002"
+      _(json[:title]).must_equal "Appropriate Testing for Children with Pharyngitis"
       refute_nil json[:description]
 
       all_criteria = json[:data_criteria]
       refute_nil all_criteria
-      all_criteria.length.must_equal 30
-      all_criteria.length.must_equal hqmf.all_data_criteria.length
+      _(all_criteria.length).must_equal 30
+      _(all_criteria.length).must_equal hqmf.all_data_criteria.length
 
       [:PatientCharacteristicBirthDate, :EncounterEncounterAmbulatoryIncludingPediatrics, :LaboratoryTestPerformedGroupAStreptococcusTest,
        :DiagnosisActivePharyngitis, :MedicationActivePharyngitisAntibiotics, :MedicationDispensedPharyngitisAntibiotics,
@@ -237,8 +237,8 @@ expected_dc[:PatientCharacteristicPayerPayer] = [
       end
 
       population_criteria = logic[:NUMER]
-      population_criteria[:conjunction?].must_equal true
-      population_criteria[:preconditions].size.must_equal 1
+      _(population_criteria[:conjunction?]).must_equal true
+      _(population_criteria[:preconditions].size).must_equal 1
 
       numerator =
       {conjunction?:true,
@@ -347,14 +347,14 @@ expected_dc[:PatientCharacteristicPayerPayer] = [
       model = HQMF::Parser::V1Parser.new.parse(@hqmf_contents)
       model.backfill_patient_characteristics_with_codes(codes)
 
-      model.all_data_criteria.size.must_equal 30
+      _(model.all_data_criteria.size).must_equal 30
 
       model.all_data_criteria.map(&:id).each do |key|
 
         refute_nil model.data_criteria(key)
       end
 
-      model.all_population_criteria.size.must_equal 4
+      _(model.all_population_criteria.size).must_equal 4
 
       ["NUMER", "DENOM", "IPP"].each do |key|
         refute_nil model.population_criteria(key)
@@ -421,7 +421,7 @@ expected_dc[:PatientCharacteristicPayerPayer] = [
     def test_all_code_set_oids
       hqmf = HQMF::Parser::V1Parser.new.parse(@hqmf_contents)
       oids = hqmf.all_code_set_oids
-      oids.length.must_equal 9
+      _(oids.length).must_equal 9
     end
 
   end

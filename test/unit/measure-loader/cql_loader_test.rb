@@ -339,16 +339,19 @@ class CQLLoaderTest < Minitest::Test
   end
 
   def test_extract_fields_from_single_code_reference_data_criteria
-    measure_file = File.new File.join(@fixtures_path, 'CMS144_v5_8_Artifacts_20191104.zip')
+    measure_file = File.new File.join(@fixtures_path, 'CMS144v610-Artifacts.zip')
     loader = Measures::CqlLoader.new(measure_file, @measure_details)
     measures = loader.extract_measures
     measure = measures[0]
 
     # value sets should only contain the fake drc generated valuesets
-    assert_equal ["drc-c48426f721cede4d865df946157d5e2dc90bd32763ffcb982ca45b3bd97a29db", "drc-7d7da17150a47034168a1372592dc014b452ce8d960b2ecd2b7f426cf4912dc3"], measure.value_sets.map(&:oid)
+    assert_equal ["drc-c48426f721cede4d865df946157d5e2dc90bd32763ffcb982ca45b3bd97a29db",
+                  "drc-6c1bdcd47568e8c9154d6fb664e50e9f101cfd349258a8fc1483098e590f9683",
+                  "drc-7d7da17150a47034168a1372592dc014b452ce8d960b2ecd2b7f426cf4912dc3"], measure.value_sets.map(&:oid)
     # source data criteria that rely on drc should still work
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Allergy/Intolerance: Substance with beta adrenergic receptor antagonist mechanism of action (substance)" }.count
     assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Patient Characteristic Birthdate: Birth date" }.count
+    assert_equal 1, measure.source_data_criteria.select { |sdc| sdc.description == "Diagnosis: Left ventricular systolic dysfunction (disorder)" }.count
   end
 
   def test_negated_source_criteria_with_drc
