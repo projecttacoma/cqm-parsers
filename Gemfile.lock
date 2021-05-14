@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/projecttacoma/cqm-models.git
-  revision: c1b6383b0e91bdb968aa16ed390065e3ea47c72c
+  revision: 9113902a30b6b4be24df09354060970a4a2d9cea
   branch: master
   specs:
     cqm-models (4.0.0)
