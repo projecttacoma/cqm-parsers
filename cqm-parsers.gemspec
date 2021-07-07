@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.version = '0.2.1.1'
 
-  # s.add_dependency 'cqm-models', '~> 3.0.6'
+  s.add_dependency 'cqm-models', '~> 3.1.1'
   s.add_dependency 'mustache'
   s.add_dependency 'erubis', '~> 2.7.0'
   s.add_dependency 'mongoid', '~> 6.4.2'
@@ -20,7 +20,7 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'uuid', '~> 2.3.7'
   s.add_dependency 'builder', '~> 3.1'
-  s.add_dependency 'nokogiri', '>= 1.8.5', '< 1.11.5'
+  s.add_dependency 'nokogiri', '>= 1.11.4'
   s.add_dependency 'highline', "~> 1.7.0"
 
   s.add_dependency 'rubyzip', '~> 1.3'
