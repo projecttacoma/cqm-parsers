@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
 
   s.version = '3.2.0.1'
 
-  s.add_dependency 'cqm-models', '~> 3.0'
+  s.add_dependency 'cqm-models', '> 3.0'
   s.add_dependency 'mustache'
   s.add_dependency 'erubis', '~> 2.7.0'
   s.add_dependency 'mongoid', '~> 7.0.5'
