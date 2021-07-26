@@ -53,7 +53,8 @@ module Measures
                 title: FHIR::PrimitiveString.transform_json(code_reference['display'], nil),
                 version: FHIR::PrimitiveString.new(value: ''),
                 compose: vs_compose,
-                fhirId: code_hash
+                fhirId: code_hash,
+                url: FHIR::PrimitiveUri.transform_json("urn:uuid:#{SecureRandom.uuid}", nil)
               )
             end
             value_sets_from_single_code_references << vs_model_cache[cache_key]
