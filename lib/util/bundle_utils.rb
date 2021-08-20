@@ -29,10 +29,10 @@ module FHIR
         end
       mp[:end] =
         if fhir_measure.effectivePeriod.end&.value
-          fhir_measure.effectivePeriod.end.value << "T23:59:59"
+          fhir_measure.effectivePeriod.end.value << "T23:59:00"
         else
           # Default measurement period end
-          mp[:end] = '2019-12-31T23:59:59'
+          mp[:end] = '2019-12-31T23:59:00'
         end
       mp
     end
