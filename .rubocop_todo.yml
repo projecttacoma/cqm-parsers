@@ -527,6 +527,8 @@ Lint/UselessAssignment:
 # Offense count: 134
 Metrics/AbcSize:
   Max: 270
+  Exclude:
+    - 'test/unit/hqmf/1.0/nqf_0002_test.rb'
 
 # Offense count: 6
 # Configuration parameters: CountComments, ExcludedMethods.

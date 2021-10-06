@@ -1,6 +1,5 @@
 require_relative '../../../test_helper'
 module HQMF1
-
   # 0033 has patient characteristic gender, so it is used to verify the backfilling of the gender as part of the conversion
 
   class NQF0033Test  < Minitest::Test
@@ -46,8 +45,6 @@ module HQMF1
       _(gender_female.value.system).must_equal "Administrative Sex"
       _(gender_female.value.type).must_equal "CD"
     end
-
-
 
   end
 end
