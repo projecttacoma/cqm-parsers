@@ -219,10 +219,6 @@
       "definition":"care_goal",
       "status":"",
       "negation":false},
-  "2.16.840.1.113883.10.20.28.4.13":{
-      "definition":"device",
-      "status":"applied",
-      "negation":false},
   "2.16.840.1.113883.10.20.28.4.11":{
       "definition":"device_adverse_event",
       "status":"",

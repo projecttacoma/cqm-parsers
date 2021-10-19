@@ -11,7 +11,7 @@ class ParseTest < Minitest::Test
   def test_basic_parse_v1
 
     parsed = HQMF::Parser::V1Parser.new.parse(@hqmf_contents_v1)
-    parsed.title.must_equal "Pneumonia Vaccination Status for Older Adults (NQF 0043)"
+    _(parsed.title).must_equal "Pneumonia Vaccination Status for Older Adults (NQF 0043)"
 
   end
 
@@ -19,7 +19,7 @@ class ParseTest < Minitest::Test
 
     parsed = HQMF::Parser::V2Parser.new.parse(@hqmf_contents_v2)
 
-    parsed.title.must_equal "Statin Prescribed at Discharge"
+    _(parsed.title).must_equal "Statin Prescribed at Discharge"
   end
 
 end

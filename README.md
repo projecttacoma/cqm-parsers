@@ -42,22 +42,9 @@ bundle exec rake test
 
 ```
 
-
 ## Versioning
 
-Starting with version **2.0.0** released on 6/20/19, cqm-parsers versioning has the format **X.Y.Z**, where:
-
-* **X** maps to a version of the CQL-based HQMF IG. See the table below to see the existing mapping to CQL-based HQMF IG versions.
-
-  | X | CQL-based HQMF IG|
-  | --- | --- |
-  | 2 | R1 STU3 |
-
-* **Y** indicates major changes (incompatible API changes)
-
-* **Z** indicates minor changes (added functionality in a backwards-compatible manner) and patch changes (backwards-compatible bug fixes)
-
-For the versions available, see [tags on this repository](https://github.com/projecttacoma/cqm-parsers/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see [tags on this repository](https://github.com/projecttacoma/cqm-parsers/tags). 
 
 ## License
 

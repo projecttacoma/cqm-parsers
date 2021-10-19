@@ -7,8 +7,7 @@ module Measures
       options.symbolize_keys!
       @vsac_options = options[:options]
       @vsac_ticket_granting_ticket = options[:ticket_granting_ticket]
-      @vsac_username = options[:username]
-      @vsac_password = options[:password]
+      @vsac_api_key = options[:api_key]
       @vs_model_cache = {}
     end
 
@@ -48,7 +47,7 @@ module Measures
 
     def load_api
       return @api if @api.present?
-      @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: @vsac_ticket_granting_ticket, username: @vsac_username, password: @vsac_password)
+      @api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], ticket_granting_ticket: @vsac_ticket_granting_ticket, api_key: @vsac_api_key)
       return @api
     end
 

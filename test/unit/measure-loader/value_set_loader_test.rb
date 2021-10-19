@@ -94,10 +94,10 @@ class VSACValueSetLoaderTest < Minitest::Test
     end
   end
 
-  def test_loading_with_username_password
+  def test_loading_with_api_key
     VCR.use_cassette('vs_loading_with_username_password', @vcr_options) do
       vsac_options = { release: 'eCQM Update 2018 EP-EC and EH' }
-      value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, username: ENV['VSAC_USERNAME'], password: ENV['VSAC_PASSWORD'])
+      value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, api_key: ENV['VSAC_API_KEY'])
       loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 162, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
