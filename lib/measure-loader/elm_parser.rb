@@ -13,7 +13,7 @@ module Measures
       ret[:identifier][:id] = doc.css("identifier").attr("id").value
       ret[:identifier][:version] = doc.css("identifier").attr("version").value
       # all the define statements including functions
-      definitions = doc.css("statements def:not([name='Patient'])")
+      definitions = doc.css("statements def")
       definitions&.each do |definition|
         annotation = definition.at("annotation")
         if annotation
