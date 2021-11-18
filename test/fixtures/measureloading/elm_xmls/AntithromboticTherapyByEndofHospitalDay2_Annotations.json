@@ -492,7 +492,7 @@
             {
               "children": [
                 {
-                  "text": "define \"Numerator\":\n  "
+                  "text": "/*this is NUMER*/define \"Numerator\":\n  "
                 }
               ]
             },
@@ -1782,7 +1782,7 @@
             {
               "children": [
                 {
-                  "text": "define \"Initial Population\":\n  "
+                  "text": "//this is IPPdefine \"Initial Population\":\n  "
                 }
               ]
             },
