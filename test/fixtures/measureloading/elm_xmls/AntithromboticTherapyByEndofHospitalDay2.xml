@@ -207,7 +207,7 @@
       <def localId="37" locator="36:1-37:40" name="Numerator" context="Patient" accessLevel="Public">
          <annotation xsi:type="a:Annotation">
             <a:s r="37">
-               <a:s>define &quot;Numerator&quot;:
+               <a:s>/*this is NUMER*/define &quot;Numerator&quot;:
 	</a:s>
                <a:s r="36">
                   <a:s>&quot;Encounter with Antithrombotic Therapy&quot;</a:s>
@@ -685,7 +685,7 @@
       <def localId="113" locator="53:1-54:49" name="Initial Population" context="Patient" accessLevel="Public">
          <annotation xsi:type="a:Annotation">
             <a:s r="113">
-               <a:s>define &quot;Initial Population&quot;:
+               <a:s>//this is IPPdefine &quot;Initial Population&quot;:
 	</a:s>
                <a:s r="112">
                   <a:s r="111">

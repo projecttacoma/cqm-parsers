@@ -27,8 +27,7 @@ class ElmParserTest < Minitest::Test
         </a>
       </a>'
     doc = Nokogiri::XML(xml) { |config| config.noblanks }
-    ret, define_name = Measures::ElmParser.parse_node(doc, {})
-    assert_equal 'SDE Ethnicity', define_name
+    ret = Measures::ElmParser.parse_node(doc, {})
     expected_ret =
       {
         children:
