@@ -1,7 +1,7 @@
 name: Continuous Integration
 on:
   pull_request:
-    branches: [master, bonnie_version]
+    branches: [master, cqm_parsers_3_x, bonnie_version]
 
 jobs:
   build:
