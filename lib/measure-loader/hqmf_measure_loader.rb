@@ -115,13 +115,20 @@ module Measures
         criteria_components = population_hqmf_node.css('component').flat_map(&:children)
         criteria_components.each do |cc|
           statement_ref = cc.at_css('precondition/criteriaReference/id')
+          subject_ref = cc.at_css('subject/criteriaReference/id')
+          subject_hqmf_id = subject_ref.nil? ? nil : subject_ref.attr('root')
           next if statement_ref.nil?
           statement_ref_hash = { library_name: statement_ref.attr('extension').split('.')[0],
                                  statement_name: Utilities.remove_enclosing_quotes(statement_ref.attr('extension').split('.')[1]),
-                                 hqmf_id: cc.at_css('id').attr('root') }
+                                 hqmf_id: cc.at_css('id').attr('root'),
+                                 subject_id: subject_hqmf_id }
           case cc.name
           when 'initialPopulationCriteria'
-            ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_hash
+            if ps[:populations][HQMF::PopulationCriteria::IPP].nil?
+              ps[:populations][HQMF::PopulationCriteria::IPP] = statement_ref_hash
+            else
+              ps[:populations][HQMF::PopulationCriteria::IPP_1] = statement_ref_hash
+            end
           when 'denominatorCriteria'
             ps[:populations][HQMF::PopulationCriteria::DENOM] = statement_ref_hash
           when 'numeratorCriteria'

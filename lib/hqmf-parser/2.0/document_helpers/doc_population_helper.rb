@@ -123,8 +123,8 @@ module HQMF2
         HQMF::PopulationCriteria::MSRPOPL => 'measurePopulationCriteria',
         HQMF::PopulationCriteria::MSRPOPLEX => 'measurePopulationExclusionCriteria'
       }.each_pair do |criteria_id, criteria_element_name|
-        criteria_def = population_def.at_xpath("cda:component[cda:#{criteria_element_name}]", HQMF2::Document::NAMESPACES)
-        if criteria_def
+        criteria_defs = population_def.xpath("cda:component[cda:#{criteria_element_name}]", HQMF2::Document::NAMESPACES)
+        criteria_defs.each do |criteria_def|
           build_population_criteria(criteria_def, criteria_id, population)
         end
       end

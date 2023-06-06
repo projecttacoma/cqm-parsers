@@ -9,6 +9,7 @@ module HQMF
     attr_accessor :aggregator
 
     IPP = 'IPP'
+    IPP_1 = 'IPP_1'
     DENOM = 'DENOM'
     NUMER = 'NUMER'
     NUMEX = 'NUMEX'
@@ -20,7 +21,7 @@ module HQMF
 
     STRAT = 'STRAT'
 
-    ALL_POPULATION_CODES = [STRAT, IPP, DENOM, DENEX, NUMER, NUMEX, DENEXCEP, MSRPOPL, OBSERV, MSRPOPLEX]
+    ALL_POPULATION_CODES = [STRAT, IPP, IPP_1, DENOM, DENEX, NUMER, NUMEX, DENEXCEP, MSRPOPL, OBSERV, MSRPOPLEX]
 
     # Create a new population criteria
     # @param [String] id
