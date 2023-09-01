@@ -113,7 +113,6 @@ APP_CONFIG = {'vsac'=> {'auth_url'=> 'https://vsac.nlm.nih.gov/vsac/ws',
                         'utility_url' => 'https://vsac.nlm.nih.gov/vsac',
                         'default_profile' => 'MU2 Update 2016-04-01'}}
 
-def get_ticket_granting_ticket_using_env_vars
-  api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], api_key: ENV['VSAC_API_KEY'])
-  return api.ticket_granting_ticket
+def test_api_key
+  "apiKeyThing"
 end
