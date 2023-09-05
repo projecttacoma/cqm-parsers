@@ -74,9 +74,8 @@ module Util
       # This is the value of the service parameter passed when getting a ticket. This never changes.
       TICKET_SERVICE_PARAM = "http://umlsks.nlm.nih.gov"
 
-      # The ticket granting that will be obtained if needed. Accessible so it may be stored in user session.
-      # Is a hash of the :ticket and time it :expires.
-      attr_reader :ticket_granting_ticket
+      # Requester UMLS API KEY
+      attr_reader :api_key
 
       ##
       # Creates a new VSACAPI. If credentials were provided they are checked now. If no credentials
@@ -91,24 +90,7 @@ module Util
         unless check_config @config
           raise VSACArgumentError.new("Required param :config is missing required URLs.")
         end
-
-        # if a ticket_granting_ticket was passed in, check it and raise errors if found
-        # VSAC API Key will be ignored
-        if !options[:ticket_granting_ticket].nil?
-          provided_ticket_granting_ticket = options[:ticket_granting_ticket]
-          if provided_ticket_granting_ticket[:ticket].nil? || provided_ticket_granting_ticket[:expires].nil?
-            raise VSACArgumentError.new("Optional param :ticket_granting_ticket is missing :ticket or :expires")
-          end
-
-          raise VSACTicketExpiredError.new if Time.now > provided_ticket_granting_ticket[:expires]
-
-          @ticket_granting_ticket = { ticket: provided_ticket_granting_ticket[:ticket],
-                                      expires: provided_ticket_granting_ticket[:expires] }
-
-        # if api key was provided use it to get a ticket granting ticket
-        elsif !options[:api_key].nil?
-          @ticket_granting_ticket = get_ticket_granting_ticket(options[:api_key])
-        end
+        @api_key = options[:api_key]
       end
 
       ##
@@ -204,8 +186,7 @@ module Util
       # hash = {vs_vsac_options: ___, value_set: {oid: ___} }
       #
       def get_multiple_valuesets(needed_value_sets)
-        raise VSACNoCredentialsError.new unless @ticket_granting_ticket
-        raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
+        raise VSACNoCredentialsError.new unless @api_key
 
         vs_responses = get_multiple_valueset_raw_responses(needed_value_sets)
         vs_datas = [needed_value_sets,vs_responses].transpose.map do |needed_vs,vs_response|
@@ -221,7 +202,7 @@ module Util
       # Given a raw valueset response, process and validate
       def process_and_validate_vsac_response(vs_response, expected_oid)
         raise VSNotFoundError.new(expected_oid) if vs_response.response_code == 404
-        validate_http_status_for_ticket_based_request(vs_response.response_code)
+        validate_http_status_for_apikey_based_request(vs_response.response_code)
 
         vs_data = vs_response.body.force_encoding("utf-8")
         begin
@@ -240,11 +221,9 @@ module Util
 
       # Execute bulk requests for valuesets, return the raw Typheous responses (requests executed in parallel)
       def get_multiple_valueset_raw_responses(needed_value_sets)
-        service_tickets = get_service_tickets(needed_value_sets.size)
-
         hydra = Typhoeus::Hydra.new(max_concurrency: 1) # Hydra executes multiple HTTP requests at once
         requests = needed_value_sets.map do |n|
-          request = create_valueset_request(n[:value_set][:oid], service_tickets.pop, n[:vs_vsac_options])
+          request = create_valueset_request(n[:value_set][:oid], n[:vs_vsac_options])
           hydra.queue(request)
           request
         end
@@ -254,28 +233,8 @@ module Util
         return responses
       end
 
-      # Bulk get an amount of service tickets (requests executed in parallel)
-      def get_service_tickets(amount)
-        raise VSACNoCredentialsError.new unless @ticket_granting_ticket
-        raise VSACTicketExpiredError.new if Time.now > @ticket_granting_ticket[:expires]
-
-        hydra = Typhoeus::Hydra.new # Hydra executes multiple HTTP requests at once
-        requests = amount.times.map do
-          request = create_service_ticket_request
-          hydra.queue(request)
-          request
-        end
-
-        hydra.run
-        tickets = requests.map do |request|
-          validate_http_status_for_ticket_based_request(request.response.response_code)
-          request.response.body
-        end
-        return tickets
-      end
-
       # Create a typheous request for a valueset (this must be executed later)
-      def create_valueset_request(oid, ticket, options = {})
+      def create_valueset_request(oid, options = {})
         # base parameter oid is always needed
         params = { id: oid }
         # release parameter, should be used moving forward
@@ -292,36 +251,16 @@ module Util
 
         # version parameter, rarely used
         params[:version] = options[:version] unless options[:version].nil?
-        params[:ticket] = ticket
 
-        return Typhoeus::Request.new("#{@config[:content_url]}/RetrieveMultipleValueSets", params: params)
-      end
-
-      # Create a typheous request for a service ticket (this must be executed later)
-      def create_service_ticket_request
-        return Typhoeus::Request.new("#{@config[:auth_url]}/Ticket/#{@ticket_granting_ticket[:ticket]}",
-                                     method: :post,
-                                     params: { service: TICKET_SERVICE_PARAM})
-      end
-
-      # Use your API Key to retrive a ticket granting ticket from VSAC
-      def get_ticket_granting_ticket(api_key)
-        response = Typhoeus.post(
-          "#{@config[:auth_url]}/Ticket",
-          # looks like typheous sometimes switches the order of username/password when encoding
-          # which vsac cant handle (!?), so encode first
-          body: URI.encode_www_form(apikey: api_key)
-        )
-        raise VSACInvalidCredentialsError.new if response.response_code == 401
-        validate_http_status(response.response_code)
-        return { ticket: String.new(response.body), expires: Time.now + 8.hours }
+        return Typhoeus::Request.new("#{@config[:content_url]}/RetrieveMultipleValueSets",
+                                     params: params,
+                                     userpwd: "apikey:#{@api_key}")
       end
 
       # Raise errors if http_status is not OK (200), and expire TGT if auth fails
-      def validate_http_status_for_ticket_based_request(http_status)
+      def validate_http_status_for_apikey_based_request(http_status)
         if http_status == 401
-          @ticket_granting_ticket[:expires] = Time.now
-          raise VSACTicketExpiredError.new
+          raise VSACInvalidCredentialsError.new
         end
         validate_http_status(http_status)
       end

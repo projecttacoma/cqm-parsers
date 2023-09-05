@@ -17,7 +17,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   def test_can_use_cache
     VCR.use_cassette('measure__test_can_use_cache') do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
-      vs_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      vs_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       needed_value_sets = [{oid: "2.16.840.1.113883.3.117.1.7.1.292", version: nil, profile: nil}]
 
       valuesets = vs_loader.retrieve_and_modelize_value_sets_from_vsac(needed_value_sets, {})
@@ -34,7 +34,7 @@ class VSACValueSetLoaderTest < Minitest::Test
     # Expects that draft and default profile will be used
     VCR.use_cassette('vs_loading_draft_profile_CMS104', @vcr_options) do
       vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
-      value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measure
       value_sets = measure.value_sets.select { |vs| vs.fhirId == '2.16.840.1.113883.3.117.1.7.1.93'}
@@ -53,7 +53,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   #   # Expects that draft and default profile will be used, and provided Profile will be ignored
   #   VCR.use_cassette('vs_loading_draft_profile', @vcr_options) do
   #     vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -64,7 +64,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   #   VCR.use_cassette('vs_loading_draft_verion',
   #                    match_requests_on: [:method, :uri_no_st]) do
   #     vsac_options = { profile: APP_CONFIG['vsac']['default_profile'], include_draft: true }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -74,7 +74,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   # def test_loading_without_includedraft_and_no_profile_or_version
   #   VCR.use_cassette('vs_loading_no_profile_version', @vcr_options) do
   #     vsac_options = { profile: APP_CONFIG['vsac']['default_profile'] }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -85,7 +85,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   #   VCR.use_cassette('vs_loading_meausre_defined_no_backup_profile', @vcr_options) do
   #     vsac_options = { measure_defined: true }
   #
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 173, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -95,7 +95,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   # def test_loading_with_release
   #   VCR.use_cassette('vs_loading_release', @vcr_options) do
   #     vsac_options = { release: 'eCQM Update 2018 EP-EC and EH' }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 162, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -115,7 +115,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   # def test_loading_measure_defined_value_sets_defined_by_profile
   #   VCR.use_cassette('vs_loading_profile', @vcr_options) do
   #     vsac_options = { measure_defined: true }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 163, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -125,7 +125,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   # def test_loading_measure_defined_value_sets_defined_by_version
   #   VCR.use_cassette('vs_loading_version', @vcr_options) do
   #     vsac_options = { measure_defined: true }
-  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #     value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #     loader = Measures::BundleLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
   #     measure = loader.extract_measures[0]
   #     assert_equal 148, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
@@ -140,7 +140,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   #     vsac_options = { profile: 'Latest eCQM', include_draft: true }
   #
   #     error = assert_raises Util::VSAC::VSEmptyError do
-  #       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #       value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
   #     end
   #     assert_equal '2.16.840.1.113762.1.4.1179.2', error.oid
@@ -153,7 +153,7 @@ class VSACValueSetLoaderTest < Minitest::Test
   #     vsac_options = { profile: 'Latest eCQM', include_draft: true }
   #
   #     error = assert_raises Util::VSAC::VSNotFoundError do
-  #       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+  #       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
   #       value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
   #     end
   #     assert_equal '2.16.840.1.113762.1.4.1179.2f', error.oid
