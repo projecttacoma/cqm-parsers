@@ -100,7 +100,7 @@ http_interactions:
   recorded_at: Fri, 11 Jan 2019 18:37:50 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01&ticket=ST-854-cueCozNN2ObBn4MFYPOI-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.117.1.7.1.292&profile=MU2%20Update%202016-04-01
     body:
       encoding: US-ASCII
       string: ''
