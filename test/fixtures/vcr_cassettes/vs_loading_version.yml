@@ -394,7 +394,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:46 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.462&ticket=ST-326334-h9uPv9HaFatsCbVguz4E-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.462&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -504,7 +504,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:46 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.1502&ticket=ST-326339-LdAT5mgEDkIshuEkqByH-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.1502&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -743,7 +743,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:46 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.1834&ticket=ST-326338-bXxpa52qPV4GcuyMiIqe-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113883.3.600.1.1834&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -1001,7 +1001,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:46 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&ticket=ST-326335-B0dh0afcazA6135ZZVkl-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.837&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -5689,7 +5689,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:48 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&ticket=ST-326333-zzxi9Q9egOwkYX9izaNh-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.3591&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -10898,7 +10898,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:48 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&ticket=ST-326337-o6nDcDof5RjIhcf2QHRc-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.114222.4.11.836&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
@@ -15600,7 +15600,7 @@ http_interactions:
   recorded_at: Tue, 15 Jan 2019 20:05:48 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&ticket=ST-326336-I2XR9miY45ahJkZlcW2o-cas&version=MU2%20EP%20Update%202014-07-01
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&version=MU2%20EP%20Update%202014-07-01
     body:
       encoding: US-ASCII
       string: ''
