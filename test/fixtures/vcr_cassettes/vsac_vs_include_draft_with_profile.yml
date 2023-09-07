@@ -100,7 +100,7 @@ http_interactions:
   recorded_at: Fri, 11 Jan 2019 18:37:05 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=eCQM%20Update%202018-05-04&ticket=ST-610-M2bVx625taemBH1KR6ag-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1&includeDraft=yes&profile=eCQM%20Update%202018-05-04
     body:
       encoding: US-ASCII
       string: ''
