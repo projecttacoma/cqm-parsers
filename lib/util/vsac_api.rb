@@ -40,13 +40,6 @@ module Util
       end
     end
 
-    # Raised when the ticket granting ticket has expired.
-    class VSACTicketExpiredError < VSACError
-      def initialize
-        super('VSAC session expired. Please re-enter credentials and try again.')
-      end
-    end
-
     # Raised when the user credentials were invalid.
     class VSACInvalidCredentialsError < VSACError
       def initialize
