@@ -17,7 +17,7 @@ class CQLLoaderTest < Minitest::Test
       measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true }
       measure_file = File.new File.join(@fixtures_path, 'CMS111_v5_6_Artifacts.zip')
 
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -93,7 +93,7 @@ class CQLLoaderTest < Minitest::Test
       measure_details = { 'episode_of_care'=> true, 'continuous_variable' => true, 'population_titles' => ['ps1','ps2','ps1strat1','ps1strat2','ps2strat1'] }
       measure_file = File.new File.join(@fixtures_path, 'CMS137v7.zip')
 
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -112,7 +112,7 @@ class CQLLoaderTest < Minitest::Test
     VCR.use_cassette('measure__definition_with_same_name_as_a_library_definition', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
 
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -130,7 +130,7 @@ class CQLLoaderTest < Minitest::Test
   def test_source_data_criteria_creation
     VCR.use_cassette('measure__source_data_criteria_creation', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS134v6.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
@@ -189,7 +189,7 @@ class CQLLoaderTest < Minitest::Test
 
     ['1','2'].each do |cassette_number|
       VCR.use_cassette('measure__direct_reference_code_handles_creation_of_codeListId_hash'+cassette_number, @vcr_options) do
-        value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+        value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
         loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
         measures = loader.extract_measures
         measure = measures[0]
@@ -203,7 +203,7 @@ class CQLLoaderTest < Minitest::Test
   def test_unique_characters_stored_correctly
     VCR.use_cassette('measure__unique_characters_stored_correctly', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'TOB2_v5_5_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -222,7 +222,7 @@ class CQLLoaderTest < Minitest::Test
   def test_measure_including_draft
     VCR.use_cassette("measure__measure_including_draft", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'DRAFT_CMS2_CQL.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -241,7 +241,7 @@ class CQLLoaderTest < Minitest::Test
   def test_measure
     VCR.use_cassette("measure__test_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS137v7.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options_w_draft, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -257,7 +257,7 @@ class CQLLoaderTest < Minitest::Test
   def test_5_4_CQL_measure
     VCR.use_cassette("measure__test_5_4_CQL_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS158_v5_4_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -274,7 +274,7 @@ class CQLLoaderTest < Minitest::Test
   def test_proportional_cv_measure
     VCR.use_cassette("measure__test_ratio_cv_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'HyperG_v5_6_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -286,7 +286,7 @@ class CQLLoaderTest < Minitest::Test
   def test_ratio_cv_measure
     VCR.use_cassette("measure__test_proportional_cv_measure", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CVmulti_v5_6_Artifacts.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -298,7 +298,7 @@ class CQLLoaderTest < Minitest::Test
   def test_multiple_libraries
     VCR.use_cassette("measure__test_multiple_libraries", @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'bonnienesting01_updated.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       measure = measures[0]
@@ -354,7 +354,7 @@ class CQLLoaderTest < Minitest::Test
   def test_negated_source_criteria_with_drc
     VCR.use_cassette('measure__negated_source_criteria_with_drc', @vcr_options) do
       measure_file = File.new File.join(@fixtures_path, 'CMS22v7.zip')
-      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, ticket_granting_ticket: get_ticket_granting_ticket_using_env_vars)
+      value_set_loader = Measures::VSACValueSetLoader.new(options: @vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(measure_file, @measure_details, value_set_loader)
       measures = loader.extract_measures
       assert_equal 1, measures.length
