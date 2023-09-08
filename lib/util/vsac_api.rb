@@ -80,7 +80,18 @@ module Util
         unless check_config @config
           raise VSACArgumentError.new("Required param :config is missing required URLs.")
         end
+
         @api_key = options[:api_key]
+        validate_api_key_vsac unless options[:api_key].nil?
+      end
+
+      ##
+      # Attempt to retrieve the ONC Admin Sex VS to verify
+      # VSAC connectivity with the supplied UMLS API Key.
+      def validate_api_key_vsac
+        response = get_multiple_valueset_raw_responses([{value_set: {oid: "2.16.840.1.113762.1.4.1"}, vs_vsac_options: {}}])[0]
+        raise VSACInvalidCredentialsError.new if !response.body || response.response_code == 401
+        validate_http_status(response.response_code)
       end
 
       ##
@@ -247,7 +258,7 @@ module Util
                                      userpwd: "apikey:#{@api_key}")
       end
 
-      # Raise errors if http_status is not OK (200), and expire TGT if auth fails
+      # Raise errors if http_status is not OK (200)
       def validate_http_status_for_apikey_based_request(http_status)
         if http_status == 401
           raise VSACInvalidCredentialsError.new
