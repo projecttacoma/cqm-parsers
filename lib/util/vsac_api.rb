@@ -62,7 +62,7 @@ module Util
       # The default program to use for get_program_details and get_program_release_names calls.
       # This can be overriden by providing a :program in the config or by the single optional parameter for those
       # methods.
-      DEFAULT_PROGRAM = "CMS eCQM"
+      DEFAULT_PROGRAM = "CMS eCQM and Hybrid Measure"
 
       # This is the value of the service parameter passed when getting a ticket. This never changes.
       TICKET_SERVICE_PARAM = "http://umlsks.nlm.nih.gov"

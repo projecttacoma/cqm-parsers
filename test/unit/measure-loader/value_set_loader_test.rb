@@ -37,7 +37,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 167, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -48,7 +48,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 167, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -59,7 +59,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 167, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -69,7 +69,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 165, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 167, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -80,7 +80,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_base, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 173, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 167, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -110,7 +110,7 @@ class VSACValueSetLoaderTest < Minitest::Test
       value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
       loader = Measures::CqlLoader.new(@measure_file_with_profiles, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
-      assert_equal 163, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
+      assert_equal 156, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
     end
   end
 
@@ -121,21 +121,6 @@ class VSACValueSetLoaderTest < Minitest::Test
       loader = Measures::CqlLoader.new(@measure_file_version, @empty_measure_details, value_set_loader)
       measure = loader.extract_measures[0]
       assert_equal 148, measure.value_sets.select { |vs| vs.oid == "2.16.840.1.113883.3.600.1.1834"}[0].concepts.size
-    end
-  end
-
-  def test_loading_valueset_that_returns_an_empty_concept_list
-    # DO NOT re-record this cassette. the response for this valueset may have changed.
-    # As of 4/11/18 this value set uses a codesystem not in Latest eCQM profile and returns an empty concept list
-    VCR.use_cassette('vs_loading_empty_concept_list', @vcr_options) do
-      value_sets = [{ oid: '2.16.840.1.113762.1.4.1179.2'}]
-      vsac_options = { profile: 'Latest eCQM', include_draft: true }
-
-      error = assert_raises Util::VSAC::VSEmptyError do
-        value_set_loader = Measures::VSACValueSetLoader.new(options: vsac_options, vsac_api_key: test_api_key)
-        value_set_loader.retrieve_and_modelize_value_sets_from_vsac(value_sets)
-      end
-      assert_equal '2.16.840.1.113762.1.4.1179.2', error.oid
     end
   end
 

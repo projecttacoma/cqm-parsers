@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20eCQM
+    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20eCQM%20and%20Hybrid%20Measure
     body:
       encoding: US-ASCII
       string: ''
@@ -16,10 +16,13 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
-      - nosniff
       - nosniff
       X-Xss-Protection:
       - 1; mode=block
@@ -32,32 +35,32 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '1166'
+      - '1527'
       Date:
-      - Fri, 11 Jan 2019 18:37:46 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!KcaBKqVGRhMjmCrNtNHn4GsLooFbU2NRLktK8tsjLStAMXcsxu9KpAGLhf928VZL1eG36MD7B5J0ryk=;
-        expires=Fri, 11-Jan-2019 20:37:47 GMT; path=/; Httponly; Secure
+      - Fri, 03 May 2024 18:01:26 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
-      string: '{"name":"CMS eCQM","description":"eCQMs use data from electronic health
-        records (EHR) and/or health information technology systems to measure health
-        care quality. eCQM value sets specify terminology codes required for eCQM
-        measurement and are updated by CMS one or more times each year.","release":[{"name":"eCQM
-        Update 2018-09-17","releaseDate":20180917},{"name":"eCQM Update 2018-05-04","releaseDate":20180504},{"name":"eCQM
-        Update 2018 EP-EC and EH","releaseDate":20170929},{"name":"eCQM Update 4Q2017
-        EH","releaseDate":20170915},{"name":"eCQM Update 2017-05-05","releaseDate":20170505},{"name":"MU2
-        Update 2017-01-06","releaseDate":20170106},{"name":"MU2 Update 2016-04-01","releaseDate":20160401},{"name":"MU2
-        Update 2015-05-01","releaseDate":20150501},{"name":"MU2 EP Update 2014-07-01","releaseDate":20140701},{"name":"MU2
-        EP Update 2014-05-30","releaseDate":20140530},{"name":"MU2 EH Update 2014-04-01","releaseDate":20140401},{"name":"MU2
-        EP Update 2013-06-14","releaseDate":20130614},{"name":"MU2 EH Update 2013-04-01","releaseDate":20130401},{"name":"MU2
-        Update 2012-12-21","releaseDate":20121221},{"name":"MU2 Update 2012-10-25","releaseDate":20121025}]}'
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:47 GMT
-recorded_with: VCR 3.0.3
+      encoding: ASCII-8BIT
+      string: '{"name":"CMS eCQM and Hybrid Measure","description":"eCQMs use data
+        from electronic health records (EHR) and/or health information technology
+        systems to measure health care quality. eCQM value sets specify terminology
+        codes required for eCQM measurement and are updated by CMS one or more times
+        each year.","release":[{"name":"eCQM Update 2024-05-02","releaseDate":20240502},{"name":"eCQM
+        Update 2023-05-04","releaseDate":20230504},{"name":"eCQM Update 2022-05-05","releaseDate":20220505},{"name":"eCQM
+        Update 2021-05-06","releaseDate":20210506},{"name":"eCQM Update 2020-05-07","releaseDate":20200507},{"name":"eCQM
+        Update 2019-05-10","releaseDate":20190510},{"name":"eCQM Update 2018-09-17","releaseDate":20180917},{"name":"eCQM
+        Update 2018-05-04","releaseDate":20180504},{"name":"eCQM Update 2018 EP-EC
+        and EH","releaseDate":20170929},{"name":"eCQM Update 4Q2017 EH","releaseDate":20170915},{"name":"eCQM
+        Update 2017-05-05","releaseDate":20170505},{"name":"MU2 Update 2017-01-06","releaseDate":20170106},{"name":"MU2
+        Update 2016-04-01","releaseDate":20160401},{"name":"MU2 Update 2015-05-01","releaseDate":20150501},{"name":"MU2
+        EP Update 2014-07-01","releaseDate":20140701},{"name":"MU2 EP Update 2014-05-30","releaseDate":20140530},{"name":"MU2
+        EH Update 2014-04-01","releaseDate":20140401},{"name":"MU2 EP Update 2013-06-14","releaseDate":20130614},{"name":"MU2
+        EH Update 2013-04-01","releaseDate":20130401},{"name":"MU2 Update 2012-12-21","releaseDate":20121221},{"name":"MU2
+        Update 2012-10-25","releaseDate":20121025}]}'
+  recorded_at: Fri, 03 May 2024 18:01:24 GMT
+recorded_with: VCR 6.2.0

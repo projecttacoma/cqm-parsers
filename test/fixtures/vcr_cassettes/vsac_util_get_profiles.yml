@@ -16,10 +16,13 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
-      - nosniff
       - nosniff
       X-Xss-Protection:
       - 1; mode=block
@@ -32,45 +35,37 @@ http_interactions:
       Content-Type:
       - text/xml;charset=utf-8
       Content-Length:
-      - '1097'
+      - '937'
       Date:
-      - Fri, 11 Jan 2019 18:37:47 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!73qkhUcry8paaHLNtNHn4GsLooFbU6LfKcsiI868DKzHtiBeAwHiGi1sAzcKIEoYLHuKLjGPMQIBlo0=;
-        expires=Fri, 11-Jan-2019 20:37:48 GMT; path=/; Httponly; Secure
+      - Fri, 03 May 2024 18:01:25 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: |
         <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
         <ProfileList>
             <profile>Most Recent Code System Versions in VSAC</profile>
-            <profile>RCKMS Release 1.0 2018-10-31</profile>
-            <profile>eCQM Update 2018-09-17</profile>
-            <profile>C-CDA R2.1 2018-06-15</profile>
-            <profile>eCQM Update 2018-05-04</profile>
-            <profile>C-CDA R2.1 2018-02-01</profile>
-            <profile>CMS 2018 IQR Voluntary Hybrid Reporting</profile>
-            <profile>eCQM Update 2018 EP-EC and EH</profile>
-            <profile>eCQM Update 4Q2017 EH</profile>
-            <profile>C-CDA R2.1 2017-06-09</profile>
-            <profile>eCQM Update 2017-05-05</profile>
-            <profile>MU2 Update 2017-01-06</profile>
-            <profile>C-CDA R1.1 2016-06-23</profile>
-            <profile>MU2 Update 2016-04-01</profile>
-            <profile>MU2 Update 2015-05-01</profile>
-            <profile>MU2 EP Update 2014-05-30</profile>
-            <profile>MU2 EH Update 2014-04-01</profile>
-            <profile>MU2 EP Update 2013-06-14</profile>
-            <profile>MU2 EH Update 2013-04-01</profile>
-            <profile>MU2 Update 2012-12-21</profile>
-            <profile>MU2 Update 2012-10-25</profile>
+            <profile>eCQM Update 2024-05-02 - QA Analysis</profile>
+            <profile>eCQM Update 2024-05-02</profile>
+            <profile>C-CDA R2.1 2023-08-15</profile>
+            <profile>eCQM Update 2023-05-04</profile>
+            <profile>C-CDA R2.1 2022-08-10</profile>
+            <profile>eCQM Update 2022-05-05</profile>
+            <profile>C-CDA R2.1 2021-08-10</profile>
+            <profile>CMS Pre-rulemaking 2021-05-06</profile>
+            <profile>eCQM Update 2021-05-06</profile>
+            <profile>C-CDA R2.1 2020-07-13</profile>
+            <profile>CMS Pre-rulemaking eCQM 2020-05-07</profile>
+            <profile>eCQM Update 2020-05-07</profile>
+            <profile>CMS Pre-rulemaking eCQM 2019-08-30</profile>
+            <profile>C-CDA R2.1 2019-06-28</profile>
+            <profile>CMS Pre-rulemaking eCQM 2019-05-10</profile>
+            <profile>eCQM Update 2019-05-10</profile>
         </ProfileList>
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:48 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Fri, 03 May 2024 18:01:24 GMT
+recorded_with: VCR 6.2.0

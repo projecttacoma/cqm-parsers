@@ -1,57 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
-    body:
-      encoding: US-ASCII
-      string: apikey=<VSAC_API_KEY>
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '62'
-      Date:
-      - Fri, 11 Jan 2019 18:37:03 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!Iip+2+B3YRdJU6TNtNHn4GsLooFbU6mYuv/JvOvA/FxVBNAPJYeulp056hXwYfxupPiPMQSLemYyFdU=;
-        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: TGT-797-XoxvkiOqc9i6ofYOrfXdFOc3HEYifdBZQKzvTI4IbNyioe3nrb-cas
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-797-XoxvkiOqc9i6ofYOrfXdFOc3HEYifdBZQKzvTI4IbNyioe3nrb-cas?service=http://umlsks.nlm.nih.gov
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1
     body:
       encoding: US-ASCII
       string: ''
@@ -60,16 +11,23 @@ http_interactions:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Expect:
       - ''
+      Authorization:
+      - Basic YXBpa2V5OmE1ZGFhYzM5LTVlMWYtNDgzYS1hNDQ1LWMyN2JkMTlmMjllNQ==
   response:
     status:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
       - nosniff
-      - nosniff
+      Set-Cookie:
+      - JSESSIONID=690344A67DB6E898476E209648B7F450; Path=/vsac; HttpOnly; Secure
       X-Xss-Protection:
       - 1; mode=block
       Cache-Control:
@@ -79,23 +37,34 @@ http_interactions:
       Expires:
       - '0'
       Content-Type:
-      - text/plain;charset=utf-8
+      - text/xml;charset=utf-8
       Content-Length:
-      - '31'
+      - '1306'
       Date:
-      - Fri, 11 Jan 2019 18:37:04 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!ZdYSHkXp9K1Lv93m9OGvBt4MxRMcjmT3/ya2Pn9VKfUzad5QX/0B5lRlPKOIp74KkSqhUpVJJguyHZM=;
-        expires=Fri, 11-Jan-2019 20:37:04 GMT; path=/; Httponly; Secure
+      - Fri, 03 May 2024 18:00:08 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.114 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
-      string: ST-608-IouVyT5Y3EO6mEWcTzfU-cas
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:04 GMT
-recorded_with: VCR 3.0.3
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="Latest">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="2023-02" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="2023-02" displayName="Male"/>
+                </ns0:ConceptList>
+                <ns0:Source>HL7 US Realm Program Management</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+  recorded_at: Fri, 03 May 2024 18:00:07 GMT
+recorded_with: VCR 6.2.0

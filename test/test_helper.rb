@@ -111,7 +111,7 @@ collection_fixtures('measures')
 APP_CONFIG = {'vsac'=> {'auth_url'=> 'https://vsac.nlm.nih.gov/vsac/ws',
                         'content_url' => 'https://vsac.nlm.nih.gov/vsac/svs',
                         'utility_url' => 'https://vsac.nlm.nih.gov/vsac',
-                        'default_profile' => 'MU2 Update 2016-04-01'}}
+                        'default_profile' => 'eCQM Update 2024-05-02'}}
 
 def test_api_key
   "apiKeyThing"

@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/program/HL7%20C-CDA
+    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20Pre-rulemaking%20eCQM
     body:
       encoding: US-ASCII
       string: ''
@@ -35,7 +35,7 @@ http_interactions:
       Content-Type:
       - application/json
       Content-Length:
-      - '813'
+      - '500'
       Date:
       - Fri, 03 May 2024 18:01:25 GMT
       X-Vip-Info:
@@ -46,14 +46,12 @@ http_interactions:
       - max-age=31536000; includeSubDomains; preload
     body:
       encoding: ASCII-8BIT
-      string: '{"name":"HL7 C-CDA","description":"Consolidated Clinical Document Architecture
-        (C-CDA) value sets provide standardized terminology data elements for exchanging
-        templated clinical information (e.g., Allergies, Encounters, Immunizations,
-        Problems, Procedures, etc.) from electronic health records.","release":[{"name":"C-CDA
-        R2.1 2023-08-15","releaseDate":20230815},{"name":"C-CDA R2.1 2022-08-10","releaseDate":20220810},{"name":"C-CDA
-        R2.1 2021-08-10","releaseDate":20210810},{"name":"C-CDA R2.1 2020-07-13","releaseDate":20200713},{"name":"C-CDA
-        R2.1 2019-06-28","releaseDate":20190628},{"name":"C-CDA R2.1 2018-06-15","releaseDate":20180615},{"name":"C-CDA
-        R2.1 2018-02-01","releaseDate":20180201},{"name":"C-CDA R2.1 2017-06-09","releaseDate":20170609},{"name":"C-CDA
-        R1.1 2016-06-23","releaseDate":20160623}]}'
+      string: '{"name":"CMS Pre-rulemaking eCQM","description":"CMS pre-rulemaking
+        eCQMs include measures that are developed, but specifications are not finalized
+        for reporting in a CMS program. The Pre-rulemaking eCQM value sets specify
+        terminology codes for use in these pre-rulemaking eCQMs.","release":[{"name":"CMS
+        Pre-rulemaking eCQM 2020-05-07","releaseDate":20200507},{"name":"CMS Pre-rulemaking
+        eCQM 2019-08-30","releaseDate":20190830},{"name":"CMS Pre-rulemaking eCQM
+        2019-05-10","releaseDate":20190510}]}'
   recorded_at: Fri, 03 May 2024 18:01:24 GMT
 recorded_with: VCR 6.2.0

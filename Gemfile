@@ -10,7 +10,7 @@ gem 'mongoid', '> 6.0.5', '< 9.0.0'
 group :development, :test do
   gem 'bundler-audit'
   gem 'rubocop', '~> 0.52.1', require: false
-  gem 'byebug', '~> 6.0.2',  platforms: [:ruby_20, :ruby_21, :ruby_22, :ruby_23]
+  gem 'byebug'
   gem 'pry'
   gem 'pry-nav'
 end
@@ -20,7 +20,7 @@ group :development do
 end
 
 group :test do
-  gem 'factory_girl', '~> 4.1.0'
+  gem 'factory_girl', '> 4.1.0'
   gem 'tailor', '~> 1.1.2'
   gem 'cane', '~> 2.3.0'
   gem 'codecov'
