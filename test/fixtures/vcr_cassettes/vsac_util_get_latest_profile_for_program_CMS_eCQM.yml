@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20eCQM/latest%20profile
+    uri: https://vsac.nlm.nih.gov/vsac/program/CMS%20eCQM%20and%20Hybrid%20Measure/latest%20profile
     body:
       encoding: US-ASCII
       string: ''
@@ -16,10 +16,13 @@ http_interactions:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
-      - nosniff
       - nosniff
       X-Xss-Protection:
       - 1; mode=block
@@ -34,20 +37,16 @@ http_interactions:
       Content-Length:
       - '72'
       Date:
-      - Fri, 11 Jan 2019 18:37:47 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!cAu2weWrymWfFoXNtNHn4GsLooFbUwdEBfUzg1ZOiOqvh2nRzSnFO3gT+Wa3HkCrnWAEYDtNxmhvKJM=;
-        expires=Fri, 11-Jan-2019 20:37:48 GMT; path=/; Httponly; Secure
+      - Fri, 03 May 2024 18:01:26 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
-      string: '{"name":"eCQM Update 2018-09-17","requestTime":"2019-01-11 01:37:48
+      encoding: ASCII-8BIT
+      string: '{"name":"eCQM Update 2024-05-02","requestTime":"2024-05-03 02:01:27
         PM"}'
-    http_version: 
-  recorded_at: Fri, 11 Jan 2019 18:37:48 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Fri, 03 May 2024 18:01:24 GMT
+recorded_with: VCR 6.2.0

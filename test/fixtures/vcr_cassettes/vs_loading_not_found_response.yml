@@ -1,57 +1,8 @@
 ---
 http_interactions:
 - request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket
-    body:
-      encoding: US-ASCII
-      string: apikey=<VSAC_API_KEY>
-    headers:
-      User-Agent:
-      - Typhoeus - https://github.com/typhoeus/typhoeus
-      Expect:
-      - ''
-  response:
-    status:
-      code: 200
-      message: ''
-    headers:
-      X-Frame-Options:
-      - SAMEORIGIN
-      X-Content-Type-Options:
-      - nosniff
-      - nosniff
-      X-Xss-Protection:
-      - 1; mode=block
-      Cache-Control:
-      - no-cache, no-store, max-age=0, must-revalidate
-      Pragma:
-      - no-cache
-      Expires:
-      - '0'
-      Content-Type:
-      - text/plain;charset=utf-8
-      Content-Length:
-      - '64'
-      Date:
-      - Tue, 15 Jan 2019 20:05:37 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!eJLw41isPHJ1s1jm9OGvBt4MxRMcjmWuEUbJJxlIfz8rCDMI5tcR0atMHKwdpEYvl/7VI3k+y3/4wJ8=;
-        expires=Tue, 15-Jan-2019 22:05:37 GMT; path=/; Httponly; Secure
-      X-Vip-Info:
-      - 130.14.16.40:443
-      X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.110 8080"
-      Strict-Transport-Security:
-      - max-age=31536000; includeSubDomains; preload
-    body:
-      encoding: UTF-8
-      string: TGT-63345-mL3Bk6rQ42fzRc1v5j5nuCnUCpbbf2tZmGrVqU70wz3CnXpPaI-cas
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 20:05:37 GMT
-- request:
-    method: post
-    uri: https://vsac.nlm.nih.gov/vsac/ws/Ticket/TGT-63345-mL3Bk6rQ42fzRc1v5j5nuCnUCpbbf2tZmGrVqU70wz3CnXpPaI-cas?service=http://umlsks.nlm.nih.gov
+    method: get
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1
     body:
       encoding: US-ASCII
       string: ''
@@ -60,16 +11,23 @@ http_interactions:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Expect:
       - ''
+      Authorization:
+      - Basic YXBpa2V5OmE1ZGFhYzM5LTVlMWYtNDgzYS1hNDQ1LWMyN2JkMTlmMjllNQ==
   response:
     status:
       code: 200
       message: ''
     headers:
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
       X-Frame-Options:
       - SAMEORIGIN
       X-Content-Type-Options:
       - nosniff
-      - nosniff
+      Set-Cookie:
+      - JSESSIONID=DE1D5FCC162EF8CA29650EE971412689; Path=/vsac; HttpOnly; Secure
       X-Xss-Protection:
       - 1; mode=block
       Cache-Control:
@@ -79,28 +37,39 @@ http_interactions:
       Expires:
       - '0'
       Content-Type:
-      - text/plain;charset=utf-8
+      - text/xml;charset=utf-8
       Content-Length:
-      - '34'
+      - '1306'
       Date:
-      - Tue, 15 Jan 2019 20:05:37 GMT
-      Set-Cookie:
-      - BIGipServervsacweb_p=!0NudF5WmdshfCHrm9OGvBt4MxRMcjpxMPUyNlqW+YpasqENwPWLsoWDpjvyT6FZAwOC4G49f2HXIuOY=;
-        expires=Tue, 15-Jan-2019 22:05:37 GMT; path=/; Httponly; Secure
+      - Fri, 03 May 2024 18:00:34 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
-      string: ST-326270-dvpasngmspuzIkDUgBJc-cas
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 20:05:37 GMT
+      encoding: ASCII-8BIT
+      string: |
+        <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+        <ns0:RetrieveMultipleValueSetsResponse xmlns:ns0="urn:ihe:iti:svs:2008" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+            <ns0:DescribedValueSet ID="2.16.840.1.113762.1.4.1" displayName="ONC Administrative Sex" version="Latest">
+                <ns0:ConceptList>
+                    <ns0:Concept code="F" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="2023-02" displayName="Female"/>
+                    <ns0:Concept code="M" codeSystem="2.16.840.1.113883.5.1" codeSystemName="AdministrativeGender" codeSystemVersion="2023-02" displayName="Male"/>
+                </ns0:ConceptList>
+                <ns0:Source>HL7 US Realm Program Management</ns0:Source>
+                <ns0:Purpose>(Clinical Focus: Gender identity restricted to only Male and Female used in administrative situations requiring a restriction to these two categories.),(Data Element Scope: Gender),(Inclusion Criteria: Male and Female only.),(Exclusion Criteria: Any gender identity that is not male or female.)</ns0:Purpose>
+                <ns0:Type>Extensional</ns0:Type>
+                <ns0:Binding>Dynamic</ns0:Binding>
+                <ns0:Status>Active</ns0:Status>
+                <ns0:RevisionDate>2015-03-31</ns0:RevisionDate>
+            </ns0:DescribedValueSet>
+        </ns0:RetrieveMultipleValueSetsResponse>
+  recorded_at: Fri, 03 May 2024 18:00:32 GMT
 - request:
     method: get
-    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1179.2f&includeDraft=yes&profile=Latest%20eCQM&ticket=ST-326270-dvpasngmspuzIkDUgBJc-cas
+    uri: https://vsac.nlm.nih.gov/vsac/svs/RetrieveMultipleValueSets?id=2.16.840.1.113762.1.4.1179.2f&includeDraft=yes&profile=Latest%20eCQM
     body:
       encoding: US-ASCII
       string: ''
@@ -109,27 +78,47 @@ http_interactions:
       - Typhoeus - https://github.com/typhoeus/typhoeus
       Expect:
       - ''
+      Authorization:
+      - Basic YXBpa2V5OmE1ZGFhYzM5LTVlMWYtNDgzYS1hNDQ1LWMyN2JkMTlmMjllNQ==
   response:
     status:
       code: 404
       message: ''
     headers:
-      Content-Length:
-      - '0'
-      Date:
-      - Tue, 15 Jan 2019 20:05:37 GMT
+      Vary:
+      - Access-Control-Request-Headers
+      - Access-Control-Request-Method
+      - Origin
+      X-Frame-Options:
+      - SAMEORIGIN
+      X-Content-Type-Options:
+      - nosniff
       Set-Cookie:
-      - BIGipServervsacweb_p=!End8RzF4ZBQWKEfm9OGvBt4MxRMcjvpnUPU7SClSAAeQp+V/JYz/5H/9gpnctwZEkEJ53/QwXQdKWq8=;
-        expires=Tue, 15-Jan-2019 22:05:37 GMT; path=/; Httponly; Secure
+      - JSESSIONID=BDAC6F834F5C5A44F255821848608B3F; Path=/vsac; HttpOnly; Secure
+      Warning:
+      - '111 NAV: Unknown value set'
+      X-Xss-Protection:
+      - 1; mode=block
+      Cache-Control:
+      - no-cache, no-store, max-age=0, must-revalidate
+      Pragma:
+      - no-cache
+      Expires:
+      - '0'
+      Content-Type:
+      - text/xml;charset=utf-8
+      Transfer-Encoding:
+      - chunked
+      Date:
+      - Fri, 03 May 2024 18:00:34 GMT
       X-Vip-Info:
       - 130.14.16.40:443
       X-Pool-Info:
-      - "/Common/vsacweb_p 10.1.5.112 8080"
+      - "/Common/vsacweb_p"
       Strict-Transport-Security:
       - max-age=31536000; includeSubDomains; preload
     body:
-      encoding: UTF-8
+      encoding: ASCII-8BIT
       string: ''
-    http_version: 
-  recorded_at: Tue, 15 Jan 2019 20:05:37 GMT
-recorded_with: VCR 3.0.3
+  recorded_at: Fri, 03 May 2024 18:00:32 GMT
+recorded_with: VCR 6.2.0

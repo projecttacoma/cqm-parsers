@@ -38,7 +38,7 @@ class VSACApiTest < Minitest::Test
   def test_get_valueset_with_include_draft_specified_profile
     VCR.use_cassette("vsac_vs_include_draft_with_profile") do
       api = Util::VSAC::VSACAPI.new(config: APP_CONFIG['vsac'], api_key: ENV['VSAC_API_KEY'])
-      vs = api.get_valueset("2.16.840.1.113762.1.4.1", include_draft: true, profile: "eCQM Update 2018-05-04")
+      vs = api.get_valueset("2.16.840.1.113762.1.4.1", include_draft: true, profile: "eCQM Update 2019-05-10")
       assert vs
       doc = Nokogiri::XML(vs)
       assert_equal 2, doc.xpath("ns0:RetrieveMultipleValueSetsResponse/ns0:DescribedValueSet/ns0:ConceptList/ns0:Concept").count
