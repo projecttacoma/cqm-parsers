@@ -6,4 +6,4 @@ SimpleCov.start do
   track_files 'lib/**/*.rb'
 end
 
-SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::HTMLFormatter,SimpleCov::Formatter::Codecov])
+SimpleCov.formatters = SimpleCov::Formatter::MultiFormatter.new([SimpleCov::Formatter::HTMLFormatter,SimpleCov::Formatter::SimpleFormatter])

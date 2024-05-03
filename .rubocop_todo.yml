@@ -28,16 +28,6 @@ Layout/AlignArray:
   Exclude:
     - 'test/unit/hqmf/model/nqf_0002_test.rb'
 
-# Offense count: 51
-# Cop supports --auto-correct.
-# Configuration parameters: EnforcedHashRocketStyle, EnforcedColonStyle, EnforcedLastArgumentHashStyle.
-# SupportedHashRocketStyles: key, separator, table
-# SupportedColonStyles: key, separator, table
-# SupportedLastArgumentHashStyles: always_inspect, always_ignore, ignore_implicit, ignore_explicit
-Layout/AlignHash:
-  Exclude:
-    - 'test/unit/hqmf/model/nqf_0002_test.rb'
-
 # Offense count: 2
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyle, IndentationWidth.
@@ -407,7 +397,7 @@ Lint/DuplicateMethods:
 # Cop supports --auto-correct.
 # Configuration parameters: EnforcedStyleAlignWith, AutoCorrect.
 # SupportedStylesAlignWith: keyword, variable, start_of_line
-Lint/EndAlignment:
+Layout/EndAlignment:
   Exclude:
     - 'lib/hqmf-model/data_criteria.rb'
 
@@ -456,14 +446,6 @@ Lint/ShadowingOuterLocalVariable:
 Lint/UnderscorePrefixedVariableName:
   Exclude:
     - 'lib/hqmf-parser/converter/pass1/data_criteria_converter.rb'
-
-# Offense count: 3
-# Cop supports --auto-correct.
-Lint/UnneededDisable:
-  Exclude:
-    - 'lib/hqmf-parser/2.0/field_value_helper.rb'
-    - 'lib/hqmf-parser/2.0/value_set_helper.rb'
-    - 'lib/hqmf-parser/cql/value_set_helper.rb'
 
 # Offense count: 26
 # Cop supports --auto-correct.
