@@ -3,14 +3,39 @@ inherit_from: .rubocop_todo.yml
 AllCops:
   TargetRubyVersion: 2.3
 
+Layout/BlockAlignment:
+  Enabled: false
 Documentation:
   Enabled: false
 Style/DateTime:
-  Enabled: false
-Performance/HashEachMethods:
   Enabled: false
 Style/RedundantReturn:
   Enabled: false
 Style/WordArray:
   Enabled: false
-  
+Style/ExpandPathArguments:
+  Enabled: false
+Layout/EmptyLineAfterGuardClause:
+  Enabled: false
+Style/MultipleComparison:
+  Enabled: false
+Layout/LeadingBlankLines:
+  Enabled: false
+Style/UnneededCondition:
+  Enabled: false
+Naming/MemoizedInstanceVariableName:
+  Enabled: false
+Naming/UncommunicativeMethodParamName:
+  Enabled: false
+Lint/UnneededCopDisableDirective:
+  Enabled: false
+Performance/InefficientHashSearch:
+  Enabled: false
+Layout/AlignHash:
+  Exclude:
+    - 'test/unit/hqmf/model/nqf_0002_test.rb'
+    - 'lib/hqmf-model/data_criteria.rb'
+    - 'lib/measure-loader/vsac_value_set_loader.rb'
+    - 'lib/util/code_system_helper.rb'
+    - 'test/test_helper.rb'
+    - 'test/unit/hqmf/model/population_criteria_test.rb'
