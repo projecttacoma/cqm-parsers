@@ -61,7 +61,8 @@ module Measures
       def extract_cms_identifier(qmd)
         cms_identifier =
           (qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eCQM Identifier (Measure Authoring Tool)"]]/xmlns:value') ||
-          qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eMeasure Identifier (Measure Authoring Tool)"]]/xmlns:value'))
+          qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="eMeasure Identifier (Measure Authoring Tool)"]]/xmlns:value') ||
+          qmd.at_xpath('./xmlns:subjectOf/xmlns:measureAttribute[xmlns:code/xmlns:originalText[@value="CMS ID"]]/xmlns:value'))
         return cms_identifier['value']
       end
 
