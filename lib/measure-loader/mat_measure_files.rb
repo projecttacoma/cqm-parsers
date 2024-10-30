@@ -58,8 +58,20 @@ module Measures
             pn = Pathname(f.name)
             next if '__MACOSX'.in? pn.each_filename  # ignore anything in a __MACOSX folder
             next unless pn.basename.extname.in? ['.xml','.cql','.json','.html']
-            folders[pn.dirname][:files] << { basename: pn.basename, contents: f.get_input_stream.read.force_encoding('UTF-8') }
-            folders[pn.dirname][:depth] =  pn.each_filename.count # this is just a count of how many folders are in the path
+
+            # The root directory for a measure may contain a sub directory 'resources' which includes the elm files (MADiE export)
+            # The root directory for a measure may contain a sub directory 'cql' which includes the cql files (MADiE export)
+            # The root directory for a measure may also contain the elm files and cql (MAT export)
+            # Categorize the files by measure's rootpath
+            measure_rootpath = pn.dirname
+            measure_rootpath = measure_rootpath.sub('/resources','')
+            measure_rootpath = measure_rootpath.sub('resources','')
+            measure_rootpath = measure_rootpath.sub('/cql','')
+            measure_rootpath = measure_rootpath.sub('cql','')
+            measure_rootpath = Pathname.new('.')  if measure_rootpath.to_s == ''
+
+            folders[measure_rootpath][:files] << { basename: pn.basename, contents: f.get_input_stream.read.force_encoding('UTF-8') }
+            folders[measure_rootpath][:depth] =  pn.each_filename.count # this is just a count of how many folders are in the path
           end
         end
         return folders
